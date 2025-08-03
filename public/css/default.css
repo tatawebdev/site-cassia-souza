@@ -1,16 +1,16 @@
 /* Default form css */
 *::-moz-selection {
-	background: #444;
+	background: #590854;
 	color: #fff;
 	text-shadow: none;
 }
 ::-moz-selection {
-	background: #444;
+	background: #590854;
 	color: #fff;
 	text-shadow: none;
 }
 ::selection {
-	background: #444;
+	background: #590854;
 	color: #fff;
 	text-shadow: none;
 }
@@ -1000,20 +1000,45 @@ background-size: cover;
 
 
 /* border */
-.theme-border{border:1px solid var(--theme-color)}
-.primary-border-bottom{
-	border-bottom: 1px solid #423e37;
+.theme-border {
+  border: 1px solid var(--theme-color); /* Roxo */
 }
-.primary-border-top{
-	border-top: 1px solid #423e37;
+
+.primary-border-bottom {
+  border-bottom: 1px solid var(--primary-color); /* Dourado */
 }
-.primary-border {border: 1px solid var(--primary-border);}
-.primary-border2-top {border-top: 1px solid var(--primary-border);}
-.white-border {border:1px solid #fff}
-.white-border-bottom{border-bottom:1px solid #fff}
-.secondary-border01{border: 1px solid #d8d7e6;}
-.theme-border-bottom2{border-bottom:2px solid #6c63ff}
-.footer-border-bottom{border-bottom: 1px solid #dcdce1;}
+
+.primary-border-top {
+  border-top: 1px solid var(--primary-color); /* Dourado */
+}
+
+.primary-border {
+  border: 1px solid var(--primary-border); /* Cinza claro */
+}
+
+.primary-border2-top {
+  border-top: 1px solid var(--primary-border); /* Cinza claro */
+}
+
+.white-border {
+  border: 1px solid #f8f8f5; /* Branco suave */
+}
+
+.white-border-bottom {
+  border-bottom: 1px solid #f8f8f5; /* Branco suave */
+}
+
+.secondary-border01 {
+  border: 1px solid #ece8e5; /* Bege acinzentado */
+}
+
+.theme-border-bottom2 {
+  border-bottom: 2px solid var(--theme-color); /* Roxo */
+}
+
+.footer-border-bottom {
+  border-bottom: 1px solid #ece8e5; /* Bege acinzentado */
+}
 
 /* social-link-color */
 .facebook-color{color: #0866FF;}

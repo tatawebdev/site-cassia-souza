@@ -42,15 +42,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --theme-color: #a18549;
-  --primary-color: #bbbbbb;
-  --main-color: #222222;
-  --text-color: #666666;
-  --section-bg: #fbf8f3;
-  --theme-border: #a18549;
-  --primary-border: #e5e5e5;
-  --meta-text-color: #999999;
+  --theme-color: #590854;        /* Roxo */
+  --primary-color: #e3b16f;      /* Dourado */
+  --main-color: #590854;         /* Reforçando o roxo como cor principal */
+  --text-color: #222222;         /* Texto escuro para contraste */
+  --section-bg: #ece8e5;         /* Bege acinzentado */
+  --theme-border: #e3b16f;       /* Dourado */
+  --primary-border: #ccc;        /* Cinza claro neutro */
+  --meta-text-color: #666666;    /* Cinza médio para textos secundários */
+  --background-color: #f8f8f5;   /* Branco suave */
 }
+
 
 body {
   font-family: "Poppins", sans-serif;
@@ -1305,7 +1307,7 @@ p {
 /* 13. footer area
 -------------------------------------------------------------- */
 .footer-area {
-  background: #18140b;
+  background: #350232;
 }
 .footer-top a:hover,
 .footer-bottom a:hover,
