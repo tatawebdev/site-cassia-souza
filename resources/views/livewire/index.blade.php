@@ -1,624 +1,407 @@
 <div>
-    <div class="slider-area hm1 position-relative over-hidden">
-        <div class="slider-active">
-            <div
-                class="single-slider single-slider1 slider-height1 d-flex align-items-end z-index1 img-hover-effect-wrapper">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6  col-md-7  col-sm-12 col-12">
-                            <div class="slider-content slider-content1 mt--10 mr-xl-2 position-relative">
-                                <span class="theme-color text-uppercase fontNoto f-700">Expertise em Destaque</span>
-                                <h1 class="mb-30 mt-1 f-700" data-aos="fade-right" data-aos-duration="2000"
-                                    data-aos-delay="150">Assessoria Tributária
-                                    Estratégica para o Seu Negócio</h1>
-                                <p class="mb-45" data-aos="fade-right" data-aos-duration="1700">Maximize seus resultados
-                                    e minimize riscos com nossa consultoria especializada em direito tributário.</p>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos.html" class="btn theme-bg">Saiba Mais</a>
+    <div class="legal_matter position-relative">
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <a class="navbar-brand" href="/">
+                        <figure class="logo mb-0"><img src="assets/images/logo-acinzentado.png" alt="logo" class="img-fluid">
+                        </figure>
+                    </a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                    id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"> Início </a>
+                                <div class="dropdown-menu drop-down-content">
+                                    <ul class="list-unstyled drop-down-pages">
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/">Direito
+                                                Tributário</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="index1">Regularização Fiscal</a></li>
+                                        <li class="nav-item active"><a class="dropdown-item nav-link"
+                                                href="index2">Litígios e Defesa</a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-5 offset-lg-1  col-md-5  col-sm-12 col-12">
-                            <div class="slider-img hm1-slider-img img-hover-effect2 over-hidden position-relative">
-                                <img class="heartbeat" src="images/hero/hm1-hero-img1.jpg" alt="hero image">
-                            </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about">Quem Somos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                    id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"> Páginas </a>
+                                <div class="dropdown-menu drop-down-content">
+                                    <ul class="list-unstyled drop-down-pages">
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="practice-area">Áreas de Atuação</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="faq">Perguntas
+                                                Frequentes</a>
+                                        </li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="team">Nossa
+                                                Equipe</a>
+                                        </li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="review">Depoimentos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="case-studies">Casos de Sucesso</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                    id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"> Blog </a>
+                                <div class="dropdown-menu drop-down-content">
+                                    <ul class="list-unstyled drop-down-pages">
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="blog">Blog</a>
+                                        </li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="single-blog">Artigo</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="load-more">Carregar
+                                                Mais</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="one-column">Uma
+                                                Coluna</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="two-column">Duas
+                                                Colunas</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="three-column">Três
+                                                Colunas</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="three-colum-sidbar">Três Colunas com Barra Lateral</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="four-column">Quatro
+                                                Colunas</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="six-colum-full-wide">Seis Colunas</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact">Contato</a>
+                            </li>
+                        </ul>
+                        <div class="last_list">
+                            <figure class="nav-phoneicon mb-0"><img class="img-fluid"
+                                    src="./assets/images/nav-phoneicon.png" alt="telefone"></figure>
+                            <a class="text-decoration-none last_list_atag" href="tel:+568925896325">+5689 2589 6325</a>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
-            <div
-                class="single-slider single-slider1 slider-height1 d-flex align-items-end z-index1 img-hover-effect-wrapper">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6  col-md-7  col-sm-12 col-12">
-                            <div class="slider-content slider-content1 mt--10 mr-xl-2 position-relative">
-                                <span class="theme-color text-uppercase fontNoto f-700">Proteja seu Patrimônio</span>
-                                <h1 class="mb-30 mt-1 f-700" data-aos="fade-right" data-aos-duration="2000"
-                                    data-aos-delay="150">Planejamento Tributário
-                                    Eficiente para Empresas</h1>
-                                <p class="mb-45" data-aos="fade-right" data-aos-duration="1700">Oferecemos soluções
-                                    personalizadas para otimizar sua carga tributária e garantir conformidade legal.</p>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos.html" class="btn theme-bg">Entre em Contato</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-5 offset-lg-1  col-md-5  col-sm-12 col-12">
-                            <div class="slider-img hm1-slider-img img-hover-effect2 over-hidden position-relative">
-                                <img class="heartbeat" src="images/hero/hm1-hero-img2.jpg" alt="hero image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="single-slider single-slider1 slider-height1 d-flex align-items-end z-index1 img-hover-effect-wrapper">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6  col-md-7  col-sm-12 col-12">
-                            <div class="slider-content slider-content1 mt--10 mr-xl-2 position-relative">
-                                <span class="theme-color text-uppercase fontNoto f-700">Seu Aliado Legal</span>
-                                <h1 class="mb-30 mt-1 f-700" data-aos="fade-right" data-aos-duration="2000"
-                                    data-aos-delay="150">Defesa em Processos
-                                    Administrativos e Judiciais</h1>
-                                <p class="mb-45" data-aos="fade-right" data-aos-duration="1700">Representamos sua
-                                    empresa com excelência em litígios tributários, buscando as melhores soluções.</p>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos.html" class="btn theme-bg">Fale Conosco</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-5 offset-lg-1  col-md-5  col-sm-12 col-12">
-                            <div class="slider-img hm1-slider-img img-hover-effect2 over-hidden position-relative">
-                                <img class="heartbeat" src="images/hero/hm1-hero-img3.jpg" alt="hero image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-dotted position-absolute bottom-0 z-index-1 d-none d-md-block">
-            <img src="images/hero/hm1-hero-dotted.png" alt="">
-        </div>
-    </div>
-    <div class="intro-area home1 mt-115 mb-75">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7  col-md-9  col-sm-12 col-12">
-                    <div class="title text-center">
-                        <span
-                            class="sub-title f-500 text-uppercase primary-color position-relative d-inline-block pb-15 mb-2">Nossa
-                            Expertise</span>
-                        <h2 class="mb-22">Sua Advocacia Tributária</h2>
-                        <p>Nossa missão é oferecer soluções jurídicas fiscais eficazes, garantindo a segurança e o
-                            sucesso de nossos clientes.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row white-bg single-intro-service-wrapper justify-content-center pt-70">
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-9 col-12">
-                    <div class="single-intro-content text-center white-bg transition5 mb-40">
-                        <div class="intro-ser-icon theme-bg d-inline-block text-center mb-40 transition5">
-                            <span>
-                                <img src="images/icon/inrto-icon1.png" alt="">
-                            </span>
-                        </div>
-                        <div class="intro-service-text">
-                            <h3 class="mb-22">Planejamento Tributário</h3>
-                            <p>Análise e estruturação de operações para otimização fiscal e redução de encargos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4  col-md-4  col-sm-9 col-12">
-                    <div class="single-intro-content text-center white-bg transition5 mb-40">
-                        <div class="intro-ser-icon theme-bg d-inline-block text-center mb-40 transition5">
-                            <span>
-                                <img src="images/icon/inrto-icon2.png" alt="">
-                            </span>
-                        </div>
-                        <div class="intro-service-text">
-                            <h3 class="mb-22">Contencioso Tributário</h3>
-                            <p>Defesa administrativa e judicial em autuações fiscais e cobranças indevidas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4  col-md-4  col-sm-9 col-12">
-                    <div class="single-intro-content text-center white-bg transition5 mb-40">
-                        <div class="intro-ser-icon theme-bg d-inline-block text-center mb-40 transition5">
-                            <span>
-                                <img src="images/icon/inrto-icon3.png" alt="">
-                            </span>
-                        </div>
-                        <div class="intro-service-text">
-                            <h3 class="mb-22">Consultoria e Compliance</h3>
-                            <p>Orientação sobre legislação tributária e garantia de conformidade fiscal.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="room-search-area home1 section-bg position-relative over-hidden pt-115 pb-120">
-        <div class="room-search-bg-img position-absolute right-0 top-0 bottom-0"
-            data-background="images/room/hm1-room-search-img.jpg"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12" data-aos="fade-right" data-aos-duration="2000"
-                    data-aos-delay="150">
-                    <div class="room-search-content-left mt--5 mb-md-5 mb-4 mb-lg-0">
-                        <div class="section-content-title">
-                            <span class="text-uppercase theme-color f-700 fontNoto mb-2">Soluções Completas</span>
-                            <h2 class="mb-40">Entenda Nossos Serviços Tributários</h2>
-                            <p>Oferecemos um leque completo de serviços em direito tributário, desde o planejamento
-                                estratégico até a defesa em litígios fiscais, sempre com foco em resultados.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5 offset-lg-2 col-md-6  col-sm-10 col-12 pl-xl-0" data-aos="fade-left"
-                    data-aos-duration="2000" data-aos-delay="150">
-                    <div class="room-search-content-right position-relative">
-                        <div class="form-hotel-search">
-                            <form action="php/mail.php">
-                                <label for="checkIn" class="text-white d-block fontNoto f-700 mb-10">AGENDE UMA
-                                    CONSULTA</label>
-                                <div class="check-in mb-25 position-relative">
-                                    <input type="text" class="datepicker primary-color w-100" id="checkIn"
-                                        placeholder="Data Preferencial" disabled>
-                                </div><label for="checkOut"
-                                    class="text-white d-block fontNoto f-700 mb-10">HORÁRIO</label>
-                                <div class="check-out mb-25 position-relative text-right">
-                                    <input type="text" class="datepicker primary-color w-100" id="checkOut"
-                                        placeholder="Horário Preferencial" disabled>
-                                </div>
-                                <div class="check-guests-form">
-                                    <div class="course-filter">
-                                        <label for="exampleFormControlSelect3"
-                                            class="text-white d-block fontNoto f-700 mb-10">TIPO DE SERVIÇO</label>
-                                        <select class="white-bg primary-color w-100 border-0 pl-0 rounded-0 mb-30"
-                                            id="exampleFormControlSelect3">
-                                            <option value="menu_order" selected="selected">Planejamento Tributário
-                                            </option>
-                                            <option value="popularity">Contencioso Tributário</option>
-                                            <option value="rating">Consultoria Fiscal</option>
-                                            <option value="date">Compliance Tributário</option>
-                                            <option value="price">Recuperação de Créditos</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="my-btn d-block form-search-btn w-100">
-                                    <a href="contato.html" class="btn theme-bg w-100">Solicitar Agendamento</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="room-hm1-area mt-115 mb-110">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7  col-md-9  col-sm-12 col-12">
-                    <div class="title text-center">
-                        <span
-                            class="sub-title f-500 text-uppercase primary-color position-relative d-inline-block pb-15 mb-2">Áreas
-                            de Atuação</span>
-                        <h2 class="mb-22">Nossas Especialidades</h2>
-                        <p>Atuamos em diversas frentes do direito tributário, oferecendo soluções sob medida para as
-                            necessidades de cada cliente.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row rooms-hm1-active main-style justify-content-center pt-70 pb-50">
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-8 col-12">
-                    <div class="single-room-hm1 zoom-img-hover white-bg transition5 mb-30">
-                        <div class="room-hm1-img over-hidden transition5">
-                            <img class="w-100 img" src="images/room/hm1-rooms-img1.jpg" alt="service image 01">
-                        </div>
-                        <div class="room-hm1-content pl-30 pr-30 pt-25 pb-30">
-                            <h4 class="mb-10"><a href="servicos-detalhes.html">Planejamento Tributário</a></h4>
-                            <p>Análise de cenários e estratégias para otimização da carga fiscal.</p>
-                            <div class="room-price-details d-flex align-items-center justify-content-between mt-25">
-                                <div class="room-price">
-                                    <span class="room-price f-700 main-color fontNoto"><span
-                                            class="text-uppercase theme-color pr-1">Consulte</span>/ Projeto</span>
-                                </div>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos-detalhes.html" class="btn theme-bg w-100">detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-9 col-12">
-                    <div class="single-room-hm1 zoom-img-hover white-bg transition5 mb-30">
-                        <div class="room-hm1-img over-hidden transition5">
-                            <img class="w-100 img" src="images/room/hm1-rooms-img2.jpg" alt="service image 02">
-                        </div>
-                        <div class="room-hm1-content pl-30 pr-30 pt-25 pb-30">
-                            <h4 class="mb-10"><a href="servicos-detalhes.html">Contencioso Administrativo</a></h4>
-                            <p>Defesa e representação em processos fiscais perante órgãos administrativos.</p>
-                            <div class="room-price-details d-flex align-items-center justify-content-between mt-25">
-                                <div class="room-price">
-                                    <span class="room-price f-700 main-color fontNoto"><span
-                                            class="text-uppercase theme-color pr-1">Consulte</span>/ Caso</span>
-                                </div>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos-detalhes.html" class="btn theme-bg w-100">detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-9 col-12">
-                    <div class="single-room-hm1 zoom-img-hover white-bg transition5 mb-30">
-                        <div class="room-hm1-img over-hidden transition5">
-                            <img class="w-100 img" src="images/room/hm1-rooms-img3.jpg" alt="service image 03">
-                        </div>
-                        <div class="room-hm1-content pl-30 pr-30 pt-25 pb-30">
-                            <h4 class="mb-10"><a href="servicos-detalhes.html">Contencioso Judicial</a></h4>
-                            <p>Atuação em ações judiciais tributárias, buscando a melhor solução para o cliente.</p>
-                            <div class="room-price-details d-flex align-items-center justify-content-between mt-25">
-                                <div class="room-price">
-                                    <span class="room-price f-700 main-color fontNoto"><span
-                                            class="text-uppercase theme-color pr-1">Consulte</span>/ Ação</span>
-                                </div>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos-detalhes.html" class="btn theme-bg w-100">detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-9 col-12">
-                    <div class="single-room-hm1 zoom-img-hover white-bg transition5 mb-30">
-                        <div class="room-hm1-img over-hidden transition5">
-                            <img class="w-100 img" src="images/room/hm1-rooms-img1.jpg" alt="service image 04">
-                        </div>
-                        <div class="room-hm1-content pl-30 pr-30 pt-25 pb-30">
-                            <h4 class="mb-10"><a href="servicos-detalhes.html">Consultoria e Pareceres</a></h4>
-                            <p>Elaboração de pareceres e consultoria sobre legislação e tributos.</p>
-                            <div class="room-price-details d-flex align-items-center justify-content-between mt-25">
-                                <div class="room-price">
-                                    <span class="room-price f-700 main-color fontNoto"><span
-                                            class="text-uppercase theme-color pr-1">Consulte</span>/ Horas</span>
-                                </div>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos-detalhes.html" class="btn theme-bg w-100">detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4  col-lg-4 col-md-4  col-sm-9 col-12">
-                    <div class="single-room-hm1 zoom-img-hover white-bg transition5 mb-30">
-                        <div class="room-hm1-img over-hidden transition5">
-                            <img class="w-100 img" src="images/room/hm1-rooms-img2.jpg" alt="service image 05">
-                        </div>
-                        <div class="room-hm1-content pl-30 pr-30 pt-25 pb-30">
-                            <h4 class="mb-10"><a href="servicos-detalhes.html">Recuperação de Créditos</a></h4>
-                            <p>Identificação e recuperação de valores pagos a maior ou indevidamente.</p>
-                            <div class="room-price-details d-flex align-items-center justify-content-between mt-25">
-                                <div class="room-price">
-                                    <span class="room-price f-700 main-color fontNoto"><span
-                                            class="text-uppercase theme-color pr-1">Consulte</span>/ Percentual</span>
-                                </div>
-                                <div class="my-btn d-inline-block">
-                                    <a href="servicos-detalhes.html" class="btn theme-bg w-100">detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="video-area primary-bg position-relative z-index1 video-bg-overlay"
-        data-background="images/bg/hm1-video-bg.jpg">
-        <div class="container">
-            <div class="row video-wrapper justify-content-center pt-110 pb-110">
-                <div class="col-xl-8 col-lg-9  col-md-12  col-sm-12 col-12">
-                    <div class="video-content-wrapper text-center">
-                        <div class="section-content-title">
-                            <span class="text-uppercase text-white f-700 fontNoto mb-2">Nosso Compromisso</span>
-                            <h2 class="mb-40 text-white">Entenda a Nossa Abordagem</h2>
-                            <p class="text-white">Conheça mais sobre como nossa equipe de especialistas atua para
-                                oferecer as melhores soluções em direito tributário, com transparência e eficiência.</p>
-                        </div>
-                        <div class="video-btn mt-85">
-                            <div class="video-main z-index1">
-                                <div class="promo-video">
-                                    <div class="waves-block">
-                                        <div class="waves wave-1"></div>
-                                        <div class="waves wave-2"></div>
-                                        <div class="waves wave-3"></div>
-                                    </div>
-                                </div>
-                                <a data-fancybox="" href="https://youtu.be/pswdTJ59fdQ"
-                                    class="video video-popup mfp-iframe" data-lity><span><i
-                                            class="fa fa-play"></i></span></a>
-                            </div>
-                            <span class="text-white text-uppercase d-block f-700 mt-50">Assista Agora</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="feature-hm1-area mt-115 mb-100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7  col-md-9  col-sm-12 col-12">
-                    <div class="title text-center">
-                        <span
-                            class="sub-title f-500 text-uppercase primary-color position-relative d-inline-block pb-15 mb-2">Vantagens</span>
-                        <h2 class="mb-22">Por Que Nos Escolher?</h2>
-                        <p>Contamos com uma equipe experiente e dedicada, focada em entregar resultados e agregar valor
-                            ao seu negócio.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="feature-hm1-active mt-70">
-                <div
-                    class="row feature-hm1-wrapper d-flex justify-content-center align-items-center pb-90 img-hover-effect-wrapper">
-                    <div class="col-xl-5  col-lg-5 col-md-5  col-sm-10 col-12">
-                        <div class="feature-hm1-img position-relative img-hover-effect2">
-                            <img src="images/bg/hm1-feature-img.jpg" alt="feature image 01">
-                        </div>
-                    </div>
-                    <div class="col-xl-6 offset-lg-1  col-lg-6 col-md-7  col-sm-10 col-12">
-                        <div class="feature-hm1-content">
-                            <div class="section-content-title">
-                                <span class="text-uppercase theme-color f-700 fontNoto mb-2">Atendimento
-                                    Personalizado</span>
-                                <h2 class="mb-40"><a href="servicos-detalhes.html">Soluções Sob Medida para Seu
-                                        Negócio</a></h2>
-                                <p>Cada cliente é único. Por isso, desenvolvemos estratégias tributárias personalizadas,
-                                    alinhadas aos seus objetivos e realidade do mercado.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="row feature-hm1-wrapper d-flex justify-content-center align-items-center pb-90 img-hover-effect-wrapper">
-                    <div class="col-xl-5  col-lg-5 col-md-5  col-sm-10 col-12">
-                        <div class="feature-hm1-img position-relative img-hover-effect2">
-                            <img src="images/bg/hm1-feature-img2.jpg" alt="feature image 02">
-                        </div>
-                    </div>
-                    <div class="col-xl-6 offset-lg-1  col-lg-6 col-md-7  col-sm-10 col-12">
-                        <div class="feature-hm1-content">
-                            <div class="section-content-title">
-                                <span class="text-uppercase theme-color f-700 fontNoto mb-2">Equipe Especializada</span>
-                                <h2 class="mb-40"><a href="servicos-detalhes.html">Profissionais Experientes em Direito
-                                        Tributário</a></h2>
-                                <p>Nossa equipe é formada por advogados altamente qualificados e com vasta experiência
-                                    na área tributária, garantindo a excelência em cada serviço prestado.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="row feature-hm1-wrapper d-flex justify-content-center align-items-center pb-90 img-hover-effect-wrapper">
-                    <div class="col-xl-5  col-lg-5 col-md-5  col-sm-10 col-12">
-                        <div class="feature-hm1-img position-relative img-hover-effect2">
-                            <img src="images/bg/hm1-feature-img3.jpg" alt="feature image 03">
-                        </div>
-                    </div>
-                    <div class="col-xl-6 offset-lg-1  col-lg-6 col-md-7  col-sm-10 col-12">
-                        <div class="feature-hm1-content">
-                            <div class="section-content-title">
-                                <span class="text-uppercase theme-color f-700 fontNoto mb-2">Resultados
-                                    Comprovados</span>
-                                <h2 class="mb-40"><a href="servicos-detalhes.html">Foco na Otimização Fiscal e Segurança
-                                        Jurídica</a></h2>
-                                <p>Nosso objetivo é proporcionar segurança jurídica e otimização da carga tributária,
-                                    contribuindo para o crescimento sustentável de sua empresa.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="testimonial-area testimonial-bg position-relative">
-        <div class="container hm1-testi-padding pt-110">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7 col-md-9  col-sm-12 col-12">
-                    <div class="title text-center">
-                        <span
-                            class="sub-title f-500 text-uppercase primary-color position-relative d-inline-block pb-15 mb-2">Depoimentos</span>
-                        <h2 class="mb-22">O Que Nossos Clientes Dizem</h2>
-                        <p>A satisfação de nossos clientes é a nossa maior recompensa. Confira o que eles têm a dizer
-                            sobre nossos serviços.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-wrapper  aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <div class="row testimonial-active main-style mt-65 pb-65 justify-content-center">
-                    <div class="col-xl-4 col-lg-4 col-md-6  col-sm-12 col-12">
-                        <div
-                            class="single-testimonial bg-white text-center position-relative pt-30 pb-45 pl-30 pr-30 mt-50 mb-20 transition5">
-                            <div class="client-img rounded-circle text-center position-absolute">
-                                <img class="rounded-circle" src="images/testimonial/hm1-author-img1.jpg" alt="image">
-                            </div>
-                            <ul class="review-ratting mt-45 mb-20">
-                                <li>
-                                    <span><i class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <p>A assessoria tributária da equipe foi fundamental para a otimização dos nossos impostos.
-                                Recomendo!</p>
-                            <div class="testi-info text-center mt-30">
-                                <h5 class="mb-1">Carlos Silva</h5>
-                                <span class="meta-text-color mb-0">Empresário</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6  col-sm-12 col-12">
-                        <div
-                            class="single-testimonial bg-white text-center position-relative pt-30 pb-45 pl-30 pr-30 mt-50 mb-20 transition5">
-                            <div class="client-img rounded-circle text-center position-absolute">
-                                <img class="rounded-circle" src="images/testimonial/hm1-author-img2.jpg" alt="image">
-                            </div>
-                            <ul class="review-ratting mt-45 mb-20">
-                                <li>
-                                    <span><i class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <p>Profissionais competentes e atenciosos. Recebemos um suporte jurídico fiscal impecável.
+        </header>
+        <section class="legal_matter_banner position-relative">
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12 col-12">
+                        <div class="banner_content" data-aos="fade-up">
+                            <h6>Bem-vindo(a) ao Nosso Escritório</h6>
+                            <h1 class="text-white">Assessoramos Você em Todas as Suas Questões Tributárias.</h1>
+                            <p class="text-white text-size-16">
+                                Compreendemos a complexidade e os desafios do cenário tributário atual.
+                                Nossa equipe está dedicada a oferecer as melhores soluções para suas demandas fiscais,
+                                garantindo conformidade, otimização e tranquilidade.
                             </p>
-                            <div class="testi-info text-center mt-30">
-                                <h5 class="mb-1">Ana Paula Costa</h5>
-                                <span class="meta-text-color mb-0">Diretora Financeira</span>
+                            <a href="./contact" class="text-decoration-none appointment">Agende sua Consulta<i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12 col-12">
+                        <div class="banner_wrapper position-relative">
+                            <figure class="banner-image mb-0" data-aos="fade-up">
+                                <img src="./assets/images/banner-image.png" alt="advogada trabalhando"
+                                    class="img-fluid">
+                            </figure>
+                            <figure class="banner-background mb-0">
+                                <img src="./assets/images/banner3-background.jpg" alt="fundo do banner"
+                                    class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0 social-icons">
+                    <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i
+                                class="fa-brands fa-facebook-f social-networks"></i></a></li>
+                    <li><a href="https://twitter.com/i/flow/login" class="text-decoration-none"><i
+                                class="fa-brands fa-x-twitter social-networks"></i></a></li>
+                    <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i
+                                class="fa-brands fa-linkedin social-networks"></i></a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+     <!-- Expertise -->
+    <section class="expertise-con">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="expertise_content text-center" data-aos="fade-up">
+                        <h6>Nossos Serviços</h6>
+                        <h2>Sua Segurança no Direito Tributário</h2>
+                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">
+                            Navegar pelo complexo sistema tributário brasileiro exige conhecimento especializado e
+                            estratégia.
+                            Nosso escritório oferece soluções jurídicas precisas para empresas e indivíduos,
+                            assegurando conformidade fiscal, otimização de cargas tributárias e defesa de seus direitos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image1.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Planejamento Tributário</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Estruturação de operações e negócios para otimização da carga fiscal,
+                                        reduzindo riscos e gerando economia para sua empresa.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image2.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Contencioso Administrativo e Judicial</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Defesa em autos de infração, execuções fiscais e processos tributários,
+                                        buscando a anulação de cobranças indevidas.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image3.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Recuperação de Créditos Tributários</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Análise e identificação de oportunidades para reaver impostos pagos a maior ou
+                                        indevidamente,
+                                        gerando fluxo de caixa para sua empresa.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image1.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Consultoria e Compliance Fiscal</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Orientação contínua sobre a legislação tributária, garantindo que sua empresa
+                                        esteja sempre em conformidade, evitando passivos e multas.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image2.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Tributação Internacional</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Assessoria em questões fiscais relacionadas a operações com o exterior,
+                                        otimizando a tributação e garantindo a legalidade.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="expertise-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/expertise-image3.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <a href="./practice-area" class="text-decoration-none">
+                                        <h5>Due Diligence Tributária</h5>
+                                    </a>
+                                    <p class="text-size-14">
+                                        Análise aprofundada da situação fiscal de empresas em processos de fusões,
+                                        aquisições ou
+                                        investimentos, identificando riscos e oportunidades.
+                                    </p>
+                                    <a href="./practice-area" class="text-decoration-none read_more">Leia mais<i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6  col-sm-12 col-12">
-                        <div
-                            class="single-testimonial bg-white text-center position-relative pt-30 pb-45 pl-30 pr-30 mt-50 mb-20 transition5">
-                            <div class="client-img rounded-circle text-center position-absolute">
-                                <img class="rounded-circle" src="images/testimonial/hm1-author-img3.jpg" alt="image">
-                            </div>
-                            <ul class="review-ratting mt-45 mb-20">
-                                <li>
-                                    <span><i class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <p>A recuperação de créditos tributários foi um sucesso. Trabalho sério e eficiente.</p>
-                            <div class="testi-info text-center mt-30">
-                                <h5 class="mb-1">Fernando Souza</h5>
-                                <span class="meta-text-color mb-0">Contador</span>
-                            </div>
-                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About -->
+    <section class="about-con position-relative">
+        <figure class="about-sideimage mb-0">
+            <img src="assets/images/about-sideimage.png" alt="imagem lateral" class="image-fluid">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+                    <div class="about_wrapper position-relative">
+                        <figure class="about-image mb-0">
+                            <img src="assets/images/about-image.jpg" alt="imagem principal" class="image-fluid">
+                        </figure>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6  col-sm-12 col-12">
-                        <div
-                            class="single-testimonial bg-white text-center position-relative pt-30 pb-45 pl-30 pr-30 mt-50 mb-20 transition5">
-                            <div class="client-img rounded-circle text-center position-absolute">
-                                <img class="rounded-circle" src="images/testimonial/hm1-author-img1.jpg" alt="image">
-                            </div>
-                            <ul class="review-ratting mt-45 mb-20">
-                                <li>
-                                    <span><i class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <p>Serviços de consultoria de alta qualidade, sempre à disposição para esclarecer dúvidas.
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 col-12">
+                    <div class="about_content" data-aos="fade-up">
+                        <div class="content">
+                            <h6>Quem Somos</h6>
+                            <h2 class="text-white">Excelência em Direito Tributário para Sua Segurança</h2>
+                            <p class="text-white text-size-16">
+                                Com vasta experiência no cenário fiscal e tributário, dedicamos nossa expertise
+                                a oferecer soluções jurídicas estratégicas e personalizadas. Nosso compromisso
+                                é com a segurança jurídica e a otimização dos resultados financeiros de nossos clientes,
+                                navegando com precisão pela complexidade da legislação.
                             </p>
-                            <div class="testi-info text-center mt-30">
-                                <h5 class="mb-1">Juliana Lima</h5>
-                                <span class="meta-text-color mb-0">Gerente Administrativa</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6  col-sm-12 col-12">
-                        <div
-                            class="single-testimonial bg-white text-center position-relative pt-30 pb-45 pl-30 pr-30 mt-50 mb-20 transition5">
-                            <div class="client-img rounded-circle text-center position-absolute">
-                                <img class="rounded-circle" src="images/testimonial/hm1-author-img2.jpg" alt="image">
-                            </div>
-                            <ul class="review-ratting mt-45 mb-20">
+                            <ul class="list-unstyled">
                                 <li>
-                                    <span><i class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i
-                                            class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <p class="mb-0 text-size-16">Planejamento tributário estratégico e preventivo.</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <p class="mb-0 text-size-16">Defesa robusta em autuações e litígios fiscais.</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <p class="mb-0 text-size-16">Recuperação de créditos tributários e análise de
+                                        riscos.</p>
                                 </li>
                             </ul>
-                            <p>A defesa em processo administrativo foi crucial para o êxito de nossa empresa. Muito
-                                obrigado!</p>
-                            <div class="testi-info text-center mt-30">
-                                <h5 class="mb-1">Roberto Martins</h5>
-                                <span class="meta-text-color mb-0">CFO</span>
-                            </div>
+                            <a href="./about" class="text-decoration-none read_more">Saiba Mais<i
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="brand-area over-hidden">
+    </section>
+    <!-- Succeed -->
+    <section class="succeed-con legal_matter_succeed position-relative">
         <div class="container">
-            <div class="row brand-active brand-wapper pt-110 pb-90">
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo1.png" alt="logo client 1">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="succeed_content" data-aos="fade-up">
+                        <h6>Nossa Abordagem</h6>
+                        <h2>Comprometidos com o Sucesso Fiscal de Nossos Clientes</h2>
+                        <p class="text text-size-16">
+                            Dedicamo-nos a compreender as necessidades fiscais únicas de cada cliente,
+                            oferecendo soluções jurídicas eficazes e personalizadas. Nosso objetivo é
+                            garantir sua segurança jurídica e otimizar seus resultados financeiros
+                            no complexo ambiente tributário.
+                        </p>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <p class="mb-0 text-size-16">Soluções estratégicas e personalizadas em tributação.</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <p class="mb-0 text-size-16">Identificação proativa de oportunidades de economia fiscal.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <p class="mb-0 text-size-16">Garantia de segurança jurídica e conformidade tributária.
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo2.png" alt="logo client 2">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo3.png" alt="logo client 3">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo4.png" alt="logo client 4">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo1.png" alt="logo client 5">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo2.png" alt="logo client 6">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo3.png" alt="logo client 7">
-                    </div>
-                </div>
-                <div class="col-xl-2  col-lg-2  col-md-4  col-sm-4 col-4 text-center">
-                    <div class="single-brand mb-30 d-block text-center">
-                        <img class="d-inline-block" src="images/brand/brand-logo4.png" alt="logo client 8">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="subscription-area about-subscription hm2 over-hidden position-relative bg-no-repeat bg-cover black-overly aos-init aos-animate"
-        data-background="images/bg/subscription-bg-img.jpg" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container subscription-padding pt-130 pb-140">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-8  col-md-10  col-sm-12 col-12">
-                    <div class="subscription-content text-center">
-                        <div class="section-content-title text-center">
-                            <span class="text-uppercase text-white f-700 fontNoto pb-15 mb-2">Mantenha-se
-                                Informado</span>
-                            <h2 class="mb-15 text-white">Assine Nossa Newsletter</h2>
-                            <p class="text-white">Receba as últimas notícias e atualizações sobre direito tributário,
-                                dicas e artigos exclusivos diretamente em seu e-mail.</p>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="succeed_wrapper" data-aos="zoom-in">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="box">
+                                    <div class="succeed-box">
+                                        <figure class="icon">
+                                            <img src="./assets/images/succeed-icon1.png" alt="ícone" class="img-fluid">
+                                        </figure>
+                                        <span class="number counter">250</span>
+                                        <sup class="plus">+</sup>
+                                        <span class="text">Empresas Atendidas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="succeed-box">
+                                    <figure class="icon">
+                                        <img src="./assets/images/succeed-icon2.png" alt="ícone" class="img-fluid">
+                                    </figure>
+                                    <span class="number counter">180</span>
+                                    <sup class="plus">+</sup>
+                                    <span class="text">Casos de Sucesso</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-xl-9  col-lg-9 col-md-10 col-sm-10 col-12">
-                                <div class="subscription-form w-100 mt-55">
-                                    <form action="#">
-                                        <div class="subscribe-info position-relative">
-                                            <input class="sub-email w-100 border-0 pl-25 pr-10 bg-white" type="email"
-                                                name="email" id="Email" placeholder="Seu e-mail aqui">
-                                            <a class="subscribe-btn position-absolute right-0 top-0 bottom-0 f-500 pl-20 pr-25 theme-color"
-                                                href="#"><span><i class="fa-regular fa-envelope"></i></span></a>
+                        <div class="succeed-downcontent">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="box">
+                                        <div class="succeed-box">
+                                            <figure class="icon">
+                                                <img src="./assets/images/succeed-icon3.png" alt="ícone"
+                                                    class="img-fluid">
+                                            </figure>
+                                            <span class="number counter">370</span>
+                                            <sup class="plus">+</sup>
+                                            <span class="text">Clientes Satisfeitos</span>
                                         </div>
-                                    </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="succeed-box">
+                                        <figure class="icon">
+                                            <img src="./assets/images/succeed-icon4.png" alt="ícone" class="img-fluid">
+                                        </figure>
+                                        <span class="number counter">90</span>
+                                        <sup class="plus">+</sup>
+                                        <span class="text">Reconhecimentos Conquistados</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -626,164 +409,89 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="blog-hm1-area mt-115 mb-100">
+    </section>
+    <!-- Violence -->
+    <section class="violence-con position-relative">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7  col-md-9  col-sm-12 col-12">
-                    <div class="title text-center">
-                        <span
-                            class="sub-title f-500 text-uppercase primary-color position-relative d-inline-block pb-15 mb-2">Conheça
-                            Mais</span>
-                        <h2 class="mb-22">Últimas Notícias e Artigos</h2>
-                        <p>Acompanhe as novidades do setor tributário, análises aprofundadas e dicas de nossos
-                            especialistas.</p>
+            <div class="row">
+                <div class="violence_wrapper position-relative">
+                    <div class="violence_content" data-aos="fade-up">
+                        <h1 class="text-white">Sua Tranquilidade Fiscal é Nossa Prioridade</h1>
+                        <p class="text-white text-size-16">
+                            Navegar pelo complexo universo tributário pode ser um desafio.
+                            Nossa equipe especializada está pronta para oferecer as soluções jurídicas mais
+                            estratégicas,
+                            seja para otimização fiscal, regularização de débitos ou defesa de seus direitos.
+                            Conte conosco para garantir a segurança e o sucesso de suas finanças.
+                        </p>
+                        <a href="./contact" class="text-decoration-none appointment">Agende uma Consulta<i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="row blog-hm1-wrapper d-flex justify-content-center align-items-center mt-70">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 aos-init aos-animate" data-aos="fade-up"
-                    data-aos-duration="1000">
-                    <div
-                        class="single-blog-wrapper blog-overly position-relative transition5 zoom-img-hover over-hidden transition5 d-flex align-items-center mb-30">
-                        <div class="blog-hm1-img w-100 position-relative transition5">
-                            <img class="img w-100" src="images/news/hm1-news-img1.jpg" alt="news-images01">
-                        </div>
-                        <div class="blog-hm1-content position-absolute transition5 z-index1 w-100 h-100">
-                            <div
-                                class="blog-hm1-text position-absolute w-100 bottom-0 transition5 pl-25 pr-25 pt-20 pb-25">
-                                <div class="blog-hm1-text-hover transition5">
-                                    <span class="text-white text-uppercase fontNoto f-700 d-inline-block">Artigos</span>
-                                    <div class="blog-hm-date d-inline-block position-relative pl-15 ml-15">
-                                        <span class="text-white d-block f-400">15 de Junho de 2025</span>
-                                    </div>
-                                    <h4 class="text-white mb-15 mt-1 mb-0">
-                                        <a href="blog-details.html">Reforma Tributária: Impactos e Oportunidades</a>
-                                    </h4>
-                                </div>
-                                <div class="my-btn2 d-inline-block blog-btn transition5">
-                                    <a href="blog-details.html" class="btn position-relative rounded-0 transition5">leia
-                                        mais</a>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </section>
+    <!-- Faq Testimonial -->
+    <section class="faq_testimonial-con aboutpage-testimonial position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="faq_testimonial_content text-center" data-aos="fade-up">
+                        <h6>Depoimentos</h6>
+                        <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 aos-init aos-animate" data-aos="fade-up"
-                    data-aos-duration="1000">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12  col-md-12  col-sm- col-">
-                            <div class="single-blog-wrapper blog-overly position-relative transition5 zoom-img-hover over-hidden transition5 d-flex align-items-center mb-30"
-                                data-overlay="2">
-                                <div class="blog-hm1-img w-100 position-relative transition5">
-                                    <img class="img w-100" src="images/news/hm1-news-img2.jpg" alt="news-images02">
-                                </div>
-                                <div class="blog-hm1-content position-absolute transition5 z-index1 w-100 h-100">
-                                    <div
-                                        class="blog-hm1-text position-absolute w-100 bottom-0 transition5 pl-25 pr-25 pt-20 pb-25">
-                                        <div class="blog-hm1-text-hover transition5">
-                                            <span
-                                                class="text-white text-uppercase fontNoto f-700 d-inline-block">Notícias</span>
-                                            <div class="blog-hm-date d-inline-block position-relative pl-15 ml-15">
-                                                <span class="text-white d-block f-400">10 de Junho de 2025</span>
-                                            </div>
-                                            <h4 class="text-white mb-15 mt-1 mb-0">
-                                                <a href="blog-details.html">Novas Regras para PIS/COFINS</a>
-                                            </h4>
-                                        </div>
-                                        <div class="my-btn2 d-inline-block blog-btn transition5">
-                                            <a href="blog-details.html"
-                                                class="btn  position-relative rounded-0 transition5">leia
-                                                mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12  col-md-12  col-sm- col-">
-                            <div class="single-blog-wrapper blog-overly position-relative transition5 zoom-img-hover over-hidden transition5 d-flex align-items-center mb-30"
-                                data-overlay="2">
-                                <div class="blog-hm1-img w-100 position-relative transition5">
-                                    <img class="img w-100" src="images/news/hm1-news-img3.jpg" alt="news-images03">
-                                </div>
-                                <div class="blog-hm1-content position-absolute transition5 z-index1 w-100 h-100">
-                                    <div
-                                        class="blog-hm1-text position-absolute w-100 bottom-0 transition5 pl-25 pr-25 pt-20 pb-25">
-                                        <div class="blog-hm1-text-hover transition5">
-                                            <span
-                                                class="text-white text-uppercase fontNoto f-700 d-inline-block">Blog</span>
-                                            <div class="blog-hm-date d-inline-block position-relative pl-15 ml-15">
-                                                <span class="text-white d-block f-400">05 de Junho de 2025</span>
-                                            </div>
-                                            <h4 class="text-white mb-15 mt-1 mb-0">
-                                                <a href="blog-details.html">Diferenças entre Elisão e Evasão Fiscal</a>
-                                            </h4>
-                                        </div>
-                                        <div class="my-btn2 d-inline-block blog-btn transition5">
-                                            <a href="blog-details.html"
-                                                class="btn position-relative rounded-0 transition5">leia
-                                                mais</a>
+            </div>
+            <div class="row position-relative" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="testimonial_content">
+                        <figure class="testimonial-quote">
+                            <img src="./assets/images/faq-testimonialquote.png" alt="aspas" class="img-fluid">
+                        </figure>
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="content-box">
+                                    <figure class="testimonial-starimage">
+                                        <img src="./assets/images/faq-testimonialstar.png" alt="estrelas"
+                                            class="img-fluid">
+                                    </figure>
+                                    <p class="text-size-18">
+                                        “A equipe superou nossas expectativas na revisão fiscal. Identificaram
+                                        oportunidades de economia que não havíamos notado e conduziram todo o processo
+                                        com extrema clareza e eficiência. Ganhamos segurança e alívio financeiro.”
+                                    </p>
+                                    <div class="review-content">
+                                        <figure class="testimonial-personimage mb-0">
+                                            <img src="./assets/images/testimonial-personimage.jpg" alt="perfil"
+                                                class="img-fluid">
+                                        </figure>
+                                        <div class="detail">
+                                            <span class="name">Mariana Costa</span>
+                                            <span class="position">Diretora Financeira, Tech Solutions</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 aos-init aos-animate" data-aos="fade-up"
-                    data-aos-duration="1000">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12  col-md-6  col-sm-6 col-">
-                            <div class="single-blog-wrapper blog-overly position-relative transition5 zoom-img-hover over-hidden transition5 d-flex align-items-center mb-30"
-                                data-overlay="2">
-                                <div class="blog-hm1-img w-100 position-relative transition5">
-                                    <img class="img w-100" src="images/news/hm1-news-img4.jpg" alt="news-images04">
-                                </div>
-                                <div class="blog-hm1-content position-absolute transition5 z-index1 w-100 h-100">
-                                    <div
-                                        class="blog-hm1-text position-absolute w-100 bottom-0 transition5 pl-25 pr-25 pt-20 pb-25">
-                                        <div class="blog-hm1-text-hover transition5">
-                                            <span
-                                                class="text-white text-uppercase fontNoto f-700 d-inline-block">Notícias</span>
-                                            <div class="blog-hm-date d-inline-block position-relative pl-15 ml-15">
-                                                <span class="text-white d-block f-400">28 de Maio de 2025</span>
-                                            </div>
-                                            <h4 class="text-white mb-15 mt-1 mb-0">
-                                                <a href="blog-details.html">Julgamento do STF sobre Tese Tributária</a>
-                                            </h4>
-                                        </div>
-                                        <div class="my-btn2 d-inline-block blog-btn transition5">
-                                            <a href="blog-details.html"
-                                                class="btn position-relative rounded-0 transition5">leia
-                                                mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12  col-md-6  col-sm-6 col-">
-                            <div class="single-blog-wrapper blog-overly position-relative transition5 zoom-img-hover over-hidden transition5 d-flex align-items-center mb-30"
-                                data-overlay="2">
-                                <div class="blog-hm1-img w-100 position-relative transition5">
-                                    <img class="img w-100" src="images/news/hm1-news-img5.jpg" alt="news-images05">
-                                </div>
-                                <div class="blog-hm1-content position-absolute transition5 z-index1 w-100 h-100">
-                                    <div
-                                        class="blog-hm1-text position-absolute w-100 bottom-0 transition5 pl-25 pr-25 pt-20 pb-25">
-                                        <div class="blog-hm1-text-hover transition5">
-                                            <span
-                                                class="text-white text-uppercase fontNoto f-700 d-inline-block">Artigos</span>
-                                            <div class="blog-hm-date d-inline-block position-relative pl-15 ml-15">
-                                                <span class="text-white d-block f-400">20 de Maio de 2025</span>
-                                            </div>
-                                            <h4 class="text-white mb-15 mt-1 mb-0">
-                                                <a href="blog-details.html">Benefícios Fiscais para Investimentos</a>
-                                            </h4>
-                                        </div>
-                                        <div class="my-btn2 d-inline-block blog-btn transition5">
-                                            <a href="blog-details.html"
-                                                class="btn  position-relative rounded-0 transition5">leia
-                                                mais</a>
+                            <div class="item">
+                                <div class="content-box">
+                                    <figure class="testimonial-starimage">
+                                        <img src="./assets/images/faq-testimonialstar.png" alt="estrelas"
+                                            class="img-fluid">
+                                    </figure>
+                                    <p class="text-size-18">
+                                        “Profissionalismo impecável! Graças à consultoria especializada, conseguimos
+                                        descomplicar a complexidade tributária de nossa empresa e garantir a
+                                        conformidade
+                                        com todas as exigências legais. Um parceiro essencial para nossos negócios.”
+                                    </p>
+                                    <div class="review-content">
+                                        <figure class="testimonial-personimage mb-0">
+                                            <img src="./assets/images/testimonial-personimage.jpg" alt="perfil"
+                                                class="img-fluid">
+                                        </figure>
+                                        <div class="detail">
+                                            <span class="name">Ricardo Almeida</span>
+                                            <span class="position">CEO, Inovare Software</span>
                                         </div>
                                     </div>
                                 </div>
@@ -793,5 +501,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
