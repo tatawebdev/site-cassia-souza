@@ -4,7 +4,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <a class="navbar-brand" href="/">
-                        <figure class="logo mb-0"><img src="assets/images/logo-acinzentado.png" alt="logo" class="img-fluid">
+                        <figure class="logo mb-0">
+                            <img style="width: 150px;" src="assets/images/logo-acinzentado.png" alt="logo" class="img-fluid">
                         </figure>
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
@@ -16,23 +17,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown active">
-                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
-                                    id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"> Início </a>
-                                <div class="dropdown-menu drop-down-content">
-                                    <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/">Direito
-                                                Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="index1">Regularização Fiscal</a></li>
-                                        <li class="nav-item active"><a class="dropdown-item nav-link"
-                                                href="index2">Litígios e Defesa</a></li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about">Quem Somos</a>
+                                <a class="nav-link" href="/about">Quem Somos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
@@ -91,7 +80,9 @@
                         <div class="last_list">
                             <figure class="nav-phoneicon mb-0"><img class="img-fluid"
                                     src="./assets/images/nav-phoneicon.png" alt="telefone"></figure>
-                            <a class="text-decoration-none last_list_atag" href="tel:+568925896325">+5689 2589 6325</a>
+                            <a class="text-decoration-none last_list_atag" href="https://web.whatsapp.com/send/?phone=5511915201084&text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20%E2%9A%96%EF%B8%8F">
+                                +55 11 91520 1084
+                            </a>
                         </div>
                     </div>
                 </nav>
@@ -137,7 +128,7 @@
             </div>
         </section>
     </div>
-     <!-- Expertise -->
+    <!-- Expertise -->
     <section class="expertise-con">
         <div class="container">
             <div class="row">
