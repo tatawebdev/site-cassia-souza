@@ -121,7 +121,6 @@
                                 <div class="content">
                                     <h5>Roseanne Williams</h5>
                                     <span class="text-size-14">Dec 29, 2022</span>
-                                    <span class="text-size-14">Dec 29, 2022</span>
                                     <a class="reply text-decoration-none" href="#">Reply</a>
                                     <div class="text_holder">
                                         <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -258,6 +257,7 @@
                                     loading="lazy">
                             </figure>
                             <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
+                                Company</a>
                                 Company</a>
                         </div>
                         <div class="feed">

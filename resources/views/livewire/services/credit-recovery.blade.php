@@ -25,8 +25,6 @@
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">
                             <figure class="singleblog-quoteimage">
-                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="singleblog-quoteimage">
                                 <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
@@ -139,6 +137,8 @@
                                     <span class="text-size-14">Dec 29, 2022</span>
                                     <a class="reply text-decoration-none" href="#">Reply</a>
                                     <div class="text_holder">
+                                        <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
                                             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                             Ut enim ad minim veniam, quis nostrud exercitation.
