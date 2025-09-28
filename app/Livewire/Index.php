@@ -5,9 +5,12 @@ namespace App\Livewire;
 use Livewire\Component;
 
 class Index extends Component
+
 {
+    public $servicos = [];
     public function render()
     {
+        $this->servicos = \App\Services\ServicoService::getServicos();
         return view('livewire.index');
     }
 
