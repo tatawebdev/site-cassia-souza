@@ -1,4 +1,4 @@
-    <section class="singleblog-section blogpage-section">
+<section class="singleblog-section blogpage-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-12">
@@ -8,22 +8,19 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Why You Need Virtual Assistant for Your Company</h4>
+                            <h4>Planejamento Tributário para Clínicas Médicas e Odontológicas</h4>
                             <div class="span-fa-outer-con">
                                 <i class="fa-solid fa-user"></i>
-                                <span class="text-size-14 text-mr">By : Admin</span>
+                                <span class="text-size-14 text-mr">Por: Cassia Souza</span>
                                 <i class="mb-0 calendar fa-solid fa-calendar-days"></i>
-                                <span class="mb-0 text-size-14">Dec 20,2022</span>
+                                <span class="mb-0 text-size-14">Atualizado</span>
                             </div>
-                            <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit
-                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
+                            <p class="text-size-16">
+                                Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.<br>
+                                Para as clínicas médicas e odontológicas existe a possibilidade de reduzir de forma significativa a carga tributária por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido.<br>
+                                Nosso papel é estruturar um planejamento tributário personalizado, que garanta economia real, segurança jurídica e previsibilidade financeira, sempre com ética e dentro da legalidade.<br>
+                                Se a sua clínica busca pagar apenas o justo e aumentar a rentabilidade sem riscos, fale conosco.
+                            </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">
                             <figure class="singleblog-quoteimage">
@@ -278,6 +275,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
             </div>
         </div>
     </section>

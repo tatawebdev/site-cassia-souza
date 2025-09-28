@@ -60,7 +60,7 @@
                         <p class="text text-size-16">
                             Nossa missão é simples: ajudar os empresários a tomar decisões mais estratégicas para o seu negócio.
                         </p>
-                        <a href="/sobre-nos" class="text-decoration-none read_more">Saiba Mais<i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="/about" class="text-decoration-none read_more">Saiba Mais<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         <h6>Compromisso</h6>
                         <h2>Comprometidos em gerar resultados reais</h2>
                         <p class="text text-size-16">
-                            Cada empresa tem sua própria história, desafios e sonhos. Por isso, acreditamos que não existe solução única quando o assunto é tributação. Nosso papel é caminhar ao lado do empresário, oferecendo estratégias jurídicas personalizadas que tragam tranquilidade, previsibilidade e crescimento sustentável.
+                            Cada empresa tem sua própria história, desafios e sonhos. Por isso, acreditamos que não existe solução única quando o assunto é tributação. Nosso papel é caminhar ao lado do empresário, oferecendo estratégias jurídicas personalizadas que tragam tranquilidade, previsibilidade e crescimento sustentável.Mais do que consultoria, somos parceiros na construção de um negócio sólido, seguro e preparado para o futuro
                         </p>
                         <ul class="list-unstyled mb-0">
                             <li>

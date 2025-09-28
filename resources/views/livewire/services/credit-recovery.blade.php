@@ -139,8 +139,6 @@
                                     <div class="text_holder">
                                         <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
                                             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                             Ut enim ad minim veniam, quis nostrud exercitation.
                                         </p>
                                     </div>
@@ -279,5 +277,7 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
         </div>
     </section>

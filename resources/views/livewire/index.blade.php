@@ -22,7 +22,7 @@
                                 <a class="nav-link" href="/">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/sobre-nos">Quem Somos</a>
+                                <a class="nav-link" href="/about">Quem Somos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"

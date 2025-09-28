@@ -59,7 +59,7 @@
                         <a class="nav-link" href="/">Página Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/sobre-nos">Quem Somos</a>
+                        <a class="nav-link" href="/about">Quem Somos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdownArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -127,7 +127,7 @@
                         <h4 class="heading">Links Úteis</h4>
                         <ul class="list-unstyled mb-0">
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/" class=" text-size-14 text text-decoration-none">Início</a></li>
-                            <li><i class="fa-solid fa-arrow-right"></i><a href="/sobre-nos" class=" text-size-14 text text-decoration-none">Quem Somos</a></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><a href="/about" class=" text-size-14 text text-decoration-none">Quem Somos</a></li>
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/blog" class=" text-size-14 text text-decoration-none">Blog</a></li>
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/blog-details" class=" text-size-14 text text-decoration-none">Blog Detalhes</a></li>
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/rooms" class=" text-size-14 text text-decoration-none">Rooms</a></li>

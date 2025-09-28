@@ -1,4 +1,4 @@
-    <section class="singleblog-section blogpage-section">
+<section class="singleblog-section blogpage-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-12">
@@ -8,22 +8,26 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Why You Need Virtual Assistant for Your Company</h4>
+                            <h4>Assessoria para a Reforma Tributária</h4>
                             <div class="span-fa-outer-con">
                                 <i class="fa-solid fa-user"></i>
-                                <span class="text-size-14 text-mr">By : Admin</span>
+                                <span class="text-size-14 text-mr">Por: Cassia Souza</span>
                                 <i class="mb-0 calendar fa-solid fa-calendar-days"></i>
-                                <span class="mb-0 text-size-14">Dec 20,2022</span>
+                                <span class="mb-0 text-size-14">Atualizado</span>
                             </div>
-                            <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit
-                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
+                            <p class="text-size-16">
+                                A Reforma Tributária está transformando o sistema tributário brasileiro.<br>
+                                A questão é: sua empresa está preparada para as mudanças?<br>
+                                Oferecemos assessoria jurídica especializada para ajudar empresários a compreender os impactos da Reforma e a se adaptar com segurança, clareza e orientações estratégicas.<br>
+                                Com nossa assessoria, você terá apoio em:<br>
+                                • Análise dos principais pontos da Reforma Tributária e seus efeitos diretos na sua empresa;<br>
+                                • Avaliação dos impactos na carga tributária e no fluxo financeiro;<br>
+                                • Estratégias de transição para o novo modelo tributário;<br>
+                                • Identificação de riscos e oportunidades no novo cenário;<br>
+                                • Treinamentos e materiais práticos para gestores e equipes.<br>
+                                <strong>Antecipe-se às mudanças e transforme a Reforma Tributária em oportunidade.<br>
+                                Fale conosco e garanta que sua empresa avance com confiança.</strong>
+                            </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">
                             <figure class="singleblog-quoteimage">
