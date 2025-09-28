@@ -8,9 +8,11 @@ class Index extends Component
 
 {
     public $servicos = [];
+    public $mockup = null;
     public function render()
     {
         $this->servicos = \App\Services\ServicoService::getServicos();
+        $this->mockup = \App\Services\PlacesService::getMockedReviews();
         return view('livewire.index');
     }
 
