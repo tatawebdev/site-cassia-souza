@@ -1928,7 +1928,8 @@ h6:before{
 /* About */
 
 .about-con {
-    background: var(--e-global-color-very-dark-black-blue);
+    /* background: url(/assets/bg/fundo-e3b16f.png); */
+    background: #f5f2ec;
 }
 .about-con .about-sideimage {
     position: absolute;

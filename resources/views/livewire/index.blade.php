@@ -22,67 +22,36 @@
                                 <a class="nav-link" href="/">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/about">Quem Somos</a>
+                                <a class="nav-link" href="/sobre-nos">Quem Somos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
                                     id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"> Páginas </a>
+                                    aria-expanded="false"> Soluções </a>
                                 <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="practice-area">Áreas de Atuação</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="faq">Perguntas
-                                                Frequentes</a>
-                                        </li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="team">Nossa
-                                                Equipe</a>
-                                        </li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="review">Depoimentos</a>
-                                        </li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/practice-area">Consultoria Tributária</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/regularizacao-pgfn">Regularização de Débitos Federais - PGFN</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/planejamento-tributario">Planejamento Tributário</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/clinicas">Planejamento para Clínicas Médicas/Odontológicas</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/reforma-tributaria">Assessoria para Reforma Tributária</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/treinamento">Treinamento Tributário</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/recuperacao-pis-cofins">Recuperação de PIS e COFINS Monofásicos</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="case-studies">Casos de Sucesso</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
-                                    id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"> Blog </a>
-                                <div class="dropdown-menu drop-down-content">
-                                    <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="blog">Blog</a>
-                                        </li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="single-blog">Artigo</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="load-more">Carregar
-                                                Mais</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="one-column">Uma
-                                                Coluna</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="two-column">Duas
-                                                Colunas</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="three-column">Três
-                                                Colunas</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="three-colum-sidbar">Três Colunas com Barra Lateral</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="four-column">Quatro
-                                                Colunas</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="six-colum-full-wide">Seis Colunas</a></li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact">Contato</a>
+                                <a class="nav-link" href="/contact">Fale Conosco</a>
                             </li>
                         </ul>
                         <div class="last_list">
                             <figure class="nav-phoneicon mb-0"><img class="img-fluid"
                                     src="./assets/images/nav-phoneicon.png" alt="telefone"></figure>
                             <a class="text-decoration-none last_list_atag"
-                                href="https://web.whatsapp.com/send/?phone=5511915201084&text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20%E2%9A%96%EF%B8%8F">
+                                href="https://web.whatsapp.com/send/?phone=5511915201084&text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia!%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20%E2%9A%96%EF%B8%8F">
                                 +55 11 91520 1084
                             </a>
                         </div>
@@ -176,7 +145,7 @@
                                 <div class="expertise-box d-flex flex-column justify-content-between align-items-center h-100"
                                     style="min-height: 420px;">
                                     <figure class="mb-0 w-100" style="overflow: hidden;">
-                                        <img src="{{ $servico['imagem'] ?? './assets/images/expertise-image1.jpg' }}"
+                                        <img src="assets/servicos/{{ $key }}.png"
                                             alt="imagem" class="img-fluid w-100" style="object-fit: contain;">
                                     </figure>
                                     <div
@@ -203,7 +172,7 @@
                 <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                     <div class="about_wrapper position-relative">
                         <figure class="about-image mb-0">
-                            <img src="assets/images/about-image.jpg" alt="imagem principal" class="image-fluid">
+                            <img src="assets/img/parceria.png" alt="imagem principal" class="image-fluid">
                         </figure>
                     </div>
                 </div>
@@ -314,4 +283,99 @@
             </div>
         </div>
     </section>
+
+    <!-- Fale Conosco -->
+    <section class="consultation-con position-relative">
+        <figure class="consultation-sideimage mb-0">
+            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_wrapper position-relative">
+                        <figure class="consultation-image mb-0">
+                            <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_content" data-aos="fade-up">
+                        <h6>Fale conosco</h6>
+                        <h2 class="text-white">Agende uma consulta gratuita</h2>
+                        <form id="contactpage" method="post" class="position-relative">
+                            <div class="form-group input1 float-left">
+                                <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
+                            </div>
+                            <div class="form-group float-left">
+                                <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
+                            </div>
+                            <div class="form-group input1 float-left">
+                                <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
+                            </div>
+                            <div class="form-group float-left">
+                                <select class="form-control">
+                                    <option>Área de interesse</option>
+                                    <option>Consultoria Tributária</option>
+                                    <option>Planejamento Fiscal</option>
+                                    <option>Contencioso Tributário</option>
+                                </select>
+                            </div>
+                            <div class="form-group message">
+                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
+                            </div>
+                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
+                                    class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artigos/Blog -->
+    <section class="article-con">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="article_content text-center" data-aos="fade-up">
+                        <h6>Conteúdos</h6>
+                        <h2>Blog & Perguntas Frequentes</h2>
+                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">
+                            O conhecimento que gera economia e fortalece sua gestão tributária.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="article-box">
+                                <figure class="mb-0">
+                                    <img src="./assets/images/article-image1.jpg" alt="imagem" class="img-fluid">
+                                </figure>
+                                <div class="box-content">
+                                    <div class="span_wrapper">
+                                        <span>18 de março de 2024</span>
+                                        <span class="dash">-</span>
+                                        <span>0 Comentários</span>
+                                    </div>
+                                    <a href="/single-blog" class="text-decoration-none">
+                                        <h5>Como reduzir impostos de forma legal</h5>
+                                    </a>
+                                    <p class="text-size-14">Descubra estratégias seguras para economizar e evitar riscos
+                                        fiscais.</p>
+                                    <a href="/single-blog" class="text-decoration-none">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ...adicione outros artigos conforme necessário... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>

@@ -5,21 +5,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Services\PlacesService;
 
-Route::get('/', \App\Livewire\Index::class);
-Route::get('/about', \App\Livewire\About::class);
-Route::get('/blog-details2', \App\Livewire\BlogDetails2::class);
-Route::get('/booking', \App\Livewire\Booking::class);
-Route::get('/confirmation', \App\Livewire\Confirmation::class);
-Route::get('/rooms-details', \App\Livewire\RoomsDetails::class);
-Route::get('/rooms2', \App\Livewire\Rooms2::class);
-Route::get('/blog-details', \App\Livewire\BlogDetails::class);
-Route::get('/blog', \App\Livewire\Blog::class);
-Route::get('/checkout', \App\Livewire\Checkout::class);
-Route::get('/contact', \App\Livewire\Contact::class);
-Route::get('/index2', \App\Livewire\Index2::class);
-Route::get('/rooms', \App\Livewire\Rooms::class);
+Route::get('/', \App\Livewire\Index::class)->name('inicio');
+Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
+Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
+Route::get('/servicos', \App\Livewire\Services::class)->name('servicos');
+Route::get('/servicos/consultoria-tributaria', \App\Livewire\Services\TaxConsulting::class)->name('servicos.consultoria.tributaria');
+Route::get('/servicos/defesa-administrativa', \App\Livewire\Services\AdministrativeDefense::class)->name('servicos.defesa.administrativa');
+Route::get('/servicos/planejamento-tributario', \App\Livewire\Services\TaxPlanning::class)->name('servicos.planejamento.tributario');
+Route::get('/servicos/recuperacao-de-creditos', \App\Livewire\Services\CreditRecovery::class)->name('servicos.recuperacao.creditos');
+Route::get('/servicos/conformidade-tributaria', \App\Livewire\Services\TaxCompliance::class)->name('servicos.conformidade.tributaria');
 
-Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->name('google.redirect');
+Route::get('/auth/google/redirecionar', [GoogleAuthController::class, 'redirect'])->name('google.redirecionar');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');
 
 Route::get('/get/comentarios', [ReviewsController::class, 'index'])->name('reviews.export');

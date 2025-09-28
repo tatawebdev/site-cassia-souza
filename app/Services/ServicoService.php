@@ -15,6 +15,7 @@ class ServicoService
                 'descricao_short' => 'Negociação de débitos federais junto à PGFN com descontos e parcelamentos especiais.',
                 'descricao' => 'Dívidas com a União não precisam ser um peso permanente no seu negócio.\n\nAtuamos na negociação de débitos inscritos em Dívida Ativa junto à PGFN, buscando descontos nos juros e multas e parcelamentos especiais, inclusive com revisão da CAPAG para adequar a capacidade de pagamento à realidade da sua empresa.\n\nCom isso, sua empresa evita execuções fiscais, bloqueios da conta bancária e penhora de bens, recuperando credibilidade e fôlego financeiro.\n\nNão deixe que a Dívida Ativa comprometa o futuro do seu negócio.\n\nFale conosco e inicie a regularização com segurança e apoio jurídico especializado.',
                 'icone' => 'fa-solid fa-scale-balanced',
+                'images' => ''
             ],
             'planejamento_tributario' => [
                 'titulo' => '2.3 PLANEJAMENTO TRIBUTÁRIO',
