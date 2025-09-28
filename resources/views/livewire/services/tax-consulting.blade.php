@@ -258,7 +258,6 @@
                             </figure>
                             <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
                                 Company</a>
-                                Company</a>
                         </div>
                         <div class="feed">
                             <figure class="feed-image mb-0" data-aos="fade-up">
@@ -280,4 +279,5 @@
                 </div>
             </div>
         </div>
+    </section>
     </section>
