@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>About | Lawfinity</title>
+    <title>Three Column Sidebar | Lawfinity</title>
     <!-- /SEO Ultimate -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta charset="utf-8">
@@ -31,6 +31,7 @@
     <!-- StyleSheet link CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/blog.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -40,6 +41,7 @@
 <body>
     <!-- Back to top button -->
     <a id="button"></a>
+
     <div class="sub_banner position-relative">
         <figure class="banner-rightimage image mb-0">
             <img src="/assets/images/banner-rightimage.png" alt="image" class="img-fluid">
@@ -50,8 +52,8 @@
         <header class="header">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <a class="navbar-brand" href="/"> <!-- index -->
-                        <figure class="logo mb-0"><img width="150px" src="assets/images/logo-acinzentado.png" alt="image"
+                    <a class="navbar-brand" href="index.html">
+                        <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""
                                 class="img-fluid"></figure>
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
@@ -64,24 +66,32 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Início</a>
+                                <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/sobre-nos">Quem Somos</a>
+                                <a class="nav-link" href="/sobre-nos">Sobre</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdownArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Serviços
-                                </a>
-                                <div class="dropdown-menu drop-down-content" aria-labelledby="navbarDropdownArea">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                    id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"> Serviços </a>
+                                <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/servicos/consultoria-tributaria">Consultoria Tributária</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/servicos/defesa-administrativa">Defesa Administrativa</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/servicos/planejamento-tributario">Planejamento Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/servicos/recuperacao-de-creditos">Recuperação de Créditos</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/servicos/conformidade-tributaria">Conformidade Tributária</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.consultoria.tributaria') }}">Consultoria Tributária</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.defesa.administrativa') }}">Defesa Administrativa</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario') }}">Planejamento Tributário</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de Créditos</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.conformidade.tributaria') }}">Conformidade Tributária</a></li>
                                     </ul>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>
@@ -89,7 +99,7 @@
                         </ul>
                         <div class="last_list">
                             <figure class="nav-phoneicon mb-0"><img class="img-fluid"
-                                    src="/assets/images/nav-phoneicon.png" alt="image"></figure>
+                                    src="/assets/images/nav-phoneicon.png" alt=""></figure>
                             <a class="text-decoration-none last_list_atag" href="tel:+568925896325">+5689 2589 6325</a>
                         </div>
                     </div>
@@ -102,17 +112,17 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="sub_banner_content" data-aos="fade-up">
-                            <h1 class="text-white">Sobre Nós</h1>
+                            <h1 class="text-white">Three Column</h1>
                             <p class="col-xl-7 col-lg-9 mx-auto text-white text-size-16">Dolor in reprehenderit in
                                 voluptate velit esse cillumdolore eu fugiat nulla pariatur sint occaecat
                                 non sunt in mollit anim laborum.
                             </p>
                             <div class="box">
-                                <a href="/" class="text-decoration-none">
-                                    <span class="mb-0">Início</span>
+                                <a href="index.html" class="text-decoration-none">
+                                    <span class="mb-0">Home</span>
                                 </a>
                                 <i class="arrow fa-solid fa-arrow-right"></i>
-                                <span class="mb-0 box_span">Quem Somos</span>
+                                <span class="mb-0 box_span">Three Column</span>
                             </div>
                         </div>
                     </div>
@@ -121,8 +131,7 @@
         </section>
     </div>
 
-{{ $slot }}
-
+{{  $slot }}
 
     <!-- Footer -->
     <section class="footer-con position-relative" id="footer">
@@ -131,13 +140,13 @@
                 <div class="col-12">
                     <div class="upper_portion">
                         <div class="heading">
-                            <h6 class="text-white">Assine</h6>
-                            <h3 class="text-white mb-0">Receba novidades e dicas tributárias</h3>
+                            <h6 class="text-white">Subscription</h6>
+                            <h3 class="text-white mb-0">Subscribe to Our Newsletter</h3>
                         </div>
                         <form action="javascript:;">
                             <div class="form-group position-relative mb-0">
-                                <input type="text" class="form_style" placeholder="Seu e-mail" name="email">
-                                <button>Inscrever-se<i class="fa-solid fa-arrow-right"></i></button>
+                                <input type="text" class="form_style" placeholder="Your email address" name="email">
+                                <button>Subscribe<i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </form>
                     </div>
@@ -147,11 +156,11 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="logo-content">
-                            <a href="/" class="footer-logo">
-                                <figure class="mb-0"><img width="250px" src="/assets/images/logo-acinzentado.png" alt="logo">
-                                </figure>
+                            <a href="./index.html" class="footer-logo">
+                                <figure class="mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""></figure>
                             </a>
-                            <p class="text-size-14">Escritório especializado em advocacia tributária. Soluções personalizadas para empresas que buscam segurança, economia e regularidade fiscal.</p>
+                            <p class="text-size-14">Nemo enim ipsam voluptatem quia voluptas sit asperna tur aut odit
+                                aut fugit, sed quia conseuntur magni dolor es eos rui ratione...</p>
                             <ul class="list-unstyled mb-0 social-icons">
                                 <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i
                                             class="fa-brands fa-facebook-f social-networks"></i></a></li>
@@ -164,48 +173,58 @@
                     </div>
                     <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4 col-6">
                         <div class="links">
-                            <h4 class="heading">Links Úteis</h4>
+                            <h4 class="heading">Useful Links</h4>
                             <ul class="list-unstyled mb-0">
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="/" class=" text-size-14 text text-decoration-none">Início</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="/sobre-nos" class=" text-size-14 text text-decoration-none">Quem Somos</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="blog" class=" text-size-14 text text-decoration-none">Blog</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="blog-details" class=" text-size-14 text text-decoration-none">Blog Detalhes</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="rooms" class=" text-size-14 text text-decoration-none">Salas</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="rooms-details" class=" text-size-14 text text-decoration-none">Detalhes das Salas</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="rooms2" class=" text-size-14 text text-decoration-none">Salas 2</a></li>
-                                <li><i class="fa-solid fa-arrow-right"></i><a href="contact" class=" text-size-14 text text-decoration-none">Contato</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./index.html"
+                                        class=" text-size-14 text text-decoration-none">Home</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./about.html"
+                                        class=" text-size-14 text text-decoration-none">About</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./practice-area.html"
+                                        class=" text-size-14 text text-decoration-none">Practice Areas</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./case-studies.html"
+                                        class=" text-size-14 text text-decoration-none">Cases</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./blog.html"
+                                        class=" text-size-14 text text-decoration-none">Blog</a></li>
+                                <li><i class="fa-solid fa-arrow-right"></i><a href="./contact.html"
+                                        class=" text-size-14 text text-decoration-none">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
                         <div class="timing">
-                            <h4 class="heading">Horário de Atendimento</h4>
+                            <h4 class="heading">Office Hours</h4>
                             <ul class="list-unstyled mb-0">
-                                <li><p>Segunda a Sexta</p></li>
-                                <li><span>09:00 – 18:00</span></li>
-                                <li><p>Sábado</p></li>
-                                <li><span>09:00 – 13:00</span></li>
-                                <li><p>Domingo</p></li>
-                                <li><span class="mb-0">Fechado</span></li>
+                                <li>
+                                    <p>Monday – Saturday</p>
+                                </li>
+                                <li><span>12:00 – 14:45</span></li>
+                                <li>
+                                    <p>Sunday – Thursday</p>
+                                </li>
+                                <li><span>17.30 – 21.45</span></li>
+                                <li>
+                                    <p>Friday – Saturday</p>
+                                </li>
+                                <li><span class="mb-0">13.00 – 19.45</span></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
                         <div class="icon">
-                            <h4 class="heading">Contato</h4>
+                            <h4 class="heading">Contact Us</h4>
                             <ul class="list-unstyled mb-0">
                                 <li class="text">
                                     <i class="fa-solid fa-phone"></i>
-                                    <a href="tel:+568925896325" class="text-decoration-none">+55 11 91520 1084</a>
+                                    <a href="tel:+568925896325" class="text-decoration-none">+5689 2589 6325</a>
                                 </li>
                                 <li class="text">
                                     <i class="fa-solid fa-envelope"></i>
-                                    <a href="mailto:contato@cassiasouzaadvocacia.com.br"
-                                        class="text-decoration-none">contato@cassiasouzaadvocacia.com.br</a>
+                                    <a href="mailto:info@lawfinity.com"
+                                        class="text-decoration-none">Info@lawfinity.com</a>
                                 </li>
                                 <li class="text">
                                     <i class="fa-solid fa-location-dot"></i>
-                                    <p class="address mb-0">Av. Paulista, 1000 - Bela Vista, São Paulo/SP</p>
+                                    <p class="address mb-0">21 King Street Melbourne, 3000, Australia</p>
                                 </li>
                             </ul>
                         </div>
@@ -216,29 +235,32 @@
         <div id="fixed-form-container">
             <div class="image">
                 <figure class="footer-contactimage mb-0">
-                    <img src="/assets/images/footer-contactimage.png" alt="image" class="img-fluid">
+                    <img src="/assets/images/footer-contactimage.png" alt="" class="img-fluid">
                 </figure>
             </div>
             <div class="body" style="display: none;">
                 <form action="javascript:;">
                     <div class="form-group mb-0">
-                        <input type="text" class="form_style" placeholder="Nome" name="name">
+                        <input type="text" class="form_style" placeholder="Name" name="name">
                     </div>
                     <div class="form-group mb-0">
-                        <input type="email" class="form_style" placeholder="E-mail" name="emailid">
+                        <input type="email" class="form_style" placeholder="Email" name="emailid">
                     </div>
                     <div class="form-group mb-0">
-                        <input type="tel" class="form_style" placeholder="Telefone" name="phone">
+                        <input type="tel" class="form_style" placeholder="Phone" name="phone">
                     </div>
                     <div class="form-group mb-0">
-                        <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
+                        <textarea class="form_style" placeholder="Message" rows="3" name="msg"></textarea>
                     </div>
-                    <button type="submit" class="submit_now text-decoration-none">Enviar</button>
+                    <button type="submit" class="submit_now text-decoration-none">Submit</button>
                 </form>
             </div>
         </div>
+        <figure class="footer-sideimage mb-0">
+            <img src="/assets/images/footer-sideimage.png" alt="image" class="img-fluid">
+        </figure>
         <div class="copyright">
-            <p class="mb-0">Copyright © cassiasouzaadvocacia.com.br, Todos os direitos reservados 2024</p>
+            <p class="mb-0">Copyright © lawfinity.com, All Rights Reserved 2024</p>
         </div>
     </section>
     <!-- PRE LOADER -->
@@ -256,12 +278,11 @@
     <script src="/assets/js/owl.carousel.js"></script>
     <script src="/assets/js/carousel.js"></script>
     <script src="/assets/js/animation.js"></script>
+    <script src="/assets/js/video-popup.js"></script>
+    <script src="/assets/js/video.js"></script>
     <script src="/assets/js/back-to-top-button.js"></script>
     <script src="/assets/js/preloader.js"></script>
     <script src="/assets/js/popup-image.js"></script>
-    <script src="/assets/js/contact-form.js"></script>
-    <script src="/assets/js/contact-validate.js"></script>
-    <script src="/assets/js/counter.js"></script>
 </body>
 
 </html>
