@@ -225,7 +225,7 @@ h1 {font-size: 58px; line-height: 66px;}
 .legal_situation_banner .banner_content .down_button {bottom: 30px;}
 .legal_situation_portfolio {padding-top: 100px;}
 .legal_situation_portfolio .portfolio_content {margin-bottom: 65px;}
-.legal_situation_faq {padding: 350px 0 100px;}
+.legal_situation_faq {padding: 30px 0 100px;}
 .amazing-con .amazing-sideimage img {display: none;}
 .amazing-con .amazing-image {left: -317px;}
 .amazing-con .amazing_content {padding: 100px 0 100px 20px;}
@@ -521,7 +521,7 @@ h5 {font-size: 18px; line-height: 28px;}
 .legal_situation_portfolio .owl-carousel .owl-dots {margin-top: 0px !important;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot span {width: 11px; height: 11px; margin: 0 5px;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot.active span {width: 15px; height: 15px;}
-.legal_situation_faq {padding: 305px 0 80px;}
+.legal_situation_faq {padding: 30px 0 80px;}
 .amazing-con .amazing_content {padding: 80px 0;}
 .amazing-con .amazing_content h6 {margin-bottom: 12px;}
 .amazing-con .amazing_content h2 {margin-bottom: 20px;}
@@ -906,7 +906,7 @@ button:focus {outline: none;}
 .legal_situation_portfolio .owl-carousel .owl-dots {margin-top: 0px !important;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot span {width: 10px; height: 10px; margin: 0 3px;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot.active span {width: 14px; height: 14px;}
-.legal_situation_faq {padding: 270px 0 60px;}
+.legal_situation_faq {padding: 27px 0 60px;}
 .amazing-con .amazing-image {position: relative; text-align: center; left: unset;}
 .amazing-con .amazing-image img{width: 80%;}
 .amazing-con .amazing_content {padding: 60px 0; text-align: center;}
@@ -1233,7 +1233,7 @@ a {font-size: 14px; line-height: 14px;}
 .legal_situation_portfolio .portfolio-box .box-content {padding: 30px 25px 20px;}
 .legal_situation_portfolio .portfolio-box .box-content p {font-size: 12px; line-height: 20px; margin-bottom: 8px;}
 .legal_situation_portfolio .owl-carousel .owl-dots {margin-top: -10px !important;}
-.legal_situation_faq {padding: 240px 0 40px;}
+.legal_situation_faq {padding: 24px 0 40px;}
 .amazing-con .amazing-image img{width: 100%;}
 .amazing-con .amazing_content {padding: 40px 30px;}
 .amazing-con .amazing_content h6 {margin-bottom: 8px;}
@@ -1476,7 +1476,7 @@ h6 {font-size: 12px; line-height: 18px;}
 .legal_situation_portfolio .owl-carousel .owl-dots {margin-top: 10px !important;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot span {width: 9px; height: 9px; margin: 0 2px;}
 .legal_situation_portfolio .owl-carousel .owl-dots .owl-dot.active span {width: 13px; height: 13px;}
-.legal_situation_faq {padding: 230px 0 40px;}
+.legal_situation_faq {padding: 23px 0 40px;}
 .amazing-con .amazing_content {padding: 40px 0 20px;}
 .amazing-con .content {width: 290px;}
 .amazing-con .amazing_content .lower_portion {padding-left: 20px;}

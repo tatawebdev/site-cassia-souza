@@ -1,81 +1,83 @@
 <div>
     <div class="legal_matter position-relative">
-    <header class="header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a class="navbar-brand" href="index.html">
-                    <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""
-                            class="img-fluid"></figure>
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sobre-nos">Sobre</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
-                                id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"> Serviços </a>
-                            <div class="dropdown-menu drop-down-content">
-                                <ul class="list-unstyled drop-down-pages">
-                                    <li class="nav-item"><a class="dropdown-item nav-link"
-                                            href="{{ route('servicos.consultoria.tributaria') }}">Consultoria
-                                            Tributária</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link"
-                                            href="{{ route('servicos.defesa.administrativa') }}">Defesa
-                                            Administrativa</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link"
-                                            href="{{ route('servicos.planejamento.tributario') }}">Planejamento
-                                            Tributário</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link"
-                                            href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de
-                                            Créditos</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link"
-                                            href="{{ route('servicos.conformidade.tributaria') }}">Conformidade
-                                            Tributária</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contato">Contato</a>
-                        </li>
-                    </ul>
-                    <div class="last_list">
-                        <a href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️"  class="float" target="_blank" rel="nofollow">
-                            <i class="fab fa-whatsapp my-float" style="font-size: 24px;"></i>
-                            <span style="margin-left: 8px;">(11) 91520-1084</span>
-                        </a>
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <a class="navbar-brand" href="index.html">
+                        <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""
+                                class="img-fluid"></figure>
+                    </a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sobre-nos">Sobre</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                    id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"> Serviços </a>
+                                <div class="dropdown-menu drop-down-content">
+                                    <ul class="list-unstyled drop-down-pages">
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.consultoria.tributaria') }}">Consultoria
+                                                Tributária</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.defesa.administrativa') }}">Defesa
+                                                Administrativa</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario') }}">Planejamento
+                                                Tributário</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de
+                                                Créditos</a></li>
+                                        <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.conformidade.tributaria') }}">Conformidade
+                                                Tributária</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contato">Contato</a>
+                            </li>
+                        </ul>
+                        <div class="last_list">
+                            <a href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️"
+                                class="float" target="_blank" rel="nofollow">
+                                <i class="fab fa-whatsapp my-float" style="font-size: 24px;"></i>
+                                <span style="margin-left: 8px;">(11) 91520-1084</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+                </nav>
+            </div>
+        </header>
         <section class="legal_matter_banner position-relative">
             <div class="container position-relative">
                 <div class="row">
                     <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 col-12">
                         <div class="banner_content" data-aos="fade-up">
                             <h2 class="text-white text-size-28 mb-3">
-Está pagando além do justo em impostos?                             </h2>
+                                Está pagando além do justo em impostos? </h2>
                             <p class="text-white text-size-16 mb-3">
-                                Nossa consultoria tributária identifica reduções legais, regulariza dívidas, recupera tributos <strong>e prepara sua empresa para a Reforma.</strong>
+                                Nossa consultoria tributária identifica reduções legais, regulariza dívidas, recupera
+                                tributos <strong>e prepara sua empresa para a Reforma.</strong>
                             </p>
-                           
+
                             <p class="text-white text-size-16 mb-3">
-                        Tudo isso com clareza, ética e planejamento, para que sua empresa tenha
+                                Tudo isso com clareza, ética e planejamento, para que sua empresa tenha
                                 <strong>previsibilidade, economia e segurança!</strong>
                             </p>
 
@@ -87,8 +89,7 @@ Está pagando além do justo em impostos?                             </h2>
                     <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="banner_wrapper position-relative">
                             <figure class="banner-image mb-0" data-aos="fade-up">
-                                <img src="./assets/img/banner-novo1.png" alt="advogada trabalhando"
-                                    class="img-fluid">
+                                <img src="./assets/img/banner-novo1.png" alt="advogada trabalhando" class="img-fluid">
                             </figure>
                             <figure class="banner-background mb-0">
                                 <img src="./assets/images/banner3-background.jpg" alt="fundo do banner"
@@ -143,15 +144,17 @@ Está pagando além do justo em impostos?                             </h2>
                                 <div class="expertise-box d-flex flex-column justify-content-between align-items-center h-100"
                                     style="min-height: 420px;">
                                     <figure class="mb-0 w-100" style="overflow: hidden;">
-                                        <img src="assets/servicos/{{ $key }}.png"
-                                            alt="imagem" class="img-fluid w-100" style="object-fit: contain;">
+                                        <img src="assets/servicos/{{ $key }}.png" alt="imagem" class="img-fluid w-100"
+                                            style="object-fit: contain;">
                                     </figure>
                                     <div
                                         class="box-content text-center flex-grow-1 d-flex flex-column justify-content-center w-100">
                                         <h5 class="mb-2" style="font-weight: 700; font-size: 1.15rem; color: #2d2d2d;">
-                                            {{ $servico['short_titulo'] }}</h5>
+                                            {{ $servico['short_titulo'] }}
+                                        </h5>
                                         <p class="text-size-14 mb-0" style="color: #555; line-height: 1.6;">
-                                            {!! nl2br(e($servico['descricao_short'])) !!}</p>
+                                            {!! nl2br(e($servico['descricao_short'])) !!}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -179,22 +182,27 @@ Está pagando além do justo em impostos?                             </h2>
                         <div class="content">
                             <p class="text-white text-size-16">
                                 O sistema tributário brasileiro é extremamente complexo. Para muitos empresários,
-                                lidar com impostos é sinônimo de <strong>insegurança, ansiedade e medo</strong> de estar sempre
+                                lidar com impostos é sinônimo de <strong>insegurança, ansiedade e medo</strong> de estar
+                                sempre
                                 “um passo atrás” do Fisco.
                             </p>
                             <p class="text-white text-size-16">
                                 Nós sabemos disso — porque estamos ao lado de empresas que já viveram essa realidade.
-                                Mas acreditamos em outro caminho: o da <strong>clareza, da regularidade e da estratégia</strong>.
+                                Mas acreditamos em outro caminho: o da <strong>clareza, da regularidade e da
+                                    estratégia</strong>.
                             </p>
                             <p class="text-white text-size-16">
-                                Não somos apenas um escritório de advocacia ou consultoria tributária. Somos <strong>parceiros
-                                que caminham junto com você</strong>, ajudando a <strong>reduzir impostos de forma legal</strong>, recuperar
+                                Não somos apenas um escritório de advocacia ou consultoria tributária. Somos
+                                <strong>parceiros
+                                    que caminham junto com você</strong>, ajudando a <strong>reduzir impostos de forma
+                                    legal</strong>, recuperar
                                 tributos pagos indevidamente, regularizar dívidas e preparar sua empresa para as
                                 transformações que já estão acontecendo, como a Reforma Tributária.
                             </p>
                             <p class="text-white text-size-16">
-                                Nossa missão é simples: <strong>ajudar os empresários a tomar decisões mais estratégicas para
-                                o seu negócio</strong>.
+                                Nossa missão é simples: <strong>ajudar os empresários a tomar decisões mais estratégicas
+                                    para
+                                    o seu negócio</strong>.
                             </p>
                             <a href="./about" class="text-decoration-none read_more">Saiba Mais<i
                                     class="fa-solid fa-arrow-right"></i></a>
@@ -206,174 +214,285 @@ Está pagando além do justo em impostos?                             </h2>
     </section>
 
     <!-- Faq Testimonial -->
-    <section class="faq_testimonial-con aboutpage-testimonial position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="faq_testimonial_content text-center" data-aos="fade-up">
-                        <h6>Depoimentos</h6>
-                        <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
-                    </div>
+
+    <section class="legal_situation_testimonial position-relative" style="background-color: #fff !important">
+        <div class="container"></div>
+        <div class="row">
+            <div class="col-12">
+                <div class="testimonial_content text-center position-relative" data-aos="fade-up">
+                    <h6>Depoimentos</h6>
+                    <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
+                    <figure class="mb-0">
+                        <img src="./assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
+                    </figure>
                 </div>
             </div>
-            <div class="row position-relative" data-aos="fade-up">
-                <div class="col-12">
-                    <div class="testimonial_content">
-                        <figure class="testimonial-quote">
-                            <img src="./assets/images/faq-testimonialquote.png" alt="aspas" class="img-fluid">
-                        </figure>
-                        <div class="owl-carousel owl-theme">
-
-                            @foreach (collect($mockup)->sortByDesc('rating')->sortByDesc('text') as $review)
-                                <div class="item">
-                                    <div class="content-box">
-                                        <figure class="testimonial-starimage">
+        </div>
+        <div class="row position-relative" data-aos="fade-up">
+            <div class="col-12">
+                <div id="testimonialcarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach (collect($mockup)->sortByDesc('rating')->sortByDesc('text') as $review)
+                            @if (!empty($review['text']))
+                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                    <div class="testimonial_box">
+                                        <figure class="testimonial-image mb-3">
+                                            <img src="{{ asset('assets/fotos/image_' . $review['id'] . '.jpg') }}"
+                                                alt="client image" class="img-fluid rounded-circle"
+                                                style="width: 80px; height: 80px; object-fit: cover;">
+                                        </figure>
+                                        <p class="text-size-18">{{ $review['text'] }}</p>
+                                        <div class="reviewer-name mt-2">
+                                            <strong>{{ $review['author_name'] }}</strong>
+                                        </div>
+                                        <div class="testimonial-stars mt-2">
                                             @for ($i = 0; $i < $review['rating']; $i++)
                                                 <i class="fa fa-star" style="color: #FFD700;"></i>
                                             @endfor
                                             @for ($i = $review['rating']; $i < 5; $i++)
                                                 <i class="fa fa-star" style="color: #E0E0E0;"></i>
                                             @endfor
-                                        </figure>
-                                        <p class="text-size-18">
-                                            {{ $review['text'] ?: '' }}
-                                        </p>
-                                        <div class="review-content">
-                                            <figure style="width: 100px; height: 100px; overflow: hidden; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
-                                                <img src="{{ asset('assets/fotos/image_' . $review['id'] . '.jpg') }}" alt="perfil"
-                                                    class="img" style="width: 100px !important; max-height: 100px; object-fit: cover;">
-                                            </figure>
-                                            <div class="detail">
-                                                <span class="name">{{ $review['author_name'] }}</span>
-                                                <span class="position">{{ $review['profile'] }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="pagination-outer">
+                        <a class="carousel-control-prev" href="#testimonialcarousel" role="button" data-slide="prev">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#testimonialcarousel" role="button" data-slide="next">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+
+
+<!-- Fale Conosco -->
+<section class="consultation-con position-relative">
+    <figure class="consultation-sideimage mb-0">
+        <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
+    </figure>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="consultation_wrapper position-relative">
+                    <figure class="consultation-image mb-0">
+                        <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="consultation_content" data-aos="fade-up">
+                    <h6>Fale conosco</h6>
+                    <h2 class="text-white">Agende uma consulta gratuita</h2>
+                    <form id="contactpage" method="post" class="position-relative">
+                        <div class="form-group input1 float-left">
+                            <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
+                        </div>
+                        <div class="form-group float-left">
+                            <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
+                        </div>
+                        <div class="form-group input1 float-left">
+                            <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
+                        </div>
+                        <div class="form-group float-left">
+                            <select class="form-control">
+                                <option>Área de interesse</option>
+                                <option>Consultoria Tributária</option>
+                                <option>Planejamento Fiscal</option>
+                                <option>Contencioso Tributário</option>
+                            </select>
+                        </div>
+                        <div class="form-group message">
+                            <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
+                        </div>
+                        <button id="submit" type="submit" class="appointment">Agendar Consulta<i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-con practicearea-faq legal_situation_faq position-relative">
+    <div class="container">
+        <div class="faq">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="left_column" data-aos="fade-up">
+                        <div class="faq_content mb-0">
+                            <h6>Faq’s</h6>
+                            <h2>Perguntas Frequentes – FAQ</h2>
+                        </div>
+                        <div class="accordian-section-inner position-relative">
+                            <div class="accordian-inner">
+                                <div id="faq_accordion1">
+                                    <!-- Serviço: Planejamento Tributário -->
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingOne">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="false"
+                                                aria-controls="collapseOne">
+                                                <h5 style="line-height: 1.3;">Como saber se meu regime tributário é o
+                                                    mais vantajoso para minha
+                                                    empresa?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">A escolha do regime ideal depende
+                                                    do seu faturamento, das suas margens de lucro e da sua atividade.
+                                                    Fazemos uma análise personalizada para simular o custo de cada
+                                                    regime e mostrar qual alternativa traz mais economia sem riscos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingTwo">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                <h5 style="line-height: 1.3;">O que muda para minha empresa com a
+                                                    Reforma Tributária?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">A Reforma vai alterar toda a
+                                                    tributação sobre o consumo. Então, vamos ter novas bases de cálculo,
+                                                    formas de apuração, alíquotas e obrigações acessórias. Isso
+                                                    significa que o que hoje é vantajoso pode deixar de ser — ou
+                                                    vice-versa. Nossa assessoria ajuda a entender exatamente quais
+                                                    mudanças vão afetar a sua empresa e como ajustar sua estrutura para
+                                                    manter segurança e evitar surpresas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingThree">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                <h5 style="line-height: 1.3;">Consultoria tributária mensal realmente
+                                                    vale a pena para resultados
+                                                    consistentes?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">Sim, quando feita com constância.
+                                                    O acompanhamento regular permite identificar erros operacionais
+                                                    cedo, ajustar práticas conforme novas normas, evitar autuações e
+                                                    identificar oportunidades de economia. Assim, você mantém a
+                                                    tranquilidade tributária enquanto cresce.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Serviço: Recuperação de PIS e COFINS -->
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingFour">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                                <h5 style="line-height: 1.3;">Minha empresa do Simples Nacional pode
+                                                    recuperar PIS e COFINS
+                                                    monofásicos pagos indevidamente?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">Sim — em muitos casos. Se você
+                                                    comercializa produtos sujeitos à tributação monofásica e os
+                                                    recolhimentos foram feitos nesses casos, pode haver crédito a
+                                                    recuperar. O primeiro passo é revisar suas notas fiscais,
+                                                    identificar produtos monofásicos e verificar se houve pagamento
+                                                    indevido no seu DAS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingFive">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseFive">
+                                                <h5 style="line-height: 1.3;">Qual é o prazo para recuperar tributos
+                                                    pagos indevidamente de PIS e
+                                                    COFINS monofásicos?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">O direito de restituição ou
+                                                    compensação abrange os últimos 5 anos (60 meses).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingSix">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseSix" aria-expanded="false"
+                                                aria-controls="collapseSix">
+                                                <h5 style="line-height: 1.3;">Quais produtos estão sujeitos à tributação
+                                                    monofásica de PIS e
+                                                    COFINS?</h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">A lista inclui medicamentos,
+                                                    cosméticos, certos produtos farmacêuticos, bebidas frias entre
+                                                    outros, de acordo com a NCM usada nas notas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Serviço: Regularização de Débitos Federais -->
+                                    <div class="accordion-card">
+                                        <div class="card-header" id="headingSeven">
+                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseSeven" aria-expanded="false"
+                                                aria-controls="collapseSeven">
+                                                <h5 style="line-height: 1.3;">Como negociar débitos federais inscritos
+                                                    em Dívida Ativa da União?
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven">
+                                            <div class="card-body">
+                                                <p class="text-size-14 text-left mb-0">É possível aderir a programas de
+                                                    transação tributária que concedem descontos nos juros e nas multas e
+                                                    parcelamento especial. O primeiro passo é estudar o débito,
+                                                    verificar a Capacidade de Pagamento (e se há necessidade de pedir
+                                                    revisão) e entender se sua empresa se enquadra nos critérios
+                                                    exigidos nos editais.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            <div class="item">
-                                <div class="content-box">
-                                    <figure class="testimonial-starimage">
-                                        <img src="./assets/images/faq-testimonialstar.png" alt="estrelas"
-                                            class="img-fluid">
-                                    </figure>
-                                    <p class="text-size-18">
-                                        “Profissionalismo impecável! Graças à consultoria especializada, conseguimos
-                                        descomplicar a complexidade tributária de nossa empresa e garantir a
-                                        conformidade
-                                        com todas as exigências legais. Um parceiro essencial para nossos negócios.”
-                                    </p>
-                                    <div class="review-content">
-                                        <figure class="testimonial-personimage mb-0">
-                                            <img src="./assets/images/testimonial-personimage.jpg" alt="perfil"
-                                                class="img-fluid">
-                                        </figure>
-                                        <div class="detail">
-                                            <span class="name">Ricardo Almeida</span>
-                                            <span class="position">CEO, Inovare Software</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fale Conosco -->
-    <section class="consultation-con position-relative">
-        <figure class="consultation-sideimage mb-0">
-            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
-        </figure>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="consultation_wrapper position-relative">
-                        <figure class="consultation-image mb-0">
-                            <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center">
+                    <div class="practicearea_wrapper text-center" data-aos="zoom-in"
+                        style="width: 100%; display: flex; height: 100%; justify-content: center; align-items: center;">
+                        <figure class="practicearea-faqimage mb-4" style="margin: 0;">
+                            <img src="assets/images/practicearea-faqimage.png" alt="image" class="img-fluid"
+                                style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
                         </figure>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="consultation_content" data-aos="fade-up">
-                        <h6>Fale conosco</h6>
-                        <h2 class="text-white">Agende uma consulta gratuita</h2>
-                        <form id="contactpage" method="post" class="position-relative">
-                            <div class="form-group input1 float-left">
-                                <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
-                            </div>
-                            <div class="form-group float-left">
-                                <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
-                            </div>
-                            <div class="form-group input1 float-left">
-                                <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
-                            </div>
-                            <div class="form-group float-left">
-                                <select class="form-control">
-                                    <option>Área de interesse</option>
-                                    <option>Consultoria Tributária</option>
-                                    <option>Planejamento Fiscal</option>
-                                    <option>Contencioso Tributário</option>
-                                </select>
-                            </div>
-                            <div class="form-group message">
-                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
-                            </div>
-                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
-                                    class="fa-solid fa-arrow-right"></i></button>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Artigos/Blog -->
-    <section class="article-con">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="article_content text-center" data-aos="fade-up">
-                        <h6>Conteúdos</h6>
-                        <h2>Blog & Perguntas Frequentes</h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">
-                            O conhecimento que gera economia e fortalece sua gestão tributária.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up">
-                <div class="col-12">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="article-box">
-                                <figure class="mb-0">
-                                    <img src="./assets/images/article-image1.jpg" alt="imagem" class="img-fluid">
-                                </figure>
-                                <div class="box-content">
-                                    <div class="span_wrapper">
-                                        <span>18 de março de 2024</span>
-                                        <span class="dash">-</span>
-                                        <span>0 Comentários</span>
-                                    </div>
-                                    <a href="/single-blog" class="text-decoration-none">
-                                        <h5>Como reduzir impostos de forma legal</h5>
-                                    </a>
-                                    <p class="text-size-14">Descubra estratégias seguras para economizar e evitar riscos
-                                        fiscais.</p>
-                                    <a href="/single-blog" class="text-decoration-none">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ...adicione outros artigos conforme necessário... -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 </div>
