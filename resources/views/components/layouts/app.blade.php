@@ -133,6 +133,8 @@
 
 {{  $slot }}
 
+
+
     <!-- Footer -->
     <section class="footer-con position-relative" id="footer">
         <div class="container position-relative">

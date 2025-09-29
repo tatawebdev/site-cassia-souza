@@ -1,68 +1,68 @@
 <div>
     <div class="legal_matter position-relative">
-        <header class="header">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <a class="navbar-brand" href="/">
-                        <figure class="logo mb-0">
-                            <img style="width: 150px;" src="assets/images/logo-acinzentado.png" alt="logo"
-                                class="img-fluid">
-                        </figure>
-                    </a>
-                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Início</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about">Quem Somos</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
-                                    id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"> Nossas Soluções Tributárias   
- </a>
-                                <div class="dropdown-menu drop-down-content">
-                                    <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/practice-area">Consultoria Tributária</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/regularizacao-pgfn">Regularização de Débitos Federais - PGFN</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/planejamento-tributario">Planejamento Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/clinicas">Planejamento para Clínicas Médicas/Odontológicas</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/reforma-tributaria">Assessoria para Reforma Tributária</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/treinamento">Treinamento Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link" href="/recuperacao-pis-cofins">Recuperação de PIS e COFINS Monofásicos</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contact">Fale Conosco</a>
-                            </li>
-                        </ul>
-                        <div class="last_list">
-                            <figure class="nav-phoneicon mb-0"><img class="img-fluid"
-                                    src="./assets/images/nav-phoneicon.png" alt="telefone"></figure>
-                            <a class="text-decoration-none last_list_atag"
-                                href="https://web.whatsapp.com/send/?phone=5511915201084&text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia!%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20%E2%9A%96%EF%B8%8F">
-                                +55 11 91520 1084
-                            </a>
-                        </div>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="navbar-brand" href="index.html">
+                    <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""
+                            class="img-fluid"></figure>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sobre-nos">Sobre</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
+                                id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"> Serviços </a>
+                            <div class="dropdown-menu drop-down-content">
+                                <ul class="list-unstyled drop-down-pages">
+                                    <li class="nav-item"><a class="dropdown-item nav-link"
+                                            href="{{ route('servicos.consultoria.tributaria') }}">Consultoria
+                                            Tributária</a></li>
+                                    <li class="nav-item"><a class="dropdown-item nav-link"
+                                            href="{{ route('servicos.defesa.administrativa') }}">Defesa
+                                            Administrativa</a></li>
+                                    <li class="nav-item"><a class="dropdown-item nav-link"
+                                            href="{{ route('servicos.planejamento.tributario') }}">Planejamento
+                                            Tributário</a></li>
+                                    <li class="nav-item"><a class="dropdown-item nav-link"
+                                            href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de
+                                            Créditos</a></li>
+                                    <li class="nav-item"><a class="dropdown-item nav-link"
+                                            href="{{ route('servicos.conformidade.tributaria') }}">Conformidade
+                                            Tributária</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contato">Contato</a>
+                        </li>
+                    </ul>
+                    <div class="last_list">
+                        <a href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️"  class="float" target="_blank" rel="nofollow">
+                            <i class="fab fa-whatsapp my-float" style="font-size: 24px;"></i>
+                            <span style="margin-left: 8px;">(11) 91520-1084</span>
+                        </a>
                     </div>
-                </nav>
-            </div>
-            3
-            ,,,,,,,,,,,
-            
-        </header>
+                </div>
+            </nav>
+        </div>
+    </header>
         <section class="legal_matter_banner position-relative">
             <div class="container position-relative">
                 <div class="row">
