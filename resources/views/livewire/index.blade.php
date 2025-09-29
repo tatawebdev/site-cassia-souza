@@ -27,7 +27,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#"
                                     id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"> Soluções </a>
+                                    aria-expanded="false"> Nossas Soluções Tributárias   
+ </a>
                                 <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
                                         <li class="nav-item"><a class="dropdown-item nav-link" href="/practice-area">Consultoria Tributária</a></li>
@@ -58,6 +59,9 @@
                     </div>
                 </nav>
             </div>
+            3
+            ,,,,,,,,,,,
+            
         </header>
         <section class="legal_matter_banner position-relative">
             <div class="container position-relative">
@@ -65,23 +69,17 @@
                     <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 col-12">
                         <div class="banner_content" data-aos="fade-up">
                             <h2 class="text-white text-size-28 mb-3">
-                                Está pagando além do justo em impostos? Chegou a hora de mudar esse jogo.
-                            </h2>
+Está pagando além do justo em impostos?                             </h2>
                             <p class="text-white text-size-16 mb-3">
-                                O sistema tributário é complexo, mas você não precisa carregar esse peso sozinho.
-                                Com nossa <strong>consultoria tributária</strong>, ajudamos você a:
+                                Nossa consultoria tributária identifica reduções legais, regulariza dívidas, recupera tributos <strong>e prepara sua empresa para a Reforma.</strong>
                             </p>
-                            <ul class="text-white text-size-16 mb-3" style="list-style: disc; padding-left: 1.5em;">
-                                <li>Identificar oportunidades de <strong>redução de impostos de forma legal</strong>,
-                                </li>
-                                <li><strong>Regularizar dívidas</strong> sem riscos,</li>
-                                <li><strong>Recuperar tributos pagos indevidamente</strong>,</li>
-                                <li>Se preparar para os impactos da <strong>Reforma Tributária</strong>.</li>
-                            </ul>
+                           
                             <p class="text-white text-size-16 mb-3">
-                                Tudo isso com clareza, ética e planejamento, para que sua empresa tenha
+                        Tudo isso com clareza, ética e planejamento, para que sua empresa tenha
                                 <strong>previsibilidade, economia e segurança!</strong>
                             </p>
+
+
                             <a href="./contact" class="text-decoration-none appointment">Fale conosco<i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -89,7 +87,7 @@
                     <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="banner_wrapper position-relative">
                             <figure class="banner-image mb-0" data-aos="fade-up">
-                                <img src="./assets/images/banner-image.png" alt="advogada trabalhando"
+                                <img src="./assets/img/banner-novo1.png" alt="advogada trabalhando"
                                     class="img-fluid">
                             </figure>
                             <figure class="banner-background mb-0">

@@ -29,7 +29,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 text-lg-left text-center">
                     <div class="about_wrapper position-relative" data-aos="zoom-in">
                         <figure class="about-image mb-0">
-                            <img src="/assets/images/aboutpage-image.jpg" alt="imagem principal" class="img-fluid">
+                            <img src="/assets/img/sobrenos.png" alt="imagem principal" class="img-fluid">
                         </figure>
                         <figure class="about-circle mb-0">
                             <img src="/assets/images/aboutpage-circle.png" alt="imagem círculo" class="img-fluid">
@@ -38,9 +38,9 @@
                             <figure class="about-icon">
                                 <img src="/assets/images/aboutpage-icon.png" alt="ícone" class="img-fluid">
                             </figure>
-                            <span class="number counter">30</span>
-                            <sup class="plus">+</sup>
-                            <span class="text">Anos de experiência</span>
+                            <span class="number counter"></span>
+                         
+                            <span class="text">Consultoria estratégica</span>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                                         </figure>
                                         <span class="number counter">250</span>
                                         <sup class="plus">+</sup>
-                                        <span class="text">Empresas atendidas</span>
+                                        <span class="text">Economia tributária gerada</span>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                     </figure>
                                     <span class="number counter">180</span>
                                     <sup class="plus">+</sup>
-                                    <span class="text">Casos resolvidos</span>
+                                    <span class="text">Recuperação de créditos</span>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                             </figure>
                                             <span class="number counter">370</span>
                                             <sup class="plus">+</sup>
-                                            <span class="text">Clientes satisfeitos</span>
+                                            <span class="text">Consultorias estratégicas entregues</span>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +139,7 @@
                                         </figure>
                                         <span class="number counter">90</span>
                                         <sup class="plus">+</sup>
-                                        <span class="text">Prêmios e reconhecimentos</span>
+                                        <span class="text">Parcelamentos negociados </span>
                                     </div>
                                 </div>
                             </div>

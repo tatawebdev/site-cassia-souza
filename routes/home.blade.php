@@ -113,7 +113,7 @@
                             <figure  class="mb-0" style="width: 250px;"><img style="width: 250px;" src="./assets/images/logo-acinzentado.png" alt="logo"></figure>
                         </a>
                         <p class="text-size-14">
-                            Escritório especializado em advocacia tributária. Soluções personalizadas para empresas que buscam segurança, economia e regularidade fiscal.
+                            
                         </p>
                         <ul class="list-unstyled mb-0 social-icons">
                             <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i class="fa-brands fa-facebook-f social-networks"></i></a></li>
@@ -128,11 +128,23 @@
                         <ul class="list-unstyled mb-0">
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/" class=" text-size-14 text text-decoration-none">Início</a></li>
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/about" class=" text-size-14 text text-decoration-none">Quem Somos</a></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><a href="/blog-details" class=" text-size-14 text text-decoration-none">Soluções</a></li>
+                             <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdownArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Área de Atuação
+                        </a>
+                        <div class="dropdown-menu drop-down-content" aria-labelledby="navbarDropdownArea">
+                            <ul class="list-unstyled drop-down-pages">
+                                <li class="nav-item"><a class="dropdown-item nav-link" href="#">Consultoria Tributária</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href="#">Defesa Administrativa</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href="#">Planejamento Fiscal</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href="#">Recuperação de Créditos</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href="#">Compliance Tributário</a></li>
+                            </ul>
+                        </div>
+                    </li>
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/blog" class=" text-size-14 text text-decoration-none">Blog</a></li>
-                            <li><i class="fa-solid fa-arrow-right"></i><a href="/blog-details" class=" text-size-14 text text-decoration-none">Blog Detalhes</a></li>
-                            <li><i class="fa-solid fa-arrow-right"></i><a href="/rooms" class=" text-size-14 text text-decoration-none">Rooms</a></li>
-                            <li><i class="fa-solid fa-arrow-right"></i><a href="/rooms-details" class=" text-size-14 text text-decoration-none">Rooms Detalhes</a></li>
-                            <li><i class="fa-solid fa-arrow-right"></i><a href="/rooms2" class=" text-size-14 text text-decoration-none">Rooms2</a></li>
+
                             <li><i class="fa-solid fa-arrow-right"></i><a href="/contact" class=" text-size-14 text text-decoration-none">Contato</a></li>
                         </ul>
                     </div>
@@ -165,8 +177,7 @@
                             </li>
                             <li class="text">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p class="address mb-0">Av. Paulista, 1000 - Bela Vista, São Paulo/SP</p>
-                            </li>
+                                
                         </ul>
                     </div>
                 </div>
@@ -198,7 +209,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p class="mb-0">Copyright © cassiasouzaadvocacia.com.br, Todos os direitos reservados 2025</p>
+        <p class="mb-0">Copyright © cassiasouzaadvocacia.com.brT, Todos os direitos reservados 2025 - Desenvolvido por Tata Web</p>
     </div>
 </section>
 <!-- PRE LOADER -->

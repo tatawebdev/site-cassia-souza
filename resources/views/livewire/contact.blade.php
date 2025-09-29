@@ -24,52 +24,54 @@
     <section class="contact-con position-relative">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="contact_content text-center" data-aos="fade-up">
-                        <h6>Informações de contato</h6>
-                        <h2>Nossos canais de atendimento</h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto mb-0 text-size-16">
-                            Fale conosco por telefone, e-mail ou WhatsApp. Atendimento personalizado para empresas.
-                        </p>
-                    </div>
-                </div>
+            <div class="col-12">
+                <div class="contact_content text-center" data-aos="fade-up">
+                <h6>Informações de contato</h6>
+                <h2>Nossos canais de atendimento</h2>
+                <p class="col-xl-8 col-lg-10 mx-auto mb-0 text-size-16">
+                    Entre em contato pelo nosso WhatsApp e e-mail para ter um atendimento personalizado e também conheça nossas redes sociais. Eu simplifico a tributação.
+                </p>
+                </div>  
+            </div>
             </div>
             <div class="row" data-aos="fade-up">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <div class="contact-box">
-                        <figure class="contact-icon">
-                            <img src="/assets/images/contact-icon1.png" alt="Localização" class="img-fluid">
-                        </figure>
-                        <h5>Endereço:</h5>
-                        <div class="text">
-                            <p class="mb-0 text-size-14">Av. Paulista, 1000 - Bela Vista, São Paulo/SP</p>
-                        </div>
-                    </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="contact-box">
+                <figure class="contact-icon">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                </figure>
+                <h5>Redes Sociais:</h5>
+                <div class="text">
+                    <a href="https://www.facebook.com/cassia.souza.adv" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">Facebook</a>
+                    <a href="https://www.linkedin.com/company/cassia-souza-advocacia/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">LinkedIn</a>
+                    <a href="https://www.instagram.com/cassiasouza.adv/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">Instagram</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <div class="contact-box">
-                        <figure class="contact-icon">
-                            <img src="/assets/images/contact-icon2.png" alt="Telefone" class="img-fluid">
-                        </figure>
-                        <h5>Telefone</h5>
-                        <div class="text">
-                            <a href="tel:+5511915201084" class="mb-0 text-decoration-none text-size-14">+55 11 91520
-                                1084</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <div class="contact-box mb-0">
-                        <figure class="contact-icon">
-                            <img src="/assets/images/contact-icon3.png" alt="E-mail" class="img-fluid">
-                        </figure>
-                        <h5>E-mail:</h5>
-                        <div class="text">
-                            <a href="mailto:contato@cassiasouzaadvocacia.com.br"
-                                class="mb-0 text-decoration-none text-size-14">contato@cassiasouzaadvocacia.com.br</a>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="contact-box">
+                <figure class="contact-icon">
+                    <i class="fa-solid fa-phone fa-2x"></i>
+                </figure>
+                <h5>Telefone:</h5>
+                <div class="text">
+                    <a href="tel:+5511915201084" class="mb-0 text-decoration-none text-size-14">+55 11 91520
+                    1084</a>
                 </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="contact-box mb-0">
+                <figure class="contact-icon">
+                    <i class="fa-solid fa-envelope fa-2x"></i>
+                </figure>
+                <h5>E-mail:</h5>
+                <div class="text">
+                    <a href="mailto:contato@cassiasouzaadvocacia.com.br"
+                    class="mb-0 text-decoration-none text-size-14">contato@cassiasouzaadvocacia.com.br</a>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -82,13 +84,13 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_wrapper position-relative">
                         <figure class="consultation-image mb-0">
-                            <img src="/assets/images/contact-image.jpg" alt="imagem principal" class="image-fluid">
+                            <img src="/assets/img/contato2.png" alt="imagem principal" class="image-fluid">
                         </figure>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_content" data-aos="fade-up">
-                        <h6>Envie sua mensagem</h6>
+                        <h6> Converse com nossa equipe</h6>
                         <h2 class="text-white">Agende uma consulta ou tire suas dúvidas</h2>
                         <form id="contactpage" method="post" class="position-relative">
                             <div class="form-group input1 float-left">
