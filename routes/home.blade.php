@@ -116,9 +116,12 @@
                             
                         </p>
                         <ul class="list-unstyled mb-0 social-icons">
-                            <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i class="fa-brands fa-facebook-f social-networks"></i></a></li>
-                            <li><a href="https://twitter.com/i/flow/login" class="text-decoration-none"><i class="fa-brands fa-x-twitter social-networks"></i></a></li>
-                            <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i class="fa-brands fa-linkedin social-networks"></i></a></li>
+                           <li><a href="https://www.facebook.com/cassia.souza.adv/" class="text-decoration-none"><i
+                                class="fa-brands fa-facebook-f social-networks"></i></a></li>
+                    <li><a href="https://www.instagram.com/cassiasouza.adv/" class="text-decoration-none"><i
+                                class="fa-brands fa-instagram social-networks"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/cassiasouzaadv/" class="text-decoration-none"><i
+                                class="fa-brands fa-linkedin social-networks"></i></a></li>
                         </ul>
                     </div>
                 </div>

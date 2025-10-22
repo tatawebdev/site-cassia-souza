@@ -10,17 +10,14 @@
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
                             <h4>Planejamento Tributário</h4>
                             <div class="span-fa-outer-con">
-                                <i class="fa-solid fa-user"></i>
-                                <span class="text-size-14 text-mr">Por: Cassia Souza</span>
-                                <i class="mb-0 calendar fa-solid fa-calendar-days"></i>
-                                <span class="mb-0 text-size-14">Atualizado</span>
+                            
                             </div>
                             <p class="text-size-16">
                                 Pagar tributos de forma inteligente não é apenas reduzir custos — é ganhar segurança, previsibilidade e liberdade para crescer.<br>
                                 Nosso planejamento tributário é estruturado sob medida para que sua empresa pague apenas o que é devido, sem riscos de autuações e com total conformidade legal.<br>
                                 Apoiamos desde a escolha do regime tributário mais vantajoso (inclusive para novos CNPJs) até a reestruturação de empresas em operação, identificando oportunidades de economia e fortalecendo a saúde financeira do negócio.<br>
                                 Com a estratégia certa, você transforma os tributos em aliados do crescimento.<br>
-                                <strong>Fale conosco e descubra como otimizar sua carga tributária com inteligência e segurança.</strong>
+                            
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">
@@ -28,27 +25,16 @@
                                 <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <p class="mb-0 text-white text-size-18">“Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur.xcepteur sint occaecat”</p>
+                            <p class="mb-0 text-white text-size-18">“Pague tributos com inteligência: reduza custos, evite riscos e transforme obrigações em oportunidades de crescimento”</p>
                         </div>
-                        <p class="text text-size-16">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae
-                            ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                            ipsam voluptatem quia voluptas.
+                        <p class="text text-size-16">Além de reduzir custos, nosso acompanhamento contínuo permite que você antecipe cenários fiscais, evitando surpresas e penalidades. Identificamos créditos, incentivos e regimes especiais aplicáveis ao seu negócio, garantindo que cada decisão tributária seja estratégica e alinhada aos seus objetivos de crescimento.
                         </p>
                         <div class="content3" data-aos="fade-up" data-aos-duration="700">
                             <figure class="image1 mb-3" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <p class="text text-size-16">Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum.
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae
-                                ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                enim ipsam voluptatem quia voluptas.
+                            <p class="text text-size-16">Com nossa consultoria, você tem mais do que números: tem clareza, controle e liberdade para investir no que realmente importa — expandir sua empresa, inovar e consolidar sua posição no mercado. Transforme a complexidade tributária em uma vantagem competitiva. Entre em contato e comece a pagar tributos com inteligência e segurança.
                             </p>
                         </div>
                         <div class="content4" data-aos="fade-up" data-aos-duration="700">
@@ -204,14 +190,14 @@
                     <div class="box1 box2" data-aos="fade-up" data-aos-duration="700">
                         <h4>Popular Category</h4>
                         <ul class="list-unstyled mb-0">
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Digital business</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Business Consulting</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Consulting</a></li>
-                            <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html">Business & Finance</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">Conheça nossos serviços</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">descubra como podemos</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">ajudar a impulsionar o crescimento</a></li>
+                            <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html"> do seu negócio! </a></li>
                         </ul>
                     </div>
                     <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Follow Us</h4>
+                        <h4>Conheça nossas redes sociais</h4>
                         <div class="social-icons">
                             <ul class="mb-0 list-unstyled ">
                                 <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i
@@ -231,14 +217,14 @@
                     <div class="box1 box4" data-aos="fade-up" data-aos-duration="700">
                         <h4>Tags</h4>
                         <ul class="tag mb-0 list-unstyled">
-                            <li><a class="button text-decoration-none" href="about.html">Assistant</a></li>
-                            <li><a class="button button2 text-decoration-none" href="about.html">Advice</a></li>
-                            <li><a class="button button3 text-decoration-none" href="about.html">Virtual</a></li>
-                            <li><a class="button button4 text-decoration-none" href="about.html">Designer</a></li>
-                            <li><a class="button button5 text-decoration-none" href="about.html">Blog</a></li>
-                            <li><a class="button button6 text-decoration-none" href="about.html">Support</a></li>
-                            <li><a class="button button7 text-decoration-none" href="about.html">Finance</a></li>
-                            <li><a class="button button8 text-decoration-none" href="about.html">Projects</a></li>
+                            <li><a class="button text-decoration-none" href="about.html">Planejamento Tributário</a></li>
+                            <li><a class="button button2 text-decoration-none" href="about.html">GestaoTributariaice</a></li>
+                            <li><a class="button button3 text-decoration-none" href="about.html">ConsultoriaTributaria</a></li>
+                            <li><a class="button button4 text-decoration-none" href="about.html">EconomiaFiscal</a></li>
+                            <li><a class="button button5 text-decoration-none" href="about.html">CrescimentoEmpresarial</a></li>
+                            <li><a class="button button6 text-decoration-none" href="about.html">TributosSeguros</a></li>
+                            <li><a class="button button7 text-decoration-none" href="about.html">EstrategiaTributaria</a></li>
+                            
                         </ul>
                     </div>
                     <div class="box1 box5" data-aos="fade-up" data-aos-duration="700">

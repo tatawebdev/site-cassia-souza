@@ -101,9 +101,8 @@
                                         <figure class="icon">
                                             <img src="/assets/images/succeed-icon1.png" alt="ícone" class="img-fluid">
                                         </figure>
-                                        <span class="number counter">250</span>
                                         <sup class="plus">+</sup>
-                                        <span class="text">Economia tributária gerada</span>
+                                        <span class="text">Empresas mais lucrativas e seguras</span>
                                     </div>
                                 </div>
                             </div>
@@ -112,9 +111,8 @@
                                     <figure class="icon">
                                         <img src="/assets/images/succeed-icon2.png" alt="ícone" class="img-fluid">
                                     </figure>
-                                    <span class="number counter">180</span>
                                     <sup class="plus">+</sup>
-                                    <span class="text">Recuperação de créditos</span>
+                                    <span class="text">Estratégias criadas com inteligência tributária</span>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +124,6 @@
                                             <figure class="icon">
                                                 <img src="/assets/images/succeed-icon3.png" alt="ícone" class="img-fluid">
                                             </figure>
-                                            <span class="number counter">370</span>
                                             <sup class="plus">+</sup>
                                             <span class="text">Consultorias estratégicas entregues</span>
                                         </div>
@@ -137,9 +134,8 @@
                                         <figure class="icon">
                                             <img src="/assets/images/succeed-icon4.png" alt="ícone" class="img-fluid">
                                         </figure>
-                                        <span class="number counter">90</span>
                                         <sup class="plus">+</sup>
-                                        <span class="text">Parcelamentos negociados </span>
+                                        <span class="text">Soluções que simplificam o complexo </span>
                                     </div>
                                 </div>
                             </div>

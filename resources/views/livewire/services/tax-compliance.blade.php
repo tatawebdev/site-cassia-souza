@@ -10,10 +10,7 @@
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
                             <h4>Planejamento Tributário para Clínicas Médicas e Odontológicas</h4>
                             <div class="span-fa-outer-con">
-                                <i class="fa-solid fa-user"></i>
-                                <span class="text-size-14 text-mr">Por: Cassia Souza</span>
-                                <i class="mb-0 calendar fa-solid fa-calendar-days"></i>
-                                <span class="mb-0 text-size-14">Atualizado</span>
+                                
                             </div>
                             <p class="text-size-16">
                                 Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.<br>

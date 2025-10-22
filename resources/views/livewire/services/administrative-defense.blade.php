@@ -10,10 +10,7 @@
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
                             <h4>Assessoria para a Reforma Tributária</h4>
                             <div class="span-fa-outer-con">
-                                <i class="fa-solid fa-user"></i>
-                                <span class="text-size-14 text-mr">Por: Cassia Souza</span>
-                                <i class="mb-0 calendar fa-solid fa-calendar-days"></i>
-                                <span class="mb-0 text-size-14">Atualizado</span>
+                                
                             </div>
                             <p class="text-size-16">
                                 A Reforma Tributária está transformando o sistema tributário brasileiro.<br>
