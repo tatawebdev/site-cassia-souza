@@ -111,29 +111,33 @@
                 </nav>
             </div>
         </header>
-        <!-- Sub Banner -->
-        <section class="sub_banner_con position-relative">
-            <div class="container position-relative">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="sub_banner_content" data-aos="fade-up">
-                            <h1 class="text-white">Three Column</h1>
-                            <p class="col-xl-7 col-lg-9 mx-auto text-white text-size-16">Dolor in reprehenderit in
-                                voluptate velit esse cillumdolore eu fugiat nulla pariatur sint occaecat
-                                non sunt in mollit anim laborum.
-                            </p>
-                            <div class="box">
-                                <a href="index.html" class="text-decoration-none">
-                                    <span class="mb-0">Home</span>
-                                </a>
-                                <i class="arrow fa-solid fa-arrow-right"></i>
-                                <span class="mb-0 box_span">Three Column</span>
+
+        @if (!empty($banner))
+            <section class="sub_banner_con position-relative">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sub_banner_content" data-aos="fade-up">
+                                <h1 class="text-white">{{ $banner['title'] }}</h1>
+                                <p class="col-xl-7 col-lg-9 mx-auto text-white text-size-16">{{ $banner['descricao'] }}</p>
+                                <div class="box">
+                                    @foreach ($breadcrumbs as $index => $breadcrumb)
+                                        @if ($index < count($breadcrumbs) - 1)
+                                            <a href="{{ $breadcrumb['url'] }}" class="text-decoration-none">
+                                                <span class="mb-0">{{ $breadcrumb['label'] }}</span>
+                                            </a>
+                                            <i class="arrow fa-solid fa-arrow-right"></i>
+                                        @else
+                                            <span class="mb-0 box_span">{{ $breadcrumb['label'] }}</span>
+                                        @endif
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
     </div>
 
     {{  $slot }}

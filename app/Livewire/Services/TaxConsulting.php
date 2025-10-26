@@ -9,6 +9,20 @@ class TaxConsulting extends Component
 {
     public function render()
     {
-        return view('livewire.services.tax-consulting');
+        $banner = [
+            'title' => 'Consultoria Tributária',
+            'descricao' => 'Consultoria especializada em matéria tributária.',
+        ];
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+            ['label' => 'Serviços', 'url' => '/servicos'],
+            ['label' => 'Consultoria Tributária', 'url' => '/servicos/consultoria-tributaria'],
+        ];
+
+        return view('livewire.services.tax-consulting')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+            ]);
     }
 }

@@ -8,6 +8,20 @@ class CreditRecovery extends Component
 {
     public function render()
     {
-        return view('livewire.services.credit-recovery');
+        $banner = [
+            'title' => 'Recuperação de Crédito',
+            'descricao' => 'Atuamos na recuperação de créditos e direitos.',
+        ];
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+            ['label' => 'Serviços', 'url' => '/servicos'],
+            ['label' => 'Recuperação de Crédito', 'url' => '/servicos/recuperacao-de-credito'],
+        ];
+
+        return view('livewire.services.credit-recovery')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+            ]);
     }
 }

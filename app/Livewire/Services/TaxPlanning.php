@@ -8,6 +8,20 @@ class TaxPlanning extends Component
 {
     public function render()
     {
-        return view('livewire.services.tax-planning');
+        $banner = [
+            'title' => 'Planejamento Tributário',
+            'descricao' => 'Estratégias de planejamento tributário para reduzir riscos e otimizar custos.',
+        ];
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+            ['label' => 'Serviços', 'url' => '/servicos'],
+            ['label' => 'Planejamento Tributário', 'url' => '/servicos/planejamento-tributario'],
+        ];
+
+        return view('livewire.services.tax-planning')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+            ]);
     }
 }

@@ -8,6 +8,19 @@ class About extends Component
 {
     public function render()
     {
-        return view('livewire.about');
+        $banner = [
+            'title' => 'Sobre Nós',
+            'descricao' => 'Conheça mais sobre nosso escritório e nossa missão.',
+        ];
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+            ['label' => 'Sobre', 'url' => '/sobre-nos'],
+        ];
+
+        return view('livewire.about')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+            ]);
     }
 }

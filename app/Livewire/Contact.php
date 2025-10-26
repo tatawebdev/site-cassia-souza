@@ -8,6 +8,19 @@ class Contact extends Component
 {
     public function render()
     {
-        return view('livewire.contact');
+        $banner = [
+            'title' => 'Contatos',
+            'descricao' => 'Entre em contato conosco para dúvidas ou informações.',
+        ];
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+            ['label' => 'Contatos', 'url' => '/contatos'],
+        ];
+
+        return view('livewire.contact')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+            ]);
     }
 }
