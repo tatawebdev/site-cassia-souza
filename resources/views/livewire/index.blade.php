@@ -98,32 +98,19 @@
                         </div>
                     </div>
                 </div>
-                <ul class="list-unstyled mb-0 social-icons">
-
-                    <li><a href="https://www.instagram.com/cassiasouza.adv/" class="text-decoration-none"
-                            target="_blank" rel="noopener noreferrer"><i
-                                class="fa-brands fa-instagram social-networks"></i></a></li>
-
-                    <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1"
-                            class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i
-                                class="fa-brands fa-tiktok social-networks"></i></a></li>
-
-                    <li><a href="https://www.linkedin.com/in/cassiasouzaadv/" class="text-decoration-none"
-                            target="_blank" rel="noopener noreferrer"><i
-                                class="fa-brands fa-linkedin social-networks"></i></a></li>
-                </ul>
+                @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'list-unstyled mb-0 social-icons'])
             </div>
         </section>
     </div>
+
+    @include('sobre-nos')
+
     <!-- Expertise -->
-    <section class="expertise-con">
+    <section class="expertise-con" style="padding-top: 0px">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="expertise_content text-center" data-aos="fade-up" style="padding: 32px 0 24px 0;">
-                        <h6
-                            style="white-space: nowrap; font-size: 1.15rem; letter-spacing: 1px; margin-bottom: 12px; text-align: center;">
-                            Nossas Soluções Tributárias</h6>
                         <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 18px; text-align: center;">Menos
                             Incertezas. Mais Segurança Tributária.</h2>
                         <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0"
@@ -135,14 +122,8 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
             <div class="row" data-aos="fade-up">
+
                 <div class="col-12">
                     <div class="owl-carousel owl-theme">
                         @foreach ($servicos as $key => $servico)

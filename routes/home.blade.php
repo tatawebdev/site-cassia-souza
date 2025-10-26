@@ -115,14 +115,7 @@
                         <p class="text-size-14">
                             
                         </p>
-                           <ul class="list-unstyled mb-0 social-icons">
-                               <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i
-                                    class="fa-brands fa-tiktok social-networks"></i></a></li>
-                        <li><a href="https://www.instagram.com/cassiasouza.adv/" class="text-decoration-none"><i
-                                    class="fa-brands fa-instagram social-networks"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/cassiasouzaadv/" class="text-decoration-none"><i
-                                    class="fa-brands fa-linkedin social-networks"></i></a></li>
-                        </ul>
+                        @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'list-unstyled mb-0 social-icons'])
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4 col-6">

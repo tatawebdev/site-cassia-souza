@@ -30,15 +30,7 @@
                             Escritório especializado em advocacia tributária. Soluções personalizadas para empresas
                             que buscam segurança, economia e regularidade fiscal.
                         </p>
-                        <ul class="list-unstyled mb-0 social-icons">
-                            <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1"
-                                    class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i
-                                        class="fa-brands fa-tiktok social-networks"></i></a></li>
-                            <li><a href="https://twitter.com/i/flow/login" class="text-decoration-none"><i
-                                        class="fa-brands fa-x-twitter social-networks"></i></a></li>
-                            <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i
-                                        class="fa-brands fa-linkedin social-networks"></i></a></li>
-                        </ul>
+                        @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'list-unstyled mb-0 social-icons'])
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4 col-6">
@@ -52,7 +44,8 @@
                                 <a href="/sobre-nos" class=" text-size-14 text text-decoration-none">Quem Somos</a>
                             </li>
                             <li><i class="fa-solid fa-arrow-right"></i>
-                                <a href="http://blog.cassiasouzaadvocacia.com.br/" target="_blank" class=" text-size-14 text text-decoration-none">Blog</a>
+                                <a href="http://blog.cassiasouzaadvocacia.com.br/" target="_blank"
+                                    class=" text-size-14 text text-decoration-none">Blog</a>
                             </li>
                             <li><i class="fa-solid fa-arrow-right"></i>
                                 <a href="/contact" class=" text-size-14 text text-decoration-none">Contato</a>

@@ -73,18 +73,7 @@
                                     <div class="icon">
                                         <h4>Social Share</h4>
                                         <div class="social-icons position-absolute">
-                                            <ul class="mb-0 list-unstyled ">
-                                                <li><a href="https://www.linkedin.com/login"
-                                                        class="text-decoration-none"><i
-                                                            class="fa-brands fa-linkedin-in social-networks"></i></a>
-                                                </li>
-                                                <li><a href="https://www.instagram.com/" class="text-decoration-none"><i
-                                                            class="fa-brands fa-instagram social-networks"></i></a></li>
-                                                <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok social-networks"></i></a></li>
-                                                <li><a href="https://twitter.com/i/flow/login"
-                                                        class="text-decoration-none"><i
-                                                            class="fa-brands fa-x-twitter social-networks"></i></a></li>
-                                            </ul>
+                                            @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                                         </div>
                                     </div>
                                 </div>
@@ -209,20 +198,10 @@
                             <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html">Business & Finance</a></li>
                         </ul>
                     </div>
-                    <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
+                        <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <ul class="mb-0 list-unstyled ">
-                                <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i
-                                            class="fa-brands fa-linkedin-in social-networks"></i></a>
-                                </li>
-                                <li><a href="https://www.instagram.com/" class="text-decoration-none"><i
-                                            class="fa-brands fa-instagram social-networks"></i></a></li>
-                                <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok social-networks"></i></a></li>
-                                <li><a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
-                                        class="text-decoration-none"><i
-                                            class="fa-brands fa-x-twitter social-networks"></i></a></li>
-                            </ul>
+                            @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                         </div>
                     </div>
                     <div class="box1 box4" data-aos="fade-up" data-aos-duration="700">
