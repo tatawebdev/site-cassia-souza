@@ -1,25 +1,4 @@
 <div>
-    <section class="sub_banner_con position-relative">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-12">
-                    <div class="sub_banner_content" data-aos="fade-up">
-                        <h1 class="text-white">Quem Somos</h1>
-                        <p class="col-xl-7 col-lg-9 mx-auto text-white text-size-16">
-                            Escritório especializado em direito tributário, comprometido em gerar resultados reais para empresas que buscam segurança, economia e regularidade fiscal.
-                        </p>
-                        <div class="box">
-                            <a href="/" class="text-decoration-none">
-                                <span class="mb-0">Início</span>
-                            </a>
-                            <i class="arrow fa-solid fa-arrow-right"></i>
-                            <span class="mb-0 box_span">Quem Somos</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="aboutpage-con position-relative">
         <figure class="about-sideimage mb-0">
             <img src="/assets/images/lawyer-sideimage.png" alt="imagem lateral" class="img-fluid">
