@@ -99,7 +99,7 @@
                                 <div class="box">
                                     <div class="succeed-box">
                                         <figure class="icon">
-                                            <img src="/assets/images/succeed-icon1.png" alt="ícone" class="img-fluid">
+                                           <i class="fa-solid fa-chart-line"></i>
                                         </figure>
                                         <sup class="plus">+</sup>
                                         <span class="text">Empresas mais lucrativas e seguras</span>
