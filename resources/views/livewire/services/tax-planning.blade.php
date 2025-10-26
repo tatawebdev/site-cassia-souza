@@ -13,11 +13,14 @@
                             
                             </div>
                             <p class="text-size-16">
-                                Pagar tributos de forma inteligente não é apenas reduzir custos — é ganhar segurança, previsibilidade e liberdade para crescer.<br>
-                                Nosso planejamento tributário é estruturado sob medida para que sua empresa pague apenas o que é devido, sem riscos de autuações e com total conformidade legal.<br>
-                                Apoiamos desde a escolha do regime tributário mais vantajoso (inclusive para novos CNPJs) até a reestruturação de empresas em operação, identificando oportunidades de economia e fortalecendo a saúde financeira do negócio.<br>
-                                Com a estratégia certa, você transforma os tributos em aliados do crescimento.<br>
-                            
+                                Planejar tributos é criar previsibilidade e reduzir custos de forma legal e sustentável.<br>
+                                Desenvolvemos estratégias sob medida: análise do regime tributário, identificação de créditos e incentivos aplicáveis, estruturação societária quando necessária e simulações de impacto fiscal.<br>
+                                Nosso objetivo é alinhar a carga tributária aos objetivos do negócio, minimizando riscos e garantindo segurança jurídica nas escolhas adotadas.<br>
+                                <br>
+                                <strong>Planejamento Tributário para Clínicas Médicas e Odontológicas:</strong><br>
+                                Para o setor de saúde, oferecemos soluções específicas (como estudos de enquadramento e alternativas de tributação) com foco em reduzir a carga tributária sem comprometer a conformidade. Entregamos análises práticas que aumentam a previsibilidade financeira e a margem operacional.
+                                <br>
+                                <strong>Fale conosco para um diagnóstico e proposta personalizada.</strong>
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">

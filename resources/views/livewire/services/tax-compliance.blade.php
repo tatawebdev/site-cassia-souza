@@ -8,15 +8,15 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Planejamento Tributário para Clínicas Médicas e Odontológicas</h4>
+                            <h4>Conformidade Tributária</h4>
                             <div class="span-fa-outer-con">
                                 
                             </div>
                             <p class="text-size-16">
-                                Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.<br>
-                                Para as clínicas médicas e odontológicas existe a possibilidade de reduzir de forma significativa a carga tributária por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido.<br>
-                                Nosso papel é estruturar um planejamento tributário personalizado, que garanta economia real, segurança jurídica e previsibilidade financeira, sempre com ética e dentro da legalidade.<br>
-                                Se a sua clínica busca pagar apenas o justo e aumentar a rentabilidade sem riscos, fale conosco.
+                                Garantir conformidade é a primeira linha de defesa do seu negócio contra autuações e passivos inesperados.<br>
+                                Oferecemos acompanhamento contínuo das obrigações acessórias, conciliações fiscais, revisão de lançamentos e rotinas de compliance tributário para que sua empresa cumpra prazos e exigências com segurança.<br>
+                                Nosso trabalho inclui checklists, orientações práticas para a área contábil/financeira, monitoramento de mudanças legais e relatórios periódicos que permitem decisões rápidas e seguras.<br>
+                                <strong>Evite riscos e mantenha a empresa em dia — fale conosco para estruturar a conformidade tributária sob medida.</strong>
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">

@@ -8,22 +8,16 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Assessoria para a Reforma Tributária</h4>
+                            <h4>Defesa Administrativa Tributária</h4>
                             <div class="span-fa-outer-con">
                                 
                             </div>
                             <p class="text-size-16">
-                                A Reforma Tributária está transformando o sistema tributário brasileiro.<br>
-                                A questão é: sua empresa está preparada para as mudanças?<br>
-                                Oferecemos assessoria jurídica especializada para ajudar empresários a compreender os impactos da Reforma e a se adaptar com segurança, clareza e orientações estratégicas.<br>
-                                Com nossa assessoria, você terá apoio em:<br>
-                                • Análise dos principais pontos da Reforma Tributária e seus efeitos diretos na sua empresa;<br>
-                                • Avaliação dos impactos na carga tributária e no fluxo financeiro;<br>
-                                • Estratégias de transição para o novo modelo tributário;<br>
-                                • Identificação de riscos e oportunidades no novo cenário;<br>
-                                • Treinamentos e materiais práticos para gestores e equipes.<br>
-                                <strong>Antecipe-se às mudanças e transforme a Reforma Tributária em oportunidade.<br>
-                                Fale conosco e garanta que sua empresa avance com confiança.</strong>
+                                Quando a empresa enfrenta autuações ou questionamentos fiscais, é essencial ter defesa técnica e estratégia jurídica — não improviso.<br>
+                                Nossa atuação em defesa administrativa inclui elaboração de impugnações, recursos administrativos, sustentações e negociações junto aos órgãos fazendários e à PGFN.<br>
+                                Trabalhamos para reduzir riscos, evitar execuções fiscais e buscar soluções eficientes, como parcelamentos, revisão de débitos e apresentação de provas e teses jurídicas robustas.<br>
+                                Atuamos com foco em segurança jurídica e resultado prático, preservando o caixa e a reputação da empresa.<br>
+                                <strong>Conte com uma defesa técnica, ágil e estratégica — entre em contato para avaliação do seu caso.</strong>
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">

@@ -8,15 +8,13 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Consultoria Tributária</h4>
+                            <h4>Consultoria Tributária Mensal</h4>
                           
                             <p class="text-size-16">
-                                A rotina de um empresário já é cheia de desafios — e a área tributária não precisa ser mais um deles.<br>
-                                Nossa consultoria acompanha sua empresa de forma contínua, garantindo que cada operação seja realizada com segurança e dentro da lei.<br>
-                                Revisamos suas movimentações fiscais, identificamos riscos, corrigimos falhas e apontamos oportunidades de economia.<br>
-                                Assim, você evita autuações, mantém regularidade e toma decisões mais seguras para o crescimento do negócio.<br>
-                                Com esse suporte, sua empresa ganha tranquilidade e resultados consistentes mês a mês.<br>
-                                <strong>Fale conosco e descubra como podemos ser o parceiro tributário que acompanha o seu crescimento.</strong>
+                                Acompanhamento técnico e estratégico para que sua empresa esteja sempre em conformidade e identificando oportunidades de economia.<br>
+                                Oferecemos revisão periódica de tributos, análise de operações, orientação sobre incentivos fiscais e suporte para tomada de decisões tributárias do dia a dia.<br>
+                                Nosso trabalho prioriza clareza e praticidade: relatórios objetivos, reuniões periódicas e recomendações acionáveis que geram impacto no caixa e reduzem risco de autuação.<br>
+                                <strong>Conte com um atendimento personalizado e contínuo — fale conosco para montar um plano sob medida.</strong>
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">

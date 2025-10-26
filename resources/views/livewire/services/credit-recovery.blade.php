@@ -8,16 +8,15 @@
                                 loading="lazy">
                         </figure>
                         <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Regularização de Débitos Federais - PGFN</h4>
+                            <h4>Recuperação de Créditos e Regularização</h4>
                             <div class="span-fa-outer-con">
                                 
                             </div>
                             <p class="text-size-16">
-                                Dívidas com a União não precisam ser um peso permanente no seu negócio.<br>
-                                Atuamos na negociação de débitos inscritos em Dívida Ativa junto à PGFN, buscando descontos nos juros e multas e parcelamentos especiais, inclusive com revisão da CAPAG para adequar a capacidade de pagamento à realidade da sua empresa.<br>
-                                Com isso, sua empresa evita execuções fiscais, bloqueios da conta bancária e penhora de bens, recuperando credibilidade e fôlego financeiro.<br>
-                                Não deixe que a Dívida Ativa comprometa o futuro do seu negócio.<br>
-                                <strong>Fale conosco e inicie a regularização com segurança e apoio jurídico especializado.</strong>
+                                Identificamos e recuperamos créditos tributários pagos indevidamente (como PIS/COFINS monofásicos) e conduzimos processos de restituição, compensação ou pedido administrativo quando cabível.<br>
+                                Também atuamos na regularização de débitos inscritos em Dívida Ativa junto à PGFN, buscando soluções que aliviem o fluxo de caixa: revisão de encargos, parcelamentos vantajosos e negociações técnicas.<br>
+                                Nosso trabalho integra análise documental detalhada, levantamento de créditos possíveis e acompanhamento administrativo e judicial até a efetiva recuperação ou regularização financeira.<br>
+                                <strong>Recupere recursos ao caixa da sua empresa e regularize suas obrigações com segurança jurídica — fale com nossa equipe.</strong>
                             </p>
                         </div>
                         <div class="content2" data-aos="fade-up" data-aos-duration="700">
