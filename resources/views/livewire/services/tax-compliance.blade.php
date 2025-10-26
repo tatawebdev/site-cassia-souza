@@ -105,43 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content7" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Leave a Comment</h4>
-                            <form id="blogpage" method="POST">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group mb-0">
-                                            <textarea class="form_style" placeholder="Enter your comment here..."
-                                                rows="3" name="msg"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group mb-0">
-                                            <input type="text" class="form_style" placeholder="Your name" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group mb-0">
-                                            <input type="email" class="form_style" placeholder="Your e-mail"
-                                                name="emailid">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group mb-0">
-                                            <input type="text" class="form_style text-mb" placeholder="Your topic"
-                                                name="topic">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="button text-center">
-                                    <button type="submit" class="post_comment">Post Comment</button>
-                                </div>
-                            </form>
-                        </div>
+                        <!-- seção de comentários removida -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
