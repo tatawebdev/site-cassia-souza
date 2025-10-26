@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="icon">
-                                        <h4>Social Share</h4>
+                                        <h4>Compartilhar</h4>
                                         <div class="social-icons position-absolute">
                                             @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                                         </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
                         <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Follow Us</h4>
+                        <h4>Siga-nos</h4>
                         <div class="social-icons">
                             @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                         </div>

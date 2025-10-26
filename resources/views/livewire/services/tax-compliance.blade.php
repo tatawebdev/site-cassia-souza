@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="icon">
-                                        <h4>Social Share</h4>
+                                        <h4>Compartilhar</h4>
                                         <div class="social-icons position-absolute">
                                             @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                                         </div>
@@ -98,7 +98,7 @@
                                 <div class="content">
                                     <h5>Samantha Nicolan</h5>
                                     <span class="text-size-14">Dec 29, 2022</span>
-                                    <a class="reply text-decoration-none" href="#">Reply</a>
+                                    <a class="reply text-decoration-none" href="#">Responder</a>
                                     <div class="text_holder">
                                         <p class="text-size-16">Comentário de cliente: orientações claras e entregas práticas para a equipe financeira.</p>
                                     </div>
@@ -117,10 +117,10 @@
                     </div>
                         <h4>Categorias populares</h4>
                         <ul class="list-unstyled mb-0">
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Digital business</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Business Consulting</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Consulting</a></li>
-                            <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html">Business & Finance</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">Negócios digitais</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">Consultoria empresarial</a></li>
+                            <li class="text-size-16"><a href="three-colum-sidbar.html">Consultoria</a></li>
+                            <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html">Negócios & Finanças</a></li>
                         </ul>
                     </div>
                         <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
@@ -156,24 +156,21 @@
                                 <img src="/assets/images/singleblog-feed2.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                         <div class="feed">
                             <figure class="feed-image mb-0" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-feed3.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                         <div class="feed feed4">
                             <figure class="feed-image mb-0" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-feed4.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="icon">
-                                        <h4>Social Share</h4>
+                                        <h4>Compartilhar</h4>
                                         <div class="social-icons position-absolute">
                                                 @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                                         </div>
@@ -104,7 +104,7 @@
                                 <div class="content">
                                     <h5>Samantha Nicolan</h5>
                                     <span class="text-size-14">Dec 29, 2022</span>
-                                    <a class="reply text-decoration-none" href="#">Reply</a>
+                                    <a class="reply text-decoration-none" href="#">Responder</a>
                                     <div class="text_holder">
                                         <p class="text-size-16">Comentário de cliente: recomendação clara e entrega prática para a equipe financeira.</p>
                                     </div>
@@ -162,24 +162,21 @@
                                 <img src="/assets/images/singleblog-feed2.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                         <div class="feed">
                             <figure class="feed-image mb-0" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-feed3.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                         <div class="feed feed4">
                             <figure class="feed-image mb-0" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-feed4.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Why You Need Virtual Assistant for Your
-                                Company</a>
+                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
                         </div>
                     </div>
                 </div>
