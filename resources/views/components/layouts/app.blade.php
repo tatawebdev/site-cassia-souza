@@ -39,8 +39,6 @@
 </head>
 
 <body>
-    <!-- Back to top button -->
-    <a id="button"></a>
 
     <div class="sub_banner position-relative">
         <figure class="banner-rightimage image mb-0">

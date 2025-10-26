@@ -203,205 +203,208 @@
     <!-- Faq Testimonial -->
 
     <section class="legal_situation_testimonial position-relative" style="background-color: #fff !important">
-        <div class="container"></div>
-        <div class="row">
-            <div class="col-12">
-                <div class="testimonial_content text-center position-relative" data-aos="fade-up">
-                    <h6>Depoimentos</h6>
-                    <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
-                    <figure class="mb-0">
-                        <img src="./assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
-                    </figure>
-                </div>
-            </div>
-        </div>
-        <div class="row position-relative" data-aos="fade-up">
-            <div class="col-12">
-                <div id="testimonialcarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        @foreach (collect($mockup)->sortByDesc('rating')->sortByDesc('text') as $review)
-                            @if (!empty($review['text']))
-                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                    <div class="testimonial_box">
-                                        <figure class="testimonial-image mb-3">
-                                            <img src="{{ asset('assets/fotos/image_' . $review['id'] . '.jpg') }}"
-                                                alt="client image" class="img-fluid rounded-circle"
-                                                style="width: 80px; height: 80px; object-fit: cover;">
-                                        </figure>
-                                        <p class="text-size-18">{{ $review['text'] }}</p>
-                                        <div class="reviewer-name mt-2">
-                                            <strong>{{ $review['author_name'] }}</strong>
-                                        </div>
-                                        <div class="testimonial-stars mt-2">
-                                            @for ($i = 0; $i < $review['rating']; $i++)
-                                                <i class="fa fa-star" style="color: #FFD700;"></i>
-                                            @endfor
-                                            @for ($i = $review['rating']; $i < 5; $i++)
-                                                <i class="fa fa-star" style="color: #E0E0E0;"></i>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                    <div class="pagination-outer">
-                        <a class="carousel-control-prev" href="#testimonialcarousel" role="button" data-slide="prev">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#testimonialcarousel" role="button" data-slide="next">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
-</section>
-
-
-<!-- Fale Conosco -->
-<section class="consultation-con position-relative">
-    <figure class="consultation-sideimage mb-0">
-        <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
-    </figure>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                <div class="consultation_wrapper position-relative">
-                    <figure class="consultation-image mb-0">
-                        <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
-                    </figure>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                <div class="consultation_content" data-aos="fade-up">
-                    <h6>Fale conosco</h6>
-                    <h2 class="text-white">Agende uma consulta gratuita</h2>
-                    <form id="contactpage" method="post" class="position-relative">
-                        <div class="form-group input1 float-left">
-                            <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
-                        </div>
-                        <div class="form-group float-left">
-                            <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
-                        </div>
-                        <div class="form-group input1 float-left">
-                            <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
-                        </div>
-                        <div class="form-group float-left">
-                            <select class="form-control">
-                                <option>Área de interesse</option>
-                                <option>Consultoria Tributária</option>
-                                <option>Planejamento Fiscal</option>
-                                <option>Contencioso Tributário</option>
-                            </select>
-                        </div>
-                        <div class="form-group message">
-                            <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
-                        </div>
-                        <button id="submit" type="submit" class="appointment">Agendar Consulta<i
-                                class="fa-solid fa-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-@php
-    $faqs = [
-        [
-            'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
-            'answer' => 'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem riscos.'
-        ],
-        [
-            'question' => 'O que muda para minha empresa com a Reforma Tributária?',
-            'answer' => 'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração, alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa. Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter segurança e evitar surpresas.'
-        ],
-        [
-            'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
-            'answer' => 'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade tributária enquanto sua empresa cresce.'
-        ],
-        [
-            'question' => 'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
-            'answer' => 'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar produtos monofásicos e verificar se houve pagamento indevido no seu DAS.'
-        ],
-        [
-            'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
-            'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).'
-        ],
-        [
-            'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
-            'answer' => 'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com a NCM usada nas notas fiscais.'
-        ],
-        [
-            'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
-            'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se enquadra nos critérios exigidos nos editais.'
-        ],
-    ];
-
-
-    $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
-@endphp
-
-
-<section class="faq-con practicearea-faq legal_situation_faq position-relative">
-    <div class="container" style="    padding: 0px 100px 0px 150px;
-    margin: 0px;
-    max-width: 100%;">
-        <div class="faq">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="left_column" data-aos="fade-up">
-                        <div class="faq_content mb-0">
-                            <h6>Faq’s</h6>
-                            <h2>Perguntas Frequentes – FAQ</h2>
-                        </div>
-                        <div class="accordian-section-inner position-relative">
-                            <div class="accordian-inner">
-                                <div id="faq_accordion1" role="tablist" aria-multiselectable="true">
-                                    @foreach($faqs as $faq)
-                                        @if(!empty($faq['answer']))
-                                            <div class="accordion-card mb-3">
-                                                <div class="card-header" id="heading{{ $loop->index }}" role="tab">
-                                                    <a href="#" class="btn btn-link {{ $loop->first ? '' : 'collapsed' }}"
-                                                        data-toggle="collapse" data-target="#collapse{{ $loop->index }}"
-                                                        aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
-                                                        aria-controls="collapse{{ $loop->index }}">
-                                                        <h5 style="line-height: 1.3; margin: 0;">{{ $faq['question'] }}</h5>
-                                                    </a>
-                                                </div>
-
-                                                <div id="collapse{{ $loop->index }}"
-                                                    class="collapse {{ $loop->first ? 'show' : '' }}"
-                                                    aria-labelledby="heading{{ $loop->index }}" data-parent="#faq_accordion1"
-                                                    role="tabpanel">
-                                                    <div class="card-body">
-                                                        <p class="text-size-14 text-left mb-0">{!! nl2br(e($faq['answer'])) !!}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center">
-                    <div class="practicearea_wrapper text-center" data-aos="zoom-in"
-                        style="width: 100%; display: flex; height: 100%; justify-content: center; align-items: center;">
-                        <figure class="practicearea-faqimage mb-4" style="margin: 0;">
-                            <img src="assets/images/practicearea-faqimage.png" alt="image" class="img-fluid"
-                                style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                <div class="col-12">
+                    <div class="testimonial_content text-center position-relative" data-aos="fade-up">
+                        <h6>Depoimentos</h6>
+                        <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
+                        <figure class="mb-0">
+                            <img src="./assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
                         </figure>
                     </div>
                 </div>
             </div>
+            <div class="row position-relative" data-aos="fade-up">
+                <div class="col-12">
+                    <div id="testimonialcarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach (collect($mockup)->sortByDesc('rating')->sortByDesc('text') as $review)
+                                @if (!empty($review['text']))
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <div class="testimonial_box">
+                                            <figure class="testimonial-image mb-3">
+                                                <img src="{{ asset('assets/fotos/image_' . $review['id'] . '.jpg') }}"
+                                                    alt="client image" class="img-fluid rounded-circle"
+                                                    style="width: 80px; height: 80px; object-fit: cover;">
+                                            </figure>
+                                            <p class="text-size-18">{{ $review['text'] }}</p>
+                                            <div class="reviewer-name mt-2">
+                                                <strong>{{ $review['author_name'] }}</strong>
+                                            </div>
+                                            <div class="testimonial-stars mt-2">
+                                                @for ($i = 0; $i < $review['rating']; $i++)
+                                                    <i class="fa fa-star" style="color: #FFD700;"></i>
+                                                @endfor
+                                                @for ($i = $review['rating']; $i < 5; $i++)
+                                                    <i class="fa fa-star" style="color: #E0E0E0;"></i>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="pagination-outer">
+                            <a class="carousel-control-prev" href="#testimonialcarousel" role="button"
+                                data-slide="prev">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#testimonialcarousel" role="button"
+                                data-slide="next">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
+    <!-- Fale Conosco -->
+    <section class="consultation-con position-relative">
+        <figure class="consultation-sideimage mb-0">
+            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_wrapper position-relative">
+                        <figure class="consultation-image mb-0">
+                            <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_content" data-aos="fade-up">
+                        <h6>Fale conosco</h6>
+                        <h2 class="text-white">Agende uma consulta gratuita</h2>
+                        <form id="contactpage" method="post" class="position-relative">
+                            <div class="form-group input1 float-left">
+                                <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
+                            </div>
+                            <div class="form-group float-left">
+                                <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
+                            </div>
+                            <div class="form-group input1 float-left">
+                                <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
+                            </div>
+                            <div class="form-group float-left">
+                                <select class="form-control">
+                                    <option>Área de interesse</option>
+                                    <option>Consultoria Tributária</option>
+                                    <option>Planejamento Fiscal</option>
+                                    <option>Contencioso Tributário</option>
+                                </select>
+                            </div>
+                            <div class="form-group message">
+                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
+                            </div>
+                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
+                                    class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @php
+        $faqs = [
+            [
+                'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
+                'answer' => 'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem riscos.'
+            ],
+            [
+                'question' => 'O que muda para minha empresa com a Reforma Tributária?',
+                'answer' => 'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração, alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa. Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter segurança e evitar surpresas.'
+            ],
+            [
+                'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
+                'answer' => 'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade tributária enquanto sua empresa cresce.'
+            ],
+            [
+                'question' => 'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
+                'answer' => 'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar produtos monofásicos e verificar se houve pagamento indevido no seu DAS.'
+            ],
+            [
+                'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
+                'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).'
+            ],
+            [
+                'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
+                'answer' => 'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com a NCM usada nas notas fiscais.'
+            ],
+            [
+                'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
+                'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se enquadra nos critérios exigidos nos editais.'
+            ],
+        ];
+
+
+        $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
+    @endphp
+
+
+    <section class="faq-con practicearea-faq legal_situation_faq position-relative">
+        <div class="container" style="    padding: 0px 100px 0px 150px;
+    margin: 0px;
+    max-width: 100%;">
+            <div class="faq">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="left_column" data-aos="fade-up">
+                            <div class="faq_content mb-0">
+                                <h6>Faq’s</h6>
+                                <h2>Perguntas Frequentes – FAQ</h2>
+                            </div>
+                            <div class="accordian-section-inner position-relative">
+                                <div class="accordian-inner">
+                                    <div id="faq_accordion1" role="tablist" aria-multiselectable="true">
+                                        @foreach($faqs as $faq)
+                                            @if(!empty($faq['answer']))
+                                                <div class="accordion-card mb-3">
+                                                    <div class="card-header" id="heading{{ $loop->index }}" role="tab">
+                                                        <a href="#" class="btn btn-link {{ $loop->first ? '' : 'collapsed' }}"
+                                                            data-toggle="collapse" data-target="#collapse{{ $loop->index }}"
+                                                            aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                                            aria-controls="collapse{{ $loop->index }}">
+                                                            <h5 style="line-height: 1.3; margin: 0;">{{ $faq['question'] }}</h5>
+                                                        </a>
+                                                    </div>
+
+                                                    <div id="collapse{{ $loop->index }}"
+                                                        class="collapse {{ $loop->first ? 'show' : '' }}"
+                                                        aria-labelledby="heading{{ $loop->index }}"
+                                                        data-parent="#faq_accordion1" role="tabpanel">
+                                                        <div class="card-body">
+                                                            <p class="text-size-14 text-left mb-0">
+                                                                {!! nl2br(e($faq['answer'])) !!}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-center align-items-center">
+                        <div class="practicearea_wrapper text-center" data-aos="zoom-in"
+                            style="width: 100%; display: flex; height: 100%; justify-content: center; align-items: center;">
+                            <figure class="practicearea-faqimage mb-4" style="margin: 0;">
+                                <img src="assets/images/practicearea-faqimage.png" alt="image" class="img-fluid"
+                                    style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

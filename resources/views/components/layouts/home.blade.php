@@ -39,14 +39,14 @@
 
 <body>
     <!-- Back to top button -->
-    <a id="button"></a>
+    <a class="button-flutuante"></a>
 
     {{ $slot }}
 
     <a id="btn_wpp" title="Agende agora mesmo uma consulta via Whatsapp"
         href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️"
         class="float" target="_blank" rel="nofollow"
-        style="position: fixed; width: 60px; height: 60px; bottom: 120px; right: 20px; background-color: #25d366; color: #fff; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;display: flex;justify-content: center;align-items: center;">
+        style="position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #fff; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;display: flex;justify-content: center;align-items: center;">
         <i class="fab fa-whatsapp my-float" style="color:#fefefe;"></i>
     </a>
     </a>

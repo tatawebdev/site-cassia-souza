@@ -38,7 +38,7 @@
 </head>
 <body>
 <!-- Back to top button -->
-<a id="button"></a>
+<a class="button-flutuante"></a>
 
 <header class="header">
     <div class="container">
