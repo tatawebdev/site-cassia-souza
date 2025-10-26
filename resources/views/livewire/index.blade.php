@@ -204,7 +204,7 @@
     <!-- About -->
     <section class="about-con position-relative">
         <figure class="about-sideimage mb-0">
-            <img src="assets/images/about-sideimage.png" alt="imagem lateral" class="image-fluid">
+            <img src="/assets/images/about-sideimage.png" alt="image" class="image-fluid">
         </figure>
         <div class="container">
             <div class="row">
@@ -218,32 +218,17 @@
                 <div class="col-lg-7 col-md-12 col-sm-12 col-12">
                     <div class="about_content" data-aos="fade-up">
                         <div class="content">
-                            <p class="text-white text-size-16">
-                                O sistema tributário brasileiro é extremamente complexo. Para muitos empresários,
-                                lidar com impostos é sinônimo de <strong>insegurança, ansiedade e medo</strong> de estar
-                                sempre
-                                “um passo atrás” do Fisco.
-                            </p>
-                            <p class="text-white text-size-16">
-                                Nós sabemos disso — porque estamos ao lado de empresas que já viveram essa realidade.
-                                Mas acreditamos em outro caminho: o da <strong>clareza, da regularidade e da
-                                    estratégia</strong>.
-                            </p>
-                            <p class="text-white text-size-16">
-                                Não somos apenas um escritório de advocacia ou consultoria tributária. Somos
-                                <strong>parceiros
-                                    que caminham junto com você</strong>, ajudando a <strong>reduzir impostos de forma
-                                    legal</strong>, recuperar
-                                tributos pagos indevidamente, regularizar dívidas e preparar sua empresa para as
-                                transformações que já estão acontecendo, como a Reforma Tributária.
-                            </p>
-                            <p class="text-white text-size-16">
-                                Nossa missão é simples: <strong>ajudar os empresários a tomar decisões mais estratégicas
-                                    para
-                                    o seu negócio</strong>.
-                            </p>
-                            <a href="./about" class="text-decoration-none read_more">Saiba Mais<i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                            <h6>Sobre a Cassia Souza Adv</h6>
+                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Clareza, Ética e Estratégia</h2>
+                            <p class="text-white text-size-16">Somos um escritório especializado em Direito Tributário que atuamos com foco em estratégias, segurança jurídica e resultados reais para empresas de todos os portes. Mais do que prestar serviços, somos parceiros estratégicos na gestão tributária, oferecendo suportes contínuos e personalizados.</p>
+
+                            <h5 class="text-white mt-3">Nossa missão</h5>
+                            <p class="text-white text-size-16">Garantir clareza e segurança tributária para que empresários tomem decisões com confiança, pagando apenas o necessário e mantendo suas empresas protegidas e competitivas.</p>
+
+                            <h5 class="text-white mt-3">Nossos valores</h5>
+                            <p class="text-white text-size-16">Ética, transparência, comunicação clara, responsabilidade, parceria com o cliente e inovação jurídica.</p>
+
+                            <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
