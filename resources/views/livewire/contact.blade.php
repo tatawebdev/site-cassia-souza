@@ -38,11 +38,11 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="contact-box">
                 <figure class="contact-icon">
-                    <i class="fa-brands fa-facebook fa-2x"></i>
+                    <i class="fa-brands fa-tiktok fa-2x"></i>
                 </figure>
                 <h5>Redes Sociais:</h5>
                 <div class="text">
-                    <a href="https://www.facebook.com/cassia.souza.adv" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">Facebook</a>
+                    <a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">TikTok</a>
                     <a href="https://www.linkedin.com/company/cassia-souza-advocacia/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">LinkedIn</a>
                     <a href="https://www.instagram.com/cassiasouza.adv/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">Instagram</a>
                 </div>

@@ -82,8 +82,7 @@
                                 que buscam segurança, economia e regularidade fiscal.
                             </p>
                             <ul class="list-unstyled mb-0 social-icons">
-                                <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i
-                                            class="fa-brands fa-facebook-f social-networks"></i></a></li>
+                                <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok social-networks"></i></a></li>
                                 <li><a href="https://twitter.com/i/flow/login" class="text-decoration-none"><i
                                             class="fa-brands fa-x-twitter social-networks"></i></a></li>
                                 <li><a href="https://www.linkedin.com/login" class="text-decoration-none"><i

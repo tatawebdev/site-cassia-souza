@@ -55,10 +55,7 @@
                                                 </li>
                                                 <li><a href="https://www.instagram.com/" class="text-decoration-none"><i
                                                             class="fa-brands fa-instagram social-networks"></i></a></li>
-                                                <li><a href="https://www.facebook.com/login/"
-                                                        class="text-decoration-none"><i
-                                                            class="fa-brands fa-facebook-f social-networks"></i></a>
-                                                </li>
+                                                <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok social-networks"></i></a></li>
                                                 <li><a href="https://twitter.com/i/flow/login"
                                                         class="text-decoration-none"><i
                                                             class="fa-brands fa-x-twitter social-networks"></i></a></li>
@@ -150,8 +147,7 @@
                                 </li>
                                 <li><a href="https://www.instagram.com/" class="text-decoration-none"><i
                                             class="fa-brands fa-instagram social-networks"></i></a></li>
-                                <li><a href="https://www.facebook.com/login/" class="text-decoration-none"><i
-                                            class="fa-brands fa-facebook-f social-networks"></i></a>
+                                <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok social-networks"></i></a>
                                 </li>
                                 <li><a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
                                         class="text-decoration-none"><i
