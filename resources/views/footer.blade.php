@@ -92,11 +92,6 @@
         </div>
     </div>
     <div id="fixed-form-container">
-        <div class="image">
-            <figure class="footer-contactimage mb-0">
-                <img src="./assets/images/footer-contactimage.png" alt="imagem" class="img-fluid">
-            </figure>
-        </div>
         <div class="body" style="display: none;">
             <form action="javascript:;">
                 <div class="form-group mb-0">

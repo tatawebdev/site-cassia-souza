@@ -308,8 +308,47 @@
     </div>
 </section>
 
+@php
+    $faqs = [
+        [
+            'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
+            'answer' => 'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem riscos.'
+        ],
+        [
+            'question' => 'O que muda para minha empresa com a Reforma Tributária?',
+            'answer' => 'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração, alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa. Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter segurança e evitar surpresas.'
+        ],
+        [
+            'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
+            'answer' => 'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade tributária enquanto sua empresa cresce.'
+        ],
+        [
+            'question' => 'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
+            'answer' => 'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar produtos monofásicos e verificar se houve pagamento indevido no seu DAS.'
+        ],
+        [
+            'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
+            'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).'
+        ],
+        [
+            'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
+            'answer' => 'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com a NCM usada nas notas fiscais.'
+        ],
+        [
+            'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
+            'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se enquadra nos critérios exigidos nos editais.'
+        ],
+    ];
+
+
+    $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
+@endphp
+
+
 <section class="faq-con practicearea-faq legal_situation_faq position-relative">
-    <div class="container">
+    <div class="container" style="    padding: 0px 100px 0px 150px;
+    margin: 0px;
+    max-width: 100%;">
         <div class="faq">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
@@ -320,147 +359,31 @@
                         </div>
                         <div class="accordian-section-inner position-relative">
                             <div class="accordian-inner">
-                                <div id="faq_accordion1">
-                                    <!-- Serviço: Planejamento Tributário -->
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingOne">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseOne" aria-expanded="false"
-                                                aria-controls="collapseOne">
-                                                <h5 style="line-height: 1.3;">Como saber se meu regime tributário é o
-                                                    mais vantajoso para minha
-                                                    empresa?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">A escolha do regime ideal depende
-                                                    do seu faturamento, das suas margens de lucro e da sua atividade.
-                                                    Fazemos uma análise personalizada para simular o custo de cada
-                                                    regime e mostrar qual alternativa traz mais economia sem riscos.</p>
+                                <div id="faq_accordion1" role="tablist" aria-multiselectable="true">
+                                    @foreach($faqs as $faq)
+                                        @if(!empty($faq['answer']))
+                                            <div class="accordion-card mb-3">
+                                                <div class="card-header" id="heading{{ $loop->index }}" role="tab">
+                                                    <a href="#" class="btn btn-link {{ $loop->first ? '' : 'collapsed' }}"
+                                                        data-toggle="collapse" data-target="#collapse{{ $loop->index }}"
+                                                        aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                                        aria-controls="collapse{{ $loop->index }}">
+                                                        <h5 style="line-height: 1.3; margin: 0;">{{ $faq['question'] }}</h5>
+                                                    </a>
+                                                </div>
+
+                                                <div id="collapse{{ $loop->index }}"
+                                                    class="collapse {{ $loop->first ? 'show' : '' }}"
+                                                    aria-labelledby="heading{{ $loop->index }}" data-parent="#faq_accordion1"
+                                                    role="tabpanel">
+                                                    <div class="card-body">
+                                                        <p class="text-size-14 text-left mb-0">{!! nl2br(e($faq['answer'])) !!}
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingTwo">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                                <h5 style="line-height: 1.3;">O que muda para minha empresa com a
-                                                    Reforma Tributária?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">A Reforma vai alterar toda a
-                                                    tributação sobre o consumo. Então, vamos ter novas bases de cálculo,
-                                                    formas de apuração, alíquotas e obrigações acessórias. Isso
-                                                    significa que o que hoje é vantajoso pode deixar de ser — ou
-                                                    vice-versa. Nossa assessoria ajuda a entender exatamente quais
-                                                    mudanças vão afetar a sua empresa e como ajustar sua estrutura para
-                                                    manter segurança e evitar surpresas.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingThree">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                <h5 style="line-height: 1.3;">Consultoria tributária mensal realmente
-                                                    vale a pena para resultados
-                                                    consistentes?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">Sim, quando feita com constância.
-                                                    O acompanhamento regular permite identificar erros operacionais
-                                                    cedo, ajustar práticas conforme novas normas, evitar autuações e
-                                                    identificar oportunidades de economia. Assim, você mantém a
-                                                    tranquilidade tributária enquanto cresce.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Serviço: Recuperação de PIS e COFINS -->
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingFour">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseFour" aria-expanded="false"
-                                                aria-controls="collapseFour">
-                                                <h5 style="line-height: 1.3;">Minha empresa do Simples Nacional pode
-                                                    recuperar PIS e COFINS
-                                                    monofásicos pagos indevidamente?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">Sim — em muitos casos. Se você
-                                                    comercializa produtos sujeitos à tributação monofásica e os
-                                                    recolhimentos foram feitos nesses casos, pode haver crédito a
-                                                    recuperar. O primeiro passo é revisar suas notas fiscais,
-                                                    identificar produtos monofásicos e verificar se houve pagamento
-                                                    indevido no seu DAS.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingFive">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseFive" aria-expanded="false"
-                                                aria-controls="collapseFive">
-                                                <h5 style="line-height: 1.3;">Qual é o prazo para recuperar tributos
-                                                    pagos indevidamente de PIS e
-                                                    COFINS monofásicos?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">O direito de restituição ou
-                                                    compensação abrange os últimos 5 anos (60 meses).</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingSix">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseSix" aria-expanded="false"
-                                                aria-controls="collapseSix">
-                                                <h5 style="line-height: 1.3;">Quais produtos estão sujeitos à tributação
-                                                    monofásica de PIS e
-                                                    COFINS?</h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">A lista inclui medicamentos,
-                                                    cosméticos, certos produtos farmacêuticos, bebidas frias entre
-                                                    outros, de acordo com a NCM usada nas notas.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Serviço: Regularização de Débitos Federais -->
-                                    <div class="accordion-card">
-                                        <div class="card-header" id="headingSeven">
-                                            <a href="#" class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#collapseSeven" aria-expanded="false"
-                                                aria-controls="collapseSeven">
-                                                <h5 style="line-height: 1.3;">Como negociar débitos federais inscritos
-                                                    em Dívida Ativa da União?
-                                                </h5>
-                                            </a>
-                                        </div>
-                                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven">
-                                            <div class="card-body">
-                                                <p class="text-size-14 text-left mb-0">É possível aderir a programas de
-                                                    transação tributária que concedem descontos nos juros e nas multas e
-                                                    parcelamento especial. O primeiro passo é estudar o débito,
-                                                    verificar a Capacidade de Pagamento (e se há necessidade de pedir
-                                                    revisão) e entender se sua empresa se enquadra nos critérios
-                                                    exigidos nos editais.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
