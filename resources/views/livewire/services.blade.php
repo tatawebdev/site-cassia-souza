@@ -14,42 +14,52 @@
                 </div>
             </div>
             @php
+            // Adicionei a chave 'route' para cada serviço. As rotas usadas foram mapeadas conforme as rotas existentes
+            // fornecidas: servicos.consultoria.tributaria, servicos.defesa.administrativa,
+            // servicos.planejamento.tributario, servicos.recuperacao.creditos, servicos.conformidade.tributaria
+            // Mapeamentos são suposições razoáveis com base nos títulos dos serviços.
             $services = [
                 [
                     'icon' => 'practice-icon1.png',
                     'alt' => 'Regularização PGFN',
                     'title' => 'Regularização PGFN',
                     'text' => 'Atuação completa em processos de regularização junto à PGFN, renegociação e parcelamentos administrativos.',
+                    'route' => 'servicos.defesa.administrativa',
                 ],
                 [
                     'icon' => 'practice-icon2.png',
                     'alt' => 'Planejamento Tributário',
                     'title' => 'Planejamento Tributário',
                     'text' => 'Estratégias fiscais personalizadas para redução de carga tributária dentro da legalidade e segurança jurídica.',
+                    'route' => 'servicos.planejamento.tributario',
                 ],
                 [
                     'icon' => 'practice-icon3.png',
                     'alt' => 'Planejamento Clínicas',
                     'title' => 'Planejamento Clínicas',
                     'text' => 'Consultoria especializada para clínicas e profissionais de saúde, abrangendo aspectos tributários e societários.',
+                    'route' => 'servicos.consultoria.tributaria',
                 ],
                 [
                     'icon' => 'practice-icon4.png',
                     'alt' => 'Assessoria Reforma',
                     'title' => 'Assessoria Reforma',
                     'text' => 'Assessoria em processos de reforma societária, reorganizações e adaptações contratuais.',
+                    'route' => 'servicos.conformidade.tributaria',
                 ],
                 [
                     'icon' => 'practice-icon5.png',
                     'alt' => 'Treinamento Tributário',
                     'title' => 'Treinamento Tributário',
                     'text' => 'Capacitação para equipes financeiras e administrativas sobre compliance tributário e melhores práticas.',
+                    'route' => 'servicos.consultoria.tributaria',
                 ],
                 [
                     'icon' => 'practice-icon6.png',
                     'alt' => 'Recuperação PIS/COFINS',
                     'title' => 'Recuperação PIS/COFINS',
                     'text' => 'Análise e recuperação de créditos de PIS/COFINS, incluindo estudos e procedimentos administrativos e judiciais.',
+                    'route' => 'servicos.recuperacao.creditos',
                 ],
             ];
             @endphp
@@ -59,12 +69,12 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="box">
                             <div class="practice-box">
-                                <figure class="icon"></figure>
+                                <figure class="icon">
                                     <img src="/assets/images/{{ $service['icon'] }}" alt="{{ $service['alt'] }}" class="img-fluid">
                                 </figure>
                                 <h5>{{ $service['title'] }}</h5>
                                 <p class="text-size-14">{{ $service['text'] }}</p>
-                                <a href="./practice-area.html" class="text-decoration-none"><i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="{{ route($service['route']) }}" class="text-decoration-none"><i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
