@@ -27,78 +27,47 @@
                                     id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"> Serviços </a>
                                 <div class="dropdown-menu drop-down-content">
-                                    <ul class="navbar-nav ml-auto">
+                                    <ul class="list-unstyled drop-down-pages">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/">Home</a>
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.consultoria.tributaria') }}">
+                                                Consultoria Tributária
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/sobre-nos">Sobre</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color"
-                                                href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"> Serviços </a>
-                                            <div class="dropdown-menu drop-down-content">
-                                                <ul class="list-unstyled drop-down-pages">
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.consultoria.tributaria') }}">
-                                                            Consultoria Tributária
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
-                                                            Regularização de Débitos PGFN
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.planejamento.tributario') }}">
-                                                            Planejamento Tributário
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.planejamento.tributario.clinicas') }}">
-                                                            Planejamento Tributário para Clínicas Médicas e
-                                                            Odontológicas
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.assessoria.reforma.tributaria') }}">
-                                                            Assessoria em Reforma Tributária
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.treinamento.tributario') }}">
-                                                            Treinamento Tributário
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item nav-link"
-                                                            href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
-                                                            Recuperação de PIS/COFINS Monofásicos
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
+                                                Regularização de Débitos Federais (PGFN)
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" target="_blank"
-                                                href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario') }}">
+                                                Planejamento Tributário
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/contato">Contato</a>
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario.clinicas') }}">
+                                                Planejamento Tributário para Clínicas Médicas/Odontológicas
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.assessoria.reforma.tributaria') }}">
+                                                Assessoria para Reforma Tributária
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.treinamento.tributario') }}">
+                                                Treinamento Tributário
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
+                                                Recuperação de PIS/COFINS Monofásicos
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" target="_blank"
-                                    href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>
@@ -219,16 +188,24 @@
                     <div class="about_content" data-aos="fade-up">
                         <div class="content">
                             <h6>Sobre a Cassia Souza Adv</h6>
-                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Clareza, Ética e Estratégia</h2>
-                            <p class="text-white text-size-16">Somos um escritório especializado em Direito Tributário que atuamos com foco em estratégias, segurança jurídica e resultados reais para empresas de todos os portes. Mais do que prestar serviços, somos parceiros estratégicos na gestão tributária, oferecendo suportes contínuos e personalizados.</p>
+                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Clareza, Ética e
+                                Estratégia</h2>
+                            <p class="text-white text-size-16">Somos um escritório especializado em Direito Tributário
+                                que atuamos com foco em estratégias, segurança jurídica e resultados reais para empresas
+                                de todos os portes. Mais do que prestar serviços, somos parceiros estratégicos na gestão
+                                tributária, oferecendo suportes contínuos e personalizados.</p>
 
                             <h5 class="text-white mt-3">Nossa missão</h5>
-                            <p class="text-white text-size-16">Garantir clareza e segurança tributária para que empresários tomem decisões com confiança, pagando apenas o necessário e mantendo suas empresas protegidas e competitivas.</p>
+                            <p class="text-white text-size-16">Garantir clareza e segurança tributária para que
+                                empresários tomem decisões com confiança, pagando apenas o necessário e mantendo suas
+                                empresas protegidas e competitivas.</p>
 
                             <h5 class="text-white mt-3">Nossos valores</h5>
-                            <p class="text-white text-size-16">Ética, transparência, comunicação clara, responsabilidade, parceria com o cliente e inovação jurídica.</p>
+                            <p class="text-white text-size-16">Ética, transparência, comunicação clara,
+                                responsabilidade, parceria com o cliente e inovação jurídica.</p>
 
-                            <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
