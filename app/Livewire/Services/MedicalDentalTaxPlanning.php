@@ -9,9 +9,9 @@ class MedicalDentalTaxPlanning extends Component
     public function render()
     {
         $banner = [
-            'title' => 'Planejamento Tributário para Clínicas',
+            'title' => 'Planejamento para Clínicas',
             'img' => 'banner-planejamento-clinicas.jpg',
-            'descricao' => 'Estratégias tributárias específicas para clínicas médicas e odontológicas.',
+            'descricao' => 'Planejamento tributário especializado para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],

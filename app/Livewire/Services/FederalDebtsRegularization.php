@@ -11,7 +11,7 @@ class FederalDebtsRegularization extends Component
         $banner = [
             'title' => 'Regularização de Débitos (PGFN)',
             'img' => 'banner-regularizacao-pgfn.jpg',
-            'descricao' => 'Negociação, parcelamento e regularização de débitos federais.',
+            'descricao' => 'Negociação e parcelamento de débitos inscritos na Dívida Ativa (PGFN), com foco em recuperação financeira e redução de encargos.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],

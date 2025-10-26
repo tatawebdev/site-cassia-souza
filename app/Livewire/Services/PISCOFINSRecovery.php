@@ -11,7 +11,7 @@ class PISCOFINSRecovery extends Component
         $banner = [
             'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
             'img' => 'banner-recuperacao-pis-cofins.jpg',
-            'descricao' => 'Análise e recuperação de créditos de PIS/COFINS monofásicos.',
+            'descricao' => 'Analisamos operações, identificamos créditos legítimos e recuperamos valores de PIS/COFINS monofásicos de forma legal, devolvendo recursos importantes ao caixa.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],

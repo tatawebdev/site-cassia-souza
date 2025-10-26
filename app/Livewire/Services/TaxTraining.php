@@ -11,7 +11,7 @@ class TaxTraining extends Component
         $banner = [
             'title' => 'Treinamento Tributário',
             'img' => 'banner-treinamento-tributario.jpg',
-            'descricao' => 'Capacitação de equipes em compliance tributário e melhores práticas.',
+            'descricao' => 'Treinamentos práticos para equipes fiscais: reduzir riscos, evitar autuações e otimizar rotinas — presencial ou online.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
