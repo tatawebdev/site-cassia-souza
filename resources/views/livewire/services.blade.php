@@ -13,91 +13,62 @@
                     </div>
                 </div>
             </div>
+            @php
+            $services = [
+                [
+                    'icon' => 'practice-icon1.png',
+                    'alt' => 'Regularização PGFN',
+                    'title' => 'Regularização PGFN',
+                    'text' => 'Atuação completa em processos de regularização junto à PGFN, renegociação e parcelamentos administrativos.',
+                ],
+                [
+                    'icon' => 'practice-icon2.png',
+                    'alt' => 'Planejamento Tributário',
+                    'title' => 'Planejamento Tributário',
+                    'text' => 'Estratégias fiscais personalizadas para redução de carga tributária dentro da legalidade e segurança jurídica.',
+                ],
+                [
+                    'icon' => 'practice-icon3.png',
+                    'alt' => 'Planejamento Clínicas',
+                    'title' => 'Planejamento Clínicas',
+                    'text' => 'Consultoria especializada para clínicas e profissionais de saúde, abrangendo aspectos tributários e societários.',
+                ],
+                [
+                    'icon' => 'practice-icon4.png',
+                    'alt' => 'Assessoria Reforma',
+                    'title' => 'Assessoria Reforma',
+                    'text' => 'Assessoria em processos de reforma societária, reorganizações e adaptações contratuais.',
+                ],
+                [
+                    'icon' => 'practice-icon5.png',
+                    'alt' => 'Treinamento Tributário',
+                    'title' => 'Treinamento Tributário',
+                    'text' => 'Capacitação para equipes financeiras e administrativas sobre compliance tributário e melhores práticas.',
+                ],
+                [
+                    'icon' => 'practice-icon6.png',
+                    'alt' => 'Recuperação PIS/COFINS',
+                    'title' => 'Recuperação PIS/COFINS',
+                    'text' => 'Análise e recuperação de créditos de PIS/COFINS, incluindo estudos e procedimentos administrativos e judiciais.',
+                ],
+            ];
+            @endphp
+
             <div class="row" data-aos="fade-up">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon1.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Immigration Law</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                @foreach($services as $service)
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="box">
+                            <div class="practice-box">
+                                <figure class="icon"></figure>
+                                    <img src="/assets/images/{{ $service['icon'] }}" alt="{{ $service['alt'] }}" class="img-fluid">
+                                </figure>
+                                <h5>{{ $service['title'] }}</h5>
+                                <p class="text-size-14">{{ $service['text'] }}</p>
+                                <a href="./practice-area.html" class="text-decoration-none"><i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon2.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Business Law</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon3.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Criminal Law</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon4.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Real Estate Law</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon5.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Tax Litigation Law</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="box">
-                        <div class="practice-box">
-                            <figure class="icon">
-                                <img src="/assets/images/practice-icon6.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Family Crimes</h5>
-                            <p class="text-size-14">Aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                maiores alias conse noloribus...</p>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

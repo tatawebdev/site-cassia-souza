@@ -9,7 +9,7 @@ class ServicoService
         
         return [
             'regularizacao_pgfn' => [
-                'titulo' => '2.2 REGULARIZAÇÃO DE DÉBITOS FEDERAIS - PGFN',
+                'titulo' => 'REGULARIZAÇÃO DE DÉBITOS FEDERAIS - PGFN',
                 'short_titulo' => 'Regularização PGFN',
                 'numero' => '2.2',
                 'descricao_short' => 'Negociação de débitos federais junto à PGFN com descontos e parcelamentos especiais.',
