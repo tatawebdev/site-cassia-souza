@@ -9,6 +9,8 @@ Route::get('/', \App\Livewire\Index::class)->name('inicio');
 Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
 Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
 Route::get('/servicos', \App\Livewire\Services::class)->name('servicos');
+
+
 Route::get('/servicos/consultoria-tributaria', \App\Livewire\Services\TaxConsulting::class)->name('servicos.consultoria.tributaria');
 Route::get('/servicos/defesa-administrativa', \App\Livewire\Services\AdministrativeDefense::class)->name('servicos.defesa.administrativa');
 Route::get('/servicos/planejamento-tributario', \App\Livewire\Services\TaxPlanning::class)->name('servicos.planejamento.tributario');
