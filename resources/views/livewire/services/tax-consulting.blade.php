@@ -66,12 +66,9 @@
                                     loading="lazy">
                             </figure>
                             <div class="content">
-                                <h4>Billy wallson</h4>
-                                <span class="text-size-16">Senior Director</span>
-                                <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ali,
-                                </p>
+                                <h4>Equipe Cassia Souza Adv</h4>
+                                <span class="text-size-16">Consultoria Tributária</span>
+                                <p class="text-size-16">Acompanhamento contínuo e orientações práticas que transformam números em decisões seguras para o crescimento do negócio.</p>
                             </div>
                         </div>
                         <div class="content6" data-aos="fade-up" data-aos-duration="700">
@@ -84,10 +81,7 @@
                                     <span class="text-size-14">Dec 29, 2022</span>
                                     <a class="reply text-decoration-none" href="#">Reply</a>
                                     <div class="text_holder">
-                                        <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation.
-                                        </p>
+                                        <p class="text-size-16">Comentário de cliente: o suporte contínuo trouxe maior previsibilidade financeira.</p>
                                     </div>
                                 </div>
                             </div>

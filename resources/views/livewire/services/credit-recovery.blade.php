@@ -24,28 +24,15 @@
                                 <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <p class="mb-0 text-white text-size-18">“Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur.xcepteur sint occaecat”</p>
+                            <p class="mb-0 text-white text-size-18">Recuperação de créditos e regularização com foco em resultado financeiro</p>
                         </div>
-                        <p class="text text-size-16">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae
-                            ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                            ipsam voluptatem quia voluptas.
-                        </p>
+                        <p class="text text-size-16">Realizamos levantamento de pagamentos indevidos e conduzimos pedidos de restituição, compensação ou revisão administrativa com o objetivo de recuperar recursos ao caixa da empresa de forma segura e documentada.</p>
                         <div class="content3" data-aos="fade-up" data-aos-duration="700">
                             <figure class="image1 mb-3" data-aos="fade-up">
                                 <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid"
                                     loading="lazy">
                             </figure>
-                            <p class="text text-size-16">Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum.
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae
-                                ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                enim ipsam voluptatem quia voluptas.
-                            </p>
+                            <p class="text text-size-16">Trabalhamos com análise documental profunda e integração com contabilidade para identificar créditos recuperáveis e garantir a efetividade das medidas adotadas.</p>
                         </div>
                         <div class="content4" data-aos="fade-up" data-aos-duration="700">
                             <div class="row">
@@ -86,12 +73,9 @@
                                     loading="lazy">
                             </figure>
                             <div class="content">
-                                <h4>Billy wallson</h4>
-                                <span class="text-size-16">Senior Director</span>
-                                <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ali,
-                                </p>
+                                <h4>Equipe Cassia Souza Adv</h4>
+                                <span class="text-size-16">Especialistas em recuperação de créditos</span>
+                                <p class="text-size-16">Apoiamos empresas na recuperação de valores e na regularização, com foco em segurança jurídica e resultado financeiro.</p>
                             </div>
                         </div>
                         <div class="content6" data-aos="fade-up" data-aos-duration="700">
@@ -104,10 +88,7 @@
                                     <span class="text-size-14">Dec 29, 2022</span>
                                     <a class="reply text-decoration-none" href="#">Reply</a>
                                     <div class="text_holder">
-                                        <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation.
-                                        </p>
+                                        <p class="text-size-16">Comentário de cliente: conseguimos recuperar créditos que melhoraram o fluxo de caixa.</p>
                                     </div>
                                 </div>
                             </div>
@@ -119,10 +100,7 @@
                                     <span class="text-size-14">Dec 29, 2022</span>
                                     <a class="reply text-decoration-none" href="#">Reply</a>
                                     <div class="text_holder">
-                                        <p class="text-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation.
-                                        </p>
+                                        <p class="text-size-16">Comentário de cliente: a equipe conduziu a recuperação com transparência e agilidade.</p>
                                     </div>
                                 </div>
                             </div>
