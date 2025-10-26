@@ -94,7 +94,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                <a class="nav-link" target="_blank" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>
