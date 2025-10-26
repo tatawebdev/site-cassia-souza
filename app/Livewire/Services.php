@@ -10,6 +10,7 @@ class Services extends Component
     {
         $banner = [
             'title' => 'Serviços',
+            'img' => 'banner-servicos.jpg',
             'descricao' => 'Conheça nossos serviços.',
         ];
         $breadcrumbs = [

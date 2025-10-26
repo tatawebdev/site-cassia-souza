@@ -11,6 +11,7 @@ class TaxConsulting extends Component
     {
         $banner = [
             'title' => 'Consultoria Tributária',
+            'img' => 'banner-consultoria-tributaria.jpg',
             'descricao' => 'Consultoria especializada em matéria tributária.',
         ];
         $breadcrumbs = [

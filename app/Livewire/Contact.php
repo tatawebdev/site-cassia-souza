@@ -10,6 +10,7 @@ class Contact extends Component
     {
         $banner = [
             'title' => 'Contatos',
+            'img' => 'banner-contatos.jpg',
             'descricao' => 'Entre em contato conosco para dúvidas ou informações.',
         ];
         $breadcrumbs = [

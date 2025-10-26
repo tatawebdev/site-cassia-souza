@@ -10,6 +10,7 @@ class AdministrativeDefense extends Component
     {
         $banner = [
             'title' => 'Defesa Administrativa',
+            'img' => 'banner-defesa-administrativa.jpg',
             'descricao' => 'Atuação em defesa administrativa para proteger seus direitos.',
         ];
         $breadcrumbs = [

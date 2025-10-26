@@ -10,6 +10,7 @@ class About extends Component
     {
         $banner = [
             'title' => 'Sobre Nós',
+            'img' => 'banner-sobre-nos.jpg',
             'descricao' => 'Conheça mais sobre nosso escritório e nossa missão.',
         ];
         $breadcrumbs = [

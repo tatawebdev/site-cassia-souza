@@ -36,6 +36,22 @@
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <style>
+        .sub_banner::before {
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 45%;
+            position: absolute;
+            background: url(/assets/images/{{ $banner['img'] ?? 'subbanner-backgroundimage.jpg' }});
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -94,7 +110,8 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                <a class="nav-link" target="_blank"
+                                    href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>

@@ -10,6 +10,7 @@ class TaxCompliance extends Component
     {
         $banner = [
             'title' => 'Compliance Tributário',
+            'img' => 'banner-compliance-tributario.jpg',
             'descricao' => 'Soluções em compliance tributário para sua empresa.',
         ];
         $breadcrumbs = [

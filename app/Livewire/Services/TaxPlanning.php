@@ -10,6 +10,7 @@ class TaxPlanning extends Component
     {
         $banner = [
             'title' => 'Planejamento Tributário',
+            'img' => 'banner-planejamento-tributario.jpg',
             'descricao' => 'Estratégias de planejamento tributário para reduzir riscos e otimizar custos.',
         ];
         $breadcrumbs = [

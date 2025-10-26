@@ -10,6 +10,7 @@ class CreditRecovery extends Component
     {
         $banner = [
             'title' => 'Recuperação de Crédito',
+            'img' => 'banner-recuperacao-credito.jpg',
             'descricao' => 'Atuamos na recuperação de créditos e direitos.',
         ];
         $breadcrumbs = [
