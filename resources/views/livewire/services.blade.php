@@ -11,52 +11,56 @@
                 </div>
             </div>
             @php
-            // Adicionei a chave 'route' para cada serviço. As rotas usadas foram mapeadas conforme as rotas existentes
-            // fornecidas: servicos.consultoria.tributaria, servicos.defesa.administrativa,
-            // servicos.planejamento.tributario, servicos.recuperacao.creditos, servicos.conformidade.tributaria
-            // Mapeamentos são suposições razoáveis com base nos títulos dos serviços.
+            // Serviços oferecidos pela Cassia Souza Adv — mapeados para as rotas nomeadas
             $services = [
                 [
                     'icon' => 'practice-icon1.png',
-                    'alt' => 'Regularização PGFN',
-                    'title' => 'Regularização PGFN',
-                    'text' => 'Atuação completa em processos de regularização junto à PGFN, renegociação e parcelamentos administrativos.',
-                    'route' => 'servicos.defesa.administrativa',
+                    'alt' => 'Consultoria Tributária',
+                    'title' => 'Consultoria Tributária',
+                    'text' => 'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades para garantir conformidade e economia.',
+                    'route' => 'servicos.consultoria.tributaria',
                 ],
                 [
                     'icon' => 'practice-icon2.png',
-                    'alt' => 'Planejamento Tributário',
-                    'title' => 'Planejamento Tributário',
-                    'text' => 'Estratégias fiscais personalizadas para redução de carga tributária dentro da legalidade e segurança jurídica.',
-                    'route' => 'servicos.planejamento.tributario',
+                    'alt' => 'Regularização de Débitos - PGFN',
+                    'title' => 'Regularização de Débitos (PGFN)',
+                    'text' => 'Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego financeiro e evitar bloqueios.',
+                    'route' => 'servicos.regularizacao.debitos.pgfn',
                 ],
                 [
                     'icon' => 'practice-icon3.png',
-                    'alt' => 'Planejamento Clínicas',
-                    'title' => 'Planejamento Clínicas',
-                    'text' => 'Consultoria especializada para clínicas e profissionais de saúde, abrangendo aspectos tributários e societários.',
-                    'route' => 'servicos.consultoria.tributaria',
+                    'alt' => 'Planejamento Tributário',
+                    'title' => 'Planejamento Tributário',
+                    'text' => 'Estruturamos estratégias sob medida para reduzir a carga tributária dentro da legalidade, garantindo previsibilidade e segurança para o crescimento.',
+                    'route' => 'servicos.planejamento.tributario',
                 ],
                 [
                     'icon' => 'practice-icon4.png',
-                    'alt' => 'Assessoria Reforma',
-                    'title' => 'Assessoria Reforma',
-                    'text' => 'Assessoria em processos de reforma societária, reorganizações e adaptações contratuais.',
-                    'route' => 'servicos.conformidade.tributaria',
+                    'alt' => 'Planejamento para Clínicas',
+                    'title' => 'Planejamento Tributário para Clínicas',
+                    'text' => 'Soluções tributárias específicas para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
+                    'route' => 'servicos.planejamento.tributario.clinicas',
                 ],
                 [
                     'icon' => 'practice-icon5.png',
-                    'alt' => 'Treinamento Tributário',
-                    'title' => 'Treinamento Tributário',
-                    'text' => 'Capacitação para equipes financeiras e administrativas sobre compliance tributário e melhores práticas.',
-                    'route' => 'servicos.consultoria.tributaria',
+                    'alt' => 'Assessoria Reforma Tributária',
+                    'title' => 'Assessoria para Reforma Tributária',
+                    'text' => 'Acompanhamos as mudanças da reforma tributária, reduzindo riscos e ajudando sua empresa a aproveitar oportunidades com segurança.',
+                    'route' => 'servicos.assessoria.reforma.tributaria',
                 ],
                 [
                     'icon' => 'practice-icon6.png',
+                    'alt' => 'Treinamento Tributário',
+                    'title' => 'Treinamento Tributário para Empresas',
+                    'text' => 'Capacitamos equipes com conteúdo prático e objetivo — presencial ou online — para reduzir riscos e otimizar rotinas fiscais.',
+                    'route' => 'servicos.treinamento.tributario',
+                ],
+                [
+                    'icon' => 'practice-icon1.png',
                     'alt' => 'Recuperação PIS/COFINS',
-                    'title' => 'Recuperação PIS/COFINS',
-                    'text' => 'Análise e recuperação de créditos de PIS/COFINS, incluindo estudos e procedimentos administrativos e judiciais.',
-                    'route' => 'servicos.recuperacao.creditos',
+                    'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
+                    'text' => 'Analisamos operações para identificar créditos de PIS/COFINS monofásicos e recuperamos valores pagos indevidamente de forma legal.',
+                    'route' => 'servicos.recuperacao.pis.cofins.monofasicos',
                 ],
             ];
             @endphp

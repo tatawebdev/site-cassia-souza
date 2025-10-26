@@ -1,186 +1,64 @@
 <section class="singleblog-section blogpage-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                    <div class="main-box">
-                        <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
-                            <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid"
-                                loading="lazy">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="main-box">
+                    <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
+                        <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
+                    </figure>
+                    <div class="content1" data-aos="fade-up" data-aos-duration="700">
+                        <h4>Planejamento Tributário</h4>
+                        <div class="span-fa-outer-con"></div>
+                        <p class="text-size-16">Planejamento tributário é mais que reduzir custos: é segurança, previsibilidade e liberdade para crescer. Estruturamos estratégias sob medida para que sua empresa pague apenas o devido, evitando riscos e fortalecendo sua saúde financeira.</p>
+                    </div>
+                    <div class="content2" data-aos="fade-up" data-aos-duration="700">
+                        <figure class="singleblog-quoteimage">
+                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                            <h4>Planejamento Tributário</h4>
-                            <div class="span-fa-outer-con">
-                            
-                            </div>
-                            <p class="text-size-16">
-                                Planejar tributos é criar previsibilidade e reduzir custos de forma legal e sustentável.<br>
-                                Desenvolvemos estratégias sob medida: análise do regime tributário, identificação de créditos e incentivos aplicáveis, estruturação societária quando necessária e simulações de impacto fiscal.<br>
-                                Nosso objetivo é alinhar a carga tributária aos objetivos do negócio, minimizando riscos e garantindo segurança jurídica nas escolhas adotadas.<br>
-                                <br>
-                                <strong>Planejamento Tributário para Clínicas Médicas e Odontológicas:</strong><br>
-                                Para o setor de saúde, oferecemos soluções específicas (como estudos de enquadramento e alternativas de tributação) com foco em reduzir a carga tributária sem comprometer a conformidade. Entregamos análises práticas que aumentam a previsibilidade financeira e a margem operacional.
-                                <br>
-                                <strong>Fale conosco para um diagnóstico e proposta personalizada.</strong>
-                            </p>
-                        </div>
-                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="singleblog-quoteimage">
-                                <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <p class="mb-0 text-white text-size-18">“Pague tributos com inteligência: reduza custos, evite riscos e transforme obrigações em oportunidades de crescimento”</p>
-                        </div>
-                        <p class="text text-size-16">Além de reduzir custos, nosso acompanhamento contínuo permite que você antecipe cenários fiscais, evitando surpresas e penalidades. Identificamos créditos, incentivos e regimes especiais aplicáveis ao seu negócio, garantindo que cada decisão tributária seja estratégica e alinhada aos seus objetivos de crescimento.
-                        </p>
-                        <div class="content3" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="image1 mb-3" data-aos="fade-up">
-                                <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <p class="text text-size-16">Com nossa consultoria, você tem mais do que números: tem clareza, controle e liberdade para investir no que realmente importa — expandir sua empresa, inovar e consolidar sua posição no mercado. Transforme a complexidade tributária em uma vantagem competitiva. Entre em contato e comece a pagar tributos com inteligência e segurança.
-                            </p>
-                        </div>
-                        <div class="content4" data-aos="fade-up" data-aos-duration="700">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="tag">
-                    <h4>Assuntos relacionados</h4>
-                    <ul class="mb-0 list-unstyled ">
-                        <li><a class="button text-decoration-none" href="about.html">Assessoria</a>
-                        </li>
-                        <li><a class="button button2 text-decoration-none"
-                            href="about.html">Orientação</a></li>
-                        <li><a class="button button3 text-decoration-none"
-                            href="about.html">Gestão Tributária</a></li>
-                    </ul>
-                                    </div>
+                        <p class="mb-0 text-white text-size-18">Segurança e previsibilidade tributária para decisões confiantes</p>
+                    </div>
+                    <p class="text text-size-16">Analisamos regime tributário, identificamos créditos e incentivos aplicáveis, e estruturamos alternativas (incluindo simulações de impacto). Nosso objetivo é alinhar a carga tributária aos objetivos do negócio, minimizando riscos e garantindo segurança jurídica.</p>
+                    <div class="content3" data-aos="fade-up" data-aos-duration="700">
+                        <figure class="image1 mb-3" data-aos="fade-up">
+                            <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
+                        </figure>
+                        <p class="text text-size-16">Com planejamento, sua empresa ganha previsibilidade financeira e liberdade para investir no crescimento. Fale conosco para um diagnóstico e proposta personalizada.</p>
+                    </div>
+                    <div class="content4" data-aos="fade-up" data-aos-duration="700">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="tag">
+                                    <h4>Assuntos relacionados</h4>
+                                    <ul class="mb-0 list-unstyled ">
+                                        <li><a class="button text-decoration-none" href="/servicos/planejamento-tributario-clinicas">Planejamento Clínicas</a></li>
+                                        <li><a class="button button2 text-decoration-none" href="/contato">Solicitar diagnóstico</a></li>
+                                    </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="icon">
-                                        <h4>Compartilhar</h4>
-                                        <div class="social-icons position-absolute">
-                                                @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
-                                        </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="icon">
+                                    <h4>Compartilhar</h4>
+                                    <div class="social-icons position-absolute">
+                                        @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="buttons aos-init aos-animate" data-aos="fade-up">
-                            <a href="single-blog.html" class="prev">
-                                <span class="prev-text">Anterior</span>
-                            </a>
-                            <a href="single-blog.html" class="next">
-                                <span class="next-text">Próximo</span>
-                            </a>
-                        </div>
-                        <div class="content5" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="singleblog-review1 mb-0">
-                                <img src="/assets/images/singleblog-review1.png" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <div class="content">
-                                <h4>Equipe Cassia Souza Adv</h4>
-                                <span class="text-size-16">Planejamento Tributário</span>
-                                <p class="text-size-16">Elaboramos estratégias que geram previsibilidade e redução de custos, com segurança jurídica e foco nos objetivos do negócio.</p>
-                            </div>
-                        </div>
-                        <div class="content6" data-aos="fade-up" data-aos-duration="700">
-                            <h4>2 Comentários</h4>
-                            <div class="comment">
-                                <div class="image" data-aos="flip-left"><img alt="image"
-                                        src="/assets/images/singleblog-review2.png" class="avatar" loading="lazy"></div>
-                                <div class="content">
-                                    <h5>Roseanne Williams</h5>
-                                    <span class="text-size-14">Dec 29, 2022</span>
-                                    <a class="reply text-decoration-none" href="#">Responder</a>
-                                    <div class="text_holder">
-                                        <p class="text-size-16">Comentário de cliente: o planejamento trouxe previsibilidade financeira e redução de custos.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <div class="image" data-aos="flip-left"><img alt="image"
-                                        src="/assets/images/singleblog-review3.png" class="avatar" loading="lazy"></div>
-                                <div class="content">
-                                    <h5>Samantha Nicolan</h5>
-                                    <span class="text-size-14">Dec 29, 2022</span>
-                                    <a class="reply text-decoration-none" href="#">Responder</a>
-                                    <div class="text_holder">
-                                        <p class="text-size-16">Comentário de cliente: recomendação clara e entrega prática para a equipe financeira.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- seção de comentários removida -->
+                    </div>
+                    <div class="buttons aos-init aos-animate" data-aos="fade-up">
+                        <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
+                        <a href="/contato" class="next"><span class="next-text">Solicitar diagnóstico</span></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
-                        <div class="box1" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Pesquisar</h4>
-                        <div class="social-icons">
-                            @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
-                        </div>
-                        <div class="box1 box2" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Categorias populares</h4>
-                        <ul class="list-unstyled mb-0">
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">Conheça nossos serviços</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">descubra como podemos</a></li>
-                            <li class="text-size-16"><a href="three-colum-sidbar.html">ajudar a impulsionar o crescimento</a></li>
-                            <li class="mb-0 text-size-16"><a href="three-colum-sidbar.html"> do seu negócio! </a></li>
-                        </ul>
-                    </div>
-                    <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Conheça nossas redes sociais</h4>
-                        <div class="social-icons">
-                            @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
-                        </div>
-                    </div>
-                    <div class="box1 box4" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Assuntos</h4>
-                        <ul class="tag mb-0 list-unstyled">
-                            <li><a class="button text-decoration-none" href="about.html">Planejamento Tributário</a></li>
-                            <li><a class="button button2 text-decoration-none" href="about.html">GestaoTributariaice</a></li>
-                            <li><a class="button button3 text-decoration-none" href="about.html">ConsultoriaTributaria</a></li>
-                            <li><a class="button button4 text-decoration-none" href="about.html">EconomiaFiscal</a></li>
-                            <li><a class="button button5 text-decoration-none" href="about.html">CrescimentoEmpresarial</a></li>
-                            <li><a class="button button6 text-decoration-none" href="about.html">TributosSeguros</a></li>
-                            <li><a class="button button7 text-decoration-none" href="about.html">EstrategiaTributaria</a></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="box1 box5" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Publicações</h4>
-                        <div class="feed">
-                            <figure class="feed-image mb-0" data-aos="fade-up">
-                                <img src="/assets/images/singleblog-feed1.jpg" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Leia nossos artigos sobre gestão tributária</a>
-                        </div>
-                        <div class="feed">
-                            <figure class="feed-image mb-0" data-aos="fade-up">
-                                <img src="/assets/images/singleblog-feed2.jpg" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
-                        </div>
-                        <div class="feed">
-                            <figure class="feed-image mb-0" data-aos="fade-up">
-                                <img src="/assets/images/singleblog-feed3.jpg" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
-                        </div>
-                        <div class="feed feed4">
-                            <figure class="feed-image mb-0" data-aos="fade-up">
-                                <img src="/assets/images/singleblog-feed4.jpg" alt="image" class="img-fluid"
-                                    loading="lazy">
-                            </figure>
-                            <a href="six-colum-full-wide.html" class="mb-0">Por que um assistente virtual pode ajudar seu negócio</a>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
+                <div class="box1 box3" data-aos="fade-up" data-aos-duration="700">
+                    <h4>Siga-nos</h4>
+                    <div class="social-icons">
+                        @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    </section>
+    </div>
+</section>
