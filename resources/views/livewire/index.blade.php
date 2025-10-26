@@ -99,11 +99,17 @@
                     </div>
                 </div>
                 <ul class="list-unstyled mb-0 social-icons">
-                    <li><a href="https://www.facebook.com/cassia.souza.adv/" class="text-decoration-none"><i
-                                class="fa-brands fa-facebook-f social-networks"></i></a></li>
-                    <li><a href="https://www.instagram.com/cassiasouza.adv/" class="text-decoration-none"><i
+
+                    <li><a href="https://www.instagram.com/cassiasouza.adv/" class="text-decoration-none"
+                            target="_blank" rel="noopener noreferrer"><i
                                 class="fa-brands fa-instagram social-networks"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/cassiasouzaadv/" class="text-decoration-none"><i
+
+                    <li><a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1"
+                            class="text-decoration-none" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-tiktok social-networks"></i></a></li>
+
+                    <li><a href="https://www.linkedin.com/in/cassiasouzaadv/" class="text-decoration-none"
+                            target="_blank" rel="noopener noreferrer"><i
                                 class="fa-brands fa-linkedin social-networks"></i></a></li>
                 </ul>
             </div>
