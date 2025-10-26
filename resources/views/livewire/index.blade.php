@@ -27,27 +27,78 @@
                                     id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"> Serviços </a>
                                 <div class="dropdown-menu drop-down-content">
-                                    <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.consultoria.tributaria') }}">Consultoria
-                                                Tributária</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.defesa.administrativa') }}">Defesa
-                                                Administrativa</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.planejamento.tributario') }}">Planejamento
-                                                Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de
-                                                Créditos</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.conformidade.tributaria') }}">Conformidade
-                                                Tributária</a></li>
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/sobre-nos">Sobre</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color"
+                                                href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"> Serviços </a>
+                                            <div class="dropdown-menu drop-down-content">
+                                                <ul class="list-unstyled drop-down-pages">
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.consultoria.tributaria') }}">
+                                                            Consultoria Tributária
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
+                                                            Regularização de Débitos PGFN
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.planejamento.tributario') }}">
+                                                            Planejamento Tributário
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.planejamento.tributario.clinicas') }}">
+                                                            Planejamento Tributário para Clínicas Médicas e
+                                                            Odontológicas
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.assessoria.reforma.tributaria') }}">
+                                                            Assessoria em Reforma Tributária
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.treinamento.tributario') }}">
+                                                            Treinamento Tributário
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item nav-link"
+                                                            href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
+                                                            Recuperação de PIS/COFINS Monofásicos
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" target="_blank"
+                                                href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/contato">Contato</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
+                                <a class="nav-link" target="_blank"
+                                    href="https://blog.cassiasouzaadvocacia.com.br/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>

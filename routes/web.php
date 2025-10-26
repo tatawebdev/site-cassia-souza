@@ -12,10 +12,12 @@ Route::get('/servicos', \App\Livewire\Services::class)->name('servicos');
 
 
 Route::get('/servicos/consultoria-tributaria', \App\Livewire\Services\TaxConsulting::class)->name('servicos.consultoria.tributaria');
-Route::get('/servicos/defesa-administrativa', \App\Livewire\Services\AdministrativeDefense::class)->name('servicos.defesa.administrativa');
+Route::get('/servicos/regularizacao-debitos-pgfn', \App\Livewire\Services\FederalDebtsRegularization::class)->name('servicos.regularizacao.debitos.pgfn');
 Route::get('/servicos/planejamento-tributario', \App\Livewire\Services\TaxPlanning::class)->name('servicos.planejamento.tributario');
-Route::get('/servicos/recuperacao-de-creditos', \App\Livewire\Services\CreditRecovery::class)->name('servicos.recuperacao.creditos');
-Route::get('/servicos/conformidade-tributaria', \App\Livewire\Services\TaxCompliance::class)->name('servicos.conformidade.tributaria');
+Route::get('/servicos/planejamento-tributario-clinicas', \App\Livewire\Services\MedicalDentalTaxPlanning::class)->name('servicos.planejamento.tributario.clinicas');
+Route::get('/servicos/assessoria-reforma-tributaria', \App\Livewire\Services\TaxReformAdvisory::class)->name('servicos.assessoria.reforma.tributaria');
+Route::get('/servicos/treinamento-tributario', \App\Livewire\Services\TaxTraining::class)->name('servicos.treinamento.tributario');
+Route::get('/servicos/recuperacao-pis-cofins-monofasicos', \App\Livewire\Services\PISCOFINSRecovery::class)->name('servicos.recuperacao.pis.cofins.monofasicos');
 
 Route::get('/auth/google/redirecionar', [GoogleAuthController::class, 'redirect'])->name('google.redirecionar');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');

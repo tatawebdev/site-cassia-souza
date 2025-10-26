@@ -91,21 +91,41 @@
                                     aria-expanded="false"> Serviços </a>
                                 <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.consultoria.tributaria') }}">Consultoria
-                                                Tributária</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.defesa.administrativa') }}">Defesa
-                                                Administrativa</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.planejamento.tributario') }}">Planejamento
-                                                Tributário</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.recuperacao.creditos') }}">Recuperação de
-                                                Créditos</a></li>
-                                        <li class="nav-item"><a class="dropdown-item nav-link"
-                                                href="{{ route('servicos.conformidade.tributaria') }}">Conformidade
-                                                Tributária</a></li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.consultoria.tributaria') }}">
+                                                Consultoria Tributária
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
+                                                Regularização de Débitos PGFN
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario') }}">
+                                                Planejamento Tributário
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario.clinicas') }}">
+                                                Planejamento Tributário para Clínicas Médicas e Odontológicas
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.assessoria.reforma.tributaria') }}">
+                                                Assessoria em Reforma Tributária
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.treinamento.tributario') }}">
+                                                Treinamento Tributário
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item nav-link" href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
+                                                Recuperação de PIS/COFINS Monofásicos
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
