@@ -70,7 +70,7 @@
                     <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12 col-12">
                         <div class="banner_content" data-aos="fade-up">
                             <h2 class="text-white text-size-28 mb-3">
-                                Está pagando além do justo em impostos? </h2>
+                                Está pagando além do justo em impostos1? </h2>
                             <p class="text-white text-size-16 mb-3">
                                 Nossa consultoria tributária identifica reduções legais, regulariza dívidas, recupera
                                 tributos <strong>e prepara sua empresa para a Reforma.</strong>
