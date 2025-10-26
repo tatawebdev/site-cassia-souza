@@ -2123,8 +2123,14 @@ h6:before{
     color: var(--e-global-color-primary);
 }
 .practice-con .box{
-    padding: 48px 35px 45px;
-    min-height: 345px;
+    /* Make cards equal-height and vertically structured */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1 1 auto;
+    height: 90%;
+    /* padding: 36px 26px; mais espaço superior para thumbnails maiores */
     margin-bottom: 30px;
     cursor: pointer;
     text-align: center;
@@ -2133,26 +2139,85 @@ h6:before{
     position: relative;
     transition: all 0.3s ease-in-out;
 }
+
+/* Remove o margin-top do primeiro box da linha */
+.practice-con .row > .col-lg-4:first-child .box {
+    margin-top: 0;
+}
 .practice-con .practice-box{
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-.practice-con .practice-box .icon{
-    margin-bottom: 18px;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-}
-.practice-con .practice-box .icon:hover{
-    transform: translateY(-5px);
-}
+
 .practice-con .practice-box h5{
-    margin-bottom: 13px;
+    margin: 6px 0 10px;
     color: var(--e-global-color-primary);
     transition: all 0.3s ease-in-out;
 }
 .practice-con .practice-box p{
     margin-bottom: 30px;
     transition: all 0.3s ease-in-out;
+}
+.practice-con .practice-box .service-icon{
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.practice-con .practice-box figure.icon img.service-icon{
+    /* usar largura 100% do container para imagens responsivas */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Prevent global inversion/filter on icon when hovering the card; instead slightly tint the icon container */
+.practice-con .box:hover .practice-box figure.icon{
+    filter: none;
+    background: rgba(255,255,255,0.08);
+}
+
+/* Responsividade: diminuir thumbnails em telas pequenas */
+@media (max-width: 767px) {
+    .practice-con .box{
+        padding: 24px 18px;
+    }
+    .practice-con .practice-box figure.icon{
+        width: 96px;
+        height: 96px;
+        margin-bottom: 12px;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .practice-con .practice-box figure.icon img.service-icon{
+        width: 72px;
+        height: 72px;
+    }
+}
+
+/* Make the link/action stick to the bottom so cards look balanced */
+.practice-con .practice-box a{
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Ensure columns stretch to equal height */
+.practice-con .row > [class*="col-"] {
+    display: flex;
+    align-items: stretch;
+}
+.practice-con .row > [class*="col-"] > .box {
+    display: flex;
+    flex-direction: column;
 }
 .practice-con .practice-box i{
     font-size: 14px;

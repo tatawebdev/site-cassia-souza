@@ -151,49 +151,50 @@
                 // Serviços oferecidos pela Cassia Souza Adv — mapeados para as rotas nomeadas
                 $services = [
                     [
-                        'icon' => 'practice-icon1.png',
+                        // ícones mapeados para arquivos reais em public/assets/servicos
+                        'icon' => 'planejamento_tributario.png',
                         'alt' => 'Consultoria Tributária',
                         'title' => 'Consultoria Tributária',
                         'text' => 'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades para garantir conformidade e economia.',
                         'route' => 'servicos.consultoria.tributaria',
                     ],
                     [
-                        'icon' => 'practice-icon2.png',
+                        'icon' => 'regularizacao_pgfn.png',
                         'alt' => 'Regularização de Débitos - PGFN',
                         'title' => 'Regularização de Débitos (PGFN)',
                         'text' => 'Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego financeiro e evitar bloqueios.',
                         'route' => 'servicos.regularizacao.debitos.pgfn',
                     ],
                     [
-                        'icon' => 'practice-icon3.png',
+                        'icon' => 'planejamento_tributario.png',
                         'alt' => 'Planejamento Tributário',
                         'title' => 'Planejamento Tributário',
                         'text' => 'Estruturamos estratégias sob medida para reduzir a carga tributária dentro da legalidade, garantindo previsibilidade e segurança para o crescimento.',
                         'route' => 'servicos.planejamento.tributario',
                     ],
                     [
-                        'icon' => 'practice-icon4.png',
+                        'icon' => 'planejamento_clinicas.png',
                         'alt' => 'Planejamento para Clínicas',
                         'title' => 'Planejamento Tributário para Clínicas',
                         'text' => 'Soluções tributárias específicas para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
                         'route' => 'servicos.planejamento.tributario.clinicas',
                     ],
                     [
-                        'icon' => 'practice-icon5.png',
+                        'icon' => 'assessoria_reforma_tributaria.png',
                         'alt' => 'Assessoria Reforma Tributária',
                         'title' => 'Assessoria para Reforma Tributária',
                         'text' => 'Acompanhamos as mudanças da reforma tributária, reduzindo riscos e ajudando sua empresa a aproveitar oportunidades com segurança.',
                         'route' => 'servicos.assessoria.reforma.tributaria',
                     ],
                     [
-                        'icon' => 'practice-icon6.png',
+                        'icon' => 'treinamento_tributario.png',
                         'alt' => 'Treinamento Tributário',
                         'title' => 'Treinamento Tributário para Empresas',
                         'text' => 'Capacitamos equipes com conteúdo prático e objetivo — presencial ou online — para reduzir riscos e otimizar rotinas fiscais.',
                         'route' => 'servicos.treinamento.tributario',
                     ],
                     [
-                        'icon' => 'practice-icon1.png',
+                        'icon' => 'recuperacao_pis_cofins.png',
                         'alt' => 'Recuperação PIS/COFINS',
                         'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
                         'text' => 'Analisamos operações para identificar créditos de PIS/COFINS monofásicos e recuperamos valores pagos indevidamente de forma legal.',
@@ -208,8 +209,8 @@
                         <div class="box">
                             <div class="practice-box">
                                 <figure class="icon">
-                                    <img src="/assets/images/{{ $service['icon'] }}" alt="{{ $service['alt'] }}"
-                                        class="img-fluid">
+                                    <img src="{{ asset('assets/servicos/' . $service['icon']) }}" alt="{{ $service['alt'] }}"
+                                        class="img-fluid service-icon">
                                 </figure>
                                 <h5>{{ $service['title'] }}</h5>
                                 <p class="text-size-14">{{ $service['text'] }}</p>
