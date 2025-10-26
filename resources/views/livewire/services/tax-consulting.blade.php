@@ -54,10 +54,10 @@
                         </div>
                         <div class="buttons aos-init aos-animate" data-aos="fade-up">
                             <a href="single-blog.html" class="prev">
-                                <span class="prev-text">Prev</span>
+                                <span class="prev-text">Anterior</span>
                             </a>
                             <a href="single-blog.html" class="next">
-                                <span class="next-text">Next</span>
+                                <span class="next-text">Próximo</span>
                             </a>
                         </div>
                         <div class="content5" data-aos="fade-up" data-aos-duration="700">
@@ -72,14 +72,14 @@
                             </div>
                         </div>
                         <div class="content6" data-aos="fade-up" data-aos-duration="700">
-                            <h4>2 Comments</h4>
+                            <h4>2 Comentários</h4>
                             <div class="comment">
                                 <div class="image" data-aos="flip-left"><img alt="image"
                                         src="/assets/images/singleblog-review2.png" class="avatar" loading="lazy"></div>
                                 <div class="content">
                                     <h5>Roseanne Williams</h5>
                                     <span class="text-size-14">Dec 29, 2022</span>
-                                    <a class="reply text-decoration-none" href="#">Reply</a>
+                                    <a class="reply text-decoration-none" href="#">Responder</a>
                                     <div class="text_holder">
                                         <p class="text-size-16">Comentário de cliente: o suporte contínuo trouxe maior previsibilidade financeira.</p>
                                     </div>
