@@ -29,37 +29,44 @@
                                 <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.consultoria.tributaria') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.consultoria.tributaria') }}">
                                                 Consultoria Tributária
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
                                                 Regularização de Débitos Federais (PGFN)
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario') }}">
                                                 Planejamento Tributário
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario.clinicas') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario.clinicas') }}">
                                                 Planejamento Tributário para Clínicas Médicas/Odontológicas
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.assessoria.reforma.tributaria') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.assessoria.reforma.tributaria') }}">
                                                 Assessoria para Reforma Tributária
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.treinamento.tributario') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.treinamento.tributario') }}">
                                                 Treinamento Tributário
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
                                                 Recuperação de PIS/COFINS Monofásicos
                                             </a>
                                         </li>
@@ -93,7 +100,7 @@
                                 Está pagando além do justo em impostos? </h2>
                             <p class="text-white text-size-16 mb-3">
                                 Nossa consultoria tributária identifica reduções legais, regulariza dívidas, recupera
-                                tributos <strong>e prepara sua empresa para a Reforma.</strong>
+                                tributos <strong>e prepara sua empresa para a Reforma Tributária.</strong>
                             </p>
 
                             <p class="text-white text-size-16 mb-3">
@@ -126,50 +133,96 @@
     @include('sobre-nos')
 
     <!-- Expertise -->
-    <section class="expertise-con" style="padding-top: 0px">
+    <section class="practice-con">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="expertise_content text-center" data-aos="fade-up" style="padding: 32px 0 24px 0;">
-                        <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 18px; text-align: center;">Menos
-                            Incertezas. Mais Segurança Tributária.</h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0"
-                            style="font-size: 1.08rem; line-height: 1.7; margin-bottom: 0; text-align: center;"></p>
-                        O cenário tributário é complexo, mas você não precisa enfrentar isso sozinho. Atuamos como
-                        parceiros estratégicos para garantir regularidade, reduzir impostos de forma legal e proteger
-                        sua empresa contra riscos fiscais.
+                    <div class="practice_content text-center" data-aos="fade-up">
+                        <h2>Nossa atuação em Direito Tributário</h2>
+                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">A Cassia Souza Adv é um escritório
+                            especializado em Direito Tributário, com foco em estratégia, segurança jurídica e resultados
+                            concretos para empresas de todos os portes. Com uma abordagem moderna e transparente,
+                            transformamos a complexidade do sistema tributário em soluções práticas, éticas e seguras.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="row" data-aos="fade-up">
+            @php
+                // Serviços oferecidos pela Cassia Souza Adv — mapeados para as rotas nomeadas
+                $services = [
+                    [
+                        'icon' => 'practice-icon1.png',
+                        'alt' => 'Consultoria Tributária',
+                        'title' => 'Consultoria Tributária',
+                        'text' => 'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades para garantir conformidade e economia.',
+                        'route' => 'servicos.consultoria.tributaria',
+                    ],
+                    [
+                        'icon' => 'practice-icon2.png',
+                        'alt' => 'Regularização de Débitos - PGFN',
+                        'title' => 'Regularização de Débitos (PGFN)',
+                        'text' => 'Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego financeiro e evitar bloqueios.',
+                        'route' => 'servicos.regularizacao.debitos.pgfn',
+                    ],
+                    [
+                        'icon' => 'practice-icon3.png',
+                        'alt' => 'Planejamento Tributário',
+                        'title' => 'Planejamento Tributário',
+                        'text' => 'Estruturamos estratégias sob medida para reduzir a carga tributária dentro da legalidade, garantindo previsibilidade e segurança para o crescimento.',
+                        'route' => 'servicos.planejamento.tributario',
+                    ],
+                    [
+                        'icon' => 'practice-icon4.png',
+                        'alt' => 'Planejamento para Clínicas',
+                        'title' => 'Planejamento Tributário para Clínicas',
+                        'text' => 'Soluções tributárias específicas para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
+                        'route' => 'servicos.planejamento.tributario.clinicas',
+                    ],
+                    [
+                        'icon' => 'practice-icon5.png',
+                        'alt' => 'Assessoria Reforma Tributária',
+                        'title' => 'Assessoria para Reforma Tributária',
+                        'text' => 'Acompanhamos as mudanças da reforma tributária, reduzindo riscos e ajudando sua empresa a aproveitar oportunidades com segurança.',
+                        'route' => 'servicos.assessoria.reforma.tributaria',
+                    ],
+                    [
+                        'icon' => 'practice-icon6.png',
+                        'alt' => 'Treinamento Tributário',
+                        'title' => 'Treinamento Tributário para Empresas',
+                        'text' => 'Capacitamos equipes com conteúdo prático e objetivo — presencial ou online — para reduzir riscos e otimizar rotinas fiscais.',
+                        'route' => 'servicos.treinamento.tributario',
+                    ],
+                    [
+                        'icon' => 'practice-icon1.png',
+                        'alt' => 'Recuperação PIS/COFINS',
+                        'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
+                        'text' => 'Analisamos operações para identificar créditos de PIS/COFINS monofásicos e recuperamos valores pagos indevidamente de forma legal.',
+                        'route' => 'servicos.recuperacao.pis.cofins.monofasicos',
+                    ],
+                ];
+            @endphp
 
-                <div class="col-12">
-                    <div class="owl-carousel owl-theme">
-                        @foreach ($servicos as $key => $servico)
-                            <div class="item">
-                                <div class="expertise-box d-flex flex-column justify-content-between align-items-center h-100"
-                                    style="min-height: 420px;">
-                                    <figure class="mb-0 w-100" style="overflow: hidden;">
-                                        <img src="assets/servicos/{{ $key }}.png" alt="imagem" class="img-fluid w-100"
-                                            style="object-fit: contain;">
-                                    </figure>
-                                    <div
-                                        class="box-content text-center flex-grow-1 d-flex flex-column justify-content-center w-100">
-                                        <h5 class="mb-2" style="font-weight: 700; font-size: 1.15rem; color: #2d2d2d;">
-                                            {{ $servico['short_titulo'] }}
-                                        </h5>
-                                        <p class="text-size-14 mb-0" style="color: #555; line-height: 1.6;">
-                                            {!! nl2br(e($servico['descricao_short'])) !!}
-                                        </p>
-                                    </div>
-                                </div>
+            <div class="row" data-aos="fade-up">
+                @foreach($services as $service)
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="box">
+                            <div class="practice-box">
+                                <figure class="icon">
+                                    <img src="/assets/images/{{ $service['icon'] }}" alt="{{ $service['alt'] }}"
+                                        class="img-fluid">
+                                </figure>
+                                <h5>{{ $service['title'] }}</h5>
+                                <p class="text-size-14">{{ $service['text'] }}</p>
+                                <a href="{{ route($service['route']) }}" class="text-decoration-none"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
+        </div>
     </section>
+
     <!-- About -->
     <section class="about-con position-relative">
         <figure class="about-sideimage mb-0">
