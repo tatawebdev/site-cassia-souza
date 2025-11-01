@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class MedicalDentalTaxPlanning extends Component
+class PlanejamentoClinicas extends Component
 {
     public function render()
     {
@@ -26,7 +26,7 @@ class MedicalDentalTaxPlanning extends Component
         $imagem2 = file_exists(public_path("{$imagem2Default}")) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
         return view(
-            'livewire.services.medical-dental-tax-planning',
+            'livewire.servicos.planejamento-tributario-clinicas',
             [
                 'imagem1' => $imagem1,
                 'imagem2' => $imagem2

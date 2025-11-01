@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class TaxCompliance extends Component
+class ConformidadeTributaria extends Component
 {
     public function render()
     {
@@ -42,7 +42,7 @@ class TaxCompliance extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.tax-compliance', [
+        return view('livewire.servicos.compliance-tributario', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

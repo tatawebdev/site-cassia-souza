@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class CreditRecovery extends Component
+class ConsultoriaTributaria extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Recuperação de Crédito',
-            'img' => 'banner-recuperacao-credito.jpg',
-            'descricao' => 'Atuamos na recuperação de créditos e direitos.',
+            'title' => 'Consultoria Tributária',
+            'img' => 'banner-consultoria-tributaria.jpg',
+            'descricao' => 'Consultoria mensal que revisa movimentações fiscais, previne riscos e identifica oportunidades para garantir conformidade e economia.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Recuperação de Crédito', 'url' => '/servicos/recuperacao-de-credito'],
+            ['label' => 'Consultoria Tributária', 'url' => '/servicos/consultoria-tributaria'],
         ];
 
         $base = class_basename($this);
@@ -28,22 +28,21 @@ class CreditRecovery extends Component
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
             if (file_exists($source1)) {
-            copy($source1, public_path($imagem1Default));
+                copy($source1, public_path($imagem1Default));
             }
         }
 
         if (!file_exists(public_path($imagem2Default))) {
             $source2 = public_path('/assets/images/singleblog-image1.jpg');
             if (file_exists($source2)) {
-            copy($source2, public_path($imagem2Default));
+                copy($source2, public_path($imagem2Default));
             }
         }
-
 
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.credit-recovery', [
+        return view('livewire.servicos.consultoria-tributaria', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

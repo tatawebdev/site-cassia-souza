@@ -1,3 +1,6 @@
+@php
+// Copiado de resources/views/livewire/services/tax-reform-advisory.blade.php
+@endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
         <div class="row">
@@ -7,24 +10,22 @@
                         <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Consultoria Tributária</h4>
+                        <h4>Assessoria para a Reforma Tributária</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">
-                            Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades. Assim, você evita autuações, garante regularidade e toma decisões seguras para crescer com tranquilidade.
-                        </p>
+                        <p class="text-size-16">A Reforma Tributária já está em curso. Nossa assessoria especializada ajuda sua empresa a entender impactos, reduzir riscos e se adaptar com segurança. Transforme as mudanças em oportunidade e siga crescendo com clareza e confiança.</p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
                             <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="mb-0 text-white text-size-18">Tranquilidade fiscal para sua empresa crescer com segurança e sem surpresas</p>
+                        <p class="mb-0 text-white text-size-18">Adapte-se às mudanças e aproveite oportunidades com segurança</p>
                     </div>
-                    <p class="text text-size-16">Oferecemos revisão periódica de tributos, análise de operações, orientação sobre incentivos fiscais e suporte para tomada de decisões do dia a dia. Relatórios claros e recomendações práticas que geram impacto no caixa e reduzem riscos.</p>
+                    <p class="text text-size-16">Oferecemos análise de impacto, ajustes de processos e orientação estratégica para que as alterações legislativas sejam aproveitadas de forma alinhada aos objetivos do negócio.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">Conte com atendimento personalizado: entregamos estratégia, clareza e ação para que sua empresa tenha mais previsibilidade financeira.</p>
+                        <p class="text text-size-16">Nossa atuação ajuda sua empresa a transformar incertezas em oportunidades reais de continuidade e crescimento.</p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">
@@ -32,9 +33,7 @@
                                 <div class="tag">
                                     <h4>Assuntos relacionados</h4>
                                     <ul class="mb-0 list-unstyled ">
-                                        <li><a class="button text-decoration-none" href="/servicos/planejamento-tributario">Planejamento Tributário</a></li>
-                                        <li><a class="button button2 text-decoration-none" href="/servicos/consultoria-tributaria">Consultoria</a></li>
-                                        <li><a class="button button3 text-decoration-none" href="/contato">Fale conosco</a></li>
+                                        <li><a class="button text-decoration-none" href="/contato">Avaliação de impacto</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -49,22 +48,8 @@
                         </div>
                     </div>
                     <div class="buttons aos-init aos-animate" data-aos="fade-up">
-                        <a href="/servicos" class="prev">
-                            <span class="prev-text">Voltar para serviços</span>
-                        </a>
-                        <a href="/contato" class="next">
-                            <span class="next-text">Fale conosco</span>
-                        </a>
-                    </div>
-                    <div class="content5" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="singleblog-review1 mb-0">
-                            <img src="/assets/images/singleblog-review1.png" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="content">
-                            <h4>Equipe Cassia Souza Adv</h4>
-                            <span class="text-size-16">Consultoria Tributária</span>
-                            <p class="text-size-16">Acompanhamento contínuo e orientações práticas que transformam números em decisões seguras para o crescimento do negócio.</p>
-                        </div>
+                        <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
+                        <a href="/contato" class="next"><span class="next-text">Solicitar assessoria</span></a>
                     </div>
                 </div>
             </div>
@@ -74,13 +59,6 @@
                     <div class="social-icons">
                         @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
                     </div>
-                </div>
-                <div class="box1 box2" data-aos="fade-up" data-aos-duration="700">
-                    <h4>Categorias populares</h4>
-                    <ul class="list-unstyled mb-0">
-                        <li class="text-size-16"><a href="/servicos">Conheça nossos serviços</a></li>
-                        <li class="text-size-16"><a href="/contato">Solicite uma proposta</a></li>
-                    </ul>
                 </div>
             </div>
         </div>

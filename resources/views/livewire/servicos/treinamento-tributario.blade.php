@@ -1,3 +1,6 @@
+@php
+// Copiado de resources/views/livewire/services/tax-training.blade.php
+@endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
         <div class="row">
@@ -7,22 +10,22 @@
                         <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Recuperação de Crédito</h4>
+                        <h4>Treinamento Tributário para Empresas</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Atuamos na identificação e recuperação de créditos e valores pagos indevidamente, por meio de análises contábeis e fiscais e de medidas administrativas e judiciais quando necessárias.</p>
+                        <p class="text-size-16">Treinamos sua equipe em gestão tributária com clareza e exemplos práticos. Capacitação personalizada para reduzir riscos, evitar autuações e otimizar rotinas fiscais — presencial ou online.</p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
                             <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="mb-0 text-white text-size-18">Recupere valores e fortaleça seu caixa</p>
+                        <p class="mb-0 text-white text-size-18">Transforme conhecimento em segurança e resultados</p>
                     </div>
-                    <p class="text text-size-16">Realizamos levantamento documental, análise de oportunidades de crédito e adotamos as medidas cabíveis para assegurar a recuperação de valores com segurança jurídica.</p>
+                    <p class="text text-size-16">Nossos treinamentos são práticos e aplicáveis, com materiais e exercícios pensados para a realidade do seu departamento fiscal e financeiro. Podemos oferecer turmas presenciais ou programas online adaptados à sua empresa.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">Nosso trabalho devolve recursos ao caixa da empresa e contribui para a saúde financeira e a capacidade de investimento do negócio.</p>
+                        <p class="text text-size-16">Capacite sua equipe e minimize erros operacionais que geram autuações e custos desnecessários. Solicite nossa proposta de treinamento.</p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">
@@ -30,7 +33,7 @@
                                 <div class="tag">
                                     <h4>Assuntos relacionados</h4>
                                     <ul class="mb-0 list-unstyled ">
-                                        <li><a class="button text-decoration-none" href="/contato">Solicitar análise</a></li>
+                                        <li><a class="button text-decoration-none" href="/contato">Solicitar treinamento</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -46,7 +49,7 @@
                     </div>
                     <div class="buttons aos-init aos-animate" data-aos="fade-up">
                         <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
-                        <a href="/contato" class="next"><span class="next-text">Solicitar análise</span></a>
+                        <a href="/contato" class="next"><span class="next-text">Solicitar treinamento</span></a>
                     </div>
                 </div>
             </div>

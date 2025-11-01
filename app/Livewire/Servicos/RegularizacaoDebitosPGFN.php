@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class AdministrativeDefense extends Component
+class RegularizacaoDebitosPGFN extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Defesa Administrativa',
-            'img' => 'banner-defesa-administrativa.jpg',
-            'descricao' => 'Atuação em defesa administrativa para proteger seus direitos.',
+            'title' => 'Regularização de Débitos (PGFN)',
+            'img' => 'banner-regularizacao-pgfn.jpg',
+            'descricao' => 'Negociação e parcelamento de débitos inscritos na Dívida Ativa (PGFN), com foco em recuperação financeira e redução de encargos.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Defesa Administrativa', 'url' => '/servicos/defesa-administrativa'],
+            ['label' => 'Regularização de Débitos (PGFN)', 'url' => '/servicos/regularizacao-debitos-pgfn'],
         ];
 
         $base = class_basename($this);
@@ -27,10 +27,6 @@ class AdministrativeDefense extends Component
 
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
-            $targetDir1 = dirname(public_path($imagem1Default));
-            if (!file_exists($targetDir1)) {
-                mkdir($targetDir1, 0755, true);
-            }
             if (file_exists($source1)) {
                 copy($source1, public_path($imagem1Default));
             }
@@ -38,10 +34,6 @@ class AdministrativeDefense extends Component
 
         if (!file_exists(public_path($imagem2Default))) {
             $source2 = public_path('/assets/images/singleblog-image1.jpg');
-            $targetDir2 = dirname(public_path($imagem2Default));
-            if (!file_exists($targetDir2)) {
-                mkdir($targetDir2, 0755, true);
-            }
             if (file_exists($source2)) {
                 copy($source2, public_path($imagem2Default));
             }
@@ -50,10 +42,7 @@ class AdministrativeDefense extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-
-
-        
-        return view('livewire.services.administrative-defense', [
+        return view('livewire.servicos.regularizacao-debitos-pgfn', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

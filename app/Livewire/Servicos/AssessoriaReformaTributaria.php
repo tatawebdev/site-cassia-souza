@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-
-class TaxConsulting extends Component
+class AssessoriaReformaTributaria extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Consultoria Tributária',
-            'img' => 'banner-consultoria-tributaria.jpg',
-            'descricao' => 'Consultoria mensal que revisa movimentações fiscais, previne riscos e identifica oportunidades para garantir conformidade e economia.',
+            'title' => 'Assessoria para Reforma Tributária',
+            'img' => 'banner-assessoria-reforma.jpg',
+            'descricao' => 'Assessoria especializada para entender impactos da reforma, reduzir riscos e adaptar processos com segurança.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Consultoria Tributária', 'url' => '/servicos/consultoria-tributaria'],
+            ['label' => 'Assessoria Reforma Tributária', 'url' => '/servicos/assessoria-reforma-tributaria'],
         ];
 
         $base = class_basename($this);
@@ -43,7 +42,7 @@ class TaxConsulting extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.tax-consulting', [
+        return view('livewire.servicos.assessoria-reforma-tributaria', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

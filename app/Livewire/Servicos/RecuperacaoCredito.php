@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class TaxPlanning extends Component
+class RecuperacaoCredito extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Planejamento Tributário',
-            'img' => 'banner-planejamento-tributario.jpg',
-            'descricao' => 'Estratégias tributárias sob medida para reduzir a carga fiscal, garantir previsibilidade e apoiar o crescimento seguro da empresa.',
+            'title' => 'Recuperação de Crédito',
+            'img' => 'banner-recuperacao-credito.jpg',
+            'descricao' => 'Atuamos na recuperação de créditos e direitos.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Planejamento Tributário', 'url' => '/servicos/planejamento-tributario'],
+            ['label' => 'Recuperação de Crédito', 'url' => '/servicos/recuperacao-de-credito'],
         ];
 
         $base = class_basename($this);
@@ -28,21 +28,22 @@ class TaxPlanning extends Component
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
             if (file_exists($source1)) {
-                copy($source1, public_path($imagem1Default));
+            copy($source1, public_path($imagem1Default));
             }
         }
 
         if (!file_exists(public_path($imagem2Default))) {
             $source2 = public_path('/assets/images/singleblog-image1.jpg');
             if (file_exists($source2)) {
-                copy($source2, public_path($imagem2Default));
+            copy($source2, public_path($imagem2Default));
             }
         }
+
 
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.tax-planning', [
+        return view('livewire.servicos.recuperacao-de-credito', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

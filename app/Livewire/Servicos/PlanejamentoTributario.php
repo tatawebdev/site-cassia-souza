@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class TaxTraining extends Component
+class PlanejamentoTributario extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Treinamento Tributário',
-            'img' => 'banner-treinamento-tributario.jpg',
-            'descricao' => 'Treinamentos práticos para equipes fiscais: reduzir riscos, evitar autuações e otimizar rotinas — presencial ou online.',
+            'title' => 'Planejamento Tributário',
+            'img' => 'banner-planejamento-tributario.jpg',
+            'descricao' => 'Estratégias tributárias sob medida para reduzir a carga fiscal, garantir previsibilidade e apoiar o crescimento seguro da empresa.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Treinamento Tributário', 'url' => '/servicos/treinamento-tributario'],
+            ['label' => 'Planejamento Tributário', 'url' => '/servicos/planejamento-tributario'],
         ];
 
         $base = class_basename($this);
@@ -42,7 +42,7 @@ class TaxTraining extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.tax-training', [
+        return view('livewire.servicos.planejamento-tributario', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

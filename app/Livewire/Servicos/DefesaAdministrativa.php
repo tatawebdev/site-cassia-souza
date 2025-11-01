@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class TaxReformAdvisory extends Component
+class DefesaAdministrativa extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Assessoria para Reforma Tributária',
-            'img' => 'banner-assessoria-reforma.jpg',
-            'descricao' => 'Assessoria especializada para entender impactos da reforma, reduzir riscos e adaptar processos com segurança.',
+            'title' => 'Defesa Administrativa',
+            'img' => 'banner-defesa-administrativa.jpg',
+            'descricao' => 'Atuação em defesa administrativa para proteger seus direitos.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Assessoria Reforma Tributária', 'url' => '/servicos/assessoria-reforma-tributaria'],
+            ['label' => 'Defesa Administrativa', 'url' => '/servicos/defesa-administrativa'],
         ];
 
         $base = class_basename($this);
@@ -27,6 +27,10 @@ class TaxReformAdvisory extends Component
 
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
+            $targetDir1 = dirname(public_path($imagem1Default));
+            if (!file_exists($targetDir1)) {
+                mkdir($targetDir1, 0755, true);
+            }
             if (file_exists($source1)) {
                 copy($source1, public_path($imagem1Default));
             }
@@ -34,6 +38,10 @@ class TaxReformAdvisory extends Component
 
         if (!file_exists(public_path($imagem2Default))) {
             $source2 = public_path('/assets/images/singleblog-image1.jpg');
+            $targetDir2 = dirname(public_path($imagem2Default));
+            if (!file_exists($targetDir2)) {
+                mkdir($targetDir2, 0755, true);
+            }
             if (file_exists($source2)) {
                 copy($source2, public_path($imagem2Default));
             }
@@ -42,7 +50,7 @@ class TaxReformAdvisory extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.tax-reform-advisory', [
+        return view('livewire.servicos.defesa-administrativa', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

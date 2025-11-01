@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Livewire\Services;
+namespace App\Livewire\Servicos;
 
 use Livewire\Component;
 
-class FederalDebtsRegularization extends Component
+class TreinamentoTributario extends Component
 {
     public function render()
     {
         $banner = [
-            'title' => 'Regularização de Débitos (PGFN)',
-            'img' => 'banner-regularizacao-pgfn.jpg',
-            'descricao' => 'Negociação e parcelamento de débitos inscritos na Dívida Ativa (PGFN), com foco em recuperação financeira e redução de encargos.',
+            'title' => 'Treinamento Tributário',
+            'img' => 'banner-treinamento-tributario.jpg',
+            'descricao' => 'Treinamentos práticos para equipes fiscais: reduzir riscos, evitar autuações e otimizar rotinas — presencial ou online.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'Serviços', 'url' => '/servicos'],
-            ['label' => 'Regularização de Débitos (PGFN)', 'url' => '/servicos/regularizacao-debitos-pgfn'],
+            ['label' => 'Treinamento Tributário', 'url' => '/servicos/treinamento-tributario'],
         ];
 
         $base = class_basename($this);
@@ -42,7 +42,7 @@ class FederalDebtsRegularization extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.services.federal-debts-regularization', [
+        return view('livewire.servicos.treinamento-tributario', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

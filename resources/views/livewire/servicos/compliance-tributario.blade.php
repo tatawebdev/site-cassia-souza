@@ -1,3 +1,6 @@
+@php
+// Copiado de resources/views/livewire/services/tax-compliance.blade.php
+@endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
         <div class="row">
@@ -7,22 +10,22 @@
                         <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Recuperação de PIS/COFINS (Monofásicos)</h4>
+                        <h4>Compliance Tributário</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Muitas empresas pagam PIS e COFINS monofásicos além do devido. Analisamos operações, identificamos créditos legítimos e recuperamos valores de forma legal, garantindo fôlego financeiro e mais recursos para o crescimento da sua empresa.</p>
+                        <p class="text-size-16">Soluções em compliance tributário para sua empresa: processos, controles e monitoramento que evitam riscos e garantem conformidade.</p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
                             <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="mb-0 text-white text-size-18">Recupere créditos e melhore seu fluxo de caixa</p>
+                        <p class="mb-0 text-white text-size-18">Controle, governança e redução de riscos fiscais</p>
                     </div>
-                    <p class="text text-size-16">Realizamos levantamento documental, análise de notas fiscais e procedimentos administrativos e judiciais quando necessários para assegurar a recuperação dos valores.</p>
+                    <p class="text text-size-16">Implementamos políticas e rotinas fiscais, verificamos obrigações acessórias e oferecemos monitoramento contínuo para garantir que sua empresa esteja alinhada às exigências legais.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">A atuação correta na recuperação de créditos devolve recursos importantes ao caixa da empresa e aumenta a capacidade de investimento.</p>
+                        <p class="text text-size-16">Nossos serviços de compliance reduzem a exposição a autuações e proporcionam segurança nas decisões operacionais e estratégicas.</p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">
@@ -30,7 +33,7 @@
                                 <div class="tag">
                                     <h4>Assuntos relacionados</h4>
                                     <ul class="mb-0 list-unstyled ">
-                                        <li><a class="button text-decoration-none" href="/contato">Solicitar análise</a></li>
+                                        <li><a class="button text-decoration-none" href="/contato">Solicitar diagnóstico</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -46,7 +49,7 @@
                     </div>
                     <div class="buttons aos-init aos-animate" data-aos="fade-up">
                         <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
-                        <a href="/contato" class="next"><span class="next-text">Solicitar análise</span></a>
+                        <a href="/contato" class="next"><span class="next-text">Solicitar diagnóstico</span></a>
                     </div>
                 </div>
             </div>
