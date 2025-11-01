@@ -227,9 +227,7 @@
 
     <!-- About -->
     <section class="about-con position-relative">
-        <figure class="about-sideimage mb-0">
-            <img src="/assets/images/about-sideimage.png" alt="image" class="image-fluid">
-        </figure>
+       
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 col-12">

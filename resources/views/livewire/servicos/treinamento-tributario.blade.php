@@ -7,7 +7,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="main-box">
                     <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
-                        <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
+                        <img src="{{ $imagem1 }}" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Treinamento Tributário para Empresas</h4>
@@ -23,7 +23,7 @@
                     <p class="text text-size-16">Nossos treinamentos são práticos e aplicáveis, com materiais e exercícios pensados para a realidade do seu departamento fiscal e financeiro. Podemos oferecer turmas presenciais ou programas online adaptados à sua empresa.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
+                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
                         <p class="text text-size-16">Capacite sua equipe e minimize erros operacionais que geram autuações e custos desnecessários. Solicite nossa proposta de treinamento.</p>
                     </div>

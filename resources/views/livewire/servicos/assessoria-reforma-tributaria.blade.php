@@ -7,7 +7,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="main-box">
                     <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
-                        <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
+                        <img src="{{ $imagem1 }}" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Assessoria para a Reforma Tributária</h4>
@@ -23,7 +23,7 @@
                     <p class="text text-size-16">Oferecemos análise de impacto, ajustes de processos e orientação estratégica para que as alterações legislativas sejam aproveitadas de forma alinhada aos objetivos do negócio.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
+                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
                         <p class="text text-size-16">Nossa atuação ajuda sua empresa a transformar incertezas em oportunidades reais de continuidade e crescimento.</p>
                     </div>

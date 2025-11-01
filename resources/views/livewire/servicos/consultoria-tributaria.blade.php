@@ -7,7 +7,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="main-box">
                     <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
-                        <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
+                        <img src="{{ $imagem1 }}" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Consultoria Tributária</h4>
@@ -25,7 +25,7 @@
                     <p class="text text-size-16">Oferecemos revisão periódica de tributos, análise de operações, orientação sobre incentivos fiscais e suporte para tomada de decisões do dia a dia. Relatórios claros e recomendações práticas que geram impacto no caixa e reduzem riscos.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
+                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
                         <p class="text text-size-16">Conte com atendimento personalizado: entregamos estratégia, clareza e ação para que sua empresa tenha mais previsibilidade financeira.</p>
                     </div>

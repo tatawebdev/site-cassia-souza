@@ -7,7 +7,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="main-box">
                     <figure class="image1 mb-3" data-aos="fade-up" data-aos-duration="700">
-                        <img src="/assets/images/singleblog-image1.jpg" alt="image" class="img-fluid" loading="lazy">
+                        <img src="{{ $imagem1 }}" alt="image" class="img-fluid" loading="lazy">
                     </figure>
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Recuperação de PIS/COFINS (Monofásicos)</h4>
@@ -23,7 +23,7 @@
                     <p class="text text-size-16">Realizamos levantamento documental, análise de notas fiscais e procedimentos administrativos e judiciais quando necessários para assegurar a recuperação dos valores.</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="/assets/images/singleblog-image2.jpg" alt="image" class="img-fluid" loading="lazy">
+                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
                         <p class="text text-size-16">A atuação correta na recuperação de créditos devolve recursos importantes ao caixa da empresa e aumenta a capacidade de investimento.</p>
                     </div>
