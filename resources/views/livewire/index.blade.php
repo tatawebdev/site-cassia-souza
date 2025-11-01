@@ -353,7 +353,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_content" data-aos="fade-up">
                         <h6>Fale conosco</h6>
-                        <h2 class="text-white">Agende uma consulta gratuita</h2>
+                        <h2 class="text-white">Agende sua consulta agora!</h2>
                         <form id="contactpage" method="post" class="position-relative">
                             <div class="form-group input1 float-left">
                                 <input type="text" class="form_style" placeholder="Nome" name="fname"
