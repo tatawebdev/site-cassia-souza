@@ -34,58 +34,57 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="succeed_wrapper" data-aos="zoom-in">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="box">
-                                    <div class="succeed-box">
-                                        <figure class="icon">
-                                            <i class="fa-solid fa-chart-line"></i>
-                                        </figure>
-                                        <sup class="plus">+</sup>
-                                        <span class="text">Empresas mais lucrativas e seguras</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="succeed-box">
-                                    <figure class="icon">
-                                        <img src="/assets/images/succeed-icon2.png" alt="ícone" class="img-fluid">
-                                    </figure>
-                                    <sup class="plus">+</sup>
-                                    <span class="text">Estratégias criadas com inteligência tributária</span>
-                                </div>
-                            </div>
+<div class="col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="succeed_wrapper" data-aos="zoom-in">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="box">
+                    <div class="succeed-box">
+                        <figure class="icon">
+                            <i class="fa-solid fa-chart-line"></i> 
+                            <i class="fa-solid fa-shield-halved"></i> 
+                        </figure>
+                        <sup class="plus">+</sup>
+                        <span class="text">Empresas mais lucrativas e seguras</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="succeed-box">
+                    <figure class="icon">
+                        <i class="fa-solid fa-balance-scale"></i>
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </figure>
+                    <sup class="plus">+</sup>
+                    <span class="text">Estratégias criadas com inteligência tributária</span>
+                </div>
+            </div>
+        </div>
+        <div class="succeed-downcontent">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="box">
+                        <div class="succeed-box">
+                            <figure class="icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                                <i class="fa-solid fa-bullseye"></i>
+                            </figure>
+                            <sup class="plus">+</sup>
+                            <span class="text">Consultorias estratégicas entregues</span>
                         </div>
-                        <div class="succeed-downcontent">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="box">
-                                        <div class="succeed-box">
-                                            <figure class="icon">
-                                                <img src="/assets/images/succeed-icon3.png" alt="ícone"
-                                                    class="img-fluid">
-                                            </figure>
-                                            <sup class="plus">+</sup>
-                                            <span class="text">Consultorias estratégicas entregues</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="succeed-box">
-                                        <figure class="icon">
-                                            <img src="/assets/images/succeed-icon4.png" alt="ícone" class="img-fluid">
-                                        </figure>
-                                        <sup class="plus">+</sup>
-                                        <span class="text">Soluções que simplificam o complexo </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="succeed-box">
+                        <figure class="icon">
+                            <i class="fa-solid fa-cogs"></i>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </figure>
+                        <sup class="plus">+</sup>
+                        <span class="text">Soluções que simplificam o complexo</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
