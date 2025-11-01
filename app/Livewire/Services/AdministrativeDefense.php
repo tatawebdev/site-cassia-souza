@@ -27,15 +27,23 @@ class AdministrativeDefense extends Component
 
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
+            $targetDir1 = dirname(public_path($imagem1Default));
+            if (!file_exists($targetDir1)) {
+                mkdir($targetDir1, 0755, true);
+            }
             if (file_exists($source1)) {
-            @copy($source1, public_path($imagem1Default));
+                copy($source1, public_path($imagem1Default));
             }
         }
 
         if (!file_exists(public_path($imagem2Default))) {
             $source2 = public_path('/assets/images/singleblog-image1.jpg');
+            $targetDir2 = dirname(public_path($imagem2Default));
+            if (!file_exists($targetDir2)) {
+                mkdir($targetDir2, 0755, true);
+            }
             if (file_exists($source2)) {
-            @copy($source2, public_path($imagem2Default));
+                copy($source2, public_path($imagem2Default));
             }
         }
 

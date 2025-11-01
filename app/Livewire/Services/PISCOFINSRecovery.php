@@ -25,7 +25,7 @@ class PISCOFINSRecovery extends Component
         $imagem1Default = "/assets/images/{$slug}/imagem1.jpg";
         $imagem2Default = "/assets/images/{$slug}/imagem2.jpg";
 
-        $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
+        $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
         return view('livewire.services.piscofins-recovery', [
