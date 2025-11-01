@@ -22,8 +22,8 @@ class DefesaAdministrativa extends Component
         $base = class_basename($this);
         $slug = strtolower(preg_replace('/([a-z0-9])([A-Z])/', '$1-$2', $base));
 
-        $imagem1Default = "/assets/images/{$slug}/imagem1.jpg";
-        $imagem2Default = "/assets/images/{$slug}/imagem2.jpg";
+        $imagem1Default = "/assets/servicos/detalhes/{$slug}/imagem1.jpg";
+        $imagem2Default = "/assets/servicos/detalhes/{$slug}/imagem2.jpg";
 
         if (!file_exists(public_path($imagem1Default))) {
             $source1 = public_path('/assets/images/singleblog-image1.jpg');
