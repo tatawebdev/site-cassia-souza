@@ -139,7 +139,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="practice_content text-center" data-aos="fade-up">
-                        <h2>Nossa atuação em Direito Tributário</h2>
+                        <h2>Nossas soluções tributárias</h2>
                         <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">A Cassia Souza Adv é um escritório
                             especializado em Direito Tributário, com foco em estratégia, segurança jurídica e resultados
                             concretos para empresas de todos os portes. Com uma abordagem moderna e transparente,
@@ -153,7 +153,7 @@
                 $services = [
                     [
                         // ícones mapeados para arquivos reais em public/assets/servicos
-                        'icon' => 'planejamento_tributario.png',
+                        'icon' => 'consultoria_tributaria.png',
                         'alt' => 'Consultoria Tributária',
                         'title' => 'Consultoria Tributária',
                         'text' => 'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades para garantir conformidade e economia.',
