@@ -115,10 +115,10 @@
                     <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="banner_wrapper position-relative">
                             <figure class="banner-image mb-0" data-aos="fade-up">
-                                <img src="./assets/img/banner-novo1.png" alt="advogada trabalhando" class="img-fluid">
+                                <img src="/assets/img/banner-novo1.png" alt="advogada trabalhando" class="img-fluid">
                             </figure>
                             <figure class="banner-background mb-0">
-                                <img src="./assets/images/banner3-background.jpg" alt="fundo do banner"
+                                <img src="/assets/images/banner3-background.jpg" alt="fundo do banner"
                                     class="img-fluid">
                             </figure>
                         </div>
@@ -276,7 +276,7 @@
                         <h6>Depoimentos</h6>
                         <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
                         <figure class="mb-0">
-                            <img src="./assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
+                            <img src="/assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
                         </figure>
                     </div>
                 </div>

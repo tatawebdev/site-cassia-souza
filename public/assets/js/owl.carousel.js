@@ -2967,8 +2967,8 @@
 			'<span aria-label="' + 'Next' + '"<i class="fa-solid fa-arrow-right"></i></span>'
 		],
 		
-		// '<span aria-label="' + 'Previous' + '"<img src="./assets/images/prev-greenarrow.png" alt="image" class="prev-arrow img-fluid"><span class="previous">Previous</span></span>',
-		// '<span aria-label="' + 'Next' + '"<img src="./assets/images/next-greenarrow.png" alt="image" class="next-arrow img-fluid"><span class="next">Next</span></span>'
+		// '<span aria-label="' + 'Previous' + '"<img src="/assets/images/prev-greenarrow.png" alt="image" class="prev-arrow img-fluid"><span class="previous">Previous</span></span>',
+		// '<span aria-label="' + 'Next' + '"<img src="/assets/images/next-greenarrow.png" alt="image" class="next-arrow img-fluid"><span class="next">Next</span></span>'
 		navSpeed: false,
 		navElement: 'button type="button" role="presentation"',
 		navContainer: false,

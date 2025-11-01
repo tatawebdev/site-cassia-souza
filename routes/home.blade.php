@@ -44,7 +44,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a class="navbar-brand" href="/">
-                <figure class="logo mb-0"><img width="150px" src="./assets/images/logo-acinzentado.png" alt="logo" class="img-fluid"></figure>
+                <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt="logo" class="img-fluid"></figure>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -110,7 +110,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                     <div class="logo-content">
                         <a href="/" class="footer-logo">
-                            <figure  class="mb-0" style="width: 250px;"><img style="width: 250px;" src="./assets/images/logo-acinzentado.png" alt="logo"></figure>
+                            <figure  class="mb-0" style="width: 250px;"><img style="width: 250px;" src="/assets/images/logo-acinzentado.png" alt="logo"></figure>
                         </a>
                         <p class="text-size-14">
                             
@@ -183,7 +183,7 @@
     <div id="fixed-form-container">
         <div class="image">
             <figure class="footer-contactimage mb-0">
-                <img src="./assets/images/footer-contactimage.png" alt="imagem" class="img-fluid">
+                <img src="/assets/images/footer-contactimage.png" alt="imagem" class="img-fluid">
             </figure>
         </div>
         <div class="body" style="display: none;">

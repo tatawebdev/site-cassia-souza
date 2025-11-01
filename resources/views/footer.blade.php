@@ -24,7 +24,7 @@
                     <div class="logo-content">
                         <a href="/" class="footer-logo">
                             <figure class="mb-0" style="width: 250px;"><img style="width: 250px;"
-                                    src="./assets/images/logo-acinzentado.png" alt="logo"></figure>
+                                    src="/assets/images/logo-acinzentado.png" alt="logo"></figure>
                         </a>
                         <p class="text-size-14">
                             Escritório especializado em advocacia tributária. Soluções personalizadas para empresas
