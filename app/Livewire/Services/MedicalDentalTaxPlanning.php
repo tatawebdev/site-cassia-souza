@@ -19,7 +19,19 @@ class MedicalDentalTaxPlanning extends Component
             ['label' => 'Planejamento para Clínicas', 'url' => '/servicos/planejamento-tributario-clinicas'],
         ];
 
-        return view('livewire.services.medical-dental-tax-planning')
+        $imagem1Default = '/assets/images/planejamento-tributario-clinicas/imagem1.jpg';
+        $imagem2Default = '/assets/images/planejamento-tributario-clinicas/imagem2.jpg';
+
+        $imagem1 = file_exists(public_path("{$imagem1Default}")) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
+        $imagem2 = file_exists(public_path("{$imagem2Default}")) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
+
+        return view(
+            'livewire.services.medical-dental-tax-planning',
+            [
+                'imagem1' => $imagem1,
+                'imagem2' => $imagem2
+            ]
+        )
             ->layout('components.layouts.app', [
                 'banner' => $banner,
                 'breadcrumbs' => $breadcrumbs,

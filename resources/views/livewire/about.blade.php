@@ -78,7 +78,6 @@
                                             <figure class="icon">
                                                 <i class="fa-solid fa-cogs" style="color: #800080; font-size: 2em;"></i>
                                             </figure>
-                                            <sup class="plus">+</sup>
                                             <span class="text">Soluções que simplificam o complexo</span>
                                         </div>
                                     </div>
