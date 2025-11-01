@@ -23,6 +23,7 @@ class MedicalDentalTaxPlanning extends Component
             ->layout('components.layouts.app', [
                 'banner' => $banner,
                 'breadcrumbs' => $breadcrumbs,
+                'pageTitle' => $banner['title'],
             ]);
     }
 }

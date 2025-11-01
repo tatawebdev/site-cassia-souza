@@ -19,10 +19,11 @@ class PISCOFINSRecovery extends Component
             ['label' => 'Recuperação PIS/COFINS', 'url' => '/servicos/recuperacao-pis-cofins-monofasicos'],
         ];
 
-        return view('livewire.services.pis-cofins-recovery')
+        return view('livewire.services.piscofins-recovery')
             ->layout('components.layouts.app', [
                 'banner' => $banner,
                 'breadcrumbs' => $breadcrumbs,
+                'pageTitle' => $banner['title'],
             ]);
     }
 }
