@@ -43,7 +43,6 @@
                         <figure class="icon">
                             <i class="fa-solid fa-chart-line" style="color: #800080; font-size: 2em;"></i>
                         </figure>
-                        <sup class="plus">+</sup>
                         <span class="text">Empresas mais lucrativas e seguras</span>
                     </div>
                 </div>
@@ -54,7 +53,6 @@
                     <figure class="icon">
                         <i class="fa-solid fa-balance-scale" style="color: #800080; font-size: 2em;"></i>
                     </figure>
-                    <sup class="plus">+</sup>
                     <span class="text">Estratégias criadas com inteligência tributária</span>
                 </div>
             </div>
@@ -68,7 +66,6 @@
                             <figure class="icon">
                                 <i class="fa-solid fa-user-tie" style="color: #800080; font-size: 2em;"></i>
                             </figure>
-                            <sup class="plus">+</sup>
                             <span class="text">Consultorias estratégicas entregues</span>
                         </div>
                     </div>

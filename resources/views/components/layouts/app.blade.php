@@ -92,37 +92,44 @@
                                 <div class="dropdown-menu drop-down-content">
                                     <ul class="list-unstyled drop-down-pages">
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.consultoria.tributaria') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.consultoria.tributaria') }}">
                                                 Consultoria Tributária
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.regularizacao.debitos.pgfn') }}">
                                                 Regularização de Débitos PGFN
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario') }}">
                                                 Planejamento Tributário
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.planejamento.tributario.clinicas') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.planejamento.tributario.clinicas') }}">
                                                 Planejamento Tributário para Clínicas Médicas e Odontológicas
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.assessoria.reforma.tributaria') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.assessoria.reforma.tributaria') }}">
                                                 Assessoria em Reforma Tributária
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.treinamento.tributario') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.treinamento.tributario') }}">
                                                 Treinamento Tributário
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item nav-link" href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
+                                            <a class="dropdown-item nav-link"
+                                                href="{{ route('servicos.recuperacao.pis.cofins.monofasicos') }}">
                                                 Recuperação de PIS/COFINS Monofásicos
                                             </a>
                                         </li>
@@ -138,9 +145,12 @@
                             </li>
                         </ul>
                         <div class="last_list">
-                            <figure class="nav-phoneicon mb-0"><img class="img-fluid"
-                                    src="/assets/images/nav-phoneicon.png" alt=""></figure>
-                            <x-link-whatsapp class="text-decoration-none last_list_atag">(11) 91520-1084</x-link-whatsapp>
+                            <figure class="nav-phoneicon mb-0">
+                                <x-link-whatsapp class="text-decoration-none last_list_atag">
+                                    <i class="fab fa-whatsapp my-float" style="font-size: 24px; vertical-align: middle; margin-right: 8px;"></i>
+                                    <span style="font-weight: bold; font-size: 20px; vertical-align: middle;">{{ config('site.whatsapp') }}</span>
+                                </x-link-whatsapp>
+                            </figure>
                         </div>
                     </div>
                 </nav>
@@ -177,6 +187,10 @@
 
     {{  $slot }}
 
+    <x-link-whatsapp id="btn_wpp" title="Agende agora mesmo uma consulta via Whatsapp" class="float"
+        style="position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #fff; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;display: flex;justify-content: center;align-items: center;">
+        <i class="fab fa-whatsapp my-float" style="color:#fefefe;"></i>
+    </x-link-whatsapp>
 
 
     <!-- Footer -->

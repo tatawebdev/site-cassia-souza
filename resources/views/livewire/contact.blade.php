@@ -55,8 +55,7 @@
                 </figure>
                 <h5>Telefone:</h5>
                 <div class="text">
-                    <a href="tel:+5511915201084" class="mb-0 text-decoration-none text-size-14">+55 11 91520
-                    1084</a>
+                    <a href="{{ config('site.whatsapp_link') }}" class="mb-0 text-decoration-none text-size-14">{{ config('site.whatsapp') }}</a>
                 </div>
                 </div>
             </div>

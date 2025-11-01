@@ -164,7 +164,7 @@
                         <ul class="list-unstyled mb-0">
                             <li class="text">
                                 <i class="fa-solid fa-phone"></i>
-                                <a href="tel:+5511915201084" class="text-decoration-none">+55 11 91520 1084</a>
+                                <a href="{{ config('site.whatsapp_link') }}" class="text-decoration-none">{{ config('site.whatsapp') }}</a>
                             </li>
                             <li class="text">
                                 <i class="fa-solid fa-envelope"></i>

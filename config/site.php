@@ -18,4 +18,6 @@ return [
             'icon_class' => 'fa-brands fa-linkedin social-networks',
         ],
     ],
+    'whatsapp' => '(11) 91520-1084',
+    'whatsapp_link' => 'https://api.whatsapp.com/send?phone=5511915201084&text=Olá,%20Cassia%20Souza%20Advogacia!%0A%0ATenho%20interesse%20em%20seus%20serviços%20advocatícios%20⚖️',
 ];

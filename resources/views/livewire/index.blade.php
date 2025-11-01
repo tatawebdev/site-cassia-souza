@@ -83,7 +83,7 @@
                         <div class="last_list">
                             <x-link-whatsapp class="float" rel="nofollow">
                                 <i class="fab fa-whatsapp my-float" style="font-size: 24px;"></i>
-                                <span style="margin-left: 8px;">(11) 91520-1084</span>
+                                <span style="margin-left: 8px;">{{ config('site.whatsapp') }}</span>
                             </x-link-whatsapp>
                         </div>
                     </div>
