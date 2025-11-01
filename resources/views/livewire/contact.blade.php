@@ -55,7 +55,7 @@
                 </figure>
                 <h5>Telefone:</h5>
                 <div class="text">
-                    <a href="{{ config('site.whatsapp_link') }}" class="mb-0 text-decoration-none text-size-14">{{ config('site.whatsapp') }}</a>
+                    <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="noopener noreferrer" class="mb-0 text-decoration-none text-size-14">{{ config('site.whatsapp') }}</a>
                 </div>
                 </div>
             </div>
