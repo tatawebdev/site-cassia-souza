@@ -81,11 +81,10 @@
                             </li>
                         </ul>
                         <div class="last_list">
-                            <a href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️"
-                                class="float" target="_blank" rel="nofollow">
+                            <x-link-whatsapp class="float" rel="nofollow">
                                 <i class="fab fa-whatsapp my-float" style="font-size: 24px;"></i>
                                 <span style="margin-left: 8px;">(11) 91520-1084</span>
-                            </a>
+                            </x-link-whatsapp>
                         </div>
                     </div>
                 </nav>

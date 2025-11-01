@@ -140,7 +140,7 @@
                         <div class="last_list">
                             <figure class="nav-phoneicon mb-0"><img class="img-fluid"
                                     src="/assets/images/nav-phoneicon.png" alt=""></figure>
-                            <a class="text-decoration-none last_list_atag" href="https://web.whatsapp.com/send/?phone=5511915201084&amp;text=Ol%C3%A1%2C%20Cassia%20Souza%20Advocacia%21%0A%0ATenho%20interesse%20em%20seus%20servi%C3%A7os%20advocat%C3%ADcios%20⚖️">(11) 91520-1084</a>
+                            <x-link-whatsapp class="text-decoration-none last_list_atag">(11) 91520-1084</x-link-whatsapp>
                         </div>
                     </div>
                 </nav>
