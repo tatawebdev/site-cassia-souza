@@ -11,22 +11,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="committed_content" data-aos="fade-up">
-                        <h6>What We Do</h6>
-                        <h2 class="col-lg-10 col-md-10 col-md-12 p-0">We are committed to providing top-notch <span
-                                class="span_borderbootom">legal representation</span> to individuals,
-                            families, and businesses.
-                        </h2>
-                        <p class="col-xl-7 col-lg-8 text-size-16 text1 p-0">Dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
-                            deserunt mollitia.
-                        </p>
-                        <p class="col-xl-7 col-lg-8 text-size-16 text2 p-0">Repudiandae sint et molestiae non
-                            recusandae
-                            itaque earum rerum hic tenetur a sapiente delectus maiores alias soluta
-                            nobis est eligendi optio cumque nihil imeit minus id quod maxime placeat facere possimus,.
-                        </p>
-                        <a href="./practice-area.html" class="text-decoration-none read_more">Read More<i
+                        <h6>Cassia Souza Advocacia Tributária</h6>
+                        <h2 class="col-lg-10 col-md-10 col-md-12 p-0">Estratégia, clareza e segurança para empresas que
+                            querem crescer do jeito certo.</h2>
+                        <p class="col-xl-7 col-lg-8 text-size-16 text1 p-0">A Cassia Souza Advocacia é um escritório
+                            especializado em Direito Tributário, focado em oferecer soluções estratégicas para
+                            empresas que desejam pagar apenas o justo em tributos, recuperar valores pagos
+                            indevidamente e garantir segurança jurídica para crescer com tranquilidade.</p>
+                        <p class="col-xl-7 col-lg-8 text-size-16 text2 p-0">Atuamos de forma consultiva e
+                            preventiva, identificando oportunidades legais de economia, regularizando pendências e
+                            preparando sua empresa para mudanças como a Reforma Tributária. Trabalhamos com
+                            linguagem simples, transparência e foco no resultado: economia, previsibilidade e
+                            proteção patrimonial.</p>
+                        <a href="./practice-area.html" class="text-decoration-none read_more">Saiba mais<i
                                 class="fa-solid fa-arrow-right"></i></a>
                         <figure class="committed-image mb-0" data-aos="zoom-in">
                             <img src="/assets/images/committed-image.png" alt="image" class="img-fluid">
@@ -41,7 +38,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon1.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Immigration Law</h5>
+                            <h5>Consultoria Tributária Mensal</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -51,7 +48,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon2.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Business Law</h5>
+                            <h5>Planejamento Tributário</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -61,7 +58,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon3.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Criminal Law</h5>
+                            <h5>Regularização de Débitos (PGFN)</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -71,7 +68,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon4.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Real Estate Law</h5>
+                            <h5>Recuperação de PIS/COFINS</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -81,7 +78,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon5.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Traffic Violence</h5>
+                            <h5>Assessoria para Reforma Tributária</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -91,7 +88,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon6.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Education Law</h5>
+                            <h5>Treinamentos Tributários</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -101,7 +98,7 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon7.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Family Crimes</h5>
+                            <h5>Consultoria para Clínicas e Profissionais</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
@@ -111,75 +108,9 @@
                             <figure class="icon">
                                 <img src="/assets/images/committed-icon8.png" alt="image" class="img-fluid">
                             </figure>
-                            <h5>Tax Law</h5>
+                            <h5>Contencioso e Defesa Fiscal</h5>
                             <a href="./practice-area.html" class="text-decoration-none"><i
                                     class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Client -->
-    <section class="client-con position-relative">
-        <figure class="client-sideimage mb-0">
-            <img src="/assets/images/client-sideimage.png" alt="image" class="img-fluid">
-        </figure>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="client_content text-center" data-aos="fade-up">
-                        <h6>Who We Are</h6>
-                        <h2 class="col-xl-6 col-lg-8 col-md-10 mx-auto">Committed to helping our <span
-                                class="span_borderbootom">clients</span> succeed</h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16">Nucimus qui blanditiis praesentium
-                            voluptatum
-                            deleniti atque corrupti quos dolores ruas molestias excepturi
-                            sint occaecati cupiditate non provident.
-                        </p>
-                        <ul class="list-unstyled">
-                            <li>
-                                <div class="value">
-                                    <span class="counter number">250</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <span class="text">Business Partners</span>
-                            </li>
-                            <li>
-                                <div class="value">
-                                    <span class="counter number">180</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <span class="text">Cases Done</span>
-                            </li>
-                            <li>
-                                <div class="value">
-                                    <span class="counter number">370</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <span class="text">Happy Clients</span>
-                            </li>
-                            <li>
-                                <div class="value">
-                                    <span class="counter number">90</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <span class="text">Awards Won</span>
-                            </li>
-                        </ul>
-                        <div class="client_wrapper position-relative">
-                            <figure class="client-image mb-0">
-                                <img src="assets/images/client-image.jpg" alt="image" class="image-fluid">
-                            </figure>
-                            <div class="video_icon">
-                                <a class="popup-vimeo"
-                                    href="https://video-previews.elements.envatousercontent.com/a4464fc1-719e-45da-bf4b-f3ad0e517555/watermarked_preview/watermarked_preview.mp4">
-                                    <figure class="mb-0">
-                                        <img class="thumb img-fluid" style="cursor: pointer"
-                                            src="/assets/images/client-videoicon.png" alt="image">
-                                    </figure>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -202,33 +133,33 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_content" data-aos="fade-up">
-                        <h6>Get in touch</h6>
-                        <h2 class="text-white">Book a free <span class="span_borderbootom">consultation</span></h2>
+                        <h6>Fale conosco</h6>
+                        <h2 class="text-white">Solicite uma análise inicial gratuita</h2>
                         <form id="contactpage" method="post" class="position-relative">
                             <div class="form-group input1 float-left">
-                                <input type="text" class="form_style" placeholder="Name" name="fname"
+                                <input type="text" class="form_style" placeholder="Nome" name="fname"
                                     id="fname">
                             </div>
                             <div class="form-group float-left">
-                                <input type="tel" class="form_style" placeholder="Phone" name="phone"
+                                <input type="tel" class="form_style" placeholder="Telefone" name="phone"
                                     id="phone">
                             </div>
                             <div class="form-group input1 float-left">
-                                <input type="email" class="form_style" placeholder="Email" name="email"
+                                <input type="email" class="form_style" placeholder="E-mail" name="email"
                                     id="email">
                             </div>
                             <div class="form-group float-left">
                                 <select class="form-control">
-                                    <option>Practice Area</option>
-                                    <option>Immigration Law</option>
-                                    <option>Business Law</option>
-                                    <option>Criminal Law</option>
+                                    <option>Área de interesse</option>
+                                    <option>Consultoria Tributária</option>
+                                    <option>Planejamento Tributário</option>
+                                    <option>Regularização / PGFN</option>
                                 </select>
                             </div>
                             <div class="form-group message">
-                                <textarea class="form_style" placeholder="Message" rows="3" name="msg"></textarea>
+                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
                             </div>
-                            <button id="submit" type="submit" class="appointment">Book Appointment<i
+                            <button id="submit" type="submit" class="appointment">Enviar solicitação<i
                                     class="fa-solid fa-arrow-right"></i></button>
                         </form>
                     </div>
@@ -242,10 +173,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="case_content text-center" data-aos="fade-up">
-                        <h6>Our Portfolio</h6>
-                        <h2>Our latest <span class="span_borderbootom">case</span> studies</h2>
-                        <p class="text-size-16 mb-0">Auit zaser aut odit aut fugit sen quia conseauntur magni eos rui
-                            ratione voluptatem serui magni dolor eos rui ratione voluptatem.</p>
+                        <h6>Serviços</h6>
+                        <h2>Nossas principais <span class="span_borderbootom">atuações</span></h2>
+                        <p class="text-size-16 mb-0">Atuamos em consultoria contínua, planejamento,
+                            recuperação de créditos e defesa fiscal — com foco em resultados mensuráveis para sua
+                            empresa.</p>
                     </div>
                 </div>
             </div>
@@ -452,183 +384,18 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial -->
-    <section class="testimonial-con position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12 col-12">
-                    <div class="testimonial_wrapper position-relative">
-                        <div class="image-bg"></div>
-                        <figure class="testimonial-image mb-0">
-                            <img src="/assets/images/testimonial-image.png" alt="image" class="img-fluid">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12 col-12">
-                    <div class="owl-carousel owl-theme" data-aos="fade-up">
-                        <div class="item">
-                            <div class="testimonial_content">
-                                <div class="content">
-                                    <figure class="testimonial-quote mb-0">
-                                        <img src="/assets/images/testimonial-quote.png" alt="image"
-                                            class="img-fluid">
-                                    </figure>
-                                    <h2 class="mb-0">What our <span class="span_borderbootom">clients</span> are
-                                        saying
-                                    </h2>
-                                </div>
-                                <p class="text-size-18">”Quisruam est rui dolorem ipsum ruia dolor sit consecteturexer
-                                    non numa eius modi tempora incidunt ut labore et doraeria aure
-                                    uat volupta rem inciu nar aute irure dolor in reprehenderullaein voluptate velit
-                                    esse maiores alias consequatur aut perferendis
-                                    doloribus asperiores ecessitatibus eveniet.”
-                                </p>
-                                <div class="review-content">
-                                    <figure class="testimonial-personimage mb-0">
-                                        <img src="/assets/images/testimonial-personimage.jpg" alt="image"
-                                            class="img-fluid">
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="name">Kevin Andrew</span>
-                                        <span class="position">CEO, of the company</span>
-                                        <figure class="testimonial-starimage mb-0">
-                                            <img src="/assets/images/testimonial-starimage.png" alt="image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_content">
-                                <div class="content">
-                                    <figure class="testimonial-quote mb-0">
-                                        <img src="/assets/images/testimonial-quote.png" alt="image"
-                                            class="img-fluid">
-                                    </figure>
-                                    <h2 class="mb-0">What our <span class="span_borderbootom">clients</span> are
-                                        saying
-                                    </h2>
-                                </div>
-                                <p class="text-size-18">”Quisruam est rui dolorem ipsum ruia dolor sit consecteturexer
-                                    non numa eius modi tempora incidunt ut labore et doraeria aure
-                                    uat volupta rem inciu nar aute irure dolor in reprehenderullaein voluptate velit
-                                    esse maiores alias consequatur aut perferendis
-                                    doloribus asperiores ecessitatibus eveniet.”
-                                </p>
-                                <div class="review-content">
-                                    <figure class="testimonial-personimage mb-0">
-                                        <img src="/assets/images/testimonial-personimage.jpg" alt="image"
-                                            class="img-fluid">
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="name">Kevin Andrew</span>
-                                        <span class="position">CEO, of the company</span>
-                                        <figure class="testimonial-starimage mb-0">
-                                            <img src="/assets/images/testimonial-starimage.png" alt="image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Violence -->
     <section class="violence-con position-relative">
         <div class="container">
             <div class="row">
                 <div class="violence_wrapper position-relative">
                     <div class="violence_content" data-aos="fade-up">
-                        <h1 class="text-white">We are here to fight against any violence</h1>
-                        <p class="text-white text-size-16">Repudiandae sint et molestiae non recusandae itaque earum
-                            rerum hic tenetur a sapiente delectus maiores alias soluta nobis
-                            est eligendi optio cumque nihil imeit minus id quod maxime placeat facere possimus,.
+                        <h1 class="text-white">Proteção patrimonial e tributária</h1>
+                        <p class="text-white text-size-16">Garantimos assessoria estratégica para proteger o
+                            patrimônio da empresa e mitigar riscos decorrentes de autuações e cobranças indevidas.
                         </p>
-                        <a href="./contact.html" class="text-decoration-none appointment">Book Appointment<i
+                        <a href="./contact.html" class="text-decoration-none appointment">Fale com nossa equipe<i
                                 class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Lawyer -->
-    <section class="lawyer-con position-relative">
-        <figure class="lawyer-sideimage mb-0">
-            <img src="/assets/images/lawyer-sideimage.png" alt="image" class="img-fluid">
-        </figure>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="lawyer_content text-center" data-aos="fade-up">
-                        <h6>Team Members</h6>
-                        <h2>Team of our expert <span class="span_borderbootom">lawyers</span></h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">Qucimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti quos dolores ruas molestias excepturi
-                            sint occaecati cupiditate non provident.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <div class="lawyer-box">
-                        <figure class="lawyer-image">
-                            <img src="/assets/images/lawyer-image1.jpg" alt="image" class="img-fluid">
-                        </figure>
-                        <div class="content">
-                            <h4>Marvin Joner</h4>
-                            <span class="text-size-14">Senior Lawyer</span>
-                            <ul class="list-unstyled mb-0">
-                                <li class="icons"><a href="https://www.facebook.com/login/"><i
-                                            class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="icons"><a href="https://twitter.com/i/flow/login"><i
-                                            class="fa-brands fa-x-twitter"></i></a></li>
-                                <li class="icons"><a href="https://www.linkedin.com/login"><i
-                                            class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <div class="lawyer-box">
-                        <figure class="lawyer-image">
-                            <img src="/assets/images/lawyer-image2.jpg" alt="image" class="img-fluid">
-                        </figure>
-                        <div class="content">
-                            <h4>Patricia Woodrum</h4>
-                            <span class="text-size-14">Assistant Lawyer</span>
-                            <ul class="list-unstyled mb-0">
-                                <li class="icons"><a href="https://www.facebook.com/login/"><i
-                                            class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="icons"><a href="https://twitter.com/i/flow/login"><i
-                                            class="fa-brands fa-x-twitter"></i></a></li>
-                                <li class="icons"><a href="https://www.linkedin.com/login"><i
-                                            class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <div class="lawyer-box mb-0">
-                        <figure class="lawyer-image">
-                            <img src="/assets/images/lawyer-image3.jpg" alt="image" class="img-fluid">
-                        </figure>
-                        <div class="content">
-                            <h4>Hannaz Stone</h4>
-                            <span class="text-size-14">Junior Lawyer</span>
-                            <ul class="list-unstyled mb-0">
-                                <li class="icons"><a href="https://www.facebook.com/login/"><i
-                                            class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="icons"><a href="https://twitter.com/i/flow/login"><i
-                                            class="fa-brands fa-x-twitter"></i></a></li>
-                                <li class="icons"><a href="https://www.linkedin.com/login"><i
-                                            class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -640,12 +407,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="article_content text-center" data-aos="fade-up">
-                        <h6>News & Articles</h6>
-                        <h2>Latest <span class="span_borderbootom">blog</span> posts</h2>
-                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">Kucimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti quos dolores ruas molestias excepturi
-                            sint occaecati cupiditate non provident.
-                        </p>
+                        <h6>Artigos e notícias</h6>
+                        <h2>Conteúdo sobre <span class="span_borderbootom">Direito Tributário</span></h2>
+                        <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">Publicamos análises e atualizações
+                            sobre tributos, decisões relevantes e orientações práticas para gestores e
+                            profissionais da área fiscal.</p>
                     </div>
                 </div>
             </div>
