@@ -1,4 +1,116 @@
 <div>
+    @php
+        $faqs = [
+            [
+                'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
+                'answer' => 'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma
+    análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem
+    riscos.',
+            ],
+            [
+                'question' => 'O que muda para minha empresa com a Reforma Tributária?',
+                'answer' => 'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração,
+    alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa.
+    Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter
+    segurança e evitar surpresas.',
+            ],
+            [
+                'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
+                'answer' => 'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar
+    práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade
+    tributária enquanto sua empresa cresce.',
+            ],
+            [
+                'question' =>
+                    'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
+                'answer' => 'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram
+    feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar
+    produtos monofásicos e verificar se houve pagamento indevido no seu DAS.',
+            ],
+            [
+                'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
+                'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).',
+            ],
+            [
+                'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
+                'answer' => 'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com
+    a NCM usada nas notas fiscais.',
+            ],
+            [
+                'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
+                'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento
+    especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se
+    enquadra nos critérios exigidos nos editais.',
+            ],
+        ];
+
+        $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
+    @endphp
+
+
+    @php
+        // Serviços oferecidos pela Cassia Souza Adv — mapeados para as rotas nomeadas
+        $services = [
+            [
+                // ícones mapeados para arquivos reais em public/assets/servicos
+                'icon' => 'consultoria_tributaria.png',
+                'alt' => 'Consultoria Tributária',
+                'title' => 'Consultoria Tributária',
+                'text' => 'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e
+    identificando oportunidades para garantir conformidade e economia.',
+                'route' => 'servicos.consultoria.tributaria',
+            ],
+            [
+                'icon' => 'regularizacao_pgfn.png',
+                'alt' => 'Regularização de Débitos - PGFN',
+                'title' => 'Regularização de Débitos (PGFN)',
+                'text' => 'Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego
+    financeiro e evitar bloqueios.',
+                'route' => 'servicos.regularizacao.debitos.pgfn',
+            ],
+            [
+                'icon' => 'planejamento_tributario.png',
+                'alt' => 'Planejamento Tributário',
+                'title' => 'Planejamento Tributário',
+                'text' => 'Estruturamos estratégias personalizadas para que sua empresa pague apenas o devido, evitando riscos e fortalecendo
+    sua saúde financeira.',
+                'route' => 'servicos.planejamento.tributario',
+            ],
+            [
+                'icon' => 'planejamento_clinicas.png',
+                'alt' => 'Planejamento para Clínicas',
+                'title' => 'Planejamento Tributário para Clínicas',
+                'text' =>
+                    'Clínicas médicas e odontológicas podem reduzir a carga tributária com planejamento personalizado.',
+                'route' => 'servicos.planejamento.tributario.clinicas',
+            ],
+            [
+                'icon' => 'assessoria_reforma_tributaria.png',
+                'alt' => 'Assessoria Reforma Tributária',
+                'title' => 'Assessoria para Reforma Tributária',
+                'text' => 'Nossa assessoria especializada ajuda sua empresa a entender impactos, reduzir riscos e se adaptar com segurança às
+    mudanças da Reforma Tributária.',
+                'route' => 'servicos.assessoria.reforma.tributaria',
+            ],
+            [
+                'icon' => 'treinamento_tributario.png',
+                'alt' => 'Treinamento Tributário',
+                'title' => 'Treinamento Tributário para Empresas',
+                'text' => 'Capacitação personalizada para reduzir riscos, evitar autuações e otimizar rotinas tributárias — presencial ou
+    online.',
+                'route' => 'servicos.treinamento.tributario',
+            ],
+            [
+                'icon' => 'recuperacao_pis_cofins.png',
+                'alt' => 'Recuperação PIS/COFINS',
+                'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
+                'text' => 'Analisamos operações, identificamos créditos legítimos e recuperamos valores de forma legal, garantindo fôlego
+    financeiro e mais recursos para o crescimento da sua empresa.',
+                'route' => 'servicos.recuperacao.pis.cofins.monofasicos',
+            ],
+        ];
+    @endphp
+
     <div class="legal_matter position-relative">
         <header class="header">
             <div class="container">
@@ -111,8 +223,9 @@
                             </p>
 
 
-                            <a href="./contact" class="text-decoration-none appointment">Fale conosco<i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="nofollow"
+                                class="text-decoration-none appointment">
+                                Fale conosco<i class="fa-solid fa-arrow-right"></i> </a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
@@ -129,7 +242,8 @@
                 </div>
                 @include('components.social-icons', [
                     'wrapper' => 'ul',
-                    'wrapperClass' => 'list-unstyled mb-0 social-icons',
+                    'wrapperClass' => 'list-unstyled mb-0
+                                                                                                social-icons',
                 ])
             </div>
         </section>
@@ -155,33 +269,8 @@
                     <div class="consultation_content" data-aos="fade-up">
                         <h6>Fale conosco</h6>
                         <h2 class="text-white">Agende sua consulta agora!</h2>
-                        <form id="contactpage" method="post" class="position-relative">
-                            <div class="form-group input1 float-left">
-                                <input type="text" class="form_style" placeholder="Nome" name="fname"
-                                    id="fname">
-                            </div>
-                            <div class="form-group float-left">
-                                <input type="tel" class="form_style" placeholder="Telefone" name="phone"
-                                    id="phone">
-                            </div>
-                            <div class="form-group input1 float-left">
-                                <input type="email" class="form_style" placeholder="E-mail" name="email"
-                                    id="email">
-                            </div>
-                            <div class="form-group float-left">
-                                <select class="form-control">
-                                    <option>Área de interesse</option>
-                                    <option>Consultoria Tributária</option>
-                                    <option>Planejamento Fiscal</option>
-                                    <option>Contencioso Tributário</option>
-                                </select>
-                            </div>
-                            <div class="form-group message">
-                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
-                            </div>
-                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
-                                    class="fa-solid fa-arrow-right"></i></button>
-                        </form>
+                        {{-- Formulário Livewire que envia e-mail --}}
+                        <livewire:contact-form />
                     </div>
                 </div>
             </div>
@@ -204,68 +293,6 @@
                     </div>
                 </div>
             </div>
-            @php
-                // Serviços oferecidos pela Cassia Souza Adv — mapeados para as rotas nomeadas
-                $services = [
-                    [
-                        // ícones mapeados para arquivos reais em public/assets/servicos
-                        'icon' => 'consultoria_tributaria.png',
-                        'alt' => 'Consultoria Tributária',
-                        'title' => 'Consultoria Tributária',
-                        'text' =>
-                            'Nossa consultoria acompanha sua empresa mês a mês, revisando movimentações fiscais, prevenindo riscos e identificando oportunidades para garantir conformidade e economia.',
-                        'route' => 'servicos.consultoria.tributaria',
-                    ],
-                    [
-                        'icon' => 'regularizacao_pgfn.png',
-                        'alt' => 'Regularização de Débitos - PGFN',
-                        'title' => 'Regularização de Débitos (PGFN)',
-                        'text' =>
-                            'Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego financeiro e evitar bloqueios.',
-                        'route' => 'servicos.regularizacao.debitos.pgfn',
-                    ],
-                    [
-                        'icon' => 'planejamento_tributario.png',
-                        'alt' => 'Planejamento Tributário',
-                        'title' => 'Planejamento Tributário',
-                        'text' =>
-                            'Estruturamos estratégias personalizadas para que sua empresa pague apenas o devido, evitando riscos e fortalecendo sua saúde financeira.',
-                        'route' => 'servicos.planejamento.tributario',
-                    ],
-                    [
-                        'icon' => 'planejamento_clinicas.png',
-                        'alt' => 'Planejamento para Clínicas',
-                        'title' => 'Planejamento Tributário para Clínicas',
-                        'text' =>
-                            'Clínicas médicas e odontológicas podem reduzir a carga tributária com planejamento personalizado.',
-                        'route' => 'servicos.planejamento.tributario.clinicas',
-                    ],
-                    [
-                        'icon' => 'assessoria_reforma_tributaria.png',
-                        'alt' => 'Assessoria Reforma Tributária',
-                        'title' => 'Assessoria para Reforma Tributária',
-                        'text' =>
-                            'Nossa assessoria especializada ajuda sua empresa a entender impactos, reduzir riscos e se adaptar com segurança às mudanças da Reforma Tributária.',
-                        'route' => 'servicos.assessoria.reforma.tributaria',
-                    ],
-                    [
-                        'icon' => 'treinamento_tributario.png',
-                        'alt' => 'Treinamento Tributário',
-                        'title' => 'Treinamento Tributário para Empresas',
-                        'text' =>
-                            'Capacitação personalizada para reduzir riscos, evitar autuações e otimizar rotinas tributárias — presencial ou online.',
-                        'route' => 'servicos.treinamento.tributario',
-                    ],
-                    [
-                        'icon' => 'recuperacao_pis_cofins.png',
-                        'alt' => 'Recuperação PIS/COFINS',
-                        'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
-                        'text' =>
-                            'Analisamos operações, identificamos créditos legítimos e recuperamos valores de forma legal, garantindo fôlego financeiro e mais recursos para o crescimento da sua empresa.',
-                        'route' => 'servicos.recuperacao.pis.cofins.monofasicos',
-                    ],
-                ];
-            @endphp
 
             <div class="row" data-aos="fade-up">
                 @foreach ($services as $service)
@@ -288,100 +315,6 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about-con position-relative">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-                    <div class="about_wrapper position-relative">
-                        <figure class="about-image mb-0">
-                            <img src="assets/img/parceria.png" alt="imagem principal" style="width: unset;" class="image-fluid">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12 col-sm-12 col-12">
-                    <div class="about_content" data-aos="fade-up">
-                        <div class="content">
-                            <h6> Cassia Souza Advocacia Tributária </h6>
-                            <h2 class="text-white" style="font-size:2.2rem; font-weight:600;">Missão, Visão e
-                                Valores</h2>
-
-                            <h5 class="text-white mt-3">Nossa Missão</h5>
-                            <p class="text-white text-size-14">Empoderar empresários e empresárias a tomarem decisões tributárias estratégicas através de um serviço jurídico claro, empático e de excelência.</p>
-
-                                  <h5 class="text-white mt-3">Nossos Visão</h5>
-                            <p class="text-white text-size-14">Ser referência na Advocacia Tributária e uma ponte que conecta os empresários e empresárias a decisões seguras e inteligentes.</p>
-
-                            <h5 class="text-white mt-3">Nossos Valores</h5>
-                            <ul class="text-white text-size-15" style="padding-left: 1.2em;">
-                                <li><strong>Fé:</strong> reconhecer que todo resultado vem de Deus
-                                     e trabalhar com confiança e propósito.</li>
-                            <li><strong>Ética:</strong> agir com integridade e transparência em todas as relações.</li>
-                                <li><strong>Responsabilidade e Comprometimento:</strong> cumprir o que é prometido, com seriedade e constância.</li>
-                                <li><strong>Comunicação Clara:</strong> traduzir o jurídico de forma acessível e didática.</li>
-                                <li><strong>Empatia:</strong> compreender as dores e a realidade do cliente antes de propor soluções.</li>
-                                <li><strong>Visão Estratégica:</strong> enxergar o Direito Tributário como ferramenta de crescimento empresarial.</li>
-                                <li><strong>Atingir Resultados:</strong> buscar soluções práticas, sustentáveis e efetivas para o cliente.</li>
-                                <li><strong>Excelência:</strong> entregar o melhor em cada detalhe, com dedicação e propósito.</li>
-                                <li><strong>Agilidade:</strong> entregar o melhor serviço, com qualidade e no menor tempo possível.</li>
-                            </ul>
-
-                            <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Faq Testimonial -->
-
-
-
-
-    @php
-        $faqs = [
-            [
-                'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
-                'answer' =>
-                    'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem riscos.',
-            ],
-            [
-                'question' => 'O que muda para minha empresa com a Reforma Tributária?',
-                'answer' =>
-                    'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração, alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa. Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter segurança e evitar surpresas.',
-            ],
-            [
-                'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
-                'answer' =>
-                    'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade tributária enquanto sua empresa cresce.',
-            ],
-            [
-                'question' =>
-                    'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
-                'answer' =>
-                    'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar produtos monofásicos e verificar se houve pagamento indevido no seu DAS.',
-            ],
-            [
-                'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
-                'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).',
-            ],
-            [
-                'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
-                'answer' =>
-                    'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com a NCM usada nas notas fiscais.',
-            ],
-            [
-                'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
-                'answer' =>
-                    'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se enquadra nos critérios exigidos nos editais.',
-            ],
-        ];
-
-        $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
-    @endphp
 
 
     <section class="faq-con practicearea-faq legal_situation_faq position-relative">

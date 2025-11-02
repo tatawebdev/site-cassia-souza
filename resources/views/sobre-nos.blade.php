@@ -5,20 +5,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 text-lg-left text-center">
-                <div class="about_wrapper position-relative" data-aos="zoom-in">
-                    <figure class="about-image mb-0">
-                        <img src="/assets/img/sobrenos.png" alt="imagem principal" class="img-fluid">
-                    </figure>
-                    <figure class="about-circle mb-0">
-                        <img src="/assets/images/aboutpage-circle.png" alt="imagem círculo" class="img-fluid">
-                    </figure>
-                    <div class="about-box">
-                        <figure class="about-icon">
-                            <img src="/assets/images/aboutpage-icon.png" alt="ícone" class="img-fluid">
-                        </figure>
-                        
+                <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
 
-                        <span class="text">Foco em Direito Tributário</span>
+                    <div class="about_wrapper position-relative" data-aos="zoom-in">
+                        <figure class="about-image mb-0">
+                            <img src="/assets/img/sobrenos.png" alt="imagem principal" class="img-fluid">
+                        </figure>
+                        <figure class="about-circle mb-0">
+                            <img src="/assets/images/aboutpage-circle.png" alt="imagem círculo" class="img-fluid">
+                        </figure>
+                        <div class="about-box">
+                            <figure class="about-icon">
+                                <img src="/assets/images/aboutpage-icon.png" alt="ícone" class="img-fluid">
+                            </figure>
+
+
+                            <span class="text">Foco em Direito Tributário</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,20 +35,21 @@
                     </p>
                     <p class="text text-size-16">
                         Nós sabemos disso — porque estamos ao lado de empresas que já viveram essa realidade. Mas
-                        acreditamos em outro caminho:<strong>o da clareza, da regularidade e da estratégia.</strong> 
+                        acreditamos em outro caminho:<strong>o da clareza, da regularidade e da estratégia.</strong>
                     </p>
                     <p class="text text-size-16">
                         Não somos apenas um escritório de advocacia ou consultoria tributária.<br>
-    <br> 
+                        <br>
                         Somos parceiros que
                         caminham junto com você, ajudando a reduzir impostos de forma legal, recuperar tributos pagos
-                
+
                         indevidamente, regularizar dívidas e preparar sua empresa para as transformações que já estão
                         acontecendo, como a Reforma Tributária.
                     </p>
                     <p class="text text-size-16">
-                        Nossa missão é simples: <strong> judar os empresários a tomar decisões mais estratégicas para o seu
-                        negócio.</strong>
+                        Nossa missão é simples: <strong> judar os empresários a tomar decisões mais estratégicas para o
+                            seu
+                            negócio.</strong>
                     </p>
                     <a href="/about" class="text-decoration-none read_more">Fale conosco<i
                             class="fa-solid fa-arrow-right"></i></a>
