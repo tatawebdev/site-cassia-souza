@@ -66,7 +66,7 @@
         <header class="header">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" style="margin-top: 10px;" href="index.html">
                         <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png" alt=""
                                 class="img-fluid"></figure>
                     </a>

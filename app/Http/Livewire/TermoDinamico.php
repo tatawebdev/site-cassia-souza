@@ -17,6 +17,11 @@ class TermoDinamico extends Component
     public $descricao;
     public $palavrasChave;
     public $autor = 'Cassia Souza Advocacia';
+    /**
+     * Texto HTML padrão usado para a chave 'html' em todos os mapeamentos.
+     * Pode conter tokens @cidade e @estado que serão substituídos em runtime.
+     */
+    protected $defaultHtml = "Cassia Souza Advocacia Tributária\nEstratégia, clareza e segurança para empresas que querem crescer do jeito certo.\nA Cassia Souza Advocacia é um escritório especializado em Direito Tributário, focado em oferecer soluções estratégicas para empresas que desejam pagar apenas o justo em tributos, recuperar valores pagos indevidamente e garantir segurança jurídica para crescer com tranquilidade.\n\nAtuamos de forma consultiva e preventiva, identificando oportunidades legais de economia, regularizando pendências e preparando sua empresa para mudanças como a Reforma Tributária. Trabalhamos com linguagem simples, transparência e foco no resultado: economia, previsibilidade e proteção patrimonial.";
     protected $mapeamento = [
         'advocacia-tributaria' => [
             'tituloBanner' => "Transforme a Gestão Tributária <br>da sua Empresa em @cidade",
@@ -26,6 +31,8 @@ class TermoDinamico extends Component
             'descricao' => "Maximize o Potencial do seu Negócio com a Advocacia Tributária em @cidade - @estado. Reduza riscos fiscais e potencialize o crescimento da sua empresa na nossa cidade.",
             'palavrasChave' => "advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário, contencioso tributário",
             'autor' => "Cassia Souza Advocacia",
+            'html' => "Advocacia Tributária\nTransforme a gestão tributária da sua empresa em @cidade com soluções estratégicas e personalizadas. Reduza riscos fiscais, potencialize o crescimento e garanta segurança jurídica para o seu negócio.\n\nNossa equipe é especializada em identificar oportunidades legais de economia, regularizar pendências fiscais e preparar sua empresa para mudanças legislativas, como a Reforma Tributária. Trabalhamos com transparência, linguagem acessível e foco em resultados: economia, previsibilidade e proteção patrimonial.",
+
         ],
         'cassia-souza-advocacia' => [
             'tituloBanner' => "Cassia Souza Advocacia: Experiência e Comprometimento em @cidade",
@@ -35,6 +42,7 @@ class TermoDinamico extends Component
             'descricao' => "Serviços especializados em Advocacia Tributária em @cidade - @estado. Conte com nossa experiência para resolver questões fiscais e melhorar a gestão tributária da sua empresa.",
             'palavrasChave' => "cassia souza advocacia, @cidade - @estado, advocacia tributária, consultoria fiscal, planejamento tributário",
             'autor' => "Cassia Souza Advocacia",
+            'html' => "Cassia Souza Advocacia Tributária\nEstratégia, clareza e segurança para empresas que querem crescer do jeito certo.\nA Cassia Souza Advocacia é um escritório especializado em Direito Tributário, focado em oferecer soluções estratégicas para empresas que desejam pagar apenas o justo em tributos, recuperar valores pagos indevidamente e garantir segurança jurídica para crescer com tranquilidade.\n\nAtuamos de forma consultiva e preventiva, identificando oportunidades legais de economia, regularizando pendências e preparando sua empresa para mudanças como a Reforma Tributária. Trabalhamos com linguagem simples, transparência e foco no resultado: economia, previsibilidade e proteção patrimonial.",
         ],
         'advogada-tributarista' => [
             'tituloBanner' => "Consultoria Tributária Especializada com Advogada Tributarista",
@@ -188,6 +196,9 @@ class TermoDinamico extends Component
 
         if (isset($this->mapeamento[$key])) {
             $dados = $this->mapeamento[$key];
+            // garantir que todos os mapeamentos tenham o campo 'html' atualizado
+            // sobrescreve o 'html' existente com o padrão fornecido
+            $dados['html'] = $this->defaultHtml;
             // substituir @cidade e @estado nas strings de template
             $dados = array_map(function ($v) {
                 $v = str_replace('@cidade', $this->cidade ?? '', $v);
