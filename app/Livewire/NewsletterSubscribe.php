@@ -4,6 +4,9 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\NewsletterSubscriber;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewsletterConfirmationMail;
+use App\Mail\NewsletterNotificationMail;
 
 class NewsletterSubscribe extends Component
 {
@@ -21,6 +24,14 @@ class NewsletterSubscribe extends Component
 
     public function subscribe()
     {
+
+        $this->dispatch('swal', [
+            'type' => 'success',
+            'title' => 'Inscrição efetuada',
+            'text' => 'Obrigado! Você foi inscrito na nossa newsletter.',
+            'timer' => 4000,
+        ]);
+        return;
         $this->validate();
 
         try {
@@ -29,11 +40,40 @@ class NewsletterSubscribe extends Component
                 'source' => $this->source,
             ]);
 
-            session()->flash('newsletter_success', 'Obrigado! Você foi inscrito na nossa newsletter.');
+            $subscriber = NewsletterSubscriber::where('email', $this->email)->first();
+
+            // enviar e-mail de confirmação ao usuário
+            try {
+                Mail::to($this->email)->send(new NewsletterConfirmationMail($subscriber));
+            } catch (\Exception $e) {
+                logger()->error('Erro ao enviar e-mail de confirmação: ' . $e->getMessage());
+            }
+
+            // notificar admin (usa config('site.contact_email') ou mail.from.address)
+            $admin = config('site.contact_email') ?? config('mail.from.address') ?? env('MAIL_FROM_ADDRESS');
+            if ($admin) {
+                try {
+                    Mail::to($admin)->send(new NewsletterNotificationMail($subscriber));
+                } catch (\Exception $e) {
+                    logger()->error('Erro ao enviar notificação ao admin: ' . $e->getMessage());
+                }
+            }
+
+            // Livewire 3: dispatch() replaces dispatchBrowserEvent
+            $this->dispatch('swal', [
+                'type' => 'success',
+                'title' => 'Inscrição efetuada',
+                'text' => 'Obrigado! Você foi inscrito na nossa newsletter.',
+                'timer' => 4000,
+            ]);
             $this->reset('email');
         } catch (\Exception $e) {
             logger()->error('Newsletter subscribe error: ' . $e->getMessage());
-            session()->flash('newsletter_error', 'Erro ao inscrever seu e-mail. Tente novamente mais tarde.');
+            $this->dispatch('swal', [
+                'type' => 'error',
+                'title' => 'Erro',
+                'text' => 'Erro ao inscrever seu e-mail. Tente novamente mais tarde.',
+            ]);
         }
     }
 

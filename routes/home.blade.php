@@ -227,5 +227,24 @@
 <script src="/assets/js/contact-form.js"></script>
 <script src="/assets/js/contact-validate.js"></script>
 <script src="/assets/js/counter.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    window.addEventListener('swal', event => {
+
+alert(9)
+        // Livewire 3 may send params as an array (params list) or as direct detail.
+        let detail = event.detail;
+        if (Array.isArray(detail) && detail.length) detail = detail[0];
+        detail = detail || {};
+        Swal.fire({
+            icon: detail.type || 'success',
+            title: detail.title || '',
+            text: detail.text || '',
+            showConfirmButton: detail.showConfirmButton !== false,
+            timer: detail.timer || undefined,
+        });
+    });
+</script>
 </body>
 </html>
