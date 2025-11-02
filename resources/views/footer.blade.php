@@ -82,8 +82,8 @@
                             </li>
                             <li class="text">
                                 <i class="fa-solid fa-envelope"></i>
-                                <a href="mailto:contato@cassiasouzaadvocacia.com.br"
-                                    class="text-decoration-none">contato@cassiasouzaadvocacia.com.br</a>
+                                <a href="mailto:cassia_souza@adv.oabsp.org.br"
+                                    class="text-decoration-none">cassia_souza@adv.oabsp.org.br</a>
                             </li>
                         </ul>
                     </div>

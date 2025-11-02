@@ -66,8 +66,8 @@
                 </figure>
                 <h5>E-mail:</h5>
                 <div class="text">
-                    <a href="mailto:contato@cassiasouzaadvocacia.com.br"
-                    class="mb-0 text-decoration-none text-size-14">contato@cassiasouzaadvocacia.com.br</a>
+                    <a href="mailto:cassia_souza@adv.oabsp.org.br"
+                    class="mb-0 text-decoration-none text-size-14">cassia_souza@adv.oabsp.org.br</a>
                 </div>
                 </div>
             </div>

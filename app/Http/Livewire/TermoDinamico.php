@@ -27,21 +27,133 @@ class TermoDinamico extends Component
             'descricao' => "Maximize o Potencial do seu Negócio com a Advocacia Tributária em @cidade - @estado. Reduza riscos fiscais e potencialize o crescimento da sua empresa na nossa cidade.",
             'palavrasChave' => "advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário, contencioso tributário",
         ],
-        'advogados-tributarios' => [
-            'tituloBanner' => "Advogados Tributários Comprometidos com Seu Sucesso",
-            'textoBanner' => "Equipe de advogados tributários dedicados a encontrar as melhores soluções para seus desafios fiscais. Conte conosco para proteger seus interesses e alcançar seus objetivos.",
-            'servico' => "Advogados Tributários",
-            'titulo' => "Advogados Tributários em @cidade - @estado",
-            'descricao' => "Equipe de Advogados Tributários em @cidade - @estado, especializados em oferecer soluções jurídicas eficientes e estratégicas para questões fiscais.",
-            'palavrasChave' => "advogados tributários, @cidade - @estado, consultoria tributária, defesa fiscal, planejamento tributário estratégico",
+        'cassia-souza-advocacia' => [
+            'tituloBanner' => "Cassia Souza Advocacia: Experiência e Comprometimento em @cidade",
+            'textoBanner' => "Especialistas em direito tributário em @cidade - @estado, oferecemos soluções jurídicas personalizadas para empresas e indivíduos. Entre em contato e descubra como podemos ajudar você a resolver questões fiscais complexas.",
+            'servico' => "Cassia Souza Advocacia",
+            'titulo' => "Cassia Souza Advocacia em @cidade - @estado",
+            'descricao' => "Serviços especializados em Advocacia Tributária em @cidade - @estado. Conte com nossa experiência para resolver questões fiscais e melhorar a gestão tributária da sua empresa.",
+            'palavrasChave' => "cassia souza advocacia, @cidade - @estado, advocacia tributária, consultoria fiscal, planejamento tributário",
         ],
         'advogada-tributarista' => [
             'tituloBanner' => "Consultoria Tributária Especializada com Advogada Tributarista",
             'textoBanner' => "Obtenha orientação jurídica especializada em tributação empresarial e pessoal. Nossa advogada tributarista está pronta para ajudar a otimizar sua carga tributária e garantir conformidade fiscal.",
             'servico' => "Advogada Tributarista",
             'titulo' => "Advogada Tributarista em @cidade - @estado",
-            'descricao' => "Especialista em Advocacia Tributária para Empresas em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas.",
+            'descricao' => "Especialista em Advocacia Tributária para Empresas em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e otimizar sua gestão fiscal.",
             'palavrasChave' => "advogada tributarista, @cidade - @estado, consultoria tributária, planejamento tributário, defesa fiscal",
+        ],
+        'defesa-fiscal' => [
+            'tituloBanner' => "Defesa Fiscal: Proteja Seus Interesses com Especialistas",
+            'textoBanner' => "Estratégias eficazes de defesa fiscal para enfrentar disputas tributárias. Conte com nossa experiência em defender seus direitos contra autuações e cobranças indevidas.",
+            'servico' => "Defesa Fiscal",
+            'titulo' => "Defesa Fiscal em @cidade - @estado",
+            'descricao' => "Consultoria Especializada em Defesa Fiscal em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e proteger seus interesses fiscais.",
+            'palavrasChave' => "defesa fiscal, @cidade - @estado, consultoria tributária, planejamento tributário, contencioso fiscal",
+        ],
+        'tributarista' => [
+            'tituloBanner' => "Especialistas Tributários ao Seu Serviço em @cidade",
+            'textoBanner' => "Profissionais dedicados a resolver questões tributárias complexas. Oferecemos soluções personalizadas para empresas e indivíduos, garantindo conformidade fiscal e eficiência operacional.",
+            'servico' => "Tributarista",
+            'titulo' => "Tributarista em @cidade - @estado",
+            'descricao' => "Consultoria Especializada em Tributaristas em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e otimizar sua gestão fiscal.",
+            'palavrasChave' => "tributarista, @cidade - @estado, consultoria tributária, planejamento tributário, defesa fiscal",
+        ],
+        'advocacia-administrativa-tributaria' => [
+            'tituloBanner' => "Advocacia Administrativa Tributária: Soluções Eficientes",
+            'textoBanner' => "Assessoria jurídica especializada em processos administrativos tributários. Nossa equipe está pronta para defender seus interesses e garantir resultados positivos para sua empresa.",
+            'servico' => "Advocacia Administrativa Tributária",
+            'titulo' => "Advocacia Administrativa Tributária em @cidade - @estado",
+            'descricao' => "Oferecemos serviços especializados em Advocacia Administrativa Tributária em @cidade - @estado. Conte com nossa expertise para resolver questões fiscais de forma estratégica e eficiente.",
+            'palavrasChave' => "advocacia administrativa tributária, @cidade - @estado, consultoria tributária, defesa fiscal, planejamento tributário",
+        ],
+        'advocacia-empresarial-e-tributaria' => [
+            'tituloBanner' => "Advocacia Empresarial e Tributária Personalizada",
+            'textoBanner' => "Soluções jurídicas completas para empresas enfrentarem desafios tributários. Conte com nossa experiência em direito empresarial e tributário para alcançar seus objetivos de negócio.",
+            'servico' => "Advocacia Empresarial e Tributária",
+            'titulo' => "Advocacia Empresarial e Tributária em @cidade - @estado",
+            'descricao' => "Especializados em Advocacia Empresarial e Tributária em @cidade - @estado, oferecemos soluções jurídicas integradas para empresas. Proteja seus interesses e otimize sua performance fiscal conosco.",
+            'palavrasChave' => "advocacia empresarial e tributária, @cidade - @estado, consultoria jurídica empresarial, planejamento tributário estratégico",
+        ],
+        'advocacia-tributaria-empresarial' => [
+            'tituloBanner' => "Advocacia Tributária Empresarial: Proteja Seu Patrimônio",
+            'textoBanner' => "Consultoria jurídica especializada em tributação empresarial. Proteja seu patrimônio e otimize sua estrutura fiscal com nossa expertise em advocacia tributária empresarial.",
+            'servico' => "Advocacia Tributária Empresarial",
+            'titulo' => "Advocacia Tributária Empresarial em @cidade - @estado",
+            'descricao' => "Nossa Advocacia Tributária Empresarial em @cidade - @estado oferece soluções personalizadas para sua empresa. Reduza custos fiscais e maximize o retorno dos seus investimentos.",
+            'palavrasChave' => "advocacia tributária empresarial, @cidade - @estado, consultoria tributária empresarial, planejamento fiscal estratégico",
+        ],
+        'advogado-area-tributaria' => [
+            'tituloBanner' => "Consultoria Jurídica na Área Tributária em @cidade",
+            'textoBanner' => "Obtenha suporte jurídico especializado em questões tributárias. Nossa equipe está preparada para oferecer orientação estratégica e representação em litígios fiscais.",
+            'servico' => "Advogado Área Tributária",
+            'titulo' => "Advogado Área Tributária em @cidade - @estado",
+            'descricao' => "Consultoria jurídica especializada na Área Tributária em @cidade - @estado. Conte com nossos advogados para resolver questões tributárias complexas de forma eficiente e estratégica.",
+            'palavrasChave' => "advogado área tributária, @cidade - @estado, consultoria jurídica, planejamento tributário estratégico, defesa fiscal",
+        ],
+        'advogado-consultoria-tributaria' => [
+            'tituloBanner' => "Consultoria Tributária com Advogado Especializado em @cidade",
+            'textoBanner' => "Consultoria tributária personalizada para empresas e indivíduos. Maximizamos oportunidades e minimizamos riscos fiscais com nossa abordagem estratégica em direito tributário.",
+            'servico' => "Advogado Consultoria Tributária",
+            'titulo' => "Advogado Consultoria Tributária em @cidade - @estado",
+            'descricao' => "Especialistas em Consultoria Tributária em @cidade - @estado, oferecemos suporte jurídico personalizado para empresas e indivíduos. Minimize riscos fiscais e otimize sua gestão tributária conosco.",
+            'palavrasChave' => "advogado consultoria tributária, @cidade - @estado, planejamento tributário estratégico, contencioso fiscal, defesa tributária",
+        ],
+        'advogado-planejamento-tributario' => [
+            'tituloBanner' => "Planejamento Tributário com Advogado Especializado em @cidade",
+            'textoBanner' => "Planejamento tributário estratégico para otimizar sua carga fiscal. Nosso advogado está aqui para ajudar você a navegar no complexo sistema tributário brasileiro.",
+            'servico' => "Advogado Planejamento Tributário",
+            'titulo' => "Advogado Planejamento Tributário em @cidade - @estado",
+            'descricao' => "Planejamento Tributário Estratégico em @cidade - @estado com foco em otimização fiscal. Nossos advogados estão prontos para oferecer soluções jurídicas que garantem segurança e economia para seu negócio.",
+            'palavrasChave' => "advogado planejamento tributário, @cidade - @estado, consultoria tributária estratégica, planejamento fiscal, otimização tributária",
+        ],
+        'advogados-tributarios' => [
+            'tituloBanner' => "Advogados Tributários Comprometidos com Seu Sucesso",
+            'textoBanner' => "Equipe de advogados tributários dedicados a encontrar as melhores soluções para seus desafios fiscais. Conte conosco para proteger seus interesses e alcançar seus objetivos.",
+            'servico' => "Advogados Tributários",
+            'titulo' => "Advogados Tributários em @cidade - @estado",
+            'descricao' => "Equipe de Advogados Tributários em @cidade - @estado, especializados em oferecer soluções jurídicas eficientes e estratégicas para questões fiscais. Conte com nossa experiência para proteger seus interesses.",
+            'palavrasChave' => "advogados tributários, @cidade - @estado, consultoria tributária, defesa fiscal, planejamento tributário estratégico",
+        ],
+        'direito-tributario-advocacia' => [
+            'tituloBanner' => "Especialistas em Direito Tributário e Advocacia",
+            'textoBanner' => "Soluções jurídicas em direito tributário para empresas e indivíduos. Nossa expertise em advocacia tributária garante suporte eficaz em todas as etapas de sua jornada fiscal.",
+            'servico' => "Direito Tributário Advocacia",
+            'titulo' => "Direito Tributário Advocacia em @cidade - @estado",
+            'descricao' => "Serviços de Advocacia Especializados em Direito Tributário em @cidade - @estado. Nossos advogados estão preparados para oferecer suporte jurídico completo e eficaz para questões fiscais.",
+            'palavrasChave' => "direito tributário advocacia, @cidade - @estado, consultoria tributária, contencioso fiscal, planejamento tributário",
+        ],
+        'direito-tributario-advogado' => [
+            'tituloBanner' => "Consultoria Jurídica em Direito Tributário",
+            'textoBanner' => "Consultoria jurídica especializada em direito tributário. Nossa equipe está pronta para oferecer suporte estratégico e representação em litígios fiscais e questões tributárias.",
+            'servico' => "Direito Tributário Advogado",
+            'titulo' => "Direito Tributário Advogado em @cidade - @estado",
+            'descricao' => "Advogado Especializado em Direito Tributário em @cidade - @estado, oferecendo soluções jurídicas personalizadas para questões fiscais. Conte com nossa expertise para resolver suas demandas tributárias.",
+            'palavrasChave' => "direito tributário advogado, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, defesa fiscal",
+        ],
+        'escritorio-advocacia-tributaria' => [
+            'tituloBanner' => "Escritório de Advocacia Tributária: Expertise e Comprometimento",
+            'textoBanner' => "Serviços jurídicos especializados em advocacia tributária. Nosso escritório oferece soluções personalizadas para empresas e indivíduos enfrentarem desafios fiscais com segurança.",
+            'servico' => "Escritório Advocacia Tributária",
+            'titulo' => "Escritório Advocacia Tributária em @cidade - @estado",
+            'descricao' => "Nosso Escritório de Advocacia Tributária em @cidade - @estado oferece soluções jurídicas integradas e personalizadas para empresas. Proteja seus interesses fiscais com nossa equipe especializada.",
+            'palavrasChave' => "escritório advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, contencioso fiscal",
+        ],
+        'escritorio-de-advocacia-tributaria' => [
+            'tituloBanner' => "Escritório de Advocacia Tributária: Compromisso com Resultados",
+            'textoBanner' => "Assessoria jurídica especializada em tributação empresarial e pessoal. Oferecemos soluções personalizadas para garantir conformidade fiscal e proteger seus interesses.",
+            'servico' => "Escritório de Advocacia Tributária",
+            'titulo' => "Escritório de Advocacia Tributária em @cidade - @estado",
+            'descricao' => "Especializados em Escritório de Advocacia Tributária em @cidade - @estado, oferecemos suporte jurídico especializado para empresas e indivíduos. Minimize riscos fiscais e otimize sua gestão tributária conosco.",
+            'palavrasChave' => "escritório de advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, contencioso fiscal",
+        ],
+        'planejamento-tributario-advogado' => [
+            'tituloBanner' => "Planejamento Tributário Estratégico com Advogado",
+            'textoBanner' => "Planejamento tributário personalizado para otimizar sua carga fiscal. Nossa equipe jurídica está preparada para oferecer as melhores soluções em planejamento tributário.",
+            'servico' => "Planejamento Tributário Advogado",
+            'titulo' => "Planejamento Tributário Advogado em @cidade - @estado",
+            'descricao' => "Serviços de Planejamento Tributário Estratégico em @cidade - @estado com foco na otimização fiscal. Nossos advogados estão preparados para oferecer soluções personalizadas e eficientes para sua empresa.",
+            'palavrasChave' => "planejamento tributário advogado, @cidade - @estado, consultoria tributária estratégica, otimização fiscal, planejamento tributário eficaz",
         ],
     ];
 
@@ -90,6 +202,46 @@ class TermoDinamico extends Component
 
     public function render()
     {
-        return view('livewire.termo-dinamico');
+        // Banner dinâmico: usar título/descrição do mapeamento quando disponível
+        $bannerTitle = $this->tituloBanner ?? $this->titulo ?? 'Cassia Souza Advocacia';
+        // gerar nome de imagem padrão a partir do termo (pode ser ajustado para caminhos reais)
+        $bannerImg = $this->termo ? 'banner-' . str_replace(['/', ' '], '-', $this->termo) . '.jpg' : 'banner-sobre-nos.jpg';
+
+        $bannerImgPath = public_path('assets/images/' . $bannerImg);
+        if (!file_exists($bannerImgPath)) {
+            $bannerImg = 'banner-sobre-nos.jpg';
+        }
+        $bannerDesc = $this->descricao ?? 'Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes.';
+
+        $banner = [
+            'title' => $bannerTitle,
+            'img' => $bannerImg,
+            'descricao' => $bannerDesc,
+        ];
+
+        // Breadcrumbs dinâmicos: Home > Serviço/Termo > Cidade (se existir)
+        $breadcrumbs = [
+            ['label' => 'Home', 'url' => '/'],
+        ];
+
+        if (!empty($this->servico)) {
+            $breadcrumbs[] = ['label' => $this->servico, 'url' => '/' . ($this->termo ?? '')];
+        } elseif (!empty($this->titulo)) {
+            $breadcrumbs[] = ['label' => $this->titulo, 'url' => '/' . ($this->termo ?? '')];
+        }
+
+        if (!empty($this->cidade)) {
+            $labelCidade = ucwords(str_replace('-', ' ', $this->cidade));
+            $urlCidade = '/' . ($this->termo ?? '') . '/' . $this->cidade . (!empty($this->estado) ? ('/' . $this->estado) : '');
+            $breadcrumbs[] = ['label' => $labelCidade, 'url' => $urlCidade];
+        }
+
+        return view('livewire.termo-dinamico')
+            ->layout('components.layouts.app', [
+                'banner' => $banner,
+                'breadcrumbs' => $breadcrumbs,
+                'pageTitle' => $banner['title'],
+            ]);
     }
 }
+
