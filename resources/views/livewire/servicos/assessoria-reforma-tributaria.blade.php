@@ -12,35 +12,37 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Assessoria para a Reforma Tributária</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">A Reforma Tributária está transformando o sistema tributário brasileiro. 
-
- A questão é: sua empresa está preparada para as mudanças? <p></p>
-Oferecemos assessoria jurídica especializada para ajudar empresários a compreender os impactos da Reforma e a se adaptar com segurança, clareza e orientações estratégicas. </p>
-                    </div>
-                    <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="singleblog-quoteimage">
-                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <p class="mb-0 text-white text-size-18">Adapte-se às mudanças e aproveite oportunidades com segurança</p>
-                    </div>
-                    <p class="text text-size-16">Com nossa assessoria, você terá apoio em: 
-
-Análise dos principais pontos da Reforma Tributária e seus efeitos diretos na sua empresa; 
-
-Avaliação dos impactos na carga tributária e no fluxo financeiro; 
-
-Estratégias de transição para o novo modelo tributário; 
-
-Identificação de riscos e oportunidades no novo cenário; 
-
-Treinamentos e materiais práticos para gestores e equipes. </p>
-                    <div class="content3" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <p class="text text-size-16">Antecipe-se às mudanças e transforme a Reforma Tributária em oportunidade. 
-
-<strong>Fale conosco e garanta que sua empresa avance com confiança.</strong> </p>
+                        <p class="text-size-16">
+                            A Reforma Tributária está transformando o sistema tributário brasileiro.<br><br>
+                            <strong>A questão é: sua empresa está preparada para as mudanças?</strong>
+                        </p>
+                        <p class="text-size-16">
+                            Oferecemos assessoria jurídica especializada para ajudar empresários a compreender os impactos da Reforma e a se adaptar com <strong>segurança, clareza e orientações estratégicas.</strong>
+                        </p>
+                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
+                            <figure class="singleblog-quoteimage">
+                                <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
+                            </figure>
+                            <p class="mb-0 text-white text-size-18">
+                                Com nossa assessoria, você terá apoio em:
+                            </p>
+                        </div>
+                        <ul class="text text-size-16">
+                            <li>Análise dos principais pontos da Reforma Tributária e seus efeitos diretos na sua empresa;</li>
+                            <li>Avaliação dos impactos na carga tributária e no fluxo financeiro;</li>
+                            <li>Estratégias de transição para o novo modelo tributário;</li>
+                            <li>Identificação de riscos e oportunidades no novo cenário;</li>
+                            <li>Treinamentos e materiais práticos para gestores e equipes.</li>
+                        </ul>
+                        <div class="content3" data-aos="fade-up" data-aos-duration="700">
+                            <figure class="image1 mb-3" data-aos="fade-up">
+                                <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
+                            </figure>
+                            <p class="text text-size-16">
+                                Antecipe-se às mudanças e transforme a Reforma Tributária em oportunidade.<br>
+                                <strong>Fale conosco e garanta que sua empresa avance com confiança.</strong>
+                            </p>
+                        </div>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">

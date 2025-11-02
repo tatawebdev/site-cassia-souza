@@ -1,5 +1,5 @@
 @php
-// Copiado de resources/views/livewire/services/piscofins-recovery.blade.php
+    // Copiado de resources/views/livewire/services/piscofins-recovery.blade.php
 @endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
@@ -12,23 +12,30 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Recuperação de PIS/COFINS (Monofásicos)</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Muitas empresas acabam pagando PIS e COFINS monofásicos além do necessário, sem perceber que esses valores podem ser recuperados de forma legal e estratégica. </p>
+                        <p class="text-size-16">Muitas empresas acabam pagando PIS e COFINS monofásicos além do
+                            necessário, sem perceber que esses valores podem ser recuperados de forma legal e
+                            estratégica. </p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
-                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
+                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
+                                loading="lazy">
                         </figure>
                         <p class="mb-0 text-white text-size-18">Recupere créditos e melhore seu fluxo de caixa</p>
                     </div>
-                    <p class="text text-size-16">Nós analisamos as operações, identificamos créditos tributários legítimos e aplicamos a legislação vigente para transformar pagamentos indevidos em recursos que fortalecem o caixa da sua empresa. </p>
+                    <p class="text text-size-16">Nós analisamos as operações, identificamos créditos tributários
+                        legítimos e aplicamos a legislação vigente para transformar pagamentos indevidos em recursos que
+                        fortalecem o caixa da sua empresa. </p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
                         <p class="text text-size-16">
-Com segurança jurídica e atuação especializada, ajudamos sua empresa a reduzir custos, ganhar fôlego financeiro e investir no que realmente importa: o crescimento do seu negócio.
+                            Com segurança jurídica e atuação especializada, ajudamos sua empresa a reduzir custos,
+                            ganhar fôlego financeiro e investir no que realmente importa: o crescimento do seu negócio.
 
-<strong> Fale conosco e descubra quanto sua empresa pode recuperar.</strong></p>
+                            <strong> Fale conosco e descubra quanto sua empresa pode recuperar.</strong>
+                        </p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">
@@ -36,7 +43,8 @@ Com segurança jurídica e atuação especializada, ajudamos sua empresa a reduz
                                 <div class="tag">
                                     <h4>Assuntos relacionados</h4>
                                     <ul class="mb-0 list-unstyled ">
-                                        <li><a class="button text-decoration-none" href="/contato">Solicitar análise</a></li>
+                                        <li><a class="button text-decoration-none" href="/contato">Solicitar análise</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

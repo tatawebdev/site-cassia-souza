@@ -12,18 +12,22 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Planejamento Tributário para Clínicas Médicas e Odontológicas</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei. Para as clínicas médicas e odontológicas existe a possibilidade de reduzir de forma significativa a carga tributária por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido. 
-</p>
-                    </div>
-                    <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="singleblog-quoteimage">
-                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <p class="mb-0 text-white text-size-18">Soluções tributárias para o setor da saúde com foco em resultados</p>
-                    </div>
-                    <p class="text text-size-16">Nosso papel é estruturar um planejamento tributário personalizado, que garanta economia real, segurança jurídica e previsibilidade financeira, sempre com ética e dentro da legalidade. 
-</p>
-                    <div class="content3" data-aos="fade-up" data-aos-duration="700">
+                        <p class="text-size-16">
+                            Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.
+                            Para as clínicas médicas e odontológicas existe a possibilidade de <strong>reduzir de forma significativa a carga tributária</strong> por meio de enquadramentos específicos, como a <strong>equiparação hospitalar</strong> no Lucro Presumido.
+                        </p>
+                        </div>
+                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
+                            <figure class="singleblog-quoteimage">
+                                <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
+                            </figure>
+                            <p class="mb-0 text-white text-size-18">
+                                <strong>Soluções tributárias para o setor da saúde com foco em resultados</strong>
+                            </p>
+                        </div>
+                        <p class="text text-size-16">
+                            Nosso papel é estruturar um <strong>planejamento tributário personalizado</strong>, que garanta <strong>economia real, segurança jurídica e previsibilidade financeira</strong>, sempre com ética e dentro da legalidade.
+                        </p><div class="content3" data-aos="fade-up" data-aos-duration="700"></div>
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
