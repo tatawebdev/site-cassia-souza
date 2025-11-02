@@ -101,6 +101,9 @@ Route::get('/download/review-images2', function (PlacesService $places) {
     return response()->download($zipFilename)->deleteFileAfterSend(true);
 })->name('download.review.images');
 
-Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
+// Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
+//     ->where('estado', '[A-Za-z]{2}')
+//     ->name('termo.dinamico');
+Route::get('/{termo}/{cidade?}/{estado?}', Index::class)
     ->where('estado', '[A-Za-z]{2}')
     ->name('termo.dinamico');
