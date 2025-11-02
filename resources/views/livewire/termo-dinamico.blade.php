@@ -25,13 +25,13 @@
                             proteção patrimonial.</p>
                         <a href="./practice-area.html" class="text-decoration-none read_more">Saiba mais<i
                                 class="fa-solid fa-arrow-right"></i></a>
-                        <figure class="committed-image mb-0" data-aos="zoom-in">
+                        <figure class="committed-image mb-0">
                             <img src="/assets/images/committed-image.png" alt="image" class="img-fluid">
                         </figure>
                     </div>
                 </div>
             </div>
-            <div class="committed_wrapper" data-aos="fade-up">
+            <div class="committed_wrapper" >
                 @php
                     $services = [
                         'Consultoria Tributária Mensal',
@@ -44,12 +44,21 @@
                         'Contencioso e Defesa Fiscal',
                     ];
                 @endphp
-                <div class="d-flex flex-wrap justify-content-center" style="gap: 24px 32px;">
+                <div class="d-flex flex-wrap justify-content-center " style="gap: 24px 32px;">
                     @foreach ($services as $service)
-                        <div class="committed-box text-center p-4 shadow rounded bg-white"
-                            style="display:inline-block; width:auto; min-width:220px; margin:0;">
-                            <h5 class="mb-0" style="color:#66004d; white-space:normal;">{{ $service }}</h5>
+                        <div class="committed-box text-center py-2 px-4 shadow-lg rounded-2 bg-white"
+                            style="display:inline-block; width:auto; min-width:220px; margin:0; transition:background 0.2s, color 0.2s;">
+                            <h5 class="mb-0 text-[#66004d] whitespace-normal" style="transition:color 0.2s;">{{ $service }}</h5>
                         </div>
+                        <style>
+                            .committed-box:hover {
+                                background: #66004d !important;
+                                color: #fff !important;
+                            }
+                            .committed-box:hover h5 {
+                                color: #fff !important;
+                            }
+                        </style>
                     @endforeach
                 </div>
             </div>
