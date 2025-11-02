@@ -32,87 +32,25 @@
                 </div>
             </div>
             <div class="committed_wrapper" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon1.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Consultoria Tributária Mensal</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                @php
+                    $services = [
+                        'Consultoria Tributária Mensal',
+                        'Planejamento Tributário',
+                        'Regularização de Débitos (PGFN)',
+                        'Recuperação de PIS/COFINS',
+                        'Assessoria para Reforma Tributária',
+                        'Treinamentos Tributários',
+                        'Consultoria para Clínicas e Profissionais',
+                        'Contencioso e Defesa Fiscal',
+                    ];
+                @endphp
+                <div class="d-flex flex-wrap justify-content-center" style="gap: 24px 32px;">
+                    @foreach ($services as $service)
+                        <div class="committed-box text-center p-4 shadow rounded bg-white"
+                            style="display:inline-block; width:auto; min-width:220px; margin:0;">
+                            <h5 class="mb-0" style="color:#66004d; white-space:normal;">{{ $service }}</h5>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon2.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Planejamento Tributário</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon3.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Regularização de Débitos (PGFN)</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon4.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Recuperação de PIS/COFINS</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon5.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Assessoria para Reforma Tributária</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon6.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Treinamentos Tributários</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon7.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Consultoria para Clínicas e Profissionais</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="committed-box">
-                            <figure class="icon">
-                                <img src="/assets/images/committed-icon8.png" alt="image" class="img-fluid">
-                            </figure>
-                            <h5>Contencioso e Defesa Fiscal</h5>
-                            <a href="./practice-area.html" class="text-decoration-none"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
