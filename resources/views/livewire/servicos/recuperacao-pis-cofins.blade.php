@@ -12,7 +12,7 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Recuperação de PIS/COFINS (Monofásicos)</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Muitas empresas pagam PIS e COFINS monofásicos além do devido. Analisamos operações, identificamos créditos legítimos e recuperamos valores de forma legal, garantindo fôlego financeiro e mais recursos para o crescimento da sua empresa.</p>
+                        <p class="text-size-16">Muitas empresas acabam pagando PIS e COFINS monofásicos além do necessário, sem perceber que esses valores podem ser recuperados de forma legal e estratégica. </p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
@@ -20,12 +20,15 @@
                         </figure>
                         <p class="mb-0 text-white text-size-18">Recupere créditos e melhore seu fluxo de caixa</p>
                     </div>
-                    <p class="text text-size-16">Realizamos levantamento documental, análise de notas fiscais e procedimentos administrativos e judiciais quando necessários para assegurar a recuperação dos valores.</p>
+                    <p class="text text-size-16">Nós analisamos as operações, identificamos créditos tributários legítimos e aplicamos a legislação vigente para transformar pagamentos indevidos em recursos que fortalecem o caixa da sua empresa. </p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">A atuação correta na recuperação de créditos devolve recursos importantes ao caixa da empresa e aumenta a capacidade de investimento.</p>
+                        <p class="text text-size-16">
+Com segurança jurídica e atuação especializada, ajudamos sua empresa a reduzir custos, ganhar fôlego financeiro e investir no que realmente importa: o crescimento do seu negócio.
+
+<strong> Fale conosco e descubra quanto sua empresa pode recuperar.</strong></p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">

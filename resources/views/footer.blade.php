@@ -26,7 +26,7 @@
                             <figure class="mb-0" style="width: 250px;"><img style="width: 250px;"
                                     src="/assets/images/logo-acinzentado.png" alt="logo"></figure>
                         </a>
-                        <p class="text-size-14">
+                        <p class="text-size-16">
                             Escritório especializado em advocacia tributária. Soluções personalizadas para empresas
                             que buscam segurança, economia e regularidade fiscal.
                         </p>
@@ -60,11 +60,11 @@
                             <li>
                                 <p>Segunda a Sexta</p>
                             </li>
-                            <li><span>09:00 – 18:00</span></li>
+                            <li><span>09:00 – 17:00</span></li>
                             <li>
                                 <p>Sábado</p>
                             </li>
-                            <li><span>09:00 – 13:00</span></li>
+                            <li><span  class="mb-0">Fechado </span></li>
                             <li>
                                 <p>Domingo</p>
                             </li>

@@ -12,26 +12,30 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Planejamento Tributário</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Pagar tributos de forma inteligente não é apenas reduzir custos — é ganhar segurança, previsibilidade e liberdade para crescer.  
-
-Nosso planejamento tributário é estruturado sob medida para que sua empresa pague apenas o que é devido, sem riscos de autuações e com total conformidade legal. 
-</p>
-                    </div>
-                    <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="singleblog-quoteimage">
-                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <p class="mb-0 text-white text-size-18">Segurança e previsibilidade tributária para decisões confiantes</p>
-                    </div>
-                    <p class="text text-size-16">Apoiamos desde a escolha do regime tributário mais vantajoso (inclusive para novos CNPJs) até a reestruturação de empresas em operação, identificando oportunidades de economia e fortalecendo a saúde financeira do negócio. 
-</p>
-                    <div class="content3" data-aos="fade-up" data-aos-duration="700">
-                        <figure class="image1 mb-3" data-aos="fade-up">
-                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
-                        </figure>
-                        <p class="text text-size-16">Com a estratégia certa, você transforma os tributos em aliados do crescimento. 
-
-<strong> Fale conosco e descubra como otimizar sua carga tributária com inteligência e segurança.</strong></p>
+                        <p class="text-size-16">
+                            Pagar tributos de forma inteligente não é apenas reduzir custos — é <strong>ganhar segurança, previsibilidade e liberdade para crescer.</strong>
+                            <br><br>
+                            Nosso planejamento tributário é estruturado sob medida para que sua empresa <strong>pague apenas o que é devido</strong>, sem riscos de autuações e com total conformidade legal.
+                        </p>
+                        </div>
+                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
+                            <figure class="singleblog-quoteimage">
+                                <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
+                            </figure>
+                            <p class="mb-0 text-white text-size-18"><strong>Segurança e previsibilidade tributária para decisões confiantes</strong></p>
+                        </div>
+                        <p class="text text-size-16">
+                            Apoiamos desde a <strong>escolha do regime tributário mais vantajoso</strong> (inclusive para novos CNPJs) até a <strong>reestruturação de empresas em operação</strong>, identificando oportunidades de economia e fortalecendo a saúde financeira do negócio.
+                        </p>
+                        <div class="content3" data-aos="fade-up" data-aos-duration="700">
+                            <figure class="image1 mb-3" data-aos="fade-up">
+                                <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
+                            </figure>
+                            <p class="text text-size-16">
+                                Com a estratégia certa, você transforma os tributos em aliados do crescimento.
+                                <br><br>
+                                <strong>Fale conosco e descubra como otimizar sua carga tributária com inteligência e segurança.</strong>
+                            </p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">
