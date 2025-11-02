@@ -32,7 +32,7 @@ Route::get('/get/places-reviews/{placeId}', function (Request $request, PlacesSe
     }
     $filename = 'places_reviews_' . now()->format('Ymd_His') . '.txt';
     $places->saveReviewsTxt($result, $filename);
-    return response()->download(storage_path('app/'.$filename));
+    return response()->download(storage_path('app/' . $filename));
 });
 
 Route::get('/get/mocked-reviews', function (PlacesService $places) {
@@ -45,13 +45,13 @@ Route::get('/get/mocked-reviews', function (PlacesService $places) {
             $r['profile'],
             str_repeat('★', $r['rating']),
             $r['date'],
-            str_replace(["\r","\n","|"], [' ',' ','/'], $r['text']),
-            str_replace(["\r","\n","|"], [' ',' ','/'], $r['reply'] ?? ''),
+            str_replace(["\r", "\n", "|"], [' ', ' ', '/'], $r['text']),
+            str_replace(["\r", "\n", "|"], [' ', ' ', '/'], $r['reply'] ?? ''),
         ]);
     }
     $filename = 'mocked_reviews_' . now()->format('Ymd_His') . '.txt';
     \Illuminate\Support\Facades\Storage::disk('local')->put($filename, implode(PHP_EOL, $lines));
-    return response()->download(storage_path('app/'.$filename));
+    return response()->download(storage_path('app/' . $filename));
 });
 
 
@@ -100,3 +100,7 @@ Route::get('/download/review-images2', function (PlacesService $places) {
 
     return response()->download($zipFilename)->deleteFileAfterSend(true);
 })->name('download.review.images');
+
+Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
+    ->where('estado', '[A-Za-z]{2}')
+    ->name('termo.dinamico');
