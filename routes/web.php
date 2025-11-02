@@ -104,6 +104,6 @@ Route::get('/download/review-images2', function (PlacesService $places) {
 // Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
 //     ->where('estado', '[A-Za-z]{2}')
 //     ->name('termo.dinamico');
-Route::get('/{termo}/{cidade?}/{estado?}', Index::class)
+Route::get('/{termo}/{cidade?}/{estado?}', \App\Livewire\Index::class)
     ->where('estado', '[A-Za-z]{2}')
     ->name('termo.dinamico');
