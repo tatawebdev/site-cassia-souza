@@ -303,22 +303,37 @@
                 <div class="col-lg-7 col-md-12 col-sm-12 col-12">
                     <div class="about_content" data-aos="fade-up">
                         <div class="content">
-                            <h6>Sobre a Cassia Souza Adv</h6>
-                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Clareza, Ética e
-                                Estratégia</h2>
-                            <p class="text-white text-size-16">Somos um escritório especializado em Direito Tributário
-                                que atuamos com foco em estratégias, segurança jurídica e resultados reais para empresas
-                                de todos os portes. Mais do que prestar serviços, somos parceiros estratégicos na gestão
-                                tributária, oferecendo suportes contínuos e personalizados.</p>
+                            <h6> Cassia Souza Advocacia Tributária </h6>
+                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Missão, Visão e
+                                Valores</h2>
 
-                            <h5 class="text-white mt-3">Nossa missão</h5>
-                            <p class="text-white text-size-16">Garantir clareza e segurança tributária para que
-                                empresários tomem decisões com confiança, pagando apenas o necessário e mantendo suas
-                                empresas protegidas e competitivas.</p>
+                            <h5 class="text-white mt-3">Nossa Missão</h5>
+                            <p class="text-white text-size-16">Empoderar empresários e empresárias a tomarem decisões tributárias estratégicas através de um serviço jurídico claro, empático e de excelência.</p>
 
-                            <h5 class="text-white mt-3">Nossos valores</h5>
-                            <p class="text-white text-size-16">Ética, transparência, comunicação clara,
-                                responsabilidade, parceria com o cliente e inovação jurídica.</p>
+                                  <h5 class="text-white mt-3">Nossos Visão</h5>
+                            <p class="text-white text-size-16">Ser referência na Advocacia Tributária e uma ponte que conecta os empresários e empresárias a decisões seguras e inteligentes.</p>
+
+                            <h5 class="text-white mt-3">Nossos Valores</h5>
+                            <p class="text-white text-size-16">
+                                
+                                Fé: reconhecer que todo resultado vem de Deus e trabalhar com confiança e propósito. 
+
+Ética: agir com integridade e transparência em todas as relações. 
+
+Responsabilidade e Comprometimento: cumprir o que é prometido, com seriedade e constância. 
+
+Comunicação Clara: traduzir o jurídico de forma acessível e didática. 
+
+Empatia: compreender as dores e a realidade do cliente antes de propor soluções. 
+
+Visão Estratégica: enxergar o Direito Tributário como ferramenta de crescimento empresarial. 
+
+Atingir Resultados: buscar soluções práticas, sustentáveis e efetivas para o cliente. 
+
+Excelência: entregar o melhor em cada detalhe, com dedicação e propósito. 
+
+Agilidade: entregar o melhor serviço, com qualidade e no menor tempo possível.
+</p>
 
                             <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i
                                     class="fa-solid fa-arrow-right"></i></a>
