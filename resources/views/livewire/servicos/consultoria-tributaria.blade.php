@@ -15,7 +15,7 @@
                         <p class="text-size-16">
                            A rotina de um empresário já é cheia de desafios — e a área tributária não precisa ser mais um deles.  
 
-Nossa consultoria acompanha sua empresa de forma contínua, garantindo que cada operação seja realizada com segurança e dentro da lei. 
+Nossa consultoria acompanha sua empresa de forma contínua, garantindo que cada <strong >operação seja realizada com segurança e dentro da lei. </strong>
 
                         </p>
                     </div>
@@ -35,7 +35,8 @@ Assim, você evita autuações, mantém regularidade e toma decisões mais segur
                         <p class="text text-size-16">
 Com esse suporte, sua empresa ganha tranquilidade e resultados consistentes mês a mês. 
 
-Fale conosco e descubra como podemos ser o parceiro tributário que acompanha o seu crescimento.</p>
+<strong>
+     Fale conosco e descubra como podemos ser o parceiro tributário que acompanha o seu crescimento.</strong></p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">

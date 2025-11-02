@@ -174,7 +174,7 @@
                         'alt' => 'Planejamento Tributário',
                         'title' => 'Planejamento Tributário',
                         'text' =>
-                            'Estruturamos estratégias sob medida para reduzir a carga tributária dentro da legalidade, garantindo previsibilidade e segurança para o crescimento.',
+                            'Estruturamos estratégias personalizadas para que sua empresa pague apenas o devido, evitando riscos e fortalecendo sua saúde financeira.',
                         'route' => 'servicos.planejamento.tributario',
                     ],
                     [
@@ -182,7 +182,7 @@
                         'alt' => 'Planejamento para Clínicas',
                         'title' => 'Planejamento Tributário para Clínicas',
                         'text' =>
-                            'Soluções tributárias específicas para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
+                            'Clínicas médicas e odontológicas podem reduzir a carga tributária com planejamento personalizado.',
                         'route' => 'servicos.planejamento.tributario.clinicas',
                     ],
                     [
@@ -190,7 +190,7 @@
                         'alt' => 'Assessoria Reforma Tributária',
                         'title' => 'Assessoria para Reforma Tributária',
                         'text' =>
-                            'Acompanhamos as mudanças da reforma tributária, reduzindo riscos e ajudando sua empresa a aproveitar oportunidades com segurança.',
+                            'Nossa assessoria especializada ajuda sua empresa a entender impactos, reduzir riscos e se adaptar com segurança às mudanças da Reforma Tributária.',
                         'route' => 'servicos.assessoria.reforma.tributaria',
                     ],
                     [
@@ -198,7 +198,7 @@
                         'alt' => 'Treinamento Tributário',
                         'title' => 'Treinamento Tributário para Empresas',
                         'text' =>
-                            'Capacitamos equipes com conteúdo prático e objetivo — presencial ou online — para reduzir riscos e otimizar rotinas fiscais.',
+                            'Capacitação personalizada para reduzir riscos, evitar autuações e otimizar rotinas tributárias — presencial ou online.',
                         'route' => 'servicos.treinamento.tributario',
                     ],
                     [
@@ -206,7 +206,7 @@
                         'alt' => 'Recuperação PIS/COFINS',
                         'title' => 'Recuperação de PIS/COFINS (Monofásicos)',
                         'text' =>
-                            'Analisamos operações para identificar créditos de PIS/COFINS monofásicos e recuperamos valores pagos indevidamente de forma legal.',
+                            'Analisamos operações, identificamos créditos legítimos e recuperamos valores de forma legal, garantindo fôlego financeiro e mais recursos para o crescimento da sua empresa.',
                         'route' => 'servicos.recuperacao.pis.cofins.monofasicos',
                     ],
                 ];

@@ -12,7 +12,8 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Regularização de Débitos (PGFN)</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Negociação de débitos em Dívida Ativa com descontos, parcelamentos e pedidos de revisão, para recuperar fôlego financeiro e evitar bloqueios.</p>
+                        <p class="text-size-16">Dívidas com a União não precisam ser um peso permanente no seu negócio.  
+</p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
@@ -20,12 +21,16 @@
                         </figure>
                         <p class="mb-0 text-white text-size-18">Negociação e soluções para dívidas ativas</p>
                     </div>
-                    <p class="text text-size-16">Atuamos na negociação, parcelamento e revisão de débitos inscritos em Dívida Ativa, com foco em preservar a operação e reduzir encargos.</p>
+                    <p class="text text-size-16">Atuamos na<strong> negociação de débitos inscritos em Dívida Ativa junto à PGFN, </strong> buscando <strong> descontos nos juros e multas e parcelamentos especiais, </strong>inclusive com <strong>revisão da CAPAG </strong> para adequar a capacidade de pagamento à realidade da sua empresa. </p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">Analisamos possibilidades de parcelamento, pedidos de transação, e revisão de débitos para recuperar a saúde financeira da empresa.</p>
+                        <p class="text text-size-16">Com isso, sua empresa evita <strong>execuções fiscais, bloqueios da conta bancária e penhora de bens, </strong>  recuperando credibilidade e fôlego financeiro. <p></p>
+
+Não deixe que a Dívida Ativa comprometa o futuro do seu negócio.  
+
+<strong>Fale conosco e inicie a regularização com segurança e apoio jurídico especializado. </strong></p>
                     </div>
                     <div class="buttons aos-init aos-animate" data-aos="fade-up">
                         <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>

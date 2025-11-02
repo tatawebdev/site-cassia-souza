@@ -12,7 +12,8 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Planejamento Tributário para Clínicas Médicas e Odontológicas</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Clínicas médicas e odontológicas podem reduzir a carga tributária com planejamento personalizado. Analisamos o regime mais vantajoso e estruturamos estratégias seguras para garantir economia legal, previsibilidade e mais rentabilidade.</p>
+                        <p class="text-size-16">Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei. Para as clínicas médicas e odontológicas existe a possibilidade de reduzir de forma significativa a carga tributária por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido. 
+</p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
@@ -20,12 +21,13 @@
                         </figure>
                         <p class="mb-0 text-white text-size-18">Soluções tributárias para o setor da saúde com foco em resultados</p>
                     </div>
-                    <p class="text text-size-16">Oferecemos diagnóstico, simulações e implementação das melhores práticas tributárias para clínicas, com foco em conformidade e resultados práticos que aumentam a previsibilidade financeira.</p>
+                    <p class="text text-size-16">Nosso papel é estruturar um planejamento tributário personalizado, que garanta economia real, segurança jurídica e previsibilidade financeira, sempre com ética e dentro da legalidade. 
+</p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">Fale conosco para realizar um diagnóstico e identificar oportunidades concretas de economia.</p>
+                        <p class="text text-size-16"><strong> Se a sua clínica busca pagar apenas o justo e aumentar a rentabilidade sem riscos, fale conosco.</strong></p>
                     </div>
                     <div class="content4" data-aos="fade-up" data-aos-duration="700">
                         <div class="row">

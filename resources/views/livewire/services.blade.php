@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="practice_content text-center" data-aos="fade-up">
-                        <h6>Sobre a Cassia Souza Adv</h6>
+                        <h6>Cassia Souza Advocacia Tributária</h6>
                         <h2> Nossas soluções tributárias</h2>
                         <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">A Cassia Souza Adv é um escritório especializado em Direito Tributário, com foco em estratégia, segurança jurídica e resultados concretos para empresas de todos os portes. Com uma abordagem moderna e transparente, transformamos a complexidade do sistema tributário em soluções práticas, éticas e seguras.</p>
                     </div>
@@ -98,12 +98,11 @@
                 <div class="col-lg-7 col-md-12 col-sm-12 col-12">
                     <div class="about_content" data-aos="fade-up">
                         <div class="content">
-                            <h6>Sobre a Cassia Souza Adv</h6>
-                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Clareza, Ética e Estratégia</h2>
-                            <p class="text-white text-size-16">Somos um escritório especializado em Direito Tributário que atuamos com foco em estratégias, segurança jurídica e resultados reais para empresas de todos os portes. Mais do que prestar serviços, somos parceiros estratégicos na gestão tributária, oferecendo suportes contínuos e personalizados.</p>
-
+                            <h6>Cassia Souza Advocacia Tributária</h6>
+                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Missão,VISÃO e VALORES</h2>
+                            
                             <h5 class="text-white mt-3">Nossa missão</h5>
-                            <p class="text-white text-size-16">Garantir clareza e segurança tributária para que empresários tomem decisões com confiança, pagando apenas o necessário e mantendo suas empresas protegidas e competitivas.</p>
+                            <p class="text-white text-size-16">Empoderar empresários e empresárias a tomarem decisões tributárias estratégicas através de um serviço jurídico claro, empático e de excelência.</p>
 
                             <h5 class="text-white mt-3">Nossos valores</h5>
                             <p class="text-white text-size-16">Ética, transparência, comunicação clara, responsabilidade, parceria com o cliente e inovação jurídica.</p>

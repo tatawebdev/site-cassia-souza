@@ -11,7 +11,7 @@ class RegularizacaoDebitosPGFN extends Component
         $banner = [
             'title' => 'Regularização de Débitos (PGFN)',
             'img' => 'banner-regularizacao-pgfn.jpg',
-            'descricao' => 'Negociação e parcelamento de débitos inscritos na Dívida Ativa (PGFN), com foco em recuperação financeira e redução de encargos.',
+            'descricao' => 'Negociamos débitos inscritos em Dívida Ativa com descontos, parcelamentos prolongados e pedido de revisão da CAPAG, gerando fôlego financeiro e evitando bloqueios.',
         ];
         $breadcrumbs = [
             ['label' => 'Home', 'url' => '/'],
