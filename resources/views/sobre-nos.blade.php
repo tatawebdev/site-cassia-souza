@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
-                <div class="about_content" data-aos="fade-up">
+                <div class="about_content" data-aos="fade-up" style="padding: 0px;">
                     <h6>Sobre nós</h6>
                     <h2>Especialistas em Advocacia Tributária</h2>
                     <p class="text text-size-16">
@@ -47,7 +47,7 @@
                         Nossa missão é simples: <strong> judar os empresários a tomar decisões mais estratégicas para o seu
                         negócio.</strong>
                     </p>
-                    <a href="/about" class="text-decoration-none read_more">Saiba Mais<i
+                    <a href="/about" class="text-decoration-none read_more">Fale conosco<i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>

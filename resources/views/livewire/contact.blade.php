@@ -9,13 +9,6 @@
                             Entre em contato para tirar dúvidas ou agendar uma consulta gratuita. Nossa equipe está
                             pronta para ajudar sua empresa a conquistar segurança tributária.
                         </p>
-                        <div class="box">
-                            <a href="/" class="text-decoration-none">
-                                <span class="mb-0">Início</span>
-                            </a>
-                            <i class="arrow fa-solid fa-arrow-right"></i>
-                            <span class="mb-0 box_span">Contato</span>
-                        </div>
                     </div>
                 </div>
             </div>

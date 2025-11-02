@@ -17,7 +17,6 @@ class TermoDinamico extends Component
     public $descricao;
     public $palavrasChave;
     public $autor = 'Cassia Souza Advocacia';
-
     protected $mapeamento = [
         'advocacia-tributaria' => [
             'tituloBanner' => "Transforme a Gestão Tributária <br>da sua Empresa em @cidade",
@@ -26,6 +25,7 @@ class TermoDinamico extends Component
             'titulo' => "Advocacia Tributária em @cidade - @estado",
             'descricao' => "Maximize o Potencial do seu Negócio com a Advocacia Tributária em @cidade - @estado. Reduza riscos fiscais e potencialize o crescimento da sua empresa na nossa cidade.",
             'palavrasChave' => "advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário, contencioso tributário",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'cassia-souza-advocacia' => [
             'tituloBanner' => "Cassia Souza Advocacia: Experiência e Comprometimento em @cidade",
@@ -34,6 +34,7 @@ class TermoDinamico extends Component
             'titulo' => "Cassia Souza Advocacia em @cidade - @estado",
             'descricao' => "Serviços especializados em Advocacia Tributária em @cidade - @estado. Conte com nossa experiência para resolver questões fiscais e melhorar a gestão tributária da sua empresa.",
             'palavrasChave' => "cassia souza advocacia, @cidade - @estado, advocacia tributária, consultoria fiscal, planejamento tributário",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advogada-tributarista' => [
             'tituloBanner' => "Consultoria Tributária Especializada com Advogada Tributarista",
@@ -42,6 +43,7 @@ class TermoDinamico extends Component
             'titulo' => "Advogada Tributarista em @cidade - @estado",
             'descricao' => "Especialista em Advocacia Tributária para Empresas em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e otimizar sua gestão fiscal.",
             'palavrasChave' => "advogada tributarista, @cidade - @estado, consultoria tributária, planejamento tributário, defesa fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'defesa-fiscal' => [
             'tituloBanner' => "Defesa Fiscal: Proteja Seus Interesses com Especialistas",
@@ -50,6 +52,7 @@ class TermoDinamico extends Component
             'titulo' => "Defesa Fiscal em @cidade - @estado",
             'descricao' => "Consultoria Especializada em Defesa Fiscal em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e proteger seus interesses fiscais.",
             'palavrasChave' => "defesa fiscal, @cidade - @estado, consultoria tributária, planejamento tributário, contencioso fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'tributarista' => [
             'tituloBanner' => "Especialistas Tributários ao Seu Serviço em @cidade",
@@ -58,6 +61,7 @@ class TermoDinamico extends Component
             'titulo' => "Tributarista em @cidade - @estado",
             'descricao' => "Consultoria Especializada em Tributaristas em @cidade - @estado. Conte com nossos serviços para resolver questões tributárias complexas e otimizar sua gestão fiscal.",
             'palavrasChave' => "tributarista, @cidade - @estado, consultoria tributária, planejamento tributário, defesa fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advocacia-administrativa-tributaria' => [
             'tituloBanner' => "Advocacia Administrativa Tributária: Soluções Eficientes",
@@ -66,6 +70,7 @@ class TermoDinamico extends Component
             'titulo' => "Advocacia Administrativa Tributária em @cidade - @estado",
             'descricao' => "Oferecemos serviços especializados em Advocacia Administrativa Tributária em @cidade - @estado. Conte com nossa expertise para resolver questões fiscais de forma estratégica e eficiente.",
             'palavrasChave' => "advocacia administrativa tributária, @cidade - @estado, consultoria tributária, defesa fiscal, planejamento tributário",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advocacia-empresarial-e-tributaria' => [
             'tituloBanner' => "Advocacia Empresarial e Tributária Personalizada",
@@ -74,6 +79,7 @@ class TermoDinamico extends Component
             'titulo' => "Advocacia Empresarial e Tributária em @cidade - @estado",
             'descricao' => "Especializados em Advocacia Empresarial e Tributária em @cidade - @estado, oferecemos soluções jurídicas integradas para empresas. Proteja seus interesses e otimize sua performance fiscal conosco.",
             'palavrasChave' => "advocacia empresarial e tributária, @cidade - @estado, consultoria jurídica empresarial, planejamento tributário estratégico",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advocacia-tributaria-empresarial' => [
             'tituloBanner' => "Advocacia Tributária Empresarial: Proteja Seu Patrimônio",
@@ -82,6 +88,7 @@ class TermoDinamico extends Component
             'titulo' => "Advocacia Tributária Empresarial em @cidade - @estado",
             'descricao' => "Nossa Advocacia Tributária Empresarial em @cidade - @estado oferece soluções personalizadas para sua empresa. Reduza custos fiscais e maximize o retorno dos seus investimentos.",
             'palavrasChave' => "advocacia tributária empresarial, @cidade - @estado, consultoria tributária empresarial, planejamento fiscal estratégico",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advogado-area-tributaria' => [
             'tituloBanner' => "Consultoria Jurídica na Área Tributária em @cidade",
@@ -90,6 +97,7 @@ class TermoDinamico extends Component
             'titulo' => "Advogado Área Tributária em @cidade - @estado",
             'descricao' => "Consultoria jurídica especializada na Área Tributária em @cidade - @estado. Conte com nossos advogados para resolver questões tributárias complexas de forma eficiente e estratégica.",
             'palavrasChave' => "advogado área tributária, @cidade - @estado, consultoria jurídica, planejamento tributário estratégico, defesa fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advogado-consultoria-tributaria' => [
             'tituloBanner' => "Consultoria Tributária com Advogado Especializado em @cidade",
@@ -98,6 +106,7 @@ class TermoDinamico extends Component
             'titulo' => "Advogado Consultoria Tributária em @cidade - @estado",
             'descricao' => "Especialistas em Consultoria Tributária em @cidade - @estado, oferecemos suporte jurídico personalizado para empresas e indivíduos. Minimize riscos fiscais e otimize sua gestão tributária conosco.",
             'palavrasChave' => "advogado consultoria tributária, @cidade - @estado, planejamento tributário estratégico, contencioso fiscal, defesa tributária",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advogado-planejamento-tributario' => [
             'tituloBanner' => "Planejamento Tributário com Advogado Especializado em @cidade",
@@ -106,6 +115,7 @@ class TermoDinamico extends Component
             'titulo' => "Advogado Planejamento Tributário em @cidade - @estado",
             'descricao' => "Planejamento Tributário Estratégico em @cidade - @estado com foco em otimização fiscal. Nossos advogados estão prontos para oferecer soluções jurídicas que garantem segurança e economia para seu negócio.",
             'palavrasChave' => "advogado planejamento tributário, @cidade - @estado, consultoria tributária estratégica, planejamento fiscal, otimização tributária",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'advogados-tributarios' => [
             'tituloBanner' => "Advogados Tributários Comprometidos com Seu Sucesso",
@@ -114,6 +124,7 @@ class TermoDinamico extends Component
             'titulo' => "Advogados Tributários em @cidade - @estado",
             'descricao' => "Equipe de Advogados Tributários em @cidade - @estado, especializados em oferecer soluções jurídicas eficientes e estratégicas para questões fiscais. Conte com nossa experiência para proteger seus interesses.",
             'palavrasChave' => "advogados tributários, @cidade - @estado, consultoria tributária, defesa fiscal, planejamento tributário estratégico",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'direito-tributario-advocacia' => [
             'tituloBanner' => "Especialistas em Direito Tributário e Advocacia",
@@ -122,6 +133,7 @@ class TermoDinamico extends Component
             'titulo' => "Direito Tributário Advocacia em @cidade - @estado",
             'descricao' => "Serviços de Advocacia Especializados em Direito Tributário em @cidade - @estado. Nossos advogados estão preparados para oferecer suporte jurídico completo e eficaz para questões fiscais.",
             'palavrasChave' => "direito tributário advocacia, @cidade - @estado, consultoria tributária, contencioso fiscal, planejamento tributário",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'direito-tributario-advogado' => [
             'tituloBanner' => "Consultoria Jurídica em Direito Tributário",
@@ -130,6 +142,7 @@ class TermoDinamico extends Component
             'titulo' => "Direito Tributário Advogado em @cidade - @estado",
             'descricao' => "Advogado Especializado em Direito Tributário em @cidade - @estado, oferecendo soluções jurídicas personalizadas para questões fiscais. Conte com nossa expertise para resolver suas demandas tributárias.",
             'palavrasChave' => "direito tributário advogado, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, defesa fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'escritorio-advocacia-tributaria' => [
             'tituloBanner' => "Escritório de Advocacia Tributária: Expertise e Comprometimento",
@@ -138,6 +151,7 @@ class TermoDinamico extends Component
             'titulo' => "Escritório Advocacia Tributária em @cidade - @estado",
             'descricao' => "Nosso Escritório de Advocacia Tributária em @cidade - @estado oferece soluções jurídicas integradas e personalizadas para empresas. Proteja seus interesses fiscais com nossa equipe especializada.",
             'palavrasChave' => "escritório advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, contencioso fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'escritorio-de-advocacia-tributaria' => [
             'tituloBanner' => "Escritório de Advocacia Tributária: Compromisso com Resultados",
@@ -146,6 +160,7 @@ class TermoDinamico extends Component
             'titulo' => "Escritório de Advocacia Tributária em @cidade - @estado",
             'descricao' => "Especializados em Escritório de Advocacia Tributária em @cidade - @estado, oferecemos suporte jurídico especializado para empresas e indivíduos. Minimize riscos fiscais e otimize sua gestão tributária conosco.",
             'palavrasChave' => "escritório de advocacia tributária, @cidade - @estado, consultoria tributária, planejamento tributário estratégico, contencioso fiscal",
+            'autor' => "Cassia Souza Advocacia",
         ],
         'planejamento-tributario-advogado' => [
             'tituloBanner' => "Planejamento Tributário Estratégico com Advogado",
@@ -154,6 +169,7 @@ class TermoDinamico extends Component
             'titulo' => "Planejamento Tributário Advogado em @cidade - @estado",
             'descricao' => "Serviços de Planejamento Tributário Estratégico em @cidade - @estado com foco na otimização fiscal. Nossos advogados estão preparados para oferecer soluções personalizadas e eficientes para sua empresa.",
             'palavrasChave' => "planejamento tributário advogado, @cidade - @estado, consultoria tributária estratégica, otimização fiscal, planejamento tributário eficaz",
+            'autor' => "Cassia Souza Advocacia",
         ],
     ];
 

@@ -91,6 +91,8 @@
                 </nav>
             </div>
         </header>
+
+
         <section class="legal_matter_banner position-relative">
             <div class="container position-relative">
                 <div class="row">
@@ -135,6 +137,58 @@
 
     @include('sobre-nos')
 
+    <!-- Fale Conosco -->
+    <section class="consultation-con position-relative">
+        <figure class="consultation-sideimage mb-0">
+            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_wrapper position-relative">
+                        <figure class="consultation-image mb-0">
+                            <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="consultation_content" data-aos="fade-up">
+                        <h6>Fale conosco</h6>
+                        <h2 class="text-white">Agende sua consulta agora!</h2>
+                        <form id="contactpage" method="post" class="position-relative">
+                            <div class="form-group input1 float-left">
+                                <input type="text" class="form_style" placeholder="Nome" name="fname"
+                                    id="fname">
+                            </div>
+                            <div class="form-group float-left">
+                                <input type="tel" class="form_style" placeholder="Telefone" name="phone"
+                                    id="phone">
+                            </div>
+                            <div class="form-group input1 float-left">
+                                <input type="email" class="form_style" placeholder="E-mail" name="email"
+                                    id="email">
+                            </div>
+                            <div class="form-group float-left">
+                                <select class="form-control">
+                                    <option>Área de interesse</option>
+                                    <option>Consultoria Tributária</option>
+                                    <option>Planejamento Fiscal</option>
+                                    <option>Contencioso Tributário</option>
+                                </select>
+                            </div>
+                            <div class="form-group message">
+                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
+                            </div>
+                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
+                                    class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Expertise -->
     <section class="practice-con">
         <div class="container">
@@ -145,7 +199,8 @@
                         <p class="col-xl-8 col-lg-10 mx-auto text-size-16 mb-0">Somos um escritório de
                             <strong>advocacia tributária</strong> dedicado a servir empresários e empresárias para que
                             tomem <strong>decisões tributárias mais estratégicas</strong>, impulsionando o
-                            <strong>crescimento de seus negócios</strong>.</p>
+                            <strong>crescimento de seus negócios</strong>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -241,7 +296,7 @@
                 <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                     <div class="about_wrapper position-relative">
                         <figure class="about-image mb-0">
-                            <img src="assets/img/parceria.png" alt="imagem principal" class="image-fluid">
+                            <img src="assets/img/parceria.png" alt="imagem principal" style="width: unset;" class="image-fluid">
                         </figure>
                     </div>
                 </div>
@@ -276,116 +331,8 @@
 
     <!-- Faq Testimonial -->
 
-    <section class="legal_situation_testimonial position-relative" style="background-color: #fff !important">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonial_content text-center position-relative" data-aos="fade-up">
-                        <h6>Depoimentos</h6>
-                        <h2 class="mb-0">A Voz dos Nossos Clientes</h2>
-                        <figure class="mb-0">
-                            <img src="/assets/images/testimonial2-quote.png" alt="quote image" class="img-fluid">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="row position-relative" data-aos="fade-up">
-                <div class="col-12">
-                    <div id="testimonialcarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach (collect($mockup)->sortByDesc('rating')->sortByDesc('text') as $review)
-                                @if (!empty($review['text']))
-                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <div class="testimonial_box">
-                                            <figure class="testimonial-image mb-3">
-                                                <img src="{{ asset('assets/fotos/image_' . $review['id'] . '.jpg') }}"
-                                                    alt="client image" class="img-fluid rounded-circle"
-                                                    style="width: 80px; height: 80px; object-fit: cover;">
-                                            </figure>
-                                            <p class="text-size-18">{{ $review['text'] }}</p>
-                                            <div class="reviewer-name mt-2">
-                                                <strong>{{ $review['author_name'] }}</strong>
-                                            </div>
-                                            <div class="testimonial-stars mt-2">
-                                                @for ($i = 0; $i < $review['rating']; $i++)
-                                                    <i class="fa fa-star" style="color: #FFD700;"></i>
-                                                @endfor
-                                                @for ($i = $review['rating']; $i < 5; $i++)
-                                                    <i class="fa fa-star" style="color: #E0E0E0;"></i>
-                                                @endfor
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                        <div class="pagination-outer">
-                            <a class="carousel-control-prev" href="#testimonialcarousel" role="button"
-                                data-slide="prev">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                            <a class="carousel-control-next" href="#testimonialcarousel" role="button"
-                                data-slide="next">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- Fale Conosco -->
-    <section class="consultation-con position-relative">
-        <figure class="consultation-sideimage mb-0">
-            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
-        </figure>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="consultation_wrapper position-relative">
-                        <figure class="consultation-image mb-0">
-                            <img src="/assets/img/contato.png" alt="imagem principal" class="image-fluid">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="consultation_content" data-aos="fade-up">
-                        <h6>Fale conosco</h6>
-                        <h2 class="text-white">Agende sua consulta agora!</h2>
-                        <form id="contactpage" method="post" class="position-relative">
-                            <div class="form-group input1 float-left">
-                                <input type="text" class="form_style" placeholder="Nome" name="fname"
-                                    id="fname">
-                            </div>
-                            <div class="form-group float-left">
-                                <input type="tel" class="form_style" placeholder="Telefone" name="phone"
-                                    id="phone">
-                            </div>
-                            <div class="form-group input1 float-left">
-                                <input type="email" class="form_style" placeholder="E-mail" name="email"
-                                    id="email">
-                            </div>
-                            <div class="form-group float-left">
-                                <select class="form-control">
-                                    <option>Área de interesse</option>
-                                    <option>Consultoria Tributária</option>
-                                    <option>Planejamento Fiscal</option>
-                                    <option>Contencioso Tributário</option>
-                                </select>
-                            </div>
-                            <div class="form-group message">
-                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
-                            </div>
-                            <button id="submit" type="submit" class="appointment">Agendar Consulta<i
-                                    class="fa-solid fa-arrow-right"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     @php
         $faqs = [
