@@ -304,36 +304,28 @@
                     <div class="about_content" data-aos="fade-up">
                         <div class="content">
                             <h6> Cassia Souza Advocacia Tributária </h6>
-                            <h2 class="text-white" style="font-size:2.2rem; font-weight:700;">Missão, Visão e
+                            <h2 class="text-white" style="font-size:2.2rem; font-weight:600;">Missão, Visão e
                                 Valores</h2>
 
                             <h5 class="text-white mt-3">Nossa Missão</h5>
-                            <p class="text-white text-size-16">Empoderar empresários e empresárias a tomarem decisões tributárias estratégicas através de um serviço jurídico claro, empático e de excelência.</p>
+                            <p class="text-white text-size-14">Empoderar empresários e empresárias a tomarem decisões tributárias estratégicas através de um serviço jurídico claro, empático e de excelência.</p>
 
                                   <h5 class="text-white mt-3">Nossos Visão</h5>
-                            <p class="text-white text-size-16">Ser referência na Advocacia Tributária e uma ponte que conecta os empresários e empresárias a decisões seguras e inteligentes.</p>
+                            <p class="text-white text-size-14">Ser referência na Advocacia Tributária e uma ponte que conecta os empresários e empresárias a decisões seguras e inteligentes.</p>
 
                             <h5 class="text-white mt-3">Nossos Valores</h5>
-                            <p class="text-white text-size-16">
-                                
-                                Fé: reconhecer que todo resultado vem de Deus e trabalhar com confiança e propósito. 
-
-Ética: agir com integridade e transparência em todas as relações. 
-
-Responsabilidade e Comprometimento: cumprir o que é prometido, com seriedade e constância. 
-
-Comunicação Clara: traduzir o jurídico de forma acessível e didática. 
-
-Empatia: compreender as dores e a realidade do cliente antes de propor soluções. 
-
-Visão Estratégica: enxergar o Direito Tributário como ferramenta de crescimento empresarial. 
-
-Atingir Resultados: buscar soluções práticas, sustentáveis e efetivas para o cliente. 
-
-Excelência: entregar o melhor em cada detalhe, com dedicação e propósito. 
-
-Agilidade: entregar o melhor serviço, com qualidade e no menor tempo possível.
-</p>
+                            <ul class="text-white text-size-15" style="padding-left: 1.2em;">
+                                <li><strong>Fé:</strong> reconhecer que todo resultado vem de Deus
+                                     e trabalhar com confiança e propósito.</li>
+                            <li><strong>Ética:</strong> agir com integridade e transparência em todas as relações.</li>
+                                <li><strong>Responsabilidade e Comprometimento:</strong> cumprir o que é prometido, com seriedade e constância.</li>
+                                <li><strong>Comunicação Clara:</strong> traduzir o jurídico de forma acessível e didática.</li>
+                                <li><strong>Empatia:</strong> compreender as dores e a realidade do cliente antes de propor soluções.</li>
+                                <li><strong>Visão Estratégica:</strong> enxergar o Direito Tributário como ferramenta de crescimento empresarial.</li>
+                                <li><strong>Atingir Resultados:</strong> buscar soluções práticas, sustentáveis e efetivas para o cliente.</li>
+                                <li><strong>Excelência:</strong> entregar o melhor em cada detalhe, com dedicação e propósito.</li>
+                                <li><strong>Agilidade:</strong> entregar o melhor serviço, com qualidade e no menor tempo possível.</li>
+                            </ul>
 
                             <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i
                                     class="fa-solid fa-arrow-right"></i></a>
