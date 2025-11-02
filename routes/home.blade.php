@@ -96,12 +96,8 @@
                         <h6 class="text-white" style="font-family: Arial, sans-serif; font-size: 14px;">Newsletter</h6>
                         <h3 class="text-white mb-0" style="font-family: 'Times New Roman', serif; font-size: 24px;">Receba novidades e dicas tributárias</h3>
                     </div>
-                    <form action="javascript:;">
-                        <div class="form-group position-relative mb-0">
-                            <input type="text" class="form_style" placeholder="Seu e-mail" name="email">
-                            <button>Inscrever-se<i class="fa-solid fa-arrow-right"></i></button>
-                        </div>
-                    </form>
+                    {{-- Newsletter subscription (Livewire) --}}
+                    <livewire:newsletter-subscribe />
                 </div>
             </div>
         </div>
