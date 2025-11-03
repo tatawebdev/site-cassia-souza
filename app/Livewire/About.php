@@ -9,7 +9,7 @@ class About extends Component
     public function render()
     {
         $banner = [
-            'title' => 'Sobre a Cassia Souza Advogacia',
+            'title' => 'Sobre a Cassia Souza Advocacia',
             'img' => 'banner-sobre-nos.jpg',
             'descricao' => 'Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes.',
         ];
