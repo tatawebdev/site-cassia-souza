@@ -4,6 +4,10 @@ use App\Http\Controllers\GoogleAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Services\PlacesService;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Application;
+use Inertia\Inertia;
+
 
 Route::get('/', \App\Livewire\Index::class)->name('inicio');
 Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
@@ -100,6 +104,19 @@ Route::get('/download/review-images2', function (PlacesService $places) {
 
     return response()->download($zipFilename)->deleteFileAfterSend(true);
 })->name('download.review.images');
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
 
 // Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
 //     ->where('estado', '[A-Za-z]{2}')
