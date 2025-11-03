@@ -67,14 +67,14 @@
     <!-- Consultation -->
     <section class="consultation-con position-relative">
         <figure class="consultation-sideimage mb-0">
-            <img src="assets/images/consultation-sideimage.png" alt="image" class="image-fluid">
+            <img src="/assets/images/consultation-sideimage.png" alt="image" class="image-fluid">
         </figure>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_wrapper position-relative">
                         <figure class="consultation-image mb-0">
-                            <img src="assets/images/consultation-image.jpg" alt="image" class="image-fluid">
+                            <img src="/assets/images/consultation-image.jpg" alt="image" class="image-fluid">
                         </figure>
                     </div>
                 </div>

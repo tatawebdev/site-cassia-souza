@@ -24,15 +24,15 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Latest compiled and minified CSS -->
-    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/js/bootstrap.min.js">
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- StyleSheet link CSS -->
-    <link href="assets/css/style.css?v1" rel="stylesheet" type="text/css">
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/style.css?v1" rel="stylesheet" type="text/css">
+    <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>

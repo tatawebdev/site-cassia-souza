@@ -254,7 +254,7 @@
     <!-- Fale Conosco -->
     <section class="consultation-con position-relative">
         <figure class="consultation-sideimage mb-0">
-            <img src="assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
+            <img src="/assets/images/consultation-sideimage.png" alt="imagem lateral" class="image-fluid">
         </figure>
         <div class="container">
             <div class="row">
@@ -368,7 +368,7 @@
                         <div class="practicearea_wrapper text-center" data-aos="zoom-in"
                             style="width: 100%; display: flex; height: 100%; justify-content: center; align-items: center;">
                             <figure class="practicearea-faqimage mb-4" style="margin: 0;">
-                                <img src="assets/images/practicearea-faqimage.png" alt="image" class="img-fluid"
+                                <img src="/assets/images/practicearea-faqimage.png" alt="image" class="img-fluid"
                                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
                             </figure>
                         </div>
