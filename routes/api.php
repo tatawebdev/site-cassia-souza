@@ -12,11 +12,13 @@ Route::get('/', function (Request $request) {
 
 Route::prefix('webhook/whatsapp')->group(function () {
     Route::post('/', [WebhookController::class, 'handle']);
+
     Route::get('/', function () {
         $webhookData = [
             'query' => $_GET,
             'headers' => getallheaders(),
         ];
+dd(storage_path('app/webhook_data.json'));
         file_put_contents(storage_path('app/webhook_data.json'), json_encode($webhookData, JSON_PRETTY_PRINT));
         return response($_REQUEST['hub_challenge'] ?? '');
     });

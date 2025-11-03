@@ -46,6 +46,9 @@
                             <li><i class="fa-solid fa-arrow-right"></i>
                                 <a href="/contact" class=" text-size-14 text text-decoration-none">Contato</a>
                             </li>
+                            <li><i class="fa-solid fa-arrow-right"></i>
+                                <a href="/politica-de-privacidade" class=" text-size-14 text text-decoration-none">Política de Privacidade</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

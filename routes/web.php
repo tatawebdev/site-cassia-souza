@@ -22,6 +22,9 @@ Route::get('/servicos/assessoria-reforma-tributaria', \App\Livewire\Servicos\Ass
 Route::get('/servicos/treinamento-tributario', \App\Livewire\Servicos\TreinamentoTributario::class)->name('servicos.treinamento.tributario');
 Route::get('/servicos/recuperacao-pis-cofins-monofasicos', \App\Livewire\Servicos\RecuperacaoPISCOFINS::class)->name('servicos.recuperacao.pis.cofins.monofasicos');
 
+// Página: Política de Privacidade
+Route::get('/politica-de-privacidade', \App\Livewire\PoliticaPrivacidade::class)->name('privacy');
+
 Route::get('/auth/google/redirecionar', [GoogleAuthController::class, 'redirect'])->name('google.redirecionar');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');
 

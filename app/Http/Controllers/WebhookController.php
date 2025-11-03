@@ -15,6 +15,8 @@ class WebhookController extends Controller
     {
         $webhookData = $request->all();
 
+
+        dd($webhookData);
         $processor = new WhatsAppWebhookProcessor();
         $result = $processor->process($webhookData);
 
