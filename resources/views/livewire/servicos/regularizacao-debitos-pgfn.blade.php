@@ -1,5 +1,5 @@
 @php
-// View para Regularização de Débitos (PGFN)
+    // View para Regularização de Débitos (PGFN)
 @endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
@@ -12,29 +12,33 @@
                     <div class="content1" data-aos="fade-up" data-aos-duration="700">
                         <h4>Regularização de Débitos (PGFN)</h4>
                         <div class="span-fa-outer-con"></div>
-                        <p class="text-size-16">Dívidas com a União não precisam ser um peso permanente no seu negócio.  
-</p>
+                        <p class="text-size-16">Dívidas com a União não precisam ser um peso permanente no seu negócio.
+                        </p>
                     </div>
                     <div class="content2" data-aos="fade-up" data-aos-duration="700">
                         <figure class="singleblog-quoteimage">
-                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
+                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
+                                loading="lazy">
                         </figure>
                         <p class="mb-0 text-white text-size-18">Negociação e soluções para dívidas ativas</p>
                     </div>
-                    <p class="text text-size-16">Atuamos na<strong> negociação de débitos inscritos em Dívida Ativa junto à PGFN, </strong> buscando <strong> descontos nos juros e multas e parcelamentos especiais, </strong>inclusive com <strong>revisão da CAPAG </strong> para adequar a capacidade de pagamento à realidade da sua empresa. </p>
+                    <p class="text text-size-16">Atuamos na<strong> negociação de débitos inscritos em Dívida Ativa
+                            junto à PGFN, </strong> buscando <strong> descontos nos juros e multas e parcelamentos
+                            especiais, </strong>inclusive com <strong>revisão da CAPAG </strong> para adequar a
+                        capacidade de pagamento à realidade da sua empresa. </p>
                     <div class="content3" data-aos="fade-up" data-aos-duration="700">
                         <figure class="image1 mb-3" data-aos="fade-up">
                             <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
                         </figure>
-                        <p class="text text-size-16">Com isso, sua empresa evita <strong>execuções fiscais, bloqueios da conta bancária e penhora de bens, </strong>  recuperando credibilidade e fôlego financeiro. <p></p>
+                        <p class="text text-size-16">Com isso, sua empresa evita <strong>execuções fiscais, bloqueios da
+                                conta bancária e penhora de bens, </strong> recuperando credibilidade e fôlego
+                            financeiro.
+                        <p></p>
 
-Não deixe que a Dívida Ativa comprometa o futuro do seu negócio.  
+                        Não deixe que a Dívida Ativa comprometa o futuro do seu negócio.
 
-<strong>Fale conosco e inicie a regularização com segurança e apoio jurídico especializado. </strong></p>
-                    </div>
-                    <div class="buttons aos-init aos-animate" data-aos="fade-up">
-                        <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
-                        <a href="/contato" class="next"><span class="next-text">Solicitar análise</span></a>
+                        <strong>Fale conosco e inicie a regularização com segurança e apoio jurídico especializado.
+                        </strong></p>
                     </div>
                 </div>
             </div>

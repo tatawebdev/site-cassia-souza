@@ -115,7 +115,7 @@
         <header class="header">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <a class="navbar-brand" style="margin-top: 10px;" href="index.html">
+                    <a class="navbar-brand" style="margin-top: 10px;" href="/">
                         <figure class="logo mb-0"><img width="150px" src="/assets/images/logo-acinzentado.png"
                                 alt="" class="img-fluid"></figure>
                     </a>
@@ -317,14 +317,12 @@
 
 
 
-    <section class="faq-con practicearea-faq legal_situation_faq position-relative">
-        <div class="container" style="    padding: 0px 100px 0px 150px;
-    margin: 0px;
-    max-width: 100%;">
+    <section class="faq-con practicearea-faq legal_situation_faq position-relative" style="padding: 30px 0 144px;">
+        <div class="container px-4 md:px-24 lg:px-36 mx-auto max-w-full ">
             <div class="faq">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="left_column" data-aos="fade-up">
+                        <div class="left_column">
                             <div class="faq_content mb-0">
                                 <h6>Faq’s</h6>
                                 <h2>Perguntas Frequentes – FAQ</h2>

@@ -2570,21 +2570,12 @@ h6:before {
 
 /* Responsividade: diminuir thumbnails em telas pequenas */
 @media (max-width: 767px) {
-    .practice-con .box {
-        padding: 24px 18px;
-    }
 
-    .practice-con .practice-box figure.icon {
-        width: 96px;
-        height: 96px;
-        margin-bottom: 12px;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
-    }
 
     .practice-con .practice-box figure.icon img.service-icon {
-        width: 72px;
-        height: 72px;
+        height: 250px; 
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
     }
 }
 

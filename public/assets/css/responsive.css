@@ -1178,7 +1178,7 @@ a {font-size: 14px; line-height: 14px;}
 .practice-con .practice_content {margin-bottom: 25px;}
 .practice-con .practice_content h6 {margin-bottom: 6px;}
 .practice-con .practice_content h2 {margin-bottom: 12px;}
-.practice-con .box {padding: 25px 20px; min-height: 250px;}
+.practice-con .box {padding: 0px; min-height: 250px;}
 .practice-con .practice-box .icon img {width: 44px;}
 .practice-con .practice-box p {font-size: 12px; line-height: 20px; margin-bottom: 14px;}
 .practice-con .practice-box i {font-size: 12px; width: 34px; height: 34px; line-height: 34px;}
@@ -1431,7 +1431,7 @@ h6 {font-size: 12px; line-height: 18px;}
 /* Practice Area Page */
 .practice-con {padding: 40px 0 25px;}
 .practice-con .practice_content h2 {margin-bottom: 10px;}
-.practice-con .box {padding: 25px 20px; min-height: auto; width: 330px; margin: 0 auto 15px;}
+.practice-con .box {padding:0px; min-height: auto; width: 330px; margin: 0 auto 15px;}
 .practicearea-faq {padding: 40px 0 105px;}
 .practicearea-faq .faq_content h6 {margin-bottom: 5px;}
 .practicearea-faq .faq_content h2 {margin-bottom: 10px;}
