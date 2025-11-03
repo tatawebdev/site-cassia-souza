@@ -22,3 +22,16 @@ Route::prefix('webhook/whatsapp')->group(function () {
     });
 });
 
+
+
+
+Route::get('send-whatsapp', function (Request $request, \App\Services\WhatsAppService $whatsapp) {
+
+    $data = [
+        'to' => 11951936777,
+        'message' => 'Olá! Esta é uma mensagem de teste enviada via API do WhatsApp.',
+    ];
+    $result = $whatsapp->sendMessageText($data['to'], $data['message'], $data['preview_url'] ?? true);
+
+    return response()->json($result);
+});
