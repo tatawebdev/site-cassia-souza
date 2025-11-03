@@ -36,6 +36,8 @@
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
+
     <style>
         .sub_banner::before {
             content: "";
@@ -147,8 +149,10 @@
                         <div class="last_list">
                             <figure class="nav-phoneicon mb-0">
                                 <x-link-whatsapp class="text-decoration-none last_list_atag">
-                                    <i class="fab fa-whatsapp my-float" style="font-size: 24px; vertical-align: middle; margin-right: 8px;"></i>
-                                    <span style="font-weight: bold; font-size: 20px; vertical-align: middle;">{{ config('site.whatsapp') }}</span>
+                                    <i class="fab fa-whatsapp my-float"
+                                        style="font-size: 24px; vertical-align: middle; margin-right: 8px;"></i>
+                                    <span
+                                        style="font-weight: bold; font-size: 20px; vertical-align: middle;">{{ config('site.whatsapp') }}</span>
                                 </x-link-whatsapp>
                             </figure>
                         </div>

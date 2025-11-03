@@ -4,6 +4,8 @@
 <head>
     <title>{{ $title ?? 'Cassia Souza Advocacia Tributária' }}</title>
     <!-- /SEO Ultimate -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta charset="utf-8">
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
@@ -19,7 +21,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/favicon/manifest.json">
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -35,6 +37,8 @@
     <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
+
 </head>
 
 <body>
@@ -43,8 +47,7 @@
 
     {{ $slot }}
 
-    <x-link-whatsapp id="btn_wpp" title="Agende agora mesmo uma consulta via Whatsapp"
-        class="float"
+    <x-link-whatsapp id="btn_wpp" title="Agende agora mesmo uma consulta via Whatsapp" class="float"
         style="position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #fff; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;display: flex;justify-content: center;align-items: center;">
         <i class="fab fa-whatsapp my-float" style="color:#fefefe;"></i>
     </x-link-whatsapp>
@@ -74,6 +77,26 @@
     <script src="/assets/js/contact-form.js"></script>
     <script src="/assets/js/contact-validate.js"></script>
     <script src="/assets/js/counter.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Listener for Livewire 3 dispatch('swal', payload)
+            window.addEventListener('swal', event => {
+                let detail = event.detail;
+                // Livewire 3 often wraps params in an array: [payload]
+                if (Array.isArray(detail) && detail.length) detail = detail[0];
+                detail = detail || {};
+
+                Swal.fire({
+                    icon: detail.type || 'success',
+                    title: detail.title || '',
+                    text: detail.text || '',
+                    showConfirmButton: detail.showConfirmButton !== false,
+                    timer: detail.timer || undefined,
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

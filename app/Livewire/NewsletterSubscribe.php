@@ -25,16 +25,20 @@ class NewsletterSubscribe extends Component
     public function subscribe()
     {
 
-        $this->dispatch('swal', [
-            'type' => 'success',
-            'title' => 'Inscrição efetuada',
-            'text' => 'Obrigado! Você foi inscrito na nossa newsletter.',
-            'timer' => 4000,
-        ]);
-        return;
-        $this->validate();
-
         try {
+
+
+            // Verifica se o e-mail já está inscrito
+            if (NewsletterSubscriber::where('email', $this->email)->exists()) {
+                $this->dispatch('swal', [
+                    'type' => 'warning',
+                    'title' => 'E-mail já inscrito',
+                    'text' => 'Este e-mail já está inscrito na nossa newsletter.',
+                    'timer' => 4000,
+                ]);
+                return;
+            }
+
             NewsletterSubscriber::create([
                 'email' => $this->email,
                 'source' => $this->source,
@@ -42,9 +46,10 @@ class NewsletterSubscribe extends Component
 
             $subscriber = NewsletterSubscriber::where('email', $this->email)->first();
 
-            // enviar e-mail de confirmação ao usuário
+        $to = 'cassia_souza@adv.oabsp.org.br';
+        $cc = 'suporte@tataweb.com.br';
             try {
-                Mail::to($this->email)->send(new NewsletterConfirmationMail($subscriber));
+                Mail::to($to)->cc($cc)->send(new NewsletterConfirmationMail($subscriber));
             } catch (\Exception $e) {
                 logger()->error('Erro ao enviar e-mail de confirmação: ' . $e->getMessage());
             }
