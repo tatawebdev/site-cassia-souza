@@ -1,5 +1,5 @@
 @php
-// Copiado de resources/views/livewire/services/tax-training.blade.php
+    // Copiado de resources/views/livewire/services/tax-training.blade.php
 @endphp
 <section class="singleblog-section blogpage-section">
     <div class="container">
@@ -14,53 +14,34 @@
                         <div class="span-fa-outer-con"></div>
                         <p class="text-size-16">
                             <strong>Treinamos sua equipe em gestão tributária com clareza e exemplos práticos.</strong>
-                            Capacitação personalizada para <strong>reduzir riscos, evitar autuações e otimizar rotinas fiscais</strong> — presencial ou online.
+                            Capacitação personalizada para <strong>reduzir riscos, evitar autuações e otimizar rotinas
+                                fiscais</strong> — presencial ou online.
                         </p>
-                        </div>
-                        <div class="content2" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="singleblog-quoteimage">
-                                <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid" loading="lazy">
-                            </figure>
-                            <p class="mb-0 text-white text-size-18">
-                                <strong>Transforme conhecimento em segurança e resultados</strong>
-                            </p>
-                        </div>
+                    </div>
+                    <div class="content2" data-aos="fade-up" data-aos-duration="700">
+                        <figure class="singleblog-quoteimage">
+                            <img src="/assets/images/singleblog-quoteimage.png" alt="image" class="img-fluid"
+                                loading="lazy">
+                        </figure>
+                        <p class="mb-0 text-white text-size-18">
+                            <strong>Transforme conhecimento em segurança e resultados</strong>
+                        </p>
+                    </div>
+                    <p class="text text-size-16">
+                        <strong>Nossos treinamentos são práticos e aplicáveis</strong>, com materiais e exercícios
+                        pensados para a realidade do seu departamento fiscal e financeiro.
+                        Podemos oferecer <strong>turmas presenciais ou programas online adaptados à sua
+                            empresa</strong>.
+                    </p>
+                    <div class="content3" data-aos="fade-up" data-aos-duration="700">
+                        <figure class="image1 mb-3" data-aos="fade-up">
+                            <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
+                        </figure>
                         <p class="text text-size-16">
-                            <strong>Nossos treinamentos são práticos e aplicáveis</strong>, com materiais e exercícios pensados para a realidade do seu departamento fiscal e financeiro.
-                            Podemos oferecer <strong>turmas presenciais ou programas online adaptados à sua empresa</strong>.
+                            <strong>Capacite sua equipe e minimize erros operacionais que geram autuações e custos
+                                desnecessários.</strong>
+                            Solicite nossa proposta de treinamento.
                         </p>
-                        <div class="content3" data-aos="fade-up" data-aos-duration="700">
-                            <figure class="image1 mb-3" data-aos="fade-up">
-                                <img src="{{ $imagem2 }}" alt="image" class="img-fluid" loading="lazy">
-                            </figure>
-                            <p class="text text-size-16">
-                                <strong>Capacite sua equipe e minimize erros operacionais que geram autuações e custos desnecessários.</strong>
-                                Solicite nossa proposta de treinamento.
-                            </p>
-                    </div>
-                    <div class="content4" data-aos="fade-up" data-aos-duration="700">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="tag">
-                                    <h4>Assuntos relacionados</h4>
-                                    <ul class="mb-0 list-unstyled ">
-                                        <li><a class="button text-decoration-none" href="/contato">Solicitar treinamento</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="icon">
-                                    <h4>Compartilhar</h4>
-                                    <div class="social-icons position-absolute">
-                                        @include('components.social-icons', ['wrapper' => 'ul', 'wrapperClass' => 'mb-0 list-unstyled '])
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttons aos-init aos-animate" data-aos="fade-up">
-                        <a href="/servicos" class="prev"><span class="prev-text">Voltar</span></a>
-                        <a href="/contato" class="next"><span class="next-text">Solicitar treinamento</span></a>
                     </div>
                 </div>
             </div>

@@ -107,7 +107,10 @@
                             <h5 class="text-white mt-3">Nossos valores</h5>
                             <p class="text-white text-size-16">Ética, transparência, comunicação clara, responsabilidade, parceria com o cliente e inovação jurídica.</p>
 
-                            <a href="/contato" class="text-decoration-none read_more">Fale com a gente<i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="nofollow"
+                                class="text-decoration-none appointment">
+                                Fale conosco<i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
