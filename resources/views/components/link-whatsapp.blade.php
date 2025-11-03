@@ -15,7 +15,7 @@
         $href = $configLink;
     } else {
         $phoneToUse = $phone ?? preg_replace('/[^0-9]/', '', config('site.whatsapp') ?? '');
-        $defaultText = "Olá, Cassia Souza Advogacia!\n\nTenho interesse em seus serviços advocatícios ⚖️";
+        $defaultText = "Olá, Cassia Souza Advocacia!\n\nTenho interesse em seus serviços advocatícios ⚖️";
         $textToUse = $text ?? $defaultText;
         $href = 'https://web.whatsapp.com/send/?phone=' . $phoneToUse . '&text=' . urlencode($textToUse);
     }
