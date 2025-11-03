@@ -17,53 +17,58 @@
     <section class="contact-con position-relative">
         <div class="container">
             <div class="row">
-            <div class="col-12">
-                <div class="contact_content text-center" data-aos="fade-up">
-                <h6>Informações de contato</h6>
-                <h2>Nossos canais de atendimento</h2>
-                <p class="col-xl-8 col-lg-10 mx-auto mb-0 text-size-16">
-                    Entre em contato pelo nosso WhatsApp e e-mail para ter um atendimento personalizado e também conheça nossas redes sociais. Eu simplifico a tributação.
-                </p>
-                </div>  
-            </div>
+                <div class="col-12">
+                    <div class="contact_content text-center" data-aos="fade-up">
+                        <h6>Informações de contato</h6>
+                        <h2>Nossos canais de atendimento</h2>
+                        <p class="col-xl-8 col-lg-10 mx-auto mb-0 text-size-16">
+                            Entre em contato pelo nosso WhatsApp e e-mail para ter um atendimento personalizado e também
+                            conheça nossas redes sociais. Eu simplifico a tributação.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="row" data-aos="fade-up">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                <div class="contact-box">
-                <figure class="contact-icon">
-                    <i class="fa-brands fa-tiktok fa-2x"></i>
-                </figure>
-                <h5>Redes Sociais:</h5>
-                <div class="text">
-                    <a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">TikTok</a>
-                    <a href="https://www.linkedin.com/company/cassia-souza-advocacia/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">LinkedIn</a>
-                    <a href="https://www.instagram.com/cassiasouza.adv/" target="_blank" class="mb-0 text-decoration-none text-size-14 d-block">Instagram</a>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="contact-box">
+                        <figure class="contact-icon">
+                            <i class="fa-brands fa-tiktok fa-2x"></i>
+                        </figure>
+                        <h5>Redes Sociais:</h5>
+                        <div class="text">
+                            <a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" target="_blank"
+                                class="mb-0 text-decoration-none text-size-14 d-block">TikTok</a>
+                            <a href="https://www.linkedin.com/company/cassia-souza-advocacia/" target="_blank"
+                                class="mb-0 text-decoration-none text-size-14 d-block">LinkedIn</a>
+                            <a href="https://www.instagram.com/cassiasouza.adv/" target="_blank"
+                                class="mb-0 text-decoration-none text-size-14 d-block">Instagram</a>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="contact-box">
+                        <figure class="contact-icon">
+                            <i class="fa-solid fa-phone fa-2x"></i>
+                        </figure>
+                        <h5>Telefone:</h5>
+                        <div class="text">
+                            <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="noopener noreferrer"
+                                class="mb-0 text-decoration-none text-size-14">{{ config('site.whatsapp') }}</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                <div class="contact-box">
-                <figure class="contact-icon">
-                    <i class="fa-solid fa-phone fa-2x"></i>
-                </figure>
-                <h5>Telefone:</h5>
-                <div class="text">
-                    <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="noopener noreferrer" class="mb-0 text-decoration-none text-size-14">{{ config('site.whatsapp') }}</a>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="contact-box mb-0">
+                        <figure class="contact-icon">
+                            <i class="fa-solid fa-envelope fa-2x"></i>
+                        </figure>
+                        <h5>E-mail:</h5>
+                        <div class="text">
+                            <a href="mailto:cassia_souza@adv.oabsp.org.br"
+                                class="mb-0 text-decoration-none text-size-14">cassia_souza@adv.oabsp.org.br</a>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                <div class="contact-box mb-0">
-                <figure class="contact-icon">
-                    <i class="fa-solid fa-envelope fa-2x"></i>
-                </figure>
-                <h5>E-mail:</h5>
-                <div class="text">
-                    <a href="mailto:cassia_souza@adv.oabsp.org.br"
-                    class="mb-0 text-decoration-none text-size-14">cassia_souza@adv.oabsp.org.br</a>
-                </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
@@ -84,35 +89,10 @@
                     <div class="consultation_content" data-aos="fade-up">
                         <h6> Converse com nossa equipe</h6>
                         <h2 class="text-white">Fale Conosco</h2>
-                        <form id="contactpage" method="post" class="position-relative">
-                            <div class="form-group input1 float-left">
-                                <input type="text" class="form_style" placeholder="Nome" name="fname" id="fname">
-                            </div>
-                            <div class="form-group float-left">
-                                <input type="tel" class="form_style" placeholder="Telefone" name="phone" id="phone">
-                            </div>
-                            <div class="form-group input1 float-left">
-                                <input type="email" class="form_style" placeholder="E-mail" name="email" id="email">
-                            </div>
-                            <div class="form-group float-left">
-                                <input type="text" class="form_style" placeholder="Assunto" name="subject" id="subject">
-                            </div>
-                            <div class="form-group message">
-                                <textarea class="form_style" placeholder="Mensagem" rows="3" name="msg"></textarea>
-                            </div>
-                            <button id="submit" type="submit" class="appointment">Enviar<i
-                                    class="fa-solid fa-arrow-right"></i></button>
-                        </form>
+                        <livewire:contact-form />
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="contact_map_con position-relative" data-aos="fade-up">
-        <div class="container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.3329737833114!2d144.96011341590386!3d-37.80566904135444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1669200882885!5m2!1sen!2s"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
 </div>

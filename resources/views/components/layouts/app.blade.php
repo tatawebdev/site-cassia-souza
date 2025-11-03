@@ -36,6 +36,7 @@
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <style>
@@ -220,6 +221,27 @@
     <script src="/assets/js/back-to-top-button.js"></script>
     <script src="/assets/js/preloader.js"></script>
     <script src="/assets/js/popup-image.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Listener for Livewire 3 dispatch('swal', payload)
+            window.addEventListener('swal', event => {
+                let detail = event.detail;
+                // Livewire 3 often wraps params in an array: [payload]
+                if (Array.isArray(detail) && detail.length) detail = detail[0];
+                detail = detail || {};
+
+                Swal.fire({
+                    icon: detail.type || 'success',
+                    title: detail.title || '',
+                    text: detail.text || '',
+                    showConfirmButton: detail.showConfirmButton !== false,
+                    timer: detail.timer || undefined,
+                });
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
