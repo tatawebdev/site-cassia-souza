@@ -118,7 +118,28 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+
+
+
+Route::get('teste', function () {
+
+
+    $testData = [
+        'celular' => '5511951936777',
+        'message' => 'Olá, gostaria de informações sobre serviços.',
+        'message_id' => 'test_msg_001',
+        'name' => 'Usuario Teste',
+        'event_type' => 'message_text',
+        'interactive_id' => null,
+    ];
+
+    app(\App\Services\Legacy\NewChatbotService::class)->processInput($testData);
+
+
+    return 'Teste funcionando1!';
+});
 
 
 // Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)

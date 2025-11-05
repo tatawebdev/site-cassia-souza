@@ -12,6 +12,29 @@ class ChatbotInteracoesUsuario extends Model
     public $timestamps = false;
     protected $guarded = [];
 
+    protected $fillable = [
+        'id_usuario',
+        'id_flow',
+        'id_step',
+        'primeira_interacao',
+        'ultima_interacao',
+        'aguardando',
+        'tipo_interacao_esperado',
+        'ia',
+    ];
+
+    protected $casts = [
+        'primeira_interacao' => 'datetime',
+        'ultima_interacao' => 'datetime',
+        'aguardando' => 'integer',
+        'id_usuario' => 'integer',
+        'id_flow' => 'integer',
+        'id_step' => 'integer',
+        'tipo_interacao_esperado' => 'string',
+        'ia' => 'string',
+    ];
+
+
     private static $table_usuario = 'chatbot_usuario';
 
     public static function getInteractionsWithUsers()

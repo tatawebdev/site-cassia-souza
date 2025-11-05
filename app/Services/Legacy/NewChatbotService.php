@@ -42,207 +42,176 @@ class NewChatbotService
         // Adiciona usuário e interação (cria se não existir)
         $usuarioRaw = ChatbotInteracoesUsuario::addUserAndInteraction($numeroUsuario, $nomeUsuario);
 
-        // Normaliza estrutura: junta dados do usuário com dados da interação para compatibilidade com código legado
-        $usuario = [];
-        if (is_array($usuarioRaw['usuario'] ?? null)) {
-            $usuario = array_merge($usuario, $usuarioRaw['usuario']);
-        }
-        if (is_array($usuarioRaw['interacao'] ?? null)) {
-            $usuario = array_merge($usuario, $usuarioRaw['interacao']);
-        }
 
-        // Obtém step
-        $step = (new ChatbotSteps())->getStepById($usuario['id_step'] ?? null) ?: [];
+        $interacao = $usuarioRaw['interacao'] ?? null;
+        $step = $interacao['id_step'] ?? null;
 
-        // Salva mensagem do usuário
-        ChatbotInteracoesChat::create([
-            'usuario_id' => $usuario['usuario_id'] ?? null,
-            'mensagem' => $mensagemUsuario,
-            'message_id' => $data['message_id'] ?? null,
-            'data' => json_encode([$data]),
-            'remetente' => 'user',
-            'id_step' => $step['id'] ?? null,
-            'status_mensagem' => 'enviado',
-            'data_envio' => now(),
-        ]);
-
-        // Se não for bot (notBot) encaminha para FCM / equipe
-        if (!empty($usuario['notBot'])) {
-            // Envia notificação para equipe via FCM (helper legacy may exist); aqui apenas log
-            Log::info('Usuario marcado como notBot, encaminhar para equipe', ['numero' => $numeroUsuario, 'mensagem' => $mensagemUsuario]);
-
-            // Reset aguardando se necessário
-            if (!empty($usuario['aguardando'])) {
-                ChatbotInteracoesUsuario::updateStepById($usuario['interacoes_id'], null, false);
-            }
-
-            return;
-        }
-
-        // Se IA ativa
-        if (!empty($usuario['ia'])) {
-            $prompt = $this->buildGeminiPrompt($mensagemUsuario);
-            try {
-                $responseBody = $this->gemini->generate($prompt, ['responseMimeType' => 'text/markdown']);
-                $text = $responseBody ? \App\Services\GeminiService::extractGeneratedText($responseBody) : null;
-                if ($text) {
-                    // Envia via WhatsApp
-                    $this->whatsapp->sendMessageText($numeroUsuario, $text);
-
-                    // pode salvar no histórico de chat se quiser
-                    ChatbotInteracoesChat::create([
-                        'usuario_id' => $usuario['usuario_id'] ?? null,
-                        'mensagem' => $text,
-                        'remetente' => 'ia',
-                        'status_mensagem' => 'enviado',
-                        'id_step' => $usuario['id_step'] ?? null,
-                        'data_envio' => now(),
-                    ]);
-                }
-            } catch (\Exception $e) {
-                Log::error('Erro Gemini: ' . $e->getMessage());
-            }
-
-            if (!empty($usuario['aguardando'])) {
-                ChatbotInteracoesUsuario::updateStepById($usuario['interacoes_id'], null, false);
-            }
-
-            return;
-        }
-
-        // Se não há step definido, encerra
-        if (empty($step['id'])) {
-            return;
-        }
-
-        // Ajusta event_type para compatibilidade
-        if ($eventType === 'interactive') {
-            $eventType = 'message_interactive';
-        }
-
-        // Verifica se usuário estava aguardando um tipo de interação específica
-        if (!empty($usuario['aguardando'])) {
-            $tipoEsperado = $usuario['tipo_interacao_esperado'] ?? null;
-            if ($eventType !== $tipoEsperado) {
-                $this->whatsapp->sendMessageText($numeroUsuario, 'Selecione uma opção válida');
-                return;
-            }
-        }
-
-        // Processa inputs interativos/texto
-        if ($eventType === 'message_interactive' || $eventType === 'message_button') {
-            $this->processarInteracaoEtapa($usuario, $step, $data, $numeroUsuario);
-        } else { // message_text
-            $this->processarTextEtapa($usuario, $step, $data, $numeroUsuario);
-        }
-    }
-
-    protected function buildGeminiPrompt(string $userMessage): string
-    {
-        return "Você é um chatbot interagindo com um cliente. Responda objetivamente.\n\n" . $userMessage;
-    }
-
-    protected function processarTextEtapa(array $usuario, array $step, array $data, string $numero)
-    {
-        // Se existir função de validação no contexto Laravel, poderíamos invocar através de callbacks; por ora, assume sucesso
-        $nomeFunc = $step['nome_da_funcao'] ?? null;
-        if ($nomeFunc && function_exists($nomeFunc)) {
-            $params = array_merge($step, $usuario);
-            $params['data'] = $data;
-            $resultado_validacao = call_user_func($nomeFunc, $params);
-            if (!empty($resultado_validacao['result'])) {
-                $idStepProximo = $params['id_step_proximo'] ?? null;
-                ChatbotInteracoesUsuario::updateStepById($params['interacoes_id'], $idStepProximo);
-            } else {
-                foreach ($resultado_validacao['message'] as $m) {
-                    $this->whatsapp->sendMessageText($numero, $m);
-                }
-            }
-        } else {
-            // Sem validação, assumimos avanço
-            if (!empty($step['nome_campo'])) {
-                ChatbotAtendimento::insertByNumeroCampoResposta($numero, $step['nome_campo'], $data['message'] ?? null);
-            }
-            // atualiza para proximo step se houver
-            $idStepProximo = $step['id_step_proximo'] ?? null;
-            if ($idStepProximo) {
-                ChatbotInteracoesUsuario::updateStepById($usuario['interacoes_id'], $idStepProximo);
-            }
-        }
-    }
-
-    protected function processarInteracaoEtapa(array $usuario, array $step, array $data, string $numero)
-    {
-        $interactiveId = $data['interactive_id'] ?? ($data['message'] ?? null);
-
-        // Verifica se opção existe
-        $opcoes = $step['options'] ?? [];
-        $found = null;
-        foreach ($opcoes as $opt) {
-            if ((string)($opt['id'] ?? '') === (string)$interactiveId) {
-                $found = $opt;
+        switch ($step) {
+            case null:
+                $this->etapa1($numeroUsuario);
+                // Atualiza o passo diretamente usando Eloquent
+                ChatbotInteracoesUsuario::where('id_usuario', $usuarioRaw['usuario']['id'])
+                    ->update(['id_step' => 2]);
                 break;
-            }
+            case 2:
+                $this->etapa2($numeroUsuario);
+                ChatbotInteracoesUsuario::where('id_usuario', $usuarioRaw['usuario']['id'])
+                    ->update(['id_step' => 3]);
+                break;
+            case 3:
+                $this->etapa3($numeroUsuario);
+                ChatbotInteracoesUsuario::where('id_usuario', $usuarioRaw['usuario']['id'])
+                    ->update(['id_step' => 4]);
+                break;
+            case 4:
+                $this->etapa4($numeroUsuario);
+                ChatbotInteracoesUsuario::where('id_usuario', $usuarioRaw['usuario']['id'])
+                    ->update(['id_step' => 5]);
+                break;
+            case 5:
+                $this->etapa5($numeroUsuario);
+                // Final step, no update
+                break;
         }
 
-        if (!$found) {
-            $this->whatsapp->sendMessageText($numero, 'Você selecionou uma opção inválida.');
-            return;
-        }
 
-        $option = ChatbotOptions::getOptionById($interactiveId);
-        $idStepProximo = null;
-        if ($option) {
-            if (is_array($option)) {
-                $idStepProximo = $option['id_step_proximo'] ?? null;
-            } else {
-                $idStepProximo = $option->id_step_proximo ?? null;
-            }
-        }
-        ChatbotInteracoesUsuario::updateStepById($usuario['interacoes_id'], $idStepProximo);
+
     }
 
-    /**
-     * Envia lista interativa baseada na configuração e nas opções
-     */
-    public function enviarListaInterativaComDados(int $id_step, string $numero)
+
+
+    //etapa1 return <p>Olá! Sou o assistente virtual da Cassia Souza Advocacia Tributária ⚖️&nbsp;</p><p>Estou aqui para compreender a sua demanda e direcioná-la da melhor maneira possível.&nbsp;</p><p><br></p><hr contenteditable="false"><p><br></p><p>Para isso, por favor, responda apenas 5 perguntas para eu lhe encaminhar ao atendimento mais adequado.&nbsp;</p><p><br></p><hr contenteditable="false"><p><span style="color: rgb(0, 0, 0);">Por favor, informe o seu nome.&nbsp;</span></p>
+
+    public function etapa1($numeroUsuario): void
     {
-        $secoes = ChatbotOptions::getListaInterativaWhatsApp($id_step);
-        if (empty($secoes)) return;
+        $mensagem1 = 'Olá! Sou o assistente virtual da Cassia Souza Advocacia Tributária ⚖️';
 
-        $config = (new ChatboConfigMessageInteractive())->where('id_step', $id_step)->first();
-        if (!$config) return;
+        $mensagem2 = 'Estou aqui para compreender a sua demanda e direcioná-la da melhor maneira possível. Para isso, por favor, responda apenas 5 perguntas para eu lhe encaminhar ao atendimento mais adequado.';
 
-        // Convert sections to WhatsApp API structure
-        $waSections = [];
+        $mensagem3 = 'Por favor, informe o seu nome.';
 
-        // If $secoes is a flat list of rows (most likely), wrap into one section
-        $first = $secoes[0] ?? null;
-        if ($first && isset($first['id'])) {
-            $rows = [];
-            foreach ($secoes as $item) {
-                $rows[] = [
-                    'id' => (string)($item['id'] ?? ''),
-                    'title' => $item['title'] ?? $item['titulo_interacao'] ?? '',
-                    'description' => $item['description'] ?? '',
-                ];
-            }
-            $waSections[] = ['title' => $config->texto_cabecalho ?? 'Opções', 'rows' => $rows];
-        } else {
-            // Otherwise assume it's already grouped as sections
-            foreach ($secoes as $sec) {
-                $rows = [];
-                foreach ($sec as $item) {
-                    $rows[] = [
-                        'id' => (string)($item['id'] ?? ''),
-                        'title' => $item['title'] ?? $item['titulo_interacao'] ?? '',
-                        'description' => $item['description'] ?? '',
-                    ];
-                }
-                $waSections[] = ['title' => $sec['secao_titulo'] ?? 'Opções', 'rows' => $rows];
-            }
-        }
 
-        $this->whatsapp->sendListMessage($numero, $config->texto_cabecalho ?? '', $config->texto_corpo ?? '', $config->texto_rodape ?? '', $waSections, $config->texto_botao ?? 'Ver opções');
+        $this->whatsapp->sendMessageText($numeroUsuario, strip_tags($mensagem1));
+        $this->whatsapp->sendMessageText($numeroUsuario, strip_tags($mensagem2));
+        $this->whatsapp->sendMessageText($numeroUsuario, strip_tags($mensagem3));
+
     }
+
+    // Etapa 2: Solicita o nome do usuário (message_text)
+    public function etapa2($numeroUsuario): void
+    {
+        $mensagem = 'Por favor, informe o seu nome.';
+        $this->whatsapp->sendMessageText($numeroUsuario, strip_tags($mensagem));
+    }
+
+    // Etapa 3: Seleção do assunto da consulta (message_interactive)
+    public function etapa3($numeroUsuario): void
+    {
+        $texto = 'Selecione o assunto da sua consulta:';
+        $botoes = [
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '29',
+                    'title' => 'Dívidas Tributárias',
+                    'description' => 'Consultas sobre dívidas fiscais e tributos em aberto.',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '30',
+                    'title' => 'Planejamento Tributário',
+                    'description' => 'Estratégias para otimizar a carga tributária.',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '31',
+                    'title' => 'Execução Fiscal',
+                    'description' => 'Ações judiciais relacionadas à cobrança de tributos.',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '32',
+                    'title' => 'Consultoria Tributária',
+                    'description' => 'Orientação especializada sobre legislação tributária.',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '33',
+                    'title' => 'Assuntos Tributários',
+                    'description' => 'Outros temas relacionados a tributos.',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '34',
+                    'title' => 'Assuntos Não Tributários',
+                    'description' => 'Consultas que não envolvem questões tributárias.',
+                ],
+            ],
+        ];
+        $sections = [
+            [
+                'title' => 'Assuntos disponíveis',
+                'rows' => array_map(function ($botao) {
+                    return [
+                        'id' => $botao['reply']['id'],
+                        'title' => $botao['reply']['title'],
+                        'description' => $botao['reply']['description'] ?? '',
+                    ];
+                }, $botoes),
+            ],
+        ];
+        $this->whatsapp->sendListMessage(
+            $numeroUsuario,
+            $texto,
+            'Escolha uma das opções abaixo:',
+            'Cassia Souza Advocacia',
+            $sections,
+            'Ver opções'
+        );
+    }
+
+
+
+    // Etapa 4: Solicita detalhes da dúvida (message_text)
+    public function etapa4($numeroUsuario): void
+    {
+        $mensagem = 'Poderia detalhar a sua dúvida para que possamos oferecer uma orientação mais adequada?';
+        $this->whatsapp->sendMessageText($numeroUsuario, strip_tags($mensagem));
+    }
+
+    // Etapa 5: Seleção do tipo de pessoa (message_button)
+    public function etapa5($numeroUsuario): void
+    {
+        $texto = 'Por favor, informe se a sua consulta é para uma Pessoa Física ou Pessoa Jurídica:';
+        $botoes = [
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '35',
+                    'title' => 'Pessoa Física',
+                ],
+            ],
+            [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => '36',
+                    'title' => 'Pessoa Jurídica',
+                ],
+            ],
+        ];
+        $this->whatsapp->sendButtonMessage($numeroUsuario, $texto, $botoes);
+    }
+
+
+
 }

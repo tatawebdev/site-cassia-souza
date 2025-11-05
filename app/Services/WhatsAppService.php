@@ -39,7 +39,6 @@ class WhatsAppService
     {
         $actionButtons = [];
         foreach ($buttons as $b) {
-            // espera cada botão no formato ['type'=>'reply','reply'=>['id'=>..., 'title'=>...]]
             $actionButtons[] = $b;
         }
 
