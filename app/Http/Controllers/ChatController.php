@@ -1,0 +1,121 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\ChatbotUsuario;
+use App\Models\ChatbotInteracaoChat;
+use Illuminate\Support\Facades\Log;
+
+class ChatController extends Controller
+{
+
+    /**
+     * Retorna lista de contatos com última mensagem e contagem de não lidos.
+     */
+    public function contacts()
+    {
+        $users = ChatbotUsuario::orderBy('ultima_conversa', 'desc')->get();
+
+        $result = $users->map(function ($u) {
+            $lastInteraction = ChatbotInteracaoChat::where('usuario_id', $u->id)
+                ->orderBy('data_envio', 'desc')
+                ->first();
+
+            $lastMessage = $lastInteraction ? $lastInteraction->mensagem : ($u->ultima_mensagem ? $u->ultima_mensagem->toDateTimeString() : '');
+
+            $unread = ChatbotInteracaoChat::where('usuario_id', $u->id)
+                ->where('remetente', 'contact')
+                ->whereNull('data_visualizacao')
+                ->count();
+
+            return [
+                'id' => $u->id,
+                'name' => $u->nome,
+                'telefone' => $u->telefone,
+                'lastMessage' => $lastMessage,
+                'lastAt' => $u->ultima_conversa ? $u->ultima_conversa->toDateTimeString() : null,
+                'unread' => $unread,
+            ];
+        });
+
+        return response()->json($result);
+    }
+
+    /**
+     * Retorna mensagens de um usuário ordenadas cronologicamente.
+     */
+    public function messages($usuarioId)
+    {
+        $msgs = ChatbotInteracaoChat::where('usuario_id', $usuarioId)
+            ->orderBy('data_envio', 'asc')
+            ->get();
+
+        $result = $msgs->map(function ($m) {
+            return [
+                'id' => $m->id,
+                'from' => in_array($m->remetente, ['me', 'agent', 'system']) ? 'me' : 'contact',
+                'text' => $m->mensagem,
+                'time' => $m->data_envio ? $m->data_envio->toDateTimeString() : null,
+                'status' => $m->status_mensagem,
+            ];
+        });
+
+        return response()->json($result);
+    }
+
+    /**
+     * Armazena uma nova mensagem (remetente pode ser 'me' ou 'contact').
+     * Se for passado telefone e não existir usuário, cria com addUserIfNotExists.
+     */
+    public function storeMessage(Request $request)
+    {
+        $data = $request->validate([
+            'usuario_id' => 'nullable|integer|exists:chatbot_usuario,id',
+            'telefone' => 'nullable|string',
+            'nome' => 'nullable|string',
+            'mensagem' => 'required|string',
+            'remetente' => 'nullable|string|in:me,contact,bot,system,agent',
+        ]);
+
+        $usuario = null;
+        if (!empty($data['usuario_id'])) {
+            $usuario = ChatbotUsuario::find($data['usuario_id']);
+        } elseif (!empty($data['telefone'])) {
+            $usuario = ChatbotUsuario::addUserIfNotExists($data['telefone'], $data['nome'] ?? null);
+        }
+
+        if (!$usuario) {
+            return response()->json(['error' => 'usuario_id ou telefone é requerido'], 422);
+        }
+
+        $remetente = $data['remetente'] ?? 'me';
+
+        $msg = ChatbotInteracaoChat::create([
+            'usuario_id' => $usuario->id,
+            'mensagem' => $data['mensagem'],
+            'remetente' => $remetente,
+            'status_mensagem' => 'sent',
+            'data_envio' => now(),
+            'data' => now(),
+            'message_id' => uniqid('msg_'),
+        ]);
+
+        // atualiza timestamps do usuario
+        $usuario->ultima_mensagem = now();
+        $usuario->ultima_conversa = now();
+        $usuario->save();
+
+        return response()->json([
+            'message' => 'ok',
+            'data' => [
+                'id' => $msg->id,
+                'usuario_id' => $usuario->id,
+                'text' => $msg->mensagem,
+                'from' => $remetente === 'me' ? 'me' : 'contact',
+                'time' => $msg->data_envio->toDateTimeString(),
+            ],
+        ], 201);
+    }
+
+}

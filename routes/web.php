@@ -120,6 +120,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // Chat API (métodos para o frontend consumir)
+    Route::get('/chat/contacts', [\App\Http\Controllers\ChatController::class, 'contacts'])->name('chat.api.contacts');
+    Route::get('/chat/{usuario}/messages', [\App\Http\Controllers\ChatController::class, 'messages'])->name('chat.api.messages');
+    Route::post('/chat/messages', [\App\Http\Controllers\ChatController::class, 'storeMessage'])->name('chat.api.storeMessage');
 });
 
 require __DIR__ . '/auth.php';

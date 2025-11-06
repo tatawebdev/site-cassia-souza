@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import ContactList from '@/Components/Chat/ContactList';
@@ -7,28 +7,91 @@ import { contacts as initialContacts } from '@/data/mockChat';
 
 export default function ContactsChat() {
   const [contacts, setContacts] = useState(initialContacts.map((c) => ({ ...c })));
-  const [selectedId, setSelectedId] = useState(contacts[0]?.id ?? null);
+  const [selectedId, setSelectedId] = useState(null);
+  const [loadingContacts, setLoadingContacts] = useState(true);
+  const [loadingMessagesFor, setLoadingMessagesFor] = useState(null);
 
   function handleSelect(id) {
     setSelectedId(id);
-    // optional: mark as read in the mocked data
+    // mark as read locally
     setContacts((prev) => prev.map((c) => (c.id === id ? { ...c, unread: 0 } : c)));
+
+    // if messages not loaded, fetch from API
+    const contact = contacts.find((c) => c.id === id);
+    if (!contact) return;
+    if (!contact.messages || contact.messages.length === 0) {
+      fetchMessages(id);
+    }
   }
 
   function handleSend(text) {
     if (!selectedId) return;
+
+    const contact = contacts.find((c) => c.id === selectedId);
+    if (!contact) return;
+
+    // optimistic UI: append a temp message
+    const tempId = `temp_${Date.now()}`;
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const tempMsg = { id: tempId, from: 'me', text, time };
+
     setContacts((prev) =>
-      prev.map((c) => {
-        if (c.id !== selectedId) return c;
-        const nextId = (c.messages[c.messages.length - 1]?.id || 0) + 1;
-        const newMsg = { id: nextId, from: 'me', text, time };
-        return { ...c, messages: [...c.messages, newMsg], lastMessage: text };
-      })
+      prev.map((c) => (c.id !== selectedId ? c : { ...c, messages: [...(c.messages || []), tempMsg], lastMessage: text }))
     );
+
+    // send to backend
+    window.axios.post(route('chat.api.storeMessage'), {
+      usuario_id: contact.id,
+      mensagem: text,
+      remetente: 'me',
+    }).then((resp) => {
+      const returned = resp.data.data;
+      setContacts((prev) =>
+        prev.map((c) => {
+          if (c.id !== selectedId) return c;
+          // replace temp message with returned message id/time
+          const msgs = (c.messages || []).map((m) => (m.id === tempId ? { id: returned.id, from: returned.from, text: returned.text, time: returned.time } : m));
+          return { ...c, messages: msgs, lastMessage: returned.text };
+        })
+      );
+    }).catch((err) => {
+      // on error, remove temp message and optionally show error
+      setContacts((prev) => prev.map((c) => c.id !== selectedId ? c : { ...c, messages: (c.messages || []).filter(m => m.id !== tempId) }));
+      console.error('Erro ao enviar mensagem', err);
+    });
   }
 
   const selected = contacts.find((c) => c.id === selectedId) || null;
+
+  useEffect(() => {
+    // try carregar contatos da API, cai para mock se falhar
+    setLoadingContacts(true);
+    window.axios.get(route('chat.api.contacts'))
+      .then((res) => {
+        const data = res.data.map((c) => ({ ...c, messages: c.messages || [] }));
+        setContacts(data);
+        // selecionar primeiro contato se existir
+        if (data.length > 0) setSelectedId((prev) => prev ?? data[0].id);
+      })
+      .catch((err) => {
+        console.warn('Não foi possível carregar contatos via API, usando mock', err);
+        // manter mocks
+      })
+      .finally(() => setLoadingContacts(false));
+  }, []);
+
+  function fetchMessages(usuarioId) {
+    setLoadingMessagesFor(usuarioId);
+    window.axios.get(`/chat/${usuarioId}/messages`)
+      .then((res) => {
+        const msgs = res.data;
+        setContacts((prev) => prev.map((c) => c.id !== usuarioId ? c : { ...c, messages: msgs }));
+      })
+      .catch((err) => {
+        console.warn('Erro ao buscar mensagens', err);
+      })
+      .finally(() => setLoadingMessagesFor(null));
+  }
 
   return (
     <AuthenticatedLayout
@@ -42,7 +105,12 @@ export default function ContactsChat() {
             <div className="flex h-full">
               <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} />
               <div className="flex-1 h-full">
-                <ChatWindow contact={selected} messages={selected?.messages || []} onSend={handleSend} />
+                <ChatWindow
+                  contact={selected}
+                  messages={selected?.messages || []}
+                  onSend={handleSend}
+                  loading={loadingMessagesFor === selectedId}
+                />
               </div>
             </div>
           </div>
