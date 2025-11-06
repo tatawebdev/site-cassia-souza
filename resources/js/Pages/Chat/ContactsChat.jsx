@@ -10,6 +10,7 @@ export default function ContactsChat() {
   const [selectedId, setSelectedId] = useState(null);
   const [loadingContacts, setLoadingContacts] = useState(true);
   const [loadingMessagesFor, setLoadingMessagesFor] = useState(null);
+  const [groups, setGroups] = useState(null);
 
   function handleSelect(id) {
     setSelectedId(id);
@@ -68,10 +69,20 @@ export default function ContactsChat() {
     setLoadingContacts(true);
     window.axios.get(route('chat.api.contacts'))
       .then((res) => {
-        const data = res.data.map((c) => ({ ...c, messages: c.messages || [] }));
-        setContacts(data);
-        // selecionar primeiro contato se existir
-        if (data.length > 0) setSelectedId((prev) => prev ?? data[0].id);
+        // se backend retornar groups, mantemos groups; caso contrário, assume lista plana
+        if (res.data && res.data.groups) {
+          setGroups(res.data.groups);
+          // selecionar primeiro contato do primeiro grupo
+          const first = res.data.groups[0]?.items?.[0];
+          if (first) setSelectedId((prev) => prev ?? first.id);
+          // também preencher contatos plano para compatibilidade
+          const flat = res.data.groups.flatMap(g => g.items.map(i => ({ ...i, messages: i.messages || [] })));
+          setContacts(flat);
+        } else {
+          const data = res.data.map((c) => ({ ...c, messages: c.messages || [] }));
+          setContacts(data);
+          if (data.length > 0) setSelectedId((prev) => prev ?? data[0].id);
+        }
       })
       .catch((err) => {
         console.warn('Não foi possível carregar contatos via API, usando mock', err);
@@ -82,7 +93,7 @@ export default function ContactsChat() {
 
   function fetchMessages(usuarioId) {
     setLoadingMessagesFor(usuarioId);
-    window.axios.get(`/chat/${usuarioId}/messages`)
+    window.axios.get(route('chat.api.messages', { usuario: usuarioId }))
       .then((res) => {
         const msgs = res.data;
         setContacts((prev) => prev.map((c) => c.id !== usuarioId ? c : { ...c, messages: msgs }));
@@ -103,7 +114,7 @@ export default function ContactsChat() {
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="bg-white shadow-sm sm:rounded-lg overflow-hidden" style={{ height: '70vh' }}>
             <div className="flex h-full">
-              <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} />
+              <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} groups={groups} />
               <div className="flex-1 h-full">
                 <ChatWindow
                   contact={selected}

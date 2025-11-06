@@ -52,7 +52,7 @@ function getTimestamp(contact) {
   return 0;
 }
 
-export default function ContactList({ contacts = [], selectedId, onSelect }) {
+export default function ContactList({ contacts = [], selectedId, onSelect, groups = null }) {
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
@@ -65,14 +65,17 @@ export default function ContactList({ contacts = [], selectedId, onSelect }) {
   }, [contacts, query]);
 
   const grouped = useMemo(() => {
-    const groups = { Hoje: [], Ontem: [], Anteriores: [] };
+    // if backend already provided groups, ignore local grouping
+    if (groups && Array.isArray(groups) && groups.length) return null;
+
+    const g = { Hoje: [], Ontem: [], Anteriores: [] };
     filtered.forEach((c) => {
       const label = getDayGroupLabel(c);
-      if (!groups[label]) groups[label] = [];
-      groups[label].push(c);
+      if (!g[label]) g[label] = [];
+      g[label].push(c);
     });
-    return groups;
-  }, [filtered]);
+    return g;
+  }, [filtered, groups]);
 
   const order = ['Hoje', 'Ontem', 'Anteriores'];
 
@@ -88,35 +91,66 @@ export default function ContactList({ contacts = [], selectedId, onSelect }) {
       </div>
 
       <div className="overflow-y-auto flex-1">
-        {order.map((section) => (
-          (grouped[section] && grouped[section].length > 0) ? (
-            <div key={section} className="pb-3">
-              <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">{section}</div>
-              {grouped[section].map((c) => (
+        {/* if backend provided groups, render them directly */}
+        {groups && Array.isArray(groups) && groups.length ? (
+          groups.map((section) => (
+            <div key={section.key} className="pb-3">
+              <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">{section.label}</div>
+              {section.items.map((c) => (
                 <button
-                  key={c.id}
-                  onClick={() => onSelect(c.id)}
+                  key={c['id']}
+                  onClick={() => onSelect(c['id'])}
                   className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${
-                    selectedId === c.id ? 'bg-gray-100' : ''
+                    selectedId === c['id'] ? 'bg-gray-100' : ''
                   }`}
                 >
                   <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
-                    {c.name.split(' ').map((s) => s[0]).slice(0,2).join('')}
+                    {String(c['name']).split(' ').map((s) => s[0]).slice(0,2).join('')}
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
-                      <div className="font-medium text-sm">{c.name}</div>
-                      {c.unread > 0 && (
-                        <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c.unread}</div>
+                      <div className="font-medium text-sm">{c['name']}</div>
+                      {c['unread'] > 0 && (
+                        <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c['unread']}</div>
                       )}
                     </div>
-                    <div className="text-xs text-gray-500 truncate">{c.lastMessage}</div>
+                    <div className="text-xs text-gray-500 truncate">{c['lastMessage']}</div>
                   </div>
                 </button>
               ))}
             </div>
-          ) : null
-        ))}
+          ))
+        ) : (
+          order.map((section) => (
+            (grouped[section] && grouped[section].length > 0) ? (
+              <div key={section} className="pb-3">
+                <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">{section}</div>
+                {grouped[section].map((c) => (
+                  <button
+                    key={c.id}
+                    onClick={() => onSelect(c.id)}
+                    className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${
+                      selectedId === c.id ? 'bg-gray-100' : ''
+                    }`}
+                  >
+                    <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
+                      {c.name.split(' ').map((s) => s[0]).slice(0,2).join('')}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center">
+                        <div className="font-medium text-sm">{c.name}</div>
+                        {c.unread > 0 && (
+                          <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c.unread}</div>
+                        )}
+                      </div>
+                      <div className="text-xs text-gray-500 truncate">{c.lastMessage}</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            ) : null
+          ))
+        )}
       </div>
     </div>
   );

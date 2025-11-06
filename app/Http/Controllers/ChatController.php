@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ChatbotUsuario;
 use App\Models\ChatbotInteracaoChat;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class ChatController extends Controller
 {
@@ -17,12 +18,20 @@ class ChatController extends Controller
     {
         $users = ChatbotUsuario::orderBy('ultima_conversa', 'desc')->get();
 
-        $result = $users->map(function ($u) {
+        // montar lista com lastAt (Carbon) e agrupar por dia
+        $items = $users->map(function ($u) {
             $lastInteraction = ChatbotInteracaoChat::where('usuario_id', $u->id)
                 ->orderBy('data_envio', 'desc')
                 ->first();
 
             $lastMessage = $lastInteraction ? $lastInteraction->mensagem : ($u->ultima_mensagem ? $u->ultima_mensagem->toDateTimeString() : '');
+
+            $lastAt = null;
+            if ($lastInteraction && $lastInteraction->data_envio) {
+                $lastAt = Carbon::parse($lastInteraction->data_envio);
+            } elseif ($u->ultima_conversa) {
+                $lastAt = Carbon::parse($u->ultima_conversa);
+            }
 
             $unread = ChatbotInteracaoChat::where('usuario_id', $u->id)
                 ->where('remetente', 'contact')
@@ -34,12 +43,49 @@ class ChatController extends Controller
                 'name' => $u->nome,
                 'telefone' => $u->telefone,
                 'lastMessage' => $lastMessage,
-                'lastAt' => $u->ultima_conversa ? $u->ultima_conversa->toDateTimeString() : null,
+                'lastAt' => $lastAt ? $lastAt->toDateTimeString() : null,
+                'lastAtDate' => $lastAt ? $lastAt->toDateString() : null, // Y-m-d
+                'lastAtTimestamp' => $lastAt ? $lastAt->timestamp : null,
                 'unread' => $unread,
             ];
+        })->filter();
+
+        // agrupar por data (Y-m-d)
+        $groups = [];
+        foreach ($items as $it) {
+            $key = $it['lastAtDate'] ?? 'sem-data';
+            if (!isset($groups[$key])) $groups[$key] = [];
+            $groups[$key][] = $it;
+        }
+
+        // ordenar keys desc
+        $keys = array_keys($groups);
+        usort($keys, function ($a, $b) {
+            if ($a === 'sem-data') return 1;
+            if ($b === 'sem-data') return -1;
+            return strcmp($b, $a);
         });
 
-        return response()->json($result);
+        // transformar em array de grupos com label formatado em PT-BR (ex: '6 DE NOV.')
+        $months = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+        $groupsOut = [];
+        foreach ($keys as $k) {
+            if ($k === 'sem-data') {
+                $label = 'Sem data';
+            } else {
+                $d = Carbon::createFromFormat('Y-m-d', $k);
+                $day = $d->day;
+                $month = $months[$d->month - 1] ?? strtoupper($d->format('M'));
+                $label = sprintf('%d DE %s.', $day, $month);
+            }
+            $groupsOut[] = [
+                'key' => $k,
+                'label' => $label,
+                'items' => $groups[$k],
+            ];
+        }
+
+        return response()->json(['groups' => $groupsOut]);
     }
 
     /**
