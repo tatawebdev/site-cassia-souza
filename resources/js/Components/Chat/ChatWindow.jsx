@@ -39,9 +39,18 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
           </div>
         )}
 
-        {messages.map((m) => (
-          <MessageBubble key={m.id} message={m} />
-        ))}
+        {!loading && (!messages || messages.length === 0) ? (
+          <div className="h-full flex items-center justify-center text-gray-500">
+            <div className="text-center">
+              <div className="mb-2">Nenhuma mensagem ainda</div>
+              <div className="text-xs">Envie a primeira mensagem para iniciar a conversa.</div>
+            </div>
+          </div>
+        ) : (
+          messages.map((m) => (
+            <MessageBubble key={m.id} message={m} />
+          ))
+        )}
         <div ref={bottomRef} />
       </div>
 

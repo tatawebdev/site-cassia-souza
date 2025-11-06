@@ -43,7 +43,8 @@ class ChatController extends Controller
                 'name' => $u->nome,
                 'telefone' => $u->telefone,
                 'lastMessage' => $lastMessage,
-                'lastAt' => $lastAt ? $lastAt->toDateTimeString() : null,
+                // lastAt em ISO 8601 com timezone de São Paulo
+                'lastAt' => $lastAt ? $lastAt->setTimezone('America/Sao_Paulo')->toIso8601String() : null,
                 'lastAtDate' => $lastAt ? $lastAt->toDateString() : null, // Y-m-d
                 'lastAtTimestamp' => $lastAt ? $lastAt->timestamp : null,
                 'unread' => $unread,
