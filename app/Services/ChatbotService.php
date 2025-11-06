@@ -96,6 +96,7 @@ class ChatbotService
         if ($data['event_type'] == "interactive") {
             $data['event_type'] = "message_interactive";
         }
+
         if (!!$usuario['aguardando']) {
             $tipoInteracaoCorreta = $data['event_type'] == $usuario['tipo_interacao_esperado'];
             if ($tipoInteracaoCorreta) {
@@ -107,7 +108,6 @@ class ChatbotService
         if ($this->stopStep) {
             return;
         }
-
         if ($this->updateStep) {
 
             if (!!$step['nome_campo']) {
@@ -125,8 +125,12 @@ class ChatbotService
             // $this->enviarEmailAtendimentobyNumber($this->numeroUsuario, $usuario);
         }
 
+
+
         $step['pergunta'] = Helpers::convertHtmlToWhatsApp($step['pergunta']);
+
         $enviodeInteracao = false;
+
         switch ($step['tipo_interacao']) {
             case 'message_button':
                 // Divide a string de perguntas em partes
@@ -318,7 +322,6 @@ class ChatbotService
         $secoes = ChatbotOption::where('id_step', $id_step)
             ->get(['secao_titulo', 'id', 'titulo_interacao as titulo', 'descricao_interacao as descricao'])
             ->toArray();
-
         if (empty($secoes)) {
             return;
         }
