@@ -23,8 +23,6 @@ Route::prefix('webhook/whatsapp')->group(function () {
         return response($_REQUEST['hub_challenge'] ?? '');
     });
     Route::get('/teste', [WebhookController::class, 'teste']);
-
-
 });
 
 
