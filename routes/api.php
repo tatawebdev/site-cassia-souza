@@ -38,3 +38,6 @@ Route::get('send-whatsapp', function (Request $request, \App\Services\WhatsAppSe
 
     return response()->json($result);
 });
+
+// Endpoint to receive and persist FCM tokens (simple file-based storage)
+Route::post('/fcm/token', [\App\Http\Controllers\FcmTokenController::class, 'store']);

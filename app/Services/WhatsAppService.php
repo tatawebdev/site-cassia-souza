@@ -15,7 +15,7 @@ class WhatsAppService
     {
         $this->token = config('whatsapp.token');
         $this->phoneId = config('whatsapp.phone_id');
-        $this->apiPhoneNumber = config('whatsapp.api_phone_number'); 
+        $this->apiPhoneNumber = config('whatsapp.api_phone_number');
         $this->apiVersion = config('whatsapp.api_version');
     }
 
@@ -103,6 +103,14 @@ class WhatsAppService
             "Content-Type" => "application/json",
         ])->post($url, $data);
 
-        return $response->json();
+        $result = $response->json();
+
+        if ($response->failed() && isset($result['error'])) {
+            // Store or log the error as needed, here we just return it
+            abort(500, 'WhatsApp API Error: ' . json_encode($result['error']));
+                
+        }
+
+        return $result;
     }
 }

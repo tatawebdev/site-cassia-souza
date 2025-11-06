@@ -130,7 +130,6 @@ class ChatbotService
         $step['pergunta'] = Helpers::convertHtmlToWhatsApp($step['pergunta']);
 
         $enviodeInteracao = false;
-
         switch ($step['tipo_interacao']) {
             case 'message_button':
                 // Divide a string de perguntas em partes
@@ -336,8 +335,8 @@ class ChatbotService
         if (empty($secoes)) {
             return;
         }
-
         $config = ChatbotConfigMessageInteractive::where('id_step', $id_step)->first();
+
         if ($config) {
             $this->enviarListaInterativaWhatsApp(
                 $config->texto_cabecalho,
