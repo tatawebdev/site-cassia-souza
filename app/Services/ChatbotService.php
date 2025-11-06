@@ -387,6 +387,7 @@ class ChatbotService
         $cnpj = ChatbotAtendimento::getCNPJByNumero($numero);
         $assuntoUsuario = ChatbotAtendimento::getAssuntoUsuarioByNumero($numero);
         $content = ChatbotAtendimento::getAllByNumero($numero)->toArray();
+        ChatbotAtendimento::deleteByNumero($numero);
 
         $dados = [
             'assunto' => 'Chatbot do Whatsapp',
@@ -408,27 +409,24 @@ class ChatbotService
                 <td style="padding: 10px; border: 1px solid #ccc;">WhatsApp</td>
                 <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($numeroFormatado) . '</td>
                 </tr>';
-        $tabela .= '<tr>
-                <td style="padding: 10px; border: 1px solid #ccc;">Nome</td>
-                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($usuario['nome'] ?? '') . '</td>
-                </tr>';
-        $tabela .= '<tr>
-                <td style="padding: 10px; border: 1px solid #ccc;">CNPJ</td>
-                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($cnpj) . '</td>
-                </tr>';
-        $tabela .= '<tr>
-                <td style="padding: 10px; border: 1px solid #ccc;">Assunto</td>
-                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($assuntoUsuario) . '</td>
-                </tr>';
 
         // Adiciona os dados brutos da solicitação
         if (!empty($content)) {
             foreach ($content as $row) {
-                foreach ($row as $campo => $valor) {
+                // Se existir nome_campo e resposta, exibe apenas esses campos
+                if (isset($row['nome_campo']) && isset($row['resposta'])) {
                     $tabela .= '<tr>
-                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars(ucwords(str_replace('_', ' ', $campo))) . '</td>
-                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($valor) . '</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars(ucwords(str_replace('_', ' ', $row['nome_campo']))) . '</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($row['resposta']) . '</td>
                 </tr>';
+                } else {
+                    // Caso contrário, exibe todos os campos normalmente
+                    foreach ($row as $campo => $valor) {
+                        $tabela .= '<tr>
+                    <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars(ucwords(str_replace('_', ' ', $campo))) . '</td>
+                    <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($valor) . '</td>
+                </tr>';
+                    }
                 }
             }
         }

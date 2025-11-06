@@ -131,11 +131,10 @@ Route::get('teste', function () {
 
 
 
-    dd(ChatbotAtendimento::get());
 
-    // $ok = ChatbotService::enviarEmailAtendimentobyNumber('11951936777');
+    $ok = ChatbotService::enviarEmailAtendimentobyNumber('5511951936777');
 
-    // dd($ok);
+    dd($ok);
 
 });
 // Route::get('teste', function () {
