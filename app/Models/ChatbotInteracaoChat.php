@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class ChatbotInteracaoChat extends Model
+{
+    protected $table = 'chatbot_interacoes_chat';
+
+    protected $fillable = [
+        'usuario_id',
+        'mensagem',
+        'remetente',
+        'status_mensagem',
+        'data_envio',
+        'data_recebimento',
+        'data_visualizacao',
+        'data_leitura',
+        'id_step',
+        'data',
+        'message_id',
+    ];
+
+    protected $casts = [
+        'data_envio' => 'datetime',
+        'data_recebimento' => 'datetime',
+        'data_visualizacao' => 'datetime',
+        'data_leitura' => 'datetime',
+    ];
+}

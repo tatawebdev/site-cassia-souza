@@ -12,8 +12,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_flow')->index();
             $table->text('pergunta')->nullable();
+            $table->string('tipo_resposta')->nullable();
             $table->string('tipo_interacao')->nullable();
             $table->unsignedBigInteger('id_step_proximo')->nullable()->index();
+            $table->unsignedBigInteger('parent')->nullable()->index();
             $table->string('nome_campo')->nullable();
             $table->string('nome_da_funcao')->nullable();
             $table->string('titulo')->nullable();
