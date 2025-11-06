@@ -16,14 +16,21 @@ class WebhookController extends Controller
     public $withCache = false;
     public function handle(Request $request, AgenteSuporte $agenteSuporte, NewChatbotService $newChatbot)
     {
-        if ($this->withCache) {
-            $webhookData = Cache::get('webhook_data');
-        } else {
-            $webhookData = $request->all();
-            Cache::put('webhook_data', $webhookData, now()->addDay());
-        }
+        $webhookData = $request->all();
+        $filePath = storage_path('app/webhook_data.json');
+        file_put_contents($filePath, json_encode($webhookData, JSON_PRETTY_PRINT));
+
+        $this->processWebhookData($webhookData, $agenteSuporte, $newChatbot);
+
+        return response()->json([
+            'status' => 'ok',
+            'file' => $filePath
+        ]);
+    }
 
 
+    private function processWebhookData($webhookData, $agenteSuporte, $newChatbot)
+    {
         $processor = new WhatsAppWebhookProcessor();
         $result = $processor->process($webhookData);
 
@@ -60,16 +67,21 @@ class WebhookController extends Controller
 
             $newChatbot->processInput($payload);
         }
-
-        return response()->json(['status' => 'ok']);
     }
 
     public function teste()
     {
-        $this->withCache = true;
-        $agenteSuporte = app(AgenteSuporte::class);
-        $newChatbot = app(NewChatbotService::class);
-        return $this->handle(request(), $agenteSuporte, $newChatbot);
+        $filePath = storage_path('app/webhook_data.json');
+        $webhookData = json_decode(file_get_contents($filePath), true);
+
+        if ($webhookData) {
+            $agenteSuporte = app(AgenteSuporte::class);
+            $newChatbot = app(NewChatbotService::class);
+            $this->processWebhookData($webhookData, $agenteSuporte, $newChatbot);
+            return response()->json(['status' => 'processed']);
+        } else {
+            return response()->json(['error' => 'No webhook data found'], 404);
+        }
     }
 
 }
