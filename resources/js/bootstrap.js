@@ -10,54 +10,81 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/messaging';
 
 const firebaseConfig = {
-	apiKey: "AIzaSyDC_juTBl65iSz_TZsjYQEtUyIRURLQap0",
-	authDomain: "chat-cassia-souza-adv.firebaseapp.com",
-	projectId: "chat-cassia-souza-adv",
-	storageBucket: "chat-cassia-souza-adv.appspot.com",
-	messagingSenderId: "969461920153",
-	appId: "1:969461920153:web:89874b4322d96f77eda308",
-	measurementId: "G-DMYW90V0D7"
+    apiKey: "AIzaSyDC_juTBl65iSz_TZsjYQEtUyIRURLQap0",
+    authDomain: "chat-cassia-souza-adv.firebaseapp.com",
+    projectId: "chat-cassia-souza-adv",
+    storageBucket: "chat-cassia-souza-adv.appspot.com",
+    messagingSenderId: "969461920153",
+    appId: "1:969461920153:web:89874b4322d96f77eda308",
+    measurementId: "G-DMYW90V0D7"
 };
 
 if (!firebase.apps.length) {
-	firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 }
 
 const messaging = firebase.messaging();
 
 async function registerFCM() {
-	if (!('serviceWorker' in navigator) || !('Notification' in window)) {
-		console.log('FCM not supported in this browser.');
-		return;
-	}
+    if (!('serviceWorker' in navigator) || !('Notification' in window)) {
+        console.log('FCM not supported in this browser.');
+        return;
+    }
 
-	try {
-		// Ensure service worker from public/ is registered
-		const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-		console.log('Service Worker registered for FCM:', registration);
+    try {
+        // Ensure service worker from public/ is registered
+        const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+        console.log('Service Worker registered for FCM:', registration);
 
-		// Request notification permission
-		const permission = await Notification.requestPermission();
-		if (permission !== 'granted') {
-			console.log('Notification permission not granted.');
-			return;
-		}
+        // Request notification permission
+        const permission = await Notification.requestPermission();
+        if (permission !== 'granted') {
+            console.log('Notification permission not granted.');
+            return;
+        }
 
-		const vapidKey = import.meta.env.VITE_FIREBASE_VAPID_KEY || 'REPLACE_WITH_VAPID_KEY';
-		const currentToken = await messaging.getToken({ vapidKey });
+        const vapidKey = import.meta.env.VITE_FIREBASE_VAPID_KEY || 'REPLACE_WITH_VAPID_KEY';
 
-		console.log('FCM token:', currentToken);
+        const isValidVapid = typeof vapidKey === 'string' && vapidKey.length > 20 && /^[A-Za-z0-9\-_]+=*$/.test(vapidKey) && vapidKey !== 'REPLACE_WITH_VAPID_KEY';
+        if (!isValidVapid) {
+            console.error('VAPID key inválida ou não configurada. Defina VITE_FIREBASE_VAPID_KEY no seu .env com o "public VAPID key" (Console Firebase → Cloud Messaging → Web configuration).');
+            return;
+        }
 
-		if (currentToken) {
-			// TODO: enviar token ao backend para associar ao usuário/dispositivo.
-			// Ex.: await axios.post('/api/fcm/token', { token: currentToken });
-		}
-	} catch (err) {
-		console.error('Error registering FCM:', err);
-	}
+        // Ensure the service worker is active and controlled before subscribing
+        const readyRegistration = await navigator.serviceWorker.ready;
+        const currentToken = await messaging.getToken({ vapidKey, serviceWorkerRegistration: readyRegistration });
+
+        console.log('FCM token:', currentToken);
+
+        if (currentToken) {
+            // Envia o token ao backend para persistência (rota: POST /api/fcm/token)
+            try {
+                await axios.post('/api/fcm/token', { token: currentToken });
+                console.log('FCM token enviado ao backend');
+            } catch (err) {
+                console.error('Erro ao enviar token FCM ao backend', err);
+            }
+        }
+    } catch (err) {
+        console.error('Error registering FCM:', err);
+    }
 }
 
 // Try to register on load (only in browsers)
 if (typeof window !== 'undefined') {
-	registerFCM();
+    registerFCM();
+}
+
+// Handle foreground messages and notify app UI via a CustomEvent
+if (typeof window !== 'undefined') {
+    messaging.onMessage(function (payload) {
+        console.log('FCM foreground message received: ', payload);
+        try {
+            const event = new CustomEvent('fcm-message', { detail: payload });
+            window.dispatchEvent(event);
+        } catch (e) {
+            console.error('Error dispatching fcm-message event', e);
+        }
+    });
 }
