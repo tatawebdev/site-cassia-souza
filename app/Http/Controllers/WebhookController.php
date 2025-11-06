@@ -51,7 +51,7 @@ class WebhookController extends Controller
             ]);
 
             // Enfileira resposta do agente humano
-            $agenteSuporte->replyToMessage($conversation);
+            // $agenteSuporte->replyToMessage($conversation);
         }
 
         if (in_array($result['event_type'], ['message_text', 'message_button', 'interactive'])) {

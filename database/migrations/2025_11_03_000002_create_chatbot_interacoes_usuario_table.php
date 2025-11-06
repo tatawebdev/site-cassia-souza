@@ -13,7 +13,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usuario')->index();
             $table->unsignedBigInteger('id_flow')->nullable()->index();
             $table->unsignedBigInteger('id_step')->nullable()->index();
-            $table->boolean('primeira_interacao')->default(false);
+            $table->dateTime('primeira_interacao')->nullable();
             $table->boolean('aguardando')->default(false);
             $table->boolean('ia')->default(false);
             $table->string('tipo_interacao_esperado')->nullable();

@@ -19,4 +19,11 @@ class ChatbotStep extends Model
         'nome_campo',
         'titulo',
     ];
+
+
+    public function options()
+    {
+        return $this->hasMany(ChatbotOption::class, 'id_step', 'id');
+    }
+
 }

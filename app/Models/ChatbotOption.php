@@ -17,4 +17,6 @@ class ChatbotOption extends Model
         'descricao_interacao',
         'secao_titulo',
     ];
+
+
 }

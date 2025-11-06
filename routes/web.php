@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\GoogleAuthController;
+use App\Models\ChatbotInteracaoUsuario;
+use App\Models\ChatbotUsuario;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Services\PlacesService;
@@ -126,20 +128,26 @@ require __DIR__ . '/auth.php';
 Route::get('teste', function () {
 
 
-    $testData = [
-        'celular' => '5511951936777',
-        'message' => 'Olá, gostaria de informações sobre serviços.',
-        'message_id' => 'test_msg_001',
-        'name' => 'Usuario Teste',
-        'event_type' => 'message_text',
-        'interactive_id' => null,
-    ];
-
-    app(\App\Services\ChatbotService::class)->processInput($testData);
-
-
+$ok =    ChatbotInteracaoUsuario::addUserAndInteraction('19119519367441', 'Usuario Teste');
     return 'Teste funcionando1!';
 });
+// Route::get('teste', function () {
+
+
+//     $testData = [
+//         'celular' => '5511951936777',
+//         'message' => 'Olá, gostaria de informações sobre serviços.',
+//         'message_id' => 'test_msg_001',
+//         'name' => 'Usuario Teste',
+//         'event_type' => 'message_text',
+//         'interactive_id' => null,
+//     ];
+
+//     app(\App\Services\ChatbotService::class)->processInput($testData);
+
+
+//     return 'Teste funcionando1!';
+// });
 
 
 // Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
