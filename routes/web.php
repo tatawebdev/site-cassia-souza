@@ -159,6 +159,11 @@ Route::get('teste', function () {
 // Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
 //     ->where('estado', '[A-Za-z]{2}')
 //     ->name('termo.dinamico');
+// Rota mocado para o chat de contatos (Inertia)
+Route::get('/chat', function () {
+    return Inertia::render('Chat/ContactsChat');
+})->middleware(['auth'])->name('chat.contacts');
+
 Route::get('/{termo}/{cidade?}/{estado?}', \App\Livewire\Index::class)
     ->where('estado', '[A-Za-z]{2}')
     ->name('termo.dinamico');
