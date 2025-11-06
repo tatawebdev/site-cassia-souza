@@ -73,7 +73,7 @@ class WebhookController extends Controller
     {
         $filePath = storage_path('app/webhook_data.json');
         $webhookData = json_decode(file_get_contents($filePath), true);
-
+dd($filePath);
         if ($webhookData) {
             $agenteSuporte = app(AgenteSuporte::class);
             $newChatbot = app(NewChatbotService::class);
