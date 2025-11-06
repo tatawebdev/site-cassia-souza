@@ -10,6 +10,9 @@ use App\Models\ChatbotStep;
 use App\Services\GeminiService;
 use App\Services\WhatsAppService;
 use App\Services\Helpers;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ChatEmail;
+use Illuminate\Support\Str;
 
 class ChatbotService
 {
@@ -121,10 +124,6 @@ class ChatbotService
 
         $enviaremail = !$step['id_step_proximo'] && count($step['options']) == 0;
 
-        if ($enviaremail) {
-            // $this->enviarEmailAtendimentobyNumber($this->numeroUsuario, $usuario);
-        }
-
 
 
         $step['pergunta'] = Helpers::convertHtmlToWhatsApp($step['pergunta']);
@@ -169,6 +168,12 @@ class ChatbotService
                     }
                 }
         }
+
+        if ($enviaremail) {
+            $this->enviarEmailAtendimentobyNumber($this->numeroUsuario, $usuario);
+
+        }
+
 
 
         if ($enviodeInteracao) {
@@ -307,13 +312,14 @@ class ChatbotService
         // Reindexa para garantir que seja um array numérico
         $sections = array_values($sections);
 
+        // Garantir que os argumentos obrigatórios tipados como string não sejam null
         $this->whatsapp->sendListMessage(
             $numero,
-            $tituloLista,
-            $subtituloLista,
-            $textoAgradecimento,
+            (string) ($tituloLista ?? ''),
+            (string) ($subtituloLista ?? ''),
+            (string) ($textoAgradecimento ?? ''),
             $sections,
-            $verOpcoes
+            (string) ($verOpcoes ?? 'Ver opções')
         );
     }
 
@@ -366,19 +372,151 @@ class ChatbotService
             $numero = $this->numeroUsuario;
         }
 
-        // Formata os botões para o padrão da API do WhatsApp
-        $actionButtons = [];
-        foreach ($buttons as $button) {
-            $actionButtons[] = [
-                'type' => 'reply',
-                'reply' => [
-                    'id' => $button['id'],
-                    'title' => $button['button'],
-                ],
-            ];
+
+
+        $this->whatsapp->sendButtonMessage($numero, $buttonText, $buttons);
+    }
+
+    public function enviarEmailAtendimentobyNumber($numero, $usuario)
+    {
+
+        ChatbotInteracaoUsuario::where('id', $usuario['interacoes_id'])->update([
+            'id_flow' => null,
+            'id_step' => null,
+            'aguardando' => 0,
+            'tipo_interacao_esperado' => ''
+        ]);
+
+        $cnpj = \App\Models\ChatbotAtendimento::getCNPJByNumero($numero);
+        $assuntoUsuario = \App\Models\ChatbotAtendimento::getAssuntoUsuarioByNumero($numero);
+        $content = \App\Models\ChatbotAtendimento::getAllByNumero($numero)->toArray();
+        \App\Models\ChatbotAtendimento::deleteByNumero($numero);
+
+        $dadosAll = null;
+
+        // Prepara os dados que serão enviados no e-mail
+        $dados = [
+            'assunto' => 'Chatbot do Whatsapp',
+            'assuntoUsuario' => $assuntoUsuario,
+            'numero_usuario' => $numero,
+            'cnpj' => $cnpj,
+        ];
+
+        // Montar tabela de registros
+        $numeroDigits = preg_replace('/[^0-9]/', '', $numero);
+        $numeroFormatado = preg_replace('/(\d{2})(\d{2})(\d{5})(\d{4})/', '+$1 ($2) $3-$4', $numeroDigits);
+
+        $tabela = '<table style="width: 100%; border-collapse: collapse;">';
+        $tabela .= '<tr>
+                <th style="padding: 10px; border: 1px solid #ccc; background:#f5f5f5;">Campo</th>
+                <th style="padding: 10px; border: 1px solid #ccc; background:#f5f5f5;">Valor</th>
+                </tr>';
+        $tabela .= '<tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">WhatsApp</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($numeroFormatado) . '</td>
+                </tr>';
+        $tabela .= '<tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">Nome</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($usuario['nome'] ?? '') . '</td>
+                </tr>';
+        $tabela .= '<tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">CNPJ</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($cnpj) . '</td>
+                </tr>';
+        $tabela .= '<tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">Assunto</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($assuntoUsuario) . '</td>
+                </tr>';
+
+        // Adiciona os dados brutos da solicitação
+        if (!empty($content)) {
+            foreach ($content as $row) {
+                foreach ($row as $campo => $valor) {
+                    $tabela .= '<tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars(ucwords(str_replace('_', ' ', $campo))) . '</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">' . htmlspecialchars($valor) . '</td>
+                </tr>';
+                }
+            }
         }
 
-        $this->whatsapp->sendButtonMessage($numero, $buttonText, $actionButtons);
+        $tabela .= '</table>';
+        // Conteúdo AI
+        $aiContentHtml = '';
+
+        $html = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//PT' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+
+        <html xmlns='http://www.w3.org/1999/xhtml' style='-webkit-text-size-adjust:none;'>
+            <head>
+                <meta charset='utf-8'/>
+                <meta name='HandheldFriendly' content='true'/>
+                <meta name='viewport' content='width=device-width; initial-scale=0.666667; maximum-scale=0.666667; user-scalable=0'/>
+                <meta name='viewport' content='width=device-width'/>
+                <title>" . $dados['assunto'] . "</title>
+
+            </head>
+            <body style='padding:25px 0 75px 0; background-color:#DFDFDF; margin:0 auto; width:100%; height:100%; font-family:Helvetica,Arial,sans-serif;'>
+                <table border='0' cellspacing='0' align='center' cellpadding='0' style='border-collapse:collapse; margin:50px 0 0 0;' width='100%' height='100%' bgcolor='#DFDFDF'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align='center' width='600' bgcolor='#FFF'>
+                                    <tr>
+                                        <td style='background-color:#001f56; text-align:center;'>
+                                            <h1 style='margin:20px 0; text-align:center; color:#FFF;'>" . $dados['assunto'] . "</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style='background-color:#FFF; text-align:left; padding:15px;font-size:14px;'>
+                                            " . $aiContentHtml . "
+                                            <h3 style='color:#001f56; text-align:center; margin-top: 20px;'>Dados Brutos da Solicitação e CNPJ</h3>
+                                            " . $tabela . "
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+        </html>";
+
+        try {
+            $to = config('mail.from.address') ?: env('MAIL_FROM_ADDRESS');
+            Mail::to($to)
+                ->bcc('suporte@tataweb.com.br')
+                ->send(new ChatEmail($dados['assunto'] . $dados['assuntoUsuario'], $html));
+        } catch (\Exception $e) {
+            error_log('Erro ao enviar e-mail de atendimento: ' . $e->getMessage());
+            return false;
+        }
+
+        return true;
     }
+
+
+    // // Primeiro prompt (resumo) — pede texto simples
+    // $prompt1 = "Atue como um assistente de advogado tributarista. Resuma a principal dúvida ou necessidade deste cliente de forma concisa, considerando o seguinte contexto:\n\n" . implode("\n", $messagesText);
+
+    // try {
+    //     $geminiText1 = $this->gemini->generateText($prompt1);
+    //     $geminiResponse1 = $geminiText1 ? [$geminiText1] : [];
+    // } catch (\Exception $e) {
+    //     error_log("Erro ao integrar com GeminiAPI para resumo da dúvida: " . $e->getMessage());
+    //     $geminiResponse1 = ["Não foi possível gerar o resumo da dúvida. Erro: " . $e->getMessage()];
+    // }
+
+    // // Segundo prompt (diagnóstico objetivo) — preferencialmente como markdown
+    // $prompt2 = "Você é um analista tributário sênior. Sua tarefa é fornecer uma análise tributária extremamente objetiva e concisa, focando apenas nos detalhes úteis para uma advogada tributarista.\n\n" . implode("\n", $messagesText);
+
+    // try {
+    //     $geminiText2 = $this->gemini->generateMarkdown($prompt2);
+    //     $geminiResponse2 = $geminiText2 ? [$geminiText2] : [];
+    // } catch (\Exception $e) {
+    //     error_log("Erro ao integrar com GeminiAPI para diagnóstico tributário: " . $e->getMessage());
+    //     $geminiResponse2 = ["Não foi possível gerar o diagnóstico tributário. Erro: " . $e->getMessage()];
+    // }
+
+
 
 }
