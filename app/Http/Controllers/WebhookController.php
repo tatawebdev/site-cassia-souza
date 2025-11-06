@@ -8,13 +8,13 @@ use App\Services\WhatsAppWebhookProcessor;
 use App\Models\Conversation;
 use App\Models\Message;
 use App\Services\AgenteSuporte;
-use App\Services\Legacy\NewChatbotService;
+use App\Services\Legacy\ChatbotService;
 
 class WebhookController extends Controller
 {
 
     public $withCache = false;
-    public function handle(Request $request, AgenteSuporte $agenteSuporte, NewChatbotService $newChatbot)
+    public function handle(Request $request, AgenteSuporte $agenteSuporte, ChatbotService $newChatbot)
     {
         $webhookData = $request->all();
         $filePath = storage_path('app/webhook_data.json');
@@ -73,10 +73,10 @@ class WebhookController extends Controller
     {
         $filePath = storage_path('app/webhook_data.json');
         $webhookData = json_decode(file_get_contents($filePath), true);
-dd($webhookData);
+
         if ($webhookData) {
             $agenteSuporte = app(AgenteSuporte::class);
-            $newChatbot = app(NewChatbotService::class);
+            $newChatbot = app(ChatbotService::class);
             $this->processWebhookData($webhookData, $agenteSuporte, $newChatbot);
             return response()->json(['status' => 'processed']);
         } else {
