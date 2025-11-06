@@ -54,12 +54,8 @@ class ChatbotInteracaoChat extends Model
             ];
 
 
-            try {
-                $fcm = new FcmService();
-                $fcm->sendNotificationToAll($title, $body, $data);
-            } catch (\Exception $e) {
-                Log::error('Error sending FCM from ChatbotInteracaoChat observer: ' . $e->getMessage());
-            }
+            $fcm = new FcmService();
+            $fcm->sendNotificationToAll($title, $body, $data);
         });
     }
 }
