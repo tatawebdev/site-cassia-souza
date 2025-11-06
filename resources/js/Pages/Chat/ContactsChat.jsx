@@ -107,6 +107,45 @@ export default function ContactsChat() {
     );
   }
 
+  // When an FCM message arrives for a contact that is NOT currently open,
+  // fetch the latest messages for that contact so the UI stays in sync.
+  useEffect(() => {
+    const recentFetch = { current: {} };
+
+    function handleBackgroundFcm(e) {
+      const payload = e.detail || e;
+      let data = payload.data || payload;
+      if (typeof data === 'string') {
+        try { data = JSON.parse(data); } catch (err) { /* ignore */ }
+      }
+
+      const usuarioId = data.usuario_id || (data.data && data.data.usuario_id) || data.user_id || data.usuario || null;
+      const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
+      if (!usuarioId) return;
+
+      // If message is for currently open contact, ChatWindow/onReceive will handle it
+      if (selectedId === usuarioId) return;
+
+      // Avoid refetching too often for the same contact (5s window)
+      const now = Date.now();
+      const last = recentFetch.current[usuarioId] || 0;
+      if (now - last < 5000) return;
+      recentFetch.current[usuarioId] = now;
+
+      // Update contact summary optimistically (lastMessage/unread)
+      setContacts((prev) => prev.map((c) => {
+        if (c.id !== usuarioId) return c;
+        return { ...c, lastMessage: mensagemText, unread: (c.unread || 0) + 1 };
+      }));
+
+      // Fetch full messages for that contact to keep UI synchronized
+      fetchMessages(usuarioId);
+    }
+
+    window.addEventListener('fcm-message', handleBackgroundFcm);
+    return () => window.removeEventListener('fcm-message', handleBackgroundFcm);
+  }, [selectedId]);
+
   function fetchMessages(usuarioId) {
     setLoadingMessagesFor(usuarioId);
     window.axios.get(route('chat.api.messages', { usuario: usuarioId }))
