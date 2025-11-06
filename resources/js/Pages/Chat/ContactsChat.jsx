@@ -91,53 +91,21 @@ export default function ContactsChat() {
       .finally(() => setLoadingContacts(false));
   }, []);
 
-  // Listen for FCM messages dispatched as CustomEvent('fcm-message')
-  useEffect(() => {
-    function handleFcmEvent(e) {
-      const payload = e.detail || e;
-      // payload may have .data as object or as JSON string
-      let data = payload.data || payload;
-      if (typeof data === 'string') {
-        try { data = JSON.parse(data); } catch (err) { /* keep as string */ }
-      }
-
-      // Support different shapes
-      const tipo = data.type || (data.data && data.data.type);
-      if (tipo && tipo !== 'chat_message') return;
-
-      const usuarioId = data.usuario_id || (data.data && data.data.usuario_id) || data.user_id || data.usuario || null;
-      const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
-      const remetente = data.remetente || (data.data && data.data.remetente) || 'user';
-      const messageId = data.id || data.message_id || (Date.now());
-
-      if (!usuarioId) return;
-
-      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      const newMsg = { id: messageId, from: remetente === 'me' ? 'me' : 'other', text: mensagemText, time };
-
-      setContacts((prev) =>
-        prev.map((c) => {
-          if (c.id !== usuarioId) return c;
-          const msgs = [...(c.messages || []), newMsg];
-          return {
-            ...c,
-            messages: msgs,
-            lastMessage: mensagemText,
-            unread: (selectedId === usuarioId) ? 0 : ((c.unread || 0) + 1),
-          };
-        })
-      );
-
-      // If the message is for the currently open contact, ensure messages are fetched/selected
-      if (selectedId === usuarioId) {
-        // nothing else needed; ChatWindow will react to messages change
-      }
-    }
-
-    window.addEventListener('fcm-message', handleFcmEvent);
-    console.log('Added fcm-message listener');
-    return () => window.removeEventListener('fcm-message', handleFcmEvent);
-  }, [selectedId]);
+  // Handler called by ChatWindow when an incoming message for the open contact arrives
+  function handleIncomingMessage(newMsg, usuarioId) {
+    setContacts((prev) =>
+      prev.map((c) => {
+        if (c.id !== usuarioId) return c;
+        const msgs = [...(c.messages || []), newMsg];
+        return {
+          ...c,
+          messages: msgs,
+          lastMessage: newMsg.text,
+          unread: (selectedId === usuarioId) ? 0 : ((c.unread || 0) + 1),
+        };
+      })
+    );
+  }
 
   function fetchMessages(usuarioId) {
     setLoadingMessagesFor(usuarioId);
@@ -167,6 +135,7 @@ export default function ContactsChat() {
                 <ChatWindow
                   contact={selected}
                   messages={selected?.messages || []}
+                  onReceive={handleIncomingMessage}
                   onSend={handleSend}
                   loading={loadingMessagesFor === selectedId}
                 />

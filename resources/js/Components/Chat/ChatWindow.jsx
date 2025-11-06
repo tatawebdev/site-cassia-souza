@@ -2,12 +2,44 @@ import { useEffect, useRef } from 'react';
 import MessageBubble from '@/Components/Chat/MessageBubble';
 import ChatInput from '@/Components/Chat/ChatInput';
 
-export default function ChatWindow({ contact, messages = [], onSend, loading = false }) {
+export default function ChatWindow({ contact, messages = [], onSend, loading = false, onReceive }) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, contact]);
+
+  // Listen for incoming FCM messages dispatched as CustomEvent('fcm-message')
+  useEffect(() => {
+    if (!onReceive) return;
+
+    function handleFcmEvent(e) {
+      const payload = e.detail || e;
+      let data = payload.data || payload;
+      if (typeof data === 'string') {
+        try { data = JSON.parse(data); } catch (err) { /* ignore */ }
+      }
+
+      const usuarioId = data.usuario_id || (data.data && data.data.usuario_id) || data.user_id || data.usuario || null;
+      if (!usuarioId || !contact || usuarioId !== contact.id) return;
+
+      const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
+      const remetente = data.remetente || (data.data && data.data.remetente) || 'user';
+      const messageId = data.id || data.message_id || Date.now();
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      const newMsg = { id: messageId, from: remetente === 'me' ? 'me' : 'other', text: mensagemText, time };
+
+      try {
+        onReceive(newMsg, usuarioId);
+      } catch (err) {
+        console.error('onReceive handler error', err);
+      }
+    }
+
+    window.addEventListener('fcm-message', handleFcmEvent);
+    return () => window.removeEventListener('fcm-message', handleFcmEvent);
+  }, [onReceive, contact]);
 
   if (!contact) {
     return (
