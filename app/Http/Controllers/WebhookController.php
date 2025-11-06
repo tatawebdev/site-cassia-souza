@@ -64,9 +64,12 @@ class WebhookController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    public function teste(AgenteSuporte $agenteSuporte, NewChatbotService $newChatbot)
+    public function teste()
     {
         $this->withCache = true;
+        $agenteSuporte = app(AgenteSuporte::class);
+        $newChatbot = app(NewChatbotService::class);
         return $this->handle(request(), $agenteSuporte, $newChatbot);
     }
+
 }
