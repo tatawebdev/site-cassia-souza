@@ -115,7 +115,7 @@ class ChatbotService
         if ($this->updateStep) {
 
             if (!!$step['nome_campo']) {
-                // ChatbotAtendimento::insertByNumeroCampoResposta($this->numeroUsuario, $step['nome_campo'], $data['message']);
+                ChatbotAtendimento::insertByNumeroCampoResposta($this->numeroUsuario, $step['nome_campo'], $data['message']);
             }
             $resultado = $this->obterUsuarioEEtapa();
 

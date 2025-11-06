@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GoogleAuthController;
+use App\Models\ChatbotAtendimento;
 use App\Models\ChatbotInteracaoUsuario;
 use App\Models\ChatbotUsuario;
 use App\Services\ChatbotService;
@@ -129,9 +130,12 @@ require __DIR__ . '/auth.php';
 Route::get('teste', function () {
 
 
-    $ok = ChatbotService::enviarEmailAtendimentobyNumber('11951936777');
 
-    dd($ok);
+    dd(ChatbotAtendimento::get());
+
+    // $ok = ChatbotService::enviarEmailAtendimentobyNumber('11951936777');
+
+    // dd($ok);
 
 });
 // Route::get('teste', function () {
