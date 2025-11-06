@@ -22,6 +22,9 @@ Route::prefix('webhook/whatsapp')->group(function () {
         file_put_contents(storage_path('app/webhook_data.json'), json_encode($webhookData, JSON_PRETTY_PRINT));
         return response($_REQUEST['hub_challenge'] ?? '');
     });
+    Route::get('/teste', [WebhookController::class, 'teste']);
+
+
 });
 
 

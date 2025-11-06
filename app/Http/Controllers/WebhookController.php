@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use Illuminate\Http\Request;
-use App\Services\WhatsAppWebhookProcessor; 
+use App\Services\WhatsAppWebhookProcessor;
 use App\Models\Conversation;
 use App\Models\Message;
 use App\Services\AgenteSuporte;
@@ -11,9 +12,16 @@ use App\Services\Legacy\NewChatbotService;
 
 class WebhookController extends Controller
 {
+
+    public $withCache = false;
     public function handle(Request $request, AgenteSuporte $agenteSuporte, NewChatbotService $newChatbot)
     {
-        $webhookData = $request->all();
+        if ($this->withCache) {
+            $webhookData = Cache::get('webhook_data');
+        } else {
+            $webhookData = $request->all();
+            Cache::put('webhook_data', $webhookData, now()->addDay());
+        }
 
 
         $processor = new WhatsAppWebhookProcessor();
@@ -54,5 +62,12 @@ class WebhookController extends Controller
         }
 
         return response()->json(['status' => 'ok']);
+    }
+
+    public function teste()
+    {
+        $this->withCache = true;
+        return response()->json($this->handle(request()));
+
     }
 }
