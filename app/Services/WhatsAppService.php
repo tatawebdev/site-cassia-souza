@@ -60,7 +60,6 @@ class WhatsAppService
 
     public function sendListMessage($recipientNumber, string $title, string $bodyText, string $footerText, array $sections = [], string $buttonText = 'Ver opções')
     {
-        // sections: array of ['title'=> 'Secao', 'rows' => [['id'=>'1','title'=>'Item','description'=>'...']]]
         $payload = [
             'messaging_product' => 'whatsapp',
             'to' => $recipientNumber,
@@ -75,6 +74,20 @@ class WhatsAppService
                     'sections' => $sections,
                 ],
             ],
+        ];
+
+        return $this->sendRequest($payload);
+    }
+
+
+    public function sendInteractiveMessage($recipientNumber, array $messageData)
+    {
+        $payload = [
+            'messaging_product' => 'whatsapp',
+            'recipient_type' => 'individual',
+            'to' => $recipientNumber,
+            'type' => 'interactive',
+            'interactive' => $messageData,
         ];
 
         return $this->sendRequest($payload);

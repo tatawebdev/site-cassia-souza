@@ -17,6 +17,28 @@ class ChatbotOption extends Model
         'descricao_interacao',
         'secao_titulo',
     ];
+    public static function getBotoesMensagemWhatsApp($id_step)
+    {
+        $opcoes = self::where('id_step', $id_step)
+            ->select('id', 'titulo_interacao')
+            ->get();
 
+        if ($opcoes->isEmpty()) {
+            return [];
+        }
+
+        $buttons = [];
+        foreach ($opcoes as $opcao) {
+            $buttons[] = [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => $opcao->id,
+                    'title' => $opcao->titulo_interacao
+                ]
+            ];
+        }
+
+        return $buttons;
+    }
 
 }

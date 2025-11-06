@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\ChatbotConfigMessageInteractive;
 use App\Models\ChatbotInteracaoChat;
 use App\Models\ChatbotInteracaoUsuario;
 use App\Models\ChatbotOption;
@@ -35,6 +36,8 @@ class ChatbotService
 
     public function processInput(array $data): void
     {
+        // ChatbotInteracaoUsuario::truncate();
+
         if (empty($data['celular']) || empty($data['message'])) {
             return;
         }
@@ -141,15 +144,15 @@ class ChatbotService
                 $ultimaPergunta = trim(end($perguntas)); // Obtém a última pergunta
                 if (!!$ultimaPergunta) {
                     $enviodeInteracao = true;
-                    // $this->enviarMensagemComBotoes($ultimaPergunta, $usuario['id_step']);
+                    $this->enviarMensagemComBotoes($ultimaPergunta, $usuario['id_step']);
                 }
                 break;
 
             case 'message_interactive':
                 $enviodeInteracao = true;
-                // $this->enviarListaInterativaComDados(
-                //     $usuario['id_step'],
-                // );
+                $this->enviarListaInterativaComDados(
+                    $usuario['id_step'],
+                );
                 break;
 
             default:
@@ -256,8 +259,8 @@ class ChatbotService
             $resultado_validacao = call_user_func($step['nome_da_funcao'], $params);
 
             $this->stopStep = !$resultado_validacao['result'];
-
             if ($resultado_validacao['result']) {
+
                 $id_step_proximo = $params['id_step_proximo'];
                 ChatbotInteracaoUsuario::updateStepById($params['interacoes_id'], $id_step_proximo);
                 $this->updateStep = true;
@@ -269,5 +272,110 @@ class ChatbotService
         }
     }
 
+
+    public function enviarListaInterativaWhatsApp($tituloLista, $subtituloLista, $textoAgradecimento, $verOpcoes, $secoes, $numero = null)
+    {
+        if ($numero === null) {
+            $numero = $this->numeroUsuario;
+        }
+
+        // Organiza as seções para o formato da API do WhatsApp
+        $sections = [];
+        foreach ($secoes as $item) {
+            $title = $item['secao_titulo'] ?? 'Opções';
+            $rowID = (string) $item['id'];
+            $rowTitle = $item['titulo'];
+            $rowDescription = $item['descricao'] ?? '';
+
+            if (!isset($sections[$title])) {
+                $sections[$title] = [
+                    'title' => $title,
+                    'rows' => [],
+                ];
+            }
+            $sections[$title]['rows'][] = [
+                'id' => $rowID,
+                'title' => $rowTitle,
+                'description' => $rowDescription,
+            ];
+        }
+
+        // Reindexa para garantir que seja um array numérico
+        $sections = array_values($sections);
+
+        $this->whatsapp->sendListMessage(
+            $numero,
+            $tituloLista,
+            $subtituloLista,
+            $textoAgradecimento,
+            $sections,
+            $verOpcoes
+        );
+    }
+
+    public function enviarListaInterativaComDados($id_step, $numero = null)
+    {
+        $secoes = ChatbotOption::where('id_step', $id_step)
+            ->get(['secao_titulo', 'id', 'titulo_interacao as titulo', 'descricao_interacao as descricao'])
+            ->toArray();
+
+        if (empty($secoes)) {
+            return;
+        }
+
+        $config = ChatbotConfigMessageInteractive::where('id_step', $id_step)->first();
+        if ($config) {
+            $this->enviarListaInterativaWhatsApp(
+                $config->texto_cabecalho,
+                $config->texto_corpo,
+                $config->texto_rodape,
+                $config->texto_botao,
+                $secoes,
+                $numero
+            );
+        }
+    }
+
+    public function enviarBotoesMensagemWhatsApp($buttonText, $opcoes, $numero = null)
+    {
+        if ($numero === null) {
+            $numero = $this->numeroUsuario;
+        }
+
+        $buttons = [];
+        foreach ($opcoes as $key => $opcao) {
+            $buttons[] = [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => $key,
+                    'title' => Helpers::convertHtmlToWhatsApp($opcao['button']),
+                ],
+            ];
+        }
+        $this->enviarMensagemComBotoes($buttonText, $opcoes, $numero);
+    }
+
+    private function enviarMensagemComBotoes($buttonText, $id_step, $numero = null)
+    {
+        $buttons = ChatbotOption::getBotoesMensagemWhatsApp($id_step);
+
+        if ($numero === null) {
+            $numero = $this->numeroUsuario;
+        }
+
+        // Formata os botões para o padrão da API do WhatsApp
+        $actionButtons = [];
+        foreach ($buttons as $button) {
+            $actionButtons[] = [
+                'type' => 'reply',
+                'reply' => [
+                    'id' => $button['id'],
+                    'title' => $button['button'],
+                ],
+            ];
+        }
+
+        $this->whatsapp->sendButtonMessage($numero, $buttonText, $actionButtons);
+    }
 
 }
