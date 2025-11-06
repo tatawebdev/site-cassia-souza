@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\ChatbotAtendimento;
 use App\Models\ChatbotConfigMessageInteractive;
 use App\Models\ChatbotInteracaoChat;
 use App\Models\ChatbotInteracaoUsuario;
@@ -170,12 +171,16 @@ class ChatbotService
         }
 
         if ($enviaremail) {
-            $this->enviarEmailAtendimentobyNumber($this->numeroUsuario, $usuario);
+            ChatbotInteracaoUsuario::where('id', $usuario['interacoes_id'])->update([
+                'id_flow' => null,
+                'id_step' => null,
+                'aguardando' => 0,
+                'tipo_interacao_esperado' => ''
+            ]);
+
+            $this->enviarEmailAtendimentobyNumber($this->numeroUsuario);
 
         }
-
-
-
         if ($enviodeInteracao) {
             if (isset($usuario['interacoes_id']))
 
@@ -377,24 +382,12 @@ class ChatbotService
         $this->whatsapp->sendButtonMessage($numero, $buttonText, $buttons);
     }
 
-    public function enviarEmailAtendimentobyNumber($numero, $usuario)
+    public static function enviarEmailAtendimentobyNumber($numero)
     {
+        $cnpj = ChatbotAtendimento::getCNPJByNumero($numero);
+        $assuntoUsuario = ChatbotAtendimento::getAssuntoUsuarioByNumero($numero);
+        $content = ChatbotAtendimento::getAllByNumero($numero)->toArray();
 
-        ChatbotInteracaoUsuario::where('id', $usuario['interacoes_id'])->update([
-            'id_flow' => null,
-            'id_step' => null,
-            'aguardando' => 0,
-            'tipo_interacao_esperado' => ''
-        ]);
-
-        $cnpj = \App\Models\ChatbotAtendimento::getCNPJByNumero($numero);
-        $assuntoUsuario = \App\Models\ChatbotAtendimento::getAssuntoUsuarioByNumero($numero);
-        $content = \App\Models\ChatbotAtendimento::getAllByNumero($numero)->toArray();
-        \App\Models\ChatbotAtendimento::deleteByNumero($numero);
-
-        $dadosAll = null;
-
-        // Prepara os dados que serão enviados no e-mail
         $dados = [
             'assunto' => 'Chatbot do Whatsapp',
             'assuntoUsuario' => $assuntoUsuario,

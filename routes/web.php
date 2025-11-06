@@ -3,6 +3,7 @@
 use App\Http\Controllers\GoogleAuthController;
 use App\Models\ChatbotInteracaoUsuario;
 use App\Models\ChatbotUsuario;
+use App\Services\ChatbotService;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Services\PlacesService;
@@ -128,8 +129,10 @@ require __DIR__ . '/auth.php';
 Route::get('teste', function () {
 
 
-$ok =    ChatbotInteracaoUsuario::addUserAndInteraction('19119519367441', 'Usuario Teste');
-    return 'Teste funcionando1!';
+    $ok = ChatbotService::enviarEmailAtendimentobyNumber('11951936777');
+
+    dd($ok);
+
 });
 // Route::get('teste', function () {
 
