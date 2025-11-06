@@ -135,6 +135,7 @@ export default function ContactsChat() {
     }
 
     window.addEventListener('fcm-message', handleFcmEvent);
+    console.log('Added fcm-message listener');
     return () => window.removeEventListener('fcm-message', handleFcmEvent);
   }, [selectedId]);
 

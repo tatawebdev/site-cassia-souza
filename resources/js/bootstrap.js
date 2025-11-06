@@ -79,7 +79,6 @@ if (typeof window !== 'undefined') {
 // Handle foreground messages and notify app UI via a CustomEvent
 if (typeof window !== 'undefined') {
     messaging.onMessage(function (payload) {
-        console.log('FCM foreground message received: ', payload);
         try {
             const event = new CustomEvent('fcm-message', { detail: payload });
             window.dispatchEvent(event);
