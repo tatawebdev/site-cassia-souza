@@ -25,4 +25,15 @@ messaging.onBackgroundMessage(function (payload) {
     };
 
     self.registration.showNotification(notificationTitle, notificationOptions);
+    // Also notify any open clients (pages) so they can update UI in real time
+    // This helps update chat windows when the app is open (but in background)
+    try {
+        self.clients.matchAll({ includeUncontrolled: true, type: 'window' }).then(function (clients) {
+            for (const client of clients) {
+                client.postMessage({ type: 'fcm-message', payload });
+            }
+        });
+    } catch (e) {
+        console.error('Error posting message to clients from SW', e);
+    }
 });

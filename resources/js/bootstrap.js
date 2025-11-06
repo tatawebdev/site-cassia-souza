@@ -88,3 +88,25 @@ if (typeof window !== 'undefined') {
         }
     });
 }
+
+// Listen for messages posted from the Service Worker (background messages)
+if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+    try {
+        navigator.serviceWorker.addEventListener('message', function (event) {
+            // The SW posts { type: 'fcm-message', payload }
+            const data = event.data;
+            if (!data) return;
+            if (data.type === 'fcm-message') {
+                console.log('Received fcm-message from service worker', data.payload);
+                try {
+                    const customEvent = new CustomEvent('fcm-message', { detail: data.payload });
+                    window.dispatchEvent(customEvent);
+                } catch (e) {
+                    console.error('Error dispatching fcm-message from SW', e);
+                }
+            }
+        });
+    } catch (e) {
+        console.error('Error adding serviceWorker message listener', e);
+    }
+}

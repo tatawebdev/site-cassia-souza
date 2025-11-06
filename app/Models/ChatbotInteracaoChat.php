@@ -53,6 +53,8 @@ class ChatbotInteracaoChat extends Model
                 'message_id' => $model->message_id ?? null,
             ];
 
+            dd($data);
+
             try {
                 $fcm = new FcmService();
                 $fcm->sendNotificationToAll($title, $body, $data);
