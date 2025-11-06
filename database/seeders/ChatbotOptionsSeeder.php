@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 
 class ChatbotOptionsSeeder extends Seeder
 {
@@ -35,6 +36,11 @@ class ChatbotOptionsSeeder extends Seeder
                 'descricao_interacao' => $item['descricao_interacao'] ?? null,
                 'tipo_interacao' => $item['tipo_interacao'] ?? null,
             ];
+
+            // Se a coluna secao_titulo existir no banco, popula também
+            if (Schema::hasColumn('chatbot_options', 'secao_titulo')) {
+                $data['secao_titulo'] = $item['secao_titulo'] ?? null;
+            }
 
             DB::table('chatbot_options')->updateOrInsert(['id' => $item['id']], $data);
         }
