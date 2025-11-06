@@ -1,17 +1,9 @@
 <?php
 
-namespace App\Services\Legacy;
+namespace App\Services;
 
-use App\Models\Legacy\ChatbotInteracoesUsuario;
-use App\Models\Legacy\ChatbotInteracoesChat;
-use App\Models\Legacy\ChatbotAtendimento;
-use App\Models\Legacy\ChatbotSteps;
-use App\Models\Legacy\ChatbotOptions;
-use App\Models\Legacy\ChatboConfigMessageInteractive;
-use App\Models\Legacy\Users as LegacyUsers;
 use App\Services\GeminiService;
 use App\Services\WhatsAppService;
-use Illuminate\Support\Facades\Log;
 
 class ChatbotService
 {
@@ -61,17 +53,6 @@ class ChatbotService
         //     $this->enviarMensagemWhatsApp(json_encode($e->getMessage()));
         // }
 
-        ChatbotInteracoesChat::insert([
-            'usuario_id' => $usuario['usuario_id'],
-            'mensagem' => $this->mensagemUsuario,
-            'message_id' => $this->mensagemId,
-            'data' => json_encode([$data]),
-            'remetente' => 'user',
-            'id_step' => $step['id'] ?? null,
-            'status_mensagem' => 'enviado',
-            'data_envio' => date('Y-m-d H:i:s')
-        ]);
-
 
 
 
@@ -79,19 +60,7 @@ class ChatbotService
 
     private function obterUsuarioEEtapa()
     {
-        $usuario = ChatbotInteracoesUsuario::addUserAndInteraction($this->numeroUsuario, $this->nomeUsuario);
 
-
-        dd($usuario);
-        $step = (new ChatbotSteps)->getStepById($usuario['id_step']);
-        $step = $step ?? [];
-
-        $step['nome_da_funcao'] = !empty($step['nome_da_funcao']) ? $step['nome_da_funcao'] : "proxima_etapa";
-
-        return [
-            'step' => $step,
-            'usuario' => $usuario
-        ];
     }
 
 

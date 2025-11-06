@@ -8,7 +8,7 @@ use App\Services\WhatsAppWebhookProcessor;
 use App\Models\Conversation;
 use App\Models\Message;
 use App\Services\AgenteSuporte;
-use App\Services\Legacy\ChatbotService;
+use App\Services\ChatbotService;
 
 class WebhookController extends Controller
 {
@@ -54,7 +54,6 @@ class WebhookController extends Controller
             $agenteSuporte->replyToMessage($conversation);
         }
 
-        // Encaminha ao chatbot legacy (novo serviço) para processar lógica do fluxo
         if (in_array($result['event_type'], ['message_text', 'message_button', 'interactive'])) {
             $payload = [
                 'celular' => $result['celular'],

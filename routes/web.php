@@ -135,7 +135,7 @@ Route::get('teste', function () {
         'interactive_id' => null,
     ];
 
-    app(\App\Services\Legacy\ChatbotService::class)->processInput($testData);
+    app(\App\Services\ChatbotService::class)->processInput($testData);
 
 
     return 'Teste funcionando1!';
