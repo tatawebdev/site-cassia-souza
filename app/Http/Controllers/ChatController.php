@@ -159,7 +159,7 @@ class ChatController extends Controller
                 'id' => $msg->id,
                 'usuario_id' => $usuario->id,
                 'text' => $msg->mensagem,
-                'from' => $remetente === 'me' ? 'me' : 'contact',
+                'from' => $remetente ,
                 'time' => $msg->data_envio->toDateTimeString(),
             ],
         ], 201);
