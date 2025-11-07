@@ -55,20 +55,23 @@ class ChatController extends Controller
         $groups = [];
         foreach ($items as $it) {
             $key = $it['lastAtDate'] ?? 'sem-data';
-            if (!isset($groups[$key])) $groups[$key] = [];
+            if (!isset($groups[$key]))
+                $groups[$key] = [];
             $groups[$key][] = $it;
         }
 
         // ordenar keys desc
         $keys = array_keys($groups);
         usort($keys, function ($a, $b) {
-            if ($a === 'sem-data') return 1;
-            if ($b === 'sem-data') return -1;
+            if ($a === 'sem-data')
+                return 1;
+            if ($b === 'sem-data')
+                return -1;
             return strcmp($b, $a);
         });
 
         // transformar em array de grupos com label formatado em PT-BR (ex: '6 DE NOV.')
-        $months = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+        $months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
         $groupsOut = [];
         foreach ($keys as $k) {
             if ($k === 'sem-data') {
@@ -148,6 +151,14 @@ class ChatController extends Controller
             'message_id' => uniqid('msg_'),
         ]);
 
+
+
+        if ($remetente === 'me' && $usuario->telefone) {
+            app(\App\Services\WhatsAppService::class)
+                ->sendMessageText($usuario->telefone, $msg->mensagem);
+        }
+
+
         // atualiza timestamps do usuario
         $usuario->ultima_mensagem = now();
         $usuario->ultima_conversa = now();
@@ -159,7 +170,7 @@ class ChatController extends Controller
                 'id' => $msg->id,
                 'usuario_id' => $usuario->id,
                 'text' => $msg->mensagem,
-                'from' => $remetente ,
+                'from' => $remetente,
                 'time' => $msg->data_envio->toDateTimeString(),
             ],
         ], 201);

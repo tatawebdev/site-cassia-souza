@@ -34,10 +34,8 @@ export default function ContactsChat() {
     // optimistic UI: append a temp message
     const tempId = `temp_${Date.now()}`;
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const tempMsg = { id: tempId, from: 'me', text, time };
 
 
-    // send to backend
     window.axios.post(route('chat.api.storeMessage'), {
       usuario_id: contact.id,
       mensagem: text,
