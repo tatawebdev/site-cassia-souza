@@ -28,13 +28,15 @@ class GoogleAuthController extends Controller
 
         $email = $googleUser->getEmail();
 
-        // Array of allowed emails
         $allowedEmails = [
             'user1@example.com',
-            'user2@cassiasouzaadvocacia.com'
+            'jeremias@cassiasouzaadvocacia.com.br',
+            'talitasantoos107@gmail.com',
+            'suporte@tataweb.com.br',
+            'talitasantoos11031999@gmail.com',
+            'sarah90lorraine@gmail.com',
         ];
 
-        // Check if email is allowed
         if (!in_array(strtolower($email), array_map('strtolower', $allowedEmails), true)) {
             return redirect()->route('login')->with('status', 'O e-mail usado não está autorizado.');
         }
