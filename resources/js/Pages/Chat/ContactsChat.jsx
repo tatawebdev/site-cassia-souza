@@ -173,8 +173,8 @@ export default function ContactsChat() {
 
       <div className="py-6">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="bg-white shadow-sm sm:rounded-lg overflow-hidden" style={{ height: '70vh' }}>
-            <div className="flex h-full">
+            <div className="bg-white shadow-sm sm:rounded-lg overflow-hidden" style={{ height: '70vh' }}>
+            <div className="flex h-full flex-col md:flex-row">
               <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} groups={groups} />
               <div className="flex-1 h-full">
                 <ChatWindow
