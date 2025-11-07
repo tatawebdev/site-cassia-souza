@@ -32,32 +32,20 @@ export default function ContactsChat() {
     const contact = contacts.find((c) => c.id === selectedId);
     if (!contact) return;
 
-    // optimistic UI: append a temp message
+
     setSendingFor(selectedId);
 
     window.axios.post(route('chat.api.storeMessage'), {
       usuario_id: contact.id,
       mensagem: text,
       remetente: 'me',
-    }).then((resp) => {
-      const returned = resp.data.data;
-      setContacts((prev) =>
-        prev.map((c) => {
-          if (c.id !== selectedId) return c;
-          // replace temp message with returned message id/time
-          const msgs = (c.messages || []).map((m) => (m.id === tempId ? { id: returned.id, from: returned.from, text: returned.text, time: returned.time } : m));
-          return { ...c, messages: msgs, lastMessage: returned.text };
-        })
-      );
+    }).then(() => {
       setSendingFor(null);
     }).catch((err) => {
-      // on error, remove temp message and optionally show error
-      setContacts((prev) => prev.map((c) => c.id !== selectedId ? c : { ...c, messages: (c.messages || []).filter(m => m.id !== tempId) }));
       setSendingFor(null);
       console.error('Erro ao enviar mensagem', err);
     });
   }
-
   const selected = contacts.find((c) => c.id === selectedId) || null;
 
   useEffect(() => {
@@ -192,10 +180,10 @@ export default function ContactsChat() {
                 <ChatWindow
                   contact={selected}
                   messages={selected?.messages || []}
-                    onReceive={handleIncomingMessage}
-                    onSend={handleSend}
-                    loading={loadingMessagesFor === selectedId}
-                    sending={sendingFor === selectedId}
+                  onReceive={handleIncomingMessage}
+                  onSend={handleSend}
+                  loading={loadingMessagesFor === selectedId}
+                  sending={sendingFor === selectedId}
                 />
               </div>
             </div>
