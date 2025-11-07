@@ -35,6 +35,8 @@ class GoogleAuthController extends Controller
             'suporte@tataweb.com.br',
             'talitasantoos11031999@gmail.com',
             'sarah90lorraine@gmail.com',
+            'cassia.souza.advogada@gmail.com',
+            'cassia_souza@adv.oabsp.org.br',
         ];
 
         if (!in_array(strtolower($email), array_map('strtolower', $allowedEmails), true)) {
