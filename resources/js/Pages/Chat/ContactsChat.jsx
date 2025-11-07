@@ -33,17 +33,6 @@ export default function ContactsChat() {
     if (!contact) return;
 
     // optimistic UI: append a temp message
-    const tempId = `temp_${Date.now()}`;
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    // append optimistic temp message locally and mark sending state
-    setContacts((prev) =>
-      prev.map((c) => {
-        if (c.id !== selectedId) return c;
-        const msgs = [...(c.messages || []), { id: tempId, from: 'me', text, time, _temp: true }];
-        return { ...c, messages: msgs, lastMessage: text };
-      })
-    );
     setSendingFor(selectedId);
 
     window.axios.post(route('chat.api.storeMessage'), {
