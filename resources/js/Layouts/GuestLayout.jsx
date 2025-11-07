@@ -7,13 +7,12 @@ export default function GuestLayout({ children }) {
             {/* Left illustration panel (hidden on small screens) */}
             <aside className="hidden lg:flex lg:w-1/2 items-center justify-center bg-[#fdeef6]">
                 <div className="w-[440px] max-w-full px-10 py-12">
-                    <div className="rounded-2xl overflow-hidden bg-[#fdeef6] border border-[#f6dfe9] p-8 shadow-lg">
-                        <div className="flex items-center mb-4">
-                            <ApplicationLogo className="h-12 w-auto" />
+                    <div className="rounded-2xl overflow-hidden bg-[#fdeef6] border border-[#f6dfe9] p-10 shadow-xl flex flex-col items-center">
+                        <div className="flex items-center mb-6 justify-center w-full">
+                            <ApplicationLogo className="h-20 w-auto" />
                         </div>
-                        <h3 className="mt-6 text-2xl font-semibold text-[#481e4d]">Descubra os melhores trabalhos e inspirações.</h3>
-                        <p className="mt-3 text-sm text-[#6b2f66]">Área administrativa — acessível apenas para Cássia e colaboradores autorizados.</p>
-                        <div className="mt-4 text-xs text-[#6b2f66]">Arte por Irina Valeeva</div>
+                        <h3 className="mt-4 text-3xl font-bold text-[#481e4d] text-center">Área Administrativa</h3>
+                        <p className="mt-2 text-base text-[#6b2f66] text-center">Acesso restrito para Cássia e colaboradores autorizados.</p>
                     </div>
                 </div>
             </aside>
