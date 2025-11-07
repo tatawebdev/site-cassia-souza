@@ -157,6 +157,7 @@ class ChatController extends Controller
             app(\App\Services\WhatsAppService::class)
                 ->sendMessageText($usuario->telefone, $data['mensagem']);
         }
+dd($usuario->telefone);
 
 
         // atualiza timestamps do usuario
