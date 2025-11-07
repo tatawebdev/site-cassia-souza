@@ -135,9 +135,18 @@ export default function ContactsChat() {
         if (c.id != usuarioId) return c;
         return { 
           ...c, 
-          lastMessage: mensagemText, 
+          lastMessage: data.mensagem, 
           unread: (c.unread || 0) + 1,
-          messages: [...(c.messages || []), { id: Date.now(), from: 'them', text: mensagemText, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]
+          messages: [
+            ...(c.messages || []), 
+            { 
+              id: data.id || data.message_id || Date.now(), 
+              from: data.remetente || 'them', 
+              text: data.mensagem, 
+              time: data.time || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+              type: data.type
+            }
+          ]
         };
       }));
 

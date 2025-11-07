@@ -21,15 +21,25 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
       }
 
       const usuarioId = data.usuario_id || (data.data && data.data.usuario_id) || data.user_id || data.usuario || null;
-      if (!usuarioId || !contact || usuarioId !== contact.id) return;
+
+
+      if (!usuarioId || !contact || usuarioId != contact.id) return;
+
+
+
 
       const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
       const remetente = data.remetente || (data.data && data.data.remetente) || 'user';
       const messageId = data.id || data.message_id || Date.now();
       const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
       const newMsg = { id: messageId, from: remetente === 'me' ? 'me' : 'other', text: mensagemText, time };
 
+      const exists = Array.isArray(messages) && messages.some(msg => msg.id == newMsg.id);
+      if (exists) {
+        return;
+      }
+
+      console.log("new message:", newMsg, data.data);
       try {
         onReceive(newMsg, usuarioId);
       } catch (err) {
@@ -53,7 +63,7 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
     <div className="flex-1 flex flex-col h-full">
       <div className="p-4 border-b border-gray-200 flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
-          {contact.name.split(' ').map((s) => s[0]).slice(0,2).join('')}
+          {contact.name.split(' ').map((s) => s[0]).slice(0, 2).join('')}
         </div>
         <div>
           <div className="font-medium">{contact.name}</div>
