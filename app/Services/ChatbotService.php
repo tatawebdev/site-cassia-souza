@@ -79,7 +79,6 @@ class ChatbotService
             'status_mensagem' => 'enviado',
             'data_envio' => date('Y-m-d H:i:s')
         ]);
-        $this->enviarNotificacaoMensagem($this->mensagemUsuario, $usuario['usuario_id'], 'user', $usuario['interacoes_id'], $this->mensagemId);
 
         if (!!$usuario['notBot']) {
             // $this->sendFCMNotificationUser($this->mensagemUsuario);
@@ -161,6 +160,14 @@ class ChatbotService
 
             default:
                 // Para outros tipos de interação, envia todas as perguntas
+                ChatbotInteracaoChat::create([
+                    'usuario_id' => $usuario['usuario_id'],
+                    'mensagem' => $step['pergunta'],
+                    'remetente' => 'bot',
+                    'status_mensagem' => 'enviado',
+                    'id_step' => $usuario['id_step'],
+                    'data_envio' => date('Y-m-d H:i:s')
+                ]);
                 $perguntas = explode("|", (trim($step['pergunta'], "|")));
                 foreach ($perguntas as $perguntaIndividual) {
                     if (!!$perguntaIndividual) {
@@ -192,7 +199,6 @@ class ChatbotService
                     'id_step' => $usuario['id_step'],
                     'data_envio' => date('Y-m-d H:i:s')
                 ]);
-                $this->enviarNotificacaoMensagem($step['pergunta'], $usuario['usuario_id'], 'bot', $usuario['interacoes_id']);
             if (!$enviaremail) {
 
                 $interacaoUsuario = ChatbotInteracaoUsuario::find($usuario['interacoes_id']);
@@ -205,28 +211,6 @@ class ChatbotService
             }
         }
 
-    }
-
-    public function enviarNotificacaoMensagem($mensagem, $usuario_id, $remetente = 'user', $id = null, $message_id = null)
-    {
-        $title = 'Nova mensagem';
-        if ($remetente === 'bot') {
-            $title = 'Resposta do bot';
-        }
-
-        $body = !empty($mensagem) ? strip_tags(substr($mensagem, 0, 240)) : '';
-
-        $data = [
-            'type' => 'chat_message',
-            'mensagem' => $mensagem,
-            'usuario_id' => $usuario_id,
-            'remetente' => $remetente,
-            'id' => $id,
-            'message_id' => $message_id,
-        ];
-
-        $fcm = new FcmService();
-        $fcm->sendNotificationToAll($title, $body, $data);
     }
 
     private function obterUsuarioEEtapa()
@@ -248,7 +232,6 @@ class ChatbotService
             $numero = $this->numeroUsuario;
         }
         $this->whatsapp->sendMessageText($numero, $mensagem, $previewUrl);
-        $this->enviarNotificacaoMensagem($mensagem, $this->numeroUsuario, 'me');
     }
 
     public function processarEtapa($usuario, $step, $data)

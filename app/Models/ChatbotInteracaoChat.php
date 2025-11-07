@@ -31,31 +31,31 @@ class ChatbotInteracaoChat extends Model
         'data_leitura' => 'datetime',
     ];
 
-    // protected static function booted()
-    // {
-    //     static::created(function (self $model) {
-    //         // Compose notification
-    //         $title = 'Nova mensagem';
-    //         $remetente = $model->remetente ?? 'user';
-    //         if ($remetente === 'bot') {
-    //             $title = 'Resposta do bot';
-    //         }
+    protected static function booted()
+    {
+        static::created(function (self $model) {
+            // Compose notification
+            $title = 'Nova mensagem';
+            $remetente = $model->remetente ?? 'user';
+            if ($remetente === 'bot') {
+                $title = 'Resposta do bot';
+            }
 
-    //         $body = !empty($model->mensagem) ? strip_tags(substr($model->mensagem, 0, 240)) : '';
+            $body = !empty($model->mensagem) ? strip_tags(substr($model->mensagem, 0, 240)) : '';
 
-    //         // Data payload to allow the client to update UI
-    //         $data = [
-    //             'type' => 'chat_message',
-    //             'mensagem' => $model->mensagem,
-    //             'usuario_id' => $model->usuario_id,
-    //             'remetente' => $remetente,
-    //             'id' => $model->id,
-    //             'message_id' => $model->message_id ?? null,
-    //         ];
+            // Data payload to allow the client to update UI
+            $data = [
+                'type' => 'chat_message',
+                'mensagem' => $model->mensagem,
+                'usuario_id' => $model->usuario_id,
+                'remetente' => $remetente,
+                'id' => $model->id,
+                'message_id' => $model->message_id ?? null,
+            ];
 
 
-    //         $fcm = new FcmService();
-    //         $fcm->sendNotificationToAll($title, $body, $data);
-    //     });
-    // }
+            $fcm = new FcmService();
+            $fcm->sendNotificationToAll($title, $body, $data);
+        });
+    }
 }
