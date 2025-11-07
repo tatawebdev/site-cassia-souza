@@ -12,7 +12,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
 
-
+Route::get('/login', function () {
+    return redirect()->route('login');
+});
 Route::get('/', \App\Livewire\Index::class)->name('inicio');
 Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
 Route::get('/contato', \App\Livewire\Contact::class)->name('contato');

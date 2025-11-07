@@ -46,10 +46,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-    // Após logout, redireciona para a tela de login (rota nomeada 'login').
-    // O 'inicio' é o site público; o comportamento desejado é enviar
-    // usuários para a página de login quando encerrarem a sessão.
     return redirect()->route('login');
     }
 }
