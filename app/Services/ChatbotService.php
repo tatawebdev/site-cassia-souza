@@ -106,6 +106,14 @@ class ChatbotService
             if ($tipoInteracaoCorreta) {
                 $this->processarEtapa($usuario, $step, $data);
             } else {
+                ChatbotInteracaoChat::create([
+                    'usuario_id' => $usuario['usuario_id'],
+                    'mensagem' => "Selecione uma opção válida",
+                    'remetente' => 'bot',
+                    'status_mensagem' => 'enviado',
+                    'id_step' => $usuario['id_step'],
+                    'data_envio' => date('Y-m-d H:i:s')
+                ]);
                 $this->enviarMensagemWhatsApp("Selecione uma opção válida");
             }
         }
@@ -287,6 +295,14 @@ class ChatbotService
                 $this->updateStep = true;
             } else {
                 foreach ($resultado_validacao['message'] as $message) {
+                    ChatbotInteracaoChat::create([
+                        'usuario_id' => $usuario['usuario_id'],
+                        'mensagem' => $message,
+                        'remetente' => 'bot',
+                        'status_mensagem' => 'enviado',
+                        'id_step' => $usuario['id_step'],
+                        'data_envio' => date('Y-m-d H:i:s')
+                    ]);
                     $this->enviarMensagemWhatsApp($message);
                 }
             }
