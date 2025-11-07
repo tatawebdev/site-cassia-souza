@@ -127,12 +127,10 @@ export default function ContactsChat() {
 
       const now = Date.now();
       const last = recentFetch.current[usuarioId] || 0;
-      if (now - last < 5000) return;
       recentFetch.current[usuarioId] = now;
 
 
       const msgId = data.id || data.message_id || Date.now();
-
 
       setContacts((prev) => prev.map((c) => {
         if (c.id != usuarioId) return c;
