@@ -30,6 +30,11 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
 
       const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
       const remetente = data.remetente || (data.data && data.data.remetente) || 'user';
+
+      console.log("FCM message for current contact:", remetente);
+
+
+      
       const messageId = data.id || data.message_id || Date.now();
       const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       const newMsg = { id: messageId, from: remetente === 'me' ? 'me' : 'other', text: mensagemText, time };
