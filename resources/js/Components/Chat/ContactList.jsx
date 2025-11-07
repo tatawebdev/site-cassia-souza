@@ -100,12 +100,11 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                 <button
                   key={c['id']}
                   onClick={() => onSelect(c['id'])}
-                  className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${
-                    selectedId === c['id'] ? 'bg-gray-100' : ''
-                  }`}
+                  className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${selectedId === c['id'] ? 'bg-gray-100' : ''
+                    }`}
                 >
                   <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
-                    {String(c['name']).split(' ').map((s) => s[0]).slice(0,2).join('')}
+                    {String(c['name']).split(' ').map((s) => s[0]).slice(0, 2).join('')}
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
@@ -129,12 +128,11 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                   <button
                     key={c.id}
                     onClick={() => onSelect(c.id)}
-                    className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${
-                      selectedId === c.id ? 'bg-gray-100' : ''
-                    }`}
+                    className={`w-full text-left p-4 hover:bg-gray-50 flex items-start gap-3 ${selectedId === c.id ? 'bg-gray-100' : ''
+                      }`}
                   >
                     <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
-                      {c.name.split(' ').map((s) => s[0]).slice(0,2).join('')}
+                      {c.name.split(' ').map((s) => s[0]).slice(0, 2).join('')}
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center">
@@ -143,7 +141,12 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                           <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c.unread}</div>
                         )}
                       </div>
-                      <div className="text-xs text-gray-500 truncate max-w-[200px]">{c.lastMessage}</div>
+                      <div className="text-xs text-gray-500 truncate max-w-[200px] line-clamp-2" style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden'
+                      }}>{c.lastMessage}</div>
                     </div>
                   </button>
                 ))}
