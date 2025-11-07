@@ -24,6 +24,8 @@ export default function ContactsChat() {
     if (!contact.messages || contact.messages.length === 0) {
       fetchMessages(id);
     }
+    // on mobile, switch to chat view after selecting
+    if (isMobile) setShowList(false);
   }
 
   function handleSend(text) {
@@ -47,6 +49,23 @@ export default function ContactsChat() {
     });
   }
   const selected = contacts.find((c) => c.id === selectedId) || null;
+
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+  const [showList, setShowList] = useState(true);
+
+  useEffect(() => {
+    function onResize() {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      // when switching to desktop ensure both panes visible
+      if (!mobile) setShowList(true);
+    }
+
+    window.addEventListener('resize', onResize);
+    // init
+    onResize();
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   useEffect(() => {
     // try carregar contatos da API, cai para mock se falhar
@@ -174,22 +193,57 @@ export default function ContactsChat() {
       <div className="py-6">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="bg-white shadow-sm sm:rounded-lg overflow-hidden" style={{ height: '70vh' }}>
-            <div className="flex h-full flex-col md:flex-row">
-              <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} groups={groups} />
-              <div className="flex-1 h-full">
-                <ChatWindow
-                  contact={selected}
-                  messages={selected?.messages || []}
-                  onReceive={handleIncomingMessage}
-                  onSend={handleSend}
-                  loading={loadingMessagesFor === selectedId}
-                  sending={sendingFor === selectedId}
-                />
-              </div>
-            </div>
+            <div className="flex h-full flex-col md:flex-row relative">
+              {/* Desktop / large screens: side-by-side. Mobile: show either list or chat */}
+              {(!isMobile || showList) && (
+                <ContactList contacts={contacts} selectedId={selectedId} onSelect={handleSelect} groups={groups} />
+              )}
+
+              {(!isMobile) ? (
+                <div className="flex-1 h-full">
+                  <ChatWindow
+                    contact={selected}
+                    messages={selected?.messages || []}
+                    onReceive={handleIncomingMessage}
+                    onSend={handleSend}
+                    loading={loadingMessagesFor === selectedId}
+                    sending={sendingFor === selectedId}
+                    isMobile={false}
+                  />
+                </div>
+              ) : (
+                <div className={`flex-1 h-full ${showList ? 'hidden' : 'block'}`}>
+                  <ChatWindow
+                    contact={selected}
+                    messages={selected?.messages || []}
+                    onReceive={handleIncomingMessage}
+                    onSend={handleSend}
+                    loading={loadingMessagesFor === selectedId}
+                    sending={sendingFor === selectedId}
+                    isMobile={true}
+                    onBack={() => setShowList(true)}
+                  />
+                </div>
+              )}
+
+              {/* Floating action button on mobile to open list / new chat */}
+              {isMobile && showList && (
+                <button
+                  type="button"
+                  onClick={() => { /* placeholder for new chat action */ }}
+                  className="fixed bottom-6 right-6 bg-green-500 shadow-lg text-white rounded-full w-14 h-14 flex items-center justify-center"
+                  title="Novo contato"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </button>
+              )}
+              {/* on mobile when viewing chat show a back button in UI provided by ChatWindow */}
           </div>
         </div>
       </div>
+    </div>
     </AuthenticatedLayout>
   );
 }

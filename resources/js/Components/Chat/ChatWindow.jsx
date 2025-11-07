@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import MessageBubble from '@/Components/Chat/MessageBubble';
 import ChatInput from '@/Components/Chat/ChatInput';
 
-export default function ChatWindow({ contact, messages = [], onSend, loading = false, onReceive, sending = false }) {
+export default function ChatWindow({ contact, messages = [], onSend, loading = false, onReceive, sending = false, isMobile = false, onBack = null }) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
@@ -67,6 +67,13 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
   return (
     <div className="flex-1 flex flex-col h-full">
       <div className="p-4 border-b border-gray-200 flex items-center gap-3">
+        {isMobile && (
+          <button type="button" onClick={() => onBack && onBack()} className="p-2 -ml-2 mr-1 rounded-full hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        )}
         <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-white font-semibold">
           {contact.name.split(' ').map((s) => s[0]).slice(0, 2).join('')}
         </div>
