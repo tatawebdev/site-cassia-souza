@@ -4,6 +4,16 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+// Attach CSRF token from meta tag (if present) so POST requests include X-CSRF-TOKEN
+try {
+    const tokenMeta = document.head.querySelector('meta[name="csrf-token"]');
+    if (tokenMeta) {
+        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = tokenMeta.content;
+    }
+} catch (e) {
+    // In non-browser environments this may fail; ignore silently.
+}
+
 // --- Firebase Cloud Messaging (FCM) setup (web) ---
 // Uses firebase compat build; add VITE_FIREBASE_VAPID_KEY to your .env for the public VAPID key
 import firebase from 'firebase/compat/app';
