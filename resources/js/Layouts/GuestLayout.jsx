@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/react';
 export default function GuestLayout({ children }) {
     return (
         <div className="min-h-screen flex flex-col lg:flex-row">
-            /* Left illustration panel (hidden on small screens) */
+            {/* Left illustration panel (hidden on small screens) */}
             <aside
                 className="hidden lg:flex lg:w-1/2 items-center justify-center"
                 style={{
@@ -21,7 +21,9 @@ export default function GuestLayout({ children }) {
                         <h3 className="mt-4 text-3xl font-bold text-[#481e4d] text-center">Área Administrativa</h3>
                     </div>
                 </div>
-            </aside>}
+            </aside>
+
+            {/* Right form panel */}
             <main className="flex-1 flex items-center justify-center bg-white">
                 <div className="w-full max-w-md px-6 py-10">
                     {children}
