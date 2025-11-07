@@ -80,7 +80,7 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
   const order = ['Hoje', 'Ontem', 'Anteriores'];
 
   return (
-    <div className="w-full md:w-80 border-gray-200 h-full flex flex-col md:border-r md:border-b-0 border-b">
+    <div className="w-full md:w-80 max-w-xs border-gray-200 h-full flex flex-col md:border-r md:border-b-0 border-b" style={{ maxWidth: '320px' }}>
       <div className="p-4">
         <input
           className="w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
@@ -114,7 +114,7 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                         <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c['unread']}</div>
                       )}
                     </div>
-                    <div className="text-xs text-gray-500 truncate">{c['lastMessage']}</div>
+                    <div className="text-xs text-gray-500 truncate max-w-[200px]">{c['lastMessage']}</div>
                   </div>
                 </button>
               ))}
@@ -143,7 +143,7 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                           <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c.unread}</div>
                         )}
                       </div>
-                      <div className="text-xs text-gray-500 truncate">{c.lastMessage}</div>
+                      <div className="text-xs text-gray-500 truncate max-w-[200px]">{c.lastMessage}</div>
                     </div>
                   </button>
                 ))}
