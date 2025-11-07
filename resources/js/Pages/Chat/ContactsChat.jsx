@@ -134,12 +134,10 @@ export default function ContactsChat() {
       const msgId = data.id || data.message_id || Date.now();
 
 
-      const exists = (c.messages || []).some(m => m.id == msgId);
-
-      if (exists) return c; 
-
       setContacts((prev) => prev.map((c) => {
         if (c.id != usuarioId) return c;
+        const exists = (c.messages || []).some(m => m.id == msgId);
+        if (exists) return c;
         return {
           ...c,
           lastMessage: data.mensagem,
