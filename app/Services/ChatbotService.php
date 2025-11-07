@@ -303,7 +303,7 @@ class ChatbotService
                         'id_step' => $usuario['id_step'],
                         'data_envio' => date('Y-m-d H:i:s')
                     ]);
-                    $this->enviarMensagemWhatsApp($message);
+                    // $this->enviarMensagemWhatsApp($message);
                 }
             }
         }
