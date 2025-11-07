@@ -50,9 +50,8 @@ class ChatbotInteracaoChat extends Model
                 'usuario_id' => $model->usuario_id,
                 'remetente' => $remetente,
                 'id' => $model->id,
-                'message_id' => $model->message_id ?? null,
+                'message_id' => $model->message_id ?? uniqid('msg_', true),
             ];
-
 
             $fcm = new FcmService();
             $fcm->sendNotificationToAll($title, $body, $data);
