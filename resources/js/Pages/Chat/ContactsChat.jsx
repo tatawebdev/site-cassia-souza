@@ -11,6 +11,7 @@ export default function ContactsChat() {
   const [loadingContacts, setLoadingContacts] = useState(true);
   const [loadingMessagesFor, setLoadingMessagesFor] = useState(null);
   const [groups, setGroups] = useState(null);
+  const [sendingFor, setSendingFor] = useState(null);
 
   function handleSelect(id) {
     setSelectedId(id);
@@ -35,6 +36,15 @@ export default function ContactsChat() {
     const tempId = `temp_${Date.now()}`;
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
+    // append optimistic temp message locally and mark sending state
+    setContacts((prev) =>
+      prev.map((c) => {
+        if (c.id !== selectedId) return c;
+        const msgs = [...(c.messages || []), { id: tempId, from: 'me', text, time, _temp: true }];
+        return { ...c, messages: msgs, lastMessage: text };
+      })
+    );
+    setSendingFor(selectedId);
 
     window.axios.post(route('chat.api.storeMessage'), {
       usuario_id: contact.id,
@@ -50,9 +60,11 @@ export default function ContactsChat() {
           return { ...c, messages: msgs, lastMessage: returned.text };
         })
       );
+      setSendingFor(null);
     }).catch((err) => {
       // on error, remove temp message and optionally show error
       setContacts((prev) => prev.map((c) => c.id !== selectedId ? c : { ...c, messages: (c.messages || []).filter(m => m.id !== tempId) }));
+      setSendingFor(null);
       console.error('Erro ao enviar mensagem', err);
     });
   }
@@ -191,9 +203,10 @@ export default function ContactsChat() {
                 <ChatWindow
                   contact={selected}
                   messages={selected?.messages || []}
-                  onReceive={handleIncomingMessage}
-                  onSend={handleSend}
-                  loading={loadingMessagesFor === selectedId}
+                    onReceive={handleIncomingMessage}
+                    onSend={handleSend}
+                    loading={loadingMessagesFor === selectedId}
+                    sending={sendingFor === selectedId}
                 />
               </div>
             </div>

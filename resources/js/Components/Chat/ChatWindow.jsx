@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import MessageBubble from '@/Components/Chat/MessageBubble';
 import ChatInput from '@/Components/Chat/ChatInput';
 
-export default function ChatWindow({ contact, messages = [], onSend, loading = false, onReceive }) {
+export default function ChatWindow({ contact, messages = [], onSend, loading = false, onReceive, sending = false }) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
         <div ref={bottomRef} />
       </div>
 
-      <ChatInput onSend={onSend} />
+      <ChatInput onSend={onSend} sending={sending} />
     </div>
   );
 }
