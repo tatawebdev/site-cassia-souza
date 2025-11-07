@@ -32,6 +32,10 @@ Route::get('/politica-de-privacidade', \App\Livewire\PoliticaPrivacidade::class)
 Route::get('/auth/google/redirecionar', [GoogleAuthController::class, 'redirect'])->name('google.redirecionar');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');
 
+// Rotas alternativas (em inglês) usadas pelo frontend React/Inertia
+Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->name('google.redirect');
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');
+
 Route::get('/get/comentarios', [ReviewsController::class, 'index'])->name('reviews.export');
 
 Route::get('/conectar-google', fn() => redirect()->route('google.redirect'))->name('google.connect');
