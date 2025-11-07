@@ -113,7 +113,17 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                         <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c['unread']}</div>
                       )}
                     </div>
-                    <div className="text-xs text-gray-500 truncate max-w-[200px]">{c['lastMessage']}</div>
+                    <div
+                      className="text-xs text-gray-500 truncate max-w-[200px]"
+                      style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      {c['lastMessage']}
+                    </div>
                   </div>
                 </button>
               ))}
@@ -141,12 +151,17 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
                           <div className="text-xs bg-red-500 text-white rounded-full px-2 py-0.5">{c.unread}</div>
                         )}
                       </div>
-                      <div className="text-xs text-gray-500 truncate max-w-[200px] line-clamp-2" style={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
-                      }}>{c.lastMessage}</div>
+                      <div
+                        className="text-xs text-gray-500 truncate max-w-[200px]"
+                        style={{
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {c.lastMessage}
+                      </div>
                     </div>
                   </button>
                 ))}
