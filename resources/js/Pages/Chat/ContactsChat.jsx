@@ -131,18 +131,25 @@ export default function ContactsChat() {
       recentFetch.current[usuarioId] = now;
 
 
+      const msgId = data.id || data.message_id || Date.now();
+
+
+      const exists = (c.messages || []).some(m => m.id == msgId);
+
+      if (exists) return c; 
+
       setContacts((prev) => prev.map((c) => {
         if (c.id != usuarioId) return c;
-        return { 
-          ...c, 
-          lastMessage: data.mensagem, 
+        return {
+          ...c,
+          lastMessage: data.mensagem,
           unread: (c.unread || 0) + 1,
           messages: [
-            ...(c.messages || []), 
-            { 
-              id: data.id || data.message_id || Date.now(), 
-              from: data.remetente || 'them', 
-              text: data.mensagem, 
+            ...(c.messages || []),
+            {
+              id: msgId,
+              from: data.remetente || 'them',
+              text: data.mensagem,
               time: data.time || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
               type: data.type
             }
