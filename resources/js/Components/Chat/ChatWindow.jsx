@@ -80,7 +80,7 @@ export default function ChatWindow({ contact, messages = [], onSend, loading = f
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/60 z-10">
             <div className="flex flex-col items-center gap-2">
-              <div className="h-8 w-8 border-4 border-t-indigo-600 border-gray-200 rounded-full animate-spin" />
+              <div className="h-8 w-8 border-4 border-t-primary-600 border-gray-200 rounded-full animate-spin" />
               <div className="text-sm text-gray-600">Carregando mensagens...</div>
             </div>
           </div>
