@@ -36,9 +36,6 @@ export default function ContactsChat() {
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const tempMsg = { id: tempId, from: 'me', text, time };
 
-    setContacts((prev) =>
-      prev.map((c) => (c.id !== selectedId ? c : { ...c, messages: [...(c.messages || []), tempMsg], lastMessage: text }))
-    );
 
     // send to backend
     window.axios.post(route('chat.api.storeMessage'), {
