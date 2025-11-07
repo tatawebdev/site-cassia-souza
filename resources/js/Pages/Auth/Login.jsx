@@ -31,7 +31,7 @@ export default function Login({ status, canResetPassword }) {
                     <div className="flex justify-center mb-4">
                         <ApplicationLogo className="h-16 w-auto" />
                     </div>
-                    <h2 className="text-2xl font-semibold text-gray-800">Acesso interno — Cássia Souza Advocacia</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800">Acesso interno </h2>
                     <p className="mt-1 text-sm text-gray-600">Área restrita para colaboradores e equipe.</p>
                     {status && (
                         <div className="mt-4 inline-block px-4 py-2 text-sm text-green-800 bg-green-100 border border-green-200 rounded">
