@@ -118,28 +118,32 @@ export default function ContactsChat() {
       if (typeof data === 'string') {
         try { data = JSON.parse(data); } catch (err) { /* ignore */ }
       }
-
       const usuarioId = data.usuario_id || (data.data && data.data.usuario_id) || data.user_id || data.usuario || null;
+
       const mensagemText = data.mensagem || (data.data && data.data.mensagem) || data.message || (data.notification && data.notification.body) || '';
       if (!usuarioId) return;
 
-      // If message is for currently open contact, ChatWindow/onReceive will handle it
-      if (selectedId === usuarioId) return;
 
-      // Avoid refetching too often for the same contact (5s window)
+
       const now = Date.now();
       const last = recentFetch.current[usuarioId] || 0;
       if (now - last < 5000) return;
       recentFetch.current[usuarioId] = now;
 
-      // Update contact summary optimistically (lastMessage/unread)
+
       setContacts((prev) => prev.map((c) => {
-        if (c.id !== usuarioId) return c;
-        return { ...c, lastMessage: mensagemText, unread: (c.unread || 0) + 1 };
+        if (c.id != usuarioId) return c;
+        return { 
+          ...c, 
+          lastMessage: mensagemText, 
+          unread: (c.unread || 0) + 1,
+          messages: [...(c.messages || []), { id: Date.now(), from: 'them', text: mensagemText, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]
+        };
       }));
 
-      // Fetch full messages for that contact to keep UI synchronized
+
       fetchMessages(usuarioId);
+
     }
 
     window.addEventListener('fcm-message', handleBackgroundFcm);
@@ -148,10 +152,15 @@ export default function ContactsChat() {
 
   function fetchMessages(usuarioId) {
     setLoadingMessagesFor(usuarioId);
+
     window.axios.get(route('chat.api.messages', { usuario: usuarioId }))
       .then((res) => {
+
         const msgs = res.data;
         setContacts((prev) => prev.map((c) => c.id !== usuarioId ? c : { ...c, messages: msgs }));
+        if (selected?.id === usuarioId) {
+          selected.messages = msgs;
+        }
       })
       .catch((err) => {
         console.warn('Erro ao buscar mensagens', err);
