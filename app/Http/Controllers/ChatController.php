@@ -156,7 +156,6 @@ class ChatController extends Controller
         if ($remetente === 'me' && $usuario->telefone) {
             app(\App\Services\WhatsAppService::class)
                 ->sendMessageText($usuario->telefone, $data['mensagem']);
-dd($usuario->telefone);
         }
 
 
