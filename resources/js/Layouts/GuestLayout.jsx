@@ -3,23 +3,30 @@ import { Link } from '@inertiajs/react';
 
 export default function GuestLayout({ children }) {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f3f4f6] via-[#efeae6] to-[#f8f8f5] px-4 py-12">
-            {/* Logo floating on top */}
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
-                <Link href="/">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-full p-3 shadow-md border border-white/30">
-                        <ApplicationLogo className="h-20 sm:h-24 w-auto fill-current text-gray-700" />
+        <div className="min-h-screen flex flex-col lg:flex-row">
+            {/* Left illustration panel (hidden on small screens) */}
+            <aside className="hidden lg:flex lg:w-1/2 items-center justify-center bg-[#fdeef6]">
+                <div className="w-[440px] max-w-full px-10 py-12">
+                    <div className="rounded-2xl overflow-hidden bg-[#fdeef6] border border-[#f6dfe9] p-8 shadow-lg">
+                        <div className="flex items-center mb-4">
+                            <ApplicationLogo className="h-12 w-auto" />
+                        </div>
+                        <h3 className="mt-6 text-2xl font-semibold text-[#481e4d]">Descubra os melhores trabalhos e inspirações.</h3>
+                        <p className="mt-3 text-sm text-[#6b2f66]">Área administrativa — acessível apenas para Cássia e colaboradores autorizados.</p>
+                        <div className="mt-4 text-xs text-[#6b2f66]">Arte por Irina Valeeva</div>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </aside>
 
-            <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/60 backdrop-blur-md px-8 py-8 shadow-2xl">
-                {children}
-            </div>
-
-            <footer className="absolute bottom-6 text-sm text-gray-500">
-                © {new Date().getFullYear()} Cassia Souza Advocacia
-            </footer>
+            {/* Right form panel */}
+            <main className="flex-1 flex items-center justify-center bg-white">
+                <div className="w-full max-w-md px-6 py-10">
+                    {children}
+                    <footer className="mt-8 text-center text-sm text-gray-400">
+                        © {new Date().getFullYear()} Cassia Souza Advocacia
+                    </footer>
+                </div>
+            </main>
         </div>
     );
 }
