@@ -1,10 +1,11 @@
 import { User, Cpu, MessageSquare } from 'lucide-react';
 
 export default function MessageBubble({ message }) {
-  const isMe = message.from === 'me';
-  const isBot = message.from === 'bot';
+  // No sistema o chatbot e o usuário "me" são a mesma entidade que envia respostas,
+  // então consideramos ambos como 'isMe' para aplicar o mesmo ícone/estilo.
+  const isMe = message.from === 'me' || message.from === 'bot';
 
-  const Icon = isBot ? Cpu : (isMe ? User : MessageSquare);
+  const Icon = isMe ? User : MessageSquare;
 
   return (
     <div className={`flex ${isMe ? 'justify-end' : 'justify-start'} mb-2`}> 
@@ -12,7 +13,7 @@ export default function MessageBubble({ message }) {
         {/* ícone à esquerda para outros, à direita para 'me' */}
         {!isMe && (
           <div className="flex-shrink-0 mt-0">
-            <Icon size={18} className={`${isBot ? 'text-white/80' : 'text-gray-500'}`} />
+            <Icon size={18} className="text-gray-500" />
           </div>
         )}
 
