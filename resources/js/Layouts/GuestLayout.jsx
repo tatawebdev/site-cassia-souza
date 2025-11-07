@@ -12,7 +12,6 @@ export default function GuestLayout({ children }) {
                             <ApplicationLogo className="h-20 w-auto" />
                         </div>
                         <h3 className="mt-4 text-3xl font-bold text-[#481e4d] text-center">Área Administrativa</h3>
-                        <p className="mt-2 text-base text-[#6b2f66] text-center">Acesso restrito para Cássia e colaboradores autorizados.</p>
                     </div>
                 </div>
             </aside>
