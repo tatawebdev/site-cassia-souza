@@ -26,7 +26,7 @@ export default function Login({ status, canResetPassword }) {
         <GuestLayout>
             <Head title="Entrar" />
 
-            <div className="bg-white rounded-xl border border-gray-100 shadow-md px-6 py-6">
+            <div className="">
                 <div className="mb-6 text-center">
                     <div className="flex justify-center mb-4">
                         <ApplicationLogo className="h-16 w-auto" />

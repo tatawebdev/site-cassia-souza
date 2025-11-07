@@ -23,9 +23,6 @@ export default function GuestLayout({ children }) {
                         <h3 className="mt-4 text-3xl font-extrabold text-[#481e4d] text-center tracking-tight">
                             Área Administrativa
                         </h3>
-                        <p className="mt-4 text-base text-[#6c3a6e] text-center">
-                            Bem-vindo ao painel administrativo. Gerencie processos, clientes e documentos com facilidade e segurança.
-                        </p>
                     </div>
                 </div>
             </aside>
