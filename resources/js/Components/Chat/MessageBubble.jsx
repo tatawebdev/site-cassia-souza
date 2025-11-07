@@ -16,7 +16,7 @@ export default function MessageBubble({ message }) {
         )}
 
         <div className="flex-1">
-          <div className="text-sm">{message.from}</div>
+          <div className="text-sm">{message.text}</div>
           <div className={`text-xs mt-1 ${isMe ? 'text-indigo-100' : 'text-gray-500'}`}>{message.time}</div>
         </div>
 
