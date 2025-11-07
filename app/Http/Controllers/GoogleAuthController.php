@@ -28,20 +28,20 @@ class GoogleAuthController extends Controller
 
         $email = $googleUser->getEmail();
 
-        // Domain whitelist (CSV) - configure GOOGLE_ALLOWED_DOMAINS in .env (ex: cassiasouzaadvocacia.com,example.com)
-        $allowedDomains = array_filter(array_map('trim', explode(',', env('GOOGLE_ALLOWED_DOMAINS', ''))));
+        // Array of allowed emails
+        $allowedEmails = [
+            'user1@example.com',
+            'user2@cassiasouzaadvocacia.com'
+        ];
 
-        if (! empty($allowedDomains)) {
-            $parts = explode('@', $email);
-            $domain = strtolower($parts[1] ?? '');
-            if (! in_array($domain, array_map('strtolower', $allowedDomains), true)) {
-                return redirect()->route('login')->with('status', 'A conta Google usada não pertence a um domínio autorizado.');
-            }
+        // Check if email is allowed
+        if (!in_array(strtolower($email), array_map('strtolower', $allowedEmails), true)) {
+            return redirect()->route('login')->with('status', 'O e-mail usado não está autorizado.');
         }
 
         $user = User::where('email', $email)->first();
 
-        // If user doesn't exist, create one only if allowedDomains is empty or domain allowed (already checked)
+        // If user doesn't exist, create one
         if (! $user) {
             $user = User::create([
                 'name' => $googleUser->getName() ?? $googleUser->getNickname() ?? $email,
