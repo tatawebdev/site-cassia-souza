@@ -19,5 +19,10 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+
+        {{-- Hidden logout form as a fallback to ensure POST with CSRF works even if JS/Inertia headers fail --}}
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+            @csrf
+        </form>
     </body>
 </html>
