@@ -80,7 +80,7 @@ export default function ContactList({ contacts = [], selectedId, onSelect, group
   const order = ['Hoje', 'Ontem', 'Anteriores'];
 
   return (
-    <div className="w-full md:w-80 max-w-xs border-gray-200 h-full flex flex-col md:border-r md:border-b-0 border-b" style={{ maxWidth: '320px' }}>
+    <div className="w-full md:w-80  border-gray-200 h-full flex flex-col md:border-r md:border-b-0 border-b" >
       <div className="p-4">
         <input
           className="w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
