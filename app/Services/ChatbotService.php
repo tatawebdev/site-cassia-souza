@@ -248,7 +248,7 @@ class ChatbotService
             $numero = $this->numeroUsuario;
         }
         $this->whatsapp->sendMessageText($numero, $mensagem, $previewUrl);
-        $this->enviarNotificacaoMensagem($mensagem, $this->numeroUsuario, 'bot');
+        $this->enviarNotificacaoMensagem($mensagem, $this->numeroUsuario, 'me');
     }
 
     public function processarEtapa($usuario, $step, $data)
