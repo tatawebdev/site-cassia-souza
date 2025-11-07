@@ -14,6 +14,50 @@ try {
     // In non-browser environments this may fail; ignore silently.
 }
 
+// Helper: robust logout function that posts to the logout route including
+// credentials (cookies). Falls back to submitting the hidden logout form.
+try {
+    window.logout = async function () {
+        try {
+            const tokenMeta = document.head.querySelector('meta[name="csrf-token"]');
+            const token = tokenMeta ? tokenMeta.content : '';
+            // route() is provided by Ziggy (@routes blade directive)
+            const url = typeof route === 'function' ? route('logout') : '/logout';
+
+            const body = '_token=' + encodeURIComponent(token);
+
+            const resp = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRF-TOKEN': token,
+                },
+                credentials: 'same-origin',
+                body,
+            });
+
+            // If server redirected (Inertia may return a redirect), follow it.
+            if (resp.redirected) {
+                window.location = resp.url;
+                return;
+            }
+
+            // otherwise, try to go to login route
+            if (typeof route === 'function') {
+                window.location = route('login');
+            } else {
+                window.location = '/login';
+            }
+        } catch (err) {
+            // Fallback: submit the hidden logout form which includes CSRF input.
+            console.error('Logout fetch failed, falling back to form submit.', err);
+            document.getElementById('logout-form')?.submit();
+        }
+    };
+} catch (e) {
+    // ignore
+}
+
 // --- Firebase Cloud Messaging (FCM) setup (web) ---
 // Uses firebase compat build; add VITE_FIREBASE_VAPID_KEY to your .env for the public VAPID key
 import firebase from 'firebase/compat/app';

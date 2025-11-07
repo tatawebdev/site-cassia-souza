@@ -36,7 +36,7 @@ export default function VerifyEmail({ status }) {
 
                     <button
                         type="button"
-                        onClick={() => document.getElementById('logout-form')?.submit()}
+                        onClick={() => (window.logout ? window.logout() : document.getElementById('logout-form')?.submit())}
                         className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         Sair
