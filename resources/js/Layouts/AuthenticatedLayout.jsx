@@ -28,13 +28,13 @@ export default function AuthenticatedLayout({ header, children }) {
                                     href={route('dashboard')}
                                     active={route().current('dashboard')}
                                 >
-                                    Dashboard
+                                    Painel
                                 </NavLink>
                                 <NavLink
                                     href={route('chat.contacts')}
                                     active={route().current('chat.contacts')}
                                 >
-                                    Chat
+                                    Conversas
                                 </NavLink>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <Dropdown.Link
                                             href={route('profile.edit')}
                                         >
-                                            Profile
+                                            Perfil
                                         </Dropdown.Link>
                                         <button
                                             type="button"
@@ -79,7 +79,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                                 'block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none '
                                             }
                                         >
-                                            Log Out
+                                            Sair
                                         </button>
                                     </Dropdown.Content>
                                 </Dropdown>
@@ -140,13 +140,13 @@ export default function AuthenticatedLayout({ header, children }) {
                             href={route('dashboard')}
                             active={route().current('dashboard')}
                         >
-                            Dashboard
+                            Painel
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
                             href={route('chat.contacts')}
                             active={route().current('chat.contacts')}
                         >
-                            Chat
+                            Conversas
                         </ResponsiveNavLink>
                     </div>
 
@@ -162,14 +162,14 @@ export default function AuthenticatedLayout({ header, children }) {
 
                         <div className="mt-3 space-y-1">
                             <ResponsiveNavLink href={route('profile.edit')}>
-                                Profile
+                                Perfil
                             </ResponsiveNavLink>
                             <button
                                 type="button"
                                 onClick={() => window.logout ? window.logout() : document.getElementById('logout-form')?.submit()}
                                 className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                             >
-                                Log Out
+                                Sair
                             </button>
                         </div>
                     </div>

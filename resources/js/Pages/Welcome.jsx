@@ -14,7 +14,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
     return (
         <>
-            <Head title="Welcome" />
+            <Head title="Bem-vindo" />
             <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
                 <img
                     id="background"
@@ -113,20 +113,18 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                             </div>
 
                                             <div className="pt-3 sm:pt-5 lg:pt-0">
-                                                <h2 className="text-xl font-semibold text-black dark:text-white">
-                                                    Documentation
-                                                </h2>
+                                                                <h2 className="text-xl font-semibold text-black dark:text-white">
+                                                                    Documentação
+                                                                </h2>
 
-                                                <p className="mt-4 text-sm/relaxed">
-                                                    Laravel has wonderful
-                                                    documentation covering every
-                                                    aspect of the framework.
-                                                    Whether you are a newcomer
-                                                    or have prior experience
-                                                    with Laravel, we recommend
-                                                    reading our documentation
-                                                    from beginning to end.
-                                                </p>
+                                                                <p className="mt-4 text-sm/relaxed">
+                                                                    O Laravel possui uma documentação
+                                                                    excelente cobrindo todos os aspectos
+                                                                    do framework. Se você é iniciante
+                                                                    ou já tem experiência, recomendamos
+                                                                    consultar a documentação para tirar
+                                                                    o máximo proveito da plataforma.
+                                                                </p>
                                             </div>
                                         </div>
 
@@ -169,12 +167,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
-                                            Laracasts offers thousands of video
-                                            tutorials on Laravel, PHP, and
-                                            JavaScript development. Check them
-                                            out, see for yourself, and massively
-                                            level up your development skills in
-                                            the process.
+                                            O Laracasts oferece milhares de tutoriais
+                                            em vídeo sobre Laravel, PHP e JavaScript.
+                                            Vale a pena conferir para aprimorar suas
+                                            habilidades de desenvolvimento.
                                         </p>
                                     </div>
 
@@ -218,12 +214,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
-                                            Laravel News is a community driven
-                                            portal and newsletter aggregating
-                                            all of the latest and most important
-                                            news in the Laravel ecosystem,
-                                            including new package releases and
-                                            tutorials.
+                                            Laravel News é um portal comunitário e
+                                            newsletter que reúne as notícias mais
+                                            relevantes do ecossistema Laravel,
+                                            incluindo lançamentos de pacotes e
+                                            tutoriais.
                                         </p>
                                     </div>
 
@@ -258,13 +253,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                                     <div className="pt-3 sm:pt-5">
                                         <h2 className="text-xl font-semibold text-black dark:text-white">
-                                            Vibrant Ecosystem
+                                            Ecossistema Vibrante
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
-                                            Laravel's robust library of
-                                            first-party tools and libraries,
-                                            such as{' '}
+                                            A rica coleção de ferramentas e
+                                            bibliotecas oficiais do Laravel,
+                                            como{' '}
                                             <a
                                                 href="https://forge.laravel.com"
                                                 className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]"
@@ -299,9 +294,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                             >
                                                 Herd
                                             </a>{' '}
-                                            help you take your projects to the
-                                            next level. Pair them with powerful
-                                            open source libraries like{' '}
+                                            ajudam a levar seus projetos ao
+                                            próximo nível. Combine-as com poderosas
+                                            bibliotecas open source como{' '}
                                             <a
                                                 href="https://laravel.com/docs/billing"
                                                 className="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white"
