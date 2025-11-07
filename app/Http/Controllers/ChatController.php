@@ -101,7 +101,7 @@ class ChatController extends Controller
         $result = $msgs->map(function ($m) {
             return [
                 'id' => $m->id,
-                'from' => in_array($m->remetente, ['me', 'agent', 'system']) ? 'me' : 'contact',
+                'from' => in_array($m->remetente, ['me', 'agent', 'system', 'bot']) ? 'me' : 'contact',
                 'text' => $m->mensagem,
                 'time' => $m->data_envio ? $m->data_envio->toDateTimeString() : null,
                 'status' => $m->status_mensagem,
