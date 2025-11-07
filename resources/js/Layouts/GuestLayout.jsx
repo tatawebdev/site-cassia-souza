@@ -3,16 +3,23 @@ import { Link } from '@inertiajs/react';
 
 export default function GuestLayout({ children }) {
     return (
-        <div className="flex min-h-screen flex-col items-center bg-gray-100 pt-6 sm:justify-center sm:pt-0">
-            <div>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f3f4f6] via-[#efeae6] to-[#f8f8f5] px-4 py-12">
+            {/* Logo floating on top */}
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
                 <Link href="/">
-                    <ApplicationLogo className="h-[150px] fill-current text-gray-500" />
+                    <div className="bg-white/60 backdrop-blur-sm rounded-full p-3 shadow-md border border-white/30">
+                        <ApplicationLogo className="h-20 sm:h-24 w-auto fill-current text-gray-700" />
+                    </div>
                 </Link>
             </div>
 
-            <div className="mt-6 w-full overflow-hidden bg-white px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg">
+            <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/60 backdrop-blur-md px-8 py-8 shadow-2xl">
                 {children}
             </div>
+
+            <footer className="absolute bottom-6 text-sm text-gray-500">
+                © {new Date().getFullYear()} Cassia Souza Advocacia
+            </footer>
         </div>
     );
 }
