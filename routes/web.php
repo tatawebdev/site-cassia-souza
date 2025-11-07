@@ -122,6 +122,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Dashboard API stats (used by the SPA frontend)
+Route::get('/dashboard/stats', [\App\Http\Controllers\DashboardController::class, 'stats'])
+    ->middleware(['auth'])->name('dashboard.stats');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
