@@ -4,7 +4,7 @@ return [
     'social_icons' => [
         [
             'name' => 'instagram',
-            'url' => 'https://www.instagram.com/cassiasouza.tributarista',
+            'url' => 'https://www.instagram.com/cassiasouza.tributarista/',
             'icon_class' => 'fa-brands fa-instagram social-networks a',
         ],
         [
