@@ -68,7 +68,10 @@
     "extra": {
         "laravel": {
             "dont-discover": []
-        }
+        },
+        "google/apiclient-services": [
+            "MyBusinessAccountManagement"
+        ]
     },
     "config": {
         "optimize-autoloader": true,
