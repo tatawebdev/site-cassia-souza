@@ -5,7 +5,7 @@ return [
         [
             'name' => 'instagram',
             'url' => 'https://www.instagram.com/cassiasouza.tributarista/',
-            'icon_class' => 'fa-brands fa-instagram social-networks',
+            'icon_class' => 'fa-brands fa-instagram social-networks a',
         ],
         [
             'name' => 'tiktok',
