@@ -228,7 +228,7 @@
                                 Fale conosco<i class="fa-solid fa-arrow-right"></i> </a>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
+                    <div class="col-xl-5 col-lg-4 d-none d-lg-block">
                         <div class="banner_wrapper position-relative">
                             <figure class="banner-image mb-0" data-aos="fade-up">
                                 <img src="/assets/img/banner-novo1.png" alt="advogada trabalhando" class="img-fluid">
