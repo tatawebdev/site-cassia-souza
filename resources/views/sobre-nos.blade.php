@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
-                <div class="about_content" data-aos="fade-up" style="padding: 0px;">
+                <div class="about_content" data-aos="fade-up">
                     <h6>Sobre nós</h6>
                     <h2>Especialistas em Advocacia Tributária</h2>
                     <p class="text text-size-16">
