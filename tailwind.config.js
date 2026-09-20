@@ -25,5 +25,11 @@ export default {
         },
     },
 
+    corePlugins: {
+        // As páginas Blade do site usam Bootstrap; o reset do Tailwind (preflight)
+        // quebraria esses estilos, então mantemos só as classes utilitárias.
+        preflight: false,
+    },
+
     plugins: [forms],
 };

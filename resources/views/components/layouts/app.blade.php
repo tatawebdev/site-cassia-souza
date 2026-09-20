@@ -22,9 +22,10 @@
     <link href="/assets/css/blog.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="/assets/css/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @vite(['resources/css/app.css'])
 
 
     <style>
@@ -200,7 +201,7 @@
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/aos.js"></script>
     <script src="/assets/js/owl.carousel.js"></script>
     <script src="/assets/js/carousel.js"></script>
     <script src="/assets/js/animation.js"></script>
