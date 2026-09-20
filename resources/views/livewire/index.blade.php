@@ -267,7 +267,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="consultation_content" data-aos="fade-up">
-                        <h6>Fale conosco</h6>
+                        <p class="section-label">Fale conosco</p>
                         <h2 class="text-white">Agende sua consulta agora!</h2>
                         {{-- Formulário Livewire que envia e-mail --}}
                         <livewire:contact-form />

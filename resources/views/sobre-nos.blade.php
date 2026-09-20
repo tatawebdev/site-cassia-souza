@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
                 <div class="about_content" data-aos="fade-up">
-                    <h6>Sobre nós</h6>
+                    <p class="section-label">Sobre nós</p>
                     <h2>Especialistas em Advocacia Tributária</h2>
                     <p class="text text-size-16">
                         O sistema tributário brasileiro é extremamente complexo. Para muitos empresários, lidar com

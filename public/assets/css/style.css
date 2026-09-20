@@ -111,6 +111,32 @@ h6 {
     color: var(--e-global-color-accent);
 }
 
+/* Decorative section kicker/eyebrow — visual label, not a real heading level */
+.section-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    position: relative;
+    display: block;
+    padding-left: 34px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--e-global-color-accent);
+    margin-bottom: 0;
+}
+
+.section-label::before {
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 23px;
+    height: 2px;
+    position: absolute;
+    background-color: var(--e-global-color-accent);
+}
+
 p {
     font-size: 20px;
     line-height: 30px;
@@ -794,13 +820,13 @@ h6:before {
     padding: 124px 0 125px 34px;
 }
 
-.consultation-con .consultation_content h6 {
+.consultation-con .consultation_content .section-label {
     margin-bottom: 20px;
     padding-left: 38px;
     color: var(--e-global-color-secondary);
 }
 
-.consultation-con .consultation_content h6::before {
+.consultation-con .consultation_content .section-label::before {
     background-color: var(--e-global-color-secondary);
 }
 
@@ -866,7 +892,7 @@ h6:before {
 .consultation-con .consultation_content input:focus,
 .consultation-con .consultation_content textarea:focus,
 .consultation-con .consultation_content select:focus {
-    box-shadow: 1px 1px 57px rgb(239 218 199 / 24%);
+    box-shadow: 0 0 0 3px rgb(239 218 199 / 45%);
 }
 
 .consultation-con .consultation_content .appointment {
@@ -1514,7 +1540,7 @@ h6:before {
 }
 
 .footer-con .upper_portion input:focus {
-    box-shadow: 1px 1px 57px rgb(239 218 199 / 24%);
+    box-shadow: 0 0 0 3px rgb(239 218 199 / 45%);
 }
 
 .footer-con .upper_portion button {
@@ -1723,7 +1749,7 @@ h6:before {
     text-align: center;
     border-radius: 30px;
     background-color: var(--e-global-color-accent);
-    box-shadow: 1px 1px 57px rgb(239 218 199 / 24%);
+    box-shadow: 0 0 0 3px rgb(239 218 199 / 45%);
     position: relative;
     display: none;
 }
@@ -1755,7 +1781,7 @@ h6:before {
 
 #fixed-form-container .body input:focus,
 #fixed-form-container .body textarea:focus {
-    box-shadow: 1px 1px 57px rgb(239 218 199 / 24%);
+    box-shadow: 0 0 0 3px rgb(239 218 199 / 45%);
 }
 
 #fixed-form-container .body .submit_now {
@@ -1949,7 +1975,7 @@ h6:before {
     margin-bottom: 52px;
 }
 
-.faq-con .faq_content h6 {
+.faq-con .faq_content .section-label {
     width: 115px;
     margin: 0 auto 19px;
     text-align: left;
@@ -1964,9 +1990,9 @@ h6:before {
     padding: 0 45px;
 }
 
-.faq-con .faq h5 {
+.faq-con .faq h3 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 22px;
     font-weight: 700;
     margin-bottom: 0;
     display: inline-block;
@@ -1981,11 +2007,11 @@ h6:before {
     border: 1px solid var(--e-global-color-very-light-gray);
 }
 
-.faq-con .accordion-card .btn-link h5 {
+.faq-con .accordion-card .btn-link h3 {
     color: var(--e-global-color-very-soft-orange);
 }
 
-.faq-con .accordion-card .collapsed h5 {
+.faq-con .accordion-card .collapsed h3 {
     color: var(--e-global-color-primary);
 }
 
@@ -2535,7 +2561,10 @@ h6:before {
     height: 100%;
 }
 
-.practice-con .practice-box h5 {
+.practice-con .practice-box h3 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
     margin: 6px 0 10px;
     color: var(--e-global-color-primary);
     transition: all 0.3s ease-in-out;
@@ -2764,7 +2793,7 @@ h6:before {
     padding: 46px 45px 0 30px;
 }
 
-.aboutpage-con .about_content h6 {
+.aboutpage-con .about_content .section-label {
     margin-bottom: 18px;
     padding-left: 38px;
 }
@@ -3996,7 +4025,7 @@ h6:before {
 .legal_matter_footer .contact_portion .contact_content input:focus,
 .legal_matter_footer .contact_portion .contact_content textarea:focus,
 .legal_matter_footer .contact_portion .contact_content select:focus {
-    box-shadow: 1px 1px 57px rgb(239 218 199 / 24%);
+    box-shadow: 0 0 0 3px rgb(239 218 199 / 45%);
 }
 
 .legal_matter_footer .contact_portion .contact_content .appointment {
