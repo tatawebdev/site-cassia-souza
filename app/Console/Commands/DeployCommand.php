@@ -107,7 +107,7 @@ class DeployCommand extends Command
             'cd '.escapeshellarg($config['path']),
             'git fetch origin '.escapeshellarg($config['branch']),
             'git reset --hard '.escapeshellarg('origin/'.$config['branch']),
-            escapeshellarg($config['composer_path']).' install --no-dev --optimize-autoloader',
+            $phpBin.' '.escapeshellarg($config['composer_path']).' install --no-dev --optimize-autoloader',
             $phpBin.' artisan config:clear',
             $phpBin.' artisan cache:clear',
             $phpBin.' artisan route:clear',
