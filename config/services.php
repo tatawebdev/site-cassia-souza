@@ -42,4 +42,19 @@ return [
     'places' => [
         'key' => env('GOOGLE_PLACES_KEY'),
     ],
+
+    'deploy' => [
+        'host' => env('DEPLOY_SSH_HOST'),
+        'user' => env('DEPLOY_SSH_USER'),
+        'port' => env('DEPLOY_SSH_PORT', 22),
+        'key' => env('DEPLOY_SSH_KEY'),
+        'path' => env('DEPLOY_SERVER_PATH'),
+        'branch' => env('DEPLOY_BRANCH', 'main'),
+        // O `php` padrão do servidor é a versão 5.6 (legado, pra sites antigos
+        // na mesma conta). O Laravel roda com o binário alternativo abaixo.
+        'php_bin' => env('DEPLOY_PHP_BIN', 'php'),
+        // Não há `composer` no PATH do servidor; usa-se um composer.phar já
+        // instalado manualmente na conta.
+        'composer_path' => env('DEPLOY_COMPOSER_PATH'),
+    ],
 ];
