@@ -121,7 +121,7 @@ Route::get('/download/review-images2', function (PlacesService $places) {
     }
 
     return response()->download($zipFilename)->deleteFileAfterSend(true);
-})->name('download.review.images');
+})->name('download.review.images.zip');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

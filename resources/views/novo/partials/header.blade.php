@@ -18,6 +18,8 @@
         <nav id="csNav" aria-label="Principal" :class="menu ? 'flex' : 'hidden'"
             class="hidden basis-full flex-col items-start gap-5 pb-2 pt-4 lg:!flex lg:basis-auto lg:flex-row lg:items-center lg:gap-10 lg:p-0">
             <ul class="flex w-full flex-col gap-1 lg:w-auto lg:flex-row lg:gap-8">
+                <li><a href="{{ route('inicio') }}" @if (request()->routeIs('inicio')) aria-current="page" @endif
+                        class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-champagne aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8">Home</a></li>
                 <li><a href="/sobre-nos" class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne">Sobre</a></li>
                 <li class="relative" @click.outside="servicos = false" @keydown.escape.window="servicos = false">
                     <button type="button" @click="servicos = !servicos" :aria-expanded="servicos.toString()"

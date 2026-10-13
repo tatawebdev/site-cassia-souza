@@ -1,3 +1,6 @@
+# A raiz "/" precisa abrir o index.php (sem isto o servidor respondia 403)
+DirectoryIndex index.php
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
