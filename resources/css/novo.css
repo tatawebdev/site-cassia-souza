@@ -1,0 +1,108 @@
+@config "../../tailwind.novo.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-white font-sans text-ink antialiased;
+    }
+
+    :focus-visible {
+        @apply outline outline-2 outline-offset-[3px] outline-gold-ink;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+@layer components {
+    .cs-wrap {
+        @apply mx-auto w-full max-w-[1240px] px-[clamp(16px,4vw,48px)];
+    }
+
+    /* Fundo roxo com profundidade: luz no alto à esquerda, escurecendo para baixo */
+    .cs-plum-bg {
+        background:
+            radial-gradient(120% 90% at 12% 0%, theme('colors.plum.bright') 0%, transparent 60%),
+            linear-gradient(160deg, theme('colors.plum.DEFAULT') 0%, theme('colors.plum.deep') 100%);
+    }
+
+    /*
+     * Formulário de contato: componente Livewire compartilhado com o tema
+     * antigo, então a marcação (form-group, form_style...) é estilizada daqui.
+     */
+    .cs-form form {
+        @apply grid grid-cols-1 gap-4 sm:grid-cols-2;
+    }
+
+    .cs-form .form-group.message,
+    .cs-form .form-group.recaptcha,
+    .cs-form button {
+        @apply sm:col-span-2;
+    }
+
+    .cs-form .form_style,
+    .cs-form select {
+        @apply h-[52px] w-full rounded-lg border border-line bg-mist px-4 text-base text-plum-night transition-colors placeholder:text-ink-soft focus:border-plum focus:bg-white focus:outline-none;
+    }
+
+    .cs-form textarea.form_style {
+        @apply h-32 resize-y py-3;
+    }
+
+    .cs-form .text-danger {
+        @apply mt-1.5 block text-sm text-red-700;
+    }
+
+    .cs-form .alert {
+        @apply mb-4 rounded-lg px-4 py-3 text-sm;
+    }
+
+    .cs-form .alert-success {
+        @apply bg-green-50 text-green-800;
+    }
+
+    .cs-form .alert-danger {
+        @apply bg-red-50 text-red-800;
+    }
+
+    .cs-form button.appointment {
+        @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-plum px-7 py-4 text-base font-semibold text-white transition hover:bg-plum-deep active:scale-[0.98];
+    }
+
+    .cs-form button.appointment i {
+        @apply hidden;
+    }
+
+    /* Newsletter do rodapé (componente Livewire compartilhado) */
+    .cs-newsletter form .form-group {
+        @apply flex flex-col gap-3 sm:flex-row;
+    }
+
+    .cs-newsletter .form_style {
+        @apply h-[52px] w-full rounded-full border border-white/20 bg-white/10 px-5 text-base text-white placeholder:text-on-plum/70 focus:border-champagne focus:outline-none;
+    }
+
+    .cs-newsletter button {
+        @apply h-[52px] shrink-0 rounded-full bg-champagne px-6 font-semibold text-plum-night transition hover:bg-champagne-light;
+    }
+
+    .cs-newsletter button i {
+        @apply hidden;
+    }
+
+    .cs-newsletter .text-danger {
+        @apply mt-2 text-sm text-red-200;
+    }
+
+    .cs-newsletter .alert {
+        @apply mb-3 rounded-lg bg-white/10 px-4 py-2 text-sm text-white;
+    }
+}

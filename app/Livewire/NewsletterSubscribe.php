@@ -7,15 +7,32 @@ use App\Models\NewsletterSubscriber;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewsletterConfirmationMail;
 use App\Mail\NewsletterNotificationMail;
+use App\Rules\Recaptcha;
 
 class NewsletterSubscribe extends Component
 {
     public $email;
     public $source;
 
-    protected $rules = [
-        'email' => 'required|email|unique:newsletter_subscribers,email',
-    ];
+    /** Resposta do reCAPTCHA v2, preenchida ao confirmar "Não sou um robô". */
+    public $recaptcha = '';
+
+    protected function rules(): array
+    {
+        // E-mail já inscrito é tratado em subscribe(), com aviso amigável
+        $rules = ['email' => 'required|email'];
+
+        if (config('services.recaptcha.site_key')) {
+            $rules['recaptcha'] = ['required', new Recaptcha()];
+        }
+
+        return $rules;
+    }
+
+    protected function messages(): array
+    {
+        return ['recaptcha.required' => 'Confirme que você não é um robô.'];
+    }
 
     public function mount($source = null)
     {
@@ -24,6 +41,13 @@ class NewsletterSubscribe extends Component
 
     public function subscribe()
     {
+        try {
+            $this->validate();
+        } finally {
+            // A resposta do reCAPTCHA só vale uma vez
+            $this->recaptcha = '';
+            $this->dispatch('newsletter-recaptcha-reset');
+        }
 
         try {
 

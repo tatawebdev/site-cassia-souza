@@ -13,7 +13,7 @@ class Index extends Component
     {
         $this->servicos = \App\Services\ServicoService::getServicos();
         $this->mockup = \App\Services\PlacesService::getMockedReviews();
-        return view('livewire.index')->layout('components.layouts.home');
+        return view('antigo.home')->layout('antigo.layout');
     }
 
 // PALETA DE CORES

@@ -43,6 +43,13 @@ return [
         'key' => env('GOOGLE_PLACES_KEY'),
     ],
 
+    // reCAPTCHA v2 ("Não sou um robô") do formulário de contato.
+    // Sem a chave do site, o formulário funciona sem reCAPTCHA.
+    'recaptcha' => [
+        'site_key' => env('RECAPTCHA_SITE_KEY'),
+        'secret_key' => env('RECAPTCHA_SECRET_KEY'),
+    ],
+
     'deploy' => [
         'host' => env('DEPLOY_SSH_HOST'),
         'user' => env('DEPLOY_SSH_USER'),

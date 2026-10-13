@@ -15,7 +15,12 @@ use Inertia\Inertia;
 Route::get('/login', function () {
     return redirect()->route('login');
 });
-Route::get('/', \App\Livewire\Index::class)->name('inicio');
+// Home no tema novo (Tailwind). A antiga (Bootstrap) fica em /antigo enquanto
+// as demais páginas migram uma a uma.
+Route::view('/', 'novo.home')->name('inicio');
+Route::get('/antigo', \App\Livewire\Index::class)->name('antigo.inicio');
+Route::redirect('/novo', '/', 301);
+
 Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
 Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
 Route::get('/servicos', \App\Livewire\Servicos::class)->name('servicos');

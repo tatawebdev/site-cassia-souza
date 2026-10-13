@@ -2008,7 +2008,9 @@ h6:before {
 }
 
 .faq-con .accordion-card .btn-link h3 {
-    color: var(--e-global-color-very-soft-orange);
+    /* Darker than --e-global-color-very-soft-orange to keep the warm accent
+       while meeting 4.5:1 text contrast on the white card background. */
+    color: #8a5c17;
 }
 
 .faq-con .accordion-card .collapsed h3 {
@@ -2059,7 +2061,7 @@ h6:before {
     position: absolute;
     display: inline-block;
     font-family: 'FontAwesome';
-    color: var(--e-global-color-very-soft-orange);
+    color: #8a5c17;
 }
 
 .faq-con .accordion-card .collapsed:before {
@@ -2528,6 +2530,12 @@ h6:before {
 .practice-con .practice_content h2 {
     margin-bottom: 30px;
     color: var(--e-global-color-primary);
+}
+
+/* 7 services don't fill an even grid; center the dangling last row
+   instead of leaving a single card stranded flush-left. */
+.practice-con .row.services-row {
+    justify-content: center;
 }
 
 .practice-con .box {

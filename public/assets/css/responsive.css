@@ -175,6 +175,7 @@ h1 {font-size: 58px; line-height: 66px;}
 .faq-con {padding: 100px 0;}
 .faq-con .faq_content {margin-bottom: 50px;}
 .faq-con .faq_content h6 {margin-bottom: 18px;}
+.faq-con .faq_content .section-label {margin-bottom: 18px;}
 .faq-con .faq_content h2 {margin-bottom: 25px;}
 .faq_testimonial-con {padding: 100px 0 170px;}
 .faq_testimonial-con .faq_testimonial_content {margin-bottom: 85px;}
@@ -205,6 +206,7 @@ h1 {font-size: 58px; line-height: 66px;}
 .practice-con .practice_content h2 {margin-bottom: 25px;}
 .practicearea-faq {padding: 100px 0 170px;}
 .practicearea-faq .faq_content h6 {margin-bottom: 15px;}
+.practicearea-faq .faq_content .section-label {margin-bottom: 15px;}
 .practicearea-faq .faq_content h2 {margin-bottom: 20px;}
 .practicearea-faq .faq_content p {margin-bottom: 35px;}
 .practicearea-faq .practicearea-faqimage {right: -70px; top: 20px;}
@@ -403,6 +405,7 @@ h5 {font-size: 18px; line-height: 28px;}
 .faq-con {padding: 80px 0;}
 .faq-con .faq_content {margin-bottom: 35px;}
 .faq-con .faq_content h6 {margin-bottom: 15px;}
+.faq-con .faq_content .section-label {margin-bottom: 15px;}
 .faq-con .faq_content h2 {margin-bottom: 20px;}
 .faq-con .faq {padding: 0;}
 .faq-con .accordian-inner .card-header {padding: 13px 35px 16px 18px;}
@@ -457,11 +460,13 @@ h5 {font-size: 18px; line-height: 28px;}
 .practice-con .practice-box .icon {margin-bottom: 15px;}
 .practice-con .practice-box .icon img {width: 46px;}
 .practice-con .practice-box h5 {margin-bottom: 8px;}
+.practice-con .practice-box h3 {margin-bottom: 8px;}
 .practice-con .practice-box p {margin-bottom: 20px;}
 .practice-con .practice-box i {width: 38px; height: 38px; line-height: 38px;}
 .practicearea-faq {padding: 80px 0 150px;}
 .practicearea-faq .left_column{padding-right: 0;}
 .practicearea-faq .faq_content h6 {margin-bottom: 10px;}
+.practicearea-faq .faq_content .section-label {margin-bottom: 10px;}
 .practicearea-faq .faq_content h2 {margin-bottom: 15px;}
 .practicearea-faq .faq_content p {margin-bottom: 30px;}
 .practicearea-faq .practicearea-faqimage {right: -85px; top: 30px;}
@@ -782,6 +787,7 @@ button:focus {outline: none;}
 .faq-con {padding: 60px 0;}
 .faq-con .faq_content {margin-bottom: 30px;}
 .faq-con .faq_content h6 {margin-bottom: 10px;}
+.faq-con .faq_content .section-label {margin-bottom: 10px;}
 .faq-con .faq_content h2 {margin-bottom: 15px;}
 .faq-con .accordian-inner .card-header {padding: 12px 38px 11px 16px;}
 .faq-con .faq h5 {font-size: 16px; line-height: 20px;}
@@ -846,6 +852,7 @@ button:focus {outline: none;}
 .practicearea-faq {padding: 60px 0 140px;}
 .practicearea-faq .faq_content {text-align: center;}
 .practicearea-faq .faq_content h6 {width: 115px; margin-bottom: 6px;}
+.practicearea-faq .faq_content .section-label {width: 115px; margin-bottom: 6px;}
 .practicearea-faq .faq_content h2 {margin-bottom: 12px;}
 .practicearea-faq .faq_content p {margin-bottom: 25px; padding: 0 45px;}
 .practicearea-faq .practicearea-faqimage {display: none;}
@@ -1124,6 +1131,7 @@ a {font-size: 14px; line-height: 14px;}
 .faq-con {padding: 40px 0 20px;}
 .faq-con .faq_content {margin-bottom: 26px;}
 .faq-con .faq_content h6 {margin-bottom: 8px;}
+.faq-con .faq_content .section-label {margin-bottom: 8px;}
 .faq-con .faq_content h2 {margin-bottom: 12px;}
 .faq-con .accordion-card {margin-bottom: 20px !important;}
 .faq-con .accordian-inner .card-header {padding: 10px 40px 12px 16px;}
@@ -1184,6 +1192,7 @@ a {font-size: 14px; line-height: 14px;}
 .practice-con .practice-box i {font-size: 12px; width: 34px; height: 34px; line-height: 34px;}
 .practicearea-faq {padding: 40px 0 100px;}
 .practicearea-faq .faq_content h6 {margin-bottom: 8px;}
+.practicearea-faq .faq_content .section-label {margin-bottom: 8px;}
 .practicearea-faq .faq_content p {margin-bottom: 26px; padding: 0;}
 /* About Page */
 .aboutpage-con {padding: 40px 0 65px;}
@@ -1398,6 +1407,7 @@ h6 {font-size: 12px; line-height: 18px;}
 .faq-con {padding: 40px 0 25px;}
 .faq-con .faq_content {margin-bottom: 25px;}
 .faq-con .faq_content h6 {margin-bottom: 6px;}
+.faq-con .faq_content .section-label {margin-bottom: 6px;}
 .faq-con .faq_content h2 {margin-bottom: 10px;}
 .faq-con .accordion-card {margin-bottom: 15px !important;}
 .faq-con .faq h5 {font-size: 15px; line-height: 20px;}
@@ -1434,6 +1444,7 @@ h6 {font-size: 12px; line-height: 18px;}
 .practice-con .box {padding:0px; min-height: auto; width: 330px; margin: 0 auto 15px;}
 .practicearea-faq {padding: 40px 0 105px;}
 .practicearea-faq .faq_content h6 {margin-bottom: 5px;}
+.practicearea-faq .faq_content .section-label {margin-bottom: 5px;}
 .practicearea-faq .faq_content h2 {margin-bottom: 10px;}
 .practicearea-faq .faq_content p {margin-bottom: 22px;}
 /* About Page */
