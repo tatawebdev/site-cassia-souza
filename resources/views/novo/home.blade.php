@@ -84,7 +84,7 @@
         <section aria-labelledby="sobre-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                 <figure class="relative mx-auto m-0 w-full max-w-[460px]">
-                    <img src="/assets/img/parceria.png" alt="Cássia Souza, advogada tributarista, sorrindo em frente ao notebook" loading="lazy"
+                    <img src="/assets/img/parceria.jpg" alt="Cássia Souza, advogada tributarista" loading="lazy"
                         width="860" height="968"
                         class="block aspect-[860/968] h-auto w-full rounded-2xl object-cover shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                     <figcaption class="absolute -bottom-6 left-6 right-6 rounded-xl bg-plum-night px-6 py-5 text-white shadow-[0_24px_48px_-16px_rgba(36,4,31,0.45)] sm:-right-8 sm:left-auto sm:max-w-[300px]">
