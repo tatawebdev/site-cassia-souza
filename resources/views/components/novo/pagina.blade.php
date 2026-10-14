@@ -11,7 +11,7 @@
     'descricao' => null,
     // Último item é a página atual (sem url)
     'breadcrumbs' => [],
-    // Título da aba; padrão: "<titulo> | Cássia Souza Advocacia"
+    // Título da aba; padrão: "<titulo> | Cassia Souza Advocacia"
     'tituloAba' => null,
     // Foto de fundo do banner (a mesma da página antiga, em /assets/images)
     'imagem' => null,
@@ -25,7 +25,7 @@
     'schema' => [],
 ])
 
-<x-novo.layout :title="$tituloAba ?? $titulo.' | Cássia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cássia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
+<x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
     :breadcrumbs="$breadcrumbs" :tipo-pagina="$tipoPagina" :schema="$schema">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])

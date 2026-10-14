@@ -1,4 +1,4 @@
-{{-- Avaliações reais do perfil da Cássia no Google, em config/avaliacoes.php
+{{-- Avaliações reais do perfil da Cassia no Google, em config/avaliacoes.php
      (gerado por: php artisan avaliacoes:importar pagina.html).
 
      Carrossel centralizado e infinito: o card do meio em destaque; cada card

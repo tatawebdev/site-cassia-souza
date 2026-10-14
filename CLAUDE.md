@@ -1,4 +1,4 @@
-# Site Cássia Souza Advocacia
+# Site Cassia Souza Advocacia
 
 Laravel 12 + Livewire 3. Site institucional público + painel (Inertia/React, atrás de login).
 Contexto de produto, público e regras de conteúdo: [PRODUCT.md](PRODUCT.md).
@@ -37,7 +37,7 @@ em `config/faqs.php`), contato (`/contato`), política de privacidade (`/politic
 - CSS: `resources/css/novo.css` + `tailwind.novo.config.js` (preflight ligado, só escaneia o tema novo).
   Depois de mudar o config do Tailwind, reinicie o `composer dev`: o Vite não recarrega o config.
 - Identidade: roxo `plum` #590854 (em degradê `cs-plum-bg`), `champagne` #EFCF9F, fundo `mist`;
-  títulos em Newsreader 600, texto em Public Sans. Visual rico (fotos reais da Cássia, cards,
+  títulos em Newsreader 600, texto em Public Sans. Visual rico (fotos reais da Cassia, cards,
   profundidade); evitar selos/rótulos decorativos e "cara de template".
 - Menu/JS: Alpine (vem com o Livewire). Sem Bootstrap/jQuery no tema novo.
 - Serviços (menu, home, rodapé): `config/servicos.php`.
@@ -57,8 +57,8 @@ faz 301 para `/advocacia-tributaria/{localidade}`. Para editar textos ou liberar
 
 ## Avaliações do Google
 
-Não há API: o perfil da Cássia é de área de atendimento e a Places API não devolve os textos.
-Fluxo: salvar a página "Ler avaliações" do Perfil da Empresa (logado na conta da Cássia, depois
+Não há API: o perfil da Cassia é de área de atendimento e a Places API não devolve os textos.
+Fluxo: salvar a página "Ler avaliações" do Perfil da Empresa (logado na conta da Cassia, depois
 de rolar até carregar todas) e rodar `php artisan avaliacoes:importar arquivo.html`. Isso gera
 `config/avaliacoes.php` (só 4+ estrelas, sem as respostas) e baixa as fotos para
 `public/assets/avaliacoes/`; ambos vão pelo Git no deploy.

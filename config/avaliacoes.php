@@ -1,6 +1,6 @@
 <?php
 
-// Avaliações do perfil da Cássia no Google. Gerado por
+// Avaliações do perfil da Cassia no Google. Gerado por
 // "php artisan avaliacoes:importar <html>" — não editar à mão.
 
 return [

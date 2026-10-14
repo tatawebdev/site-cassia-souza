@@ -21,14 +21,14 @@
 $tributarista = [
     [
         'Em {local}, como em qualquer lugar do país, a pergunta de quem empreende costuma ser a mesma: estou pagando o tributo certo, no regime certo? A resposta depende das atividades, do faturamento e da forma como a empresa está organizada.',
-        'A Cássia Souza é advogada tributarista inscrita na OAB/SP e atende empresas de todos os portes e segmentos. O trabalho começa entendendo a operação da empresa para indicar o caminho tributário que faz sentido para ela.',
+        'A Cassia Souza é advogada tributarista inscrita na OAB/SP e atende empresas de todos os portes e segmentos. O trabalho começa entendendo a operação da empresa para indicar o caminho tributário que faz sentido para ela.',
     ],
     [
         'Para quem empreende em {local_uf}, os tributos são um dos maiores custos do negócio, e boa parte das dúvidas só aparece quando algo já deu errado: um débito, uma cobrança, uma mudança de regime.',
         'Com uma advogada tributarista acompanhando a empresa, essas questões são vistas antes: o enquadramento, os créditos que podem ser recuperados e o que a Reforma Tributária muda na rotina.',
     ],
     [
-        'A Cássia Souza atende empresas de {local} que querem entender a própria carga tributária e tomar decisões com segurança jurídica, sem juridiquês.',
+        'A Cassia Souza atende empresas de {local} que querem entender a própria carga tributária e tomar decisões com segurança jurídica, sem juridiquês.',
         'Do planejamento do regime à regularização de débitos com a União, cada caso é analisado a partir dos documentos e da realidade da empresa, e não de fórmulas prontas.',
     ],
 ];
@@ -36,7 +36,7 @@ $tributarista = [
 $advocacia = [
     [
         'A advocacia tributária cuida da relação entre a empresa e o Fisco: o regime em que ela está, os tributos que recolhe, os créditos que pode recuperar e as dívidas que precisa resolver.',
-        'Para empresas de {local_uf}, a Cássia Souza Advocacia faz esse acompanhamento de forma consultiva e preventiva, com linguagem simples e decisões explicadas passo a passo.',
+        'Para empresas de {local_uf}, a Cassia Souza Advocacia faz esse acompanhamento de forma consultiva e preventiva, com linguagem simples e decisões explicadas passo a passo.',
     ],
     [
         'Pagar apenas o que é devido exige conhecer bem a legislação e a operação da empresa. É nesse ponto que a advocacia tributária ajuda quem empreende em {local}.',
@@ -44,21 +44,21 @@ $advocacia = [
     ],
     [
         'Comércio, serviços, indústria e saúde têm desafios tributários diferentes, mas, para qualquer empresa de {local}, o ponto de partida é o mesmo: saber onde ela está hoje e para onde pode ir dentro da lei.',
-        'A Cássia Souza Advocacia Tributária atende esses negócios com consultoria contínua ou em frentes específicas, como planejamento, recuperação de créditos e regularização de débitos.',
+        'A Cassia Souza Advocacia Tributária atende esses negócios com consultoria contínua ou em frentes específicas, como planejamento, recuperação de créditos e regularização de débitos.',
     ],
 ];
 
 $escritorio = [
     [
         'Procurar um escritório de advocacia tributária é, quase sempre, procurar alguém que entenda a sua empresa antes de propor qualquer mudança.',
-        'O escritório Cássia Souza Advocacia atende empresas de {local_uf} com análise do regime tributário, recuperação de créditos, regularização de débitos e acompanhamento mensal.',
+        'O escritório Cassia Souza Advocacia atende empresas de {local_uf} com análise do regime tributário, recuperação de créditos, regularização de débitos e acompanhamento mensal.',
     ],
     [
         'Empresários de {local} chegam ao escritório com perguntas diferentes: se o Simples Nacional ainda compensa, se há tributo pago a mais, como negociar uma dívida com a União.',
         'Cada pergunta começa com uma conversa e com a análise dos documentos da empresa. Só depois vem a recomendação, explicada sem juridiquês.',
     ],
     [
-        'O escritório Cássia Souza Advocacia Tributária trabalha só com direito tributário, para empresas de todos os portes e segmentos, inclusive de {local}.',
+        'O escritório Cassia Souza Advocacia Tributária trabalha só com direito tributário, para empresas de todos os portes e segmentos, inclusive de {local}.',
         'O foco é prevenção: acompanhar a empresa para que ela pague o que é devido, aproveite o que a lei permite e não seja surpreendida por autuações.',
     ],
 ];
@@ -66,7 +66,7 @@ $escritorio = [
 $planejamento = [
     [
         'O planejamento tributário começa por uma pergunta simples: a sua empresa está no regime que faz mais sentido para ela? Simples Nacional, Lucro Presumido e Lucro Real têm regras diferentes, e a escolha muda o quanto se paga.',
-        'Para empresas de {local_uf}, a Cássia Souza faz esse estudo com base no faturamento, nas atividades e nas despesas da empresa, inclusive para quem ainda vai abrir o CNPJ.',
+        'Para empresas de {local_uf}, a Cassia Souza faz esse estudo com base no faturamento, nas atividades e nas despesas da empresa, inclusive para quem ainda vai abrir o CNPJ.',
     ],
     [
         'Muitas empresas de {local} continuam no mesmo regime tributário desde a abertura, mesmo depois de crescer ou mudar de atividade.',
@@ -74,14 +74,14 @@ $planejamento = [
     ],
     [
         'Com a Reforma Tributária em andamento, o planejamento tributário deixou de ser uma decisão tomada uma vez só. As regras mudam até 2033, e a empresa precisa acompanhar.',
-        'A Cássia Souza ajuda empresários de {local} a entender o efeito dessas mudanças no próprio negócio e a planejar a transição com antecedência.',
+        'A Cassia Souza ajuda empresários de {local} a entender o efeito dessas mudanças no próprio negócio e a planejar a transição com antecedência.',
     ],
 ];
 
 $consultoria = [
     [
         'Consultoria tributária é ter alguém acompanhando a parte fiscal da empresa todo mês: revisando movimentações, apontando riscos e respondendo dúvidas antes que virem problema.',
-        'A Cássia Souza oferece esse acompanhamento para empresas de {local_uf}, em conjunto com a contabilidade da empresa.',
+        'A Cassia Souza oferece esse acompanhamento para empresas de {local_uf}, em conjunto com a contabilidade da empresa.',
     ],
     [
         'Uma dúvida tributária não espera o fim do ano. Empresas de {local} tomam decisões todos os dias que mudam o tributo a pagar: um novo produto, um novo contrato, uma nova filial.',
@@ -96,7 +96,7 @@ $consultoria = [
 $defesa = [
     [
         'Diante de uma cobrança do Fisco ou de débitos inscritos em Dívida Ativa, o primeiro passo é entender exatamente o que está sendo cobrado e quais caminhos a lei oferece.',
-        'A Cássia Souza atende empresas de {local_uf} na análise desses débitos e na negociação com a Procuradoria-Geral da Fazenda Nacional (PGFN).',
+        'A Cassia Souza atende empresas de {local_uf} na análise desses débitos e na negociação com a Procuradoria-Geral da Fazenda Nacional (PGFN).',
     ],
     [
         'Débitos com a União podem ser regularizados por caminhos previstos em lei, com descontos e parcelamentos, o que evita execução fiscal, bloqueio de contas e penhora de bens.',
@@ -104,7 +104,7 @@ $defesa = [
     ],
     [
         'Uma pendência fiscal não precisa travar a empresa. Com a análise certa, é possível entender o tamanho real do débito e negociar condições compatíveis com o caixa.',
-        'A Cássia Souza atende empresas de {local} nessa regularização, com explicações claras sobre cada etapa.',
+        'A Cassia Souza atende empresas de {local} nessa regularização, com explicações claras sobre cada etapa.',
     ],
 ];
 
@@ -114,7 +114,7 @@ $termo = fn (string $nome, string $h1, string $servico, array $introducoes, stri
     'nome' => $nome,
     'servico' => $servico,
     'h1' => $h1,
-    'titulo_seo' => $nome.' em {local_uf} | Cássia Souza Advocacia',
+    'titulo_seo' => $nome.' em {local_uf} | Cassia Souza Advocacia',
     'descricao_seo' => $descricao,
     'subtitulo' => $subtitulo,
     'introducoes' => $introducoes,
@@ -124,13 +124,13 @@ $termo = fn (string $nome, string $h1, string $servico, array $introducoes, stri
 
 $subAdvocacia = 'Planejamento tributário, recuperação de créditos e regularização de débitos para empresas de {local}, com {atendimento}.';
 $descAdvocacia = 'Advocacia tributária para empresas de {local_uf}: planejamento tributário, recuperação de PIS/COFINS, regularização de débitos na PGFN e Reforma Tributária.';
-$subTributarista = 'A Cássia Souza é advogada tributarista (OAB/SP) e atende empresas de {local}, com {atendimento}.';
+$subTributarista = 'A Cassia Souza é advogada tributarista (OAB/SP) e atende empresas de {local}, com {atendimento}.';
 $descTributarista = 'Advogada tributarista para empresas de {local_uf}: regime tributário, créditos de PIS/COFINS, débitos com a União e Reforma Tributária.';
 
 return [
     'termos' => [
         'advocacia-tributaria' => $termo('Advocacia tributária', 'Advocacia tributária em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, true),
-        'cassia-souza-advocacia' => $termo('Cássia Souza Advocacia', 'Cássia Souza Advocacia em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
+        'cassia-souza-advocacia' => $termo('Cassia Souza Advocacia', 'Cassia Souza Advocacia em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'direito-tributario-advocacia' => $termo('Direito tributário', 'Direito tributário para empresas de {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'advocacia-tributaria-empresarial' => $termo('Advocacia tributária empresarial', 'Advocacia tributária empresarial em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'advocacia-empresarial-e-tributaria' => $termo('Advocacia empresarial e tributária', 'Advocacia tributária para empresas de {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
@@ -176,7 +176,7 @@ return [
         'atendimento_online' => [
             'titulo' => 'Atendimento online para empresas de {local}',
             'paragrafos' => [
-                'A Cássia Souza atende empresas de todo o Brasil de forma online, com reuniões por videochamada e contato direto pelo WhatsApp e pelo e-mail, sem precisar ir até o escritório, em Suzano (SP).',
+                'A Cassia Souza atende empresas de todo o Brasil de forma online, com reuniões por videochamada e contato direto pelo WhatsApp e pelo e-mail, sem precisar ir até o escritório, em Suzano (SP).',
                 'O primeiro contato pode ser pelo WhatsApp, pelo e-mail ou pelo formulário desta página.',
             ],
         ],
@@ -193,7 +193,7 @@ return [
             [
                 'titulo' => 'Por onde começar',
                 'paragrafos' => [
-                    'O primeiro passo é uma conversa sobre a empresa: atividade, faturamento, regime atual e o que está preocupando. A partir disso, a Cássia indica se o caso pede planejamento, recuperação de créditos, regularização de débitos ou acompanhamento mensal.',
+                    'O primeiro passo é uma conversa sobre a empresa: atividade, faturamento, regime atual e o que está preocupando. A partir disso, a Cassia indica se o caso pede planejamento, recuperação de créditos, regularização de débitos ou acompanhamento mensal.',
                 ],
             ],
         ],

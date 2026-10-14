@@ -4,7 +4,7 @@ namespace App\Support;
 
 /**
  * Dados estruturados (JSON-LD, schema.org) do tema novo. O layout sempre publica o
- * escritório, a Cássia e o site; cada página soma os seus nós (breadcrumb, serviço,
+ * escritório, a Cassia e o site; cada página soma os seus nós (breadcrumb, serviço,
  * perguntas frequentes) pela prop "schema" de <x-novo.layout> / <x-novo.pagina>.
  *
  * Só fatos confirmados: sem endereço de rua (não publicado no site) e sem nota de
@@ -27,7 +27,7 @@ class Schema
             [
                 '@type' => 'LegalService',
                 '@id' => self::id('escritorio'),
-                'name' => 'Cássia Souza Advocacia Tributária',
+                'name' => 'Cassia Souza Advocacia Tributária',
                 'url' => url('/'),
                 'logo' => url('/assets/images/logo-acinzentado.png'),
                 'image' => url('/assets/img/sobrenos.png'),
@@ -54,7 +54,7 @@ class Schema
             [
                 '@type' => 'Person',
                 '@id' => self::id('cassia'),
-                'name' => 'Cássia Souza',
+                'name' => 'Cassia Souza',
                 'jobTitle' => 'Advogada tributarista',
                 'description' => 'Advogada tributarista inscrita na OAB/SP, em Suzano (SP).',
                 'image' => url('/assets/img/sobrenos.png'),
@@ -65,7 +65,7 @@ class Schema
             [
                 '@type' => 'WebSite',
                 '@id' => self::id('site'),
-                'name' => 'Cássia Souza Advocacia Tributária',
+                'name' => 'Cassia Souza Advocacia Tributária',
                 'url' => url('/'),
                 'inLanguage' => 'pt-BR',
                 'publisher' => ['@id' => self::id('escritorio')],

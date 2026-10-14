@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Cássia Souza Advocacia Tributária',
+    'title' => 'Cassia Souza Advocacia Tributária',
     'description' => 'Advocacia tributária para empresas: planejamento tributário, recuperação de PIS/COFINS, regularização de débitos na PGFN e assessoria para a Reforma Tributária.',
     // Imagem ao compartilhar o link (WhatsApp, LinkedIn etc.)
     'image' => '/assets/img/sobrenos.png',
@@ -27,7 +27,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Cássia Souza Advocacia">
+    <meta property="og:site_name" content="Cassia Souza Advocacia">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">

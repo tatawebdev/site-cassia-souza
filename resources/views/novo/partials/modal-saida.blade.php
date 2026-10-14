@@ -1,4 +1,4 @@
-{{-- Modal de saída: quando o visitante vai embora, oferece falar com a Cássia.
+{{-- Modal de saída: quando o visitante vai embora, oferece falar com a Cassia.
      Desktop: mouse saindo pelo topo da janela. Celular: rolagem rápida para
      cima depois de ter lido parte da página. Regra por sessão (sessionStorage:
      zera ao fechar a aba ou numa janela anônima nova): nunca nos primeiros 8s da
@@ -76,7 +76,7 @@
                     Antes de ir: quer entender o caso da sua empresa?
                 </h2>
                 <p class="mt-3 text-[16px] leading-relaxed text-on-plum">
-                    Conte o que está acontecendo e a Cássia indica o melhor caminho, seja regime tributário,
+                    Conte o que está acontecendo e a Cassia indica o melhor caminho, seja regime tributário,
                     créditos a recuperar ou débitos com a PGFN.
                 </p>
                 <button type="button" x-ref="fechar" @click="aberto = false" aria-label="Fechar"

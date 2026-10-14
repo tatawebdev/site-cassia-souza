@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <title>{{ $titulo }} | Cássia Souza Advocacia Tributária</title>
+    <title>{{ $titulo }} | Cassia Souza Advocacia Tributária</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <meta name="theme-color" content="#590854">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,8 @@
 <body>
     <main class="cs-plum-bg flex min-h-screen flex-col text-white">
         <div class="cs-wrap flex items-center justify-between py-5">
-            <a href="/" aria-label="Cássia Souza Advocacia — início">
-                <img src="/assets/images/logo-acinzentado.png" alt="Cássia Souza Advocacia" width="128" height="68" class="block h-auto w-[128px]">
+            <a href="/" aria-label="Cassia Souza Advocacia — início">
+                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68" class="block h-auto w-[128px]">
             </a>
             <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="nofollow noopener"
                 class="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-[15px] font-semibold tabular-nums text-white transition-colors hover:border-champagne">
@@ -57,7 +57,7 @@
         </section>
 
         <p class="cs-wrap border-t border-white/10 py-6 text-sm text-on-plum/60">
-            © {{ date('Y') }} Cássia Souza Advocacia · cassia_souza@adv.oabsp.org.br
+            © {{ date('Y') }} Cassia Souza Advocacia · cassia_souza@adv.oabsp.org.br
         </p>
     </main>
 </body>

@@ -1,5 +1,5 @@
 <x-novo.pagina tipo-pagina="AboutPage"
-    titulo="Sobre a Cássia Souza Advocacia"
+    titulo="Sobre a Cassia Souza Advocacia"
     imagem="assets/images/banner-sobre-nos.jpg"
     descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes."
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Sobre']]">
@@ -7,12 +7,12 @@
     <section aria-labelledby="quem-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
             <figure class="relative m-0 mx-auto w-full max-w-[520px]">
-                <img src="/assets/img/sobrenos.png" alt="Cássia Souza, advogada tributarista, em seu escritório"
+                <img src="/assets/img/sobrenos.png" alt="Cassia Souza, advogada tributarista, em seu escritório"
                     width="1080" height="1080" fetchpriority="high"
                     class="block aspect-square h-auto w-full rounded-2xl object-cover object-[55%_30%] shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                 <figcaption class="absolute -bottom-6 left-6 right-6 rounded-xl bg-plum-night px-6 py-5 text-white shadow-[0_24px_48px_-16px_rgba(36,4,31,0.45)] sm:-right-8 sm:left-auto sm:max-w-[300px]">
                     <span class="block font-display text-2xl font-semibold leading-tight">“Eu simplifico a tributação.”</span>
-                    <span class="mt-2 block text-sm text-on-plum/80">Cássia Souza, advogada tributarista</span>
+                    <span class="mt-2 block text-sm text-on-plum/80">Cassia Souza, advogada tributarista</span>
                 </figcaption>
             </figure>
 
@@ -42,7 +42,7 @@
                 <dl class="mt-9 grid gap-x-8 gap-y-5 border-t border-line pt-7 sm:grid-cols-3">
                     <div>
                         <dt class="text-sm text-ink-soft">Advogada responsável</dt>
-                        <dd class="mt-1 font-semibold text-plum-night">Cássia Souza</dd>
+                        <dd class="mt-1 font-semibold text-plum-night">Cassia Souza</dd>
                     </div>
                     <div>
                         <dt class="text-sm text-ink-soft">Inscrição</dt>
@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    {{-- Missão: a frase da Cássia em destaque, sem rótulo acima --}}
+    {{-- Missão: a frase da Cassia em destaque, sem rótulo acima --}}
     <section aria-label="Nossa missão" class="cs-plum-bg relative overflow-hidden py-[clamp(72px,9vw,128px)] text-white">
         <i class="fa-solid fa-quote-left pointer-events-none absolute left-[6%] top-10 text-[clamp(96px,14vw,200px)] leading-none text-champagne/10" aria-hidden="true"></i>
         <div class="cs-wrap relative text-center">
@@ -158,7 +158,7 @@
                         Tributação explicada sem complicação
                     </h2>
                     <p class="mt-3 text-[17px] leading-relaxed text-ink-soft">
-                        A Cássia compartilha conteúdo sobre Reforma Tributária, créditos e regularização nas redes e no blog.
+                        A Cassia compartilha conteúdo sobre Reforma Tributária, créditos e regularização nas redes e no blog.
                     </p>
                 </div>
                 <ul class="flex shrink-0 flex-wrap gap-3 xl:flex-nowrap">

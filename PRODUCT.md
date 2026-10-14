@@ -12,7 +12,7 @@ Empresas de pequeno, médio e grande porte que precisam de assessoria tributári
 
 ## Product Purpose
 
-Site institucional do escritório Cássia Souza Advocacia Tributária. O objetivo principal é gerar contato/lead: o visitante identifica o problema tributário que tem (regime tributário inadequado, crédito de PIS/COFINS a recuperar, débito com a PGFN, impacto da Reforma Tributária, etc.), entende que o escritório resolve esse tipo de caso, e entra em contato via formulário, WhatsApp ou e-mail.
+Site institucional do escritório Cassia Souza Advocacia Tributária. O objetivo principal é gerar contato/lead: o visitante identifica o problema tributário que tem (regime tributário inadequado, crédito de PIS/COFINS a recuperar, débito com a PGFN, impacto da Reforma Tributária, etc.), entende que o escritório resolve esse tipo de caso, e entra em contato via formulário, WhatsApp ou e-mail.
 
 ## Positioning
 
@@ -33,7 +33,7 @@ Assessoria tributária especializada e personalizada — atuação vai da consul
 
 ## Brand Commitments
 
-Nome: Cássia Souza Advocacia (Tributária). E-mail institucional `cassia_souza@adv.oabsp.org.br` (indica advogada inscrita na OAB/SP). Blog próprio em domínio separado (`cassiasouzaadvocacia.com.br`). Nenhuma paleta, tipografia ou diretriz visual foi definida como vínculo obrigatório neste momento — decisões visuais ficam para os comandos de design (`new-work`, `polish`, etc.), não para este documento.
+Nome: Cassia Souza Advocacia (Tributária). E-mail institucional `cassia_souza@adv.oabsp.org.br` (indica advogada inscrita na OAB/SP). Blog próprio em domínio separado (`cassiasouzaadvocacia.com.br`). Nenhuma paleta, tipografia ou diretriz visual foi definida como vínculo obrigatório neste momento — decisões visuais ficam para os comandos de design (`new-work`, `polish`, etc.), não para este documento.
 
 ## Evidence on Hand
 

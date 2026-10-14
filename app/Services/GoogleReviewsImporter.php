@@ -94,7 +94,7 @@ class GoogleReviewsImporter
         File::put(config_path('avaliacoes.php'), implode("\n", [
             '<?php',
             '',
-            '// Avaliações do perfil da Cássia no Google. Gerado por',
+            '// Avaliações do perfil da Cassia no Google. Gerado por',
             '// "php artisan avaliacoes:importar <html>" — não editar à mão.',
             '',
             'return '.$this->export($data).';',

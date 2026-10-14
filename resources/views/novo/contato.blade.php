@@ -79,14 +79,14 @@
     <section aria-labelledby="assina-titulo" class="overflow-hidden bg-white py-[clamp(64px,8vw,112px)]">
         <div class="cs-wrap grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <figure class="m-0 mx-auto w-full max-w-[400px] overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(58,6,55,0.45)]">
-                <img src="/assets/img/parceria.jpg" alt="Cássia Souza, advogada tributarista"
+                <img src="/assets/img/parceria.jpg" alt="Cassia Souza, advogada tributarista"
                     width="860" height="968" loading="lazy" class="block aspect-[860/968] h-auto w-full object-cover">
             </figure>
             <div>
                 <p id="assina-titulo" class="font-display text-[clamp(34px,4.4vw,58px)] font-semibold leading-[1.08] tracking-[-0.02em] text-plum-night">
                     “Eu simplifico a tributação.”
                 </p>
-                <p class="mt-5 text-[17px] text-ink-soft">Cássia Souza, advogada tributarista, OAB/SP</p>
+                <p class="mt-5 text-[17px] text-ink-soft">Cassia Souza, advogada tributarista, OAB/SP</p>
                 <a href="{{ route('sobre') }}"
                     class="mt-8 inline-flex items-center gap-2 rounded-full border border-plum px-7 py-3.5 font-semibold text-plum transition-colors hover:bg-plum hover:text-white">Conheça o escritório</a>
             </div>

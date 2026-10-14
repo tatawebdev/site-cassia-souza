@@ -1,5 +1,5 @@
 {{-- Página não encontrada (tema novo). --}}
-<x-novo.layout title="Página não encontrada | Cássia Souza Advocacia Tributária"
+<x-novo.layout title="Página não encontrada | Cassia Souza Advocacia Tributária"
     description="O endereço acessado não existe ou mudou de lugar.">
     <div class="cs-plum-bg relative overflow-hidden text-white">
         @include('novo.partials.header')
@@ -12,7 +12,7 @@
                 </h1>
                 <p class="mt-5 max-w-[34em] text-lg leading-relaxed text-on-plum">
                     Confira o endereço ou siga por um dos caminhos abaixo. Se procurava ajuda com a tributação da sua
-                    empresa, fale com a Cássia.
+                    empresa, fale com a Cassia.
                 </p>
                 <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
                     <a href="{{ route('inicio') }}"
