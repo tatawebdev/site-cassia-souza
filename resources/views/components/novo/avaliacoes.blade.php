@@ -148,7 +148,7 @@
 
                         <footer class="flex items-center gap-3 border-t border-line pt-5">
                             @if ($review['photo'])
-                                <img src="{{ asset($review['photo']) }}" alt="" width="44" height="44" loading="lazy" draggable="false"
+                                <img src="{{ asset($review['photo']) }}" alt="Foto de {{ $review['author'] }}" width="44" height="44" loading="lazy" draggable="false"
                                     class="h-11 w-11 rounded-full object-cover">
                             @else
                                 <span class="grid h-11 w-11 place-items-center rounded-full bg-plum/10 font-semibold text-plum" aria-hidden="true">

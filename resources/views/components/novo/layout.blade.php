@@ -8,6 +8,8 @@
     'robots' => null,
     // Dados estruturados (App\Support\Schema): tipo da página, breadcrumb e nós extras
     'tipoPagina' => 'WebPage',
+    // Palavras-chave (o Google ignora; outras ferramentas e buscadores ainda leem)
+    'keywords' => 'advocacia tributária, advogada tributarista, planejamento tributário, recuperação de PIS/COFINS, regularização de débitos PGFN, Reforma Tributária, Suzano',
     'breadcrumbs' => [],
     'schema' => [],
 ])
@@ -23,6 +25,7 @@
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
     {{-- Padrão: indexar e permitir prévia grande da imagem (Google Discover e respostas de IA) --}}
     <meta name="robots" content="{{ $robots ?? 'index, follow, max-image-preview:large' }}">
+    <meta name="keywords" content="{{ $keywords }}">
     <meta name="author" content="Cassia Souza">
     <meta name="publisher" content="Cassia Souza Advocacia Tributária">
 

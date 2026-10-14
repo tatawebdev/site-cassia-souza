@@ -98,7 +98,9 @@
                     <ul class="m-0 flex list-none gap-2 p-0" aria-label="Redes sociais da Cassia">
                         @foreach (config('site.social_icons', []) as $item)
                             <li>
-                                <a href="{{ $item['url'] }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($item['name']) }}"
+                                <a href="{{ $item['url'] }}" target="_blank" rel="noopener"
+                                    aria-label="{{ $redeNome = ['instagram' => 'Instagram', 'tiktok' => 'TikTok', 'linkedin' => 'LinkedIn'][$item['name']] ?? ucfirst($item['name']) }} da Cassia Souza"
+                                    title="{{ $redeNome }} da Cassia Souza"
                                     class="grid h-[38px] w-[38px] place-items-center rounded-full border border-line text-plum transition-colors hover:border-plum hover:bg-mist">
                                     <i class="{{ str_replace(' social-networks', '', $item['icon_class']) }} text-[16px]" aria-hidden="true"></i>
                                 </a>

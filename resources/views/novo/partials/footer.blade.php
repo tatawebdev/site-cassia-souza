@@ -22,7 +22,8 @@
                     @foreach (config('site.social_icons', []) as $item)
                         <li>
                             <a href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer"
-                                aria-label="{{ ucfirst($item['name']) }}"
+                                aria-label="{{ $redeNome = ['instagram' => 'Instagram', 'tiktok' => 'TikTok', 'linkedin' => 'LinkedIn'][$item['name']] ?? ucfirst($item['name']) }} da Cassia Souza"
+                                title="{{ $redeNome }} da Cassia Souza"
                                 class="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition-colors hover:border-champagne hover:text-champagne">
                                 <i class="{{ $item['icon_class'] }}" aria-hidden="true"></i>
                             </a>
