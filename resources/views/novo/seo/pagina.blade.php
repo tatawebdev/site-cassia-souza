@@ -8,6 +8,7 @@
 
 <x-novo.pagina :titulo="$h1" :descricao="$subtitulo" :descricao-seo="$descricao_seo" :titulo-aba="$titulo_seo"
     :canonical="$canonical" :robots="$robots"
+    :schema="[$servico ? \App\Support\Schema::servico($servico, $local->tipo === 'municipio' ? $local->nome : null) : null, \App\Support\Schema::faq($faqs)]"
     :imagem="'assets/images/'.($servico['banner'] ?? 'banner-servicos.jpg')"
     :breadcrumbs="[
         ['label' => 'Home', 'url' => route('inicio')],

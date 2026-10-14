@@ -1,4 +1,4 @@
-<x-novo.pagina
+<x-novo.pagina tipo-pagina="ContactPage" :schema="[\App\Support\Schema::faq(config('faqs'))]"
     titulo="Fale conosco"
     descricao="Tire dúvidas ou agende uma consulta gratuita. Estamos prontos para ajudar sua empresa a conquistar segurança tributária."
     imagem="assets/images/banner-contatos.jpg"

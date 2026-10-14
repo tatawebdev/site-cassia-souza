@@ -6,6 +6,10 @@
     // Páginas de SEO: canonical para o termo principal e noindex até ganharem texto próprio
     'canonical' => null,
     'robots' => null,
+    // Dados estruturados (App\Support\Schema): tipo da página, breadcrumb e nós extras
+    'tipoPagina' => 'WebPage',
+    'breadcrumbs' => [],
+    'schema' => [],
 ])
 
 <!DOCTYPE html>
@@ -41,6 +45,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     @vite('resources/css/novo.css')
+
+    <script type="application/ld+json">{!! \App\Support\Schema::json(array_merge(
+        \App\Support\Schema::base(),
+        \App\Support\Schema::pagina($title, $description, $canonical ?? url()->current(), $breadcrumbs, $tipoPagina),
+        $schema,
+    )) !!}</script>
 </head>
 
 <body>

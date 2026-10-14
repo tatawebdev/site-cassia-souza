@@ -1,4 +1,4 @@
-<x-novo.pagina
+<x-novo.pagina tipo-pagina="AboutPage"
     titulo="Sobre a Cássia Souza Advocacia"
     imagem="assets/images/banner-sobre-nos.jpg"
     descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes."

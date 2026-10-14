@@ -13,6 +13,7 @@
 
 <x-novo.pagina :titulo="$servico['title']" :descricao="$servico['descricao']"
     :imagem="'assets/images/'.$servico['banner']"
+    :schema="[\App\Support\Schema::servico($servico), \App\Support\Schema::faq($faqs)]"
     :breadcrumbs="[
         ['label' => 'Home', 'url' => route('inicio')],
         ['label' => 'Serviços', 'url' => route('servicos')],
