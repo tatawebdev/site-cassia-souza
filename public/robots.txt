@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow: /antigo
+Disallow: /dashboard
+Disallow: /chat
+
+Sitemap: https://cassiasouzaadvocacia.com.br/sitemap.xml
+Sitemap: https://blog.cassiasouzaadvocacia.com.br/sitemap.xml

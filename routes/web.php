@@ -78,6 +78,9 @@ Route::get('/chat', function () {
     return Inertia::render('Chat/ContactsChat');
 })->middleware(['auth'])->name('chat.contacts');
 
+// Sitemap: páginas institucionais + páginas de SEO liberadas para o Google
+Route::get('/sitemap.xml', \App\Http\Controllers\SitemapController::class)->name('sitemap');
+
 // Páginas de SEO herdadas do site antigo (/{termo}/{localidade}), com o texto no banco
 // (seo_termos, seo_localidades, seo_paginas, seo_blocos). Fica por último: só recebe o que
 // nenhuma outra rota atendeu, e o controller devolve 404 para termo ou localidade inexistente.

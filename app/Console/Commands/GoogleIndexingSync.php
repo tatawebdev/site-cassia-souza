@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\IndexedPage;
 use App\Services\GoogleIndexingService;
+use App\Services\Sitemap;
 use Illuminate\Console\Command;
 
 class GoogleIndexingSync extends Command
@@ -20,18 +21,8 @@ class GoogleIndexingSync extends Command
             return Command::SUCCESS;
         }
 
-        $urls = [
-            route('inicio'),
-            route('sobre'),
-            route('servicos'),
-            route('contato'),
-            route('privacy'),
-        ];
-
-        // Uma página por serviço (config/servicos.php)
-        foreach (config('servicos') as $servico) {
-            $urls[] = route($servico['route']);
-        }
+        // Páginas institucionais e uma por serviço (a mesma lista do sitemap)
+        $urls = Sitemap::institucionais();
 
         // Normaliza para a URL canônica de produção, para não duplicar linhas em indexed_pages
         $urls = array_unique(array_map(fn ($url) => $indexing->toProductionUrl($url), $urls));
