@@ -27,8 +27,9 @@ próprio em Tailwind. Até a migração terminar, **toda página segue este proc
 
 Migradas: home (`/`), sobre (`/sobre-nos`), listagem `/servicos` e as 7 páginas `/servicos/<slug>`
 (um único modelo, `novo/servico.blade.php`, com o conteúdo em `config/servicos.php` e as perguntas
-em `config/faqs.php`) e contato (`/contato`). Ainda no tema antigo: política de privacidade e a rota curinga de SEO
-`/{termo}/{cidade?}/{estado?}`.
+em `config/faqs.php`), contato (`/contato`), política de privacidade (`/politica-de-privacidade`) e a página 404 (`errors/404.blade.php`). Ainda no tema
+antigo: a rota curinga de SEO `/{termo}/{cidade?}/{estado?}`, restrita aos 17 termos de
+`App\Http\Livewire\TermoDinamico` (os demais endereços dão 404).
 
 ### Tema novo
 

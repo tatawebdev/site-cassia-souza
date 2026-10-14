@@ -9,6 +9,7 @@ export default {
     content: [
         './resources/views/novo/**/*.blade.php',
         './resources/views/components/novo/**/*.blade.php',
+        './resources/views/errors/**/*.blade.php',
     ],
 
     theme: {

@@ -8,6 +8,6 @@ class PoliticaPrivacidade extends Component
 {
     public function render()
     {
-        return view('livewire.politica-privacidade');
+        return view('antigo.politica-privacidade');
     }
 }
