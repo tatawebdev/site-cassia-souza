@@ -14,7 +14,7 @@
         <section class="relative lg:min-h-[620px]">
             {{-- Foto sangrando até a borda direita, fundida ao roxo pela esquerda --}}
             <figure class="relative m-0 h-[360px] sm:h-[460px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[46%]">
-                <img src="/assets/img/sobrenos.png" alt="Cassia Souza, advogada tributarista, em seu escritório"
+                <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
                     width="1080" height="1080" fetchpriority="high"
                     class="block h-full w-full object-cover object-[60%_28%] motion-safe:animate-unveil">
                 <div class="absolute inset-0 bg-gradient-to-t from-plum-deep via-plum-deep/10 to-transparent lg:bg-gradient-to-r lg:from-plum-deep lg:via-plum-deep/10 lg:to-transparent" aria-hidden="true"></div>
@@ -84,12 +84,12 @@
         <section aria-labelledby="sobre-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                 <figure class="relative mx-auto m-0 w-full max-w-[460px]">
-                    <img src="/assets/img/parceria.jpg" alt="Cassia Souza, advogada tributarista" loading="lazy"
+                    <img src="/assets/img/parceria.jpg" alt="Cassia Souza Advocacia Tributária" loading="lazy"
                         width="860" height="968"
                         class="block aspect-[860/968] h-auto w-full rounded-2xl object-cover shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                     <figcaption class="absolute -bottom-6 left-6 right-6 rounded-xl bg-plum-night px-6 py-5 text-white shadow-[0_24px_48px_-16px_rgba(36,4,31,0.45)] sm:-right-8 sm:left-auto sm:max-w-[300px]">
                         <span class="block font-display text-2xl font-semibold leading-tight">“Eu simplifico a tributação.”</span>
-                        <span class="mt-2 block text-sm text-on-plum/80">Cassia Souza, advogada tributarista</span>
+                        <span class="mt-2 block text-sm text-on-plum/80">Cassia Souza Advocacia Tributária</span>
                     </figcaption>
                 </figure>
 

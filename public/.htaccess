@@ -60,10 +60,15 @@ DirectoryIndex index.php
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+    # Na hospedagem o site fica em www/novo/public: quem pedir esse caminho interno
+    # vai (301) para o endereço limpo (o .htaccess da raiz não roda aqui dentro)
+    RewriteCond %{THE_REQUEST} \s/+novo/public/*([^\s?]*) [NC]
+    RewriteRule ^ /%1 [L,R=301,NE]
+
     # Redirect Trailing Slashes If Not A Folder...
+    # ($1 é relativo a esta pasta, então o prefixo interno /novo/public não vaza)
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    RewriteRule ^(.+)/$ /$1 [L,R=301]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
