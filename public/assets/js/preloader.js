@@ -1,5 +1,5 @@
 (function () {
-    var MIN_VISIBLE_MS = 600; // não "pisca" quando a página carrega rápido
+    var MIN_VISIBLE_MS = 1500; // não "pisca" quando a página carrega rápido
     var MAX_WAIT_MS = 8000; // não prende o usuário se algum recurso externo travar o "load"
 
     // performance.now() conta desde o início da navegação: se o load já
