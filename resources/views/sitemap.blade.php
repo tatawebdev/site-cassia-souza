@@ -1,4 +1,4 @@
-{!! '<?xml version="1.0" encoding="UTF-8"?>' !!}
+{{-- A declaração XML é posta pelo SitemapController: com short_open_tag ligado (produção), ela quebraria a view --}}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 @foreach ($urls as $item)
     <url>

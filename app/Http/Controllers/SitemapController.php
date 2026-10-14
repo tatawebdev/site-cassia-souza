@@ -13,8 +13,8 @@ class SitemapController extends Controller
             ->map(fn ($url) => ['url' => $url, 'lastmod' => null])
             ->concat($sitemap->paginasSeo());
 
-        return response()
-            ->view('sitemap', ['urls' => $urls])
-            ->header('Content-Type', 'application/xml; charset=UTF-8');
+        $xml = '<'.'?xml version="1.0" encoding="UTF-8"?'.">\n".view('sitemap', ['urls' => $urls])->render();
+
+        return response($xml)->header('Content-Type', 'application/xml; charset=UTF-8');
     }
 }
