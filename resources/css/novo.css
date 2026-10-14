@@ -17,6 +17,19 @@
         @apply outline outline-2 outline-offset-[3px] outline-gold-ink;
     }
 
+    /* Títulos equilibrados e parágrafos sem palavra solta na última linha */
+    h1, h2, h3 {
+        text-wrap: balance;
+    }
+
+    p, li, dd, blockquote {
+        text-wrap: pretty;
+    }
+
+    ::selection {
+        @apply bg-champagne text-plum-night;
+    }
+
     [x-cloak] {
         display: none !important;
     }

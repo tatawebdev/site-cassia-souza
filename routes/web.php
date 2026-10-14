@@ -21,7 +21,8 @@ Route::view('/', 'novo.home')->name('inicio');
 Route::get('/antigo', \App\Livewire\Index::class)->name('antigo.inicio');
 Route::redirect('/novo', '/', 301);
 
-Route::get('/sobre-nos', \App\Livewire\About::class)->name('sobre');
+Route::view('/sobre-nos', 'novo.sobre')->name('sobre');
+Route::get('/antigo/sobre-nos', \App\Livewire\About::class)->name('antigo.sobre');
 Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
 Route::get('/servicos', \App\Livewire\Servicos::class)->name('servicos');
 

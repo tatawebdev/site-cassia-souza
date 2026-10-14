@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Empresas de pequeno, médio e grande porte que precisam de assessoria tributária: desde negócios optantes pelo Simples Nacional buscando recuperação de créditos (PIS/COFINS monofásico) e regularização de débitos, até empresas maiores com contabilidade estruturada que precisam de consultoria e planejamento tributário contínuo. Um segmento específico já atendido é o de clínicas e profissionais da saúde (planejamento tributário para clínicas).
+Empresas de pequeno, médio e grande porte que precisam de assessoria tributária: desde negócios optantes pelo Simples Nacional buscando recuperação de créditos (PIS/COFINS monofásico) e regularização de débitos, até empresas maiores com contabilidade estruturada que precisam de consultoria e planejamento tributário contínuo. O escritório atende empresas de todos os segmentos (comércio, serviços, indústria, saúde etc.); clínicas e profissionais da saúde são um exemplo com serviço próprio (planejamento tributário para clínicas), não um nicho exclusivo.
 
 ## Product Purpose
 

@@ -18,7 +18,7 @@ class About extends Component
             ['label' => 'Sobre', 'url' => '/sobre-nos'],
         ];
 
-        return view('livewire.about')
+        return view('antigo.sobre')
             ->layout('components.layouts.app', [
                 'banner' => $banner,
                 'breadcrumbs' => $breadcrumbs,
