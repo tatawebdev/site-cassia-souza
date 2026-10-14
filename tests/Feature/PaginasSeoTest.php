@@ -109,6 +109,17 @@ class PaginasSeoTest extends TestCase
         $this->get('/advogada-tributarista/jundiapeba')->assertOk()->assertSee('Advogada tributarista em Jundiapeba (SP)');
     }
 
+    public function test_pagina_lista_outros_servicos_e_lugares(): void
+    {
+        $this->get('/advocacia-tributaria/suzano')
+            ->assertSee('Atendimento em Suzano e em outros lugares')
+            ->assertSee('/advogada-tributarista/suzano')
+            ->assertSee('/advocacia-tributaria/mogi-das-cruzes')
+            ->assertSee('/advocacia-tributaria/curitiba')
+            // Sinônimos não recebem links
+            ->assertDontSee('/escritorio-de-advocacia-tributaria/suzano');
+    }
+
     public function test_pagina_do_termo_lista_cidades_em_destaque(): void
     {
         $this->get('/advocacia-tributaria')

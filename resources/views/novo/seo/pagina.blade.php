@@ -116,24 +116,75 @@
         <x-novo.faq :faqs="$faqs" class="bg-white" />
     @endif
 
-    @if ($vizinhas->isNotEmpty())
-        <section aria-labelledby="vizinhas-titulo" class="bg-mist py-[clamp(64px,8vw,104px)]">
-            <div class="cs-wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-                <h2 id="vizinhas-titulo" class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] text-plum-night">
-                    {{ $local->microrregiao ? 'Também na região de '.$local->microrregiao : 'Também no Alto Tietê' }}
-                </h2>
-                <ul class="grid gap-x-8 sm:grid-cols-2">
-                    @foreach ($vizinhas as $vizinha)
-                        <li class="border-b border-line">
-                            <a href="{{ url('/'.$termoLinks.'/'.$vizinha->slug) }}"
-                                class="group flex items-center justify-between gap-4 py-4 font-semibold text-plum-night transition-colors hover:text-plum">
-                                {{ $termo->nome }} em {{ $vizinha->nome }}
-                                <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+    {{-- Em outros lugares: outros serviços nesta cidade, cidades vizinhas e
+         cidades em destaque. Links só para os termos principais (os sinônimos
+         apontam para eles pelo canonical). --}}
+    @php
+        $nomeCidade = fn ($c) => $c->nome.($c->uf && $c->uf !== 'SP' ? ' ('.$c->uf.')' : '');
+        $grupos = array_filter([
+            'Grande São Paulo' => $destaques->where('uf', 'SP')->where('capital', false),
+            'Capitais' => $destaques->where('capital', true),
+        ], fn ($cidades) => $cidades->isNotEmpty());
+    @endphp
+    <section aria-labelledby="lugares-titulo" class="bg-mist py-[clamp(64px,8vw,104px)]">
+        <div class="cs-wrap">
+            <h2 id="lugares-titulo" class="max-w-[20em] font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] text-plum-night">
+                Atendimento em {{ $local->nome }} e em outros lugares
+            </h2>
+
+            <div class="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+                @if ($outrosTermos->isNotEmpty())
+                    <div>
+                        <h3 class="text-sm font-semibold text-gold-ink">Outros serviços em {{ $local->nome }}</h3>
+                        <ul class="mt-3 border-t border-line">
+                            @foreach ($outrosTermos as $outro)
+                                <li class="border-b border-line">
+                                    <a href="{{ url('/'.$outro->slug.'/'.$local->slug) }}"
+                                        class="group flex items-center justify-between gap-4 py-3.5 font-semibold text-plum-night transition-colors hover:text-plum">
+                                        {{ $outro->nome }} em {{ $local->nome }}
+                                        <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if ($vizinhas->isNotEmpty())
+                    <div>
+                        <h3 class="text-sm font-semibold text-gold-ink">
+                            {{ $local->microrregiao ? 'Na região de '.$local->microrregiao : 'No Alto Tietê' }}
+                        </h3>
+                        <ul class="mt-3 border-t border-line">
+                            @foreach ($vizinhas as $vizinha)
+                                <li class="border-b border-line">
+                                    <a href="{{ url('/'.$termoLinks.'/'.$vizinha->slug) }}"
+                                        class="group flex items-center justify-between gap-4 py-3.5 font-semibold text-plum-night transition-colors hover:text-plum">
+                                        {{ $termo->nome }} em {{ $vizinha->nome }}
+                                        <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
-        </section>
-    @endif
+
+            @foreach ($grupos as $grupo => $cidades)
+                <div class="mt-12">
+                    <h3 class="text-sm font-semibold text-gold-ink">{{ $termo->nome }}: {{ $grupo }}</h3>
+                    <ul class="mt-4 flex flex-wrap gap-2">
+                        @foreach ($cidades as $cidade)
+                            <li>
+                                <a href="{{ url('/'.$termoLinks.'/'.$cidade->slug) }}"
+                                    class="inline-flex rounded-full border border-line bg-white px-4 py-2 text-[15px] font-medium text-plum-night transition-colors hover:border-plum hover:text-plum">
+                                    {{ $nomeCidade($cidade) }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endforeach
+        </div>
+    </section>
 </x-novo.pagina>

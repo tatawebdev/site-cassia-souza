@@ -82,7 +82,14 @@ class PaginaSeo
             'robots' => ($termo->canonical || $indexar) ? 'index, follow' : 'noindex, follow',
             'indexavel' => ! $termo->canonical && $indexar,
             'homonimos' => $local->tipo === 'homonimo' ? $this->homonimos($local) : collect(),
-            'vizinhas' => $this->vizinhas($local),
+            'vizinhas' => $vizinhas = $this->vizinhas($local),
+            // Links "em outros lugares": os outros termos principais nesta localidade
+            // e as cidades em destaque (Grande SP e capitais), sem repetir as vizinhas
+            'outrosTermos' => SeoTermo::where('ativo', true)->where('indexar', true)->whereNull('canonical')
+                ->where('slug', '!=', $canonicalTermo)->orderBy('nome')->get(),
+            'destaques' => SeoLocalidade::where('tipo', 'municipio')->where('indexar', true)
+                ->whereNotIn('id', $vizinhas->pluck('id')->push($local->id))
+                ->orderBy('nome')->get(),
         ];
     }
 
