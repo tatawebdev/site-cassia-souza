@@ -30,7 +30,10 @@ leve zoom. Quem esconde é /assets/js/preloader.js. --}}
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #fff;
+        /* Mesmo fundo roxo do topo das páginas (.cs-plum-bg em resources/css/novo.css) */
+        background:
+            radial-gradient(120% 90% at 12% 0%, #6E1468 0%, transparent 60%),
+            linear-gradient(160deg, #590854 0%, #3A0637 100%);
         opacity: 1;
         transform: scale(1);
         transition:
@@ -60,7 +63,7 @@ leve zoom. Quem esconde é /assets/js/preloader.js. --}}
         width: 120px;
         height: 120px;
         border-radius: 9999px;
-        background: #590854;
+        background: #EFCF9F;
         filter: blur(26px);
         animation: site-preloader-glow 2.2s ease-in-out infinite;
     }
@@ -73,8 +76,15 @@ leve zoom. Quem esconde é /assets/js/preloader.js. --}}
     .site-preloader__half {
         position: absolute;
         inset: 0;
-        background: url(/assets/images/monograma-sc.png) center / contain no-repeat;
         animation: site-preloader-half 2s ease-in-out infinite;
+    }
+    /* O PNG é roxo; usado como máscara, o monograma sai em champagne sobre o roxo */
+    .site-preloader__ink {
+        position: absolute;
+        inset: 0;
+        background: #F5DDB8;
+        -webkit-mask: url(/assets/images/monograma-sc.png) center / contain no-repeat;
+        mask: url(/assets/images/monograma-sc.png) center / contain no-repeat;
     }
     .site-preloader__half--s {
         -webkit-mask-image: linear-gradient(to right, #000 35%, transparent 75%);
@@ -103,8 +113,8 @@ leve zoom. Quem esconde é /assets/js/preloader.js. --}}
     <div class="site-preloader__inner">
         <span class="site-preloader__glow"></span>
         <div class="site-preloader__mark" aria-hidden="true">
-            <span class="site-preloader__half site-preloader__half--s"></span>
-            <span class="site-preloader__half site-preloader__half--c"></span>
+            <span class="site-preloader__half site-preloader__half--s"><span class="site-preloader__ink"></span></span>
+            <span class="site-preloader__half site-preloader__half--c"><span class="site-preloader__ink"></span></span>
         </div>
     </div>
 </div>
