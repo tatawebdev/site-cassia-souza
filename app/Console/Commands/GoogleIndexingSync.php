@@ -3,17 +3,25 @@
 namespace App\Console\Commands;
 
 use App\Models\IndexedPage;
-use App\Services\GoogleIndexingService;
+use App\Services\IndexacaoGoogle;
 use App\Services\Sitemap;
 use Illuminate\Console\Command;
 
+/**
+ * Envia ao Google (Indexing API) as páginas do sitemap que ainda não foram enviadas,
+ * até acabar a cota diária. Quando a cota acaba, para e pausa os envios por 36 h
+ * (o site também respeita essa pausa); rodando de novo depois, continua de onde parou.
+ */
 class GoogleIndexingSync extends Command
 {
-    protected $signature = 'google:indexing-sync {--force : Reenvia mesmo as URLs já marcadas como indexadas}';
+    protected $signature = 'google:indexing-sync
+        {--force : Reenvia mesmo as URLs já marcadas como indexadas}
+        {--limite= : Envia no máximo esta quantidade nesta rodada}
+        {--ignorar-pausa : Tenta mesmo durante a pausa do limite diário}';
 
-    protected $description = 'Envia para a Google Indexing API as URLs do site (páginas fixas e de serviço) ainda não indexadas, registrando o resultado em indexed_pages';
+    protected $description = 'Envia para a Google Indexing API as páginas do sitemap ainda não indexadas (até a cota diária), registrando o resultado em indexed_pages';
 
-    public function handle(GoogleIndexingService $indexing): int
+    public function handle(IndexacaoGoogle $indexacao, Sitemap $sitemap): int
     {
         if (! config('services.google_indexing.enabled')) {
             $this->warn('Google Indexing desativado (GOOGLE_INDEXING_ENABLED=false). Nada enviado.');
@@ -21,48 +29,58 @@ class GoogleIndexingSync extends Command
             return Command::SUCCESS;
         }
 
-        // Páginas institucionais e uma por serviço (a mesma lista do sitemap)
-        $urls = Sitemap::institucionais();
+        if (($ate = $indexacao->pausadoAte()) && ! $this->option('ignorar-pausa')) {
+            $this->warn("Limite diário do Google atingido. Envios pausados até {$ate->format('d/m/Y H:i')}. Rode de novo depois disso (ou use --ignorar-pausa).");
 
-        // Normaliza para a URL canônica de produção, para não duplicar linhas em indexed_pages
-        $urls = array_unique(array_map(fn ($url) => $indexing->toProductionUrl($url), $urls));
+            return Command::SUCCESS;
+        }
+        if ($this->option('ignorar-pausa')) {
+            $indexacao->liberarPausa();
+        }
+
+        // Mesma lista do sitemap: institucionais + páginas de SEO liberadas, no domínio de produção
+        $urls = collect(Sitemap::institucionais())
+            ->concat($sitemap->paginasSeo()->pluck('url'))
+            ->map(fn ($url) => $indexacao->url($url))
+            ->unique()->values();
 
         $force = (bool) $this->option('force');
+        $feitas = $force ? collect() : IndexedPage::whereIn('url', $urls)->whereNotNull('indexed_at')->pluck('url');
+        $pendentes = $urls->diff($feitas)->values();
+        if ($limite = (int) $this->option('limite')) {
+            $pendentes = $pendentes->take($limite);
+        }
 
-        $this->info(sprintf(
-            'Verificando %d URLs (%s)...',
-            count($urls),
-            $force ? 'reenviando todas' : 'só as ainda não indexadas'
-        ));
+        $this->info(sprintf('%d páginas no sitemap, %d já enviadas, %d para enviar agora.', $urls->count(), $feitas->count(), $pendentes->count()));
 
         $ok = 0;
-        $fail = 0;
-        $skipped = 0;
+        $falhas = 0;
+        foreach ($pendentes as $url) {
+            $resultado = $indexacao->enviar($url);
 
-        foreach ($urls as $url) {
-            $page = IndexedPage::firstOrNew(['url' => $url]);
-
-            if (! $force && $page->exists && $page->indexed_at) {
-                $skipped++;
-                $this->line("  SKIP {$url}");
+            if ($resultado === IndexacaoGoogle::OK) {
+                $ok++;
+                $this->line("  OK   {$url}");
 
                 continue;
             }
 
-            if ($indexing->notifyUrlUpdate($url)) {
-                $page->fill(['indexed_at' => now(), 'last_error' => null])->save();
-                $ok++;
-                $this->line("  OK   {$url}");
-            } else {
-                $page->fill(['last_error' => 'Falha ao notificar o Google Indexing API — ver storage/logs/laravel.log'])->save();
-                $fail++;
-                $this->error(" FALHA {$url}");
+            if ($resultado === IndexacaoGoogle::LIMITE) {
+                $restantes = $urls->count() - $feitas->count() - $ok;
+                $this->newLine();
+                $this->warn("Limite diário do Google atingido depois de {$ok} envios. Faltam {$restantes} páginas.");
+                $this->warn('Envios pausados por '.IndexacaoGoogle::PAUSA_HORAS.' h ('.$indexacao->pausadoAte()?->format('d/m/Y H:i').'). Rode o comando de novo depois disso.');
+
+                return Command::SUCCESS;
             }
+
+            $falhas++;
+            $this->error(" FALHA {$url}");
         }
 
         $this->newLine();
-        $this->info("Concluído: {$ok} enviadas, {$skipped} já indexadas (puladas), {$fail} falharam.");
+        $this->info("Concluído: {$ok} enviadas, {$falhas} falharam, {$feitas->count()} já tinham sido enviadas.");
 
-        return $fail > 0 ? Command::FAILURE : Command::SUCCESS;
+        return $falhas > 0 ? Command::FAILURE : Command::SUCCESS;
     }
 }

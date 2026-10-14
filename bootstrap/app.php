@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            // Envia ao Google as páginas indexáveis na primeira visita (depois de responder)
+            \App\Http\Middleware\IndexarNoGoogle::class,
         ]);
 
         //

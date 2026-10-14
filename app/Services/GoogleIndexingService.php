@@ -12,6 +12,9 @@ class GoogleIndexingService
 {
     protected ?Indexing $indexingService = null;
 
+    /** Erro do último envio que falhou (para saber se foi o limite diário) */
+    public ?Throwable $ultimoErro = null;
+
     /**
      * Notifica o Google que uma URL foi criada ou atualizada.
      */
@@ -45,11 +48,14 @@ class GoogleIndexingService
             'type' => $type,
         ]);
 
+        $this->ultimoErro = null;
+
         try {
             $service->urlNotifications->publish($notification);
 
             return true;
         } catch (Throwable $e) {
+            $this->ultimoErro = $e;
             Log::warning('Falha ao notificar o Google Indexing API.', [
                 'url' => $url,
                 'type' => $type,
@@ -58,6 +64,20 @@ class GoogleIndexingService
 
             return false;
         }
+    }
+
+    /** O último envio falhou porque a cota diária da API acabou (HTTP 429 / RESOURCE_EXHAUSTED)? */
+    public function ultimoErroFoiLimite(): bool
+    {
+        if (! $this->ultimoErro) {
+            return false;
+        }
+
+        $mensagem = $this->ultimoErro->getMessage();
+
+        return $this->ultimoErro->getCode() === 429
+            || str_contains($mensagem, 'RESOURCE_EXHAUSTED')
+            || stripos($mensagem, 'quota') !== false;
     }
 
     /**
