@@ -45,6 +45,7 @@ class PaginasSeoTest extends TestCase
             ->assertSee('<meta name="robots" content="index, follow">', false)
             ->assertSee('<link rel="canonical" href="'.url('/advocacia-tributaria/suzano').'">', false)
             ->assertSee('Atendimento em Suzano e no Alto Tietê')
+            ->assertSee('com atendimento presencial ou online')
             ->assertSee('ICMS de São Paulo')
             ->assertSee('Mogi das Cruzes');
     }
@@ -56,6 +57,7 @@ class PaginasSeoTest extends TestCase
             ->assertSee('Sete Lagoas (MG)')
             ->assertSee('<meta name="robots" content="noindex, follow">', false)
             ->assertSee('Atendimento online para empresas de Sete Lagoas')
+            ->assertSee('Sete Lagoas, com atendimento online.')
             ->assertSee('ICMS de Minas Gerais');
     }
 

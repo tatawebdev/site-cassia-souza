@@ -12,6 +12,7 @@
  *   {estado}     São Paulo            {do_estado}  de São Paulo · do Paraná · da Bahia
  *   {regiao}     microrregião do IBGE (Mogi das Cruzes)
  *   {termo}      nome do termo
+ *   {atendimento} "atendimento presencial ou online" (Alto Tietê) ou "atendimento online"
  *
  * Tom: o mesmo do site. Explica, não promete resultado, não assusta e não
  * inventa números, prêmios ou casos.
@@ -19,7 +20,7 @@
 
 $tributarista = [
     [
-        'Empresas de {local} lidam com a mesma pergunta que empresas de qualquer lugar do país: estou pagando o tributo certo, no regime certo? A resposta depende das atividades, do faturamento e da forma como a empresa está organizada.',
+        'Em {local}, como em qualquer lugar do país, a pergunta de quem empreende costuma ser a mesma: estou pagando o tributo certo, no regime certo? A resposta depende das atividades, do faturamento e da forma como a empresa está organizada.',
         'A Cássia Souza é advogada tributarista inscrita na OAB/SP e atende empresas de todos os portes e segmentos. O trabalho começa entendendo a operação da empresa para indicar o caminho tributário que faz sentido para ela.',
     ],
     [
@@ -38,11 +39,11 @@ $advocacia = [
         'Para empresas de {local_uf}, a Cássia Souza Advocacia faz esse acompanhamento de forma consultiva e preventiva, com linguagem simples e decisões explicadas passo a passo.',
     ],
     [
-        'Pagar apenas o que é devido exige conhecer bem a legislação e a operação da empresa. É nesse ponto que a advocacia tributária ajuda empresários de {local}.',
+        'Pagar apenas o que é devido exige conhecer bem a legislação e a operação da empresa. É nesse ponto que a advocacia tributária ajuda quem empreende em {local}.',
         'O escritório analisa o enquadramento, revisa o que já foi pago, identifica riscos e organiza a empresa para as mudanças da Reforma Tributária.',
     ],
     [
-        'Empresas de {local} de comércio, serviços, indústria e saúde têm desafios tributários diferentes, mas o ponto de partida é o mesmo: saber onde a empresa está e para onde pode ir dentro da lei.',
+        'Comércio, serviços, indústria e saúde têm desafios tributários diferentes, mas, para qualquer empresa de {local}, o ponto de partida é o mesmo: saber onde ela está hoje e para onde pode ir dentro da lei.',
         'A Cássia Souza Advocacia Tributária atende esses negócios com consultoria contínua ou em frentes específicas, como planejamento, recuperação de créditos e regularização de débitos.',
     ],
 ];
@@ -94,11 +95,11 @@ $consultoria = [
 
 $defesa = [
     [
-        'Receber uma cobrança do Fisco ou ter débitos inscritos em Dívida Ativa preocupa qualquer empresário. O primeiro passo é entender exatamente o que está sendo cobrado e quais caminhos a lei oferece.',
+        'Diante de uma cobrança do Fisco ou de débitos inscritos em Dívida Ativa, o primeiro passo é entender exatamente o que está sendo cobrado e quais caminhos a lei oferece.',
         'A Cássia Souza atende empresas de {local_uf} na análise desses débitos e na negociação com a Procuradoria-Geral da Fazenda Nacional (PGFN).',
     ],
     [
-        'Débitos com a União podem levar a execução fiscal, bloqueio de contas e penhora de bens. Mas existem formas legais de regularizar a situação, com descontos e parcelamentos.',
+        'Débitos com a União podem ser regularizados por caminhos previstos em lei, com descontos e parcelamentos, o que evita execução fiscal, bloqueio de contas e penhora de bens.',
         'Para empresas de {local}, o escritório analisa a dívida, verifica as modalidades de negociação disponíveis e, quando cabe, pede a revisão da capacidade de pagamento (CAPAG).',
     ],
     [
@@ -121,10 +122,10 @@ $termo = fn (string $nome, string $h1, string $servico, array $introducoes, stri
     'canonical' => $canonical,
 ];
 
-$subAdvocacia = 'Planejamento tributário, recuperação de créditos e regularização de débitos para empresas de {local}, com atendimento online.';
+$subAdvocacia = 'Planejamento tributário, recuperação de créditos e regularização de débitos para empresas de {local}, com {atendimento}.';
 $descAdvocacia = 'Advocacia tributária para empresas de {local_uf}: planejamento tributário, recuperação de PIS/COFINS, regularização de débitos na PGFN e Reforma Tributária.';
-$subTributarista = 'A Cássia Souza é advogada tributarista (OAB/SP) e atende empresas de {local} com atendimento online.';
-$descTributarista = 'Advogada tributarista para empresas de {local_uf}: regime tributário, créditos de PIS/COFINS, débitos com a União e Reforma Tributária. Atendimento online.';
+$subTributarista = 'A Cássia Souza é advogada tributarista (OAB/SP) e atende empresas de {local}, com {atendimento}.';
+$descTributarista = 'Advogada tributarista para empresas de {local_uf}: regime tributário, créditos de PIS/COFINS, débitos com a União e Reforma Tributária.';
 
 return [
     'termos' => [
@@ -144,10 +145,10 @@ return [
         'escritorio-de-advocacia-tributaria' => $termo('Escritório de advocacia tributária', 'Escritório de advocacia tributária para empresas de {local_uf}', 'consultoria-tributaria', $escritorio, $subAdvocacia, $descAdvocacia, false, 'escritorio-advocacia-tributaria'),
 
         'advogado-planejamento-tributario' => $termo('Planejamento tributário', 'Planejamento tributário para empresas de {local_uf}', 'planejamento-tributario', $planejamento,
-            'Escolha do regime tributário e reorganização da empresa dentro da lei, para empresas de {local}, com atendimento online.',
+            'Escolha do regime tributário e reorganização da empresa dentro da lei, para empresas de {local}, com {atendimento}.',
             'Planejamento tributário para empresas de {local_uf}: escolha do regime (Simples, Presumido ou Real), novos CNPJs e transição para a Reforma Tributária.', true),
         'planejamento-tributario-advogado' => $termo('Planejamento tributário', 'Planejamento tributário para empresas de {local_uf}', 'planejamento-tributario', $planejamento,
-            'Escolha do regime tributário e reorganização da empresa dentro da lei, para empresas de {local}, com atendimento online.',
+            'Escolha do regime tributário e reorganização da empresa dentro da lei, para empresas de {local}, com {atendimento}.',
             'Planejamento tributário para empresas de {local_uf}: escolha do regime (Simples, Presumido ou Real), novos CNPJs e transição para a Reforma Tributária.', false, 'advogado-planejamento-tributario'),
 
         'advogado-consultoria-tributaria' => $termo('Consultoria tributária', 'Consultoria tributária para empresas de {local_uf}', 'consultoria-tributaria', $consultoria,
@@ -155,11 +156,11 @@ return [
             'Consultoria tributária mensal para empresas de {local_uf}: revisão de movimentações fiscais, prevenção de autuações e oportunidades previstas em lei.', true),
 
         // Sem página de serviço própria no site: o texto se apoia na regularização de débitos
-        'defesa-fiscal' => $termo('Defesa fiscal', 'Débitos e cobranças fiscais: atendimento para empresas de {local_uf}', 'regularizacao-debitos-pgfn', $defesa,
-            'Análise de débitos e negociação com a PGFN para empresas de {local}, com atendimento online.',
+        'defesa-fiscal' => $termo('Defesa fiscal', 'Débitos e cobranças fiscais de empresas de {local_uf}', 'regularizacao-debitos-pgfn', $defesa,
+            'Análise de débitos e negociação com a PGFN para empresas de {local}, com {atendimento}.',
             'Empresas de {local_uf} com débitos na Dívida Ativa da União: análise da cobrança, negociação com a PGFN, descontos, parcelamento e revisão da CAPAG.'),
         'advocacia-administrativa-tributaria' => $termo('Advocacia administrativa tributária', 'Regularização de débitos fiscais para empresas de {local_uf}', 'regularizacao-debitos-pgfn', $defesa,
-            'Análise de débitos e negociação com a PGFN para empresas de {local}, com atendimento online.',
+            'Análise de débitos e negociação com a PGFN para empresas de {local}, com {atendimento}.',
             'Empresas de {local_uf} com débitos na Dívida Ativa da União: análise da cobrança, negociação com a PGFN, descontos, parcelamento e revisão da CAPAG.'),
     ],
 
@@ -175,7 +176,7 @@ return [
         'atendimento_online' => [
             'titulo' => 'Atendimento online para empresas de {local}',
             'paragrafos' => [
-                'A Cássia Souza atende empresas de todo o Brasil de forma online, com reuniões por videochamada e contato direto pelo WhatsApp e pelo e-mail. Não é preciso se deslocar até o escritório, em Suzano (SP).',
+                'A Cássia Souza atende empresas de todo o Brasil de forma online, com reuniões por videochamada e contato direto pelo WhatsApp e pelo e-mail, sem precisar ir até o escritório, em Suzano (SP).',
                 'O primeiro contato pode ser pelo WhatsApp, pelo e-mail ou pelo formulário desta página.',
             ],
         ],
@@ -184,7 +185,7 @@ return [
             [
                 'titulo' => 'O que a Reforma Tributária muda para empresas de {local}',
                 'paragrafos' => [
-                    'Hoje, uma empresa de {local} recolhe o ICMS {do_estado}, o ISS do município e tributos federais como PIS e COFINS, conforme a atividade e o regime.',
+                    'Hoje, conforme a atividade e o regime, uma empresa de {local} recolhe o ICMS {do_estado}, o ISS do município e tributos federais como PIS e COFINS.',
                     'Com a Reforma Tributária, ICMS e ISS serão substituídos aos poucos pelo IBS, e PIS e COFINS pela CBS. A transição começou em 2026 e vai até 2033, e durante esse período as regras antigas e as novas convivem.',
                     'Entender o efeito disso no seu setor ajuda a revisar preços, contratos e o regime tributário com antecedência.',
                 ],

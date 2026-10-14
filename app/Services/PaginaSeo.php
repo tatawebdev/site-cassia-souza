@@ -114,10 +114,11 @@ class PaginaSeo
         return strtr($texto, [
             '{local}' => $local->nome,
             '{local_uf}' => $local->uf ? "{$local->nome} ({$local->uf})" : $local->nome,
-            '{estado}' => $estado ?? 'do estado',
+            '{estado}' => $estado ?? '',
             '{do_estado}' => $estado ? "{$prep} {$estado}" : 'do estado',
             '{regiao}' => $local->microrregiao ?? $local->nome,
             '{termo}' => $termo->nome,
+            '{atendimento}' => $local->presencial ? 'atendimento presencial ou online' : 'atendimento online',
         ]);
     }
 
