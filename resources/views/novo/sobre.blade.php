@@ -140,7 +140,7 @@
                         <a href="{{ route($servico['route']) }}"
                             class="group flex items-center justify-between gap-4 py-5 font-semibold text-plum-night transition-colors hover:text-plum">
                             {{ $servico['title'] }}
-                            <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                            <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                         </a>
                     </li>
                 @endforeach

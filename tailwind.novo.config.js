@@ -6,6 +6,11 @@
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    // hover: só em aparelhos com mouse: no toque, o "levantar" do card não fica preso depois do toque
+    future: {
+        hoverOnlyWhenSupported: true,
+    },
+
     content: [
         './resources/views/novo/**/*.blade.php',
         './resources/views/components/novo/**/*.blade.php',
@@ -42,8 +47,20 @@ export default {
                 display: ['Newsreader', 'Georgia', 'serif'],
                 sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
             },
+            /*
+             * Movimento do tema novo (espelhados em :root no novo.css como --cs-ease,
+             * --cs-rapido e --cs-medio): uma única curva de desaceleração suave e duas
+             * durações. 200ms para hover, foco e cores; 300ms para revelar, menus e modal.
+             * `transition` / `transition-colors` sem duração já usam esses padrões.
+             */
             transitionTimingFunction: {
+                DEFAULT: 'cubic-bezier(0.22, 0.8, 0.2, 1)',
                 'out-soft': 'cubic-bezier(0.22, 0.8, 0.2, 1)',
+            },
+            transitionDuration: {
+                DEFAULT: '200ms',
+                rapido: '200ms',
+                medio: '300ms',
             },
             keyframes: {
                 rise: {

@@ -46,11 +46,11 @@
 
                 <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
                     <x-link-whatsapp rel="nofollow"
-                        class="inline-flex items-center gap-2.5 rounded-full bg-plum px-7 py-4 font-semibold text-white transition hover:bg-plum-deep active:scale-[0.98]">
+                        class="inline-flex items-center gap-2.5 rounded-full bg-plum px-7 py-4 font-semibold text-white transition hover:bg-plum-deep">
                         <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i> Conversar no WhatsApp
                     </x-link-whatsapp>
                     <a href="#contato"
-                        class="font-semibold text-plum underline decoration-plum/40 underline-offset-[6px] transition-all hover:decoration-plum hover:underline-offset-[3px]">Enviar uma mensagem</a>
+                        class="font-semibold text-plum underline decoration-plum/40 underline-offset-[6px] transition-[color,text-decoration-color,text-underline-offset] hover:decoration-plum hover:underline-offset-[3px]">Enviar uma mensagem</a>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                             <a href="{{ url('/'.$termoLinks.'/'.$vizinha->slug) }}"
                                 class="group flex items-center justify-between gap-4 py-4 font-semibold text-plum-night transition-colors hover:text-plum">
                                 {{ $termo->nome }} em {{ $vizinha->nome }}
-                                <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-right text-sm text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                             </a>
                         </li>
                     @endforeach

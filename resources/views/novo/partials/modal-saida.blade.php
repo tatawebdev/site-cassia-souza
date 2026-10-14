@@ -44,12 +44,14 @@
         },
     }"
     @keydown.escape.window="aberto = false">
-    <div x-cloak x-show="aberto" x-transition.opacity.duration.200ms
+    <div x-cloak x-show="aberto" x-transition.opacity.duration.300ms
         class="fixed inset-0 z-[9998] grid place-items-center bg-plum-night/60 p-4 backdrop-blur-[2px]"
         @click.self="aberto = false">
         <div role="dialog" aria-modal="true" aria-labelledby="saida-titulo"
-            x-show="aberto" x-transition:enter="transition duration-300 ease-out-soft"
-            x-transition:enter-start="translate-y-3 scale-[0.98] opacity-0"
+            x-show="aberto" x-transition:enter="transition duration-medio ease-out-soft"
+            x-transition:enter-start="opacity-0 motion-safe:translate-y-3 motion-safe:scale-[0.98]"
+            x-transition:leave="transition duration-rapido ease-out-soft"
+            x-transition:leave-end="opacity-0 motion-safe:scale-[0.98]"
             class="relative w-full max-w-[480px] overflow-hidden rounded-3xl bg-white shadow-[0_40px_80px_-24px_rgba(36,4,31,0.6)]">
             <div class="cs-plum-bg relative px-8 pb-8 pt-10 text-white">
                 <img src="/assets/img/sobrenos.png" alt="" width="72" height="72"

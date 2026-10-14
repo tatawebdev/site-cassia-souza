@@ -63,10 +63,33 @@
     @include('novo.partials.modal-saida')
 
     <x-link-whatsapp rel="nofollow" title="Conversar no WhatsApp" aria-label="Conversar no WhatsApp"
-        class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25d366] text-[28px] text-white shadow-[0_12px_28px_-8px_rgba(0,0,0,0.45)] transition hover:scale-105">
+        class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25d366] text-[28px] text-white shadow-[0_12px_28px_-8px_rgba(0,0,0,0.45)] transition motion-safe:hover:scale-105">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </x-link-whatsapp>
 
+    <script>
+        // Revelar ao rolar (estilos .cs-revelar no novo.css): títulos de seção e
+        // cards de serviço, uma vez só. Só esconde o que está abaixo da dobra e
+        // só quando o navegador tem IntersectionObserver e não pede menos movimento;
+        // sem isso (ou sem JS), tudo fica visível como sempre.
+        (function () {
+            if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var alvos = document.querySelectorAll('main h2[id$="-titulo"], [data-revelar]');
+            var io = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (e) {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.add('cs-visivel');
+                    io.unobserve(e.target);
+                });
+            }, { rootMargin: '0px 0px -8% 0px' });
+            var dobra = window.innerHeight;
+            alvos.forEach(function (el) {
+                if (el.getBoundingClientRect().top < dobra) return;
+                el.classList.add('cs-revelar');
+                io.observe(el);
+            });
+        })();
+    </script>
     <script src="/assets/js/preloader.js?v={{ filemtime(public_path('assets/js/preloader.js')) }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

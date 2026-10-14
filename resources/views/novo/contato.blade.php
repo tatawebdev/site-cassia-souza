@@ -19,7 +19,7 @@
                 <ul class="mt-9 grid gap-3">
                     <li>
                         <x-link-whatsapp rel="nofollow"
-                            class="cs-plum-bg group flex items-center gap-5 rounded-2xl p-5 text-white shadow-[0_24px_48px_-28px_rgba(58,6,55,0.7)] transition hover:-translate-y-0.5 sm:p-6">
+                            class="cs-plum-bg group flex items-center gap-5 rounded-2xl p-5 text-white shadow-[0_24px_48px_-28px_rgba(58,6,55,0.7)] transition motion-safe:hover:-translate-y-0.5 sm:p-6">
                             <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-champagne text-2xl text-plum-night" aria-hidden="true">
                                 <i class="fab fa-whatsapp"></i>
                             </span>
@@ -27,7 +27,7 @@
                                 <span class="block text-sm text-on-plum">WhatsApp</span>
                                 <span class="block font-display text-[26px] font-semibold leading-tight tabular-nums">{{ config('site.whatsapp') }}</span>
                             </span>
-                            <i class="fa-solid fa-arrow-right text-champagne transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                            <i class="fa-solid fa-arrow-right text-champagne transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                         </x-link-whatsapp>
                     </li>
                     <li>
@@ -40,7 +40,7 @@
                                 <span class="block text-sm text-ink-soft">E-mail</span>
                                 <span class="block text-[14px] font-semibold text-plum-night [overflow-wrap:anywhere] min-[400px]:text-base sm:text-lg">cassia_souza@adv.oabsp.org.br</span>
                             </span>
-                            <i class="fa-solid fa-arrow-right text-plum transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                            <i class="fa-solid fa-arrow-right text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>

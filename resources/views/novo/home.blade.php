@@ -32,11 +32,11 @@
                     </p>
                     <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 motion-safe:animate-fade">
                         <x-link-whatsapp rel="nofollow"
-                            class="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-champagne px-7 py-4 text-base font-semibold leading-none text-plum-night shadow-[0_12px_32px_-12px_rgba(239,207,159,0.6)] transition hover:bg-champagne-light hover:text-plum-night active:scale-[0.98] sm:w-auto">
+                            class="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-champagne px-7 py-4 text-base font-semibold leading-none text-plum-night shadow-[0_12px_32px_-12px_rgba(239,207,159,0.6)] transition hover:bg-champagne-light hover:text-plum-night sm:w-auto">
                             <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i> Conversar no WhatsApp
                         </x-link-whatsapp>
                         <a href="#situacoes"
-                            class="font-semibold text-white underline decoration-champagne/60 decoration-1 underline-offset-[6px] transition-all hover:text-white hover:underline hover:decoration-champagne hover:underline-offset-[3px]">Ver como podemos ajudar</a>
+                            class="font-semibold text-white underline decoration-champagne/60 decoration-1 underline-offset-[6px] transition-[color,text-decoration-color,text-underline-offset] hover:text-white hover:underline hover:decoration-champagne hover:underline-offset-[3px]">Ver como podemos ajudar</a>
                     </div>
                 </div>
             </div>

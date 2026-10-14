@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="border-t border-line">
+        <div class="cs-faq border-t border-line">
             @foreach ($faqs as $faq)
                 <details class="group border-b border-line" @if ($loop->first) open @endif>
                     <summary class="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_32px] items-center gap-6 py-6 [&::-webkit-details-marker]:hidden">

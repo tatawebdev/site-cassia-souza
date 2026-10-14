@@ -42,7 +42,7 @@
                                         <a href="{{ url('/'.$termoLinks.'/'.$cidade->slug) }}"
                                             class="group flex items-center justify-between gap-4 py-3 font-semibold text-plum-night transition-colors hover:text-plum">
                                             {{ $cidade->nome }}{{ $cidade->uf !== 'SP' ? ' ('.$cidade->uf.')' : '' }}
-                                            <i class="fa-solid fa-arrow-right text-xs text-plum transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                                            <i class="fa-solid fa-arrow-right text-xs text-plum transition-transform duration-200 motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                 @endforeach

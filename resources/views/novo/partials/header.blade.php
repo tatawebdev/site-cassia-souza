@@ -15,7 +15,7 @@
                 :class="menu && '-translate-y-1 -rotate-45'"></span>
         </button>
 
-        <nav id="csNav" aria-label="Principal" :class="menu && '!flex'"
+        <nav id="csNav" aria-label="Principal" :class="menu && '!flex cs-aberto'"
             class="hidden basis-full flex-col items-start gap-5 pb-2 pt-4 lg:!flex lg:basis-auto lg:flex-row lg:items-center lg:gap-10 lg:p-0">
             <ul class="flex w-full flex-col gap-1 lg:w-auto lg:flex-row lg:gap-8">
                 <li><a href="{{ route('inicio') }}" @if (request()->routeIs('inicio')) aria-current="page" @endif
@@ -27,18 +27,18 @@
                         aria-controls="csServicos" @if (request()->routeIs('servicos*')) data-atual @endif
                         class="inline-flex items-center gap-1.5 py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne data-[atual]:text-white data-[atual]:underline data-[atual]:decoration-champagne data-[atual]:decoration-2 data-[atual]:underline-offset-8">
                         Serviços
-                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform"
                             :class="servicos && 'rotate-180'" aria-hidden="true"></i>
                     </button>
                     <div id="csServicos" x-cloak x-show="servicos"
-                        x-transition:enter="transition duration-150 ease-out"
-                        x-transition:enter-start="opacity-0 -translate-y-1"
-                        x-transition:leave="transition duration-100 ease-in"
-                        x-transition:leave-end="opacity-0"
-                        class="z-30 mt-2 w-full rounded-xl bg-white p-2 shadow-[0_24px_48px_-12px_rgba(36,4,31,0.45)] lg:absolute lg:left-1/2 lg:w-max lg:-translate-x-1/2">
+                        x-transition:enter="transition duration-rapido ease-out-soft"
+                        x-transition:enter-start="opacity-0 motion-safe:-translate-y-1 motion-safe:scale-[0.98]"
+                        x-transition:leave="transition duration-150 ease-out-soft"
+                        x-transition:leave-end="opacity-0 motion-safe:-translate-y-1"
+                        class="z-30 mt-2 w-full origin-top rounded-xl bg-white p-2 shadow-[0_24px_48px_-12px_rgba(36,4,31,0.45)] lg:absolute lg:left-1/2 lg:w-max lg:-translate-x-1/2">
                         @foreach (config('servicos') as $service)
                             <a href="{{ route($service['route']) }}"
-                                class="block rounded-lg px-4 py-2.5 text-[15px] lg:whitespace-nowrap font-medium text-plum-night hover:bg-mist hover:text-plum">{{ $service['title'] }}</a>
+                                class="block rounded-lg px-4 py-2.5 text-[15px] lg:whitespace-nowrap font-medium text-plum-night transition-colors hover:bg-mist hover:text-plum">{{ $service['title'] }}</a>
                         @endforeach
                     </div>
                 </li>

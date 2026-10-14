@@ -34,7 +34,7 @@
                             <a href="{{ route($servico['route']) }}"
                                 class="group flex items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-[15px] font-medium text-on-plum transition-colors hover:bg-white/10 hover:text-white">
                                 {{ $servico['title'] }}
-                                <i class="fa-solid fa-arrow-right text-xs text-champagne transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-right text-xs text-champagne transition-transform motion-safe:group-hover:translate-x-1" aria-hidden="true"></i>
                             </a>
                         </li>
                     @endforeach

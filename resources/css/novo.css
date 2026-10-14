@@ -5,16 +5,42 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
+    /* Tokens de movimento (os mesmos de tailwind.novo.config.js) */
+    :root {
+        --cs-ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+        --cs-rapido: 200ms;
+        --cs-medio: 300ms;
+        /* Deixa o <details> do FAQ animar até a altura "auto" (Chrome/Edge) */
+        interpolate-size: allow-keywords;
+    }
+
+    /* Âncoras da mesma página (#contato, #situacoes) rolam suave, menos para quem pede menos movimento */
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
     }
 
     body {
         @apply bg-white font-sans text-ink antialiased;
     }
 
+    /*
+     * Foco do teclado: dourado nos fundos claros e champagne nos roxos. A cor vem
+     * do contêiner mais próximo (variável herdada), então um botão claro dentro
+     * de uma seção roxa e vice-versa sempre ficam com o anel visível.
+     */
+    :is([class~="cs-plum-bg"], [class~="bg-plum"], [class~="bg-plum-night"], [class~="bg-plum-deep"]):not(a, button) {
+        --cs-foco: theme('colors.champagne.DEFAULT');
+    }
+
+    :is([class~="bg-white"], [class~="bg-mist"], [class~="cs-form"]):not(a, button) {
+        --cs-foco: theme('colors.gold.ink');
+    }
+
     :focus-visible {
-        @apply outline outline-2 outline-offset-[3px] outline-gold-ink;
+        @apply outline outline-2 outline-offset-[3px];
+        outline-color: var(--cs-foco, theme('colors.gold.ink'));
     }
 
     /* Títulos equilibrados e parágrafos sem palavra solta na última linha */
@@ -32,6 +58,132 @@
 
     [x-cloak] {
         display: none !important;
+    }
+}
+
+/*
+ * ---------------------------------------------------------------------------
+ * Movimento
+ * Uma curva (--cs-ease, desaceleração suave, sem quique) e duas durações:
+ * 200ms para hover/foco/cores e 300ms para revelar, menus e modal.
+ * Com "reduzir movimento": sem deslocamentos nem revelação; cores e opacidade
+ * continuam mudando, só que sem nada se mover.
+ * ---------------------------------------------------------------------------
+ */
+
+/* Pressionar: botões e links em pílula (e ícones redondos) afundam de leve ao clique */
+@media (prefers-reduced-motion: no-preference) {
+    :is(a, button)[class~="rounded-full"],
+    .cs-form button.appointment,
+    .cs-newsletter button {
+        transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow, transform;
+        transition-duration: var(--cs-rapido);
+        transition-timing-function: var(--cs-ease);
+    }
+
+    :is(a, button)[class~="rounded-full"]:active,
+    .cs-form button.appointment:active,
+    .cs-newsletter button:active {
+        transform: scale(0.97);
+        transition-duration: 100ms;
+    }
+}
+
+/* FAQ: a resposta abre e fecha deslizando (onde há ::details-content; nos outros, abre na hora) */
+@media (prefers-reduced-motion: no-preference) {
+    @supports selector(::details-content) {
+        .cs-faq details::details-content {
+            block-size: 0;
+            overflow-y: clip;
+            transition:
+                block-size var(--cs-medio) var(--cs-ease),
+                content-visibility var(--cs-medio) allow-discrete;
+        }
+
+        .cs-faq details[open]::details-content {
+            block-size: auto;
+        }
+
+        .cs-faq details > :not(summary) {
+            opacity: 0;
+            transition: opacity var(--cs-medio) var(--cs-ease);
+        }
+
+        .cs-faq details[open] > :not(summary) {
+            opacity: 1;
+        }
+    }
+}
+
+/* Menu do celular: entra e sai com fade e um leve deslize (o desktop não muda) */
+@media (max-width: 1023.98px) and (prefers-reduced-motion: no-preference) {
+    #csNav {
+        opacity: 0;
+        transform: translateY(-6px);
+        transition:
+            opacity var(--cs-medio) var(--cs-ease),
+            transform var(--cs-medio) var(--cs-ease),
+            display var(--cs-medio) allow-discrete;
+    }
+
+    #csNav.cs-aberto {
+        opacity: 1;
+        transform: none;
+    }
+
+    @starting-style {
+        #csNav.cs-aberto {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+    }
+}
+
+/*
+ * Revelar ao rolar: só os títulos de seção e os cards de serviço, uma vez.
+ * A classe .cs-revelar é posta pelo script do layout (com IntersectionObserver
+ * e sem "reduzir movimento"), e só no que está abaixo da dobra: sem JS, tudo
+ * aparece normalmente.
+ */
+@media (prefers-reduced-motion: no-preference) {
+    .cs-revelar {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+            opacity var(--cs-medio) var(--cs-ease),
+            transform var(--cs-medio) var(--cs-ease);
+    }
+
+    .cs-revelar.cs-visivel {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Troca de página: um fade curto entre uma página e outra (onde houver suporte) */
+    @view-transition {
+        navigation: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 250ms;
+        animation-timing-function: var(--cs-ease);
+    }
+}
+
+@media print {
+    .cs-revelar {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Reduzir movimento: transições só de cor/opacidade (nada desliza, cresce ou gira) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow !important;
     }
 }
 
@@ -87,7 +239,7 @@
     }
 
     .cs-form button.appointment {
-        @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-plum px-7 py-4 text-base font-semibold text-white transition hover:bg-plum-deep active:scale-[0.98];
+        @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-plum px-7 py-4 text-base font-semibold text-white transition hover:bg-plum-deep;
     }
 
     .cs-form button.appointment i {
