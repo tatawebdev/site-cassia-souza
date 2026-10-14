@@ -3,6 +3,9 @@
     'description' => 'Advocacia tributária para empresas: planejamento tributário, recuperação de PIS/COFINS, regularização de débitos na PGFN e assessoria para a Reforma Tributária.',
     // Imagem ao compartilhar o link (WhatsApp, LinkedIn etc.)
     'image' => '/assets/img/sobrenos.png',
+    // Páginas de SEO: canonical para o termo principal e noindex até ganharem texto próprio
+    'canonical' => null,
+    'robots' => null,
 ])
 
 <!DOCTYPE html>
@@ -13,14 +16,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
+    @if ($robots)
+        <meta name="robots" content="{{ $robots }}">
+    @endif
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Cássia Souza Advocacia">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description }}">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:image" content="{{ url($image) }}">
     <meta name="twitter:card" content="summary_large_image">
     {{-- Monograma "SC" do logo (gerado a partir de assets/favicon original) --}}

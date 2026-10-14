@@ -16,9 +16,13 @@
     // Foto de fundo do banner (a mesma da página antiga, em /assets/images)
     'imagem' => null,
     'contato' => true,
+    // Meta description diferente do texto do banner (padrão: a própria descrição)
+    'descricaoSeo' => null,
+    'canonical' => null,
+    'robots' => null,
 ])
 
-<x-novo.layout :title="$tituloAba ?? $titulo.' | Cássia Souza Advocacia Tributária'" :description="$descricao ?? 'Cássia Souza Advocacia Tributária'">
+<x-novo.layout :title="$tituloAba ?? $titulo.' | Cássia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cássia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])
         @if ($imagem)

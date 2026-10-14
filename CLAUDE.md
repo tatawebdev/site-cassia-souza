@@ -27,9 +27,8 @@ próprio em Tailwind. Até a migração terminar, **toda página segue este proc
 
 Migradas: home (`/`), sobre (`/sobre-nos`), listagem `/servicos` e as 7 páginas `/servicos/<slug>`
 (um único modelo, `novo/servico.blade.php`, com o conteúdo em `config/servicos.php` e as perguntas
-em `config/faqs.php`), contato (`/contato`), política de privacidade (`/politica-de-privacidade`) e a página 404 (`errors/404.blade.php`). Ainda no tema
-antigo: a rota curinga de SEO `/{termo}/{cidade?}/{estado?}`, restrita aos 17 termos de
-`App\Http\Livewire\TermoDinamico` (os demais endereços dão 404).
+em `config/faqs.php`), contato (`/contato`), política de privacidade (`/politica-de-privacidade`) e a página 404 (`errors/404.blade.php`). Páginas de SEO
+`/{termo}/{localidade}` (herdadas do site antigo) também estão no tema novo, com o texto no banco: ver a seção abaixo.
 
 ### Tema novo
 
@@ -45,6 +44,16 @@ antigo: a rota curinga de SEO `/{termo}/{cidade?}/{estado?}`, restrita aos 17 te
 - Componentes Livewire compartilhados com o tema antigo (`contact-form`, `newsletter-subscribe`)
   são estilizados pelo `novo.css` via `.cs-form` / `.cs-newsletter`; o modal da newsletter usa
   estilos inline para funcionar nos dois temas.
+
+## Páginas de SEO por termo e cidade
+
+~97 mil endereços `/{termo}/{localidade}` herdados do site antigo, respondidos por
+`PaginaSeoController` (rota curinga, a última de `routes/web.php`). Texto no banco (`seo_termos`,
+`seo_localidades`, `seo_paginas`, `seo_blocos`), montado por `App\Services\PaginaSeo`; carga inicial
+com `php artisan seo:importar` (dados em `database/data/seo/`). Só indexam as páginas marcadas
+(hoje: 5 termos principais × Grande SP e capitais); o resto fica `noindex`. `/{localidade}` sozinho
+faz 301 para `/advocacia-tributaria/{localidade}`. Para editar textos ou liberar páginas: skill
+`paginas-seo`.
 
 ## Avaliações do Google
 

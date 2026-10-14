@@ -73,24 +73,14 @@ require __DIR__ . '/auth.php';
 
 
 
-// Route::get('/{termo}/{cidade?}/{estado?}', \App\Http\Livewire\TermoDinamico::class)
-//     ->where('estado', '[A-Za-z]{2}')
-//     ->name('termo.dinamico');
 // Rota mocado para o chat de contatos (Inertia)
 Route::get('/chat', function () {
     return Inertia::render('Chat/ContactsChat');
 })->middleware(['auth'])->name('chat.contacts');
 
-// Páginas dinâmicas de SEO: só os termos mapeados (os demais endereços dão 404).
-// Ainda mostram a home antiga; serão refeitas no tema novo.
-Route::get('/{termo}/{cidade?}/{estado?}', \App\Livewire\Index::class)
-    ->whereIn('termo', [
-        'advocacia-tributaria', 'cassia-souza-advocacia', 'advogada-tributarista', 'defesa-fiscal',
-        'tributarista', 'advocacia-administrativa-tributaria', 'advocacia-empresarial-e-tributaria',
-        'advocacia-tributaria-empresarial', 'advogado-area-tributaria', 'advogado-consultoria-tributaria',
-        'advogado-planejamento-tributario', 'advogados-tributarios', 'direito-tributario-advocacia',
-        'direito-tributario-advogado', 'escritorio-advocacia-tributaria', 'escritorio-de-advocacia-tributaria',
-        'planejamento-tributario-advogado',
-    ])
-    ->where('estado', '[A-Za-z]{2}')
-    ->name('termo.dinamico');
+// Páginas de SEO herdadas do site antigo (/{termo}/{localidade}), com o texto no banco
+// (seo_termos, seo_localidades, seo_paginas, seo_blocos). Fica por último: só recebe o que
+// nenhuma outra rota atendeu, e o controller devolve 404 para termo ou localidade inexistente.
+Route::get('/{termo}/{local?}/{uf?}', \App\Http\Controllers\PaginaSeoController::class)
+    ->where(['termo' => "[A-Za-z0-9'-]+", 'local' => "[A-Za-z0-9'-]+", 'uf' => '[A-Za-z]{2}'])
+    ->name('seo.pagina');
