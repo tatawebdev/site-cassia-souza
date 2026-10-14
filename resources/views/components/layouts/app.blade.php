@@ -201,7 +201,7 @@
     <script src="/assets/js/video-popup.js"></script>
     <script src="/assets/js/video.js"></script>
     <script src="/assets/js/back-to-top-button.js"></script>
-    <script src="/assets/js/preloader.js"></script>
+    <script src="/assets/js/preloader.js?v={{ filemtime(public_path('assets/js/preloader.js')) }}"></script>
     <script src="/assets/js/popup-image.js"></script>
         <script>
         document.addEventListener('DOMContentLoaded', () => {

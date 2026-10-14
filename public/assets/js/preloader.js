@@ -1,5 +1,12 @@
 (function () {
+    var MIN_VISIBLE_MS = 600; // não "pisca" quando a página carrega rápido
     var MAX_WAIT_MS = 8000; // não prende o usuário se algum recurso externo travar o "load"
+
+    // performance.now() conta desde o início da navegação: se o load já
+    // passou do mínimo, esconde na hora; senão espera só o que falta.
+    function hideAfterMinimum() {
+        setTimeout(hidePreloader, Math.max(0, MIN_VISIBLE_MS - performance.now()));
+    }
 
     function hidePreloader() {
         var el = document.getElementById('site-preloader');
@@ -12,7 +19,7 @@
         }, 600);
     }
 
-    window.addEventListener('load', hidePreloader);
+    window.addEventListener('load', hideAfterMinimum);
     setTimeout(hidePreloader, MAX_WAIT_MS);
 
     // Voltando pelo histórico (bfcache) a página não dispara "load" de novo

@@ -49,7 +49,7 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </x-link-whatsapp>
 
-    <script src="/assets/js/preloader.js"></script>
+    <script src="/assets/js/preloader.js?v={{ filemtime(public_path('assets/js/preloader.js')) }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Livewire 3: dispatch('swal', payload) dos formulários de contato e newsletter
