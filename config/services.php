@@ -43,6 +43,14 @@ return [
         'key' => env('GOOGLE_PLACES_KEY'),
     ],
 
+    // Google Indexing API (google:indexing-sync). As credenciais são o JSON da
+    // conta de serviço, que precisa ser proprietária da propriedade no Search Console.
+    'google_indexing' => [
+        'enabled' => env('GOOGLE_INDEXING_ENABLED', false),
+        'credentials_path' => env('GOOGLE_INDEXING_CREDENTIALS', storage_path('app/private/google-indexing.json')),
+        'base_url' => env('GOOGLE_INDEXING_BASE_URL', 'https://cassiasouzaadvocacia.com.br'),
+    ],
+
     // reCAPTCHA v2 ("Não sou um robô") do formulário de contato.
     // Sem a chave do site, o formulário funciona sem reCAPTCHA.
     'recaptcha' => [
