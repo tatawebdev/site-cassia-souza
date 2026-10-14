@@ -23,7 +23,7 @@
 <body>
     <main class="cs-plum-bg flex min-h-screen flex-col text-white">
         <div class="cs-wrap flex items-center justify-between py-5">
-            <a href="/" aria-label="Cassia Souza Advocacia — início">
+            <a href="/" aria-label="Cassia Souza Advocacia, início">
                 <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68" class="block h-auto w-[128px]">
             </a>
             <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="nofollow noopener"

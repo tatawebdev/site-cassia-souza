@@ -28,7 +28,7 @@
                     </h1>
                     <p class="mt-6 max-w-[34em] text-lg leading-relaxed text-on-plum motion-safe:animate-fade">
                         Identificamos reduções legais, regularizamos dívidas, recuperamos tributos e preparamos sua
-                        empresa para a Reforma Tributária — com clareza, ética e planejamento.
+                        empresa para a Reforma Tributária, com clareza, ética e planejamento.
                     </p>
                     <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 motion-safe:animate-fade">
                         <x-link-whatsapp rel="nofollow"

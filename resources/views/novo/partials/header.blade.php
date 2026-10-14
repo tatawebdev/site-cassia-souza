@@ -1,7 +1,7 @@
 {{-- Cabeçalho do tema novo. Fica dentro do hero de cada página, sobre o fundo roxo. --}}
 <header x-data="{ menu: false, servicos: false }" class="relative z-20 text-white">
     <div class="cs-wrap flex flex-wrap items-center justify-between py-5">
-        <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia — início">
+        <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia, início">
             <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68"
                 class="block h-auto w-[128px]">
         </a>
