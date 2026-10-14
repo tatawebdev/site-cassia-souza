@@ -6,7 +6,16 @@ O monograma "SC" (recorte de logo-roxo.png) "respira": duas cópias com
 máscara em gradiente acendem alternadas — uma o lado do S, outra o do C —
 com meio segundo de atraso, e um brilho difuso atrás. Na saída faz fade +
 leve zoom. Quem esconde é /assets/js/preloader.js. --}}
+<script>document.documentElement.classList.add('cs-preloading');</script>
+<noscript><style>#site-preloader { display: none !important; }</style></noscript>
 <style>
+    /* As animações de entrada da página (animate-rise, animate-fade...) ficam
+       paradas no quadro inicial enquanto o pré-loader cobre a tela; o
+       preloader.js tira a classe quando ele começa a sair. */
+    .cs-preloading [class*="animate-"] {
+        animation-play-state: paused !important;
+    }
+
     @keyframes site-preloader-mark {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.06); }

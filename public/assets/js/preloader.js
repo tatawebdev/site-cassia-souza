@@ -13,6 +13,8 @@
         if (!el || el.classList.contains('site-preloader--hidden')) return;
 
         el.classList.add('site-preloader--hidden');
+        // Solta as animações de entrada da página junto com o fade de saída
+        document.documentElement.classList.remove('cs-preloading');
         // Remove do DOM depois da animação de saída (550ms)
         setTimeout(function () {
             if (el.parentNode) el.parentNode.removeChild(el);
