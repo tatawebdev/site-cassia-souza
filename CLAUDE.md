@@ -27,7 +27,7 @@ próprio em Tailwind. Até a migração terminar, **toda página segue este proc
 
 Migradas: home (`/`), sobre (`/sobre-nos`), listagem `/servicos` e as 7 páginas `/servicos/<slug>`
 (um único modelo, `novo/servico.blade.php`, com o conteúdo em `config/servicos.php` e as perguntas
-em `config/faqs.php`). Ainda no tema antigo: contato, política de privacidade e a rota curinga de SEO
+em `config/faqs.php`) e contato (`/contato`). Ainda no tema antigo: política de privacidade e a rota curinga de SEO
 `/{termo}/{cidade?}/{estado?}`.
 
 ### Tema novo

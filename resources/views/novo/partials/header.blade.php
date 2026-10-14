@@ -43,7 +43,8 @@
                     </div>
                 </li>
                 <li><a href="https://blog.cassiasouzaadvocacia.com.br/" target="_blank" class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne">Blog</a></li>
-                <li><a href="/contato" class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne">Contato</a></li>
+                <li><a href="{{ route('contato') }}" @if (request()->routeIs('contato')) aria-current="page" @endif
+                        class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-champagne aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8">Contato</a></li>
             </ul>
             <x-link-whatsapp rel="nofollow"
                 class="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-[15px] font-semibold tabular-nums text-white transition-colors hover:border-champagne">

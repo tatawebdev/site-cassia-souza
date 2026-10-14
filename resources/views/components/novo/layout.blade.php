@@ -7,7 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    {{-- Monograma "SC" do logo (gerado a partir de assets/favicon original) --}}
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" href="/assets/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#590854">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

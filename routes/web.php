@@ -23,7 +23,8 @@ Route::redirect('/novo', '/', 301);
 
 Route::view('/sobre-nos', 'novo.sobre')->name('sobre');
 Route::get('/antigo/sobre-nos', \App\Livewire\About::class)->name('antigo.sobre');
-Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
+Route::view('/contato', 'novo.contato')->name('contato');
+Route::get('/antigo/contato', \App\Livewire\Contact::class)->name('antigo.contato');
 // Serviços no tema novo: listagem e uma página por serviço (config/servicos.php).
 // A listagem antiga (Livewire Servicos) nunca funcionou (view inexistente), então não ganhou /antigo.
 Route::view('/servicos', 'novo.servicos')->name('servicos');

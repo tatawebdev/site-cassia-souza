@@ -18,7 +18,7 @@ class Contact extends Component
             ['label' => 'Contatos', 'url' => '/contatos'],
         ];
 
-        return view('livewire.contact')
+        return view('antigo.contato')
             ->layout('components.layouts.app', [
                 'banner' => $banner,
                 'breadcrumbs' => $breadcrumbs,
