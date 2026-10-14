@@ -171,7 +171,7 @@
                         </li>
                     @endforeach
                     <li>
-                        <a href="https://blog.cassiasouzaadvocacia.com.br/" target="_blank"
+                        <a href="https://blog.cassiasouzaadvocacia.com.br/"
                             class="inline-flex items-center gap-2 rounded-full bg-plum px-5 py-3 font-semibold text-white transition-colors hover:bg-plum-deep">
                             <i class="fa-solid fa-book-open" aria-hidden="true"></i>Blog
                         </a>

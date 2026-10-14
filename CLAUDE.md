@@ -59,6 +59,16 @@ v2 "Não sou um robô" no formulário de contato e na confirmação da newslette
 (`RECAPTCHA_SITE_KEY` / `RECAPTCHA_SECRET_KEY` no `.env`; sem a chave, os formulários funcionam
 sem ele). Validação em `App\Rules\Recaptcha`; script carregado uma vez por `partials/recaptcha-loader`.
 
+## Blog (WordPress, blog.cassiasouzaadvocacia.com.br)
+
+- Fica no servidor em `www/blog` (fora do Laravel e fora do Git); cópia local em `blog/` (no `.gitignore`).
+- `php artisan blog:baixar` traz arquivos + dump do banco (`blog/blog-banco.sql`, nunca subir) via o SSH do deploy.
+- Não há deploy: cada arquivo sobe direto (SFTP do VS Code com upload ao salvar, ou `scp` com a chave do deploy).
+- Tema ativo: **filho do Blocksy** em `wp-content/themes/cassia-souza` (cabeçalho/rodapé iguais ao site,
+  chamada para contato e quadro da autora no fim dos posts; categoria → serviço em `functions.php`).
+  Para voltar ao Blocksy puro: opção `stylesheet` = `blocksy` em `wp_options`.
+- O PHP de linha de comando do servidor é 5.6 e o cliente é `mariadb` (exige `--skip-ssl`).
+
 ## Ambiente e deploy
 
 - Local: `composer dev` (servidor na 8000 + Vite). O `.env` local aponta para o MySQL de

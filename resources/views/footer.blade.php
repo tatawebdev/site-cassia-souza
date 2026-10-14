@@ -40,7 +40,7 @@
                                 <a href="/sobre-nos" class=" text-size-14 text text-decoration-none">Quem Somos</a>
                             </li>
                             <li><i class="fa-solid fa-arrow-right"></i>
-                                <a href="http://blog.cassiasouzaadvocacia.com.br/" target="_blank"
+                                <a href="http://blog.cassiasouzaadvocacia.com.br/"
                                     class=" text-size-14 text text-decoration-none">Blog</a>
                             </li>
                             <li><i class="fa-solid fa-arrow-right"></i>

@@ -44,7 +44,7 @@
                 <p class="text-sm font-semibold text-white">Escritório</p>
                 <ul class="mt-4 grid gap-2.5 text-[15px]">
                     <li><a href="/sobre-nos" class="transition-colors hover:text-champagne">Quem somos</a></li>
-                    <li><a href="https://blog.cassiasouzaadvocacia.com.br/" target="_blank" class="transition-colors hover:text-champagne">Blog</a></li>
+                    <li><a href="https://blog.cassiasouzaadvocacia.com.br/" class="transition-colors hover:text-champagne">Blog</a></li>
                     <li><a href="/contato" class="transition-colors hover:text-champagne">Contato</a></li>
                     <li><a href="/politica-de-privacidade" class="transition-colors hover:text-champagne">Política de privacidade</a></li>
                 </ul>
