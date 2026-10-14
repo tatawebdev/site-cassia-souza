@@ -35,10 +35,10 @@
                         x-transition:enter-start="opacity-0 -translate-y-1"
                         x-transition:leave="transition duration-100 ease-in"
                         x-transition:leave-end="opacity-0"
-                        class="z-30 mt-2 w-full rounded-xl bg-white p-2 shadow-[0_24px_48px_-12px_rgba(36,4,31,0.45)] lg:absolute lg:left-1/2 lg:w-[340px] lg:-translate-x-1/2">
+                        class="z-30 mt-2 w-full rounded-xl bg-white p-2 shadow-[0_24px_48px_-12px_rgba(36,4,31,0.45)] lg:absolute lg:left-1/2 lg:w-max lg:-translate-x-1/2">
                         @foreach (config('servicos') as $service)
                             <a href="{{ route($service['route']) }}"
-                                class="block rounded-lg px-4 py-2.5 text-[15px] font-medium text-plum-night hover:bg-mist hover:text-plum">{{ $service['title'] }}</a>
+                                class="block rounded-lg px-4 py-2.5 text-[15px] lg:whitespace-nowrap font-medium text-plum-night hover:bg-mist hover:text-plum">{{ $service['title'] }}</a>
                         @endforeach
                     </div>
                 </li>
