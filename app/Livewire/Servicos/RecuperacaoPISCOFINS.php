@@ -53,7 +53,7 @@ class RecuperacaoPISCOFINS extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.servicos.recuperacao-pis-cofins', [
+        return view('antigo.servicos.recuperacao-pis-cofins', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

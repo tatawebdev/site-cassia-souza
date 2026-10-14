@@ -67,7 +67,7 @@ class RegularizacaoDebitosPGFN extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.servicos.regularizacao-debitos-pgfn', [
+        return view('antigo.servicos.regularizacao-debitos-pgfn', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

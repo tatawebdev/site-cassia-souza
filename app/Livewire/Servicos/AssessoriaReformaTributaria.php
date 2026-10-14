@@ -50,7 +50,7 @@ class AssessoriaReformaTributaria extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.servicos.assessoria-reforma-tributaria', [
+        return view('antigo.servicos.assessoria-reforma-tributaria', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])

@@ -52,7 +52,7 @@ class PlanejamentoClinicas extends Component
         $imagem2 = file_exists(public_path("{$imagem2Default}")) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
         return view(
-            'livewire.servicos.planejamento-tributario-clinicas',
+            'antigo.servicos.planejamento-tributario-clinicas',
             [
                 'imagem1' => $imagem1,
                 'imagem2' => $imagem2

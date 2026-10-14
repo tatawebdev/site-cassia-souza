@@ -1,50 +1,7 @@
 <x-novo.layout title="Cássia Souza Advocacia Tributária">
     @php
-        $faqs = [
-            [
-                'question' => 'Como saber se meu regime tributário é o mais vantajoso para minha empresa?',
-                'answer' => 'A escolha do regime ideal depende do seu faturamento, das suas margens de lucro e da sua atividade. Fazemos uma
-    análise personalizada para simular o custo de cada regime e mostrar qual alternativa traz mais economia sem
-    riscos.',
-            ],
-            [
-                'question' => 'O que muda para minha empresa com a Reforma Tributária?',
-                'answer' => 'A Reforma vai alterar toda a tributação sobre o consumo. Teremos novas bases de cálculo, formas de apuração,
-    alíquotas e obrigações acessórias. Isso significa que o que hoje é vantajoso pode deixar de ser — ou vice‑versa.
-    Nossa assessoria ajuda a entender quais mudanças vão afetar sua empresa e como ajustar a estrutura para manter
-    segurança e evitar surpresas.',
-            ],
-            [
-                'question' => 'Consultoria tributária mensal realmente vale a pena para resultados consistentes?',
-                'answer' => 'Sim, quando feita com constância. O acompanhamento regular permite identificar erros operacionais cedo, ajustar
-    práticas conforme novas normas, evitar autuações e identificar oportunidades de economia, mantendo a tranquilidade
-    tributária enquanto sua empresa cresce.',
-            ],
-            [
-                'question' =>
-                    'Minha empresa do Simples Nacional pode recuperar PIS e COFINS monofásicos pagos indevidamente?',
-                'answer' => 'Sim — em muitos casos. Se você comercializa produtos sujeitos à tributação monofásica e os recolhimentos foram
-    feitos nesses casos, pode haver crédito a recuperar. O primeiro passo é revisar suas notas fiscais, identificar
-    produtos monofásicos e verificar se houve pagamento indevido no seu DAS.',
-            ],
-            [
-                'question' => 'Qual é o prazo para recuperar tributos pagos indevidamente de PIS e COFINS monofásicos?',
-                'answer' => 'O direito de restituição ou compensação abrange os últimos 5 anos (60 meses).',
-            ],
-            [
-                'question' => 'Quais produtos estão sujeitos à tributação monofásica de PIS e COFINS?',
-                'answer' => 'A lista inclui medicamentos, cosméticos, certos produtos farmacêuticos, bebidas frias, entre outros, de acordo com
-    a NCM usada nas notas fiscais.',
-            ],
-            [
-                'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
-                'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento
-    especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se
-    enquadra nos critérios exigidos nos editais.',
-            ],
-        ];
-
-        $faqs = collect($faqs)->shuffle()->take(5)->values()->all();
+        // Amostra aleatória das perguntas frequentes (config/faqs.php)
+        $faqs = collect(config('faqs'))->shuffle()->take(5)->values()->all();
     @endphp
 
     <div class="cs-plum-bg relative overflow-hidden text-white">
@@ -120,33 +77,7 @@
                     </p>
                 </div>
 
-                <ul class="m-0 mt-12 grid list-none gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach (config('servicos') as $service)
-                        @php $featured = $loop->first || $loop->last; @endphp
-                        <li class="{{ $featured ? 'md:col-span-2' : '' }}">
-                            <a href="{{ route($service['route']) }}"
-                                class="group grid h-full overflow-hidden rounded-2xl border border-line bg-white shadow-[0_24px_48px_-32px_rgba(58,6,55,0.45)] transition duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-[0_32px_64px_-32px_rgba(58,6,55,0.6)] {{ $featured ? 'lg:grid-cols-2' : '' }} {{ $loop->last ? 'lg:[&>figure]:order-2' : '' }}">
-                                <figure class="relative m-0 h-52 overflow-hidden {{ $featured ? 'lg:h-full lg:min-h-[300px]' : '' }}">
-                                    <img src="{{ asset('assets/servicos/detalhes/' . $service['image'] . '/imagem1.jpg') }}"
-                                        alt="" loading="lazy" width="735" height="509"
-                                        class="h-full w-full object-cover transition-transform duration-500 ease-out-soft group-hover:scale-[1.04]">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-plum-night/40 to-transparent" aria-hidden="true"></div>
-                                </figure>
-                                <div class="flex flex-col p-6 sm:p-7 {{ $featured ? 'lg:justify-center lg:p-10' : '' }}">
-                                    <span class="text-sm font-semibold text-gold-ink">{{ $service['title'] }}</span>
-                                    <span class="mt-2 font-display font-semibold leading-tight tracking-[-0.01em] text-plum-night {{ $featured ? 'text-[clamp(24px,2.4vw,32px)]' : 'text-[22px]' }}">{{ $service['problem'] }}</span>
-                                    <span class="mt-3 text-[15px] leading-relaxed text-ink-soft">{{ $service['text'] }}</span>
-                                    <span class="mt-auto flex items-center gap-3 pt-6 text-[15px] font-semibold text-plum">
-                                        <span class="grid h-9 w-9 place-items-center rounded-full bg-plum text-white transition-transform duration-200 ease-out-soft group-hover:translate-x-1" aria-hidden="true">
-                                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                                        </span>
-                                        Ver solução
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+                <x-novo.servicos-grade class="mt-12" />
             </div>
         </section>
 
@@ -193,41 +124,7 @@
 
         <x-novo.avaliacoes class="bg-mist" />
 
-        <section aria-labelledby="faq-titulo" class="bg-white py-[clamp(72px,9vw,128px)]">
-            <div class="cs-wrap grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-                <div class="lg:sticky lg:top-10">
-                    <h2 id="faq-titulo" class="font-display text-[clamp(34px,4vw,54px)] font-semibold leading-[1.05] tracking-[-0.015em] text-plum-night">
-                        Perguntas frequentes
-                    </h2>
-                    <p class="mt-5 max-w-[26em] text-[17px] leading-relaxed text-ink-soft">
-                        As dúvidas que mais ouvimos de empresários sobre regime tributário, créditos e dívidas.
-                    </p>
-                    <div class="cs-plum-bg relative mt-10 overflow-hidden rounded-2xl p-8 text-white">
-                        <p class="font-display text-2xl font-semibold leading-snug">Não encontrou a sua dúvida?</p>
-                        <p class="mt-2 text-[15px] leading-relaxed text-on-plum">Conte o seu caso e respondemos pessoalmente.</p>
-                        <x-link-whatsapp rel="nofollow"
-                            class="mt-6 inline-flex items-center gap-2.5 rounded-full bg-champagne px-6 py-3 font-semibold text-plum-night transition hover:bg-champagne-light hover:text-plum-night">
-                            <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Perguntar no WhatsApp
-                        </x-link-whatsapp>
-                    </div>
-                </div>
-
-                <div class="border-t border-line">
-                    @foreach ($faqs as $faq)
-                        <details class="group border-b border-line" @if ($loop->first) open @endif>
-                            <summary class="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_32px] items-center gap-6 py-6 [&::-webkit-details-marker]:hidden">
-                                <h3 class="font-display text-[22px] font-semibold leading-snug text-plum-night transition-colors group-hover:text-plum">{{ $faq['question'] }}</h3>
-                                <span class="relative grid h-8 w-8 place-items-center rounded-full bg-mist transition duration-200 ease-out-soft group-open:rotate-45 group-open:bg-plum" aria-hidden="true">
-                                    <span class="absolute h-0.5 w-3 bg-plum group-open:bg-white"></span>
-                                    <span class="absolute h-3 w-0.5 bg-plum group-open:bg-white"></span>
-                                </span>
-                            </summary>
-                            <p class="max-w-[42em] pb-7 text-base leading-relaxed text-ink-soft">{{ preg_replace('/\s+/u', ' ', $faq['answer']) }}</p>
-                        </details>
-                    @endforeach
-                </div>
-            </div>
-        </section>
+        <x-novo.faq :faqs="$faqs" class="bg-white" />
 
         <x-novo.contato />
     </main>

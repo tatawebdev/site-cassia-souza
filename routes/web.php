@@ -24,15 +24,21 @@ Route::redirect('/novo', '/', 301);
 Route::view('/sobre-nos', 'novo.sobre')->name('sobre');
 Route::get('/antigo/sobre-nos', \App\Livewire\About::class)->name('antigo.sobre');
 Route::get('/contato', \App\Livewire\Contact::class)->name('contato');
-Route::get('/servicos', \App\Livewire\Servicos::class)->name('servicos');
+// Serviços no tema novo: listagem e uma página por serviço (config/servicos.php).
+// A listagem antiga (Livewire Servicos) nunca funcionou (view inexistente), então não ganhou /antigo.
+Route::view('/servicos', 'novo.servicos')->name('servicos');
+foreach (config('servicos') as $servico) {
+    Route::view('/servicos/'.$servico['slug'], 'novo.servico', ['slug' => $servico['slug']])->name($servico['route']);
+}
 
-Route::get('/servicos/consultoria-tributaria', \App\Livewire\Servicos\ConsultoriaTributaria::class)->name('servicos.consultoria.tributaria');
-Route::get('/servicos/regularizacao-debitos-pgfn', \App\Livewire\Servicos\RegularizacaoDebitosPGFN::class)->name('servicos.regularizacao.debitos.pgfn');
-Route::get('/servicos/planejamento-tributario', \App\Livewire\Servicos\PlanejamentoTributario::class)->name('servicos.planejamento.tributario');
-Route::get('/servicos/planejamento-tributario-clinicas', \App\Livewire\Servicos\PlanejamentoClinicas::class)->name('servicos.planejamento.tributario.clinicas');
-Route::get('/servicos/assessoria-reforma-tributaria', \App\Livewire\Servicos\AssessoriaReformaTributaria::class)->name('servicos.assessoria.reforma.tributaria');
-Route::get('/servicos/treinamento-tributario', \App\Livewire\Servicos\TreinamentoTributario::class)->name('servicos.treinamento.tributario');
-Route::get('/servicos/recuperacao-pis-cofins-monofasicos', \App\Livewire\Servicos\RecuperacaoPISCOFINS::class)->name('servicos.recuperacao.pis.cofins.monofasicos');
+// Versões antigas das páginas de serviço
+Route::get('/antigo/servicos/consultoria-tributaria', \App\Livewire\Servicos\ConsultoriaTributaria::class)->name('antigo.servicos.consultoria.tributaria');
+Route::get('/antigo/servicos/regularizacao-debitos-pgfn', \App\Livewire\Servicos\RegularizacaoDebitosPGFN::class)->name('antigo.servicos.regularizacao.debitos.pgfn');
+Route::get('/antigo/servicos/planejamento-tributario', \App\Livewire\Servicos\PlanejamentoTributario::class)->name('antigo.servicos.planejamento.tributario');
+Route::get('/antigo/servicos/planejamento-tributario-clinicas', \App\Livewire\Servicos\PlanejamentoClinicas::class)->name('antigo.servicos.planejamento.tributario.clinicas');
+Route::get('/antigo/servicos/assessoria-reforma-tributaria', \App\Livewire\Servicos\AssessoriaReformaTributaria::class)->name('antigo.servicos.assessoria.reforma.tributaria');
+Route::get('/antigo/servicos/treinamento-tributario', \App\Livewire\Servicos\TreinamentoTributario::class)->name('antigo.servicos.treinamento.tributario');
+Route::get('/antigo/servicos/recuperacao-pis-cofins-monofasicos', \App\Livewire\Servicos\RecuperacaoPISCOFINS::class)->name('antigo.servicos.recuperacao.pis.cofins.monofasicos');
 
 // Página: Política de Privacidade
 Route::get('/politica-de-privacidade', \App\Livewire\PoliticaPrivacidade::class)->name('privacy');

@@ -25,8 +25,10 @@ próprio em Tailwind. Até a migração terminar, **toda página segue este proc
    É o equivalente de `$banner` + `$breadcrumbs` do layout antigo (`components.layouts.app`).
 4. Não mexer no tema antigo além de correções; ele é removido quando a migração acabar.
 
-Migradas: home (`/`), sobre (`/sobre-nos`). Ainda no tema antigo: serviços, contato, política
-de privacidade e a rota curinga de SEO `/{termo}/{cidade?}/{estado?}`.
+Migradas: home (`/`), sobre (`/sobre-nos`), listagem `/servicos` e as 7 páginas `/servicos/<slug>`
+(um único modelo, `novo/servico.blade.php`, com o conteúdo em `config/servicos.php` e as perguntas
+em `config/faqs.php`). Ainda no tema antigo: contato, política de privacidade e a rota curinga de SEO
+`/{termo}/{cidade?}/{estado?}`.
 
 ### Tema novo
 

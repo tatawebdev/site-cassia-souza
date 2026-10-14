@@ -51,7 +51,7 @@ class PlanejamentoTributario extends Component
         $imagem1 = file_exists(public_path($imagem1Default)) ? $imagem1Default : '/assets/images/singleblog-image1.jpg';
         $imagem2 = file_exists(public_path($imagem2Default)) ? $imagem2Default : '/assets/images/singleblog-image2.jpg';
 
-        return view('livewire.servicos.planejamento-tributario', [
+        return view('antigo.servicos.planejamento-tributario', [
             'imagem1' => $imagem1,
             'imagem2' => $imagem2,
         ])
