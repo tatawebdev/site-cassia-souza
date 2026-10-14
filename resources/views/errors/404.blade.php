@@ -1,5 +1,5 @@
 {{-- Página não encontrada (tema novo). --}}
-<x-novo.layout title="Página não encontrada | Cassia Souza Advocacia Tributária"
+<x-novo.layout title="Página não encontrada | Cassia Souza Advocacia Tributária" robots="noindex, follow"
     description="O endereço acessado não existe ou mudou de lugar.">
     <div class="cs-plum-bg relative overflow-hidden text-white">
         @include('novo.partials.header')

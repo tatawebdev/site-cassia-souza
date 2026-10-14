@@ -72,9 +72,9 @@
             <div class="cs-plum-bg relative px-8 pb-8 pt-10 text-white">
                 <img src="/assets/img/sobrenos.png" alt="" width="72" height="72"
                     class="h-[72px] w-[72px] rounded-full border-2 border-champagne/60 object-cover object-[55%_30%]">
-                <h2 id="saida-titulo" class="mt-5 font-display text-[30px] font-semibold leading-[1.1]">
+                <p id="saida-titulo" class="mt-5 font-display text-[30px] font-semibold leading-[1.1]">
                     Antes de ir: quer entender o caso da sua empresa?
-                </h2>
+                </p>
                 <p class="mt-3 text-[16px] leading-relaxed text-on-plum">
                     Conte o que está acontecendo e a Cassia indica o melhor caminho, seja regime tributário,
                     créditos a recuperar ou débitos com a PGFN.

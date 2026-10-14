@@ -21,9 +21,10 @@
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}">
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
-    @if ($robots)
-        <meta name="robots" content="{{ $robots }}">
-    @endif
+    {{-- Padrão: indexar e permitir prévia grande da imagem (Google Discover e respostas de IA) --}}
+    <meta name="robots" content="{{ $robots ?? 'index, follow, max-image-preview:large' }}">
+    <meta name="author" content="Cassia Souza">
+    <meta name="publisher" content="Cassia Souza Advocacia Tributária">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">

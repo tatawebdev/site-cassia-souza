@@ -1,4 +1,4 @@
-<x-novo.layout title="Cassia Souza Advocacia Tributária">
+<x-novo.layout title="Advocacia tributária para empresas em Suzano (SP) | Cassia Souza">
     @php
         // Amostra aleatória das perguntas frequentes (config/faqs.php)
         $faqs = collect(config('faqs'))->shuffle()->take(5)->values()->all();

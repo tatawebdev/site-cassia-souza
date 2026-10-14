@@ -25,7 +25,7 @@
     'schema' => [],
 ])
 
-<x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
+<x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
     :breadcrumbs="$breadcrumbs" :tipo-pagina="$tipoPagina" :schema="$schema">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])
