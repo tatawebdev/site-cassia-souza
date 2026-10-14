@@ -18,7 +18,7 @@
     'contato' => true,
 ])
 
-<x-novo.layout :title="$tituloAba ?? $titulo.' | Cássia Souza Advocacia Tributária'">
+<x-novo.layout :title="$tituloAba ?? $titulo.' | Cássia Souza Advocacia Tributária'" :description="$descricao ?? 'Cássia Souza Advocacia Tributária'">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])
         @if ($imagem)

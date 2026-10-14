@@ -24,8 +24,8 @@
                         class="inline-block py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-champagne aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8">Sobre</a></li>
                 <li class="relative" @click.outside="servicos = false" @keydown.escape.window="servicos = false">
                     <button type="button" @click="servicos = !servicos" :aria-expanded="servicos.toString()"
-                        aria-controls="csServicos"
-                        class="inline-flex items-center gap-1.5 py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne">
+                        aria-controls="csServicos" @if (request()->routeIs('servicos*')) data-atual @endif
+                        class="inline-flex items-center gap-1.5 py-2 text-[15px] font-medium text-on-plum transition-colors hover:text-champagne data-[atual]:text-white data-[atual]:underline data-[atual]:decoration-champagne data-[atual]:decoration-2 data-[atual]:underline-offset-8">
                         Serviços
                         <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"
                             :class="servicos && 'rotate-180'" aria-hidden="true"></i>

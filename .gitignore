@@ -24,3 +24,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Blog WordPress (www/blog no servidor), sincronizado à parte via SFTP (.vscode/sftp.json)
+/blog

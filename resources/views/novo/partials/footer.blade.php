@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div class="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_0.75fr_1.2fr]">
             <div>
                 <img src="/assets/images/logo-acinzentado.png" alt="Cássia Souza Advocacia" width="150" height="80"
                     class="h-auto w-[150px]">
@@ -60,7 +60,7 @@
                         </x-link-whatsapp>
                     </li>
                     <li>
-                        <a href="mailto:cassia_souza@adv.oabsp.org.br" class="inline-flex items-center gap-2 [overflow-wrap:anywhere] transition-colors hover:text-champagne">
+                        <a href="mailto:cassia_souza@adv.oabsp.org.br" class="inline-flex items-center gap-2 text-[14px] transition-colors hover:text-champagne">
                             <i class="fa-regular fa-envelope text-champagne" aria-hidden="true"></i>cassia_souza@adv.oabsp.org.br
                         </a>
                     </li>
