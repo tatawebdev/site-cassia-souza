@@ -9,7 +9,7 @@ return [
         ],
         [
             'name' => 'tiktok',
-            'url' => 'https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1',
+            'url' => 'https://www.tiktok.com/@cassiasouza.tributarista',
             'icon_class' => 'fa-brands fa-tiktok social-networks',
         ],
         [

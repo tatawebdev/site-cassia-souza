@@ -36,7 +36,7 @@
                         </figure>
                         <h5>Redes Sociais:</h5>
                         <div class="text">
-                            <a href="https://www.tiktok.com/@cassia.souza.adv?_t=ZM-90f26k8kEKh&_r=1" target="_blank"
+                            <a href="https://www.tiktok.com/@cassiasouza.tributarista" target="_blank"
                                 class="mb-0 text-decoration-none text-size-14 d-block">TikTok</a>
                             <a href="https://www.linkedin.com/company/cassia-souza-advocacia/" target="_blank"
                                 class="mb-0 text-decoration-none text-size-14 d-block">LinkedIn</a>
