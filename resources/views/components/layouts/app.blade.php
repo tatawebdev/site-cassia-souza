@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="preload" href="/assets/images/monograma-sc.png" as="image">
     <link rel="manifest" href="/assets/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -45,6 +46,7 @@
 </head>
 
 <body>
+    @include('partials.preloader')
 
     <div class="sub_banner position-relative">
         <figure class="banner-rightimage image mb-0">
@@ -188,13 +190,6 @@
     <!-- Footer -->
     @include('footer')
 
-    <!-- PRE LOADER -->
-    <div class="loader-mask">
-        <div class="loader">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
     <!-- Latest compiled JavaScript -->
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>
