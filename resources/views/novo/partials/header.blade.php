@@ -15,7 +15,7 @@
                 :class="menu && '-translate-y-1 -rotate-45'"></span>
         </button>
 
-        <nav id="csNav" aria-label="Principal" :class="menu ? 'flex' : 'hidden'"
+        <nav id="csNav" aria-label="Principal" :class="menu && '!flex'"
             class="hidden basis-full flex-col items-start gap-5 pb-2 pt-4 lg:!flex lg:basis-auto lg:flex-row lg:items-center lg:gap-10 lg:p-0">
             <ul class="flex w-full flex-col gap-1 lg:w-auto lg:flex-row lg:gap-8">
                 <li><a href="{{ route('inicio') }}" @if (request()->routeIs('inicio')) aria-current="page" @endif

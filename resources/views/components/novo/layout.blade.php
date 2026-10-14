@@ -28,6 +28,7 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#590854">
+    <link rel="preload" href="/assets/images/monograma-sc.png" as="image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,8 @@
 </head>
 
 <body>
+    @include('partials.preloader')
+
     {{ $slot }}
 
     @include('novo.partials.footer')
@@ -46,6 +49,7 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </x-link-whatsapp>
 
+    <script src="/assets/js/preloader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Livewire 3: dispatch('swal', payload) dos formulários de contato e newsletter
