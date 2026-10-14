@@ -8,9 +8,13 @@
     <section aria-labelledby="quem-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
             <figure class="relative m-0 mx-auto w-full max-w-[520px]">
-                <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
-                    width="1080" height="1080" fetchpriority="high"
-                    class="block aspect-square h-auto w-full rounded-2xl object-cover object-[55%_30%] shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
+                <picture class="contents">
+                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-1080.webp 1080w"
+                        sizes="(min-width: 560px) 520px, 100vw">
+                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
+                        width="1080" height="1080" fetchpriority="high"
+                        class="block aspect-square h-auto w-full rounded-2xl object-cover object-[55%_30%] shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
+                </picture>
                 <figcaption class="absolute -bottom-6 left-6 right-6 rounded-xl bg-plum-night px-6 py-5 text-white shadow-[0_24px_48px_-16px_rgba(36,4,31,0.45)] sm:-right-8 sm:left-auto sm:max-w-[300px]">
                     <span class="block font-display text-2xl font-semibold leading-tight">“Eu simplifico a tributação.”</span>
                     <span class="mt-2 block text-sm text-on-plum/80">Cassia Souza Advocacia Tributária</span>

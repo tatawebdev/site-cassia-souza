@@ -14,9 +14,13 @@
         <section class="relative lg:min-h-[620px]">
             {{-- Foto sangrando até a borda direita, fundida ao roxo pela esquerda --}}
             <figure class="relative m-0 h-[360px] sm:h-[460px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[46%]">
-                <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
-                    width="1080" height="1080" fetchpriority="high"
-                    class="block h-full w-full object-cover object-[60%_28%] motion-safe:animate-unveil">
+                <picture class="contents">
+                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-1080.webp 1080w"
+                        sizes="(min-width: 1024px) 46vw, 100vw">
+                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
+                        width="1080" height="1080" fetchpriority="high"
+                        class="block h-full w-full object-cover object-[60%_28%] motion-safe:animate-unveil">
+                </picture>
                 <div class="absolute inset-0 bg-gradient-to-t from-plum-deep via-plum-deep/10 to-transparent lg:bg-gradient-to-r lg:from-plum-deep lg:via-plum-deep/10 lg:to-transparent" aria-hidden="true"></div>
             </figure>
 

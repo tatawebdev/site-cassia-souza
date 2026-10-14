@@ -70,7 +70,7 @@
             x-transition:leave-end="opacity-0 motion-safe:scale-[0.98]"
             class="relative w-full max-w-[480px] overflow-hidden rounded-3xl bg-white shadow-[0_40px_80px_-24px_rgba(36,4,31,0.6)]">
             <div class="cs-plum-bg relative px-8 pb-8 pt-10 text-white">
-                <img src="/assets/img/sobrenos.png" alt="" width="72" height="72"
+                <img src="/assets/img/cassia-160.webp" alt="" width="72" height="72"
                     class="h-[72px] w-[72px] rounded-full border-2 border-champagne/60 object-cover object-[55%_30%]">
                 <p id="saida-titulo" class="mt-5 font-display text-[30px] font-semibold leading-[1.1]">
                     Antes de ir: quer entender o caso da sua empresa?

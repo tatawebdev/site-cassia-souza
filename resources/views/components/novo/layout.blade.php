@@ -2,7 +2,7 @@
     'title' => 'Cassia Souza Advocacia Tributária',
     'description' => 'Advocacia tributária para empresas: planejamento tributário, recuperação de PIS/COFINS, regularização de débitos na PGFN e assessoria para a Reforma Tributária.',
     // Imagem ao compartilhar o link (WhatsApp, LinkedIn etc.)
-    'image' => '/assets/img/sobrenos.png',
+    'image' => '/assets/img/og-cassia-souza.jpg',
     // Páginas de SEO: canonical para o termo principal e noindex até ganharem texto próprio
     'canonical' => null,
     'robots' => null,
@@ -36,6 +36,11 @@
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:image" content="{{ url($image) }}">
+    @if ($image === '/assets/img/og-cassia-souza.jpg')
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)">
+    @endif
     <meta name="twitter:card" content="summary_large_image">
     {{-- Monograma "SC" do logo (gerado a partir de assets/favicon original) --}}
     <link rel="icon" href="/favicon.ico" sizes="48x48">

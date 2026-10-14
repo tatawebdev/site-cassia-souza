@@ -17,9 +17,10 @@
 
 @if ($reviews)
     <section aria-labelledby="avaliacoes-titulo" {{ $attributes->merge(['class' => 'overflow-hidden py-[clamp(72px,9vw,128px)]']) }}
-        {{-- Loop infinito: os cards são renderizados 3 vezes e a posição (pos)
-             fica na cópia do meio; ao sair dela, volta sem animação para o card
-             equivalente, então sempre há vizinhos dos dois lados. --}}
+        {{-- Loop infinito: o servidor manda os cards uma vez só (o HTML não repete
+             o texto) e o init() cria no navegador uma cópia antes e outra depois.
+             A posição (pos) fica na cópia do meio; ao sair dela, volta sem animação
+             para o card equivalente, então sempre há vizinhos dos dois lados. --}}
         x-data="{
             total: {{ count($reviews) }},
             duracoes: @js($duracoes),
@@ -32,6 +33,20 @@
             inicioToque: null,
             get atual() { return this.pos % this.total },
             init() {
+                // Roda antes de o Alpine processar os filhos: as cópias entram
+                // no DOM e são inicializadas junto com os originais
+                const trilho = this.$el.querySelector('[x-ref=trilho]');
+                const originais = [...trilho.children];
+                const copia = () => originais.map((li) => {
+                    const c = li.cloneNode(true);
+                    [':aria-hidden', 'aria-roledescription', 'aria-label'].forEach((a) => c.removeAttribute(a));
+                    c.setAttribute('aria-hidden', 'true');
+                    return c;
+                });
+                trilho.prepend(...copia());
+                trilho.append(...copia());
+                [...trilho.children].forEach((li, i) => li.dataset.i = i);
+
                 this.$nextTick(() => this.medir());
                 window.addEventListener('resize', () => this.medir());
 
@@ -110,18 +125,13 @@
                 :class="semAnimacao && '!transition-none [&>li]:!transition-none'"
                 class="flex items-stretch gap-6 py-6 transition-transform duration-700 ease-out-soft motion-reduce:transition-none"
                 :style="`transform: translateX(${deslocamento}px)`">
-                @foreach ([0, 1, 2] as $copia)
                 @foreach ($reviews as $review)
-                    @php $k = $copia * count($reviews) + $loop->index; @endphp
-                    <li @click="pos !== {{ $k }} && ir({{ $k }})"
-                        {{-- Só a cópia do meio existe para leitores de tela --}}
-                        @if ($copia === 1)
-                            :aria-hidden="(pos !== {{ $k }}).toString()"
-                            aria-roledescription="avaliação" aria-label="{{ $loop->iteration }} de {{ count($reviews) }}"
-                        @else
-                            aria-hidden="true"
-                        @endif
-                        :class="pos === {{ $k }}
+                    {{-- data-i: posição no trilho, preenchida pelo init() (as cópias
+                         criadas no navegador ficam ocultas para leitores de tela) --}}
+                    <li @click="pos !== +$el.dataset.i && ir(+$el.dataset.i)"
+                        :aria-hidden="(pos !== +$el.dataset.i).toString()"
+                        aria-roledescription="avaliação" aria-label="{{ $loop->iteration }} de {{ count($reviews) }}"
+                        :class="pos === +$el.dataset.i
                             ? 'scale-100 opacity-100 shadow-[0_40px_80px_-40px_rgba(58,6,55,0.55)]'
                             : 'scale-[0.88] cursor-pointer opacity-45 shadow-none'"
                         class="relative flex w-[82vw] shrink-0 flex-col overflow-hidden rounded-2xl border border-line/80 bg-[radial-gradient(120%_70%_at_0%_0%,#FFF6EA_0%,#FFFFFF_45%,#F8F2F7_100%)] p-7 transition duration-700 ease-out-soft motion-reduce:transition-none sm:w-[440px] sm:p-9">
@@ -164,7 +174,6 @@
                             </span>
                         </footer>
                     </li>
-                @endforeach
                 @endforeach
             </ul>
         </div>
