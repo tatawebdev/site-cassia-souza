@@ -93,6 +93,19 @@
                     class="inline-flex items-center justify-center gap-2 rounded-full border border-plum px-6 py-3.5 font-semibold text-plum transition-colors hover:bg-plum hover:text-white">
                     Enviar uma mensagem
                 </a>
+                <div class="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-ink-soft">
+                    <span>Acompanhe a Cassia:</span>
+                    <ul class="m-0 flex list-none gap-2 p-0" aria-label="Redes sociais da Cassia">
+                        @foreach (config('site.social_icons', []) as $item)
+                            <li>
+                                <a href="{{ $item['url'] }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($item['name']) }}"
+                                    class="grid h-[38px] w-[38px] place-items-center rounded-full border border-line text-plum transition-colors hover:border-plum hover:bg-mist">
+                                    <i class="{{ str_replace(' social-networks', '', $item['icon_class']) }} text-[16px]" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
                 <button type="button" @click="aberto = false"
                     class="mt-1 text-sm font-medium text-ink-soft underline decoration-ink-soft/40 underline-offset-4 hover:text-plum-night">
                     Agora não
