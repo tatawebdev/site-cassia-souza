@@ -41,4 +41,44 @@ return [
         'question' => 'Como negociar débitos federais inscritos em Dívida Ativa da União?',
         'answer' => 'É possível aderir a programas de transação tributária que concedem descontos nos juros e nas multas e parcelamento especial. O primeiro passo é estudar o débito, verificar a capacidade de pagamento e entender se a empresa se enquadra nos critérios exigidos nos editais.',
     ],
+    [
+        'tema' => 'regime',
+        'question' => 'Posso mudar de regime tributário no meio do ano?',
+        'answer' => 'Em regra, não. A opção pelo Lucro Presumido vale para todo o ano e é feita com o pagamento do imposto do primeiro período de apuração. A opção pelo Simples Nacional também vale para o ano inteiro e, para a empresa que já está em atividade, é feita em janeiro. Por isso, a análise deve acontecer antes, no fim do ano anterior.',
+    ],
+    [
+        'tema' => 'regime',
+        'question' => 'Empresa nova pode escolher o regime tributário?',
+        'answer' => 'Sim. Ao abrir o CNPJ, a empresa escolhe o regime em que vai começar, e esse é o melhor momento para comparar o custo de cada um antes de decidir.',
+    ],
+    [
+        'tema' => 'pis-cofins',
+        'question' => 'Empresa do Lucro Presumido também pode ter PIS e COFINS monofásicos a recuperar?',
+        'answer' => 'Pode. Para quem não é fabricante nem importador, a revenda de produtos monofásicos tem alíquota zero de PIS e COFINS. Se a empresa recolheu essas contribuições sobre essas vendas, a análise das notas fiscais mostra o que foi pago indevidamente.',
+    ],
+    [
+        'tema' => 'pgfn',
+        'question' => 'Débito com a Receita Federal e débito em Dívida Ativa são a mesma coisa?',
+        'answer' => 'Não. Enquanto o débito está na Receita Federal, a negociação é feita lá. Depois de inscrito em Dívida Ativa da União, a cobrança passa para a Procuradoria-Geral da Fazenda Nacional (PGFN), e é com ela que se faz a transação.',
+    ],
+    [
+        'tema' => 'reforma',
+        'question' => 'O que acontece com o PIS e a COFINS na Reforma Tributária?',
+        'answer' => 'Deixam de existir a partir de 2027, quando a CBS, a nova contribuição federal sobre bens e serviços, passa a ser cobrada. Em 2026, a CBS é cobrada em caráter de teste, com alíquota de 0,9% compensada com o PIS e a COFINS.',
+    ],
+    [
+        'tema' => 'clinicas',
+        'question' => 'Toda clínica pode ter equiparação hospitalar?',
+        'answer' => 'Não. A lei exige que a clínica seja sociedade empresária, atenda às normas da Anvisa e preste os serviços listados na Lei 9.249/1995, como os hospitalares e os de auxílio diagnóstico e terapia. O percentual menor vale para a receita desses serviços.',
+    ],
+    [
+        'tema' => 'treinamento',
+        'question' => 'O treinamento pode ser feito online?',
+        'answer' => 'Sim. As turmas podem ser presenciais ou online, com material e exercícios pensados para a rotina do departamento fiscal e financeiro da empresa.',
+    ],
+    [
+        'tema' => 'consultoria',
+        'question' => 'Advogado tributarista atende empresa de outra cidade?',
+        'answer' => 'Sim. A Cassia atende empresas de todo o Brasil de forma online e, presencialmente, em Suzano e nas cidades do Alto Tietê.',
+    ],
 ];

@@ -42,6 +42,9 @@
 </IfModule>
 # END Cache e compressão (Cássia Souza)
 
+# A hospedagem não manda Content-Type para .webp
+AddType image/webp .webp
+
 # A raiz "/" precisa abrir o index.php (sem isto o servidor respondia 403)
 DirectoryIndex index.php
 

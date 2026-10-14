@@ -115,29 +115,7 @@
     }
 }
 
-/* Menu do celular: entra e sai com fade e um leve deslize (o desktop não muda) */
-@media (max-width: 1023.98px) and (prefers-reduced-motion: no-preference) {
-    #csNav {
-        opacity: 0;
-        transform: translateY(-6px);
-        transition:
-            opacity var(--cs-medio) var(--cs-ease),
-            transform var(--cs-medio) var(--cs-ease),
-            display var(--cs-medio) allow-discrete;
-    }
-
-    #csNav.cs-aberto {
-        opacity: 1;
-        transform: none;
-    }
-
-    @starting-style {
-        #csNav.cs-aberto {
-            opacity: 0;
-            transform: translateY(-6px);
-        }
-    }
-}
+/* Menu do celular: o painel de tela cheia (partials/header) anima com x-transition do Alpine */
 
 /*
  * Revelar ao rolar: só os títulos de seção e os cards de serviço, uma vez.

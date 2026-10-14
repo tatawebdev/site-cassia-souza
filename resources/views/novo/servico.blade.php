@@ -12,9 +12,10 @@
 @endphp
 
 <x-novo.pagina :titulo="$servico['title']" :descricao="$servico['descricao']"
+    :titulo-aba="$servico['titulo_seo'] ?? null"
     :imagem="'assets/images/'.$servico['banner']"
     :schema="[\App\Support\Schema::servico($servico), \App\Support\Schema::faq($faqs)]"
-    :keywords="mb_strtolower($servico['title']).', advocacia tributária, advogada tributarista, Cassia Souza, Suzano'"
+    :keywords="mb_strtolower($servico['title']).', advocacia tributária, advogada tributarista, advogado tributarista, Cassia Souza, Suzano'"
     :breadcrumbs="[
         ['label' => 'Home', 'url' => route('inicio')],
         ['label' => 'Serviços', 'url' => route('servicos')],
@@ -107,13 +108,85 @@
         </div>
     </section>
 
-    <x-novo.avaliacoes class="bg-white" />
+    {{-- Perguntas do tema respondidas na própria página: resposta direta no
+         primeiro parágrafo, depois o detalhe, e a base legal no fim --}}
+    @if (! empty($servico['secoes']))
+        <section aria-label="Entenda o tema" class="bg-white py-[clamp(72px,9vw,128px)]">
+            <div class="cs-wrap">
+                @foreach ($servico['secoes'] as $secao)
+                    <article @class([
+                        'grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20',
+                        'mt-14 border-t border-line pt-14' => ! $loop->first,
+                    ])>
+                        <h2 class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] tracking-[-0.015em] text-plum-night">
+                            {{ $secao['pergunta'] }}
+                        </h2>
+                        <div class="max-w-[42em] text-[17px] leading-relaxed">
+                            <p class="text-[19px] leading-relaxed text-plum-night">{{ $secao['resposta'] }}</p>
 
-    @if ($faqs)
-        <x-novo.faq :faqs="$faqs" class="bg-mist" :descricao="$faqDescricao" />
+                            @foreach ($secao['paragrafos'] ?? [] as $paragrafo)
+                                <p class="mt-5">{{ $paragrafo }}</p>
+                            @endforeach
+
+                            @if (! empty($secao['lista']))
+                                <ul class="mt-6 divide-y divide-line border-y border-line">
+                                    @foreach ($secao['lista'] as $item)
+                                        <li class="flex gap-4 py-4">
+                                            <span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-plum text-white" aria-hidden="true">
+                                                <i class="fa-solid fa-check text-[10px]"></i>
+                                            </span>
+                                            {{ $item }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            @if (! empty($secao['tabela']))
+                                <dl class="mt-6 divide-y divide-line border-y border-line">
+                                    @foreach ($secao['tabela'] as [$rotulo, $texto])
+                                        <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                                            <dt class="font-display text-[20px] font-semibold text-plum">{{ $rotulo }}</dt>
+                                            <dd>{{ $texto }}</dd>
+                                        </div>
+                                    @endforeach
+                                </dl>
+                            @endif
+                        </div>
+                    </article>
+                @endforeach
+
+                @if (! empty($servico['fontes']))
+                    <div class="mt-14 rounded-2xl bg-mist p-7 text-[15px] leading-relaxed sm:p-9">
+                        <h2 class="font-semibold text-plum-night">Base legal</h2>
+                        <ul class="mt-3 space-y-2">
+                            @foreach ($servico['fontes'] as $fonte)
+                                <li>
+                                    <a href="{{ $fonte['url'] }}" target="_blank" rel="noopener"
+                                        class="text-plum underline decoration-plum/40 underline-offset-4 hover:decoration-plum">{{ $fonte['nome'] }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                        @if (! empty($servico['atualizado']))
+                            <p class="mt-4 text-ink-soft">
+                                Conteúdo conferido com a legislação em
+                                {{ \Illuminate\Support\Carbon::createFromFormat('Y-m', $servico['atualizado'])->locale('pt_BR')->translatedFormat('F \d\e Y') }}.
+                                Ele explica as regras gerais e não substitui a análise do caso de cada empresa.
+                            </p>
+                        @endif
+                    </div>
+                @endif
+            </div>
+        </section>
     @endif
 
-    <section aria-labelledby="outros-titulo" class="bg-white py-[clamp(64px,8vw,104px)]">
+    {{-- Fundos alternados: com as seções (fundo branco), as avaliações vão para o mist --}}
+    <x-novo.avaliacoes :class="empty($servico['secoes']) ? 'bg-white' : 'bg-mist'" />
+
+    @if ($faqs)
+        <x-novo.faq :faqs="$faqs" :class="empty($servico['secoes']) ? 'bg-mist' : 'bg-white'" :descricao="$faqDescricao" />
+    @endif
+
+    <section aria-labelledby="outros-titulo" @class(['py-[clamp(64px,8vw,104px)]', 'bg-mist' => ! empty($servico['secoes']), 'bg-white' => empty($servico['secoes'])])>
         <div class="cs-wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <h2 id="outros-titulo" class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] text-plum-night">
                 Outros serviços
