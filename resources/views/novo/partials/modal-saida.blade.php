@@ -1,29 +1,45 @@
 {{-- Modal de saída: quando o visitante vai embora, oferece falar com a Cássia.
      Desktop: mouse saindo pelo topo da janela. Celular: rolagem rápida para
-     cima depois de ter lido parte da página. Aparece no máximo 1 vez a cada
-     7 dias, nunca nos primeiros 8s e nunca para quem já clicou no WhatsApp ou
-     enviou o formulário. Não aparece na página de contato. --}}
+     cima depois de ter lido parte da página. Regra por sessão (sessionStorage:
+     zera ao fechar a aba ou numa janela anônima nova): nunca nos primeiros 8s da
+     página; depois de aparecer, só volta após 2, 5 e 10 minutos, no máximo 4 vezes
+     por sessão; quem clicou no WhatsApp/e-mail ou enviou um formulário não vê mais
+     na sessão. Não aparece na página de contato. A mesma regra está no blog
+     (modal-saida.js do tema). --}}
 @unless (request()->routeIs('contato'))
 <div x-data="{
         aberto: false,
         chave: 'cs-saida-site',
+        // Espera depois da 1ª, 2ª e 3ª vez; depois da 4ª, não aparece mais na sessão
+        intervalos: [2 * 60000, 5 * 60000, 10 * 60000],
+        // Sem sessionStorage (algumas janelas anônimas), vale só para esta página
+        memoria: { vezes: 0, ultima: 0, convertido: false },
+        ler() {
+            try { return JSON.parse(sessionStorage.getItem(this.chave)) || this.memoria; } catch (e) { return this.memoria; }
+        },
+        gravar(estado) {
+            this.memoria = estado;
+            try { sessionStorage.setItem(this.chave, JSON.stringify(estado)); } catch (e) {}
+        },
         podeMostrar() {
             if (performance.now() < 8000) return false;
-            try {
-                const visto = Number(localStorage.getItem(this.chave) || 0);
-                return Date.now() - visto > 7 * 24 * 60 * 60 * 1000;
-            } catch (e) { return false; }
+            const s = this.ler();
+            if (s.convertido || s.vezes > this.intervalos.length) return false;
+            return s.vezes === 0 || Date.now() - s.ultima >= this.intervalos[s.vezes - 1];
         },
         mostrar() {
             if (this.aberto || ! this.podeMostrar()) return;
             this.aberto = true;
-            try { localStorage.setItem(this.chave, Date.now()); } catch (e) {}
+            const s = this.ler();
+            this.gravar({ vezes: s.vezes + 1, ultima: Date.now(), convertido: s.convertido });
             this.$nextTick(() => this.$refs.fechar.focus());
         },
         nuncaMais() {
-            try { localStorage.setItem(this.chave, Date.now() + 365 * 24 * 60 * 60 * 1000); } catch (e) {}
+            const s = this.ler();
+            this.gravar({ vezes: s.vezes, ultima: s.ultima, convertido: true });
         },
         init() {
+            try { localStorage.removeItem(this.chave); } catch (e) {} // regra antiga (7 dias)
             // Quem já entrou em contato não precisa do convite
             document.addEventListener('click', (e) => {
                 if (e.target.closest('a[href*=\'whatsapp\'], a[href^=\'mailto:\']')) this.nuncaMais();
