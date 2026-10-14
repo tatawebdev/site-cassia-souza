@@ -3,11 +3,8 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\NewsletterSubscriber;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\NewsletterConfirmationMail;
-use App\Mail\NewsletterNotificationMail;
 use App\Rules\Recaptcha;
+use App\Services\Newsletter;
 
 class NewsletterSubscribe extends Component
 {
@@ -50,10 +47,9 @@ class NewsletterSubscribe extends Component
         }
 
         try {
+            $resultado = app(Newsletter::class)->inscrever($this->email, $this->source);
 
-
-            // Verifica se o e-mail já está inscrito
-            if (NewsletterSubscriber::where('email', $this->email)->exists()) {
+            if ($resultado === Newsletter::JA_INSCRITO) {
                 $this->dispatch('swal', [
                     'type' => 'warning',
                     'title' => 'E-mail já inscrito',
@@ -61,31 +57,6 @@ class NewsletterSubscribe extends Component
                     'timer' => 4000,
                 ]);
                 return;
-            }
-
-            NewsletterSubscriber::create([
-                'email' => $this->email,
-                'source' => $this->source,
-            ]);
-
-            $subscriber = NewsletterSubscriber::where('email', $this->email)->first();
-
-        $to = 'cassia_souza@adv.oabsp.org.br';
-        $cc = 'suporte@tataweb.com.br';
-            try {
-                Mail::to($to)->cc($cc)->send(new NewsletterConfirmationMail($subscriber));
-            } catch (\Exception $e) {
-                logger()->error('Erro ao enviar e-mail de confirmação: ' . $e->getMessage());
-            }
-
-            // notificar admin (usa config('site.contact_email') ou mail.from.address)
-            $admin = config('site.contact_email') ?? config('mail.from.address') ?? env('MAIL_FROM_ADDRESS');
-            if ($admin) {
-                try {
-                    Mail::to($admin)->send(new NewsletterNotificationMail($subscriber));
-                } catch (\Exception $e) {
-                    logger()->error('Erro ao enviar notificação ao admin: ' . $e->getMessage());
-                }
             }
 
             // Livewire 3: dispatch() replaces dispatchBrowserEvent

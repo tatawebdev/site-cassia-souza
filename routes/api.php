@@ -41,3 +41,7 @@ Route::get('send-whatsapp', function (Request $request, \App\Services\WhatsAppSe
 
 // Endpoint to receive and persist FCM tokens (simple file-based storage)
 Route::post('/fcm/token', [\App\Http\Controllers\FcmTokenController::class, 'store']);
+// Newsletter pelo modal de saída do blog (CORS liberado só para o blog em config/cors.php)
+Route::post('/newsletter', [\App\Http\Controllers\NewsletterApiController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('api.newsletter');
