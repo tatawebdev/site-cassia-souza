@@ -116,8 +116,17 @@ class PaginasSeoTest extends TestCase
             ->assertSee('/advogada-tributarista/suzano')
             ->assertSee('/advocacia-tributaria/mogi-das-cruzes')
             ->assertSee('/advocacia-tributaria/curitiba')
+            ->assertSee('No Alto Tietê')
+            ->assertSee('/advocacia-tributaria/aruja')
             // Sinônimos não recebem links
             ->assertDontSee('/escritorio-de-advocacia-tributaria/suzano');
+    }
+
+    public function test_cidade_de_fora_mostra_grupo_alto_tiete(): void
+    {
+        $this->get('/advocacia-tributaria/curitiba')
+            ->assertSee('Advocacia tributária: Alto Tietê')
+            ->assertSee('/advocacia-tributaria/suzano');
     }
 
     public function test_pagina_do_termo_lista_cidades_em_destaque(): void

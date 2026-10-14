@@ -122,7 +122,8 @@
     @php
         $nomeCidade = fn ($c) => $c->nome.($c->uf && $c->uf !== 'SP' ? ' ('.$c->uf.')' : '');
         $grupos = array_filter([
-            'Grande São Paulo' => $destaques->where('uf', 'SP')->where('capital', false),
+            'Alto Tietê' => $destaques->where('presencial', true),
+            'Grande São Paulo' => $destaques->where('uf', 'SP')->where('capital', false)->where('presencial', false),
             'Capitais' => $destaques->where('capital', true),
         ], fn ($cidades) => $cidades->isNotEmpty());
     @endphp
@@ -153,7 +154,7 @@
                 @if ($vizinhas->isNotEmpty())
                     <div>
                         <h3 class="text-sm font-semibold text-gold-ink">
-                            {{ $local->microrregiao ? 'Na região de '.$local->microrregiao : 'No Alto Tietê' }}
+                            {{ ($local->presencial || ! $local->microrregiao) ? 'No Alto Tietê' : 'Na região de '.$local->microrregiao }}
                         </h3>
                         <ul class="mt-3 border-t border-line">
                             @foreach ($vizinhas as $vizinha)

@@ -140,7 +140,10 @@ class PaginaSeo
     {
         $consulta = SeoLocalidade::where('tipo', 'municipio')->where('id', '!=', $local->id);
 
-        if ($local->microrregiao && $local->uf) {
+        if ($local->presencial) {
+            // Alto Tietê: as outras cidades da região (o IBGE põe Arujá e Santa Isabel em outra microrregião)
+            $consulta->where('presencial', true);
+        } elseif ($local->microrregiao && $local->uf) {
             $consulta->where('uf', $local->uf)->where('microrregiao', $local->microrregiao);
         } elseif ($local->tipo === 'homonimo') {
             return collect();
