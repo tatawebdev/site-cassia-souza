@@ -1,14 +1,15 @@
 {{-- Página de SEO /{termo}/{localidade}. Os textos vêm de App\Services\PaginaSeo::montar()
      (banco: seo_termos, seo_localidades, seo_paginas, seo_blocos); aqui só o layout. --}}
 @php
-    $faqs = $servico ? collect(config('faqs'))->whereIn('tema', $servico['faq'])->values()->all() : [];
+    // Perguntas do serviço do termo e as da Reforma Tributária (a página também fala dela)
+    $faqs = $servico ? collect(config('faqs'))->whereIn('tema', array_merge($servico['faq'], ['reforma']))->values()->all() : [];
     $termoLinks = $termo->canonical ?: $termo->slug;
     $foto = $servico ? 'assets/servicos/detalhes/'.$servico['image'].'/imagem1.jpg' : null;
 @endphp
 
 <x-novo.pagina :titulo="$h1" :descricao="$subtitulo" :descricao-seo="$descricao_seo" :titulo-aba="$titulo_seo"
     :canonical="$canonical" :robots="$robots"
-    :keywords="mb_strtolower($termo->nome).' em '.$local->nome.', '.mb_strtolower($termo->nome).', advocacia tributária '.$local->nome.', advogada tributarista, Cassia Souza'"
+    :keywords="mb_strtolower($termo->nome).' em '.$local->nome.', '.mb_strtolower($termo->nome).', advocacia tributária '.$local->nome.', advogada tributarista, advogado tributarista, Cassia Souza'"
     :schema="[$servico ?\App\Support\Schema::servico($servico, $local->tipo === 'municipio' ? $local->nome : null) : null, \App\Support\Schema::faq($faqs)]"
     :imagem="'assets/images/'.($servico['banner'] ?? 'banner-servicos.jpg')"
     :breadcrumbs="[

@@ -42,7 +42,7 @@ class PaginasSeoTest extends TestCase
         $this->get('/advocacia-tributaria/suzano')
             ->assertOk()
             ->assertSee('Advocacia tributária em Suzano (SP)')
-            ->assertSee('<meta name="robots" content="index, follow">', false)
+            ->assertSee('<meta name="robots" content="index, follow, max-image-preview:large">', false)
             ->assertSee('<link rel="canonical" href="'.url('/advocacia-tributaria/suzano').'">', false)
             ->assertSee('Atendimento em Suzano e no Alto Tietê')
             ->assertSee('com atendimento presencial ou online')
@@ -82,7 +82,7 @@ class PaginasSeoTest extends TestCase
             ->assertOk()
             ->assertSee('Título próprio de Sete Lagoas')
             ->assertSee('Parágrafo escrito para Sete Lagoas (MG).')
-            ->assertSee('<meta name="robots" content="index, follow">', false);
+            ->assertSee('<meta name="robots" content="index, follow, max-image-preview:large">', false);
     }
 
     public function test_homonimo_lista_as_cidades_e_uf_no_endereco_leva_a_cidade_certa(): void

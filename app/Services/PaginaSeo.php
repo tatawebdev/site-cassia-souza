@@ -79,7 +79,7 @@ class PaginaSeo
             ],
             'canonical' => $this->url($canonicalTermo, $local->slug),
             // Sinônimo: sem noindex, o canonical já consolida no termo principal
-            'robots' => ($termo->canonical || $indexar) ? 'index, follow' : 'noindex, follow',
+            'robots' => ($termo->canonical || $indexar) ? 'index, follow, max-image-preview:large' : 'noindex, follow',
             'indexavel' => ! $termo->canonical && $indexar,
             'homonimos' => $local->tipo === 'homonimo' ? $this->homonimos($local) : collect(),
             'vizinhas' => $vizinhas = $this->vizinhas($local),
@@ -104,7 +104,7 @@ class PaginaSeo
             'termo' => $termo,
             'servico' => collect(config('servicos'))->firstWhere('slug', $termo->servico),
             'canonical' => $this->url($termo->canonical ?: $termo->slug),
-            'robots' => ($termo->canonical || $termo->indexar) ? 'index, follow' : 'noindex, follow',
+            'robots' => ($termo->canonical || $termo->indexar) ? 'index, follow, max-image-preview:large' : 'noindex, follow',
             'grupos' => [
                 'Alto Tietê' => $destaques->where('presencial', true),
                 'Grande São Paulo' => $destaques->where('presencial', false)->where('uf', 'SP')->where('indexar', true),
