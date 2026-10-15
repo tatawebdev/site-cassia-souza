@@ -1,6 +1,6 @@
 {{-- Política de Privacidade (tema novo). Texto idêntico ao da versão antiga
-     (resources/views/antigo/politica-privacidade.blade.php), exceto o trecho
-     "CNPJ – --", omitido até o número ser informado. --}}
+     (resources/views/antigo/politica-privacidade.blade.php), com o CNPJ preenchido
+     e a data da última atualização. --}}
 @php
     $secoes = [
         'coleta' => '1. Sobre a coleta de dados',
@@ -34,8 +34,11 @@
             </nav>
 
             <article class="text-[17px] leading-[1.75] text-ink [&_h2]:mt-12 [&_h2]:scroll-mt-8 [&_h2]:font-display [&_h2]:text-[clamp(26px,2.6vw,32px)] [&_h2]:font-semibold [&_h2]:leading-tight [&_h2]:text-plum-night [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-[22px] [&_h3]:font-semibold [&_h3]:text-plum-night [&_p]:mt-4">
-                <p class="!mt-0">
-                    Nós da <strong>Cassia Souza Advocacia Tributária</strong> temos o compromisso de proteger a sua privacidade.
+                <p class="!mt-0 text-[15px] text-ink-soft">
+                    Última atualização: <time datetime="2026-10-15">15 de outubro de 2026</time>
+                </p>
+                <p>
+                    Nós da <strong>Cassia Souza Advocacia Tributária</strong>, CNPJ <strong>57.078.276/0001-00</strong>, temos o compromisso de proteger a sua privacidade.
                     Através da nossa Política de Privacidade, buscamos esclarecer quais informações são coletadas dos
                     usuários que acessam o nosso site e respectivos serviços e de que forma esses dados são manipulados
                     e utilizados. Para oferecermos nossos serviços, por meio do nosso site e dos dispositivos

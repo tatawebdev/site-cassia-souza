@@ -58,10 +58,16 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-    @vite('resources/css/novo.css')
+    {{-- CSS dentro do HTML (~10 KB comprimido): a primeira pintura não espera
+         outra requisição. Com o Vite em modo dev (composer dev), link normal. --}}
+    @if (\Illuminate\Support\Facades\Vite::isRunningHot())
+        @vite('resources/css/novo.css')
+    @else
+        <style>{!! \Illuminate\Support\Facades\Vite::content('resources/css/novo.css') !!}</style>
+    @endif
     @stack('head')
-    {{-- Aviso de cookies (o mesmo do blog) --}}
-    <link rel="stylesheet" href="/assets/css/cookies.css?v={{ filemtime(public_path('assets/css/cookies.css')) }}">
+    {{-- Aviso de cookies (o mesmo do blog); pequeno, vai junto no HTML --}}
+    <style>{!! file_get_contents(public_path('assets/css/cookies.css')) !!}</style>
     <script src="/assets/js/cookies.js?v={{ filemtime(public_path('assets/js/cookies.js')) }}" defer></script>
 
     <script type="application/ld+json">{!! \App\Support\Schema::json(array_merge(

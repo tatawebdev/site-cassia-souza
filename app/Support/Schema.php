@@ -107,8 +107,11 @@ class Schema
                         config('servicos')
                     ),
                 ],
-                // sameAs do escritório: só perfis do escritório (o do Google, quando o usuário informar).
+                // CNPJ e perfis do próprio escritório (Facebook; o do Google quando o usuário informar).
                 // Instagram, TikTok e LinkedIn são da Cassia e ficam na Person.
+                'taxID' => '57.078.276/0001-00',
+                'identifier' => ['@type' => 'PropertyValue', 'propertyID' => 'CNPJ', 'value' => '57.078.276/0001-00'],
+                'sameAs' => [config('site.facebook')],
             ],
             [
                 '@type' => 'Person',
@@ -140,8 +143,9 @@ class Schema
                     ],
                     // Quando o usuário informar o número: 'identifier' => ['@type' => 'PropertyValue', 'propertyID' => 'OAB/SP', 'value' => '...'],
                 ],
+                // Perfis pessoais (o Facebook é do escritório e fica no LegalService)
                 'sameAs' => array_merge(
-                    array_column(config('site.social_icons'), 'url'),
+                    array_values(array_diff(array_column(config('site.social_icons'), 'url'), [config('site.facebook')])),
                     ['https://blog.cassiasouzaadvocacia.com.br/autor/cassia-souza/']
                 ),
             ],

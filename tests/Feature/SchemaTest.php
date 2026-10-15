@@ -146,8 +146,11 @@ class SchemaTest extends TestCase
         $this->assertSame('EducationalOccupationalCredential', $cassia['hasCredential']['@type']);
         $this->assertContains('https://blog.cassiasouzaadvocacia.com.br/autor/cassia-souza/', $cassia['sameAs']);
 
-        // Os perfis são da Cassia: o escritório não repete o sameAs dela
-        $this->assertArrayNotHasKey('sameAs', $grafo->firstWhere('@type', 'LegalService'));
+        // Perfis pessoais na Cassia; o escritório tem só os dele (Facebook) e o CNPJ
+        $escritorio = $grafo->firstWhere('@type', 'LegalService');
+        $this->assertSame([config('site.facebook')], $escritorio['sameAs']);
+        $this->assertNotContains(config('site.facebook'), $cassia['sameAs']);
+        $this->assertSame('57.078.276/0001-00', $escritorio['taxID']);
         $this->assertSame('Sobre a Cassia Souza Advocacia Tributária', $grafo->firstWhere('@type', 'AboutPage')['name']);
     }
 

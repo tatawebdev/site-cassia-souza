@@ -24,7 +24,7 @@
 
             <div>
                 <h2 id="quem-titulo" class="font-display text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.08] tracking-[-0.015em] text-plum-night">
-                    Especialistas em advocacia tributária
+                    Advocacia tributária para empresas
                 </h2>
                 <div class="mt-6 space-y-5 text-[17px] leading-relaxed">
                     <p>
