@@ -82,7 +82,7 @@
     <section aria-labelledby="assina-titulo" class="overflow-hidden bg-white py-[clamp(64px,8vw,112px)]">
         <div class="cs-wrap grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <figure class="m-0 mx-auto w-full max-w-[400px] overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(58,6,55,0.45)]">
-                <img src="/assets/img/parceria.jpg" alt="Cassia Souza, advogada tributarista"
+                <img src="/assets/img/parceria.jpg" alt="Cassia Souza Advocacia Tributária"
                     width="860" height="968" loading="lazy" class="block aspect-[860/968] h-auto w-full object-cover">
             </figure>
             <div>

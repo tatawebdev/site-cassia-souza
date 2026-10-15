@@ -123,7 +123,7 @@ class Schema
                     'url' => url('/assets/img/cassia-1080.webp'),
                     'width' => 1080,
                     'height' => 1080,
-                    'caption' => 'Cassia Souza, advogada tributarista',
+                    'caption' => 'Cassia Souza Advocacia Tributária',
                 ],
                 'email' => 'cassia_souza@adv.oabsp.org.br',
                 'worksFor' => ['@id' => self::id('escritorio')],

@@ -12,7 +12,7 @@
                 <picture class="contents">
                     <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-828.webp 828w, /assets/img/cassia-1080.webp 1080w"
                         sizes="(min-width: 560px) 520px, 100vw">
-                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza, advogada tributarista"
+                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária"
                         width="1080" height="1080" fetchpriority="high"
                         class="block aspect-square h-auto w-full rounded-2xl object-cover object-[55%_30%] shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                 </picture>

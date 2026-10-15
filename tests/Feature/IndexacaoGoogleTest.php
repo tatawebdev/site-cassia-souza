@@ -51,6 +51,13 @@ class IndexacaoGoogleTest extends TestCase
         parent::setUp();
         config(['services.google_indexing.enabled' => true, 'services.google_indexing.base_url' => 'https://cassiasouzaadvocacia.com.br']);
         Cache::flush();
+        app(IndexacaoGoogle::class)->liberarPausa();
+    }
+
+    protected function tearDown(): void
+    {
+        app(IndexacaoGoogle::class)->liberarPausa();
+        parent::tearDown();
     }
 
     public function test_abrir_a_pagina_envia_uma_vez_so(): void
@@ -93,6 +100,16 @@ class IndexacaoGoogleTest extends TestCase
         $this->get('/contato');
         $this->artisan('google:indexing-sync')->expectsOutputToContain('Envios pausados até')->assertSuccessful();
         $this->assertSame(1, IndexedPage::count());
+    }
+
+    public function test_pausa_sobrevive_ao_cache_clear_do_deploy(): void
+    {
+        $this->fake('limite', 0);
+        $this->get('/sobre-nos');
+
+        $this->artisan('cache:clear');
+
+        $this->assertNotNull(app(IndexacaoGoogle::class)->pausadoAte());
     }
 
     public function test_comando_para_no_limite_e_continua_de_onde_parou(): void
