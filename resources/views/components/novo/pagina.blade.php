@@ -23,12 +23,15 @@
     // Dados estruturados: tipo da página (WebPage, AboutPage, ContactPage) e nós extras
     'tipoPagina' => 'WebPage',
     'schema' => [],
+    // Campos extras do nó da página (o name já é o título do banner)
+    'paginaSchema' => [],
     // Palavras-chave da página (padrão: as gerais do layout)
     'keywords' => null,
 ])
 
 <x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
     :breadcrumbs="$breadcrumbs" :tipo-pagina="$tipoPagina" :schema="$schema"
+    :pagina-schema="array_merge(['name' => $titulo], $paginaSchema)"
     :keywords="$keywords ?? 'advocacia tributária, advogada tributarista, planejamento tributário, recuperação de PIS/COFINS, regularização de débitos PGFN, Reforma Tributária, Suzano'">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])

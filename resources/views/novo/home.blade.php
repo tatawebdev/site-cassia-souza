@@ -1,8 +1,11 @@
-<x-novo.layout title="Advocacia tributária para empresas em Suzano (SP) | Cassia Souza">
-    @php
-        // Amostra aleatória das perguntas frequentes (config/faqs.php)
-        $faqs = collect(config('faqs'))->shuffle()->take(5)->values()->all();
-    @endphp
+@php
+    // Uma pergunta de cada tema (config/faqs.php), sempre as mesmas: o JSON-LD e os
+    // buscadores veem o mesmo conteúdo a cada acesso
+    $faqs = collect(config('faqs'))->unique('tema')->take(5)->values()->all();
+@endphp
+<x-novo.layout title="Advocacia tributária para empresas em Suzano (SP) | Cassia Souza"
+    :schema="[\App\Support\Schema::faq($faqs, url('/'))]"
+    :pagina-schema="['name' => 'Cassia Souza Advocacia Tributária', 'primaryImageOfPage' => ['@id' => \App\Support\Schema::id('foto-cassia')], 'hasPart' => ['@id' => url('/').'#faq']]">
 
     <div class="cs-plum-bg relative overflow-hidden text-white">
         {{-- Monograma do logo como marca d'água --}}
@@ -17,7 +20,7 @@
                 <picture class="contents">
                     <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-828.webp 828w, /assets/img/cassia-1080.webp 1080w"
                         sizes="(min-width: 1024px) 46vw, 100vw">
-                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
+                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza, advogada tributarista"
                         width="1080" height="1080" fetchpriority="high"
                         class="block h-full w-full object-cover object-[60%_28%] motion-safe:animate-unveil">
                 </picture>
@@ -88,7 +91,7 @@
         <section aria-labelledby="sobre-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                 <figure class="relative mx-auto m-0 w-full max-w-[460px]">
-                    <img src="/assets/img/parceria.jpg" alt="Cassia Souza Advocacia Tributária" loading="lazy"
+                    <img src="/assets/img/parceria.jpg" alt="Cassia Souza, advogada tributarista" loading="lazy"
                         width="860" height="968"
                         class="block aspect-[860/968] h-auto w-full rounded-2xl object-cover shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                     <figcaption class="absolute -bottom-6 left-6 right-6 rounded-xl bg-plum-night px-6 py-5 text-white shadow-[0_24px_48px_-16px_rgba(36,4,31,0.45)] sm:-right-8 sm:left-auto sm:max-w-[300px]">
@@ -102,9 +105,10 @@
                         Clareza, regularidade e estratégia para quem empreende
                     </h2>
                     <p class="mt-6 text-[17px] leading-relaxed">
-                        O sistema tributário brasileiro é extremamente complexo. Para muitos empresários, lidar com
-                        impostos é sinônimo de insegurança e do medo de estar sempre um passo atrás do Fisco.
-                        Caminhamos junto com a sua empresa para mudar isso.
+                        A Cassia Souza Advocacia Tributária é o escritório da advogada tributarista Cassia Souza,
+                        inscrita na OAB/SP, em Suzano (SP). Atende empresas de todo o Brasil de forma online e,
+                        presencialmente, em Suzano e no Alto Tietê. O sistema tributário brasileiro é complexo, e
+                        caminhamos junto com a sua empresa para que cada decisão sobre impostos seja clara e segura.
                     </p>
                     <ul class="m-0 mt-8 grid list-none gap-4 p-0">
                         @foreach ([

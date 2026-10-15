@@ -7,6 +7,8 @@
     :descricao-seo="$termo->nome.' para empresas: planejamento, créditos, débitos com a PGFN e Reforma Tributária. Atendimento online em todo o Brasil.'"
     :titulo-aba="$termo->nome.' | Cassia Souza Advocacia Tributária'"
     :canonical="$canonical" :robots="$robots"
+    :schema="[\App\Support\Schema::servicoLocal($termo->nome, $termo->nome, $termo->nome.' para empresas: planejamento, créditos, débitos com a PGFN e Reforma Tributária. Atendimento online em todo o Brasil.', $canonical, $servico, null)]"
+    :pagina-schema="['about' => ['@id' => $canonical.'#servico'], 'mainEntity' => ['@id' => $canonical.'#servico']]"
     :imagem="'assets/images/'.($servico['banner'] ?? 'banner-servicos.jpg')"
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => $termo->nome]]">
 

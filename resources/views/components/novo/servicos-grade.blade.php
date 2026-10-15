@@ -20,7 +20,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-plum-night/40 to-transparent" aria-hidden="true"></div>
                 </figure>
                 <div class="flex flex-col p-6 sm:p-7 {{ $featured ? 'lg:justify-center lg:p-10' : '' }}">
-                    <span class="text-sm font-semibold text-gold-ink">{{ $service['title'] }}</span>
+                    <h3 class="text-sm font-semibold text-gold-ink">{{ $service['title'] }}</h3>
                     <span class="mt-2 font-display font-semibold leading-tight tracking-[-0.01em] text-plum-night {{ $featured ? 'text-[clamp(24px,2.4vw,32px)]' : 'text-[22px]' }}">{{ $service['problem'] }}</span>
                     <span class="mt-3 text-[15px] leading-relaxed text-ink-soft">{{ $service['text'] }}</span>
                     <span class="mt-auto flex items-center gap-3 pt-6 text-[15px] font-semibold text-plum">

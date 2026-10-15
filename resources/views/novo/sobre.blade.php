@@ -3,7 +3,8 @@
     titulo-aba="Sobre o escritório | Cassia Souza Advocacia Tributária"
     imagem="assets/images/banner-sobre-nos.jpg"
     descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes."
-    :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Sobre']]">
+    :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Sobre']]"
+    :pagina-schema="['about' => [['@id' => \App\Support\Schema::id('escritorio')], ['@id' => \App\Support\Schema::id('cassia')]], 'mainEntity' => ['@id' => \App\Support\Schema::id('escritorio')], 'primaryImageOfPage' => ['@id' => \App\Support\Schema::id('foto-cassia')]]">
 
     <section aria-labelledby="quem-titulo" class="overflow-hidden bg-white py-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
@@ -11,7 +12,7 @@
                 <picture class="contents">
                     <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-828.webp 828w, /assets/img/cassia-1080.webp 1080w"
                         sizes="(min-width: 560px) 520px, 100vw">
-                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
+                    <img src="/assets/img/sobrenos.png" alt="Cassia Souza, advogada tributarista"
                         width="1080" height="1080" fetchpriority="high"
                         class="block aspect-square h-auto w-full rounded-2xl object-cover object-[55%_30%] shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
                 </picture>
@@ -27,12 +28,15 @@
                 </h2>
                 <div class="mt-6 space-y-5 text-[17px] leading-relaxed">
                     <p>
-                        O sistema tributário brasileiro é extremamente complexo. Para muitos empresários, lidar com
-                        impostos é sinônimo de insegurança, ansiedade e medo de estar sempre “um passo atrás” do Fisco.
+                        A Cassia Souza Advocacia Tributária é um escritório de advocacia tributária para empresas,
+                        conduzido pela advogada tributarista Cassia Souza, inscrita na OAB/SP. Fica em Suzano (SP) e
+                        atende empresas de todo o Brasil de forma online e, presencialmente, em Suzano e no Alto
+                        Tietê, de segunda a sexta, das 9h às 17h.
                     </p>
                     <p>
-                        Nós sabemos disso, porque estamos ao lado de empresas que já viveram essa realidade. Mas
-                        acreditamos em outro caminho: o da clareza, da regularidade e da estratégia.
+                        O sistema tributário brasileiro é complexo, e para muitos empresários lidar com impostos é
+                        sinônimo de insegurança e do medo de estar sempre “um passo atrás” do Fisco. Acreditamos em
+                        outro caminho: o da clareza, da regularidade e da estratégia.
                     </p>
                     <p>
                         Não somos apenas um escritório de advocacia ou de consultoria tributária. Somos parceiros que
@@ -89,7 +93,7 @@
     </section>
 
     {{-- Missão: a frase da Cassia em destaque, sem rótulo acima --}}
-    <section aria-label="Nossa missão" class="cs-plum-bg relative overflow-hidden py-[clamp(72px,9vw,128px)] text-white">
+    <div class="cs-plum-bg relative overflow-hidden py-[clamp(72px,9vw,128px)] text-white">
         <i class="fa-solid fa-quote-left pointer-events-none absolute left-[6%] top-10 text-[clamp(96px,14vw,200px)] leading-none text-champagne/10" aria-hidden="true"></i>
         <div class="cs-wrap relative text-center">
             <p class="mx-auto max-w-[23ch] font-display text-[clamp(32px,4.4vw,58px)] font-semibold leading-[1.1] tracking-[-0.02em] [text-wrap:balance]">
@@ -97,7 +101,7 @@
                 ajudar os empresários a tomar decisões mais estratégicas para o seu negócio.
             </p>
         </div>
-    </section>
+    </div>
 
     <section aria-labelledby="compromisso-titulo" class="bg-white py-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -114,18 +118,18 @@
                     class="mt-10 inline-flex items-center gap-2 rounded-full border border-plum px-7 py-3.5 font-semibold text-plum transition-colors hover:bg-plum hover:text-white">Conheça os serviços</a>
             </div>
 
-            <ul class="divide-y divide-line border-y border-line">
+            <dl class="divide-y divide-line border-y border-line">
                 @foreach ([
                     ['Sob medida', 'Estratégias tributárias pensadas para a realidade da sua empresa, não modelos prontos.'],
                     ['Economia dentro da lei', 'Identificação de oportunidades de economia com base na legislação vigente.'],
                     ['Segurança jurídica', 'Decisões mais estratégicas e resultados consistentes, sem surpresas com o Fisco.'],
                 ] as [$titulo, $texto])
-                    <li class="grid gap-2 py-7 sm:grid-cols-[15rem_1fr] sm:gap-8">
-                        <span class="font-display text-2xl font-semibold text-plum-night">{{ $titulo }}</span>
-                        <span class="text-[17px] leading-relaxed text-ink-soft">{{ $texto }}</span>
-                    </li>
+                    <div class="grid gap-2 py-7 sm:grid-cols-[15rem_1fr] sm:gap-8">
+                        <dt class="font-display text-2xl font-semibold text-plum-night">{{ $titulo }}</dt>
+                        <dd class="text-[17px] leading-relaxed text-ink-soft">{{ $texto }}</dd>
+                    </div>
                 @endforeach
-            </ul>
+            </dl>
         </div>
     </section>
 

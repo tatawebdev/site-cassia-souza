@@ -42,7 +42,7 @@
     @if (config('services.recaptcha.site_key'))
         {{-- Confirmação "Não sou um robô". Estilos inline: o componente também
              aparece no rodapé do tema antigo, que não carrega o Tailwind. --}}
-        <div wire:ignore x-show="confirmando" x-transition.opacity style="display: none;"
+        <div data-nosnippet wire:ignore x-show="confirmando" x-transition.opacity style="display: none;"
             @keydown.escape.window="confirmando = false">
         <div style="position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(36, 4, 31, 0.55);"
             @click.self="confirmando = false">

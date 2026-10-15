@@ -9,6 +9,7 @@
                     Analisamos o seu caso e indicamos o melhor caminho. Atendimento de segunda a sexta, das 9h
                     às 17h.
                 </p>
+                <address class="not-italic">
                 <ul class="m-0 mt-9 grid list-none gap-3 p-0">
                     <li>
                         <x-link-whatsapp rel="nofollow"
@@ -25,6 +26,7 @@
                         </a>
                     </li>
                 </ul>
+                </address>
             </div>
             <div class="cs-form rounded-2xl bg-white p-6 text-ink shadow-[0_40px_80px_-32px_rgba(0,0,0,0.5)] sm:p-9">
                 <p class="mb-6 font-display text-2xl font-semibold text-plum-night">Solicite uma análise</p>

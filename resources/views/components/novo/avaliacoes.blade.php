@@ -43,6 +43,7 @@
                     const c = li.cloneNode(true);
                     [':aria-hidden', 'aria-roledescription', 'aria-label'].forEach((a) => c.removeAttribute(a));
                     c.setAttribute('aria-hidden', 'true');
+                    c.setAttribute('data-nosnippet', '');
                     c.querySelectorAll('img').forEach((img) => img.alt = '');
                     return c;
                 });
@@ -177,7 +178,7 @@
 
                         <footer class="flex items-center gap-3 border-t border-line pt-5">
                             @if ($review['photo'])
-                                <img src="{{ asset($review['photo']) }}" alt="Foto de {{ $review['author'] }}" width="44" height="44" loading="lazy" draggable="false"
+                                <img src="{{ asset($review['photo']) }}" alt="" width="44" height="44" loading="lazy" draggable="false"
                                     class="h-11 w-11 rounded-full object-cover">
                             @else
                                 <span class="grid h-11 w-11 place-items-center rounded-full bg-plum/10 font-semibold text-plum" aria-hidden="true">
@@ -185,10 +186,14 @@
                                 </span>
                             @endif
                             <span class="min-w-0">
-                                <span class="block truncate font-semibold text-plum-night">{{ $review['author'] ?? 'Cliente' }}</span>
+                                <cite class="block truncate font-semibold not-italic text-plum-night">{{ $review['author'] ?? 'Cliente' }}</cite>
                                 <span class="block text-sm text-ink-soft">
                                     <i class="fa-brands fa-google mr-1 text-xs" aria-hidden="true"></i>
-                                    {{ $review['date'] ? \Illuminate\Support\Carbon::parse($review['date'])->locale('pt_BR')->diffForHumans() : 'Avaliação no Google' }}
+                                    @if ($review['date'])
+                                        <time datetime="{{ $review['date'] }}">{{ \Illuminate\Support\Carbon::parse($review['date'])->locale('pt_BR')->diffForHumans() }}</time>
+                                    @else
+                                        Avaliação no Google
+                                    @endif
                                 </span>
                             </span>
                         </footer>

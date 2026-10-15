@@ -10,7 +10,11 @@
 <x-novo.pagina :titulo="$h1" :descricao="$subtitulo" :descricao-seo="$descricao_seo" :titulo-aba="$titulo_seo"
     :canonical="$canonical" :robots="$robots"
     :keywords="mb_strtolower($termo->nome).' em '.$local->nome.', '.mb_strtolower($termo->nome).', advocacia tributária '.$local->nome.', advogada tributarista, advogado tributarista, Cassia Souza'"
-    :schema="[$servico ?\App\Support\Schema::servico($servico, $local->tipo === 'municipio' ? $local->nome : null) : null, \App\Support\Schema::faq($faqs)]"
+    :schema="[
+        \App\Support\Schema::servicoLocal($h1, $termo->nome, $descricao_seo, $canonical, $servico, \App\Support\Schema::area($local)),
+        \App\Support\Schema::faq($faqs, $canonical),
+    ]"
+    :pagina-schema="array_filter(['about' => ['@id' => $canonical.'#servico'], 'mainEntity' => ['@id' => $canonical.'#servico'], 'hasPart' => $faqs ? ['@id' => $canonical.'#faq'] : null])"
     :imagem="'assets/images/'.($servico['banner'] ?? 'banner-servicos.jpg')"
     :breadcrumbs="[
         ['label' => 'Home', 'url' => route('inicio')],
@@ -78,11 +82,11 @@
     </section>
 
     @if ($secoes)
-        <section aria-label="Mais sobre o atendimento em {{ $local->nome }}" class="bg-mist py-[clamp(72px,9vw,128px)]">
+        <div class="bg-mist py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap divide-y divide-line">
                 @foreach ($secoes as $secao)
-                    <div class="grid gap-6 py-10 first:pt-0 last:pb-0 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-                        <h2 class="font-display text-[clamp(26px,2.8vw,36px)] font-semibold leading-[1.12] tracking-[-0.01em] text-plum-night">
+                    <section aria-labelledby="local-secao-{{ $loop->iteration }}" class="grid gap-6 py-10 first:pt-0 last:pb-0 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+                        <h2 id="local-secao-{{ $loop->iteration }}" class="font-display text-[clamp(26px,2.8vw,36px)] font-semibold leading-[1.12] tracking-[-0.01em] text-plum-night">
                             {{ $secao['titulo'] }}
                         </h2>
                         <div class="space-y-5 text-[17px] leading-relaxed">
@@ -90,10 +94,10 @@
                                 <p>{{ $paragrafo }}</p>
                             @endforeach
                         </div>
-                    </div>
+                    </section>
                 @endforeach
             </div>
-        </section>
+        </div>
     @endif
 
     <section aria-labelledby="servicos-titulo" class="bg-white py-[clamp(72px,9vw,128px)]">

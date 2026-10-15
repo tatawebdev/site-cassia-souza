@@ -2,6 +2,9 @@
     titulo="Serviços"
     descricao="Do planejamento à regularização de dívidas: encontre a frente tributária que resolve a situação da sua empresa."
     imagem="assets/images/banner-servicos.jpg"
+    tipo-pagina="CollectionPage"
+    :schema="[\App\Support\Schema::listaServicos(), \App\Support\Schema::faq(config('faqs'), route('servicos'))]"
+    :pagina-schema="['mainEntity' => ['@id' => route('servicos').'#lista'], 'hasPart' => ['@id' => route('servicos').'#faq']]"
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Serviços']]">
 
     <section aria-labelledby="situacoes-titulo" class="bg-mist py-[clamp(72px,9vw,128px)]">

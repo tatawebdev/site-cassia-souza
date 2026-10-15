@@ -14,7 +14,8 @@
 <x-novo.pagina :titulo="$servico['title']" :descricao="$servico['descricao']"
     :titulo-aba="$servico['titulo_seo'] ?? null"
     :imagem="'assets/images/'.$servico['banner']"
-    :schema="[\App\Support\Schema::servico($servico), \App\Support\Schema::faq($faqs)]"
+    :schema="[\App\Support\Schema::servico($servico), \App\Support\Schema::faq($faqs, route($servico['route']))]"
+    :pagina-schema="\App\Support\Schema::paginaServico($servico, (bool) $faqs)"
     :keywords="mb_strtolower($servico['title']).', advocacia tributária, advogada tributarista, advogado tributarista, Cassia Souza, Suzano'"
     :breadcrumbs="[
         ['label' => 'Home', 'url' => route('inicio')],
@@ -44,28 +45,28 @@
                 </div>
             </div>
 
-            <figure class="m-0">
+            <div class="m-0">
                 <img src="{{ asset($foto.'/imagem2.jpg') }}" alt="" width="735" height="314" fetchpriority="high"
                     class="block aspect-[735/314] h-auto w-full rounded-2xl object-cover shadow-[0_40px_80px_-40px_rgba(58,6,55,0.5)]">
-            </figure>
+            </div>
         </div>
     </section>
 
-    <section aria-label="Em destaque" class="cs-plum-bg relative overflow-hidden py-[clamp(64px,8vw,112px)] text-white">
+    <div class="cs-plum-bg relative overflow-hidden py-[clamp(64px,8vw,112px)] text-white">
         <i class="fa-solid fa-quote-left pointer-events-none absolute left-[6%] top-8 text-[clamp(96px,14vw,200px)] leading-none text-champagne/10" aria-hidden="true"></i>
         <div class="cs-wrap relative text-center">
             <p class="mx-auto max-w-[24ch] font-display text-[clamp(30px,4vw,52px)] font-semibold leading-[1.12] tracking-[-0.02em]">
                 {{ $servico['destaque'] }}
             </p>
         </div>
-    </section>
+    </div>
 
     <section aria-labelledby="como-titulo" class="bg-mist py-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-20">
-            <figure class="relative m-0 overflow-hidden rounded-2xl lg:min-h-[420px]">
+            <div class="relative m-0 overflow-hidden rounded-2xl lg:min-h-[420px]">
                 <img src="{{ asset($foto.'/imagem1.jpg') }}" alt="" loading="lazy" width="735" height="509"
                     class="block aspect-[735/509] h-auto w-full object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
-            </figure>
+            </div>
 
             <div>
                 <h2 id="como-titulo" class="font-display text-[clamp(30px,3.4vw,44px)] font-semibold leading-[1.1] tracking-[-0.015em] text-plum-night">
@@ -111,14 +112,14 @@
     {{-- Perguntas do tema respondidas na própria página: resposta direta no
          primeiro parágrafo, depois o detalhe, e a base legal no fim --}}
     @if (! empty($servico['secoes']))
-        <section aria-label="Entenda o tema" class="bg-white py-[clamp(72px,9vw,128px)]">
+        <div class="bg-white py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap">
                 @foreach ($servico['secoes'] as $secao)
-                    <article @class([
+                    <article aria-labelledby="secao-{{ $loop->iteration }}" @class([
                         'grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20',
                         'mt-14 border-t border-line pt-14' => ! $loop->first,
                     ])>
-                        <h2 class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] tracking-[-0.015em] text-plum-night">
+                        <h2 id="secao-{{ $loop->iteration }}" class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] tracking-[-0.015em] text-plum-night">
                             {{ $secao['pergunta'] }}
                         </h2>
                         <div class="max-w-[42em] text-[17px] leading-relaxed">
@@ -168,15 +169,15 @@
                         </ul>
                         @if (! empty($servico['atualizado']))
                             <p class="mt-4 text-ink-soft">
-                                Conteúdo conferido com a legislação em
-                                {{ \Illuminate\Support\Carbon::createFromFormat('Y-m', $servico['atualizado'])->locale('pt_BR')->translatedFormat('F \d\e Y') }}.
+                                Conteúdo da Cassia Souza Advocacia Tributária, conferido com a legislação em
+                                <time datetime="{{ $servico['atualizado'] }}">{{ \Illuminate\Support\Carbon::createFromFormat('Y-m', $servico['atualizado'])->locale('pt_BR')->translatedFormat('F \d\e Y') }}</time>.
                                 Ele explica as regras gerais e não substitui a análise do caso de cada empresa.
                             </p>
                         @endif
                     </div>
                 @endif
             </div>
-        </section>
+        </div>
     @endif
 
     {{-- Fundos alternados: com as seções (fundo branco), as avaliações vão para o mist --}}

@@ -7,7 +7,7 @@
      na sessão. Não aparece na página de contato. A mesma regra está no blog
      (modal-saida.js do tema). --}}
 @unless (request()->routeIs('contato'))
-<div x-data="{
+<div data-nosnippet x-data="{
         aberto: false,
         chave: 'cs-saida-site',
         // Espera depois da 1ª, 2ª e 3ª vez; depois da 4ª, não aparece mais na sessão

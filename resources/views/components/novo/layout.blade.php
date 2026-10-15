@@ -12,6 +12,8 @@
     'keywords' => 'advocacia tributária, advogada tributarista, planejamento tributário, recuperação de PIS/COFINS, regularização de débitos PGFN, Reforma Tributária, Suzano',
     'breadcrumbs' => [],
     'schema' => [],
+    // Campos extras do nó da página (App\Support\Schema::pagina): name, about, mainEntity...
+    'paginaSchema' => [],
 ])
 
 <!DOCTYPE html>
@@ -62,7 +64,7 @@
 
     <script type="application/ld+json">{!! \App\Support\Schema::json(array_merge(
         \App\Support\Schema::base(),
-        \App\Support\Schema::pagina($title, $description, $canonical ?? url()->current(), $breadcrumbs, $tipoPagina),
+        \App\Support\Schema::pagina($title, $description, $canonical ?? url()->current(), $breadcrumbs, $tipoPagina, $paginaSchema),
         $schema,
     )) !!}</script>
 </head>

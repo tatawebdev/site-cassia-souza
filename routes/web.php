@@ -81,6 +81,9 @@ Route::get('/chat', function () {
 // Sitemap: páginas institucionais + páginas de SEO liberadas para o Google
 Route::get('/sitemap.xml', \App\Http\Controllers\SitemapController::class)->name('sitemap');
 
+// Resumo do site para assistentes de IA (llms.txt), montado de config/servicos.php
+Route::get('/llms.txt', \App\Http\Controllers\LlmsController::class)->name('llms');
+
 // Páginas de SEO herdadas do site antigo (/{termo}/{localidade}), com o texto no banco
 // (seo_termos, seo_localidades, seo_paginas, seo_blocos). Fica por último: só recebe o que
 // nenhuma outra rota atendeu, e o controller devolve 404 para termo ou localidade inexistente.

@@ -26,7 +26,7 @@
 
         <div class="cs-faq border-t border-line">
             @foreach ($faqs as $faq)
-                <details class="group border-b border-line" @if ($loop->first) open @endif>
+                <details id="{{ \Illuminate\Support\Str::slug($faq['question']) }}" class="group border-b border-line" @if ($loop->first) open @endif>
                     <summary class="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_32px] items-center gap-6 py-6 [&::-webkit-details-marker]:hidden">
                         <h3 class="font-display text-[22px] font-semibold leading-snug text-plum-night transition-colors group-hover:text-plum">{{ $faq['question'] }}</h3>
                         <span class="relative grid h-8 w-8 place-items-center rounded-full bg-mist transition duration-200 ease-out-soft group-open:rotate-45 group-open:bg-plum" aria-hidden="true">

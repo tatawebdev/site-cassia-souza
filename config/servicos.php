@@ -16,6 +16,7 @@
  *   (pergunta, resposta, e opcionalmente paragrafos, lista e tabela [[rótulo, texto]])
  * - fontes: base legal citada nas seções (nome, url), sempre de fonte oficial
  * - atualizado: mês em que as seções foram conferidas com a legislação (AAAA-MM)
+ * - publico: a quem o serviço se destina (dados estruturados); padrão "Empresas"
  *
  * Textos jurídicos das seções: conferidos na legislação em outubro de 2026.
  * Nada de promessa de resultado, números de clientes ou casos.
@@ -254,6 +255,7 @@ return [
         'image' => 'planejamento-clinicas',
         'banner' => 'banner-planejamento-clinicas.jpg',
         'descricao' => 'Planejamento tributário especializado para clínicas médicas e odontológicas, buscando economia legal, previsibilidade e maior rentabilidade.',
+        'publico' => 'Clínicas médicas e odontológicas',
         'abertura' => [
             'Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.',
             'Para as clínicas médicas e odontológicas existe a possibilidade de reduzir a carga tributária, dentro do que a lei permite, por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido.',
@@ -350,6 +352,7 @@ return [
         'image' => 'treinamento-tributario',
         'banner' => 'banner-treinamento-tributario.jpg',
         'descricao' => 'Treinamentos práticos para equipes fiscais: reduzir riscos, evitar autuações e otimizar rotinas, presencial ou online.',
+        'publico' => 'Equipes fiscais de empresas',
         'abertura' => [
             'Treinamos sua equipe em gestão tributária com clareza e exemplos práticos.',
             'Capacitação personalizada para reduzir riscos, evitar autuações e otimizar rotinas fiscais, presencial ou online.',

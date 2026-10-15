@@ -32,17 +32,17 @@
                 </ul>
             </div>
 
-            <div>
-                <p class="text-sm font-semibold text-white">Serviços</p>
+            <nav aria-labelledby="rodape-servicos">
+                <p id="rodape-servicos" class="text-sm font-semibold text-white">Serviços</p>
                 <ul class="mt-4 grid gap-2.5 text-[15px]">
                     @foreach (config('servicos') as $service)
                         <li><a href="{{ route($service['route']) }}" class="transition-colors hover:text-champagne">{{ $service['title'] }}</a></li>
                     @endforeach
                 </ul>
-            </div>
+            </nav>
 
-            <div>
-                <p class="text-sm font-semibold text-white">Escritório</p>
+            <nav aria-labelledby="rodape-escritorio">
+                <p id="rodape-escritorio" class="text-sm font-semibold text-white">Escritório</p>
                 <ul class="mt-4 grid gap-2.5 text-[15px]">
                     <li><a href="/sobre-nos" class="transition-colors hover:text-champagne">Quem somos</a></li>
                     <li><a href="https://blog.cassiasouzaadvocacia.com.br/" class="transition-colors hover:text-champagne">Blog</a></li>
@@ -50,10 +50,11 @@
                     <li><a href="/politica-de-privacidade" class="transition-colors hover:text-champagne">Política de privacidade</a></li>
                     <li><a href="/politica-de-privacidade" data-cookies-abrir class="transition-colors hover:text-champagne">Preferências de cookies</a></li>
                 </ul>
-            </div>
+            </nav>
 
             <div>
                 <p class="text-sm font-semibold text-white">Atendimento</p>
+                <address class="not-italic">
                 <ul class="mt-4 grid gap-2.5 text-[15px]">
                     <li>Segunda a sexta, 9h às 17h</li>
                     <li>
@@ -67,6 +68,7 @@
                         </a>
                     </li>
                 </ul>
+                </address>
             </div>
         </div>
 
