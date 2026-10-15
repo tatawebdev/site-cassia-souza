@@ -7,14 +7,20 @@
     :schema="[\App\Support\Schema::faq($faqs, url('/'))]"
     :pagina-schema="['name' => 'Cassia Souza Advocacia Tributária', 'primaryImageOfPage' => ['@id' => \App\Support\Schema::id('foto-cassia')], 'hasPart' => ['@id' => url('/').'#faq']]">
 
+    {{-- O header fica por cima do herói e fora do <main>; o herói (h1) abre o <main> --}}
+    <div class="relative">
+    @include('novo.partials.header', ['sobreposto' => true])
+
+    <main id="conteudo">
     <div class="cs-plum-bg relative overflow-hidden text-white">
         {{-- Monograma do logo como marca d'água --}}
         <img src="/assets/images/logo-acinzentado.png" alt="" aria-hidden="true"
             class="pointer-events-none absolute -bottom-24 -left-28 w-[720px] max-w-none select-none opacity-[0.05]">
 
-        @include('novo.partials.header')
+        {{-- Altura do header sobreposto --}}
+        <div class="h-[108.125px]" aria-hidden="true"></div>
 
-        <section class="relative lg:min-h-[620px]">
+        <section aria-labelledby="inicio-titulo" class="relative lg:min-h-[620px]">
             {{-- Foto sangrando até a borda direita, fundida ao roxo pela esquerda --}}
             <figure class="relative m-0 h-[360px] sm:h-[460px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[46%]">
                 <picture class="contents">
@@ -29,7 +35,7 @@
 
             <div class="cs-wrap relative pb-12 pt-8 sm:pb-[150px] lg:pb-[190px] lg:pt-[72px]">
                 <div class="max-w-[640px]">
-                    <h1 class="font-display text-[clamp(40px,4.7vw,68px)] font-semibold leading-[1.02] tracking-[-0.02em] text-white">
+                    <h1 id="inicio-titulo" class="font-display text-[clamp(40px,4.7vw,68px)] font-semibold leading-[1.02] tracking-[-0.02em] text-white">
                         <span class="block overflow-hidden pb-[0.06em]"><span class="block motion-safe:animate-rise">Está pagando além</span></span>
                         <span class="block overflow-hidden pb-[0.06em]"><span class="block motion-safe:animate-rise motion-safe:[animation-delay:90ms]">do justo em impostos?</span></span>
                     </h1>
@@ -71,7 +77,6 @@
         </section>
     </div>
 
-    <main>
         <section id="situacoes" aria-labelledby="situacoes-titulo" class="bg-mist py-[clamp(72px,9vw,128px)]">
             <div class="cs-wrap">
                 <div class="grid items-end gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -136,4 +141,5 @@
 
         <x-novo.contato />
     </main>
+    </div>
 </x-novo.layout>

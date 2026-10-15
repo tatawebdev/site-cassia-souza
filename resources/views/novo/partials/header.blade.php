@@ -1,5 +1,11 @@
-{{-- Cabeçalho do tema novo. Fica dentro do hero de cada página, sobre o fundo roxo. --}}
-<header x-data="{ menu: false, servicos: false }" class="relative z-20 text-white">
+{{-- Cabeçalho do tema novo, sobre o fundo roxo do banner. Com $sobreposto, fica fora do
+     <main> e por cima do banner (que reserva a altura dele com um espaçador de 108.125px:
+     py-5 + logo de 128px de largura na proporção 558x297), para o h1 ficar dentro do <main>. --}}
+<header x-data="{ menu: false, servicos: false }" @class([
+    'z-20 text-white',
+    'absolute inset-x-0 top-0' => $sobreposto ?? false,
+    'relative' => ! ($sobreposto ?? false),
+])>
     <div class="cs-wrap flex flex-wrap items-center justify-between py-5">
         <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia Tributária, início">
             <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia Tributária" width="128" height="68"

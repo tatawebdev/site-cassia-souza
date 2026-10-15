@@ -1,8 +1,13 @@
 {{-- Página não encontrada (tema novo). --}}
 <x-novo.layout title="Página não encontrada | Cassia Souza Advocacia Tributária" robots="noindex, follow"
     description="O endereço acessado não existe ou mudou de lugar.">
+    <div class="relative">
+    @include('novo.partials.header', ['sobreposto' => true])
+
+    <main id="conteudo">
     <div class="cs-plum-bg relative overflow-hidden text-white">
-        @include('novo.partials.header')
+        {{-- Altura do header sobreposto --}}
+        <div class="h-[108.125px]" aria-hidden="true"></div>
 
         <section class="cs-wrap relative grid gap-12 pb-[clamp(64px,8vw,112px)] pt-[clamp(32px,5vw,72px)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
@@ -46,5 +51,7 @@
                 </ul>
             </nav>
         </section>
+    </div>
+    </main>
     </div>
 </x-novo.layout>

@@ -33,15 +33,21 @@
     :breadcrumbs="$breadcrumbs" :tipo-pagina="$tipoPagina" :schema="$schema"
     :pagina-schema="array_merge(['name' => $titulo], $paginaSchema)"
     :keywords="$keywords ?? 'advocacia tributária, advogada tributarista, planejamento tributário, recuperação de PIS/COFINS, regularização de débitos PGFN, Reforma Tributária, Suzano'">
+    {{-- O header fica por cima do banner e fora do <main>; o banner (h1 e descrição) abre o <main> --}}
+    <div class="relative">
+    @include('novo.partials.header', ['sobreposto' => true])
+
+    <main id="conteudo">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}
     <div @class(['relative overflow-hidden bg-plum bg-cover bg-center text-white', 'cs-plum-bg' => ! $imagem])
         @if ($imagem)
             style="background-image: linear-gradient(100deg, rgba(36, 4, 31, 0.94) 0%, rgba(89, 8, 84, 0.88) 45%, rgba(89, 8, 84, 0.55) 100%), url('{{ asset($imagem) }}');"
         @endif>
 
-        @include('novo.partials.header')
+        {{-- Altura do header sobreposto --}}
+        <div class="h-[108.125px]" aria-hidden="true"></div>
 
-        <section class="cs-wrap relative pb-[clamp(56px,7vw,96px)] pt-[clamp(24px,4vw,56px)]">
+        <section aria-labelledby="pagina-titulo" class="cs-wrap relative pb-[clamp(56px,7vw,96px)] pt-[clamp(24px,4vw,56px)]">
             @if ($breadcrumbs)
                 <nav aria-label="Você está em">
                     <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-on-plum/80">
@@ -59,7 +65,7 @@
                 </nav>
             @endif
 
-            <h1 class="mt-5 max-w-[18em] font-display text-[clamp(38px,5vw,64px)] font-semibold leading-[1.04] tracking-[-0.02em] text-white">
+            <h1 id="pagina-titulo" class="mt-5 max-w-[18em] font-display text-[clamp(38px,5vw,64px)] font-semibold leading-[1.04] tracking-[-0.02em] text-white">
                 {{ $titulo }}
             </h1>
 
@@ -69,11 +75,11 @@
         </section>
     </div>
 
-    <main>
         {{ $slot }}
 
         @if ($contato)
             <x-novo.contato />
         @endif
     </main>
+    </div>
 </x-novo.layout>
