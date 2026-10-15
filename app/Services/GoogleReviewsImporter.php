@@ -110,8 +110,8 @@ class GoogleReviewsImporter
             return null;
         }
 
-        // A foto do painel vem em 50px; pedimos 120px para telas de alta densidade
-        $url = preg_replace('/=s\d+-/', '=s120-', $review['photo_url']);
+        // A foto do painel vem em 50px; pedimos 88px (o site mostra em 44px, telas 2x)
+        $url = preg_replace('/=s\d+-/', '=s88-', $review['photo_url']);
 
         try {
             $response = Http::timeout(20)->get($url);
@@ -123,12 +123,25 @@ class GoogleReviewsImporter
             return null;
         }
 
+        $name = substr(md5($review['id'] ?? $review['photo_url']), 0, 12);
+
+        // Salva em WebP (o Google costuma mandar PNG, 3x maior); sem GD, guarda como veio
+        $image = function_exists('imagewebp') ? @imagecreatefromstring($response->body()) : false;
+
+        if ($image) {
+            imagepalettetotruecolor($image);
+            imagewebp($image, $dir.'/'.$name.'.webp', 80);
+            imagedestroy($image);
+
+            return self::PHOTOS_DIR.'/'.$name.'.webp';
+        }
+
         $extension = match ($response->header('Content-Type')) {
             'image/png' => 'png',
             'image/webp' => 'webp',
             default => 'jpg',
         };
-        $name = substr(md5($review['id'] ?? $review['photo_url']), 0, 12).'.'.$extension;
+        $name .= '.'.$extension;
         File::put($dir.'/'.$name, $response->body());
 
         return self::PHOTOS_DIR.'/'.$name;

@@ -1,0 +1,262 @@
+/* Aviso de cookies do site e do blog (assets/js/cookies.js). CSS próprio, sem
+   Tailwind, para funcionar igual nos dois. Cores da identidade do escritório. */
+.cs-cookies {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 2147483001;
+    box-sizing: border-box;
+    width: min(400px, calc(100% - 32px));
+    padding: 22px 22px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background:
+        radial-gradient(420px 220px at 100% 0%, rgba(239, 207, 159, 0.12), transparent 70%),
+        linear-gradient(160deg, #3a0637 0%, #24041f 100%);
+    box-shadow: 0 32px 64px -24px rgba(20, 2, 18, 0.65);
+    color: #f3e6f1;
+    font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 250ms cubic-bezier(0.22, 0.8, 0.2, 1), transform 250ms cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+.cs-cookies[hidden] {
+    display: none;
+}
+
+.cs-cookies--aberto {
+    opacity: 1;
+    transform: none;
+}
+
+.cs-cookies * {
+    box-sizing: border-box;
+}
+
+.cs-cookies p {
+    margin: 0;
+}
+
+.cs-cookies__topo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cs-cookies__escudo svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    color: #efcf9f;
+}
+
+.cs-cookies__titulo {
+    flex: 1;
+    color: #fff;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cs-cookies__fechar {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(243, 230, 241, 0.7);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.cs-cookies__fechar:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.cs-cookies__texto {
+    margin-top: 10px !important;
+    color: rgba(243, 230, 241, 0.85);
+}
+
+.cs-cookies__docs {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cs-cookies__docs li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cs-cookies__docs svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    color: #efcf9f;
+}
+
+.cs-cookies__docs a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgba(239, 207, 159, 0.6);
+    text-underline-offset: 3px;
+}
+
+.cs-cookies__docs a:hover {
+    color: #efcf9f;
+}
+
+.cs-cookies__prefs {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.cs-cookies__prefs[hidden] {
+    display: none;
+}
+
+.cs-cookies__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+label.cs-cookies__item {
+    cursor: pointer;
+}
+
+.cs-cookies__item-titulo {
+    color: #fff;
+    font-weight: 600;
+}
+
+.cs-cookies__item-texto {
+    margin-top: 2px !important;
+    color: rgba(243, 230, 241, 0.72);
+    font-size: 13px;
+}
+
+.cs-cookies__sempre {
+    flex: none;
+    color: #efcf9f;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Chave liga/desliga */
+.cs-cookies__chave {
+    position: relative;
+    flex: none;
+    width: 42px;
+    height: 24px;
+    margin: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+}
+
+.cs-cookies__chave::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 200ms cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+.cs-cookies__chave:checked {
+    background: #efcf9f;
+}
+
+.cs-cookies__chave:checked::after {
+    transform: translateX(18px);
+    background: #24041f;
+}
+
+.cs-cookies__chave:focus-visible,
+.cs-cookies__botao:focus-visible,
+.cs-cookies__fechar:focus-visible,
+.cs-cookies__docs a:focus-visible {
+    outline: 2px solid #efcf9f;
+    outline-offset: 2px;
+}
+
+.cs-cookies__acoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.cs-cookies__botao {
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.cs-cookies__botao--contorno {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: transparent;
+    color: #fff;
+}
+
+.cs-cookies__botao--contorno:hover {
+    border-color: #efcf9f;
+    color: #efcf9f;
+}
+
+.cs-cookies__botao--cheio {
+    border: 0;
+    background: #efcf9f;
+    color: #24041f;
+}
+
+.cs-cookies__botao--cheio:hover {
+    background: #f5ddb8;
+}
+
+@media (max-width: 520px) {
+    .cs-cookies {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-cookies {
+        transform: none;
+        transition: opacity 150ms linear;
+    }
+}

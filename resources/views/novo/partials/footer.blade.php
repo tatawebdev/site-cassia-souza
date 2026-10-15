@@ -48,6 +48,7 @@
                     <li><a href="https://blog.cassiasouzaadvocacia.com.br/" class="transition-colors hover:text-champagne">Blog</a></li>
                     <li><a href="/contato" class="transition-colors hover:text-champagne">Contato</a></li>
                     <li><a href="/politica-de-privacidade" class="transition-colors hover:text-champagne">Política de privacidade</a></li>
+                    <li><a href="/politica-de-privacidade" data-cookies-abrir class="transition-colors hover:text-champagne">Preferências de cookies</a></li>
                 </ul>
             </div>
 

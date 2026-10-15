@@ -9,7 +9,7 @@
         <div class="cs-wrap grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
             <figure class="relative m-0 mx-auto w-full max-w-[520px]">
                 <picture class="contents">
-                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-1080.webp 1080w"
+                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-828.webp 828w, /assets/img/cassia-1080.webp 1080w"
                         sizes="(min-width: 560px) 520px, 100vw">
                     <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
                         width="1080" height="1080" fetchpriority="high"

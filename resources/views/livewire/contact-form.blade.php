@@ -8,19 +8,19 @@
 
     <form wire:submit.prevent="submit" class="position-relative">
         <div class="form-group input1 float-left">
-            <input wire:model.defer="nome" type="text" class="form_style" placeholder="Nome">
+            <input wire:model.defer="nome" type="text" class="form_style" placeholder="Nome" aria-label="Nome" autocomplete="name">
             @error('nome') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <div class="form-group float-left">
-            <input wire:model.defer="phone" type="tel" class="form_style" placeholder="Telefone">
+            <input wire:model.defer="phone" type="tel" class="form_style" placeholder="Telefone" aria-label="Telefone" autocomplete="tel">
             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <div class="form-group input1 float-left">
-            <input wire:model.defer="email" type="email" class="form_style" placeholder="E-mail">
+            <input wire:model.defer="email" type="email" class="form_style" placeholder="E-mail" aria-label="E-mail" autocomplete="email">
             @error('email') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <div class="form-group float-left">
-            <select wire:model.defer="area" class="form-control">
+            <select wire:model.defer="area" class="form-control" aria-label="Área de interesse">
                 <option value="">Área de interesse</option>
                 <option>Planejamento Tributário</option>
                 <option>Recuperação de PIS/COFINS monofásicos</option>
@@ -34,7 +34,7 @@
             @error('area') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <div class="form-group message">
-            <textarea wire:model.defer="msg" class="form_style" placeholder="Mensagem" rows="3"></textarea>
+            <textarea wire:model.defer="msg" class="form_style" placeholder="Mensagem" aria-label="Mensagem" rows="3"></textarea>
             @error('msg') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
 

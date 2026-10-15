@@ -52,8 +52,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    {{-- Ícones sem bloquear a primeira pintura: o CSS chega depois e os ícones aparecem em seguida --}}
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     @vite('resources/css/novo.css')
+    {{-- Aviso de cookies (o mesmo do blog) --}}
+    <link rel="stylesheet" href="/assets/css/cookies.css?v={{ filemtime(public_path('assets/css/cookies.css')) }}">
+    <script src="/assets/js/cookies.js?v={{ filemtime(public_path('assets/js/cookies.js')) }}" defer></script>
 
     <script type="application/ld+json">{!! \App\Support\Schema::json(array_merge(
         \App\Support\Schema::base(),
@@ -100,7 +106,7 @@
         })();
     </script>
     <script src="/assets/js/preloader.js?v={{ filemtime(public_path('assets/js/preloader.js')) }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script>
         // Livewire 3: dispatch('swal', payload) dos formulários de contato e newsletter
         window.addEventListener('swal', event => {

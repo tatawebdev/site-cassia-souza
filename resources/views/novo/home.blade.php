@@ -15,7 +15,7 @@
             {{-- Foto sangrando até a borda direita, fundida ao roxo pela esquerda --}}
             <figure class="relative m-0 h-[360px] sm:h-[460px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[46%]">
                 <picture class="contents">
-                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-1080.webp 1080w"
+                    <source type="image/webp" srcset="/assets/img/cassia-640.webp 640w, /assets/img/cassia-828.webp 828w, /assets/img/cassia-1080.webp 1080w"
                         sizes="(min-width: 1024px) 46vw, 100vw">
                     <img src="/assets/img/sobrenos.png" alt="Cassia Souza Advocacia Tributária, escritório em Suzano (SP)"
                         width="1080" height="1080" fetchpriority="high"
