@@ -116,9 +116,10 @@ class DeployCommand extends Command
             $phpBin.' artisan config:cache',
             $phpBin.' artisan route:cache',
             $phpBin.' artisan view:cache',
-            // Avisa o Google das páginas novas (só as ainda não enviadas, até 50 por deploy
-            // para não alongá-lo; o resto vai pelo site e pelo comando). Se falhar, só avisa.
-            '('.$phpBin.' artisan google:indexing-sync --limite=50 || echo "Aviso: Google Indexing não sincronizado")',
+            // Avisa o Google das páginas pendentes e, com --loop, libera novas páginas de SEO
+            // (seo:liberar) até acabar a cota do dia. Durante a pausa de 36 h só avisa e segue;
+            // se falhar, o deploy não para.
+            '('.$phpBin.' artisan google:indexing-sync --loop || echo "Aviso: Google Indexing não sincronizado")',
         ]);
 
         $sshCommand = [

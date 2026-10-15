@@ -58,6 +58,7 @@ Para liberar mais páginas aos poucos: `php artisan seo:liberar --quantidade=20 
 termo + localidade ainda fechadas, Alto Tietê primeiro, depois bairros, estado de SP e outros estados;
 grava em `seo_paginas.indexar` e envia ao Google até o limite diário). Tudo de uma vez, até acabar a cota
 do dia: `php artisan google:indexing-sync --loop` (libera lotes de 20 e envia; `--lote=N` muda o tamanho).
+O `php artisan deploy` roda esse `--loop` no fim de todo deploy.
 
 ## Avaliações do Google
 
