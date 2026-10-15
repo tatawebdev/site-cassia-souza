@@ -111,7 +111,8 @@ class Schema
                 // Instagram, TikTok e LinkedIn são da Cassia e ficam na Person.
                 'taxID' => '57.078.276/0001-00',
                 'identifier' => ['@type' => 'PropertyValue', 'propertyID' => 'CNPJ', 'value' => '57.078.276/0001-00'],
-                'sameAs' => [config('site.facebook')],
+                'sameAs' => [config('site.facebook'), config('site.google_kgmid')],
+                'hasMap' => config('site.google_perfil'),
             ],
             [
                 '@type' => 'Person',

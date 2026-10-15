@@ -148,7 +148,7 @@ class SchemaTest extends TestCase
 
         // Perfis pessoais na Cassia; o escritório tem só os dele (Facebook) e o CNPJ
         $escritorio = $grafo->firstWhere('@type', 'LegalService');
-        $this->assertSame([config('site.facebook')], $escritorio['sameAs']);
+        $this->assertSame([config('site.facebook'), config('site.google_kgmid')], $escritorio['sameAs']);
         $this->assertNotContains(config('site.facebook'), $cassia['sameAs']);
         $this->assertSame('57.078.276/0001-00', $escritorio['taxID']);
         $this->assertSame('Sobre a Cassia Souza Advocacia Tributária', $grafo->firstWhere('@type', 'AboutPage')['name']);

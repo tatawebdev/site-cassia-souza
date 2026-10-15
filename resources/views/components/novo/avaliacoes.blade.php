@@ -128,9 +128,10 @@
                                     <i class="fa-solid fa-star text-sm {{ $i <= round($nota) ? '' : 'opacity-25' }}" aria-hidden="true"></i>
                                 @endfor
                             </span>
-                            <span class="mt-1 block text-sm text-ink-soft">
+                            <a href="{{ config('site.google_perfil') }}" target="_blank" rel="noopener"
+                                class="mt-1 block text-sm text-ink-soft underline decoration-ink-soft/30 underline-offset-4 transition-colors hover:text-plum hover:decoration-plum">
                                 <i class="fa-brands fa-google mr-1 text-xs" aria-hidden="true"></i>{{ $total }} avaliações no Google
-                            </span>
+                            </a>
                         </span>
                     </div>
                 @endif
