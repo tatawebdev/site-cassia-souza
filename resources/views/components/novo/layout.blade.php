@@ -49,9 +49,8 @@
     <meta name="theme-color" content="#590854">
     <link rel="preload" href="/assets/images/monograma-sc.png" as="image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    {{-- Fontes no próprio site (@font-face em novo.css); a do texto vem antes de tudo --}}
+    <link rel="preload" href="/assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     {{-- Ícones sem bloquear a primeira pintura: o CSS chega depois e os ícones aparecem em seguida --}}
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">

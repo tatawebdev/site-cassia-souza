@@ -1,9 +1,11 @@
 (function () {
-    var MIN_VISIBLE_MS = 1500; // não "pisca" quando a página carrega rápido
-    var MAX_WAIT_MS = 8000; // não prende o usuário se algum recurso externo travar o "load"
+    var MIN_VISIBLE_MS = 700; // não "pisca" quando a página carrega rápido
+    var MAX_WAIT_MS = 4000; // não prende o usuário se algo travar
 
-    // performance.now() conta desde o início da navegação: se o load já
-    // passou do mínimo, esconde na hora; senão espera só o que falta.
+    // Sai quando o HTML está pronto (DOMContentLoaded), sem esperar imagens e
+    // scripts externos (o "load"): esperar por eles atrasava a foto do topo e
+    // derrubava o LCP do PageSpeed. performance.now() conta desde o início da
+    // navegação: se já passou do mínimo, esconde na hora; senão espera o que falta.
     function hideAfterMinimum() {
         setTimeout(hidePreloader, Math.max(0, MIN_VISIBLE_MS - performance.now()));
     }
@@ -21,7 +23,11 @@
         }, 600);
     }
 
-    window.addEventListener('load', hideAfterMinimum);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideAfterMinimum);
+    } else {
+        hideAfterMinimum();
+    }
     setTimeout(hidePreloader, MAX_WAIT_MS);
 
     // Voltando pelo histórico (bfcache) a página não dispara "load" de novo

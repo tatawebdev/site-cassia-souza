@@ -13,9 +13,6 @@
     <title>{{ $titulo }} | Cassia Souza Advocacia Tributária</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <meta name="theme-color" content="#590854">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     @vite('resources/css/novo.css')
 </head>
