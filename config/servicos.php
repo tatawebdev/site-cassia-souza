@@ -95,7 +95,7 @@ return [
             'Com segurança jurídica e atuação especializada, ajudamos sua empresa a reduzir custos, ganhar fôlego financeiro e investir no que realmente importa: o crescimento do seu negócio.',
         ],
         'lista' => [],
-        'fechamento' => 'Fale conosco e descubra quanto sua empresa pode recuperar.',
+        'fechamento' => 'Fale conosco e analise a viabilidade de recuperação para sua empresa.',
         'faq' => ['pis-cofins'],
         'titulo_seo' => 'Recuperação de PIS/COFINS monofásico no Simples | Cassia Souza',
         'secoes' => [
@@ -260,7 +260,7 @@ return [
             'Muitos gestores da área da saúde pagam mais impostos do que deveriam simplesmente por desconhecer oportunidades previstas em lei.',
             'Para as clínicas médicas e odontológicas existe a possibilidade de reduzir a carga tributária, dentro do que a lei permite, por meio de enquadramentos específicos, como a equiparação hospitalar no Lucro Presumido.',
         ],
-        'destaque' => 'Soluções tributárias para o setor da saúde com foco em resultados.',
+        'destaque' => 'Soluções tributárias para o setor da saúde com segurança e estratégia.',
         'como_titulo' => 'Planejamento feito para a realidade da saúde',
         'como' => [
             'Nosso papel é estruturar um planejamento tributário personalizado, que garanta economia real, segurança jurídica e previsibilidade financeira, sempre com ética e dentro da legalidade.',

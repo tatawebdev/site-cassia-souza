@@ -1,7 +1,7 @@
 <x-novo.pagina tipo-pagina="ContactPage" :schema="[\App\Support\Schema::faq(config('faqs'), route('contato'))]"
     :pagina-schema="['mainEntity' => ['@id' => \App\Support\Schema::id('escritorio')], 'hasPart' => ['@id' => route('contato').'#faq']]"
     titulo="Fale conosco"
-    descricao="Tire dúvidas ou agende uma consulta gratuita. Estamos prontos para ajudar sua empresa a conquistar segurança tributária."
+    descricao="Tire dúvidas ou agende um atendimento. Estamos prontos para ajudar sua empresa a conquistar segurança tributária."
     imagem="assets/images/banner-contatos.jpg"
     :contato="false"
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Contato']]">

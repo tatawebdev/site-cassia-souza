@@ -2,7 +2,7 @@
     titulo="Sobre a Cassia Souza Advocacia Tributária"
     titulo-aba="Sobre o escritório | Cassia Souza Advocacia Tributária"
     imagem="assets/images/banner-sobre-nos.jpg"
-    descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes."
+    descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e soluções sob medida para empresas de todos os portes."
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Sobre']]"
     :pagina-schema="['about' => [['@id' => \App\Support\Schema::id('escritorio')], ['@id' => \App\Support\Schema::id('cassia')]], 'mainEntity' => ['@id' => \App\Support\Schema::id('escritorio')], 'primaryImageOfPage' => ['@id' => \App\Support\Schema::id('foto-cassia')]]">
 
@@ -29,7 +29,7 @@
                 <div class="mt-6 space-y-5 text-[17px] leading-relaxed">
                     <p>
                         A Cassia Souza Advocacia Tributária é um escritório de advocacia tributária para empresas,
-                        conduzido pela advogada tributarista Cassia Souza, inscrita na OAB/SP. Fica em Suzano (SP) e
+                        conduzido pela advogada tributarista Cassia Souza, inscrita na OAB/SP sob o nº 55.965 (Sociedade Individual de Advocacia). Fica em Suzano (SP) e
                         atende empresas de todo o Brasil de forma online e, presencialmente, em Suzano e no Alto
                         Tietê, de segunda a sexta, das 9h às 17h.
                     </p>
@@ -46,8 +46,7 @@
                     </p>
                 </div>
 
-                {{-- Quem atende: só fatos confirmados (OAB/SP pelo e-mail institucional,
-                     Suzano pelo perfil no Google) --}}
+                {{-- Quem atende: dados profissionais confirmados --}}
                 <dl class="mt-9 grid gap-x-8 gap-y-5 border-t border-line pt-7 sm:grid-cols-3">
                     <div>
                         <dt class="text-sm text-ink-soft">Advogada responsável</dt>
@@ -55,7 +54,7 @@
                     </div>
                     <div>
                         <dt class="text-sm text-ink-soft">Inscrição</dt>
-                        <dd class="mt-1 font-semibold text-plum-night">OAB/SP</dd>
+                        <dd class="mt-1 font-semibold text-plum-night">{{ config('site.oab') }}</dd>
                     </div>
                     <div>
                         <dt class="text-sm text-ink-soft">Base</dt>
@@ -107,7 +106,7 @@
         <div class="cs-wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <div>
                 <h2 id="compromisso-titulo" class="font-display text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.08] tracking-[-0.015em] text-plum-night">
-                    Comprometidos em gerar resultados reais
+                    Compromisso com segurança e estratégia
                 </h2>
                 <p class="mt-6 text-[17px] leading-relaxed">
                     Cada empresa tem sua própria história, desafios e sonhos. Por isso, não existe solução única
@@ -156,8 +155,6 @@
             </ul>
         </div>
     </section>
-
-    <x-novo.avaliacoes class="bg-white" />
 
     <section aria-labelledby="conteudo-titulo" class="bg-white pb-[clamp(72px,9vw,128px)]">
         <div class="cs-wrap">

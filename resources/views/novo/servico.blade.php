@@ -180,14 +180,11 @@
         </div>
     @endif
 
-    {{-- Fundos alternados: com as seções (fundo branco), as avaliações vão para o mist --}}
-    <x-novo.avaliacoes :class="empty($servico['secoes']) ? 'bg-white' : 'bg-mist'" />
-
     @if ($faqs)
-        <x-novo.faq :faqs="$faqs" :class="empty($servico['secoes']) ? 'bg-mist' : 'bg-white'" :descricao="$faqDescricao" />
+        <x-novo.faq :faqs="$faqs" :class="empty($servico['secoes']) ? 'bg-white' : 'bg-mist'" :descricao="$faqDescricao" />
     @endif
 
-    <section aria-labelledby="outros-titulo" @class(['py-[clamp(64px,8vw,104px)]', 'bg-mist' => ! empty($servico['secoes']), 'bg-white' => empty($servico['secoes'])])>
+    <section aria-labelledby="outros-titulo" @class(['py-[clamp(64px,8vw,104px)]', 'bg-mist' => empty($servico['secoes']), 'bg-white' => ! empty($servico['secoes'])])>
         <div class="cs-wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <h2 id="outros-titulo" class="font-display text-[clamp(28px,3vw,40px)] font-semibold leading-[1.1] text-plum-night">
                 Outros serviços

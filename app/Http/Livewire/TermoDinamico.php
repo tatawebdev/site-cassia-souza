@@ -76,7 +76,7 @@ class TermoDinamico extends Component
         ],
         'advocacia-administrativa-tributaria' => [
             'tituloBanner' => "Advocacia Administrativa Tributária: Soluções Eficientes",
-            'textoBanner' => "Assessoria jurídica especializada em processos administrativos tributários. Nossa equipe está pronta para defender seus interesses e garantir resultados positivos para sua empresa.",
+            'textoBanner' => "Assessoria jurídica especializada em processos administrativos tributários. Atuação técnica e dedicada na defesa dos interesses da sua empresa.",
             'servico' => "Advocacia Administrativa Tributária",
             'titulo' => "Advocacia Administrativa Tributária em @cidade - @estado",
             'descricao' => "Oferecemos serviços especializados em Advocacia Administrativa Tributária em @cidade - @estado. Conte com nossa expertise para resolver questões fiscais de forma estratégica e eficiente.",

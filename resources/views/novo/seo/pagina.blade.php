@@ -115,10 +115,8 @@
         </div>
     </section>
 
-    <x-novo.avaliacoes class="bg-mist" />
-
     @if ($faqs)
-        <x-novo.faq :faqs="$faqs" class="bg-white" />
+        <x-novo.faq :faqs="$faqs" class="bg-mist" />
     @endif
 
     {{-- Em outros lugares: outros serviços nesta cidade, cidades vizinhas e

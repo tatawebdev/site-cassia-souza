@@ -22,7 +22,5 @@
         </div>
     </section>
 
-    <x-novo.avaliacoes class="bg-white" />
-
-    <x-novo.faq :faqs="config('faqs')" class="bg-mist" />
+    <x-novo.faq :faqs="config('faqs')" class="bg-white" />
 </x-novo.pagina>

@@ -1,21 +1,12 @@
-{{-- Avaliações reais do perfil da Cassia no Google, em config/avaliacoes.php
-     (gerado por: php artisan avaliacoes:importar pagina.html).
-
-     Carrossel centralizado e infinito: o card do meio em destaque; cada card
-     fica na tela um tempo proporcional ao texto, com barra de progresso em
-     segmentos (estilo stories). Pausa no hover/foco, no botão de pausa e com
-     "reduzir movimento". Todos os cards têm a altura do maior, para a seção
-     não mudar de tamanho ao passar. --}}
+{{-- Componente desativado em conformidade com as normas da OAB (Provimento 205/2021
+     e Código de Ética e Disciplina), que vedam a utilização de depoimentos e
+     avaliações de clientes como prova social no marketing jurídico. --}}
 @php
-    $todas = config('avaliacoes.reviews', []);
-    $reviews = array_values(array_filter($todas, fn ($r) => $r['rating'] >= 4 && $r['text'] !== ''));
-    $nota = config('avaliacoes.rating');
-    $total = count($todas);
-    // Tempo de leitura: 3,5s + 30ms por caractere, entre 4s e 14s
-    $duracoes = array_map(fn ($r) => max(4000, min(14000, 3500 + mb_strlen($r['text']) * 30)), $reviews);
+    $todas = [];
+    $reviews = [];
 @endphp
 
-@if ($reviews)
+@if (false && $reviews)
     <section aria-labelledby="avaliacoes-titulo" {{ $attributes->merge(['class' => 'overflow-hidden py-[clamp(72px,9vw,128px)]']) }}
         {{-- Loop infinito: o servidor manda os cards uma vez só (o HTML não repete
              o texto) e o init() copia no navegador os últimos cards para antes e

@@ -55,6 +55,4 @@
             </div>
         </div>
     </section>
-
-    <x-novo.avaliacoes class="bg-mist" />
 </x-novo.pagina>

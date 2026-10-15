@@ -73,7 +73,7 @@
         </div>
 
         <p class="border-t border-white/10 py-6 text-sm text-on-plum/60">
-            © {{ date('Y') }} Cassia Souza Advocacia Tributária · CNPJ 57.078.276/0001-00. Todos os direitos reservados.
+            © {{ date('Y') }} Cassia Souza Advocacia Tributária · {{ config('site.razao_social') }} ({{ config('site.oab') }}) · CNPJ {{ config('site.cnpj') }}. Todos os direitos reservados.
         </p>
     </div>
 </footer>

@@ -142,9 +142,7 @@
             </div>
         </section>
 
-        <x-novo.avaliacoes class="bg-mist" />
-
-        <x-novo.faq :faqs="$faqs" class="bg-white" />
+        <x-novo.faq :faqs="$faqs" class="bg-mist" />
 
         <x-novo.contato />
     </main>

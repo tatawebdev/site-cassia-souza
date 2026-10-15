@@ -33,4 +33,9 @@ return [
     'google_avaliar' => 'https://g.page/r/CdT_NGvxISczEBM/review',
     'whatsapp' => '(11) 99738-8186',
     'whatsapp_link' => 'https://api.whatsapp.com/send?phone=5511997388186&text=Olá,%20Cassia%20Souza%20Advocacia%20Tributária!%0A%0ATenho%20interesse%20em%20seus%20serviços%20advocatícios%20⚖️',
+    'razao_social' => 'Cassia Souza Sociedade Individual de Advocacia',
+    'oab' => env('SITE_OAB', 'OAB/SP nº 55.965'),
+    'advogada_responsavel' => 'Cassia Souza',
+    'cnpj' => '57.078.276/0001-00',
 ];
+

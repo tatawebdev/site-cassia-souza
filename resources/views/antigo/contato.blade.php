@@ -6,7 +6,7 @@
                     <div class="sub_banner_content" data-aos="fade-up">
                         <h1 class="text-white">Fale Conosco</h1>
                         <p class="col-xl-7 col-lg-9 mx-auto text-white text-size-16">
-                            Entre em contato para tirar dúvidas ou agendar uma consulta gratuita. Nossa equipe está
+                            Entre em contato para tirar dúvidas ou agendar um atendimento. Nossa equipe está
                             pronta para ajudar sua empresa a conquistar segurança tributária.
                         </p>
                     </div>
