@@ -117,7 +117,7 @@ class DeployCommand extends Command
             $phpBin.' artisan route:cache',
             $phpBin.' artisan view:cache',
             // Avisa o Google das páginas pendentes e, com --loop, libera novas páginas de SEO
-            // (seo:liberar) até acabar a cota do dia. Durante a pausa de 36 h só avisa e segue;
+            // (seo:liberar) até acabar a cota do dia (sem pausa: todo deploy tenta);
             // se falhar, o deploy não para.
             '('.$phpBin.' artisan google:indexing-sync --loop || echo "Aviso: Google Indexing não sincronizado")',
         ]);

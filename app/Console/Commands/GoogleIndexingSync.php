@@ -10,8 +10,8 @@ use Illuminate\Console\Command;
 
 /**
  * Envia ao Google (Indexing API) as páginas do sitemap que ainda não foram enviadas,
- * até acabar a cota diária. Quando a cota acaba, para e pausa os envios por 36 h
- * (o site também respeita essa pausa); rodando de novo depois, continua de onde parou.
+ * até acabar a cota diária. Quando a cota acaba, para; sem pausa:
+ * rodando de novo (ou no próximo deploy), tenta e continua de onde parou.
  *
  * Com --loop: quando não há mais páginas pendentes, libera um novo lote com
  * seo:liberar (Alto Tietê primeiro) e continua enviando, até a cota do dia acabar
@@ -22,7 +22,6 @@ class GoogleIndexingSync extends Command
     protected $signature = 'google:indexing-sync
         {--force : Reenvia mesmo as URLs já marcadas como indexadas}
         {--limite= : Envia no máximo esta quantidade nesta rodada}
-        {--ignorar-pausa : Tenta mesmo durante a pausa do limite diário}
         {--loop : Libera novas páginas (seo:liberar) e continua enviando até acabar a cota do Google}
         {--lote=20 : No --loop, quantas páginas liberar por vez}';
 
@@ -34,15 +33,6 @@ class GoogleIndexingSync extends Command
             $this->warn('Google Indexing desativado (GOOGLE_INDEXING_ENABLED=false). Nada enviado.');
 
             return Command::SUCCESS;
-        }
-
-        if (($ate = $indexacao->pausadoAte()) && ! $this->option('ignorar-pausa')) {
-            $this->warn("Limite diário do Google atingido. Envios pausados até {$ate->format('d/m/Y H:i')}. Rode de novo depois disso (ou use --ignorar-pausa).");
-
-            return Command::SUCCESS;
-        }
-        if ($this->option('ignorar-pausa')) {
-            $indexacao->liberarPausa();
         }
 
         if (! $this->option('loop')) {
@@ -122,8 +112,7 @@ class GoogleIndexingSync extends Command
             if ($resultado === IndexacaoGoogle::LIMITE) {
                 $restantes = $urls->count() - $feitas->count() - $ok;
                 $this->newLine();
-                $this->warn("Limite diário do Google atingido depois de {$ok} envios. Faltam {$restantes} páginas.");
-                $this->warn('Envios pausados por '.IndexacaoGoogle::PAUSA_HORAS.' h ('.$indexacao->pausadoAte()?->format('d/m/Y H:i').'). Rode o comando de novo depois disso.');
+                $this->warn("Limite diário do Google atingido depois de {$ok} envios. Faltam {$restantes} páginas; a próxima execução tenta de novo.");
 
                 return ['ok' => $ok, 'falhas' => $falhas, 'limite' => true];
             }

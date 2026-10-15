@@ -51,13 +51,6 @@ class IndexacaoGoogleTest extends TestCase
         parent::setUp();
         config(['services.google_indexing.enabled' => true, 'services.google_indexing.base_url' => 'https://cassiasouzaadvocacia.com.br']);
         Cache::flush();
-        app(IndexacaoGoogle::class)->liberarPausa();
-    }
-
-    protected function tearDown(): void
-    {
-        app(IndexacaoGoogle::class)->liberarPausa();
-        parent::tearDown();
     }
 
     public function test_abrir_a_pagina_envia_uma_vez_so(): void
@@ -87,29 +80,19 @@ class IndexacaoGoogleTest extends TestCase
         $this->assertSame(['https://cassiasouzaadvocacia.com.br/advocacia-tributaria/suzano'], $fake->enviadas);
     }
 
-    public function test_limite_pausa_por_36_horas_no_site_e_no_comando(): void
-    {
-        $fake = $this->fake('limite', 0);
-
-        $this->get('/sobre-nos');
-        $this->assertNotNull($ate = app(IndexacaoGoogle::class)->pausadoAte());
-        $this->assertTrue($ate->between(now()->addHours(35), now()->addHours(37)));
-        $this->assertStringContainsString('Limite diário', IndexedPage::first()->last_error);
-
-        // Durante a pausa nem o site nem o comando tentam
-        $this->get('/contato');
-        $this->artisan('google:indexing-sync')->expectsOutputToContain('Envios pausados até')->assertSuccessful();
-        $this->assertSame(1, IndexedPage::count());
-    }
-
-    public function test_pausa_sobrevive_ao_cache_clear_do_deploy(): void
+    public function test_limite_nao_pausa_e_a_proxima_execucao_tenta_de_novo(): void
     {
         $this->fake('limite', 0);
+
         $this->get('/sobre-nos');
+        $this->assertStringContainsString('Limite diário', IndexedPage::first()->last_error);
 
-        $this->artisan('cache:clear');
-
-        $this->assertNotNull(app(IndexacaoGoogle::class)->pausadoAte());
+        // Outra página e o comando tentam normalmente (sem pausa)
+        $fake = $this->fake();
+        $this->get('/contato');
+        $this->assertSame(['https://cassiasouzaadvocacia.com.br/contato'], $fake->enviadas);
+        $this->artisan('google:indexing-sync')->assertSuccessful();
+        $this->assertSame(5 + count(config('servicos')), IndexedPage::whereNotNull('indexed_at')->count());
     }
 
     public function test_comando_para_no_limite_e_continua_de_onde_parou(): void
@@ -119,8 +102,7 @@ class IndexacaoGoogleTest extends TestCase
         $this->artisan('google:indexing-sync')->expectsOutputToContain('Limite diário do Google atingido depois de 3 envios')->assertSuccessful();
         $this->assertSame(3, IndexedPage::whereNotNull('indexed_at')->count());
 
-        // Dia seguinte (fim da pausa e cota renovada): envia só o que faltou
-        $this->travel(37)->hours();
+        // Próxima execução (cota renovada): envia só o que faltou
         $fake = $this->fake();
         $this->artisan('google:indexing-sync')->assertSuccessful();
         $this->assertCount(5 + count(config('servicos')) - 3, $fake->enviadas);
@@ -143,10 +125,9 @@ class IndexacaoGoogleTest extends TestCase
         $liberadas = \App\Models\SeoPagina::where('indexar', true)->with('localidade')->get();
         $this->assertCount(15, $liberadas);
         $this->assertTrue($liberadas->every(fn ($p) => $p->localidade->presencial));
-        $this->assertNotNull(app(IndexacaoGoogle::class)->pausadoAte());
     }
 
-    public function test_limite_por_rodada_e_erro_comum_nao_pausa(): void
+    public function test_limite_por_rodada_e_erro_comum(): void
     {
         $fake = $this->fake();
         $this->artisan('google:indexing-sync --limite=2')->assertSuccessful();
@@ -154,7 +135,6 @@ class IndexacaoGoogleTest extends TestCase
 
         $this->fake('erro');
         $this->artisan('google:indexing-sync')->assertFailed();
-        $this->assertNull(app(IndexacaoGoogle::class)->pausadoAte());
         $this->assertSame('Permission denied', IndexedPage::whereNull('indexed_at')->first()->last_error);
     }
 }

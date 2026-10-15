@@ -12,8 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
  * Envia ao Google (Indexing API) cada página indexável na primeira vez que ela é
  * aberta. O envio acontece em terminate(), depois que a página já foi entregue ao
  * visitante. Quem decide se a página é indexável é o próprio HTML: meta robots
- * sem noindex e canonical igual ao endereço aberto. Regras de registro e de
- * pausa pelo limite diário em App\Services\IndexacaoGoogle.
+ * sem noindex e canonical igual ao endereço aberto. Registro do resultado em
+ * App\Services\IndexacaoGoogle.
  */
 class IndexarNoGoogle
 {
@@ -34,7 +34,7 @@ class IndexarNoGoogle
 
         // Cache evita ir ao banco a cada visita das páginas já enviadas
         $feito = 'google-indexing:feito:'.md5($url);
-        if (Cache::has($feito) || $this->indexacao->pausadoAte()) {
+        if (Cache::has($feito)) {
             return;
         }
 
@@ -50,13 +50,9 @@ class IndexarNoGoogle
             return;
         }
 
-        $resultado = $this->indexacao->enviar($url);
-
-        if ($resultado === IndexacaoGoogle::OK) {
+        // Limite ou erro: a trava de 6 h acima evita repetir a cada visita; depois tenta de novo
+        if ($this->indexacao->enviar($url) === IndexacaoGoogle::OK) {
             Cache::forever($feito, true);
-        } elseif ($resultado === IndexacaoGoogle::LIMITE) {
-            // Tenta esta página de novo quando a pausa acabar
-            Cache::forget($tentativa);
         }
     }
 
