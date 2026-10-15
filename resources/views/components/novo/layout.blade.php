@@ -59,6 +59,7 @@
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     @vite('resources/css/novo.css')
+    @stack('head')
     {{-- Aviso de cookies (o mesmo do blog) --}}
     <link rel="stylesheet" href="/assets/css/cookies.css?v={{ filemtime(public_path('assets/css/cookies.css')) }}">
     <script src="/assets/js/cookies.js?v={{ filemtime(public_path('assets/js/cookies.js')) }}" defer></script>
@@ -100,8 +101,12 @@
                 });
             }, { rootMargin: '0px 0px -8% 0px' });
             var dobra = window.innerHeight;
-            alvos.forEach(function (el) {
-                if (el.getBoundingClientRect().top < dobra) return;
+            // Mede tudo antes de mudar classes: ler a posição depois de cada
+            // classList.add forçava um layout por elemento (reflow forçado)
+            var abaixo = Array.prototype.filter.call(alvos, function (el) {
+                return el.getBoundingClientRect().top >= dobra;
+            });
+            abaixo.forEach(function (el) {
                 el.classList.add('cs-revelar');
                 io.observe(el);
             });
