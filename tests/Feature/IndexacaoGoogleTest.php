@@ -126,6 +126,26 @@ class IndexacaoGoogleTest extends TestCase
         $this->assertCount(5 + count(config('servicos')) - 3, $fake->enviadas);
     }
 
+    public function test_loop_libera_e_envia_ate_acabar_a_cota(): void
+    {
+        $this->artisan('seo:importar');
+        $institucionais = 5 + count(config('servicos'));
+        $indexaveis = app(\App\Services\Sitemap::class)->paginasSeo()->count();
+        // Cota cobre o sitemap atual + 12 páginas novas
+        $fake = $this->fake('limite', $institucionais + $indexaveis + 12);
+
+        $this->artisan('google:indexing-sync --loop --lote=5')
+            ->expectsOutputToContain('Limite diário do Google atingido')
+            ->assertSuccessful();
+
+        $this->assertCount($institucionais + $indexaveis + 12, $fake->enviadas);
+        // 3 lotes de 5 liberados (o 3º só em parte coube na cota), começando pelo Alto Tietê
+        $liberadas = \App\Models\SeoPagina::where('indexar', true)->with('localidade')->get();
+        $this->assertCount(15, $liberadas);
+        $this->assertTrue($liberadas->every(fn ($p) => $p->localidade->presencial));
+        $this->assertNotNull(app(IndexacaoGoogle::class)->pausadoAte());
+    }
+
     public function test_limite_por_rodada_e_erro_comum_nao_pausa(): void
     {
         $fake = $this->fake();

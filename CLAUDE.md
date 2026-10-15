@@ -56,7 +56,8 @@ faz 301 para `/advocacia-tributaria/{localidade}`. Para editar textos ou liberar
 `paginas-seo`.
 Para liberar mais páginas aos poucos: `php artisan seo:liberar --quantidade=20 --enviar` (sorteia combinações
 termo + localidade ainda fechadas, Alto Tietê primeiro, depois bairros, estado de SP e outros estados;
-grava em `seo_paginas.indexar` e envia ao Google até o limite diário).
+grava em `seo_paginas.indexar` e envia ao Google até o limite diário). Tudo de uma vez, até acabar a cota
+do dia: `php artisan google:indexing-sync --loop` (libera lotes de 20 e envia; `--lote=N` muda o tamanho).
 
 ## Avaliações do Google
 
