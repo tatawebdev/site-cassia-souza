@@ -132,6 +132,10 @@
                                 class="mt-1 block text-sm text-ink-soft underline decoration-ink-soft/30 underline-offset-4 transition-colors hover:text-plum hover:decoration-plum">
                                 <i class="fa-brands fa-google mr-1 text-xs" aria-hidden="true"></i>{{ $total }} avaliações no Google
                             </a>
+                            <a href="{{ config('site.google_avaliar') }}" target="_blank" rel="noopener"
+                                class="mt-1 block text-sm font-semibold text-plum underline decoration-plum/30 underline-offset-4 transition-colors hover:decoration-plum">
+                                Deixar uma avaliação
+                            </a>
                         </span>
                     </div>
                 @endif

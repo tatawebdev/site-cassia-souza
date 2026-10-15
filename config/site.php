@@ -29,6 +29,8 @@ return [
     // pelo identificador fixo do Knowledge Graph (para o schema; não muda se o nome mudar)
     'google_perfil' => 'https://share.google/HL4Ed2SfsSwpYQNgN',
     'google_kgmid' => 'https://www.google.com/search?kgmid=/g/11vsywwnbf',
+    // Abre direto a janela de avaliar o perfil
+    'google_avaliar' => 'https://g.page/r/CdT_NGvxISczEBM/review',
     'whatsapp' => '(11) 99738-8186',
     'whatsapp_link' => 'https://api.whatsapp.com/send?phone=5511997388186&text=Olá,%20Cassia%20Souza%20Advocacia%20Tributária!%0A%0ATenho%20interesse%20em%20seus%20serviços%20advocatícios%20⚖️',
 ];
