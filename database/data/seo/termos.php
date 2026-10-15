@@ -36,7 +36,7 @@ $tributarista = [
 $advocacia = [
     [
         'A advocacia tributária cuida da relação entre a empresa e o Fisco: o regime em que ela está, os tributos que recolhe, os créditos que pode recuperar e as dívidas que precisa resolver.',
-        'Para empresas de {local_uf}, a Cassia Souza Advocacia faz esse acompanhamento de forma consultiva e preventiva, com linguagem simples e decisões explicadas passo a passo.',
+        'Para empresas de {local_uf}, a Cassia Souza Advocacia Tributária faz esse acompanhamento de forma consultiva e preventiva, com linguagem simples e decisões explicadas passo a passo.',
     ],
     [
         'Pagar apenas o que é devido exige conhecer bem a legislação e a operação da empresa. É nesse ponto que a advocacia tributária ajuda quem empreende em {local}.',
@@ -51,7 +51,7 @@ $advocacia = [
 $escritorio = [
     [
         'Procurar um escritório de advocacia tributária é, quase sempre, procurar alguém que entenda a sua empresa antes de propor qualquer mudança.',
-        'O escritório Cassia Souza Advocacia atende empresas de {local_uf} com análise do regime tributário, recuperação de créditos, regularização de débitos e acompanhamento mensal.',
+        'O escritório Cassia Souza Advocacia Tributária atende empresas de {local_uf} com análise do regime tributário, recuperação de créditos, regularização de débitos e acompanhamento mensal.',
     ],
     [
         'Empresários de {local} chegam ao escritório com perguntas diferentes: se o Simples Nacional ainda compensa, se há tributo pago a mais, como negociar uma dívida com a União.',
@@ -114,7 +114,7 @@ $termo = fn (string $nome, string $h1, string $servico, array $introducoes, stri
     'nome' => $nome,
     'servico' => $servico,
     'h1' => $h1,
-    'titulo_seo' => $nome.' em {local_uf} | Cassia Souza Advocacia',
+    'titulo_seo' => $nome.' em {local_uf} | Cassia Souza Advocacia Tributária',
     'descricao_seo' => $descricao,
     'subtitulo' => $subtitulo,
     'introducoes' => $introducoes,
@@ -130,7 +130,7 @@ $descTributarista = 'Advogada tributarista para empresas de {local_uf}: regime t
 return [
     'termos' => [
         'advocacia-tributaria' => $termo('Advocacia tributária', 'Advocacia tributária em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, true),
-        'cassia-souza-advocacia' => $termo('Cassia Souza Advocacia', 'Cassia Souza Advocacia em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
+        'cassia-souza-advocacia' => $termo('Cassia Souza Advocacia Tributária', 'Cassia Souza Advocacia Tributária em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'direito-tributario-advocacia' => $termo('Direito tributário', 'Direito tributário para empresas de {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'advocacia-tributaria-empresarial' => $termo('Advocacia tributária empresarial', 'Advocacia tributária empresarial em {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),
         'advocacia-empresarial-e-tributaria' => $termo('Advocacia empresarial e tributária', 'Advocacia tributária para empresas de {local_uf}', 'consultoria-tributaria', $advocacia, $subAdvocacia, $descAdvocacia, false, 'advocacia-tributaria'),

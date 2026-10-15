@@ -1,6 +1,6 @@
 <x-novo.pagina tipo-pagina="AboutPage"
-    titulo="Sobre a Cassia Souza Advocacia"
-    titulo-aba="Sobre o escritório | Cassia Souza Advocacia"
+    titulo="Sobre a Cassia Souza Advocacia Tributária"
+    titulo-aba="Sobre o escritório | Cassia Souza Advocacia Tributária"
     imagem="assets/images/banner-sobre-nos.jpg"
     descricao="Escritório de Direito Tributário focado em estratégia, segurança jurídica e resultados reais para empresas de todos os portes."
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => 'Sobre']]">

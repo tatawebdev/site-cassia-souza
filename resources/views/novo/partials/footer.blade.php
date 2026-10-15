@@ -12,7 +12,7 @@
 
         <div class="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_0.75fr_1.2fr]">
             <div>
-                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="150" height="80"
+                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia Tributária" width="150" height="80"
                     class="h-auto w-[150px]">
                 <p class="mt-5 max-w-[22em] text-[15px] leading-relaxed text-on-plum/80">
                     Escritório especializado em advocacia tributária. Soluções personalizadas para empresas que
@@ -70,7 +70,7 @@
         </div>
 
         <p class="border-t border-white/10 py-6 text-sm text-on-plum/60">
-            © {{ date('Y') }} Cassia Souza Advocacia. Todos os direitos reservados.
+            © {{ date('Y') }} Cassia Souza Advocacia Tributária. Todos os direitos reservados.
         </p>
     </div>
 </footer>

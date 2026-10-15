@@ -23,8 +23,8 @@
 <body>
     <main class="cs-plum-bg flex min-h-screen flex-col text-white">
         <div class="cs-wrap flex items-center justify-between py-5">
-            <a href="/" aria-label="Cassia Souza Advocacia, início">
-                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68" class="block h-auto w-[128px]">
+            <a href="/" aria-label="Cassia Souza Advocacia Tributária, início">
+                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia Tributária" width="128" height="68" class="block h-auto w-[128px]">
             </a>
             <a href="{{ config('site.whatsapp_link') }}" target="_blank" rel="nofollow noopener"
                 class="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-[15px] font-semibold tabular-nums text-white transition-colors hover:border-champagne">
@@ -57,7 +57,7 @@
         </section>
 
         <p class="cs-wrap border-t border-white/10 py-6 text-sm text-on-plum/60">
-            © {{ date('Y') }} Cassia Souza Advocacia · cassia_souza@adv.oabsp.org.br
+            © {{ date('Y') }} Cassia Souza Advocacia Tributária · cassia_souza@adv.oabsp.org.br
         </p>
     </main>
 </body>

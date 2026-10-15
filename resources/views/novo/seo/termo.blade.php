@@ -5,7 +5,7 @@
 <x-novo.pagina :titulo="$termo->nome"
     descricao="Atendimento online para empresas de todo o Brasil e presencial em Suzano e no Alto Tietê."
     :descricao-seo="$termo->nome.' para empresas: planejamento, créditos, débitos com a PGFN e Reforma Tributária. Atendimento online em todo o Brasil.'"
-    :titulo-aba="$termo->nome.' | Cassia Souza Advocacia'"
+    :titulo-aba="$termo->nome.' | Cassia Souza Advocacia Tributária'"
     :canonical="$canonical" :robots="$robots"
     :imagem="'assets/images/'.($servico['banner'] ?? 'banner-servicos.jpg')"
     :breadcrumbs="[['label' => 'Home', 'url' => route('inicio')], ['label' => $termo->nome]]">

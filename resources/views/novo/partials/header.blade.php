@@ -1,8 +1,8 @@
 {{-- Cabeçalho do tema novo. Fica dentro do hero de cada página, sobre o fundo roxo. --}}
 <header x-data="{ menu: false, servicos: false }" class="relative z-20 text-white">
     <div class="cs-wrap flex flex-wrap items-center justify-between py-5">
-        <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia, início">
-            <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68"
+        <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia Tributária, início">
+            <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia Tributária" width="128" height="68"
                 class="block h-auto w-[128px]">
         </a>
 
@@ -67,8 +67,8 @@
         x-transition:leave-end="opacity-0"
         class="cs-plum-bg fixed inset-0 z-[60] flex flex-col overflow-y-auto lg:hidden">
         <div class="cs-wrap flex items-center justify-between py-5">
-            <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia, início">
-                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia" width="128" height="68" class="block h-auto w-[128px]">
+            <a href="{{ route('inicio') }}" aria-label="Cassia Souza Advocacia Tributária, início">
+                <img src="/assets/images/logo-acinzentado.png" alt="Cassia Souza Advocacia Tributária" width="128" height="68" class="block h-auto w-[128px]">
             </a>
             <button type="button" @click="menu = false" aria-label="Fechar menu"
                 class="grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/5 text-white">

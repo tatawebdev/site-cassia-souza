@@ -11,7 +11,7 @@
     'descricao' => null,
     // Último item é a página atual (sem url)
     'breadcrumbs' => [],
-    // Título da aba; padrão: "<titulo> | Cassia Souza Advocacia"
+    // Título da aba; padrão: "<titulo> | Cassia Souza Advocacia Tributária"
     'tituloAba' => null,
     // Foto de fundo do banner (a mesma da página antiga, em /assets/images)
     'imagem' => null,
@@ -27,7 +27,7 @@
     'keywords' => null,
 ])
 
-<x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
+<x-novo.layout :title="$tituloAba ?? $titulo.' | Cassia Souza Advocacia Tributária'" :description="$descricaoSeo ?? $descricao ?? 'Cassia Souza Advocacia Tributária'" :canonical="$canonical" :robots="$robots"
     :breadcrumbs="$breadcrumbs" :tipo-pagina="$tipoPagina" :schema="$schema"
     :keywords="$keywords ?? 'advocacia tributária, advogada tributarista, planejamento tributário, recuperação de PIS/COFINS, regularização de débitos PGFN, Reforma Tributária, Suzano'">
     {{-- Com imagem: roxo denso à esquerda (texto) e mais transparente à direita (foto) --}}

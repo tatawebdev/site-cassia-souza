@@ -31,7 +31,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Cassia Souza Advocacia">
+    <meta property="og:site_name" content="Cassia Souza Advocacia Tributária">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
