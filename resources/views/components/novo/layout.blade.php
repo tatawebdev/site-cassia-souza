@@ -50,6 +50,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#590854">
     <link rel="preload" href="/assets/images/monograma-sc.png" as="image">
+    @include('partials.preloader-head')
 
     {{-- Fontes no próprio site (@font-face em novo.css); a do texto vem antes de tudo --}}
     <link rel="preload" href="/assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>

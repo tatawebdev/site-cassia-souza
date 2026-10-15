@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link rel="preload" href="/assets/images/monograma-sc.png" as="image">
+    @include('partials.preloader-head')
     <link rel="manifest" href="/assets/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
