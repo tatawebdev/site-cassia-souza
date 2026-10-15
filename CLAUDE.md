@@ -54,6 +54,9 @@ com `php artisan seo:importar` (dados em `database/data/seo/`). Só indexam as p
 (hoje: 5 termos principais × Grande SP e capitais); o resto fica `noindex`. `/{localidade}` sozinho
 faz 301 para `/advocacia-tributaria/{localidade}`. Para editar textos ou liberar páginas: skill
 `paginas-seo`.
+Para liberar mais páginas aos poucos: `php artisan seo:liberar --quantidade=20 --enviar` (sorteia combinações
+termo + localidade ainda fechadas, Alto Tietê primeiro, depois bairros, estado de SP e outros estados;
+grava em `seo_paginas.indexar` e envia ao Google até o limite diário).
 
 ## Avaliações do Google
 
