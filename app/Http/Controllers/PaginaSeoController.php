@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\SeoLocalidade;
+use App\Models\SeoTermo;
 use App\Services\PaginaSeo;
 
 /**
- * Endereços herdados do site antigo:
+ * Endereços de SEO e localidades:
  *   /{termo}/{localidade}       página de SEO (ex.: /advocacia-tributaria/suzano)
  *   /{termo}/{localidade}/{uf}  301 para o endereço sem UF (ou para o homônimo daquela UF)
  *   /{termo}                    página do termo com as cidades em destaque
- *   /{localidade}               301 para /advocacia-tributaria/{localidade}
+ *   /{localidade}               página da cidade direta (tema novo, sem redirect 301 externo)
  */
 class PaginaSeoController extends Controller
 {
@@ -25,10 +26,18 @@ class PaginaSeoController extends Controller
         $seoTermo = $seo->termo($termo);
 
         if (! $seoTermo) {
-            // Um segmento só: localidade do sitemap antigo
-            abort_if($local !== null || ! SeoLocalidade::where('slug', $termo)->exists(), 404);
+            // Localidade direta (ex.: /abdon-batista ou /bom-jesus/pi) sem redirect externo
+            $slugLocal = $local && $uf ? $local.'-'.strtolower($uf) : ($local ? $termo.'-'.strtolower($local) : $termo);
+            $localidade = SeoLocalidade::where('slug', $slugLocal)->first()
+                ?? SeoLocalidade::where('slug', $termo)->first();
 
-            return redirect($seo->url('advocacia-tributaria', $termo), 301);
+            abort_if(! $localidade, 404);
+
+            $termoPadrao = $seo->termo('advocacia-tributaria') ?? SeoTermo::where('ativo', true)->firstOrFail();
+            $dados = $seo->montar($termoPadrao, $localidade);
+            $dados['canonical'] = url('/'.$localidade->slug);
+
+            return view('novo.seo.pagina', $dados);
         }
 
         if ($local === null) {
