@@ -82,137 +82,124 @@
     {{-- Feed RSS do Blog --}}
     <link rel="alternate" type="application/rss+xml" title="Blog Cassia Souza Advocacia" href="https://blog.cassiasouzaadvocacia.com.br/feed/">
 
-    {{-- OneSignal Web Push SDK --}}
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-        window.OneSignalDeferred = window.OneSignalDeferred || [];
-        OneSignalDeferred.push(async function(OneSignal) {
-            await OneSignal.init({
-                appId: "47d11bbb-32e3-4065-8ee1-29366377ece1",
-                serviceWorkerPath: "/OneSignalSDKWorker.js",
-                serviceWorkerParam: { scope: "/" },
-                promptOptions: {
-                    slidedown: {
-                        prompts: [
-                            {
-                                type: "push",
-                                autoPrompt: true,
-                                icon: "https://cassiasouzaadvocacia.com.br/assets/images/monograma-sc.png",
-                                text: {
-                                    actionMessage: "Deseja receber novidades e dicas tributárias?",
-                                    acceptButton: "Permitir",
-                                    cancelButton: "Agora não"
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-            try {
-                await OneSignal.Slidedown.promptPush();
-            } catch (e) {
-                console.log("OneSignal prompt:", e);
-            }
-        });
-    </script>
+    {{-- Google Firebase Cloud Messaging (FCM) SDK --}}
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js" defer></script>
     <style>
-        /* OneSignal Slidedown - Design System Cassia Souza */
-        #onesignal-slidedown-container {
-            z-index: 2147483000 !important;
+        /* Banner de Notificações Push FCM - Padrão Dark & Champagne */
+        .cs-fcm-dialog {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 2147483000;
+            width: min(440px, calc(100% - 32px));
+            padding: 22px 24px 20px;
+            border: 1px solid rgba(239, 207, 159, 0.3);
+            border-radius: 20px;
+            background:
+                radial-gradient(420px 220px at 100% 0%, rgba(239, 207, 159, 0.15), transparent 70%),
+                linear-gradient(160deg, #3a0637 0%, #24041f 100%);
+            box-shadow: 0 32px 64px -16px rgba(15, 1, 14, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            color: #f3e6f1;
+            font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+            opacity: 0;
+            transform: translateY(-20px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 300ms cubic-bezier(0.22, 0.8, 0.2, 1), transform 300ms cubic-bezier(0.22, 0.8, 0.2, 1);
         }
-        #onesignal-slidedown-dialog,
-        .onesignal-slidedown-dialog {
-            background: radial-gradient(420px 220px at 100% 0%, rgba(239, 207, 159, 0.15), transparent 70%),
-                        linear-gradient(160deg, #3a0637 0%, #24041f 100%) !important;
-            border: 1px solid rgba(239, 207, 159, 0.3) !important;
-            border-radius: 20px !important;
-            box-shadow: 0 32px 64px -16px rgba(15, 1, 14, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
-            color: #f3e6f1 !important;
-            padding: 22px 24px !important;
-            max-width: 480px !important;
-            font-family: 'Public Sans', system-ui, -apple-system, sans-serif !important;
+        .cs-fcm-dialog--ativo {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
         }
-        #onesignal-slidedown-dialog #onesignal-slidedown-body,
-        .onesignal-slidedown-dialog .slidedown-body {
-            display: flex !important;
-            align-items: center !important;
-            gap: 16px !important;
+        .cs-fcm-dialog__topo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
-        #onesignal-slidedown-dialog .slidedown-image,
-        .onesignal-slidedown-dialog .slidedown-image {
-            width: 48px !important;
-            height: 48px !important;
-            min-width: 48px !important;
-            border-radius: 12px !important;
-            background: rgba(239, 207, 159, 0.12) !important;
-            border: 1px solid rgba(239, 207, 159, 0.25) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            overflow: hidden !important;
-            padding: 6px !important;
+        .cs-fcm-dialog__brasao {
+            flex: none;
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(239, 207, 159, 0.12);
+            border: 1px solid rgba(239, 207, 159, 0.25);
+            padding: 5px;
         }
-        #onesignal-slidedown-dialog .slidedown-image img,
-        .onesignal-slidedown-dialog .slidedown-image img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
+        .cs-fcm-dialog__brasao img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
-        #onesignal-slidedown-dialog .slidedown-text,
-        .onesignal-slidedown-dialog .slidedown-text {
-            color: #ffffff !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            line-height: 1.45 !important;
-            margin: 0 !important;
+        .cs-fcm-dialog__titulos {
+            flex: 1;
         }
-        #onesignal-slidedown-dialog .slidedown-button-container,
-        .onesignal-slidedown-dialog .slidedown-button-container {
-            display: flex !important;
-            justify-content: flex-end !important;
-            gap: 10px !important;
-            margin-top: 18px !important;
+        .cs-fcm-dialog__titulo {
+            margin: 0;
+            color: #ffffff;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.25;
         }
-        #onesignal-slidedown-dialog button.primary,
-        #onesignal-slidedown-allow-button,
-        .onesignal-slidedown-dialog button.primary.slidedown-button {
-            background: #efcf9f !important;
-            color: #24041f !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            padding: 9px 22px !important;
-            border-radius: 999px !important;
-            border: none !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 14px rgba(239, 207, 159, 0.25) !important;
-            transition: all 200ms ease !important;
+        .cs-fcm-dialog__texto {
+            margin: 6px 0 0;
+            color: rgba(243, 230, 241, 0.82);
+            font-size: 13.5px;
+            line-height: 1.45;
         }
-        #onesignal-slidedown-dialog button.primary:hover,
-        #onesignal-slidedown-allow-button:hover,
-        .onesignal-slidedown-dialog button.primary.slidedown-button:hover {
-            background: #f7dfb9 !important;
-            transform: translateY(-1px) !important;
-            box-shadow: 0 6px 18px rgba(239, 207, 159, 0.35) !important;
+        .cs-fcm-dialog__acoes {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            margin-top: 16px;
         }
-        #onesignal-slidedown-dialog button.secondary,
-        #onesignal-slidedown-cancel-button,
-        .onesignal-slidedown-dialog button.secondary.slidedown-button {
-            background: rgba(255, 255, 255, 0.06) !important;
-            color: rgba(243, 230, 241, 0.85) !important;
-            font-weight: 500 !important;
-            font-size: 14px !important;
-            padding: 9px 20px !important;
-            border-radius: 999px !important;
-            border: 1px solid rgba(255, 255, 255, 0.18) !important;
-            cursor: pointer !important;
-            transition: all 200ms ease !important;
+        .cs-fcm-dialog__btn-permitir {
+            padding: 9px 22px;
+            border-radius: 999px;
+            border: 0;
+            background: #efcf9f;
+            color: #24041f;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(239, 207, 159, 0.25);
+            transition: all 200ms ease;
         }
-        #onesignal-slidedown-dialog button.secondary:hover,
-        #onesignal-slidedown-cancel-button:hover,
-        .onesignal-slidedown-dialog button.secondary.slidedown-button:hover {
-            background: rgba(255, 255, 255, 0.12) !important;
-            color: #ffffff !important;
-            border-color: rgba(255, 255, 255, 0.3) !important;
+        .cs-fcm-dialog__btn-permitir:hover {
+            background: #f7dfb9;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(239, 207, 159, 0.35);
+        }
+        .cs-fcm-dialog__btn-recusar {
+            padding: 9px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(243, 230, 241, 0.85);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+        .cs-fcm-dialog__btn-recusar:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 640px) {
+            .cs-fcm-dialog {
+                top: auto;
+                bottom: 24px;
+                right: 16px;
+                left: 16px;
+                width: auto;
+            }
         }
     </style>
 </head>
@@ -276,6 +263,102 @@
                 confirmButtonColor: '#590854',
             });
         });
+    </script>
+
+    {{-- Banner de Notificações Push FCM --}}
+    <aside id="cs-fcm-dialog" class="cs-fcm-dialog" aria-live="polite" aria-label="Permissão para receber notificações">
+        <div class="cs-fcm-dialog__topo">
+            <div class="cs-fcm-dialog__brasao">
+                <img src="/assets/images/monograma-sc.png" alt="Cassia Souza Advocacia" width="36" height="36">
+            </div>
+            <div class="cs-fcm-dialog__titulos">
+                <p class="cs-fcm-dialog__titulo">Notificações Tributárias</p>
+                <p class="cs-fcm-dialog__texto">Deseja receber em primeira mão novidades sobre Reforma Tributária e novos artigos do blog?</p>
+            </div>
+        </div>
+        <div class="cs-fcm-dialog__acoes">
+            <button type="button" class="cs-fcm-dialog__btn-recusar" onclick="csRecusarFCM()">Agora não</button>
+            <button type="button" id="cs-fcm-btn-permitir" class="cs-fcm-dialog__btn-permitir" onclick="csPermitirFCM()">Permitir</button>
+        </div>
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!('serviceWorker' in navigator) || !('Notification' in window)) return;
+            var status = localStorage.getItem('cs_fcm_status');
+            var dispensado = localStorage.getItem('cs_fcm_dispensado');
+            if (Notification.permission === 'granted' || status === 'granted') return;
+            if (dispensado && (Date.now() - parseInt(dispensado, 10)) < 7 * 24 * 60 * 60 * 1000) return;
+
+            setTimeout(function () {
+                var el = document.getElementById('cs-fcm-dialog');
+                if (el) el.classList.add('cs-fcm-dialog--ativo');
+            }, 2500);
+        });
+
+        async function csPermitirFCM() {
+            var btn = document.getElementById('cs-fcm-btn-permitir');
+            var dialog = document.getElementById('cs-fcm-dialog');
+            if (btn) btn.textContent = 'Ativando...';
+
+            try {
+                var permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                    var config = {
+                        apiKey: "AIzaSyDC_juTBl65iSz_TZsjYQEtUyIRURLQap0",
+                        authDomain: "chat-cassia-souza-adv.firebaseapp.com",
+                        projectId: "chat-cassia-souza-adv",
+                        storageBucket: "chat-cassia-souza-adv.appspot.com",
+                        messagingSenderId: "969461920153",
+                        appId: "1:969461920153:web:89874b4322d96f77eda308",
+                        measurementId: "G-DMYW90V0D7"
+                    };
+
+                    if (!firebase.apps.length) {
+                        firebase.initializeApp(config);
+                    }
+
+                    var messaging = firebase.messaging();
+                    var registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+                    await navigator.serviceWorker.ready;
+
+                    var token = await messaging.getToken({
+                        vapidKey: 'BMcsGmQg3luA4MCokshTgRcCW7C6jfF9mHplEUCc-hyXSGlFn6wKC_8zbA5vCk4_9TK3HJHM5N36sFiSk6MClFs',
+                        serviceWorkerRegistration: registration
+                    });
+
+                    if (token) {
+                        await fetch('/api/fcm/token', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({ token: token })
+                        });
+
+                        localStorage.setItem('cs_fcm_status', 'granted');
+                        if (dialog) {
+                            dialog.innerHTML = '<div style="display:flex;align-items:center;gap:12px;color:#efcf9f;"><i class="fas fa-check-circle" style="font-size:22px;"></i><span style="font-size:15px;font-weight:600;color:#ffffff;">Notificações ativadas com sucesso!</span></div>';
+                            setTimeout(function () {
+                                dialog.classList.remove('cs-fcm-dialog--ativo');
+                            }, 2500);
+                        }
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.error('Erro FCM:', e);
+            }
+
+            if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
+        }
+
+        function csRecusarFCM() {
+            localStorage.setItem('cs_fcm_dispensado', Date.now().toString());
+            var dialog = document.getElementById('cs-fcm-dialog');
+            if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
+        }
     </script>
 </body>
 
