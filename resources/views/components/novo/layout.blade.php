@@ -97,6 +97,7 @@
                             {
                                 type: "push",
                                 autoPrompt: true,
+                                icon: "https://cassiasouzaadvocacia.com.br/assets/images/monograma-sc.png",
                                 text: {
                                     actionMessage: "Deseja receber novidades e dicas tributárias?",
                                     acceptButton: "Permitir",
@@ -114,6 +115,106 @@
             }
         });
     </script>
+    <style>
+        /* OneSignal Slidedown - Design System Cassia Souza */
+        #onesignal-slidedown-container {
+            z-index: 2147483000 !important;
+        }
+        #onesignal-slidedown-dialog,
+        .onesignal-slidedown-dialog {
+            background: radial-gradient(420px 220px at 100% 0%, rgba(239, 207, 159, 0.15), transparent 70%),
+                        linear-gradient(160deg, #3a0637 0%, #24041f 100%) !important;
+            border: 1px solid rgba(239, 207, 159, 0.3) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 32px 64px -16px rgba(15, 1, 14, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+            color: #f3e6f1 !important;
+            padding: 22px 24px !important;
+            max-width: 480px !important;
+            font-family: 'Public Sans', system-ui, -apple-system, sans-serif !important;
+        }
+        #onesignal-slidedown-dialog #onesignal-slidedown-body,
+        .onesignal-slidedown-dialog .slidedown-body {
+            display: flex !important;
+            align-items: center !important;
+            gap: 16px !important;
+        }
+        #onesignal-slidedown-dialog .slidedown-image,
+        .onesignal-slidedown-dialog .slidedown-image {
+            width: 48px !important;
+            height: 48px !important;
+            min-width: 48px !important;
+            border-radius: 12px !important;
+            background: rgba(239, 207, 159, 0.12) !important;
+            border: 1px solid rgba(239, 207, 159, 0.25) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            padding: 6px !important;
+        }
+        #onesignal-slidedown-dialog .slidedown-image img,
+        .onesignal-slidedown-dialog .slidedown-image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+        }
+        #onesignal-slidedown-dialog .slidedown-text,
+        .onesignal-slidedown-dialog .slidedown-text {
+            color: #ffffff !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            line-height: 1.45 !important;
+            margin: 0 !important;
+        }
+        #onesignal-slidedown-dialog .slidedown-button-container,
+        .onesignal-slidedown-dialog .slidedown-button-container {
+            display: flex !important;
+            justify-content: flex-end !important;
+            gap: 10px !important;
+            margin-top: 18px !important;
+        }
+        #onesignal-slidedown-dialog button.primary,
+        #onesignal-slidedown-allow-button,
+        .onesignal-slidedown-dialog button.primary.slidedown-button {
+            background: #efcf9f !important;
+            color: #24041f !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            padding: 9px 22px !important;
+            border-radius: 999px !important;
+            border: none !important;
+            cursor: pointer !important;
+            box-shadow: 0 4px 14px rgba(239, 207, 159, 0.25) !important;
+            transition: all 200ms ease !important;
+        }
+        #onesignal-slidedown-dialog button.primary:hover,
+        #onesignal-slidedown-allow-button:hover,
+        .onesignal-slidedown-dialog button.primary.slidedown-button:hover {
+            background: #f7dfb9 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 6px 18px rgba(239, 207, 159, 0.35) !important;
+        }
+        #onesignal-slidedown-dialog button.secondary,
+        #onesignal-slidedown-cancel-button,
+        .onesignal-slidedown-dialog button.secondary.slidedown-button {
+            background: rgba(255, 255, 255, 0.06) !important;
+            color: rgba(243, 230, 241, 0.85) !important;
+            font-weight: 500 !important;
+            font-size: 14px !important;
+            padding: 9px 20px !important;
+            border-radius: 999px !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            cursor: pointer !important;
+            transition: all 200ms ease !important;
+        }
+        #onesignal-slidedown-dialog button.secondary:hover,
+        #onesignal-slidedown-cancel-button:hover,
+        .onesignal-slidedown-dialog button.secondary.slidedown-button:hover {
+            background: rgba(255, 255, 255, 0.12) !important;
+            color: #ffffff !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+    </style>
 </head>
 
 <body>
