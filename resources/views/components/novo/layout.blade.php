@@ -89,7 +89,29 @@
         OneSignalDeferred.push(async function(OneSignal) {
             await OneSignal.init({
                 appId: "47d11bbb-32e3-4065-8ee1-29366377ece1",
+                serviceWorkerPath: "/OneSignalSDKWorker.js",
+                serviceWorkerParam: { scope: "/" },
+                promptOptions: {
+                    slidedown: {
+                        prompts: [
+                            {
+                                type: "push",
+                                autoPrompt: true,
+                                text: {
+                                    actionMessage: "Deseja receber novidades e dicas tributárias?",
+                                    acceptButton: "Permitir",
+                                    cancelButton: "Agora não"
+                                }
+                            }
+                        ]
+                    }
+                }
             });
+            try {
+                await OneSignal.Slidedown.promptPush();
+            } catch (e) {
+                console.log("OneSignal prompt:", e);
+            }
         });
     </script>
 </head>
