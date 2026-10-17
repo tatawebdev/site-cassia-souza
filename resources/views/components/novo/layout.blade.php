@@ -78,6 +78,20 @@
         \App\Support\Schema::pagina($title, $description, $canonical ?? url()->current(), $breadcrumbs, $tipoPagina, $paginaSchema),
         $schema,
     )) !!}</script>
+
+    {{-- Feed RSS do Blog --}}
+    <link rel="alternate" type="application/rss+xml" title="Blog Cassia Souza Advocacia" href="https://blog.cassiasouzaadvocacia.com.br/feed/">
+
+    {{-- OneSignal Web Push SDK --}}
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "47d11bbb-32e3-4065-8ee1-29366377ece1",
+            });
+        });
+    </script>
 </head>
 
 <body>
