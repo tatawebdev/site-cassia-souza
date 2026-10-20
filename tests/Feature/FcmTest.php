@@ -39,13 +39,38 @@ class FcmTest extends TestCase
 
     public function test_visitante_se_inscreve_como_site(): void
     {
+        Http::fake(['fcm.googleapis.com/*' => Http::response(['name' => 'ok'])]);
+
         $this->postJson('/api/fcm/token', ['token' => 'tok-visitante'])->assertOk();
 
         $this->assertDatabaseHas('fcm_tokens', ['token' => 'tok-visitante', 'publico' => 'site']);
+        Http::assertSent(fn ($r) => $r['validate_only'] === true);
+    }
+
+    public function test_token_morto_nao_e_gravado_e_pede_outro(): void
+    {
+        Http::fake(['fcm.googleapis.com/*' => Http::response(['error' => ['status' => 'NOT_FOUND']], 404)]);
+
+        $this->postJson('/api/fcm/token', ['token' => 'tok-antigo'])
+            ->assertStatus(410)
+            ->assertJson(['status' => 'token_invalido']);
+
+        $this->assertDatabaseMissing('fcm_tokens', ['token' => 'tok-antigo']);
+    }
+
+    public function test_sem_conferir_com_o_google_grava_mesmo_assim(): void
+    {
+        Http::fake(['fcm.googleapis.com/*' => Http::response('erro', 500)]);
+
+        $this->postJson('/api/fcm/token', ['token' => 'tok-visitante'])->assertOk();
+
+        $this->assertDatabaseHas('fcm_tokens', ['token' => 'tok-visitante']);
     }
 
     public function test_inscricao_do_painel_exige_login(): void
     {
+        Http::fake(['fcm.googleapis.com/*' => Http::response(['name' => 'ok'])]);
+
         $this->postJson('/painel/fcm/token', ['token' => 'tok-intruso'])->assertUnauthorized();
         $this->assertDatabaseMissing('fcm_tokens', ['token' => 'tok-intruso']);
 

@@ -4,8 +4,12 @@
 
 <ul {{ $attributes->merge(['class' => 'grid list-none gap-6 p-0 md:grid-cols-2 lg:grid-cols-3']) }}>
     @foreach ($servicos as $service)
-        @php $featured = $loop->first || $loop->last; @endphp
-        <li class="{{ $featured ? 'md:col-span-2' : '' }}" data-revelar>
+        @php
+            $featured = $loop->first || $loop->last;
+            // Em 3 colunas, o último ocupa a linha toda quando ficaria sozinho com um buraco ao lado
+            $linhaToda = $loop->last && ($loop->count - 3) % 3 === 0;
+        @endphp
+        <li class="{{ $featured ? 'md:col-span-2' : '' }} {{ $linhaToda ? 'lg:col-span-3' : '' }}" data-revelar>
             <a href="{{ route($service['route']) }}"
                 class="group grid h-full overflow-hidden rounded-2xl border border-line bg-white shadow-[0_24px_48px_-32px_rgba(58,6,55,0.45)] transition duration-medio motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 active:duration-100 hover:shadow-[0_32px_64px_-32px_rgba(58,6,55,0.6)] {{ $featured ? 'lg:grid-cols-2' : '' }} {{ $loop->last ? 'lg:[&>figure]:order-2' : '' }}">
                 <figure class="relative m-0 h-52 overflow-hidden {{ $featured ? 'lg:h-full lg:min-h-[300px]' : '' }}">

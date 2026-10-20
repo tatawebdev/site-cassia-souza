@@ -81,4 +81,24 @@ return [
         'question' => 'Advogado tributarista atende empresa de outra cidade?',
         'answer' => 'Sim. A Cassia atende empresas de todo o Brasil de forma online e, presencialmente, em Suzano e nas cidades do Alto Tietê.',
     ],
+    [
+        'tema' => 'execucao-fiscal',
+        'question' => 'Tive a conta bloqueada em uma execução fiscal. O que fazer?',
+        'answer' => 'Procure um advogado logo. É possível pedir a liberação quando o valor bloqueado é impenhorável, quando passa do valor da dívida ou quando a execução já está garantida de outra forma, e o bloqueio também marca o início de prazos importantes para a defesa.',
+    ],
+    [
+        'tema' => 'execucao-fiscal',
+        'question' => 'Dá para negociar a dívida depois que a execução fiscal começou?',
+        'answer' => 'Sim. Débitos em execução podem entrar em parcelamentos e transações oferecidos pelo órgão que cobra, e o acordo suspende a cobrança enquanto as parcelas estiverem em dia. A análise mostra se vale mais negociar, se defender ou combinar os dois caminhos.',
+    ],
+    [
+        'tema' => 'nao-residentes',
+        'question' => 'O atendimento é feito mesmo morando em outro país?',
+        'answer' => 'Sim. Todo o trabalho pode ser feito online, com reuniões por vídeo, documentos digitais e contato pelo WhatsApp.',
+    ],
+    [
+        'tema' => 'nao-residentes',
+        'question' => 'Quem mora fora pode ser cobrado duas vezes pelo mesmo rendimento?',
+        'answer' => 'Pode acontecer, quando o Brasil e o país onde a pessoa mora tributam o mesmo rendimento. Alguns países têm acordo com o Brasil para evitar a dupla tributação; outros não. A análise começa por identificar qual é o caso.',
+    ],
 ];

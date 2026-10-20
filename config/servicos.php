@@ -196,6 +196,64 @@ return [
         'atualizado' => '2026-10',
     ],
     [
+        'slug' => 'defesa-execucao-fiscal',
+        'problem' => 'Minha empresa foi citada em uma execução fiscal',
+        'title' => 'Defesa em Execução Fiscal',
+        'text' => 'Analisamos a cobrança, apontamos falhas como prescrição e erros no título e organizamos a defesa e a garantia certas para evitar bloqueios e penhoras.',
+        'route' => 'servicos.defesa.execucao.fiscal',
+        'image' => 'defesa-execucao-fiscal',
+        'banner' => 'banner-servicos.jpg',
+        'descricao' => 'Defesa de empresas em execuções fiscais da União, dos estados e dos municípios: análise da cobrança, exceção de pré-executividade, embargos e escolha da garantia.',
+        'abertura' => [
+            'Receber a citação de uma execução fiscal assusta, mas a cobrança não é automática nem está sempre correta.',
+            'Analisamos o processo e a dívida cobrada para definir a defesa mais adequada, com atenção aos prazos e ao risco de bloqueio de contas e penhora de bens.',
+        ],
+        'destaque' => 'Prazo curto pede resposta rápida e defesa bem fundamentada.',
+        'como_titulo' => 'Da análise da cobrança à defesa',
+        'como' => [
+            'Conferimos a certidão de dívida ativa, a origem do débito e os prazos de cobrança, em busca de falhas como prescrição, decadência, cobrança em duplicidade ou valores calculados de forma errada.',
+            'Com esse diagnóstico, definimos o caminho: defesa sem garantia quando a falha é evidente, embargos com a garantia menos onerosa para a empresa ou negociação do débito quando ela for a melhor saída.',
+        ],
+        'lista' => [],
+        'fechamento' => 'Recebeu uma citação ou teve a conta bloqueada? Fale conosco o quanto antes: os prazos da execução fiscal são curtos.',
+        'faq' => ['execucao-fiscal'],
+        'titulo_seo' => 'Defesa em execução fiscal para empresas | Cassia Souza',
+        'secoes' => [
+            [
+                'pergunta' => 'O que acontece depois da citação?',
+                'resposta' => 'Citada, a empresa tem 5 dias para pagar a dívida ou garantir a execução. Se não fizer nenhum dos dois, o juiz pode determinar a penhora de bens e o bloqueio de valores em conta.',
+                'paragrafos' => [
+                    'A execução fiscal é o processo usado pela União, pelos estados e pelos municípios para cobrar débitos inscritos em dívida ativa, e segue a Lei 6.830/1980.',
+                ],
+            ],
+            [
+                'pergunta' => 'Quais são as formas de defesa?',
+                'resposta' => 'As principais são a exceção de pré-executividade e os embargos à execução. A escolha depende do tipo de falha encontrada na cobrança.',
+                'tabela' => [
+                    ['Exceção', 'Apresentada no próprio processo, sem garantia, para questões que o juiz pode ver só com os documentos, como prescrição ou nulidade da certidão de dívida ativa.'],
+                    ['Embargos', 'Ação de defesa que admite discussão ampla e produção de provas. Exige a execução garantida e deve ser proposta em 30 dias.'],
+                ],
+            ],
+            [
+                'pergunta' => 'Como garantir a execução?',
+                'resposta' => 'A lei admite depósito em dinheiro, fiança bancária, seguro garantia ou a indicação de bens à penhora. O seguro garantia e a fiança costumam pesar menos no caixa do que o depósito.',
+                'paragrafos' => [
+                    'O prazo de 30 dias dos embargos começa a contar do depósito, da juntada da fiança ou do seguro garantia, ou da intimação da penhora.',
+                ],
+            ],
+            [
+                'pergunta' => 'A dívida pode estar prescrita?',
+                'resposta' => 'Pode. O Fisco tem 5 anos, contados da constituição definitiva do crédito, para cobrar o tributo. Também existe a prescrição intercorrente, quando o processo fica parado por falta de bens ou de localização do devedor por mais tempo do que a lei permite.',
+            ],
+        ],
+        'fontes' => [
+            ['nome' => 'Lei 6.830/1980, arts. 8º, 9º e 16 (Lei de Execução Fiscal)', 'url' => 'https://www.planalto.gov.br/ccivil_03/leis/l6830.htm'],
+            ['nome' => 'Lei 6.830/1980, art. 40 (prescrição intercorrente)', 'url' => 'https://www.planalto.gov.br/ccivil_03/leis/l6830.htm'],
+            ['nome' => 'Código Tributário Nacional, art. 174 (prescrição da cobrança)', 'url' => 'https://www.planalto.gov.br/ccivil_03/leis/l5172compilado.htm'],
+        ],
+        'atualizado' => '2026-10',
+    ],
+    [
         'slug' => 'assessoria-reforma-tributaria',
         'problem' => 'Quero saber o que a Reforma Tributária muda para mim',
         'title' => 'Assessoria para Reforma Tributária',
@@ -342,6 +400,71 @@ return [
                 ],
             ],
         ],
+    ],
+    [
+        'slug' => 'regularizacao-fiscal-nao-residentes',
+        'problem' => 'Moro fora do Brasil e preciso acertar minha situação com a Receita',
+        'title' => 'Regularização Fiscal para Brasileiros Não Residentes',
+        'text' => 'Saída definitiva, declarações pendentes, CPF irregular e rendimentos que continuam no Brasil, com atendimento online de onde você estiver.',
+        'route' => 'servicos.regularizacao.fiscal.nao.residentes',
+        'image' => 'regularizacao-fiscal-nao-residentes',
+        'banner' => 'banner-servicos.jpg',
+        'descricao' => 'Regularização da situação fiscal de brasileiros que moram no exterior: saída definitiva do país, declarações em atraso, CPF e tributação dos bens e rendimentos no Brasil.',
+        'publico' => 'Brasileiros que moram no exterior',
+        'abertura' => [
+            'Mudar de país não encerra automaticamente a relação com a Receita Federal.',
+            'Quem sai do Brasil sem comunicar a saída continua sendo tratado como residente, com declarações a entregar e risco de pendências no CPF. Organizamos essa transição e a situação dos bens e rendimentos que ficam no país, com atendimento online.',
+        ],
+        'destaque' => 'Morar fora com a vida fiscal em dia no Brasil.',
+        'como_titulo' => 'Da saída definitiva à rotina no exterior',
+        'como' => [
+            'Levantamos a situação do CPF e das declarações, verificamos a data em que você passou a ser não residente e cuidamos da comunicação e da declaração de saída definitiva.',
+            'Depois, orientamos a tributação do que continua no Brasil, como aluguéis, aplicações e a venda de imóveis, e avaliamos se há acordo para evitar a dupla tributação com o país onde você mora.',
+        ],
+        'lista' => [],
+        'fechamento' => 'Mora fora e não sabe como está sua situação com a Receita? Fale conosco pelo WhatsApp, de qualquer país.',
+        'faq' => ['nao-residentes'],
+        'titulo_seo' => 'Saída definitiva e regularização fiscal no exterior | Cassia Souza',
+        'secoes' => [
+            [
+                'pergunta' => 'Quando a pessoa deixa de ser residente no Brasil?',
+                'resposta' => 'Na data da saída, quando ela sai em caráter definitivo. Quem saiu de forma temporária passa a ser não residente depois de completar 12 meses seguidos fora do país.',
+                'paragrafos' => [
+                    'A condição de não residente tem efeito só tributário: não altera a nacionalidade nem o acesso aos serviços consulares.',
+                ],
+            ],
+            [
+                'pergunta' => 'O que precisa ser entregue à Receita?',
+                'resposta' => 'São dois documentos diferentes, e um não substitui o outro.',
+                'tabela' => [
+                    ['Comunicação', 'A Comunicação de Saída Definitiva do País, entregue até o último dia de fevereiro do ano seguinte ao da saída.'],
+                    ['Declaração', 'A Declaração de Saída Definitiva do País, com os rendimentos e bens até a data da saída, entregue no prazo da declaração anual do ano seguinte.'],
+                ],
+                'paragrafos' => [
+                    'Também é preciso avisar as fontes pagadoras no Brasil, como bancos e inquilinos, para que o imposto passe a ser retido do jeito certo.',
+                ],
+            ],
+            [
+                'pergunta' => 'O que muda na tributação?',
+                'resposta' => 'O residente declara no Brasil a renda do mundo todo. O não residente deixa de entregar a declaração anual e paga imposto aqui só sobre os rendimentos de fonte brasileira, em geral retido na fonte.',
+                'lista' => [
+                    'Aluguéis de imóveis no Brasil',
+                    'Rendimentos de aplicações financeiras',
+                    'Ganho de capital na venda de bens',
+                    'Aposentadorias e pensões pagas por fontes brasileiras',
+                ],
+            ],
+            [
+                'pergunta' => 'Saí do Brasil há anos sem avisar. Ainda dá para regularizar?',
+                'resposta' => 'Sim. O caminho depende de quanto tempo passou e do que ficou pendente: pode envolver a entrega de declarações em atraso, a comunicação de saída com a data correta e, para quem é não residente há mais de seis anos, um pedido específico à Receita com os documentos que comprovem a mudança.',
+            ],
+        ],
+        'fontes' => [
+            ['nome' => 'gov.br: comunicar saída definitiva do país', 'url' => 'https://www.gov.br/pt-br/servicos/comunicar-saida-definitiva-do-pais'],
+            ['nome' => 'Receita Federal: Declaração de Saída Definitiva do País', 'url' => 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/dsdp'],
+            ['nome' => 'Ministério das Relações Exteriores: saída fiscal definitiva do Brasil', 'url' => 'https://www.gov.br/mre/pt-br/assuntos/portal-consular/saida-fiscal-definitiva-do-brasil/saida-fiscal-definitiva-do-brasil-orientacoes-para-brasileiros-no-exterior'],
+        ],
+        'atualizado' => '2026-10',
     ],
     [
         'slug' => 'treinamento-tributario',

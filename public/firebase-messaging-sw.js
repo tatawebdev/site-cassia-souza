@@ -14,6 +14,17 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
+// Quando o Chrome troca a inscrição de push (pushsubscriptionchange), o SDK tenta
+// apagar o token usando o registro do worker, que aqui fica vazio até alguém
+// chamar getToken: dava "Cannot read properties of undefined (reading
+// 'pushManager')". Entregamos o registro de antemão. O token novo é gravado pela
+// página (renovação diária e nova tentativa quando o site responde 410).
+try {
+    (messaging._delegate || messaging).swRegistration = self.registration;
+} catch (e) {
+    console.error('Erro ao preparar o registro do FCM no worker', e);
+}
+
 // Handle background messages
 messaging.onBackgroundMessage(function (payload) {
     // Mensagens com "notification" (todas as do servidor) o próprio SDK já mostra,

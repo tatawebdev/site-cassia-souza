@@ -48,10 +48,27 @@ class FcmService
     }
 
     /**
+     * Confere com o Google, sem mostrar nada ao usuário (validate_only), se o
+     * token ainda vale. O SDK do navegador guarda o token por dias e pode
+     * devolver um que já morreu. Null quando não deu para conferir.
+     */
+    public function tokenValido(string $token): ?bool
+    {
+        try {
+            $resultado = $this->sendNotificationToTokens([$token], 'teste', 'teste', [], null, true)[$token];
+        } catch (\Exception $e) {
+            Log::warning('Token FCM não conferido: ' . $e->getMessage());
+            return null;
+        }
+
+        return $resultado['ok'] ? true : (($resultado['invalido'] ?? false) ? false : null);
+    }
+
+    /**
      * @return array Respostas por token: ok, status e se o token é inválido
      * @throws \Exception sem a conta de serviço ou sem conseguir autenticar
      */
-    public function sendNotificationToTokens(array $tokens, string $title, string $body, array $data = [], ?string $link = null): array
+    public function sendNotificationToTokens(array $tokens, string $title, string $body, array $data = [], ?string $link = null, bool $soValidar = false): array
     {
         if (empty($tokens)) {
             return [];
@@ -88,7 +105,7 @@ class FcmService
         foreach ($tokens as $token) {
             $response = Http::withToken($accessToken)
                 ->timeout(10)
-                ->post($url, ['message' => ['token' => $token] + $mensagem]);
+                ->post($url, ['message' => ['token' => $token] + $mensagem] + ($soValidar ? ['validate_only' => true] : []));
 
             if ($response->successful()) {
                 $results[$token] = ['ok' => true, 'status' => $response->status()];

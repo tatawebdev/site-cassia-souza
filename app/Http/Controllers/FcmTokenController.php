@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FcmToken;
+use App\Services\FcmService;
 use Illuminate\Http\Request;
 
 class FcmTokenController extends Controller
@@ -29,6 +30,11 @@ class FcmTokenController extends Controller
         $data = $request->validate([
             'token' => 'required|string|max:500',
         ]);
+
+        // Token morto (o navegador guardou um antigo): não grava e pede um novo
+        if (app(FcmService::class)->tokenValido($data['token']) === false) {
+            return response()->json(['status' => 'token_invalido'], 410);
+        }
 
         FcmToken::firstOrCreate(['token' => $data['token'], 'publico' => $publico]);
 

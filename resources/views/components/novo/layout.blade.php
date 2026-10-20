@@ -364,19 +364,31 @@
                 });
             }
 
+            var messaging = firebase.messaging();
             var registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
             await navigator.serviceWorker.ready;
-            var token = await firebase.messaging().getToken({
-                vapidKey: 'BMcsGmQg3luA4MCokshTgRcCW7C6jfF9mHplEUCc-hyXSGlFn6wKC_8zbA5vCk4_9TK3HJHM5N36sFiSk6MClFs',
-                serviceWorkerRegistration: registration
-            });
-            if (!token) throw new Error('Sem token do FCM');
 
-            var resposta = await fetch('/api/fcm/token', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ token: token })
-            });
+            async function enviar() {
+                var token = await messaging.getToken({
+                    vapidKey: 'BMcsGmQg3luA4MCokshTgRcCW7C6jfF9mHplEUCc-hyXSGlFn6wKC_8zbA5vCk4_9TK3HJHM5N36sFiSk6MClFs',
+                    serviceWorkerRegistration: registration
+                });
+                if (!token) throw new Error('Sem token do FCM');
+
+                return fetch('/api/fcm/token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ token: token })
+                });
+            }
+
+            var resposta = await enviar();
+            // 410: o SDK devolveu um token guardado que o Google já não aceita.
+            // Apaga o guardado e pede outro (uma vez só).
+            if (resposta.status === 410) {
+                await messaging.deleteToken().catch(function () {});
+                resposta = await enviar();
+            }
             if (!resposta.ok) throw new Error('Site recusou o token: ' + resposta.status);
         }
 
