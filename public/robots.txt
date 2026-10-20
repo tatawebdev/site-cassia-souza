@@ -3,5 +3,14 @@ Disallow: /antigo
 Disallow: /dashboard
 Disallow: /chat
 
+# O logo do cabeçalho é claro (feito para o fundo roxo) e, no branco da busca,
+# vira uma miniatura apagada. Bloqueado para o Googlebot-Image, o Google usa a foto do og:image.
+# Este grupo substitui o "*" para o Googlebot-Image, por isso repete os bloqueios.
+User-agent: Googlebot-Image
+Disallow: /antigo
+Disallow: /dashboard
+Disallow: /chat
+Disallow: /assets/images/logo-acinzentado.png
+
 Sitemap: https://cassiasouzaadvocacia.com.br/sitemap.xml
 Sitemap: https://blog.cassiasouzaadvocacia.com.br/sitemap.xml
