@@ -1,3 +1,12 @@
+// Versão nova assume na hora, sem esperar o visitante fechar todas as abas do
+// site (senão a antiga continua recebendo os avisos e pode não saber mostrá-los).
+self.addEventListener('install', function () {
+    self.skipWaiting();
+});
+self.addEventListener('activate', function (event) {
+    event.waitUntil(self.clients.claim());
+});
+
 // Avisos de artigos (só dados, ver FcmService): este worker mostra a notificação
 // sempre, mesmo com uma aba do site aberta. Registrado antes do SDK do Firebase,
 // que só repassa mensagens de dados para a página e não exibe nada.
