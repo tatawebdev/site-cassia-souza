@@ -23,7 +23,10 @@ class ArtigoNovoMail extends Mailable
 
     public function build()
     {
+        // Respostas vão para a Cassia (o remetente é do domínio do site, que pode
+        // enviar pelo nosso SMTP; o da OAB-SP rejeita e-mail vindo de fora)
         return $this->subject($this->aviso->titulo)
+            ->replyTo('cassia_souza@adv.oabsp.org.br', 'Cassia Souza')
             ->view('emails.artigo-novo')
             ->withSymfonyMessage(function (Email $mensagem) {
                 $mensagem->getHeaders()->addTextHeader('List-Unsubscribe', '<'.$this->linkCancelar.'>');

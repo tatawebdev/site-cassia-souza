@@ -1,10 +1,13 @@
 {{-- Artigo novo do blog para a newsletter (App\Mail\ArtigoNovoMail).
-     E-mail: tabelas e estilos inline, sem fontes da web garantidas
-     (Newsreader só onde o leitor aceita; Georgia e Arial no resto). --}}
+     Mesma cara do hero do site: bloco roxo em degradê (cs-plum-bg) com o título
+     em serifa branca e o botão champagne; embaixo, a foto do artigo e a
+     assinatura com a foto da Cassia.
+     E-mail: tabelas e estilos inline. O Outlook ignora degradê (fica o roxo
+     sólido do bgcolor) e Hotmail/Gmail não carregam fontes da web (Georgia). --}}
 @php
     $serif = "'Newsreader', Georgia, 'Times New Roman', serif";
-    $sans = "'Public Sans', Arial, Helvetica, sans-serif";
-    $resumo = $aviso->resumo ? \Illuminate\Support\Str::limit($aviso->resumo, 260, '…', preserveWords: true) : null;
+    $sans = "Arial, Helvetica, sans-serif";
+    $resumo = $aviso->resumo ? \Illuminate\Support\Str::limit($aviso->resumo, 240, '…', preserveWords: true) : null;
 @endphp
 <!doctype html>
 <html lang="pt-BR">
@@ -17,80 +20,82 @@
     <style>
         @media (max-width: 620px) {
             .folha { width: 100% !important; border-radius: 0 !important; }
+            .moldura { padding: 0 !important; }
             .miolo { padding-left: 24px !important; padding-right: 24px !important; }
-            .titulo { font-size: 26px !important; line-height: 32px !important; }
+            .titulo { font-size: 30px !important; line-height: 36px !important; }
         }
-        a.botao:hover { background: #6d0a67 !important; }
     </style>
 </head>
 <body style="margin:0;padding:0;background:#F5F1F4;">
     {{-- Prévia na caixa de entrada --}}
-    <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F5F1F4;">{{ \Illuminate\Support\Str::limit($aviso->resumo ?? $aviso->titulo, 110) }}&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;</div>
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F5F1F4;">{{ \Illuminate\Support\Str::limit($aviso->resumo ?? $aviso->titulo, 110, '…', preserveWords: true) }}&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;</div>
 
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5F1F4;">
         <tr>
-            <td align="center" style="padding:32px 12px 40px;">
-                <table role="presentation" class="folha" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#FFFFFF;border-radius:16px;overflow:hidden;">
+            <td align="center" class="moldura" style="padding:32px 12px 40px;">
+                <table role="presentation" class="folha" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#FFFFFF;border-radius:20px;overflow:hidden;">
+
+                    {{-- Hero roxo, como o da home --}}
                     <tr>
-                        <td style="background:#590854;padding:22px 40px;" class="miolo">
+                        <td class="miolo" bgcolor="#590854" style="padding:36px 48px 44px;background-color:#590854;background-image:radial-gradient(120% 90% at 12% 0%, #6E1468 0%, rgba(110,20,104,0) 60%), linear-gradient(160deg, #590854 0%, #3A0637 100%);">
                             <a href="{{ url('/') }}" style="text-decoration:none;">
-                                <img src="{{ url('/assets/images/logo-acinzentado.png') }}" width="132" alt="Cassia Souza Advocacia" style="display:block;width:132px;height:auto;border:0;color:#EFCF9F;font-family:{{ $serif }};font-size:18px;">
+                                <img src="{{ url('/assets/images/logo-acinzentado.png') }}" width="112" alt="Cassia Souza Advocacia" style="display:block;width:112px;height:auto;border:0;color:#F3E6F1;font-family:{{ $serif }};font-size:16px;">
                             </a>
-                        </td>
-                    </tr>
 
-                    @if ($aviso->imagem)
-                        <tr>
-                            <td>
-                                <a href="{{ $aviso->url }}">
-                                    <img src="{{ $aviso->imagem }}" width="600" alt="" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
-                                </a>
-                            </td>
-                        </tr>
-                    @endif
-
-                    <tr>
-                        <td class="miolo" style="padding:36px 48px 8px;">
                             @if ($aviso->categoria)
-                                <p style="margin:0 0 10px;font-family:{{ $sans }};font-size:14px;line-height:20px;font-weight:600;color:#8A3A84;">{{ $aviso->categoria }}</p>
+                                <p style="margin:36px 0 12px;font-family:{{ $sans }};font-size:14px;line-height:20px;font-weight:bold;color:#EFCF9F;">{{ $aviso->categoria }}</p>
                             @endif
-                            <h1 class="titulo" style="margin:0;font-family:{{ $serif }};font-size:32px;line-height:38px;font-weight:600;color:#3B2F3A;">
-                                <a href="{{ $aviso->url }}" style="color:#3B2F3A;text-decoration:none;">{{ $aviso->titulo }}</a>
+                            <h1 class="titulo" style="margin:{{ $aviso->categoria ? '0' : '36px 0 0' }};font-family:{{ $serif }};font-size:38px;line-height:44px;font-weight:600;color:#FFFFFF;">
+                                <a href="{{ $aviso->url }}" style="color:#FFFFFF;text-decoration:none;">{{ $aviso->titulo }}</a>
                             </h1>
                             @if ($resumo)
-                                <p style="margin:18px 0 0;font-family:{{ $sans }};font-size:16px;line-height:26px;color:#4A3B48;">{{ $resumo }}</p>
+                                <p style="margin:20px 0 0;font-family:{{ $sans }};font-size:17px;line-height:28px;color:#F3E6F1;">{{ $resumo }}</p>
                             @endif
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td class="miolo" style="padding:28px 48px 36px;">
-                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;">
                                 <tr>
-                                    <td style="border-radius:999px;background:#590854;">
-                                        <a class="botao" href="{{ $aviso->url }}" style="display:inline-block;padding:14px 30px;border-radius:999px;background:#590854;font-family:{{ $sans }};font-size:16px;line-height:20px;font-weight:600;color:#EFCF9F;text-decoration:none;">Ler o artigo</a>
+                                    <td bgcolor="#EFCF9F" style="border-radius:999px;background:#EFCF9F;">
+                                        <a href="{{ $aviso->url }}" style="display:inline-block;padding:15px 34px;border-radius:999px;background:#EFCF9F;font-family:{{ $sans }};font-size:16px;line-height:20px;font-weight:bold;color:#24041F;text-decoration:none;">Ler o artigo</a>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
 
+                    @if ($aviso->imagem)
+                        <tr>
+                            <td class="miolo" style="padding:32px 48px 0;">
+                                <a href="{{ $aviso->url }}">
+                                    <img src="{{ $aviso->imagem }}" width="504" alt="" style="display:block;width:100%;max-width:504px;height:auto;border:0;border-radius:14px;">
+                                </a>
+                            </td>
+                        </tr>
+                    @endif
+
+                    {{-- Assinatura com a foto da Cassia --}}
                     <tr>
-                        <td class="miolo" style="padding:0 48px 36px;">
-                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                                <tr><td style="border-top:2px solid #EFCF9F;font-size:0;line-height:0;">&nbsp;</td></tr>
+                        <td class="miolo" style="padding:32px 48px 36px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-right:16px;vertical-align:middle;">
+                                        <img src="{{ url('/assets/img/cassia-email.jpg') }}" width="64" height="64" alt="Cassia Souza" style="display:block;width:64px;height:64px;border:0;border-radius:50%;">
+                                    </td>
+                                    <td style="vertical-align:middle;">
+                                        <p style="margin:0;font-family:{{ $serif }};font-size:20px;line-height:24px;font-weight:600;color:#590854;">Cassia Souza</p>
+                                        <p style="margin:4px 0 0;font-family:{{ $sans }};font-size:14px;line-height:20px;color:#6A5D68;">Advogada tributarista, atende empresas em Suzano (SP) e online.</p>
+                                    </td>
+                                </tr>
                             </table>
-                            <p style="margin:22px 0 0;font-family:{{ $serif }};font-size:20px;line-height:26px;font-weight:600;color:#590854;">Cassia Souza</p>
-                            <p style="margin:4px 0 0;font-family:{{ $sans }};font-size:14px;line-height:22px;color:#6A5D68;">Advocacia tributária para empresas, em Suzano (SP) e online.<br>Dúvidas sobre o tema? <a href="{{ route('contato') }}" style="color:#590854;font-weight:600;">Fale com a Cassia</a>.</p>
+                            <p style="margin:20px 0 0;font-family:{{ $sans }};font-size:14px;line-height:22px;color:#3B2F3A;">Ficou com dúvida sobre o tema? Responda este e-mail ou <a href="{{ route('contato') }}" style="color:#590854;font-weight:bold;">fale com a Cassia pelo site</a>.</p>
                         </td>
                     </tr>
                 </table>
 
                 <table role="presentation" class="folha" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
                     <tr>
-                        <td class="miolo" style="padding:24px 48px 0;font-family:{{ $sans }};font-size:13px;line-height:20px;color:#6A5D68;">
-                            Você recebe este e-mail porque se inscreveu na newsletter da <a href="{{ url('/') }}" style="color:#6A5D68;">Cassia Souza Advocacia</a>.
-                            Não quer mais receber? <a href="{{ $linkCancelar }}" style="color:#590854;font-weight:600;">Cancelar inscrição</a>.
+                        <td class="miolo" style="padding:22px 48px 0;font-family:{{ $sans }};font-size:12px;line-height:19px;color:#6A5D68;">
+                            Você recebe este e-mail porque se inscreveu na newsletter da Cassia Souza Advocacia.
+                            Não quer mais receber? <a href="{{ $linkCancelar }}" style="color:#6A5D68;">Cancelar inscrição</a>.
                         </td>
                     </tr>
                 </table>
