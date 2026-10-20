@@ -307,9 +307,21 @@
         // Só convida quem já leu um pouco: depois da escolha de cookies (para não
         // empilhar dois avisos) e de rolar quase uma tela. Se o navegador já
         // bloqueou as notificações, o botão não teria efeito, então nem aparece.
+        // Quem já permitiu não vê o convite, mas renova o token uma vez por dia:
+        // o token muda com o tempo, e o servidor apaga os que deixaram de valer.
         document.addEventListener('DOMContentLoaded', function () {
             if (!('serviceWorker' in navigator) || !('Notification' in window)) return;
-            if (Notification.permission !== 'default' || localStorage.getItem('cs_fcm_status') === 'granted') return;
+
+            if (Notification.permission === 'granted') {
+                var renovado = parseInt(localStorage.getItem('cs_fcm_renovado') || '0', 10);
+                if (Date.now() - renovado > 24 * 60 * 60 * 1000) {
+                    csRegistrarFCM().then(function () {
+                        localStorage.setItem('cs_fcm_renovado', Date.now().toString());
+                    }).catch(function (e) { console.error('Erro FCM:', e); });
+                }
+                return;
+            }
+            if (Notification.permission !== 'default') return;
             var dispensado = localStorage.getItem('cs_fcm_dispensado');
             if (dispensado && (Date.now() - parseInt(dispensado, 10)) < 30 * 24 * 60 * 60 * 1000) return;
 
@@ -333,67 +345,69 @@
             });
         }
 
+        // Gera o token deste navegador e grava no site. Exige a permissão já dada.
+        async function csRegistrarFCM() {
+            // O SDK só é baixado aqui, por quem aceitou (antes pesava em toda página)
+            if (!window.firebase) {
+                await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js');
+                await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js');
+            }
+            if (!firebase.apps.length) {
+                firebase.initializeApp({
+                    apiKey: "AIzaSyDC_juTBl65iSz_TZsjYQEtUyIRURLQap0",
+                    authDomain: "chat-cassia-souza-adv.firebaseapp.com",
+                    projectId: "chat-cassia-souza-adv",
+                    storageBucket: "chat-cassia-souza-adv.appspot.com",
+                    messagingSenderId: "969461920153",
+                    appId: "1:969461920153:web:89874b4322d96f77eda308",
+                    measurementId: "G-DMYW90V0D7"
+                });
+            }
+
+            var registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+            await navigator.serviceWorker.ready;
+            var token = await firebase.messaging().getToken({
+                vapidKey: 'BMcsGmQg3luA4MCokshTgRcCW7C6jfF9mHplEUCc-hyXSGlFn6wKC_8zbA5vCk4_9TK3HJHM5N36sFiSk6MClFs',
+                serviceWorkerRegistration: registration
+            });
+            if (!token) throw new Error('Sem token do FCM');
+
+            var resposta = await fetch('/api/fcm/token', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ token: token })
+            });
+            if (!resposta.ok) throw new Error('Site recusou o token: ' + resposta.status);
+        }
+
         async function csPermitirFCM() {
             var btn = document.getElementById('cs-fcm-btn-permitir');
             var dialog = document.getElementById('cs-fcm-dialog');
             if (btn) { btn.disabled = true; btn.textContent = 'Ativando…'; }
 
-            try {
-                var permission = await Notification.requestPermission();
-                if (permission === 'granted') {
-                    var config = {
-                        apiKey: "AIzaSyDC_juTBl65iSz_TZsjYQEtUyIRURLQap0",
-                        authDomain: "chat-cassia-souza-adv.firebaseapp.com",
-                        projectId: "chat-cassia-souza-adv",
-                        storageBucket: "chat-cassia-souza-adv.appspot.com",
-                        messagingSenderId: "969461920153",
-                        appId: "1:969461920153:web:89874b4322d96f77eda308",
-                        measurementId: "G-DMYW90V0D7"
-                    };
-
-                    // O SDK só é baixado aqui, por quem aceitou (antes pesava em toda página)
-                    await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js');
-                    await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js');
-
-                    if (!firebase.apps.length) {
-                        firebase.initializeApp(config);
-                    }
-
-                    var messaging = firebase.messaging();
-                    var registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-                    await navigator.serviceWorker.ready;
-
-                    var token = await messaging.getToken({
-                        vapidKey: 'BMcsGmQg3luA4MCokshTgRcCW7C6jfF9mHplEUCc-hyXSGlFn6wKC_8zbA5vCk4_9TK3HJHM5N36sFiSk6MClFs',
-                        serviceWorkerRegistration: registration
-                    });
-
-                    if (token) {
-                        await fetch('/api/fcm/token', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({ token: token })
-                        });
-
-                        localStorage.setItem('cs_fcm_status', 'granted');
-                        if (dialog) {
-                            dialog.innerHTML = '<p class="cs-fcm-dialog__ok" role="status"><svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Avisos ativados</p>';
-                            setTimeout(function () {
-                                dialog.classList.remove('cs-fcm-dialog--ativo');
-                            }, 2500);
-                        }
-                        return;
-                    }
-                }
-            } catch (e) {
-                console.error('Erro FCM:', e);
+            var permission = await Notification.requestPermission();
+            if (permission !== 'granted') {
+                // Recusou no pedido do navegador: conta como "agora não"
+                csRecusarFCM();
+                return;
             }
 
-            localStorage.setItem('cs_fcm_dispensado', Date.now().toString());
-            if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
+            try {
+                await csRegistrarFCM();
+            } catch (e) {
+                // Falha técnica não é recusa: o convite volta na próxima visita
+                console.error('Erro FCM:', e);
+                if (btn) { btn.disabled = false; btn.textContent = 'Tentar de novo'; }
+                return;
+            }
+
+            localStorage.setItem('cs_fcm_renovado', Date.now().toString());
+            if (dialog) {
+                dialog.innerHTML = '<p class="cs-fcm-dialog__ok" role="status"><svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Avisos ativados</p>';
+                setTimeout(function () {
+                    dialog.classList.remove('cs-fcm-dialog--ativo');
+                }, 2500);
+            }
         }
 
         function csRecusarFCM() {
