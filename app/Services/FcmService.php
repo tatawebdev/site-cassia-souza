@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\FcmAviso;
 use App\Models\FcmToken;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -33,18 +32,6 @@ class FcmService
         $enviados = count(array_filter($results, fn ($r) => $r['ok']));
 
         return ['enviados' => $enviados, 'falhas' => count($results) - $enviados];
-    }
-
-    /**
-     * Avisa os inscritos do site sobre um artigo novo e anota quantos receberam.
-     */
-    public function avisarArtigo(FcmAviso $aviso): void
-    {
-        try {
-            $aviso->update($this->enviarPara(FcmToken::SITE, $aviso->titulo, 'Artigo novo da Cassia Souza no blog', [], $aviso->url));
-        } catch (\Exception $e) {
-            Log::error('Aviso de artigo não enviado: ' . $e->getMessage(), ['url' => $aviso->url]);
-        }
     }
 
     /**

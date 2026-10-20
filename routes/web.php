@@ -38,6 +38,13 @@ Route::get('/antigo/servicos/recuperacao-pis-cofins-monofasicos', \App\Livewire\
 Route::view('/politica-de-privacidade', 'novo.privacidade')->name('privacy');
 Route::get('/antigo/politica-de-privacidade', \App\Livewire\PoliticaPrivacidade::class)->name('antigo.privacy');
 
+// Link "Cancelar inscrição" dos e-mails da newsletter (assinado: só vale para aquele inscrito)
+Route::get('/newsletter/cancelar/{inscrito}', function (\App\Models\NewsletterSubscriber $inscrito) {
+    $inscrito->delete();
+
+    return view('novo.newsletter-cancelada');
+})->middleware('signed')->missing(fn () => response()->view('novo.newsletter-cancelada'))->name('newsletter.cancelar');
+
 Route::get('/auth/google/redirecionar', [GoogleAuthController::class, 'redirect'])->name('google.redirecionar');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('google.callback');
 

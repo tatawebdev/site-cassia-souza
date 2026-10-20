@@ -3,9 +3,11 @@
         id: null,
         exigeRecaptcha: @js((bool) config('services.recaptcha.site_key')),
         {{-- Clique em "Inscrever-se": sem reCAPTCHA envia direto; com ele,
+             primeiro confere se o e-mail já está inscrito (aí só avisa) e, se não,
              abre a confirmação e envia sozinho quando a caixa é marcada --}}
-        enviar() {
+        async enviar() {
             if (! this.exigeRecaptcha) return $wire.subscribe();
+            if (await $wire.jaInscrito()) return;
             this.confirmando = true;
             this.$nextTick(() => {
                 if (this.id !== null) return grecaptcha.reset(this.id);

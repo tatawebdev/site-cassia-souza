@@ -3,8 +3,10 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\NewsletterSubscriber;
 use App\Rules\Recaptcha;
 use App\Services\Newsletter;
+use Illuminate\Support\Facades\RateLimiter;
 
 class NewsletterSubscribe extends Component
 {
@@ -36,6 +38,46 @@ class NewsletterSubscribe extends Component
         $this->source = $source;
     }
 
+    /**
+     * Chamado antes do reCAPTCHA: e-mail já inscrito recebe o aviso direto, sem
+     * precisar confirmar que não é robô. True encerra o envio no navegador.
+     * Limitado por IP para ninguém usar isso para descobrir quem está na lista;
+     * passando do limite, segue para o reCAPTCHA como os demais.
+     */
+    public function jaInscrito(): bool
+    {
+        $this->resetErrorBag();
+        if (validator(['email' => $this->email], ['email' => 'required|email'])->fails()) {
+            $this->addError('email', 'Informe um e-mail válido.');
+
+            return true;
+        }
+
+        $chave = 'newsletter-ja-inscrito:'.request()->ip();
+        if (RateLimiter::tooManyAttempts($chave, 10)) {
+            return false;
+        }
+        RateLimiter::hit($chave, 60);
+
+        if (! NewsletterSubscriber::where('email', $this->email)->exists()) {
+            return false;
+        }
+
+        $this->avisarJaInscrito();
+
+        return true;
+    }
+
+    private function avisarJaInscrito(): void
+    {
+        $this->dispatch('swal', [
+            'type' => 'info',
+            'title' => 'Você já está inscrito',
+            'text' => 'Este e-mail já recebe a nossa newsletter.',
+            'timer' => 4000,
+        ]);
+    }
+
     public function subscribe()
     {
         try {
@@ -50,12 +92,7 @@ class NewsletterSubscribe extends Component
             $resultado = app(Newsletter::class)->inscrever($this->email, $this->source);
 
             if ($resultado === Newsletter::JA_INSCRITO) {
-                $this->dispatch('swal', [
-                    'type' => 'warning',
-                    'title' => 'E-mail já inscrito',
-                    'text' => 'Este e-mail já está inscrito na nossa newsletter.',
-                    'timer' => 4000,
-                ]);
+                $this->avisarJaInscrito();
                 return;
             }
 
