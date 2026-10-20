@@ -1,3 +1,31 @@
+// Avisos de artigos (só dados, ver FcmService): este worker mostra a notificação
+// sempre, mesmo com uma aba do site aberta. Registrado antes do SDK do Firebase,
+// que só repassa mensagens de dados para a página e não exibe nada.
+self.addEventListener('push', function (event) {
+    var dados;
+    try {
+        dados = (event.data && event.data.json().data) || {};
+    } catch (e) {
+        return;
+    }
+    if (!dados.aviso_titulo) return;
+
+    event.waitUntil(self.registration.showNotification(dados.aviso_titulo, {
+        body: dados.aviso_texto || '',
+        icon: '/favicon-192x192.png',
+        badge: '/favicon-96x96.png',
+        tag: dados.aviso_link,
+        data: { link: dados.aviso_link }
+    }));
+});
+
+self.addEventListener('notificationclick', function (event) {
+    var link = event.notification.data && event.notification.data.link;
+    if (!link) return;
+    event.notification.close();
+    event.waitUntil(self.clients.openWindow(link));
+});
+
 importScripts('https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js')
 importScripts('https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js')
 
@@ -25,20 +53,9 @@ try {
     console.error('Erro ao preparar o registro do FCM no worker', e);
 }
 
-// Handle background messages
+// Mensagens do chat (com "notification"): o próprio SDK mostra quando não há aba
+// em foco. Aqui só repassamos às abas abertas para o painel se atualizar.
 messaging.onBackgroundMessage(function (payload) {
-    // Mensagens com "notification" (todas as do servidor) o próprio SDK já mostra,
-    // com ícone e link de clique (webpush.fcm_options.link). Mostrar aqui também
-    // duplicava a notificação; só as mensagens só de dados são exibidas por nós.
-    if (!payload.notification && payload.data && payload.data.title) {
-        self.registration.showNotification(payload.data.title, {
-            body: payload.data.body || '',
-            icon: '/favicon-192x192.png'
-        });
-    }
-
-    // Also notify any open clients (pages) so they can update UI in real time
-    // This helps update chat windows when the app is open (but in background)
     try {
         self.clients.matchAll({ includeUncontrolled: true, type: 'window' }).then(function (clients) {
             for (const client of clients) {

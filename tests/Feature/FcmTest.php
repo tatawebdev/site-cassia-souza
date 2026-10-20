@@ -98,7 +98,7 @@ class FcmTest extends TestCase
 
         $this->assertSame(['enviados' => 1, 'falhas' => 1], $resultado);
         Http::assertNotSent(fn ($r) => $r['message']['token'] === 'tok-painel');
-        Http::assertSent(fn ($r) => $r['message']['webpush']['fcm_options']['link'] === 'https://blog.cassiasouzaadvocacia.com.br/post/');
+        Http::assertSent(fn ($r) => $r['message']['data']['aviso_link'] === 'https://blog.cassiasouzaadvocacia.com.br/post/');
         $this->assertDatabaseMissing('fcm_tokens', ['token' => 'tok-morto']);
         $this->assertDatabaseHas('fcm_tokens', ['token' => 'tok-painel']);
     }
@@ -153,7 +153,7 @@ class FcmTest extends TestCase
 
         $this->artisan('fcm:avisar-artigo')->assertSuccessful()->expectsOutputToContain('1 enviados');
         Http::assertSent(fn ($r) => str_contains($r->url(), 'fcm.googleapis.com')
-            && $r['message']['notification']['title'] === 'Minha empresa tem créditos tributários?');
+            && $r['message']['data']['aviso_titulo'] === 'Minha empresa tem créditos tributários?');
 
         // Repetir sem --forcar não manda de novo
         $this->artisan('fcm:avisar-artigo')->expectsOutputToContain('já foi avisado');

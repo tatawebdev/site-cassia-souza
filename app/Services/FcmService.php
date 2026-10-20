@@ -86,17 +86,26 @@ class FcmService
             throw new \Exception('Failed to obtain access token for FCM HTTP v1');
         }
 
-        $mensagem = [
-            'notification' => ['title' => $title, 'body' => $body],
-            'webpush' => ['notification' => ['icon' => url('/favicon-192x192.png')]],
-        ];
-        // Ao clicar, o navegador abre o link (só aceita https)
         if ($link) {
-            $mensagem['webpush']['fcm_options'] = ['link' => $link];
+            // Aviso com link (artigos): só dados, e o service worker monta a
+            // notificação. Com "notification", o SDK do Firebase não mostra nada
+            // quando há uma aba do site aberta em foco, só repassa à página.
+            $mensagem = [
+                'data' => ['aviso_titulo' => $title, 'aviso_texto' => $body, 'aviso_link' => $link] + $data,
+                'webpush' => ['headers' => ['Urgency' => 'high', 'TTL' => '86400']],
+            ];
+        } else {
+            $mensagem = [
+                'notification' => ['title' => $title, 'body' => $body],
+                'webpush' => ['notification' => ['icon' => url('/favicon-192x192.png')]],
+            ];
+            if (! empty($data)) {
+                $mensagem['data'] = $data;
+            }
         }
-        if (! empty($data)) {
-            // O FCM só aceita textos nos dados
-            $mensagem['data'] = array_map(fn ($v) => is_string($v) ? $v : json_encode($v), $data);
+        // O FCM só aceita textos nos dados
+        if (isset($mensagem['data'])) {
+            $mensagem['data'] = array_map(fn ($v) => is_string($v) ? $v : json_encode($v), $mensagem['data']);
         }
 
         $results = [];
