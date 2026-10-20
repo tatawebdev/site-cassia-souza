@@ -204,12 +204,24 @@
             outline: 2px solid #efcf9f;
             outline-offset: 2px;
         }
-        .cs-fcm-dialog__ok {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-            font-weight: 600;
+        .cs-fcm-dialog [hidden] {
+            display: none;
+        }
+        /* Etapa do e-mail: fica abaixo da confirmação do reCAPTCHA (z-index 9999) */
+        .cs-fcm-dialog--email {
+            z-index: 9000;
+        }
+        .cs-fcm-dialog__news {
+            margin-top: 14px;
+        }
+        .cs-fcm-dialog .cs-fcm-dialog__news form .form-group {
+            flex-direction: column;
+            gap: 8px;
+        }
+        .cs-fcm-dialog .cs-fcm-dialog__news .form_style,
+        .cs-fcm-dialog .cs-fcm-dialog__news button[type="submit"] {
+            height: 44px;
+            font-size: 15px;
         }
         @media (max-width: 520px) {
             .cs-fcm-dialog {
@@ -291,21 +303,38 @@
 
     {{-- Convite para avisos no navegador (FCM) --}}
     <aside id="cs-fcm-dialog" class="cs-fcm-dialog" role="dialog" aria-labelledby="cs-fcm-titulo" aria-describedby="cs-fcm-texto">
-        <div class="cs-fcm-dialog__topo">
-            <svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg>
-            <p id="cs-fcm-titulo" class="cs-fcm-dialog__titulo">Avisos de artigos novos</p>
-            <button type="button" class="cs-fcm-dialog__fechar" onclick="csRecusarFCM()" aria-label="Fechar">&times;</button>
+        {{-- 1. Convite para os avisos no navegador --}}
+        <div id="cs-fcm-convite">
+            <div class="cs-fcm-dialog__topo">
+                <svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg>
+                <p id="cs-fcm-titulo" class="cs-fcm-dialog__titulo">Avisos de artigos novos</p>
+                <button type="button" class="cs-fcm-dialog__fechar" onclick="csRecusarFCM()" aria-label="Fechar">&times;</button>
+            </div>
+            <p id="cs-fcm-texto" class="cs-fcm-dialog__texto">Receba um aviso no navegador quando a Cassia publicar sobre impostos e a Reforma Tributária. Dá para desligar quando quiser.</p>
+            <div class="cs-fcm-dialog__acoes">
+                <button type="button" class="cs-fcm-dialog__btn-recusar" onclick="csRecusarFCM()">Agora não</button>
+                <button type="button" id="cs-fcm-btn-permitir" class="cs-fcm-dialog__btn-permitir" onclick="csPermitirFCM()">Ativar avisos</button>
+            </div>
         </div>
-        <p id="cs-fcm-texto" class="cs-fcm-dialog__texto">Receba um aviso no navegador quando a Cassia publicar sobre impostos e a Reforma Tributária. Dá para desligar quando quiser.</p>
-        <div class="cs-fcm-dialog__acoes">
-            <button type="button" class="cs-fcm-dialog__btn-recusar" onclick="csRecusarFCM()">Agora não</button>
-            <button type="button" id="cs-fcm-btn-permitir" class="cs-fcm-dialog__btn-permitir" onclick="csPermitirFCM()">Ativar avisos</button>
+
+        {{-- 2. Só para quem ativou: oferta da newsletter por e-mail (o mesmo
+             formulário do rodapé, com reCAPTCHA para e-mail novo) --}}
+        <div id="cs-fcm-email" hidden>
+            <div class="cs-fcm-dialog__topo" role="status">
+                <svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                <p class="cs-fcm-dialog__titulo">Avisos ativados</p>
+                <button type="button" class="cs-fcm-dialog__fechar" onclick="csFecharFCM()" aria-label="Fechar">&times;</button>
+            </div>
+            <p class="cs-fcm-dialog__texto">Quer receber os artigos também por e-mail? Um e-mail por artigo novo, com o resumo e o link.</p>
+            <div class="cs-newsletter cs-fcm-dialog__news">
+                <livewire:newsletter-subscribe source="avisos" />
+            </div>
         </div>
     </aside>
 
     <script>
-        // Só convida quem já leu um pouco: depois da escolha de cookies (para não
-        // empilhar dois avisos) e de rolar quase uma tela. Se o navegador já
+        // Só convida quem já leu um pouco: 20 s depois da escolha de cookies (para
+        // não emendar um aviso no outro) e depois de rolar quase uma tela. Se o navegador já
         // bloqueou as notificações, o botão não teria efeito, então nem aparece.
         // Quem já permitiu não vê o convite, mas renova o token uma vez por dia:
         // o token muda com o tempo, e o servidor apaga os que deixaram de valer.
@@ -325,13 +354,18 @@
             var dispensado = localStorage.getItem('cs_fcm_dispensado');
             if (dispensado && (Date.now() - parseInt(dispensado, 10)) < 30 * 24 * 60 * 60 * 1000) return;
 
+            var pronto = false;
             function talvezMostrar() {
-                if (window.scrollY < window.innerHeight * 0.8) return;
-                if (!/(?:^|; )cs_consentimento=/.test(document.cookie)) return;
+                if (!pronto || window.scrollY < window.innerHeight * 0.8) return;
                 window.removeEventListener('scroll', talvezMostrar);
                 var el = document.getElementById('cs-fcm-dialog');
                 if (el) el.classList.add('cs-fcm-dialog--ativo');
             }
+            // Espera existir a escolha de cookies (de antes ou feita agora) e conta 20 s
+            (function aguardarCookies() {
+                if (!/(?:^|; )cs_consentimento=/.test(document.cookie)) return setTimeout(aguardarCookies, 1000);
+                setTimeout(function () { pronto = true; talvezMostrar(); }, 20000);
+            })();
             window.addEventListener('scroll', talvezMostrar, { passive: true });
         });
 
@@ -414,19 +448,29 @@
             }
 
             localStorage.setItem('cs_fcm_renovado', Date.now().toString());
-            if (dialog) {
-                dialog.innerHTML = '<p class="cs-fcm-dialog__ok" role="status"><svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Avisos ativados</p>';
-                setTimeout(function () {
-                    dialog.classList.remove('cs-fcm-dialog--ativo');
-                }, 2500);
-            }
+            // Ativou: oferece também a newsletter por e-mail (quem recusa não vê)
+            document.getElementById('cs-fcm-convite').hidden = true;
+            document.getElementById('cs-fcm-email').hidden = false;
+            dialog.classList.add('cs-fcm-dialog--email');
+        }
+
+        function csFecharFCM() {
+            var dialog = document.getElementById('cs-fcm-dialog');
+            if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
         }
 
         function csRecusarFCM() {
             localStorage.setItem('cs_fcm_dispensado', Date.now().toString());
-            var dialog = document.getElementById('cs-fcm-dialog');
-            if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
+            csFecharFCM();
         }
+
+        // Inscreveu (ou já era inscrito) pela etapa do e-mail: o SweetAlert confirma e o card fecha
+        window.addEventListener('swal', function (event) {
+            var dialog = document.getElementById('cs-fcm-dialog');
+            var detalhe = Array.isArray(event.detail) ? event.detail[0] : event.detail;
+            if (!dialog || !dialog.classList.contains('cs-fcm-dialog--email') || !detalhe) return;
+            if (detalhe.type === 'success' || detalhe.type === 'info') csFecharFCM();
+        });
     </script>
 </body>
 
