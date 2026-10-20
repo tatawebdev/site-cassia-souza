@@ -51,6 +51,14 @@ return [
         'base_url' => env('GOOGLE_INDEXING_BASE_URL', 'https://cassiasouzaadvocacia.com.br'),
     ],
 
+    // Notificações no navegador (Firebase Cloud Messaging). As credenciais são o
+    // JSON da conta de serviço do projeto chat-cassia-souza-adv. A chave de avisos
+    // é a que o blog manda ao publicar um post (functions.php do tema).
+    'fcm' => [
+        'credentials_path' => env('FCM_SERVICE_ACCOUNT', storage_path('app/private/fcm.json')),
+        'chave_avisos' => env('FCM_CHAVE_AVISOS'),
+    ],
+
     // reCAPTCHA v2 ("Não sou um robô") do formulário de contato.
     // Sem a chave do site, o formulário funciona sem reCAPTCHA.
     'recaptcha' => [

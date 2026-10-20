@@ -16,15 +16,16 @@ const messaging = firebase.messaging();
 
 // Handle background messages
 messaging.onBackgroundMessage(function (payload) {
-    console.log('Received background message ', payload);
+    // Mensagens com "notification" (todas as do servidor) o próprio SDK já mostra,
+    // com ícone e link de clique (webpush.fcm_options.link). Mostrar aqui também
+    // duplicava a notificação; só as mensagens só de dados são exibidas por nós.
+    if (!payload.notification && payload.data && payload.data.title) {
+        self.registration.showNotification(payload.data.title, {
+            body: payload.data.body || '',
+            icon: '/favicon-192x192.png'
+        });
+    }
 
-    const notificationTitle = payload.notification.title;
-    const notificationOptions = {
-        body: payload.notification.body,
-        icon: payload.notification.icon
-    };
-
-    self.registration.showNotification(notificationTitle, notificationOptions);
     // Also notify any open clients (pages) so they can update UI in real time
     // This helps update chat windows when the app is open (but in background)
     try {

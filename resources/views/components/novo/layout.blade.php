@@ -82,123 +82,147 @@
     {{-- Feed RSS do Blog --}}
     <link rel="alternate" type="application/rss+xml" title="Blog Cassia Souza Advocacia" href="https://blog.cassiasouzaadvocacia.com.br/feed/">
 
-    {{-- Google Firebase Cloud Messaging (FCM) SDK --}}
-    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js" defer></script>
     <style>
-        /* Banner de Notificações Push FCM - Padrão Dark & Champagne */
+        /* Convite para avisos no navegador (FCM). Mesmo material do aviso de cookies
+           (cookies.css), no canto oposto: embaixo à direita, acima do WhatsApp,
+           para não cobrir o menu nem disputar espaço com o aviso de cookies. */
         .cs-fcm-dialog {
             position: fixed;
-            top: 24px;
             right: 24px;
+            bottom: 96px;
             z-index: 2147483000;
-            width: min(440px, calc(100% - 32px));
-            padding: 22px 24px 20px;
-            border: 1px solid rgba(239, 207, 159, 0.3);
+            box-sizing: border-box;
+            width: min(360px, calc(100% - 32px));
+            padding: 18px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 20px;
             background:
-                radial-gradient(420px 220px at 100% 0%, rgba(239, 207, 159, 0.15), transparent 70%),
+                radial-gradient(360px 200px at 100% 0%, rgba(239, 207, 159, 0.12), transparent 70%),
                 linear-gradient(160deg, #3a0637 0%, #24041f 100%);
-            box-shadow: 0 32px 64px -16px rgba(15, 1, 14, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            box-shadow: 0 32px 64px -24px rgba(20, 2, 18, 0.65);
             color: #f3e6f1;
-            font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+            font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            line-height: 1.55;
             opacity: 0;
-            transform: translateY(-20px) scale(0.96);
-            pointer-events: none;
-            transition: opacity 300ms cubic-bezier(0.22, 0.8, 0.2, 1), transform 300ms cubic-bezier(0.22, 0.8, 0.2, 1);
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity 250ms cubic-bezier(0.22, 0.8, 0.2, 1), transform 250ms cubic-bezier(0.22, 0.8, 0.2, 1), visibility 0s linear 250ms;
         }
         .cs-fcm-dialog--ativo {
             opacity: 1;
+            visibility: visible;
             transform: none;
-            pointer-events: auto;
+            transition-delay: 0s;
+        }
+        .cs-fcm-dialog p {
+            margin: 0;
         }
         .cs-fcm-dialog__topo {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
         }
-        .cs-fcm-dialog__brasao {
+        .cs-fcm-dialog__icone {
+            display: block;
             flex: none;
-            width: 46px;
-            height: 46px;
-            display: grid;
-            place-items: center;
-            border-radius: 12px;
-            background: rgba(239, 207, 159, 0.12);
-            border: 1px solid rgba(239, 207, 159, 0.25);
-            padding: 5px;
-        }
-        .cs-fcm-dialog__brasao img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .cs-fcm-dialog__titulos {
-            flex: 1;
+            width: 22px;
+            height: 22px;
+            color: #efcf9f;
         }
         .cs-fcm-dialog__titulo {
-            margin: 0;
-            color: #ffffff;
+            flex: 1;
+            color: #fff;
             font-family: 'Newsreader', Georgia, serif;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 600;
-            line-height: 1.25;
+            line-height: 1.2;
+        }
+        .cs-fcm-dialog__fechar {
+            display: grid;
+            width: 32px;
+            height: 32px;
+            margin: -6px -8px -6px 0;
+            place-items: center;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: rgba(243, 230, 241, 0.7);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background-color 200ms ease, color 200ms ease;
+        }
+        .cs-fcm-dialog__fechar:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
         }
         .cs-fcm-dialog__texto {
-            margin: 6px 0 0;
-            color: rgba(243, 230, 241, 0.82);
-            font-size: 13.5px;
-            line-height: 1.45;
+            margin-top: 8px !important;
+            color: rgba(243, 230, 241, 0.85);
         }
         .cs-fcm-dialog__acoes {
             display: flex;
             justify-content: flex-end;
-            align-items: center;
-            gap: 10px;
-            margin-top: 16px;
+            gap: 8px;
+            margin-top: 14px;
         }
-        .cs-fcm-dialog__btn-permitir {
-            padding: 9px 22px;
+        .cs-fcm-dialog__acoes button {
+            padding: 9px 18px;
             border-radius: 999px;
-            border: 0;
-            background: #efcf9f;
-            color: #24041f;
             font-family: inherit;
             font-size: 14px;
             font-weight: 600;
+            line-height: 1.2;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(239, 207, 159, 0.25);
-            transition: all 200ms ease;
-        }
-        .cs-fcm-dialog__btn-permitir:hover {
-            background: #f7dfb9;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(239, 207, 159, 0.35);
+            transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
         }
         .cs-fcm-dialog__btn-recusar {
-            padding: 9px 18px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.05);
-            color: rgba(243, 230, 241, 0.85);
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 200ms ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: rgba(243, 230, 241, 0.9);
         }
         .cs-fcm-dialog__btn-recusar:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fff;
         }
-        @media (max-width: 640px) {
+        .cs-fcm-dialog__btn-permitir {
+            border: 1px solid #efcf9f;
+            background: #efcf9f;
+            color: #24041f;
+        }
+        .cs-fcm-dialog__btn-permitir:hover {
+            border-color: #f7dfb9;
+            background: #f7dfb9;
+        }
+        .cs-fcm-dialog__btn-permitir[disabled] {
+            cursor: progress;
+            opacity: 0.75;
+        }
+        .cs-fcm-dialog button:focus-visible {
+            outline: 2px solid #efcf9f;
+            outline-offset: 2px;
+        }
+        .cs-fcm-dialog__ok {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 600;
+        }
+        @media (max-width: 520px) {
             .cs-fcm-dialog {
-                top: auto;
-                bottom: 24px;
-                right: 16px;
-                left: 16px;
+                right: 12px;
+                left: 12px;
+                bottom: 92px;
                 width: auto;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .cs-fcm-dialog {
+                transform: none;
+                transition: opacity 1ms, visibility 0s linear 1ms;
             }
         }
     </style>
@@ -265,41 +289,54 @@
         });
     </script>
 
-    {{-- Banner de Notificações Push FCM --}}
-    <aside id="cs-fcm-dialog" class="cs-fcm-dialog" aria-live="polite" aria-label="Permissão para receber notificações">
+    {{-- Convite para avisos no navegador (FCM) --}}
+    <aside id="cs-fcm-dialog" class="cs-fcm-dialog" role="dialog" aria-labelledby="cs-fcm-titulo" aria-describedby="cs-fcm-texto">
         <div class="cs-fcm-dialog__topo">
-            <div class="cs-fcm-dialog__brasao">
-                <img src="/assets/images/monograma-sc.png" alt="Cassia Souza Advocacia" width="36" height="36">
-            </div>
-            <div class="cs-fcm-dialog__titulos">
-                <p class="cs-fcm-dialog__titulo">Notificações Tributárias</p>
-                <p class="cs-fcm-dialog__texto">Deseja receber em primeira mão novidades sobre Reforma Tributária e novos artigos do blog?</p>
-            </div>
+            <svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg>
+            <p id="cs-fcm-titulo" class="cs-fcm-dialog__titulo">Avisos de artigos novos</p>
+            <button type="button" class="cs-fcm-dialog__fechar" onclick="csRecusarFCM()" aria-label="Fechar">&times;</button>
         </div>
+        <p id="cs-fcm-texto" class="cs-fcm-dialog__texto">Receba um aviso no navegador quando a Cassia publicar sobre impostos e a Reforma Tributária. Dá para desligar quando quiser.</p>
         <div class="cs-fcm-dialog__acoes">
             <button type="button" class="cs-fcm-dialog__btn-recusar" onclick="csRecusarFCM()">Agora não</button>
-            <button type="button" id="cs-fcm-btn-permitir" class="cs-fcm-dialog__btn-permitir" onclick="csPermitirFCM()">Permitir</button>
+            <button type="button" id="cs-fcm-btn-permitir" class="cs-fcm-dialog__btn-permitir" onclick="csPermitirFCM()">Ativar avisos</button>
         </div>
     </aside>
 
     <script>
+        // Só convida quem já leu um pouco: depois da escolha de cookies (para não
+        // empilhar dois avisos) e de rolar quase uma tela. Se o navegador já
+        // bloqueou as notificações, o botão não teria efeito, então nem aparece.
         document.addEventListener('DOMContentLoaded', function () {
             if (!('serviceWorker' in navigator) || !('Notification' in window)) return;
-            var status = localStorage.getItem('cs_fcm_status');
+            if (Notification.permission !== 'default' || localStorage.getItem('cs_fcm_status') === 'granted') return;
             var dispensado = localStorage.getItem('cs_fcm_dispensado');
-            if (Notification.permission === 'granted' || status === 'granted') return;
-            if (dispensado && (Date.now() - parseInt(dispensado, 10)) < 7 * 24 * 60 * 60 * 1000) return;
+            if (dispensado && (Date.now() - parseInt(dispensado, 10)) < 30 * 24 * 60 * 60 * 1000) return;
 
-            setTimeout(function () {
+            function talvezMostrar() {
+                if (window.scrollY < window.innerHeight * 0.8) return;
+                if (!/(?:^|; )cs_consentimento=/.test(document.cookie)) return;
+                window.removeEventListener('scroll', talvezMostrar);
                 var el = document.getElementById('cs-fcm-dialog');
                 if (el) el.classList.add('cs-fcm-dialog--ativo');
-            }, 2500);
+            }
+            window.addEventListener('scroll', talvezMostrar, { passive: true });
         });
+
+        function csCarregarScript(src) {
+            return new Promise(function (ok, erro) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.onload = ok;
+                s.onerror = erro;
+                document.head.appendChild(s);
+            });
+        }
 
         async function csPermitirFCM() {
             var btn = document.getElementById('cs-fcm-btn-permitir');
             var dialog = document.getElementById('cs-fcm-dialog');
-            if (btn) btn.textContent = 'Ativando...';
+            if (btn) { btn.disabled = true; btn.textContent = 'Ativando…'; }
 
             try {
                 var permission = await Notification.requestPermission();
@@ -313,6 +350,10 @@
                         appId: "1:969461920153:web:89874b4322d96f77eda308",
                         measurementId: "G-DMYW90V0D7"
                     };
+
+                    // O SDK só é baixado aqui, por quem aceitou (antes pesava em toda página)
+                    await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js');
+                    await csCarregarScript('https://www.gstatic.com/firebasejs/10.5.2/firebase-messaging-compat.js');
 
                     if (!firebase.apps.length) {
                         firebase.initializeApp(config);
@@ -339,7 +380,7 @@
 
                         localStorage.setItem('cs_fcm_status', 'granted');
                         if (dialog) {
-                            dialog.innerHTML = '<div style="display:flex;align-items:center;gap:12px;color:#efcf9f;"><i class="fas fa-check-circle" style="font-size:22px;"></i><span style="font-size:15px;font-weight:600;color:#ffffff;">Notificações ativadas com sucesso!</span></div>';
+                            dialog.innerHTML = '<p class="cs-fcm-dialog__ok" role="status"><svg class="cs-fcm-dialog__icone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Avisos ativados</p>';
                             setTimeout(function () {
                                 dialog.classList.remove('cs-fcm-dialog--ativo');
                             }, 2500);
@@ -351,6 +392,7 @@
                 console.error('Erro FCM:', e);
             }
 
+            localStorage.setItem('cs_fcm_dispensado', Date.now().toString());
             if (dialog) dialog.classList.remove('cs-fcm-dialog--ativo');
         }
 

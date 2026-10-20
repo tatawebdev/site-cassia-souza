@@ -112,9 +112,9 @@ async function registerFCM() {
         console.log('FCM token:', currentToken);
 
         if (currentToken) {
-            // Envia o token ao backend para persistência (rota: POST /api/fcm/token)
+            // Envia o token ao backend (rota do painel, com login: só o painel recebe o chat)
             try {
-                await axios.post('/api/fcm/token', { token: currentToken });
+                await axios.post('/painel/fcm/token', { token: currentToken });
                 console.log('FCM token enviado ao backend');
             } catch (err) {
                 console.error('Erro ao enviar token FCM ao backend', err);

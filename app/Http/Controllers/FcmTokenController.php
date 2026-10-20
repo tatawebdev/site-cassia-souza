@@ -8,42 +8,29 @@ use Illuminate\Http\Request;
 class FcmTokenController extends Controller
 {
     /**
-     * Store FCM token in database and fallback file.
+     * Visitante do site que aceitou os avisos de artigos novos (rota pública).
      */
     public function store(Request $request)
     {
+        return $this->salvar($request, FcmToken::SITE);
+    }
+
+    /**
+     * Navegador do painel, para as mensagens do chat (rota com login: o chat
+     * traz conversas de clientes e não pode chegar a quem só visita o site).
+     */
+    public function storePainel(Request $request)
+    {
+        return $this->salvar($request, FcmToken::PAINEL);
+    }
+
+    private function salvar(Request $request, string $publico)
+    {
         $data = $request->validate([
-            'token' => 'required|string',
+            'token' => 'required|string|max:500',
         ]);
 
-        $token = $data['token'];
-
-        try {
-            FcmToken::firstOrCreate(
-                ['token' => $token],
-                [
-                    'ip_address' => $request->ip(),
-                    'user_agent' => $request->userAgent(),
-                ]
-            );
-        } catch (\Exception $e) {
-            logger()->error('Erro ao salvar FCM token no banco: ' . $e->getMessage());
-        }
-
-        $file = storage_path('app/fcm_tokens.json');
-        try {
-            $tokens = [];
-            if (file_exists($file)) {
-                $tokens = json_decode(file_get_contents($file), true) ?? [];
-            }
-
-            if (!in_array($token, $tokens)) {
-                $tokens[] = $token;
-                file_put_contents($file, json_encode($tokens, JSON_PRETTY_PRINT));
-            }
-        } catch (\Exception $e) {
-            logger()->error('Erro ao salvar FCM token em arquivo: ' . $e->getMessage());
-        }
+        FcmToken::firstOrCreate(['token' => $data['token'], 'publico' => $publico]);
 
         return response()->json(['status' => 'ok']);
     }

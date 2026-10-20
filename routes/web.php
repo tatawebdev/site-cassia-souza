@@ -66,6 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/chat/contacts', [\App\Http\Controllers\ChatController::class, 'contacts'])->name('chat.api.contacts');
     Route::get('/chat/{usuario}/messages', [\App\Http\Controllers\ChatController::class, 'messages'])->name('chat.api.messages');
     Route::post('/chat/messages', [\App\Http\Controllers\ChatController::class, 'storeMessage'])->name('chat.api.storeMessage');
+
+    // Notificações do chat neste navegador (só com login; ver FcmTokenController)
+    Route::post('/painel/fcm/token', [\App\Http\Controllers\FcmTokenController::class, 'storePainel'])->name('painel.fcm.token');
 });
 
 require __DIR__ . '/auth.php';

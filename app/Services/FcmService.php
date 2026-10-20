@@ -2,48 +2,62 @@
 
 namespace App\Services;
 
+use App\Models\FcmAviso;
+use App\Models\FcmToken;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Cache;
 
+/**
+ * Notificações no navegador pelo Firebase Cloud Messaging (API HTTP v1).
+ * Autentica com o JSON da conta de serviço do projeto (config services.fcm).
+ */
 class FcmService
 {
     /**
-     * Send notification to a list of tokens using the legacy FCM HTTP API.
-     * Requires FCM_SERVER_KEY in .env (server key).
+     * Envia para todos os tokens de um público (FcmToken::PAINEL ou ::SITE) e
+     * apaga os que o Google diz que não existem mais.
      *
-     * @param array $tokens
-     * @param string $title
-     * @param string $body
-     * @param array $data
-     * @return array|null
+     * @return array{enviados: int, falhas: int}
      */
+    public function enviarPara(string $publico, string $title, string $body, array $data = [], ?string $link = null): array
+    {
+        $tokens = FcmToken::where('publico', $publico)->pluck('token')->all();
+        $results = $this->sendNotificationToTokens($tokens, $title, $body, $data, $link);
+
+        $invalidos = array_keys(array_filter($results, fn ($r) => $r['invalido'] ?? false));
+        if ($invalidos) {
+            FcmToken::where('publico', $publico)->whereIn('token', $invalidos)->delete();
+        }
+
+        $enviados = count(array_filter($results, fn ($r) => $r['ok']));
+
+        return ['enviados' => $enviados, 'falhas' => count($results) - $enviados];
+    }
+
     /**
-     * Send notification to a list of tokens using the FCM HTTP v1 API.
-     * This implementation obtains an OAuth2 access token from a Service Account
-     * (file path configured in FCM_SERVICE_ACCOUNT or defaults to storage/app/fcm.json)
-     * and sends a message to each token (reusing the same access token).
-     *
-     * @param array $tokens
-     * @param string $title
-     * @param string $body
-     * @param array $data
-     * @return array Array of responses keyed by token
-     * @throws \Exception
+     * Avisa os inscritos do site sobre um artigo novo e anota quantos receberam.
      */
-    public function sendNotificationToTokens(array $tokens, string $title, string $body, array $data = [])
+    public function avisarArtigo(FcmAviso $aviso): void
+    {
+        try {
+            $aviso->update($this->enviarPara(FcmToken::SITE, $aviso->titulo, 'Artigo novo da Cassia Souza no blog', [], $aviso->url));
+        } catch (\Exception $e) {
+            Log::error('Aviso de artigo não enviado: ' . $e->getMessage(), ['url' => $aviso->url]);
+        }
+    }
+
+    /**
+     * @return array Respostas por token: ok, status e se o token é inválido
+     * @throws \Exception sem a conta de serviço ou sem conseguir autenticar
+     */
+    public function sendNotificationToTokens(array $tokens, string $title, string $body, array $data = [], ?string $link = null): array
     {
         if (empty($tokens)) {
-            Log::info('No FCM tokens to send to.');
             return [];
         }
 
-        $serviceAccountPath = env('FCM_SERVICE_ACCOUNT', storage_path('app/fcm.json'));
-
-        if (!file_exists($serviceAccountPath)) {
-            throw new \Exception('Service account file not found at: ' . $serviceAccountPath);
-        }
-
+        $serviceAccountPath = $this->serviceAccountPath();
         $serviceAccount = json_decode(file_get_contents($serviceAccountPath), true);
         $projectId = $serviceAccount['project_id'] ?? null;
         if (empty($projectId)) {
@@ -55,86 +69,76 @@ class FcmService
             throw new \Exception('Failed to obtain access token for FCM HTTP v1');
         }
 
+        $mensagem = [
+            'notification' => ['title' => $title, 'body' => $body],
+            'webpush' => ['notification' => ['icon' => url('/favicon-192x192.png')]],
+        ];
+        // Ao clicar, o navegador abre o link (só aceita https)
+        if ($link) {
+            $mensagem['webpush']['fcm_options'] = ['link' => $link];
+        }
+        if (! empty($data)) {
+            // O FCM só aceita textos nos dados
+            $mensagem['data'] = array_map(fn ($v) => is_string($v) ? $v : json_encode($v), $data);
+        }
+
         $results = [];
-        $urlBase = "https://fcm.googleapis.com/v1/projects/{$projectId}/messages:send";
+        $url = "https://fcm.googleapis.com/v1/projects/{$projectId}/messages:send";
 
         foreach ($tokens as $token) {
-            $payload = [
-                'message' => [
-                    'token' => $token,
-                    'notification' => [
-                        'title' => $title,
-                        'body' => $body,
-                    ],
-                ],
-            ];
-
-            if (!empty($data)) {
-                // FCM expects string values for data
-                $strData = [];
-                foreach ($data as $k => $v) {
-                    $strData[$k] = is_string($v) ? $v : json_encode($v);
-                }
-                $payload['message']['data'] = $strData;
-            }
-
             $response = Http::withToken($accessToken)
-                ->withHeaders(['Content-Type' => 'application/json'])
-                ->post($urlBase, $payload);
+                ->timeout(10)
+                ->post($url, ['message' => ['token' => $token] + $mensagem]);
 
-            if ($response->failed()) {
-                Log::error('FCM v1 send failed', ['token' => $token, 'status' => $response->status(), 'body' => $response->body()]);
-                $results[$token] = ['ok' => false, 'status' => $response->status(), 'body' => $response->body()];
-            } else {
-                $results[$token] = ['ok' => true, 'response' => $response->json()];
+            if ($response->successful()) {
+                $results[$token] = ['ok' => true, 'status' => $response->status()];
+                continue;
             }
+
+            // 404 UNREGISTERED: o navegador cancelou a inscrição.
+            // 400 com token mal formado: não adianta tentar de novo.
+            $invalido = $response->status() === 404
+                || ($response->status() === 400 && str_contains($response->body(), 'registration token'));
+
+            if (! $invalido) {
+                Log::error('FCM v1 send failed', ['status' => $response->status(), 'body' => $response->body()]);
+            }
+            $results[$token] = ['ok' => false, 'status' => $response->status(), 'invalido' => $invalido];
         }
 
         return $results;
     }
 
-    /**
-     * Read tokens from storage file and send notification to all.
-     * File path: storage/app/fcm_tokens.json
-     */
-    public function sendNotificationToAll(string $title, string $body, array $data = [])
+    protected function serviceAccountPath(): string
     {
-        $file = storage_path('app/fcm_tokens.json');
-        $tokens = [];
-        if (file_exists($file)) {
-            $tokens = json_decode(file_get_contents($file), true) ?? [];
+        $caminho = config('services.fcm.credentials_path');
+        if (! file_exists($caminho) && file_exists(storage_path('app/fcm.json'))) {
+            $caminho = storage_path('app/fcm.json');
+        }
+        if (! file_exists($caminho)) {
+            throw new \Exception('Service account file not found at: ' . $caminho);
         }
 
-        return $this->sendNotificationToTokens($tokens, $title, $body, $data);
+        return $caminho;
     }
 
     /**
      * Obtain OAuth2 access token for service account using JWT assertion.
      * Caches token in the application cache for its lifetime minus a small buffer.
-     *
-     * @param string|null $serviceAccountPath
-     * @return string|null
      */
-    protected function getAccessToken(string $serviceAccountPath = null)
+    protected function getAccessToken(string $serviceAccountPath): ?string
     {
-        $serviceAccountPath = $serviceAccountPath ?: env('FCM_SERVICE_ACCOUNT', storage_path('app/fcm.json'));
         $cacheKey = 'fcm_access_token_' . md5($serviceAccountPath);
 
-        // Return cached token if available
         $cached = Cache::get($cacheKey);
-        if (!empty($cached) && isset($cached['access_token']) && isset($cached['expires_at']) && $cached['expires_at'] > time()) {
+        if (! empty($cached['access_token']) && ($cached['expires_at'] ?? 0) > time()) {
             return $cached['access_token'];
-        }
-
-        if (!file_exists($serviceAccountPath)) {
-            Log::error('FCM service account file not found: ' . $serviceAccountPath);
-            return null;
         }
 
         $serviceAccount = json_decode(file_get_contents($serviceAccountPath), true);
         $clientEmail = $serviceAccount['client_email'] ?? null;
         $privateKey = $serviceAccount['private_key'] ?? null;
-        if (!$clientEmail || !$privateKey) {
+        if (! $clientEmail || ! $privateKey) {
             Log::error('Invalid service account JSON for FCM');
             return null;
         }
@@ -148,19 +152,13 @@ class FcmService
             'exp' => $now + 3600,
         ];
 
-        $jwtHeader = ['alg' => 'RS256', 'typ' => 'JWT'];
-        $base64Url = function ($str) {
-            return rtrim(strtr(base64_encode($str), '+/', '-_'), '=');
-        };
+        $base64Url = fn ($str) => rtrim(strtr(base64_encode($str), '+/', '-_'), '=');
+        $assertion = $base64Url(json_encode(['alg' => 'RS256', 'typ' => 'JWT'])) . '.' . $base64Url(json_encode($claims));
 
-        $assertion = $base64Url(json_encode($jwtHeader)) . '.' . $base64Url(json_encode($claims));
-
-        // Sign assertion
         $signature = '';
         openssl_sign($assertion, $signature, $privateKey, OPENSSL_ALGO_SHA256);
         $assertion .= '.' . $base64Url($signature);
 
-        // Request token
         $resp = Http::asForm()->post('https://oauth2.googleapis.com/token', [
             'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
             'assertion' => $assertion,
@@ -171,12 +169,10 @@ class FcmService
             return null;
         }
 
-        $data = $resp->json();
-        $accessToken = $data['access_token'] ?? null;
-        $expiresIn = $data['expires_in'] ?? 3600;
+        $accessToken = $resp->json('access_token');
+        $expiresIn = $resp->json('expires_in', 3600);
         if ($accessToken) {
-            $expiresAt = time() + $expiresIn - 60; // buffer
-            Cache::put($cacheKey, ['access_token' => $accessToken, 'expires_at' => $expiresAt], $expiresIn / 60);
+            Cache::put($cacheKey, ['access_token' => $accessToken, 'expires_at' => time() + $expiresIn - 60], $expiresIn);
             return $accessToken;
         }
 

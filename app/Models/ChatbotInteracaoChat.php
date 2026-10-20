@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\FcmToken;
 use App\Services\FcmService;
 use Illuminate\Support\Facades\Log;
 
@@ -54,7 +55,8 @@ class ChatbotInteracaoChat extends Model
             ];
 
             $fcm = new FcmService();
-            $fcm->sendNotificationToAll($title, $body, $data);
+            // Só para o painel: são conversas de clientes
+            $fcm->enviarPara(FcmToken::PAINEL, $title, $body, $data);
         });
     }
 }

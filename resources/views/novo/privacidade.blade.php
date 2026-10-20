@@ -83,6 +83,15 @@
                     salvas.
                 </p>
 
+                <h3>1.3. Avisos no navegador</h3>
+                <p>
+                    Se você ativar os avisos de artigos novos, o seu navegador gera um identificador anônimo que
+                    guardamos para enviar as notificações, por meio do Firebase Cloud Messaging, do Google. Não
+                    guardamos seu nome, e-mail, endereço IP nem outros dados junto com ele. Para parar de receber,
+                    basta bloquear as notificações deste site nas configurações do navegador; o identificador deixa
+                    de valer e é apagado do nosso banco no envio seguinte.
+                </p>
+
                 <h2 id="uso">2. Sobre o uso de seus dados pessoais</h2>
                 <p>
                     Todos os dados e informações sobre você são tratados como confidenciais, protegendo a sua
