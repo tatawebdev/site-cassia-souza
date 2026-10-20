@@ -78,7 +78,7 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td style="padding-right:16px;vertical-align:middle;">
-                                        <img src="{{ url('/assets/img/cassia-email.jpg') }}" width="64" height="64" alt="Cassia Souza" style="display:block;width:64px;height:64px;border:0;border-radius:50%;">
+                                        <img src="{{ url('/assets/img/cassia-email.jpg?v=2') }}" width="64" height="64" alt="Cassia Souza" style="display:block;width:64px;height:64px;border:0;border-radius:50%;">
                                     </td>
                                     <td style="vertical-align:middle;">
                                         <p style="margin:0;font-family:{{ $serif }};font-size:20px;line-height:24px;font-weight:600;color:#590854;">Cassia Souza</p>
