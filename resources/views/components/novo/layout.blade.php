@@ -325,7 +325,7 @@
                 <p class="cs-fcm-dialog__titulo">Avisos ativados</p>
                 <button type="button" class="cs-fcm-dialog__fechar" onclick="csFecharFCM()" aria-label="Fechar">&times;</button>
             </div>
-            <p class="cs-fcm-dialog__texto">Quer receber os artigos também por e-mail? Um e-mail por artigo novo, com o resumo e o link.</p>
+            <p class="cs-fcm-dialog__texto">Quer receber os artigos também por e&#8209;mail? Um e&#8209;mail por artigo novo, com o resumo e o link.</p>
             <div class="cs-newsletter cs-fcm-dialog__news">
                 <livewire:newsletter-subscribe source="avisos" />
             </div>
