@@ -8,6 +8,9 @@
     $serif = "'Newsreader', Georgia, 'Times New Roman', serif";
     $sans = "Arial, Helvetica, sans-serif";
     $resumo = $aviso->resumo ? \Illuminate\Support\Str::limit($aviso->resumo, 240, '…', preserveWords: true) : null;
+    // WhatsApp com a mensagem já citando o artigo, para a Cassia saber de onde veio
+    $whatsapp = 'https://api.whatsapp.com/send?phone=55'.preg_replace('/\D/', '', config('site.whatsapp'))
+        .'&text='.rawurlencode("Olá, Cassia! Li o artigo \"{$aviso->titulo}\" e tenho uma dúvida.");
 @endphp
 <!doctype html>
 <html lang="pt-BR">
@@ -59,18 +62,15 @@
                                     </td>
                                 </tr>
                             </table>
-                        </td>
-                    </tr>
 
-                    @if ($aviso->imagem)
-                        <tr>
-                            <td class="miolo" style="padding:32px 48px 0;">
-                                <a href="{{ $aviso->url }}">
+                            {{-- Foto do artigo dentro do roxo, como a foto no hero do site --}}
+                            @if ($aviso->imagem)
+                                <a href="{{ $aviso->url }}" style="display:block;margin-top:36px;">
                                     <img src="{{ $aviso->imagem }}" width="504" alt="" style="display:block;width:100%;max-width:504px;height:auto;border:0;border-radius:14px;">
                                 </a>
-                            </td>
-                        </tr>
-                    @endif
+                            @endif
+                        </td>
+                    </tr>
 
                     {{-- Assinatura com a foto da Cassia --}}
                     <tr>
@@ -86,14 +86,36 @@
                                     </td>
                                 </tr>
                             </table>
-                            <p style="margin:20px 0 0;font-family:{{ $sans }};font-size:14px;line-height:22px;color:#3B2F3A;">Ficou com dúvida sobre o tema? Responda este e-mail ou <a href="{{ route('contato') }}" style="color:#590854;font-weight:bold;">fale com a Cassia pelo site</a>.</p>
+                            <p style="margin:20px 0 0;font-family:{{ $sans }};font-size:15px;line-height:23px;color:#3B2F3A;">Ficou com dúvida sobre o tema? Responda este e-mail ou chame a Cassia no WhatsApp.</p>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;">
+                                <tr>
+                                    <td bgcolor="#590854" style="border-radius:999px;background:#590854;">
+                                        <a href="{{ $whatsapp }}" style="display:inline-block;padding:12px 24px 12px 20px;border-radius:999px;background:#590854;font-family:{{ $sans }};font-size:15px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;"><img src="{{ url('/assets/email/email-whatsapp-branco.png') }}" width="20" height="20" alt="" style="display:inline-block;width:20px;height:20px;border:0;vertical-align:-5px;margin-right:8px;">Chamar no WhatsApp</a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
 
                 <table role="presentation" class="folha" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+                    {{-- Redes, as mesmas do rodapé do site (config/site.php) --}}
                     <tr>
-                        <td class="miolo" style="padding:22px 48px 0;font-family:{{ $sans }};font-size:12px;line-height:19px;color:#6A5D68;">
+                        <td class="miolo" style="padding:28px 48px 0;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    @foreach (config('site.social_icons', []) as $rede)
+                                        @php($nomeRede = ['instagram' => 'Instagram', 'tiktok' => 'TikTok', 'linkedin' => 'LinkedIn'][$rede['name']] ?? ucfirst($rede['name']))
+                                        <td style="padding-right:10px;">
+                                            <a href="{{ $rede['url'] }}" title="{{ $nomeRede }} da Cassia Souza"><img src="{{ url('/assets/email/email-'.$rede['name'].'.png') }}" width="36" height="36" alt="{{ $nomeRede }}" style="display:block;width:36px;height:36px;border:0;"></a>
+                                        </td>
+                                    @endforeach
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="miolo" style="padding:18px 48px 0;font-family:{{ $sans }};font-size:12px;line-height:19px;color:#6A5D68;">
                             Você recebe este e-mail porque se inscreveu na newsletter da Cassia Souza Advocacia.
                             Não quer mais receber? <a href="{{ $linkCancelar }}" style="color:#6A5D68;">Cancelar inscrição</a>.
                         </td>
