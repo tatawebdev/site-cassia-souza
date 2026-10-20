@@ -17,7 +17,7 @@ class FcmService
      * Envia para todos os tokens de um público (FcmToken::PAINEL ou ::SITE) e
      * apaga os que o Google diz que não existem mais.
      *
-     * @return array{enviados: int, falhas: int}
+     * @return array{enviados: int, falhas: int, resultados: array} resultados por token (ver sendNotificationToTokens)
      */
     public function enviarPara(string $publico, string $title, string $body, array $data = [], ?string $link = null): array
     {
@@ -31,7 +31,7 @@ class FcmService
 
         $enviados = count(array_filter($results, fn ($r) => $r['ok']));
 
-        return ['enviados' => $enviados, 'falhas' => count($results) - $enviados];
+        return ['enviados' => $enviados, 'falhas' => count($results) - $enviados, 'resultados' => $results];
     }
 
     /**

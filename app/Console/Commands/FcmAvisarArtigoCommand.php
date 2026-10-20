@@ -48,10 +48,10 @@ class FcmAvisarArtigoCommand extends Command
             $aviso = (new FcmAviso)->forceFill(['url' => $url] + $post);
             $teste = new NewsletterSubscriber(['email' => $para]);
             $teste->id = 0;
-            $ok = $avisoArtigo->enviarEmail($aviso, $teste);
-            $ok ? $this->info("E-mail de teste enviado para {$para}.") : $this->error('Não enviou: veja storage/logs.');
+            $erro = $avisoArtigo->enviarEmail($aviso, $teste);
+            $erro === null ? $this->info("E-mail de teste enviado para {$para}.") : $this->error("Não enviou: {$erro}");
 
-            return $ok ? self::SUCCESS : self::FAILURE;
+            return $erro === null ? self::SUCCESS : self::FAILURE;
         }
 
         $aviso = FcmAviso::firstOrNew(['url' => $url]);
@@ -67,8 +67,18 @@ class FcmAvisarArtigoCommand extends Command
         $inscritos = FcmToken::where('publico', FcmToken::SITE)->count();
         $this->line("Avisando: \"{$aviso->titulo}\" ({$url})");
 
+        $inicio = now()->subSecond();
         $avisoArtigo->enviar($aviso, $navegador, $email);
         $aviso->refresh();
+
+        // Quem recebeu e quem não, neste disparo (fica também em fcm_aviso_envios)
+        $this->table(['Canal', 'Para', 'Resultado'], $aviso->envios()
+            ->where('created_at', '>=', $inicio)->orderBy('canal')->orderBy('id')->get()
+            ->map(fn ($e) => [
+                $e->canal === 'email' ? 'E-mail' : 'Navegador',
+                $e->destino,
+                $e->ok ? 'enviado' : 'falhou: '.$e->erro,
+            ])->all());
 
         if ($navegador) {
             if ($inscritos && ! $aviso->enviados && ! $aviso->falhas) {

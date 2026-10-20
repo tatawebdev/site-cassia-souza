@@ -101,7 +101,8 @@ class FcmTest extends TestCase
 
         $resultado = app(FcmService::class)->enviarPara('site', 'Título', 'Texto', [], 'https://blog.cassiasouzaadvocacia.com.br/post/');
 
-        $this->assertSame(['enviados' => 1, 'falhas' => 1], $resultado);
+        $this->assertSame(1, $resultado['enviados']);
+        $this->assertSame(1, $resultado['falhas']);
         Http::assertNotSent(fn ($r) => $r['message']['token'] === 'tok-painel');
         Http::assertSent(fn ($r) => $r['message']['data']['aviso_link'] === 'https://blog.cassiasouzaadvocacia.com.br/post/');
         $this->assertDatabaseMissing('fcm_tokens', ['token' => 'tok-morto']);
@@ -191,6 +192,33 @@ class FcmTest extends TestCase
                 && str_contains($html, e($mail->linkCancelar));
         });
         $this->assertDatabaseHas('fcm_avisos', ['url' => $dados['url'], 'emails_enviados' => 2, 'emails_falhas' => 0]);
+        $this->assertDatabaseHas('fcm_aviso_envios', ['canal' => 'email', 'destino' => 'leitor@example.com', 'ok' => true]);
+        $this->assertDatabaseHas('fcm_aviso_envios', ['canal' => 'email', 'destino' => 'outra@example.com', 'ok' => true]);
+    }
+
+    public function test_comando_mostra_a_tabela_de_quem_recebeu(): void
+    {
+        $vivo = FcmToken::create(['token' => 'tok-vivo', 'publico' => 'site']);
+        $morto = FcmToken::create(['token' => 'tok-morto', 'publico' => 'site']);
+        NewsletterSubscriber::create(['email' => 'leitor@example.com']);
+        Http::fake([
+            'blog.cassiasouzaadvocacia.com.br/feed/' => Http::response('<?xml version="1.0"?><rss><channel>'
+                .'<item><title>Post</title><link>https://blog.cassiasouzaadvocacia.com.br/post/</link></item>'
+                .'</channel></rss>'),
+            'fcm.googleapis.com/*' => fn ($r) => $r['message']['token'] === 'tok-morto'
+                ? Http::response(['error' => ['status' => 'NOT_FOUND']], 404)
+                : Http::response(['name' => 'ok']),
+        ]);
+
+        $this->artisan('fcm:avisar-artigo')
+            ->expectsOutputToContain('leitor@example.com')
+            ->expectsOutputToContain('falhou: Navegador cancelou a inscrição (removido da lista)')
+            ->assertSuccessful();
+
+        $this->assertDatabaseHas('fcm_aviso_envios', ['canal' => 'email', 'destino' => 'leitor@example.com', 'ok' => true]);
+        $this->assertDatabaseHas('fcm_aviso_envios', ['canal' => 'navegador', 'destino' => 'Navegador #'.$vivo->id, 'ok' => true]);
+        $this->assertDatabaseHas('fcm_aviso_envios', ['canal' => 'navegador', 'destino' => 'Navegador #'.$morto->id, 'ok' => false]);
+        $this->assertSame(3, \App\Models\FcmAvisoEnvio::count());
     }
 
     public function test_link_do_email_cancela_a_inscricao(): void

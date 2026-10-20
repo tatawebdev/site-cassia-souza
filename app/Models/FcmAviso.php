@@ -21,4 +21,9 @@ class FcmAviso extends Model
         'emails_enviados',
         'emails_falhas',
     ];
+
+    public function envios()
+    {
+        return $this->hasMany(FcmAvisoEnvio::class);
+    }
 }
