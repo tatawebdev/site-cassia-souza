@@ -49,3 +49,7 @@ Route::post('/fcm/avisos', [\App\Http\Controllers\FcmAvisoController::class, 'st
 Route::post('/newsletter', [\App\Http\Controllers\NewsletterApiController::class, 'store'])
     ->middleware('throttle:5,1')
     ->name('api.newsletter');
+// Blog: e-mail já inscrito dispensa o reCAPTCHA (limite por IP contra varredura da lista)
+Route::post('/newsletter/inscrito', [\App\Http\Controllers\NewsletterApiController::class, 'inscrito'])
+    ->middleware('throttle:10,1')
+    ->name('api.newsletter.inscrito');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewsletterSubscriber;
 use App\Rules\Recaptcha;
 use App\Services\Newsletter;
 use Illuminate\Http\JsonResponse;
@@ -31,6 +32,20 @@ class NewsletterApiController extends Controller
             'mensagem' => $resultado === Newsletter::JA_INSCRITO
                 ? 'Este e-mail já está inscrito. Obrigado!'
                 : 'Inscrição feita! Você vai receber nossas novidades.',
+        ]);
+    }
+
+    /**
+     * Antes do reCAPTCHA: quem já está inscrito recebe o aviso sem precisar
+     * confirmar que não é robô. A rota tem limite por IP (routes/api.php) para
+     * ninguém usar isso para descobrir quem está na lista.
+     */
+    public function inscrito(Request $request): JsonResponse
+    {
+        $dados = $request->validate(['email' => 'required|email|max:255']);
+
+        return response()->json([
+            'inscrito' => NewsletterSubscriber::where('email', $dados['email'])->exists(),
         ]);
     }
 }

@@ -32,6 +32,28 @@ class NewsletterApiTest extends TestCase
         $this->assertDatabaseHas('newsletter_subscribers', ['email' => 'leitor@example.com', 'source' => 'blog']);
     }
 
+    public function test_checagem_de_inscrito_sem_recaptcha_com_limite(): void
+    {
+        NewsletterSubscriber::create(['email' => 'leitor@example.com']);
+
+        $this->postJson('/api/newsletter/inscrito', ['email' => 'leitor@example.com'])->assertOk()->assertJson(['inscrito' => true]);
+        $this->postJson('/api/newsletter/inscrito', ['email' => 'novo@example.com'])->assertOk()->assertJson(['inscrito' => false]);
+
+        for ($i = 0; $i < 8; $i++) {
+            $this->postJson('/api/newsletter/inscrito', ['email' => 'x'.$i.'@example.com']);
+        }
+        $this->postJson('/api/newsletter/inscrito', ['email' => 'leitor@example.com'])->assertStatus(429);
+        Http::assertNothingSent();
+    }
+
+    public function test_blog_pode_gravar_inscricao_de_notificacao(): void
+    {
+        $this->call('OPTIONS', '/api/fcm/token', [], [], [], [
+            'HTTP_ORIGIN' => 'https://blog.cassiasouzaadvocacia.com.br',
+            'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'POST',
+        ])->assertHeader('Access-Control-Allow-Origin', 'https://blog.cassiasouzaadvocacia.com.br');
+    }
+
     public function test_email_ja_inscrito_responde_sem_duplicar(): void
     {
         Http::fake(['www.google.com/recaptcha/*' => Http::response(['success' => true])]);
